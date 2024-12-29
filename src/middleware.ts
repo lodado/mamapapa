@@ -46,9 +46,6 @@ export async function middleware(request: NextRequest) {
   return i18nMiddleware(request, path, defaultLocale);
 }
 
-
-
-
 export const config = {
-  matcher: ["/((?!_next/static|_next/image|.*\\.(?:png|jpg|jpeg|gif|webp|svg|js|json)$).*)"],
+  matcher: ["/((?!_next/static|_next/image|.*\\.(?:png|jpg|jpeg|gif|webp|svg|js|json|bin)$).*)"],
 };

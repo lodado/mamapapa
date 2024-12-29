@@ -7,8 +7,6 @@ import useLinkHref from "./useLinkHref";
 import useInterval from "./useInterval";
 import useServerAction from "./useServerAction";
  
-export * from "./reduxSelector";
-
 export { useErrorBoundary, useServerAction };
 
 export { useInterval, useIsClient, useLinkHref, useForkRef, useDebounce, useForceRenderer };

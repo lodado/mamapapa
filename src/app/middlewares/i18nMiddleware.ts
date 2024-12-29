@@ -2,8 +2,7 @@
 
 import { NextRequest, NextResponse } from "next/server";
 import createIntlMiddleware from "next-intl/middleware";
-
-import { applySubDomain } from "./utils/applySubDomain";
+ 
 import { cspMiddleware } from "./cspMiddleware";
 import { i18nOption } from "@/shared/libs/i18n/lib/option";
  
