@@ -1,5 +1,3 @@
-import PageLoading from "./PageLoading";
-
 export * from "./Button";
 export * from "./Tooltip";
 export * from "./icons";
@@ -14,5 +12,3 @@ export * from "./animation";
 export * from "./Link";
 export * from "./ScrollArea";
 export * from "./Switch";
-
-export { PageLoading };

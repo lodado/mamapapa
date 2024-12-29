@@ -1,9 +1,7 @@
-import { SERVER_DI_REPOSITORY } from "@/DI/index.server";
-
 import React, { PropsWithChildren } from "react";
 import ClientProvider from "./ClientProvider";
 import { AuthProvider, GetUserSessionInfoUseCase } from "@/entities/index.server";
- 
+
 import { EDGE_DI_REPOSITORY } from "@/DI/edge.server";
 
 const RootProvider = async ({ children }: PropsWithChildren) => {
