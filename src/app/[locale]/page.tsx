@@ -13,12 +13,12 @@ import * as blazeface from "@tensorflow-models/blazeface";
 class L2 {
   static className = "L2";
 
-  constructor(config) {
+  constructor(config: any) {
     return tf.regularizers.l1l2(config);
   }
 }
 
-tf.serialization.registerClass(L2);
+tf.serialization.registerClass(L2 as any);
 
 /**
  * FaceCropper 컴포넌트 (GhostNet 기반으로 변경)
@@ -31,7 +31,7 @@ function FaceCropper({
 }: {
   index: number;
   faceModel: blazeface.BlazeFaceModel | null;
-  ghostNetModel: tf.GraphModel | null;
+  ghostNetModel: tf.LayersModel | null;
   onEmbeddingUpdate: (embedding: Float32Array | null, index: number) => void;
 }) {
   const [file, setFile] = useState<File | null>(null);
@@ -159,7 +159,7 @@ function FaceCropper({
 
 export default function ComparisonPage() {
   const [faceModel, setFaceModel] = useState<blazeface.BlazeFaceModel | null>(null);
-  const [ghostNetModel, setGhostNetModel] = useState<tf.GraphModel | null>(null);
+  const [ghostNetModel, setGhostNetModel] = useState<tf.LayersModel | null>(null);
   const [embeddings, setEmbeddings] = useState<(Float32Array | null)[]>([null, null, null]);
   const [similarities, setSimilarities] = useState<{ [key: string]: number }>({});
 
