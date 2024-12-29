@@ -181,7 +181,7 @@ export default function ComparisonPage() {
         const bfModel = await blazeface.load();
         setFaceModel(bfModel);
 
-        const ghostModel = await tf.loadLayersModel("/models/ghostnet/model.json");
+        const ghostModel = await tf.loadLayersModel("/models/ghostnet2/model.json");
         setGhostNetModel(ghostModel);
       } catch (err) {
         console.error("Model load error:", err);
