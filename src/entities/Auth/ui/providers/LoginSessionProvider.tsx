@@ -4,16 +4,16 @@ import { SessionProvider as NextAuthSessionProvider } from "next-auth/react";
 import React, { ReactNode, useEffect, useState } from "react";
 import { NextAuthSessionResponse } from "../../server/type";
 import { LogoutUseCase } from "../../core";
-import { AUTH_LOGOUT_ACTION, AuthClientRepository } from "../../client";
-import { useDispatch, useSelector } from "@/shared/hooks";
-
+// import { AUTH_LOGOUT_ACTION, AuthClientRepository } from "../../client";
+ 
 const LoginSessionProvider = ({ children, session }: { children: ReactNode; session?: NextAuthSessionResponse }) => {
   const [sessionRefetchInterval, setSessionRefetchInterval] = useState(10000);
-  const isLogin = useSelector((state) => state.auth.isLogin);
-  const dispatch = useDispatch();
+  // const isLogin = useSelector((state) => state.auth.isLogin);
+  // const dispatch = useDispatch();
 
   useEffect(() => {
-    if (isLogin) {
+    /*
+    if (false)  {
       if (session == undefined || session?.error) {
         new LogoutUseCase(new AuthClientRepository()).execute();
         dispatch(AUTH_LOGOUT_ACTION());
@@ -28,6 +28,8 @@ const LoginSessionProvider = ({ children, session }: { children: ReactNode; sess
         setSessionRefetchInterval(timeRemaining > 0 ? timeRemaining : 0);
       }
     }
+
+    */
   }, [session, setSessionRefetchInterval]);
 
   return (

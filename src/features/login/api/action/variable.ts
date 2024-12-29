@@ -1,1 +1,0 @@
-export const LOGIN_METHOD = 'SIGNUP_METHOD'
