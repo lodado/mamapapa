@@ -1,0 +1,72 @@
+{
+  "EDITORLINKDIALOG": {
+    "SUBMITTEXT": "확인",
+    "CANCELTEXT": "취소",
+    "HEADER": "링크 설명 및 주소 입력 모달",
+    "DESCRIPTION": "지금 선택한 텍스트에 넣을 링크의 설명과 주소를 입력해주세요."
+  },
+  "LoginDialogContainer": {
+    "DialogTitle": "로그인",
+    "DialogDescription": "원하시는 로그인 방법을 선택하세요"
+  },
+  "LoginForm": {
+    "KakaoButton": "카카오로 회원가입하기",
+    "GoogleButton": "구글로 회원가입하기",
+    "GithubButton": "깃허브로 회원가입하기"
+  },
+  "loginButton": {
+    "login": "로그인"
+  },
+  "LogoutButton": {
+    "logout": "로그아웃"
+  },
+  "ProfileDropdown": {
+    "profile": "프로필",
+    "my_blog": "내 블로그",
+    "settings": "설정"
+  },
+  "PROFILETHEMESELECTOR": {
+    "LABEL-THEME": "테마",
+    "ITEM-SYSTEM": "시스템",
+    "ITEM-DARK": "다크",
+    "ITEM-LIGHT": "라이트"
+  },
+  "LANG": {
+    "ko": "한국어",
+    "en": "영어",
+    "ja": "일본어",
+    "zh": "중국어",
+    "hi": "힌디어",
+    "fr": "프랑스어",
+    "es": "스페인어",
+    "ar": "아랍어",
+    "bn": "벵골어",
+    "pt": "포르투갈어",
+    "id": "인도네시아어",
+    "it": "이탈리아어",
+    "vi": "베트남어",
+    "th": "태국어",
+    "ms": "말레이어",
+    "ru": "러시아어",
+    "de": "독일어",
+    "tr": "터키어"
+  },
+  "LanguageSelector": {
+    "mainLanguage": "주요 언어",
+    "tooltipContent": "블로그의 주 언어를 입력하세요. 카노니컬 태그에 사용됩니다.",
+    "placeholder": "블로그, 기술, 생활",
+    "selectLabel": "언어"
+  },
+  "errorpage": {
+    "title": "오류 발생",
+    "defaultError": "알 수 없는 오류가 발생했습니다.",
+    "returnHome": "홈페이지로 돌아가기"
+  },
+  "LOGIN": {
+    "TOOLTIP-LASTLOGINTEXT": "🔑 최근 로그인",
+    "TOOLTIP-TEXT": "⚡️ 3초만에 로그인으로 시작하세요"
+  },
+  "CreateBlogPostLink": {
+    "title": "블로그 게시물 작성"
+  }
+}

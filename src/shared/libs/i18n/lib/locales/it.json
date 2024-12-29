@@ -1,0 +1,72 @@
+{
+  "EDITORLINKDIALOG": {
+    "SUBMITTEXT": "Invia",
+    "CANCELTEXT": "Annulla",
+    "HEADER": "Descrizione del link e input URL Modal",
+    "DESCRIPTION": "Si prega di inserire la descrizione del link e l'URL per il testo selezionato."
+  },
+  "LoginDialogContainer": {
+    "DialogTitle": "Accesso",
+    "DialogDescription": "Si prega di selezionare il metodo di accesso preferito"
+  },
+  "LoginForm": {
+    "KakaoButton": "Iscriviti con Kakao",
+    "GoogleButton": "Iscriviti con Google",
+    "GithubButton": "Iscriviti con GitHub"
+  },
+  "loginButton": {
+    "login": "Accedi"
+  },
+  "LogoutButton": {
+    "logout": "Disconnetti"
+  },
+  "ProfileDropdown": {
+    "profile": "Profilo",
+    "my_blog": "Il Mio Blog",
+    "settings": "Impostazioni"
+  },
+  "PROFILETHEMESELECTOR": {
+    "LABEL-THEME": "Tema",
+    "ITEM-SYSTEM": "sistema",
+    "ITEM-DARK": "scuro",
+    "ITEM-LIGHT": "chiaro"
+  },
+  "LANG": {
+    "ko": "Coreano",
+    "en": "Inglese",
+    "ja": "Giapponese",
+    "zh": "Cinese",
+    "hi": "Hindi",
+    "fr": "Francese",
+    "es": "Spagnolo",
+    "ar": "Arabo",
+    "bn": "Bengalese",
+    "pt": "Portoghese",
+    "id": "Indonesiano",
+    "it": "Italiano",
+    "vi": "Vietnamita",
+    "th": "Thailandese",
+    "ms": "Malese",
+    "ru": "Russo",
+    "de": "Tedesco",
+    "tr": "Turco"
+  },
+  "LanguageSelector": {
+    "mainLanguage": "Lingua principale",
+    "tooltipContent": "Inserisci la lingua principale del blog. Verrà utilizzata nel tag canonico.",
+    "placeholder": "Blog, Tecnologia, Vita",
+    "selectLabel": "Lingua"
+  },
+  "errorpage": {
+    "title": "Errore Occorso",
+    "defaultError": "Si è verificato un errore sconosciuto",
+    "returnHome": "Torna alla Homepage"
+  },
+  "LOGIN": {
+    "TOOLTIP-LASTLOGINTEXT": "🔑 Ultimo accesso",
+    "TOOLTIP-TEXT": "⚡️ Inizia l'accesso in 3 secondi"
+  },
+  "CreateBlogPostLink": {
+    "title": "crea post sul blog"
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "EDITORLINKDIALOG": {
+    "SUBMITTEXT": "Einreichen",
+    "CANCELTEXT": "Abbrechen",
+    "HEADER": "Link-Beschreibung und URL-Eingabemodal",
+    "DESCRIPTION": "Bitte geben Sie die Linkbeschreibung und die URL für den ausgewählten Text ein."
+  },
+  "LoginDialogContainer": {
+    "DialogTitle": "Anmelden",
+    "DialogDescription": "Bitte wählen Sie Ihre bevorzugte Anmeldemethode"
+  },
+  "LoginForm": {
+    "KakaoButton": "Mit Kakao registrieren",
+    "GoogleButton": "Mit Google registrieren",
+    "GithubButton": "Mit GitHub registrieren"
+  },
+  "loginButton": {
+    "login": "Anmelden"
+  },
+  "LogoutButton": {
+    "logout": "Abmelden"
+  },
+  "ProfileDropdown": {
+    "profile": "Profil",
+    "my_blog": "Mein Blog",
+    "settings": "Einstellungen"
+  },
+  "PROFILETHEMESELECTOR": {
+    "LABEL-THEME": "Thema",
+    "ITEM-SYSTEM": "System",
+    "ITEM-DARK": "dunkel",
+    "ITEM-LIGHT": "hell"
+  },
+  "LANG": {
+    "ko": "Koreanisch",
+    "en": "Englisch",
+    "ja": "Japanisch",
+    "zh": "Chinesisch",
+    "hi": "Hindi",
+    "fr": "Französisch",
+    "es": "Spanisch",
+    "ar": "Arabisch",
+    "bn": "Bengalisch",
+    "pt": "Portugiesisch",
+    "id": "Indonesisch",
+    "it": "Italienisch",
+    "vi": "Vietnamesisch",
+    "th": "Thailändisch",
+    "ms": "Malaiisch",
+    "ru": "Russisch",
+    "de": "Deutsch",
+    "tr": "Türkisch"
+  },
+  "LanguageSelector": {
+    "mainLanguage": "Hauptsprache",
+    "tooltipContent": "Geben Sie die Hauptsprache des Blogs ein. Sie wird im kanonischen Tag verwendet.",
+    "placeholder": "Blog, Technologie, Leben",
+    "selectLabel": "Sprache"
+  },
+  "errorpage": {
+    "title": "Fehler aufgetreten",
+    "defaultError": "Ein unbekannter Fehler ist aufgetreten.",
+    "returnHome": "Zurück zur Startseite"
+  },
+  "LOGIN": {
+    "TOOLTIP-LASTLOGINTEXT": "🔑 Letzte Anmeldung",
+    "TOOLTIP-TEXT": "⚡️ Beginnen Sie in 3 Sekunden mit der Anmeldung"
+  },
+  "CreateBlogPostLink": {
+    "title": "Blogbeitrag erstellen"
+  }
+}

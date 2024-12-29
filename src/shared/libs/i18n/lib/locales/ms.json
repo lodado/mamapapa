@@ -1,0 +1,72 @@
+{
+  "EDITORLINKDIALOG": {
+    "SUBMITTEXT": "Hantar",
+    "CANCELTEXT": "Batal",
+    "HEADER": "Penerangan Pautan dan Input Modal URL",
+    "DESCRIPTION": "Sila masukkan perihalan pautan dan URL untuk teks yang dipilih."
+  },
+  "LoginDialogContainer": {
+    "DialogTitle": "Log masuk",
+    "DialogDescription": "Sila pilih kaedah log masuk pilihan anda"
+  },
+  "LoginForm": {
+    "KakaoButton": "Daftar dengan Kakao",
+    "GoogleButton": "Daftar dengan Google",
+    "GithubButton": "Daftar dengan GitHub"
+  },
+  "loginButton": {
+    "login": "Log masuk"
+  },
+  "LogoutButton": {
+    "logout": "Log keluar"
+  },
+  "ProfileDropdown": {
+    "profile": "Profil",
+    "my_blog": "Blog saya",
+    "settings": "Tetapan"
+  },
+  "PROFILETHEMESELECTOR": {
+    "LABEL-THEME": "Tema",
+    "ITEM-SYSTEM": "sistem",
+    "ITEM-DARK": "gelap",
+    "ITEM-LIGHT": "terang"
+  },
+  "LANG": {
+    "ko": "Bahasa Korea",
+    "en": "Bahasa Inggeris",
+    "ja": "Bahasa Jepun",
+    "zh": "Bahasa Cina",
+    "hi": "Bahasa Hindi",
+    "fr": "Bahasa Perancis",
+    "es": "Bahasa Sepanyol",
+    "ar": "Bahasa Arab",
+    "bn": "Bahasa Bengali",
+    "pt": "Bahasa Portugis",
+    "id": "Bahasa Indonesia",
+    "it": "Bahasa Itali",
+    "vi": "Bahasa Vietnam",
+    "th": "Bahasa Thai",
+    "ms": "Bahasa Melayu",
+    "ru": "Bahasa Rusia",
+    "de": "Bahasa Jerman",
+    "tr": "Bahasa Turki"
+  },
+  "LanguageSelector": {
+    "mainLanguage": "Bahasa Utama",
+    "tooltipContent": "Masukkan bahasa utama blog. Ia akan digunakan dalam tag kanonik.",
+    "placeholder": "Blog, Teknologi, Kehidupan",
+    "selectLabel": "Bahasa"
+  },
+  "errorpage": {
+    "title": "Kesalahan Berlaku",
+    "defaultError": "Kesalahan tidak diketahui telah berlaku",
+    "returnHome": "Kembali ke Laman Utama"
+  },
+  "LOGIN": {
+    "TOOLTIP-LASTLOGINTEXT": "🔑 Log masuk terakhir",
+    "TOOLTIP-TEXT": "⚡️ Mula log masuk dalam 3 saat"
+  },
+  "CreateBlogPostLink": {
+    "title": "buat catatan blog"
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "EDITORLINKDIALOG": {
+    "SUBMITTEXT": "Submit",
+    "CANCELTEXT": "Cancel",
+    "HEADER": "Link Description and URL Input Modal",
+    "DESCRIPTION": "Please enter the link description and URL for the selected text."
+  },
+  "LoginDialogContainer": {
+    "DialogTitle": "Login",
+    "DialogDescription": "Please select your preferred login method"
+  },
+  "LoginForm": {
+    "KakaoButton": "Sign up with Kakao",
+    "GoogleButton": "Sign up with Google",
+    "GithubButton": "Sign up with GitHub"
+  },
+  "loginButton": {
+    "login": "Login"
+  },
+  "LogoutButton": {
+    "logout": "Logout"
+  },
+  "ProfileDropdown": {
+    "profile": "Profile",
+    "my_blog": "My Blog",
+    "settings": "Settings"
+  },
+  "PROFILETHEMESELECTOR": {
+    "LABEL-THEME": "Theme",
+    "ITEM-SYSTEM": "system",
+    "ITEM-DARK": "dark",
+    "ITEM-LIGHT": "light"
+  },
+  "LANG": {
+    "ko": "Korean",
+    "en": "English",
+    "ja": "Japanese",
+    "zh": "Chinese",
+    "hi": "Hindi",
+    "fr": "French",
+    "es": "Spanish",
+    "ar": "Arabic",
+    "bn": "Bengali",
+    "pt": "Portuguese",
+    "id": "Indonesian",
+    "it": "Italian",
+    "vi": "Vietnamese",
+    "th": "Thai",
+    "ms": "Malay",
+    "ru": "Russian",
+    "de": "German",
+    "tr": "Turkish"
+  },
+  "LanguageSelector": {
+    "mainLanguage": "Main Language",
+    "tooltipContent": "Enter the primary language of the blog. It will be used in the canonical tag.",
+    "placeholder": "Blog, Technology, Life",
+    "selectLabel": "Language"
+  },
+  "errorpage": {
+    "title": "Error Occurred",
+    "defaultError": "An unknown error has occurred.",
+    "returnHome": "Return to Homepage"
+  },
+  "LOGIN": {
+    "TOOLTIP-LASTLOGINTEXT": "🔑 Last Login",
+    "TOOLTIP-TEXT": "⚡️ Start logging in within 3 seconds"
+  },
+  "CreateBlogPostLink": {
+    "title": "create blog post"
+  }
+}

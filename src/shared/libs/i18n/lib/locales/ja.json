@@ -1,0 +1,72 @@
+{
+  "EDITORLINKDIALOG": {
+    "SUBMITTEXT": "送信",
+    "CANCELTEXT": "キャンセル",
+    "HEADER": "リンク説明とURL入力モーダル",
+    "DESCRIPTION": "選択したテキストに挿入するリンクの説明とURLを入力してください。"
+  },
+  "LoginDialogContainer": {
+    "DialogTitle": "ログイン",
+    "DialogDescription": "希望のログイン方法を選択してください"
+  },
+  "LoginForm": {
+    "KakaoButton": "カカオで登録",
+    "GoogleButton": "Googleで登録",
+    "GithubButton": "GitHubで登録"
+  },
+  "loginButton": {
+    "login": "ログイン"
+  },
+  "LogoutButton": {
+    "logout": "ログアウト"
+  },
+  "ProfileDropdown": {
+    "profile": "プロフィール",
+    "my_blog": "私のブログ",
+    "settings": "設定"
+  },
+  "PROFILETHEMESELECTOR": {
+    "LABEL-THEME": "テーマ",
+    "ITEM-SYSTEM": "システム",
+    "ITEM-DARK": "ダーク",
+    "ITEM-LIGHT": "ライト"
+  },
+  "LANG": {
+    "ko": "韓国語",
+    "en": "英語",
+    "ja": "日本語",
+    "zh": "中国語",
+    "hi": "ヒンディー語",
+    "fr": "フランス語",
+    "es": "スペイン語",
+    "ar": "アラビア語",
+    "bn": "ベンガル語",
+    "pt": "ポルトガル語",
+    "id": "インドネシア語",
+    "it": "イタリア語",
+    "vi": "ベトナム語",
+    "th": "タイ語",
+    "ms": "マレー語",
+    "ru": "ロシア語",
+    "de": "ドイツ語",
+    "tr": "トルコ語"
+  },
+  "LanguageSelector": {
+    "mainLanguage": "主要言語",
+    "tooltipContent": "ブログの主な言語を入力してください。カノニカルタグで使用されます。",
+    "placeholder": "ブログ、技術、生活",
+    "selectLabel": "言語"
+  },
+  "errorpage": {
+    "title": "エラーが発生しました",
+    "defaultError": "不明なエラーが発生しました",
+    "returnHome": "ホームページに戻る"
+  },
+  "LOGIN": {
+    "TOOLTIP-LASTLOGINTEXT": "🔑 最後のログイン",
+    "TOOLTIP-TEXT": "⚡️ 3秒でログインを開始してください"
+  },
+  "CreateBlogPostLink": {
+    "title": "ブログ投稿を作成する"
+  }
+}

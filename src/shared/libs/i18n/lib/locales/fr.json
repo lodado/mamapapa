@@ -1,0 +1,72 @@
+{
+  "EDITORLINKDIALOG": {
+    "SUBMITTEXT": "Soumettre",
+    "CANCELTEXT": "Annuler",
+    "HEADER": "Description du lien et modal de saisie d'URL",
+    "DESCRIPTION": "Veuillez entrer la description du lien et l'URL pour le texte sélectionné."
+  },
+  "LoginDialogContainer": {
+    "DialogTitle": "Connexion",
+    "DialogDescription": "Veuillez sélectionner votre méthode de connexion préférée"
+  },
+  "LoginForm": {
+    "KakaoButton": "Inscrivez-vous avec Kakao",
+    "GoogleButton": "Inscrivez-vous avec Google",
+    "GithubButton": "Inscrivez-vous avec GitHub"
+  },
+  "loginButton": {
+    "login": "Connexion"
+  },
+  "LogoutButton": {
+    "logout": "Déconnexion"
+  },
+  "ProfileDropdown": {
+    "profile": "Profil",
+    "my_blog": "Mon Blog",
+    "settings": "Paramètres"
+  },
+  "PROFILETHEMESELECTOR": {
+    "LABEL-THEME": "Thème",
+    "ITEM-SYSTEM": "système",
+    "ITEM-DARK": "sombre",
+    "ITEM-LIGHT": "clair"
+  },
+  "LANG": {
+    "ko": "Coréen",
+    "en": "Anglais",
+    "ja": "Japonais",
+    "zh": "Chinois",
+    "hi": "Hindi",
+    "fr": "Français",
+    "es": "Espagnol",
+    "ar": "Arabe",
+    "bn": "Bengali",
+    "pt": "Portugais",
+    "id": "Indonésien",
+    "it": "Italien",
+    "vi": "Vietnamien",
+    "th": "Thaï",
+    "ms": "Malais",
+    "ru": "Russe",
+    "de": "Allemand",
+    "tr": "Turc"
+  },
+  "LanguageSelector": {
+    "mainLanguage": "Langue principale",
+    "tooltipContent": "Entrez la langue principale du blog. Elle sera utilisée dans la balise canonique.",
+    "placeholder": "Blog, Technologie, Vie",
+    "selectLabel": "Langue"
+  },
+  "errorpage": {
+    "title": "Erreur survenue",
+    "defaultError": "Une erreur inconnue est survenue.",
+    "returnHome": "Retourner à la page d'accueil"
+  },
+  "LOGIN": {
+    "TOOLTIP-LASTLOGINTEXT": "🔑 Dernière connexion",
+    "TOOLTIP-TEXT": "⚡️ Commencez à vous connecter en 3 secondes"
+  },
+  "CreateBlogPostLink": {
+    "title": "créer un article de blog"
+  }
+}

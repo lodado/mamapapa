@@ -1,0 +1,26 @@
+:root, :root[data-theme][data-theme='light'] {
+  --Background: #fff;
+  --Background-Inverse: #000;
+
+  --Background-Editor-Tooltip: #000;
+  --Background-Editor-Tooltip-Text: #fff;
+
+
+  background-color: #fffe ;
+  color: var(--Color-Text-Default);
+}
+
+
+
+:root[data-theme][data-theme='dark'] {
+  --Background: #121212;
+  --Background-Inverse: #fff;
+
+  --Background-Editor-Tooltip: #121212;
+  --Background-Editor-Tooltip-Text: #fff;
+
+
+  background-color: #121212;
+  color: var(--Color-Text-Default);
+}
+ 

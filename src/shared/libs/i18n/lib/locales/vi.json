@@ -1,0 +1,72 @@
+{
+  "EDITORLINKDIALOG": {
+    "SUBMITTEXT": "Gửi",
+    "CANCELTEXT": "Hủy bỏ",
+    "HEADER": "Mô tả liên kết và Nhập URL Modal",
+    "DESCRIPTION": "Vui lòng nhập mô tả liên kết và URL cho văn bản đã chọn."
+  },
+  "LoginDialogContainer": {
+    "DialogTitle": "Đăng nhập",
+    "DialogDescription": "Vui lòng chọn phương thức đăng nhập bạn muốn"
+  },
+  "LoginForm": {
+    "KakaoButton": "Đăng ký với Kakao",
+    "GoogleButton": "Đăng ký với Google",
+    "GithubButton": "Đăng ký với GitHub"
+  },
+  "loginButton": {
+    "login": "Đăng nhập"
+  },
+  "LogoutButton": {
+    "logout": "Đăng xuất"
+  },
+  "ProfileDropdown": {
+    "profile": "Hồ sơ",
+    "my_blog": "Blog của tôi",
+    "settings": "Cài đặt"
+  },
+  "PROFILETHEMESELECTOR": {
+    "LABEL-THEME": "Chủ đề",
+    "ITEM-SYSTEM": "hệ thống",
+    "ITEM-DARK": "tối",
+    "ITEM-LIGHT": "sáng"
+  },
+  "LANG": {
+    "ko": "Hàn Quốc",
+    "en": "Tiếng Anh",
+    "ja": "Tiếng Nhật",
+    "zh": "Tiếng Trung",
+    "hi": "Tiếng Hindi",
+    "fr": "Tiếng Pháp",
+    "es": "Tiếng Tây Ban Nha",
+    "ar": "Tiếng Ả Rập",
+    "bn": "Tiếng Bengal",
+    "pt": "Tiếng Bồ Đào Nha",
+    "id": "Tiếng Indonesia",
+    "it": "Tiếng Ý",
+    "vi": "Tiếng Việt",
+    "th": "Tiếng Thái",
+    "ms": "Tiếng Mã Lai",
+    "ru": "Tiếng Nga",
+    "de": "Tiếng Đức",
+    "tr": "Tiếng Thổ Nhĩ Kỳ"
+  },
+  "LanguageSelector": {
+    "mainLanguage": "Ngôn ngữ chính",
+    "tooltipContent": "Nhập ngôn ngữ chính của blog. Nó sẽ được sử dụng trong thẻ chuẩn.",
+    "placeholder": "Blog, Công nghệ, Cuộc sống",
+    "selectLabel": "Ngôn ngữ"
+  },
+  "errorpage": {
+    "title": "Đã xảy ra lỗi",
+    "defaultError": "Đã xảy ra lỗi không xác định",
+    "returnHome": "Quay lại trang chủ"
+  },
+  "LOGIN": {
+    "TOOLTIP-LASTLOGINTEXT": "🔑 Đăng nhập lần cuối",
+    "TOOLTIP-TEXT": "⚡️ Bắt đầu đăng nhập trong 3 giây"
+  },
+  "CreateBlogPostLink": {
+    "title": "tạo bài viết blog"
+  }
+}

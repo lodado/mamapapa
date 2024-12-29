@@ -1,0 +1,72 @@
+{
+  "EDITORLINKDIALOG": {
+    "SUBMITTEXT": "Gönder",
+    "CANCELTEXT": "İptal etmek",
+    "HEADER": "Bağlantı Açıklaması ve URL Girişi Modalı",
+    "DESCRIPTION": "Lütfen seçilen metin için bağlantı açıklaması ve URL girin."
+  },
+  "LoginDialogContainer": {
+    "DialogTitle": "Giriş Yap",
+    "DialogDescription": "Lütfen tercih ettiğiniz giriş yöntemini seçin"
+  },
+  "LoginForm": {
+    "KakaoButton": "Kakao ile kayıt ol",
+    "GoogleButton": "Google ile kayıt ol",
+    "GithubButton": "GitHub ile kayıt ol"
+  },
+  "loginButton": {
+    "login": "Giriş yap"
+  },
+  "LogoutButton": {
+    "logout": "Çıkış Yap"
+  },
+  "ProfileDropdown": {
+    "profile": "Profil",
+    "my_blog": "Blogum",
+    "settings": "Ayarlar"
+  },
+  "PROFILETHEMESELECTOR": {
+    "LABEL-THEME": "Tema",
+    "ITEM-SYSTEM": "sistem",
+    "ITEM-DARK": "karanlık",
+    "ITEM-LIGHT": "aydınlık"
+  },
+  "LANG": {
+    "ko": "Korece",
+    "en": "İngilizce",
+    "ja": "Japonca",
+    "zh": "Çince",
+    "hi": "Hintçe",
+    "fr": "Fransızca",
+    "es": "İspanyolca",
+    "ar": "Arapça",
+    "bn": "Bengalce",
+    "pt": "Portekizce",
+    "id": "Endonezce",
+    "it": "İtalyanca",
+    "vi": "Vietnamca",
+    "th": "Tayca",
+    "ms": "Malayca",
+    "ru": "Rusça",
+    "de": "Almanca",
+    "tr": "Türkçe"
+  },
+  "LanguageSelector": {
+    "mainLanguage": "Ana Dil",
+    "tooltipContent": "Blog'un ana dilini girin. Kanonik etiket için kullanılacaktır.",
+    "placeholder": "Blog, Teknoloji, Yaşam",
+    "selectLabel": "Dil"
+  },
+  "errorpage": {
+    "title": "Hata Oluştu",
+    "defaultError": "Bilinmeyen bir hata oluştu",
+    "returnHome": "Ana sayfaya dön"
+  },
+  "LOGIN": {
+    "TOOLTIP-LASTLOGINTEXT": "🔑 Son Giriş",
+    "TOOLTIP-TEXT": "⚡️ 3 saniye içinde giriş yapmaya başlayın"
+  },
+  "CreateBlogPostLink": {
+    "title": "blog yazısı oluştur"
+  }
+}
