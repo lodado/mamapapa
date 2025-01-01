@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('./typography.scss');
 
 * {
   box-sizing: border-box; 
@@ -10,18 +11,6 @@
 /* RTL 기본 스타일 */
 html[dir='rtl'] {
   direction: rtl;  
- 
-  & .editor-container {
-    &[data-direction='rtl']{
-      & .ProseMirror {
-        text-align: right;
-      }
-  
-      & .ProseMirror * {
-        text-align: right;
-      }
-    }
-  }
 }
 
 /* LTR 기본 스타일 (기본값으로 사용할 수 있음) */
@@ -32,6 +21,7 @@ html[dir='ltr'] {
 * {
   text-align: start;
 }
+
 
 :root {
   --safe-area-top: env(safe-area-inset-top);
@@ -48,13 +38,13 @@ body {
   padding-left: var(--safe-area-left);
 }
  
-
 html, body {
   margin: 0;
   padding: 0;
   height: 100%;
 
 }
+
 
 .page-nav {
  position: sticky;
