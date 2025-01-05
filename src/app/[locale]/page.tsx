@@ -217,7 +217,7 @@ export default function ComparisonPage() {
 
   return (
     <>
-      <header className="page-nav">test</header>
+      <header className="header-content">test</header>
       <div style={{ padding: 20 }}>
         <h1>3장 얼굴 크롭 & GhostNet 임베딩 비교</h1>
 

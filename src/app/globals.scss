@@ -57,10 +57,11 @@ html, body {
   height: 100%;
 }
 
-.page-nav {
- position: sticky;
+.header-content {
+ position: fixed;
   top: 0;
-  height: 4rem;
+  width: 100%;
+  height: var(--header-height);
   padding-top: var(--safe-area-top);
   flex-shrink: 0;
 
@@ -75,11 +76,6 @@ html, body {
   background: blue; /* Example background color */
 }
 
-.page-footer-margin {
-  width: 100%;
-  height: calc(var(--footer-height) + var(--safe-area-bottom));
-}
-
 .page-footer {
   position: fixed;
   bottom: 0;
@@ -88,4 +84,16 @@ html, body {
   flex-shrink: 0; /* Ensure footer maintains its height */
   
   background: #f5f5f5; /* Example background color */
+}
+
+
+.page-header-margin {
+  width: 100%;
+  height: calc(var(--footer-height) + var(--safe-area-top));
+}
+
+
+.page-footer-margin {
+  width: 100%;
+  height: calc(var(--footer-height) + var(--safe-area-bottom));
 }
