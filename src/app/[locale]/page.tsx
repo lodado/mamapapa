@@ -216,40 +216,46 @@ export default function ComparisonPage() {
   };
 
   return (
-    <div style={{ padding: 20 }}>
-      <h1>3장 얼굴 크롭 & GhostNet 임베딩 비교</h1>
+    <>
+      <header className="page-nav">test</header>
+      <div style={{ padding: 20 }}>
+        <h1>3장 얼굴 크롭 & GhostNet 임베딩 비교</h1>
 
-      <FaceCropper
-        index={1}
-        faceModel={faceModel}
-        ghostNetModel={ghostNetModel}
-        onEmbeddingUpdate={handleEmbeddingUpdate}
-      />
-      <FaceCropper
-        index={2}
-        faceModel={faceModel}
-        ghostNetModel={ghostNetModel}
-        onEmbeddingUpdate={handleEmbeddingUpdate}
-      />
-      <FaceCropper
-        index={3}
-        faceModel={faceModel}
-        ghostNetModel={ghostNetModel}
-        onEmbeddingUpdate={handleEmbeddingUpdate}
-      />
+        <FaceCropper
+          index={1}
+          faceModel={faceModel}
+          ghostNetModel={ghostNetModel}
+          onEmbeddingUpdate={handleEmbeddingUpdate}
+        />
+        <FaceCropper
+          index={2}
+          faceModel={faceModel}
+          ghostNetModel={ghostNetModel}
+          onEmbeddingUpdate={handleEmbeddingUpdate}
+        />
+        <FaceCropper
+          index={3}
+          faceModel={faceModel}
+          ghostNetModel={ghostNetModel}
+          onEmbeddingUpdate={handleEmbeddingUpdate}
+        />
 
-      <button onClick={handleCompare} style={{ marginTop: 20 }}>
-        비교하기
-      </button>
+        <button onClick={handleCompare} style={{ marginTop: 20 }}>
+          비교하기
+        </button>
 
-      {similarities["12"] != null && (
-        <div style={{ marginTop: 20 }}>
-          <h3>결과 (코사인 유사도)</h3>
-          <p>1 vs 2: {similarities["12"].toFixed(4)}</p>
-          <p>1 vs 3: {similarities["13"].toFixed(4)}</p>
-          <p>2 vs 3: {similarities["23"].toFixed(4)}</p>
-        </div>
-      )}
-    </div>
+        {similarities["12"] != null && (
+          <div style={{ marginTop: 20 }}>
+            <h3>결과 (코사인 유사도)</h3>
+            <p>1 vs 2: {similarities["12"].toFixed(4)}</p>
+            <p>1 vs 3: {similarities["13"].toFixed(4)}</p>
+            <p>2 vs 3: {similarities["23"].toFixed(4)}</p>
+          </div>
+        )}
+
+        <div className="page-footer-margin" />
+      </div>
+      <footer className="page-footer">footer</footer>
+    </>
   );
 }
