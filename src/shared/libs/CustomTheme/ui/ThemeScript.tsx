@@ -63,5 +63,6 @@ const code = function code() {
  * script는 랜더링 차단 요소로 동작하므로 다크모드를 보장함
  */
 export default function ThemeScript({ nonce }: { nonce: string }) {
-  return <script id="theme-script" nonce={nonce} dangerouslySetInnerHTML={{ __html: `(${code})();` }} />;
+  return <></>;
+  // return <script id="theme-script" nonce={nonce} dangerouslySetInnerHTML={{ __html: `(${code})();` }} />;
 }

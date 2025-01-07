@@ -1,39 +1,20 @@
 import { cva } from 'class-variance-authority'
 
-export const rawButtonVariants = cva(`rounded-[4px] inline-flex justify-center items-center`, {
-  variants: {
-    variant: {
-      primary: `bg-color-background-brand-bold-default text-background hover:bg-color-background-brand-bold-hovered active:bg-color-background-brand-bold-pressed
-      border-2 border-transparent focus:border-solid focus-visible:border-color-background-input-default focus-visible:outline focus:outline-1 focus-visible:outline-color-border-bold
-      disabled:opacity-20`,
-
-      secondary: `bg-color-background-accent-gray-subtlest-default text-color-text-default hover:bg-color-background-accent-gray-subtlest-hovered active:bg-color-background-accent-gray-subtlest-pressed
-      border-2 border-transparent focus:border-solid focus-visible:border-color-background-input-default focus-visible:outline focus:outline-1 focus-visible:outline-color-border-bold
-      disabled:opacity-20`,
-
-      text: `bg-transparent text-color-text-default hover:bg-color-background-input-hovered active:bg-color-background-input-pressed
-      border-2 border-transparent focus:border-solid focus-visible:border-color-background-input-default focus-visible:outline focus:outline-1 focus-visible:outline-color-border-bold
-      disabled:opacity-20`,
-
-      outline: `bg-transparent text-color-text-default hover:bg-color-background-input-hovered active:bg-color-background-input-pressed
-      border-2 border-color-border-input focus:border-solid focus-visible:border-color-background-input-default focus-visible:outline focus:outline-1 focus-visible:outline-color-border-bold
-      disabled:opacity-20`,
-
-      custom: "",
+export const rawButtonVariants = cva(
+  `rounded-[0.75rem] flex h-14 py-2 px-4 justify-center items-center gap-0.5 head-3 flex-shrink-0 self-stretch`,
+  {
+    variants: {
+      variant: {
+        solid: "rounded-[0.75rem] bg-primary-01 text-text-00 active:bg-primary-01-press",
+        line: "border border-solid border-primary-01 bg-transparent active:bg-primary-01-line-press text-text-primary",
+        custom: "",
+      },
     },
-
-    size: {
-      medium: "gap-1 body-01",
-      large: "gap-2 heading-03",
-      small: "gap-1 body-03",
-      custom: "",
+    defaultVariants: {
+      variant: "solid",
     },
-  },
-  defaultVariants: {
-    variant: "primary",
-    size: "medium",
-  },
-});
+  }
+);
 
 export const buttonVariants = cva("", {
   variants: {
@@ -41,15 +22,11 @@ export const buttonVariants = cva("", {
       // primarymedium: 'h-9 px-spacing-3 py-spacing-1',
       // primarylarge: 'h-10 px-spacing-4 py-spacing-3',
       // primarysmall: 'h-6 px-spacing-2 py-spacing-1',
-
-      medium: "h-9 px-2 py-2",
-      large: "h-10 px-4 py-3",
-      small: "h-6 px-2 py-1",
       custom: "",
     },
   },
   defaultVariants: {
-    size: "medium",
+    size: "custom",
   },
 });
 
