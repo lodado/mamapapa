@@ -1,4 +1,4 @@
-import type { Viewport } from "next";
+import type { Metadata, Viewport } from "next";
 import { headers } from "next/headers";
 import { NextIntlClientProvider, useMessages } from "next-intl";
 import React from "react";
@@ -34,6 +34,21 @@ export function generateViewport(): Viewport {
     userScalable: false,
     viewportFit: "cover",
     width: "device-width",
+
+    /**
+     *  * { media: "(prefers-color-scheme: dark)", color: "#000000" }
+     * <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000000" />
+     <link rel="icon" type="image/svg+xml" href="/Logo.svg" />
+     */
+  };
+}
+
+export function generateMetadata(): Metadata {
+  return {
+    title: "Simmey",
+    icons: {
+      icon: "/Logo.svg",
+    },
   };
 }
 
@@ -48,7 +63,6 @@ const RootLayout: React.FunctionComponent<LocaleProps> = ({ children, params: { 
     <html lang={locale} suppressHydrationWarning>
       <Head>
         <meta httpEquiv="X-UA-Compatible" content="IE=Edge" />
-
         <meta name="application-name" content="pokitoki" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
@@ -60,16 +74,9 @@ const RootLayout: React.FunctionComponent<LocaleProps> = ({ children, params: { 
         <meta name="msapplication-tap-highlight" content="no" />
         <meta name="theme-color" content="#000000" />
 
-        <link rel="apple-touch-icon" href="/icons/touch-icon-iphone.png" />
-        <link rel="apple-touch-icon" sizes="152x152" href="/icons/touch-icon-ipad.png" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/icons/touch-icon-iphone-retina.png" />
-        <link rel="apple-touch-icon" sizes="167x167" href="/icons/touch-icon-ipad-retina.png" />
-
-        <link rel="icon" type="image/png" sizes="32x32" href="/icons/icon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/icons/icon-16x16.png" />
         <link rel="manifest" href="/manifest.json" />
+        <link rel="icon" type="image/svg+xml" href="/Logo.svg" />
         <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#5bbad5" />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <body className={inter.className}>
