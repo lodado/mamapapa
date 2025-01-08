@@ -1,13 +1,11 @@
 // RawButton 컴포넌트
-import { Slot } from "@radix-ui/react-slot";
+ 
 import { forwardRef } from "react";
-
+import { motion } from "motion/react";
 import { RawButtonProps } from "../type";
 
 const RawButton = forwardRef<HTMLButtonElement, RawButtonProps>(
   ({ variant, asChild = false, children, onClick, ...props }, ref) => {
-    const Comp = asChild ? Slot : "button";
-
     const handleButtonClick = (e: React.MouseEvent<HTMLButtonElement>) => {
       // @ts-ignore
       navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate;
@@ -19,9 +17,15 @@ const RawButton = forwardRef<HTMLButtonElement, RawButtonProps>(
     };
 
     return (
-      <Comp ref={ref} {...props} onClick={handleButtonClick}>
+      <motion.button
+        whileHover={{ scale: 1.01 }}
+        whileTap={{ scale: 0.98 }}
+        ref={ref}
+        {...(props as any)}
+        onClick={handleButtonClick}
+      >
         {children}
-      </Comp>
+      </motion.button>
     );
   }
 );

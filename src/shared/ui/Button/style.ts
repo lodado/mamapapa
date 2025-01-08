@@ -1,7 +1,7 @@
 import { cva } from 'class-variance-authority'
 
 export const rawButtonVariants = cva(
-  `rounded-[0.75rem] flex h-14 py-2 px-4 justify-center items-center gap-0.5 head-3 flex-shrink-0 self-stretch active:scale-[calc(98%)] transition-all`,
+  `rounded-[0.75rem] flex h-14 py-2 px-4 justify-center items-center gap-0.5 head-3 flex-shrink-0 self-stretch `,
   {
     variants: {
       variant: {
