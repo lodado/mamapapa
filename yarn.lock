@@ -7185,6 +7185,15 @@ framer-motion@^11.11.10:
   dependencies:
     tslib "^2.4.0"
 
+framer-motion@^11.16.1:
+  version "11.16.1"
+  resolved "https://registry.yarnpkg.com/framer-motion/-/framer-motion-11.16.1.tgz#3768ba04acbe51bdba599dc8a10db7b9737cc020"
+  integrity sha512-xsjhEUSWHn39g334PpBTH+QissgEJVJkpRGS/4QUyMSmoJSNxA+7FTuq61s+OXPMS4muu5k9Y6r7GpcNKhd1xA==
+  dependencies:
+    motion-dom "^11.16.1"
+    motion-utils "^11.16.0"
+    tslib "^2.4.0"
+
 fresh@0.5.2:
   version "0.5.2"
   resolved "https://registry.yarnpkg.com/fresh/-/fresh-0.5.2.tgz#3d8cadd90d976569fa835ab1f8e4b23a105605a7"
@@ -8847,6 +8856,26 @@ mongodb@^6.9.0:
     "@mongodb-js/saslprep" "^1.1.5"
     bson "^6.7.0"
     mongodb-connection-string-url "^3.0.0"
+
+motion-dom@^11.16.1:
+  version "11.16.1"
+  resolved "https://registry.yarnpkg.com/motion-dom/-/motion-dom-11.16.1.tgz#ce1057bbd12bece8eb1cd42f99d64013b24cf949"
+  integrity sha512-XVNf3iCfZn9OHPZYJQy5YXXLn0NuPNvtT3YCat89oAnr4D88Cr52KqFgKa8dWElBK8uIoQhpJMJEG+dyniYycQ==
+  dependencies:
+    motion-utils "^11.16.0"
+
+motion-utils@^11.16.0:
+  version "11.16.0"
+  resolved "https://registry.yarnpkg.com/motion-utils/-/motion-utils-11.16.0.tgz#e75865442278be49e411ca9105c9139edc572811"
+  integrity sha512-ngdWPjg31rD4WGXFi0eZ00DQQqKKu04QExyv/ymlC+3k+WIgYVFbt6gS5JsFPbJODTF/r8XiE/X+SsoT9c0ocw==
+
+motion@^11.16.1:
+  version "11.16.1"
+  resolved "https://registry.yarnpkg.com/motion/-/motion-11.16.1.tgz#3dc25be8de7c1fbe035eae5ab2f5c1ec5b961bd5"
+  integrity sha512-VEwkZHdisrudJVF3Qpy2EtL1J4gZhcg6yv7HkbvnTHrD/wbMamymTH29y89ezIQa9k2RbMXe4vc2K55c+MdbBQ==
+  dependencies:
+    framer-motion "^11.16.1"
+    tslib "^2.4.0"
 
 mrmime@^2.0.0:
   version "2.0.0"
