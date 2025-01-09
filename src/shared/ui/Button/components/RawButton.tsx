@@ -22,7 +22,7 @@ const RawButton = forwardRef<HTMLButtonElement, RawButtonProps>(
         componentType={componentType}
         whileHover={{ scale: 1.01 }}
         whileTap={{ scale: 0.98 }}
-        transition={{ type: "spring", stiffness: 220 }}
+        transition={{ type: "spring", stiffness: 160, duration: 0.3 }}
         ref={ref}
         {...(props as any)}
         onClick={handleButtonClick}

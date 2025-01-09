@@ -12,3 +12,4 @@ export * from "./animation";
 export * from "./Link";
 export * from "./ScrollArea";
 export * from "./Switch";
+export * from "./Children";
