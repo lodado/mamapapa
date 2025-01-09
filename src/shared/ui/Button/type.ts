@@ -15,6 +15,8 @@ export type ButtonElement = ButtonHTMLAttributes<HTMLButtonElement>
  * option to render the button as a child component without wrapper elements.
  */
 export interface RawButtonProps extends ButtonElement, VariantProps<typeof rawButtonVariants> {
+  componentType?: JSX.IntrinsicElements;
+
   className?: string;
 
   /** Defines the button's style variant

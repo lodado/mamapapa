@@ -1,11 +1,12 @@
-// RawButton 컴포넌트
- 
+"use client";
+
 import { forwardRef } from "react";
-import { motion } from "motion/react";
+
 import { RawButtonProps } from "../type";
+import { Motion } from "../../animation/animation";
 
 const RawButton = forwardRef<HTMLButtonElement, RawButtonProps>(
-  ({ variant, asChild = false, children, onClick, ...props }, ref) => {
+  ({ variant, componentType = "button", asChild = false, children, onClick, ...props }, ref) => {
     const handleButtonClick = (e: React.MouseEvent<HTMLButtonElement>) => {
       // @ts-ignore
       navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate;
@@ -17,15 +18,17 @@ const RawButton = forwardRef<HTMLButtonElement, RawButtonProps>(
     };
 
     return (
-      <motion.button
+      <Motion
+        componentType={componentType}
         whileHover={{ scale: 1.01 }}
         whileTap={{ scale: 0.98 }}
+        transition={{ type: "spring", stiffness: 220 }}
         ref={ref}
         {...(props as any)}
         onClick={handleButtonClick}
       >
         {children}
-      </motion.button>
+      </Motion>
     );
   }
 );
