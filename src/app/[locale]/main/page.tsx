@@ -10,6 +10,11 @@ import { ButtonLink } from "@/entities/Router";
 import { ScrollLock } from "@/shared/ui";
 import { PAGE_ROUTE } from "@/entities/Router/configs/route";
 
+export async function generateStaticParams() {
+  return [];
+}
+
+
 const page = () => {
   return (
     <ScrollLock>

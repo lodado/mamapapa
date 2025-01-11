@@ -1,5 +1,4 @@
 import { products } from "../product";
-import PDP from "./@modal/page";
 import { ReactNode } from "react";
 
 export async function generateStaticParams() {
@@ -8,6 +7,6 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function ProductPage({ children }: { children: ReactNode }) {
-  return <>{children}</>;
+export default async function ProductPage() {
+  return <></>;
 }

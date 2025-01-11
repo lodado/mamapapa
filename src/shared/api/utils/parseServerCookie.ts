@@ -13,5 +13,5 @@ const rawParseServerCookie = async () => {
 };
 
 export const parseServerCookie = () => {
-  return cache(rawParseServerCookie);
+  return rawParseServerCookie;
 };
