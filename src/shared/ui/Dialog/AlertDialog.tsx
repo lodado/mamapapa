@@ -44,7 +44,7 @@ const SubmitForm = ({
     >
       {children}
 
-      <Button className="w-full mb-2" type="submit" variant="solid" onClick={handleDialogSubmit}>
+      <Button className="w-full mb-2" type="submit" variant="primarySolid" onClick={handleDialogSubmit}>
         {submitText}
       </Button>
       <Button className="w-full" onClick={() => onChangeVisibleStatus(false)} type="button" variant="line">

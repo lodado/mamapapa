@@ -6,7 +6,7 @@ import { cn } from "@/shared/utils";
 import { rawButtonVariants } from "../../Button/style";
 
 const SelectTrigger = (props: ComponentProps<typeof Trigger> & ComponentProps<typeof rawButtonVariants>) => {
-  const { children, className, variant = "solid", ...rest } = props;
+  const { children, className, variant = "primarySolid", ...rest } = props;
 
   return (
     <Trigger

@@ -10,7 +10,7 @@ const meta: Meta<typeof Button> = {
   component: Button,
   tags: ["autodocs"],
   args: {
-    variant: "line",
+    variant: "primaryLine",
     size: "custom",
   },
   parameters: {

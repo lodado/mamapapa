@@ -6,7 +6,7 @@ import { cn } from "@/shared/utils";
 import { rawButtonVariants } from "../../Button/style";
 
 const DropdownTrigger = (props: ComponentProps<typeof Trigger> & ComponentProps<typeof rawButtonVariants>) => {
-  const { children, className, variant = "solid", ...rest } = props;
+  const { children, className, variant = "primarySolid", ...rest } = props;
 
   return (
     <Trigger
@@ -30,7 +30,7 @@ const DropdownTrigger = (props: ComponentProps<typeof Trigger> & ComponentProps<
 export const DropdownSubTrigger = (
   props: ComponentProps<typeof SubTrigger> & ComponentProps<typeof rawButtonVariants>
 ) => {
-  const { children, className, variant = "solid", ...rest } = props;
+  const { children, className, variant = "primarySolid", ...rest } = props;
 
   return (
     <SubTrigger
