@@ -21,7 +21,7 @@ export const getLinkHref = async (props: ComponentProps<typeof SeverLocaleLink>)
   const protocol = isLocalhost ? "http" : "https";
   const port = isLocalhost ? `:3000` : "";
 
-  const preSubDomain = isLocalhost ? "" : `${subDomain}.`;
+  const preSubDomain = isLocalhost ? "" : subDomain ? `${subDomain}.` : "";
   const postSubDomain = isLocalhost ? `${subDomain}` : "";
 
   // 서브도메인 및 locale prefix 추가하여 href 생성

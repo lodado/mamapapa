@@ -19,7 +19,7 @@ const useLinkHref = (props: ComponentProps<typeof LocaleLink>) => {
   const protocol = isLocalhost ? "http" : "https";
   const port = window.location.port ? `:${window.location.port}` : "";
 
-  const preSubDomain = isLocalhost ? "" : `${subDomain}.`;
+  const preSubDomain = isLocalhost ? "" : subDomain ? `${subDomain}.` : "";
   const postSubDomain = isLocalhost ? `${subDomain}` : "";
 
   // 서브도메인 및 locale prefix 추가하여 href 생성
