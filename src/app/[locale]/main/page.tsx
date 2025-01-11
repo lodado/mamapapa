@@ -10,9 +10,10 @@ import { ModelDownloader } from "@/features";
 import { ButtonLink } from "@/entities/Router";
 import { ScrollLock } from "@/shared/ui";
 import { PAGE_ROUTE } from "@/entities/Router/configs/route";
+import { getLocalesListsForStateParams } from "@/shared/libs/i18n/server/getLocalesListsForStateParams";
 
 export async function generateStaticParams() {
-  return [];
+  return getLocalesListsForStateParams();
 }
 
 const page = ({ params }: { params: { locale: string } }) => {

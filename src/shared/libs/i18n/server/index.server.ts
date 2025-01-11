@@ -1,1 +1,1 @@
-export * from './setServerComponentSSG'
+export * from "./getLocalesListsForStateParams";
