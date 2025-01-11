@@ -43,7 +43,6 @@ class FaceModelStore extends BaseAsyncStore<FaceModelState> {
       await model.save(`indexeddb://${MODEL_ID}`);
     } catch (error) {
       this.setModel(null);
-      this.setError("모델 로딩에 실패했습니다.");
       this.set({ isLoading: false });
     }
   }
