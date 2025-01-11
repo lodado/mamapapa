@@ -14,10 +14,10 @@ const useLinkHref = (props: ComponentProps<typeof LocaleLink>) => {
   let { subDomain = "" /* www */ } = params;
   subDomain = _subDomain || subDomain;
 
-  const isLocalhost = typeof window !== "undefined" && window.location.hostname === "localhost";
+  const isLocalhost = typeof window !== "undefined" && window?.location.hostname === "localhost";
   const domain = isLocalhost ? "localhost" : process.env.NEXT_PUBLIC_DOMAIN;
   const protocol = isLocalhost ? "http" : "https";
-  const port = window.location.port ? `:${window.location.port}` : "";
+  const port = window?.location.port ? `:${window.location.port}` : "";
 
   const preSubDomain = isLocalhost ? "" : subDomain ? `${subDomain}.` : "";
   const postSubDomain = isLocalhost ? `${subDomain}` : "";

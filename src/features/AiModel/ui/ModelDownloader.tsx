@@ -14,8 +14,6 @@ const ModelDownloader = () => {
     loadModelWithProgress();
   }, [loadModelWithProgress]);
 
-  console.log(progress, model, isError, isLoading, "wtf?");
-
   return (
     <div className="shadow-02 min-w-[320px] flex flex-row py-2 w-max min-h-[68px] gap-3 justify-start items-center rounded-xl">
       {isLoading && <ModelDownloadLoading />}
