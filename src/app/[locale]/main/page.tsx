@@ -1,4 +1,5 @@
 import { ReactiveLayout } from "@/shared/ui/ReactiveLayout";
+import { setRequestLocale } from "next-intl/server";
 import React from "react";
 
 import BodySvg from "./BODY.svg";
@@ -6,7 +7,7 @@ import HeadSvg from "./HEAD.svg";
 import { Motion } from "@/shared/ui/animation/animation";
 import { ModelDownloader } from "@/features";
 
-import { ButtonLink } from "@/entities/Router"; 
+import { ButtonLink } from "@/entities/Router";
 import { ScrollLock } from "@/shared/ui";
 import { PAGE_ROUTE } from "@/entities/Router/configs/route";
 
@@ -14,8 +15,9 @@ export async function generateStaticParams() {
   return [];
 }
 
+const page = ({ params }: { params: { locale: string } }) => {
+  setRequestLocale(params.locale);
 
-const page = () => {
   return (
     <ScrollLock>
       <ReactiveLayout>
