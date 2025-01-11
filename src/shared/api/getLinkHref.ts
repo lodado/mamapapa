@@ -1,5 +1,5 @@
 import { ComponentProps } from "react";
-import SeverLocaleLink from "../ui/Link/ServerLocaleLink.server";
+import SeverLocaleLink from "../../entities/Router/ui/Link/ServerLocaleLink.server";
 
 import { sanitizeUrl } from "@/shared/utils/sanitizeUrl";
 import { getLocale } from "next-intl/server";

@@ -4,7 +4,7 @@ import { ComponentProps } from "react";
 
 import useUrl from "@/shared/hooks/useUrl";
 import { sanitizeUrl } from "@/shared/utils/sanitizeUrl";
-import { LocaleLink } from "../ui/Link";
+import { LocaleLink } from "../../entities/Router/ui/Link";
 
 const useLinkHref = (props: ComponentProps<typeof LocaleLink>) => {
   const { href = "", subDomain: _subDomain, custom = false, ...rest } = props;

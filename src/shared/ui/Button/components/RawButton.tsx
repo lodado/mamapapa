@@ -6,7 +6,7 @@ import { RawButtonProps } from "../type";
 import { Motion } from "../../animation/animation";
 
 const RawButton = forwardRef<HTMLButtonElement, RawButtonProps>(
-  ({ variant, componentType = "button", asChild = false, children, onClick, ...props }, ref) => {
+  ({ variant, componentType = "button", children, onClick, ...props }, ref) => {
     const handleButtonClick = (e: React.MouseEvent<HTMLButtonElement>) => {
       // @ts-ignore
       navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate;

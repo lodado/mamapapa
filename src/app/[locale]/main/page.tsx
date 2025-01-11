@@ -1,4 +1,3 @@
-import { Button } from "@/shared/ui";
 import { ReactiveLayout } from "@/shared/ui/ReactiveLayout";
 import React from "react";
 
@@ -6,7 +5,7 @@ import BodySvg from "./BODY.svg";
 import HeadSvg from "./HEAD.svg";
 import { Motion } from "@/shared/ui/animation/animation";
 import { ModelDownloader } from "@/features";
-import { ServerLocaleLink } from "@/shared/ui/index.server";
+import { ButtonLink } from "@/entities/Router";
 
 const page = () => {
   return (
@@ -52,12 +51,12 @@ const page = () => {
       </main>
 
       <nav className="flex flex-col w-full max-w-[29rem] md:w-[768px] gap-3 p-6 fixed bottom-0 mb-[var(--safe-area-bottom)] ">
-        <ServerLocaleLink variant="primarySolid" href={"/"}>
+        <ButtonLink variant="primarySolid" href={"/"}>
           닮은꼴 비교 시작하기
-        </ServerLocaleLink>
-        <ServerLocaleLink href={"/"} variant="primaryLine">
+        </ButtonLink>
+        <ButtonLink href={"/"} variant="primaryLine">
           닮은꼴 진행 내역 확인하기
-        </ServerLocaleLink>
+        </ButtonLink>
       </nav>
     </ReactiveLayout>
   );
