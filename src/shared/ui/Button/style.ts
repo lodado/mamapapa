@@ -1,17 +1,19 @@
 import { cva } from 'class-variance-authority'
 
 export const rawButtonVariants = cva(
-  `rounded-[0.75rem] select-none touch-none flex h-14 py-2 px-4 justify-center items-center gap-0.5 head-3 flex-shrink-0 self-stretch `,
+  `rounded-[0.75rem] select-none touch-none flex  py-2 justify-center items-center gap-0.5 head-3 flex-shrink-0 self-stretch `,
   {
     variants: {
       variant: {
-        solid: "rounded-[0.75rem] bg-primary-01 text-text-00 active:bg-primary-01-press",
-        line: "border border-solid border-primary-01 bg-transparent active:bg-primary-01-line-press text-text-primary",
+        primarySolid: "rounded-[0.75rem] h-14 bg-primary-01 px-4 text-text-00 active:bg-primary-01-press",
+        primaryLine:
+          "border border-solid border-primary-01 h-14 px-4 bg-transparent active:bg-primary-01-line-press text-text-primary",
+        line: "h-[1.875rem] gap-[0.625rem] pl-[0.625rem] pr-[0.75rem] rounded border border-solid border-border-02 bg-background-01 active:bg-tertiary-op-press  ",
         custom: "",
       },
     },
     defaultVariants: {
-      variant: "solid",
+      variant: "primarySolid",
     },
   }
 );

@@ -51,8 +51,8 @@ const page = () => {
       </main>
 
       <nav className="flex flex-col w-full max-w-[29rem] md:w-[768px] gap-3 p-6 fixed bottom-0 mb-[var(--safe-area-bottom)] ">
-        <Button variant="solid">닮은꼴 비교 시작하기</Button>
-        <Button variant="line">닮은꼴 진행 내역 확인하기</Button>
+        <Button variant="primarySolid">닮은꼴 비교 시작하기</Button>
+        <Button variant="primaryLine">닮은꼴 진행 내역 확인하기</Button>
       </nav>
     </ReactiveLayout>
   );

@@ -10,6 +10,7 @@ import "@tensorflow/tfjs-backend-webgl";
 // BlazeFace 얼굴 검출 모델
 import * as blazeface from "@tensorflow-models/blazeface";
 
+
 class L2 {
   static className = "L2";
 

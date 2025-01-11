@@ -1,18 +1,26 @@
-import React from "react";
+"use client";
 
-import Spinner from "./Spinner.svg";
+import React, { useEffect } from "react";
+
+import { useFaceModelStore } from "../model/faceModelStore";
+import ModelDownloadLoading from "./components/ModelDownloadLoading";
+import ModelDownloadFail from "./components/ModelDownloadFail";
+import ModelDownloadSuccess from "./components/ModelDownloadSuccess";
 
 const ModelDownloader = () => {
-  return (
-    <div className="shadow-02 flex flex-row py-2 w-max min-h-[68px] gap-3 justify-start items-center rounded-xl">
-      <div className="ml-2 rounded-full h-full flex items-center justify-center pl-2">
-        <Spinner className="animate-spin" />
-      </div>
+  const { progress, model, isError, isLoading, loadModelWithProgress } = useFaceModelStore();
 
-      <div className="mr-[1.75rem]">
-        <p className="text-text-primary subhead-2">비교를 위한 AI 모델을 다운로드중입니다</p>
-        <p className="body-1 text-text-03">잠시만 기다려주세요...</p>
-      </div>
+  useEffect(() => {
+    loadModelWithProgress();
+  }, [loadModelWithProgress]);
+
+  console.log(progress, model, isError, isLoading, "wtf?");
+
+  return (
+    <div className="shadow-02 min-w-[320px] flex flex-row py-2 w-max min-h-[68px] gap-3 justify-start items-center rounded-xl">
+      {isLoading && <ModelDownloadLoading />}
+      {isError && <ModelDownloadFail />}
+      {!isLoading && !isError && model && <ModelDownloadSuccess />}
     </div>
   );
 };
