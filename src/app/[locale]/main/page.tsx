@@ -54,7 +54,7 @@ const page = () => {
         </main>
 
         <nav className="flex flex-col w-full max-w-[29rem] md:w-[768px] gap-3 p-6 fixed bottom-0 mb-[var(--safe-area-bottom)] ">
-          <ButtonLink variant="primarySolid" href={"/"}>
+          <ButtonLink variant="primarySolid" href={"/faces"}>
             닮은꼴 비교 시작하기
           </ButtonLink>
           <ButtonLink href={"/"} variant="primaryLine">

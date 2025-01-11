@@ -23,11 +23,14 @@ export const tailwindLogicalPropertiesPlugins = [
       return acc;
     }, {} as Record<string, any>);
 
+    widthUtilities[`.w-full`] = {
+      "inline-size": "100%",
+    };
+
     // height 값 가져오기
     const heightValues = theme("height") as Record<string, string>;
     const heightUtilities = Object.entries(heightValues).reduce((acc, [key, value]) => {
       acc[`.h-${key.replace("/", "\\/")}`] = {
-       
         "block-size": value,
       };
       return acc;
@@ -37,11 +40,9 @@ export const tailwindLogicalPropertiesPlugins = [
     matchUtilities(
       {
         w: (value: string) => ({
-           
           "inline-size": value,
         }),
         h: (value: string) => ({
-      
           "block-size": value,
         }),
       },
@@ -50,6 +51,10 @@ export const tailwindLogicalPropertiesPlugins = [
         supportsNegativeValues: false, // 음수 값 지원 여부
       }
     );
+
+    widthUtilities[`.h-full`] = {
+      "block-size": "100%",
+    };
 
     // 유틸리티 추가
     addUtilities(widthUtilities, variants("width"));

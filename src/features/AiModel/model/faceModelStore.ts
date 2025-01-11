@@ -29,7 +29,7 @@ interface FaceModelState extends BaseAsyncState {
 class FaceModelStore extends BaseAsyncStore<FaceModelState> {
   // 모델을 실제로 로딩하는 메서드
   async loadModelWithProgress() {
-    if (this.get().isLoading && !!this.get().faceRecognitionModel) return;
+    if (this.get().isLoading || !!this.get().faceRecognitionModel) return;
 
     this.startLoading(); // 공통 로딩 시작 로직
 
@@ -46,7 +46,7 @@ class FaceModelStore extends BaseAsyncStore<FaceModelState> {
       await faceRecognitionModel.save(`indexeddb://${MODEL_ID}`);
     } catch (error) {
       this.setModel(null, null);
-      this.set({ isLoading: false });
+      this.set({ isLoading: false, isError: true });
     }
   }
 
@@ -62,7 +62,7 @@ export const useFaceModelStore = create<FaceModelState>((set, get) => {
 
   return {
     // BaseAsyncState
-    isLoading: true,
+    isLoading: false,
     isError: false,
     progress: 0,
     errorMessage: undefined,
