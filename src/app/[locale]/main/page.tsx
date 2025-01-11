@@ -35,9 +35,13 @@ const page = () => {
           닮은꼴 비교를 시작해보세요
         </h1>
 
-        <div className="body-2 text-text-03 flex flex-col mb-4 w-full items-center ">
-          <p>닮은꼴 비교를 위한 사진을 업데이트를 하고 닮은꼴 비교를 진행해보세요.</p>
-          <p>누구를 더 닮았는지 확인해볼 수 있습니다.</p>
+        <div className="flex flex-col items-center text-center mb-4 w-full">
+          <p className="body-2 flex flex-col items-center text-center text-text-03">
+            닮은꼴 비교를 위한 사진을 업데이트를 하고 닮은꼴 비교를 진행해보세요.
+          </p>
+          <p className="body-2 flex flex-col items-center text-center text-text-03">
+            누구를 더 닮았는지 확인해볼 수 있습니다.
+          </p>
         </div>
       </main>
       <nav className="flex flex-col w-full max-w-[29rem] md:w-[768px] gap-3 h-[12.5rem] p-6 fixed bottom-0 mb-[var(--safe-area-bottom)] ">
