@@ -15,7 +15,7 @@ const ModelDownloader = () => {
   }, [loadModelWithProgress]);
 
   return (
-    <div className="shadow-02 min-w-[320px] flex flex-row py-2 w-max min-h-[68px] gap-3 justify-start items-center rounded-xl">
+    <div className="shadow-02 flex-shrink-0 min-w-[320px] flex flex-row py-2 w-max min-h-[68px] gap-3 justify-start items-center rounded-xl">
       {isLoading && <ModelDownloadLoading />}
       {isError && <ModelDownloadFail />}
       {!isLoading && !isError && model && <ModelDownloadSuccess />}

@@ -50,7 +50,7 @@ const page = () => {
 
           <ModelDownloader />
 
-          <div className="h-[200px]"></div>
+          <div role="none presentation" className="h-[200px]"></div>
         </main>
 
         <nav className="flex flex-col w-full max-w-[29rem] md:w-[768px] gap-3 p-6 fixed bottom-0 mb-[var(--safe-area-bottom)] ">
