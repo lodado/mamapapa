@@ -31,6 +31,7 @@ function FaceCropper({
   onEmbeddingUpdate, // (embedding, index) => void (부모로 임베딩 전달)
 }: {
   index: number;
+
   faceModel: blazeface.BlazeFaceModel | null;
   ghostNetModel: tf.LayersModel | null;
   onEmbeddingUpdate: (embedding: Float32Array | null, index: number) => void;

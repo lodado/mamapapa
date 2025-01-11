@@ -8,7 +8,7 @@ import ModelDownloadFail from "./components/ModelDownloadFail";
 import ModelDownloadSuccess from "./components/ModelDownloadSuccess";
 
 const ModelDownloader = () => {
-  const { progress, model, isError, isLoading, loadModelWithProgress } = useFaceModelStore();
+  const { progress, faceRecognitionModel: model, isError, isLoading, loadModelWithProgress } = useFaceModelStore();
 
   useEffect(() => {
     loadModelWithProgress();

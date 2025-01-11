@@ -4,7 +4,7 @@ import { LayersModel, regularizers, serialization, loadLayersModel } from "@tens
 import "@tensorflow/tfjs-backend-cpu";
 import "@tensorflow/tfjs-backend-webgl";
 import BaseAsyncStore, { BaseAsyncState } from "@/shared/models/zustand/BaseAsyncStore";
-import { IndexedDBController } from "@/shared";
+import * as blazeface from "@tensorflow-models/blazeface";
 
 const MODEL_ID = "GHOST_FACE_NET_2";
 
@@ -19,37 +19,40 @@ class L2 {
 serialization.registerClass(L2 as any);
 
 interface FaceModelState extends BaseAsyncState {
-  model: LayersModel | null;
+  faceRecognitionModel: LayersModel | null;
+  faceCropModel: blazeface.BlazeFaceModel | null;
 
   loadModelWithProgress: () => Promise<void>;
-  setModel: (model: LayersModel) => void;
+  setModel: (faceRecognitionModel: LayersModel | null, faceCropModel: blazeface.BlazeFaceModel | null) => void;
 }
 
 class FaceModelStore extends BaseAsyncStore<FaceModelState> {
   // 모델을 실제로 로딩하는 메서드
   async loadModelWithProgress() {
-    if (this.get().isLoading && !!this.get().model) return;
+    if (this.get().isLoading && !!this.get().faceRecognitionModel) return;
 
     this.startLoading(); // 공통 로딩 시작 로직
 
     try {
-      let model = await loadLayersModel("/models/ghostnet2/model.json");
+      const faceRecognitionModel = await loadLayersModel("/models/ghostnet2/model.json");
+      const faceCropModel = await blazeface.load();
 
       // 모델 세팅
-      this.setModel(model);
+      this.setModel(faceRecognitionModel, faceCropModel);
+
       this.finishLoading();
 
       // offline에서도 사용 가능하도록 indexed DB caching
-      await model.save(`indexeddb://${MODEL_ID}`);
+      await faceRecognitionModel.save(`indexeddb://${MODEL_ID}`);
     } catch (error) {
-      this.setModel(null);
+      this.setModel(null, null);
       this.set({ isLoading: false });
     }
   }
 
   // 모델 세팅
-  setModel(model: LayersModel | null) {
-    this.set({ model });
+  setModel(faceRecognitionModel: LayersModel | null, faceCropModel: blazeface.BlazeFaceModel | null) {
+    this.set({ faceRecognitionModel, faceCropModel });
   }
 }
 
@@ -65,7 +68,8 @@ export const useFaceModelStore = create<FaceModelState>((set, get) => {
     errorMessage: undefined,
 
     // FaceModelState
-    model: null,
+    faceRecognitionModel: null,
+    faceCropModel: null,
 
     // 메서드 바인딩
     loadModelWithProgress: store.loadModelWithProgress.bind(store),

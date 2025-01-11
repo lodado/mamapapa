@@ -16,7 +16,7 @@ const page = () => {
         <main className="flex flex-col justify-center items-center w-full h-full pt-[2.5rem] px-[2rem]">
           <div className="relative flex flex-col items-center mb-6">
             <Motion
-              style={{ position: "absolute", willChange: "transform" }}
+              className="absolute will-change-transform"
               componentType="div"
               initial={{ y: -32 }}
               animate={{ y: [-32, -38] }}
