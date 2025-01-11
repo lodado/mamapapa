@@ -5,6 +5,7 @@ import React from "react";
 import BodySvg from "./BODY.svg";
 import HeadSvg from "./HEAD.svg";
 import { Motion } from "@/shared/ui/animation/animation";
+import { ModelDownloader } from "@/features";
 
 const page = () => {
   return (
@@ -15,12 +16,12 @@ const page = () => {
             style={{ position: "absolute", willChange: "transform" }}
             componentType="div"
             initial={{ y: -32 }}
-            animate={{ y: [-32, -40] }}
+            animate={{ y: [-32, -38] }}
             transition={{
-              type: "spring",
+              type: "tween",
               stiffness: 300, // 스프링 강도를 증가시켜 더 빠르게 이동
               damping: 15, // 감쇠 계수를 낮춰 통통 튀는 효과
-              duration: 0.01, // 키프레임 전환 시간을 짧게 설정
+              duration: 0.35, // 키프레임 전환 시간을 짧게 설정
               repeat: Infinity,
               repeatType: "mirror",
               repeatDelay: 0, // 반복 간의 지연 시간을 제거
@@ -43,8 +44,13 @@ const page = () => {
             누구를 더 닮았는지 확인해볼 수 있습니다.
           </p>
         </div>
+
+        <ModelDownloader />
+
+        <div className="h-[200px]"></div>
       </main>
-      <nav className="flex flex-col w-full max-w-[29rem] md:w-[768px] gap-3 h-[12.5rem] p-6 fixed bottom-0 mb-[var(--safe-area-bottom)] ">
+
+      <nav className="flex flex-col w-full max-w-[29rem] md:w-[768px] gap-3 p-6 fixed bottom-0 mb-[var(--safe-area-bottom)] ">
         <Button variant="solid">닮은꼴 비교 시작하기</Button>
         <Button variant="line">닮은꼴 진행 내역 확인하기</Button>
       </nav>
