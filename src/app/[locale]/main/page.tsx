@@ -5,7 +5,8 @@ import BodySvg from "./BODY.svg";
 import HeadSvg from "./HEAD.svg";
 import { Motion } from "@/shared/ui/animation/animation";
 import { ModelDownloader } from "@/features";
-import { ButtonLink } from "@/entities/Router";
+
+import { ButtonLink } from "@/entities/Router"; 
 
 const page = () => {
   return (
