@@ -4,6 +4,9 @@ import { LayersModel, regularizers, serialization, loadLayersModel } from "@tens
 import "@tensorflow/tfjs-backend-cpu";
 import "@tensorflow/tfjs-backend-webgl";
 import BaseAsyncStore, { BaseAsyncState } from "@/shared/models/zustand/BaseAsyncStore";
+import { IndexedDBController } from "@/shared";
+
+const MODEL_ID = "GHOST_FACE_NET_2";
 
 class L2 {
   static className = "L2";
@@ -30,12 +33,14 @@ class FaceModelStore extends BaseAsyncStore<FaceModelState> {
     this.startLoading(); // 공통 로딩 시작 로직
 
     try {
-      // 실제 모델 로딩
-      const model = await loadLayersModel("/models/ghostnet2/model.json");
+      let model = await loadLayersModel("/models/ghostnet2/model.json");
 
       // 모델 세팅
       this.setModel(model);
       this.finishLoading();
+
+      // offline에서도 사용 가능하도록 indexed DB caching
+      await model.save(`indexeddb://${MODEL_ID}`);
     } catch (error) {
       this.setModel(null);
       this.setError("모델 로딩에 실패했습니다.");
