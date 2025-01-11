@@ -8,6 +8,7 @@ import { ModelDownloader } from "@/features";
 
 import { ButtonLink } from "@/entities/Router"; 
 import { ScrollLock } from "@/shared/ui";
+import { PAGE_ROUTE } from "@/entities/Router/configs/route";
 
 const page = () => {
   return (
@@ -54,7 +55,7 @@ const page = () => {
         </main>
 
         <nav className="flex flex-col w-full max-w-[29rem] md:w-[768px] gap-3 p-6 fixed bottom-0 mb-[var(--safe-area-bottom)] ">
-          <ButtonLink variant="primarySolid" href={"/faces"}>
+          <ButtonLink variant="primarySolid" href={PAGE_ROUTE.FACES}>
             닮은꼴 비교 시작하기
           </ButtonLink>
           <ButtonLink href={"/"} variant="primaryLine">
