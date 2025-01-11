@@ -1,51 +1,108 @@
-import { ReactiveLayout } from "@/shared/ui/ReactiveLayout";
-import React from "react";
-import CrossHair from "/public/CrossHair.svg";
+"use client";
 
-import { ModelDownloader } from "@/features";
+import { useState, useEffect, useCallback, useTransition } from "react";
+import { motion, AnimatePresence } from "motion/react";
+import { Product, products } from "./product";
+import { ProductImage } from "./components/product-image";
+import PDP from "./[id]/@modal/page";
+import { useLocale } from "next-intl";
 
-import { ButtonLink } from "@/entities/Router";
-import { Button, ScrollLock } from "@/shared/ui";
-import FallBackHeader from "@/features/Navigation/ui/Header/FallBackHeader";
-import { PAGE_ROUTE } from "@/entities/Router/configs/route";
-import { ImageContainer } from "@/features/ImageSelector";
+export default function Page() {
+  const locale = useLocale();
 
-const page = () => {
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+  const [_, startTransition] = useTransition();
+
+  const handleProductClick = (product: Product) => {
+    startTransition(() => {
+      setSelectedProduct(product);
+
+      window.history.pushState(null, `/${locale}`, `/${locale}/faces/${product.id}`);
+    });
+  };
+
+  const handleBack = useCallback(() => {
+    startTransition(() => {
+      setSelectedProduct(null);
+      window.history.pushState(null, `/${locale}`, "/faces");
+    });
+  }, []);
+
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (selectedProduct) {
+        if (event.key === "Escape") {
+          handleBack();
+        }
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [selectedProduct, handleBack]);
+
+  useEffect(() => {
+    const handlePopState = () => {
+      const productId = window.location.pathname.split("/").pop();
+      if (productId && productId !== "") {
+        const product = products.find((p) => p.id === productId);
+        if (product) {
+          setSelectedProduct(product);
+        } else {
+          setSelectedProduct(null);
+        }
+      } else {
+        setSelectedProduct(null);
+      }
+    };
+
+    window.addEventListener("popstate", handlePopState);
+
+    return () => {
+      window.removeEventListener("popstate", handlePopState);
+    };
+  }, []);
+
   return (
-    <>
-      <ReactiveLayout>
-        <FallBackHeader fallbackUrl={PAGE_ROUTE.MAIN} />
+    <div className="flex flex-col min-h-screen">
+      <main className="flex-grow relative pt-12">
+        <motion.div
+          className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-9 gap-x-5 gap-y-12 pb-8"
+          animate={{ opacity: selectedProduct ? 0 : 1 }}
+          transition={{ duration: 0.3 }}
+        >
+          {products.map((product) => (
+            <div key={product.id} className="group cursor-pointer" onClick={() => handleProductClick(product)}>
+              <ProductImage product={product} layoutId={`product-image-${product.id}`} />
+              <p className="font-medium text-center font-mono uppercase">
+                {product.id.split("-").slice(0, -1).join("-")}
+              </p>
+            </div>
+          ))}
+        </motion.div>
 
-        <h1 className="display-2  pb-2 flex flex-row justify-start mb-2 w-full text-text-01 px-[1rem] items-center border-b border-b-solid border-b-border-02">
-          <span className="h-[2.25rem]">닮은꼴 비교하기</span>
-        </h1>
-
-        <div className="flex flex-row justify-between items-center text-center  mt-[1.25rem]  w-full px-4">
-          <h2 className="subhead-3 flex flex-col items-center text-center text-text-01">비교할 사진을 선택해주세요</h2>
-
-          <Button variant="line">
-            <CrossHair /> 사진 추가하기
-          </Button>
-        </div>
-
-        <main className="flex flex-col items-center w-full h-full  ">
-          <div className="flex-grow w-full p-4">
-            <ImageContainer />
-          </div>
-
-          <ModelDownloader />
-
-          <div role="none presentation" className="h-[200px]"></div>
-        </main>
-
-        <nav className="flex flex-col w-full max-w-[29rem] md:w-[768px] gap-3 p-6 fixed bottom-0 mb-[var(--safe-area-bottom)] ">
-          <ButtonLink variant="primarySolid" href={"/"}>
-            비교하기
-          </ButtonLink>
-        </nav>
-      </ReactiveLayout>
-    </>
+        <AnimatePresence>
+          {selectedProduct && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 flex flex-col items-center justify-between bg-white bg-opacity-90"
+              style={{
+                top: "0",
+                height: "calc(100vh - 80px - env(safe-area-inset-top) - env(safe-area-inset-bottom))",
+                paddingTop: "calc(20px + env(safe-area-inset-top))",
+                paddingBottom: "0",
+              }}
+            >
+              <PDP params={{ id: selectedProduct.id }} />
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </main>
+    </div>
   );
-};
-
-export default page;
+}

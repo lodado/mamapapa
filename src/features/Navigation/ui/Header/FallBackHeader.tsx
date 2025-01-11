@@ -1,22 +1,22 @@
 import React from "react";
 import Header from "./Header";
-import { ServerLocaleLink } from "@/entities/Router/index.server";
+import { LocaleLink, ServerLocaleLink } from "@/entities/Router/index.server";
 import { ChevronLeft } from "lucide-react";
 
 const FallBackHeader = ({ fallbackUrl }: { fallbackUrl: string }) => {
   return (
     <>
-      <Header className="w-full md:w-[768px] h-[2.75rem] flex flex-row justify-between items-center">
-        <ServerLocaleLink className="py-[11px] px-2 text-text-primary flex flex-row gap-1" href={fallbackUrl}>
+      <Header className="w-full md:w-[768px] h-[2.75rem] fixed top-0 flex flex-row justify-between items-center">
+        <LocaleLink className="py-[11px] px-2 text-text-primary flex flex-row gap-1" href={fallbackUrl}>
           <ChevronLeft width={20} height={24} strokeWidth={3} />
           뒤로 가기
-        </ServerLocaleLink>
+        </LocaleLink>
 
-        <ServerLocaleLink className="py-[11px] px-4 text-text-primary flex flex-row gap-1" href="/help">
+        <LocaleLink className="py-[11px] px-4 text-text-primary flex flex-row gap-1" href="/help">
           도움말
-        </ServerLocaleLink>
+        </LocaleLink>
       </Header>
-      <div className="w-full h-[4rem]" role="none presentation" />
+      <div className="w-full h-[4rem] flex-shrink-0" role="none presentation" />
     </>
   );
 };
