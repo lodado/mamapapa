@@ -37,6 +37,15 @@ const nextConfig = {
     defaultLocale: 'ko',
   }, */
 
+  webpack: (config) => {
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: ["@svgr/webpack"],
+    });
+
+    return config;
+  },
+
   images: {
     remotePatterns: [parseURL(process.env.NEXT_PUBLIC_SUPABASE_URL)],
 
