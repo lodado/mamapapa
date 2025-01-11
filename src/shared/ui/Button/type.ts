@@ -29,11 +29,6 @@ export interface RawButtonProps extends ButtonElement, VariantProps<typeof rawBu
    */
   size?: "custom";
 
-  /** Allows the button to be rendered as a child component, omitting wrapper elements if true.
-   * @default false
-   */
-  asChild?: boolean;
-
   /**
    * @default false
    */

@@ -6,6 +6,7 @@ import BodySvg from "./BODY.svg";
 import HeadSvg from "./HEAD.svg";
 import { Motion } from "@/shared/ui/animation/animation";
 import { ModelDownloader } from "@/features";
+import { ServerLocaleLink } from "@/shared/ui/index.server";
 
 const page = () => {
   return (
@@ -51,8 +52,12 @@ const page = () => {
       </main>
 
       <nav className="flex flex-col w-full max-w-[29rem] md:w-[768px] gap-3 p-6 fixed bottom-0 mb-[var(--safe-area-bottom)] ">
-        <Button variant="primarySolid">닮은꼴 비교 시작하기</Button>
-        <Button variant="primaryLine">닮은꼴 진행 내역 확인하기</Button>
+        <ServerLocaleLink variant="primarySolid" href={"/"}>
+          닮은꼴 비교 시작하기
+        </ServerLocaleLink>
+        <ServerLocaleLink href={"/"} variant="primaryLine">
+          닮은꼴 진행 내역 확인하기
+        </ServerLocaleLink>
       </nav>
     </ReactiveLayout>
   );

@@ -14,7 +14,7 @@ export const getLinkHref = async (props: ComponentProps<typeof SeverLocaleLink>)
 
   let _href = href;
 
-  let subDomain = "www";
+  let subDomain = ""; // wwww
   subDomain = _subDomain || subDomain;
 
   const domain = isLocalhost ? "localhost" : process.env.NEXT_PUBLIC_DOMAIN;
@@ -25,7 +25,8 @@ export const getLinkHref = async (props: ComponentProps<typeof SeverLocaleLink>)
   const postSubDomain = isLocalhost ? `${subDomain}` : "";
 
   // 서브도메인 및 locale prefix 추가하여 href 생성
-  const linkHref = custom ? _href : `${protocol}://${preSubDomain}${domain}${port}/${locale}/${postSubDomain}${_href}`;
+  //  const linkHref = custom ? _href : `${protocol}://${preSubDomain}${domain}${port}/${locale}/${postSubDomain}${_href}`;
 
+  const linkHref = custom ? _href : `${protocol}://${preSubDomain}${domain}${port}/${locale}${_href}`;
   return sanitizeUrl(linkHref)!;
 };

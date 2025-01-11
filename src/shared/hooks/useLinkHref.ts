@@ -11,7 +11,7 @@ const useLinkHref = (props: ComponentProps<typeof LocaleLink>) => {
   const { locale, params } = useUrl();
 
   let _href = href;
-  let { subDomain = "www" } = params;
+  let { subDomain = "" /* www */ } = params;
   subDomain = _subDomain || subDomain;
 
   const isLocalhost = typeof window !== "undefined" && window.location.hostname === "localhost";
@@ -23,8 +23,8 @@ const useLinkHref = (props: ComponentProps<typeof LocaleLink>) => {
   const postSubDomain = isLocalhost ? `${subDomain}` : "";
 
   // 서브도메인 및 locale prefix 추가하여 href 생성
-  const linkHref = custom ? _href : `${protocol}://${preSubDomain}${domain}${port}/${locale}/${postSubDomain}${_href}`;
-
+  // const linkHref = custom ? _href : `${protocol}://${preSubDomain}${domain}${port}/${locale}/${postSubDomain}${_href}`;
+  const linkHref = custom ? _href : `${protocol}://${preSubDomain}${domain}${port}/${locale}${_href}`;
   return sanitizeUrl(linkHref);
 };
 
