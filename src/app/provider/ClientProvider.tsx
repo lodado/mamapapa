@@ -5,6 +5,7 @@ import { PropsWithChildren } from "react";
 import { ReactQueryProvider, RtlProvider, ThemeProvider } from "@/shared";
 
 import { NextAuthSessionResponse } from "@/entities/Auth/server/type";
+import ToastProvider from "@/features/Toast/ui/ToastProvider";
 
 const ClientProvider = ({
   children,
@@ -14,7 +15,7 @@ const ClientProvider = ({
 }) => {
   return (
     <ReactQueryProvider>
-      {children}
+      <ToastProvider>{children}</ToastProvider>
 
       <RtlProvider />
     </ReactQueryProvider>
