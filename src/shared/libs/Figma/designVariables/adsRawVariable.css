@@ -1,4 +1,4 @@
-[data-theme='light'] {
+:root, :root[data-theme][data-theme='light'] {
   --border-01: rgba(241, 241, 241, 1);
   --border-02: rgba(230, 230, 230, 1);
   --border-03: rgba(42, 42, 42, 1);

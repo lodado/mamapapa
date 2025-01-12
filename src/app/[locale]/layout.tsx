@@ -79,7 +79,7 @@ const RootLayout: React.FunctionComponent<LocaleProps> = ({ children, params: { 
         <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#5bbad5" />
       </Head>
 
-      <body className={inter.className}>
+      <body className={`${inter.className}`}>
         <ThemeScript nonce={nonce} />
         <ScreenVhScript nonce={nonce} />
         <RootProvider>

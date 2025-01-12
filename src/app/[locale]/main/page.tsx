@@ -62,7 +62,7 @@ const page = ({ params }: { params: { locale: string } }) => {
           <div role="none presentation" className="h-[200px]"></div>
         </main>
 
-        <nav className="flex flex-col w-full max-w-[29rem] md:w-[768px] gap-3 p-6 fixed bottom-0 mb-[var(--safe-area-bottom)] ">
+        <nav className="flex bg-background-op-01 flex-col w-full max-w-[29rem] md:w-[768px] gap-3 p-6 fixed bottom-0 mb-[var(--safe-area-bottom)] ">
           <ButtonLink variant="primarySolid" href={PAGE_ROUTE.FACES}>
             닮은꼴 비교 시작하기
           </ButtonLink>
