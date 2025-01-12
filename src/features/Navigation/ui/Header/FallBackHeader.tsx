@@ -6,7 +6,7 @@ import { ChevronLeft } from "lucide-react";
 const FallBackHeader = ({ fallbackUrl }: { fallbackUrl: string }) => {
   return (
     <>
-      <Header className="w-full bg-background-op-01 md:w-[768px] h-[2.75rem] fixed top-0 flex flex-row justify-between items-center">
+      <Header className="z-header w-full bg-background-op-01 md:w-[768px] h-[2.75rem] fixed top-0 flex flex-row justify-between items-center">
         <LocaleLink className="py-[11px] px-2 text-text-primary flex flex-row gap-1" href={fallbackUrl}>
           <ChevronLeft width={20} height={24} strokeWidth={3} />
           뒤로 가기
