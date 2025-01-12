@@ -42,7 +42,7 @@ html[dir='ltr'] {
   --header-height: 4rem;
   --footer-height: 4rem; 
 }
-
+ 
 body {
   margin: 0;
   padding-top: var(--safe-area-top);
@@ -51,9 +51,6 @@ body {
   padding-left: var(--safe-area-left);
 }
 
- 
-
- 
 html, body {
   margin: 0;
   padding: 0;
@@ -84,8 +81,20 @@ html, body {
   
   height: var(--footer-height);
   flex-shrink: 0; /* Ensure footer maintains its height */
-   
 }
+
+.notch-bottom {
+  content: '';
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: var(--safe-area-bottom);
+  background: var(--bg-background-op-01);
+  background-blend-mode: hard-light;
+  backdrop-filter: blur(25px);
+}
+
 
 
 .page-header-margin {
@@ -112,3 +121,4 @@ html, body {
 /* background blur */
   backdrop-filter: blur(25px);
 }
+

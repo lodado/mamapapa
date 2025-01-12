@@ -15,11 +15,14 @@ const Layout = ({ children }: PropsWithChildren) => {
   return (
     <>
       <ReactiveLayout>
-        <FallBackHeader fallbackUrl={PAGE_ROUTE.MAIN} />
         <div role="none presentation" className="w-full flex-shrink-0 h-[4rem]" />
-        <h1 className="z-header bg-background-op-01 fixed md:w-[768px] top-[4rem] h-[4rem] display-2  pb-2 flex flex-row justify-start mb-2 w-full text-text-01 px-[1rem] items-center border-b border-b-solid border-b-border-02">
-          <span className="h-[2.25rem]">닮은꼴 비교하기</span>
-        </h1>
+        <div className="z-header fixed w-full md:w-[768px] top-0 bg-background-op-01 border-b border-b-solid border-b-border-02">
+          <FallBackHeader fallbackUrl={PAGE_ROUTE.MAIN} />
+          <h1 className="md:w-[768px] top-[4rem] h-[4rem] display-2 pb-2 flex flex-row justify-start mb-2 w-full text-text-01 px-[1rem] items-center ">
+            <span className="h-[2.25rem]">닮은꼴 비교하기</span>
+          </h1>
+        </div>
+
         <div className="flex flex-row justify-between items-center text-center  mt-[1.25rem]  w-full px-4">
           <h2 className="subhead-3 flex flex-col items-center text-center text-text-01">비교할 사진을 선택해주세요</h2>
 
@@ -41,14 +44,8 @@ const Layout = ({ children }: PropsWithChildren) => {
           <div role="none presentation" className="h-[200px]"></div>
         </main>
         <nav
-          className={`z-nav flex bg-background-op-01 flex-col justify-center items-center  w-full md:w-[768px] gap-3 p-6 fixed bottom-0 mb-[var(--safe-area-bottom)] 
-            after:content-['']                 
-            after:fixed
-            after:left-0 
-            after:right-0 
-            after:bottom-0
-            after:h-[var(--safe-area-bottom)]  
-            after:bg-background-op-01       
+          className={`z-nav flex bg-background-op-01 flex-col justify-center items-center  w-full md:w-[768px] gap-3 px-6 pt-6 fixed bottom-0 
+            pb-[calc(1.5rem+var(--safe-area-bottom))]
         `}
         >
           <ButtonLink wrapperClassName="w-full max-w-[29rem]" variant="primarySolid" href={"/"}>
