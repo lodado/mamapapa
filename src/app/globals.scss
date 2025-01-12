@@ -51,28 +51,7 @@ body {
   padding-left: var(--safe-area-left);
 }
 
-body::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: var(--background-op-01);
-  background-blend-mode: hard-light;
-  backdrop-filter: blur(25px);
-  
-  z-index: -1; /* 본문 콘텐츠 뒤로 보내기 */
-  clip-path: polygon(
-    0 env(safe-area-inset-top),                  /* 상단 */
-    env(safe-area-inset-left) env(safe-area-inset-top), /* 좌측 상단 */
-    env(safe-area-inset-left) calc(100% - env(safe-area-inset-bottom)), /* 좌측 하단 */
-    0 calc(100% - env(safe-area-inset-bottom)), /* 하단 */
-    calc(100% - env(safe-area-inset-right)) calc(100% - env(safe-area-inset-bottom)), /* 우측 하단 */
-    calc(100% - env(safe-area-inset-right)) env(safe-area-inset-top), /* 우측 상단 */
-    100% env(safe-area-inset-top)              /* 상단 */
-  );
-}
+ 
 
  
 html, body {
