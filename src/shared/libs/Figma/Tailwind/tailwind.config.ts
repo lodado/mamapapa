@@ -91,6 +91,7 @@ export default {
         loading: "10000",
         overlay: "1000",
         toast: "700",
+        header: "600",
         dropdown: "500",
         dialog: "100",
         portal: "50",
