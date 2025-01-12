@@ -23,7 +23,7 @@ const Template = () => {
 
   const handleClick = () => {
     addToast({
-      type: "success",
+      type: count % 2 === 0 ? "success" : "error",
       title: `스토리북 알림!`,
       description: `이것은 스토리북에서 다중 Toast 테스트 중입니다. ${count++}`,
     });
