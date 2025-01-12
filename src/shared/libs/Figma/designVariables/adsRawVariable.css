@@ -4,6 +4,7 @@
   --border-03: rgba(42, 42, 42, 1);
   --border-04: rgba(0, 0, 0, 0.3);
   --blank: rgba(0, 0, 0, 0.6);
+  --layer-01: rgba(36, 36, 36, 0);
   --background-01: rgba(255, 255, 255, 1);
   --background-02: rgba(248, 248, 252, 1);
   --background-03: rgba(245, 244, 243, 1);
@@ -12,7 +13,7 @@
   --primary-01-op-press: rgba(204, 231, 255, 0.2);
   --primary-01-line-press: rgba(238, 247, 255, 1);
   --tertiary: rgba(255, 255, 255, 1);
-  --eeeded: rgba(237, 236, 236, 1);
+  --tertiary-press: rgba(237, 236, 236, 1);
   --tertiary-op-press: rgba(237, 236, 236, 0.2);
   --secondary: rgba(51, 51, 51, 1);
   --secondary-press: rgba(36, 36, 36, 1);
@@ -31,7 +32,7 @@
   --teal-bg: rgba(225, 250, 246, 1);
   --focus: rgba(22, 143, 255, 1);
   --error: rgba(241, 76, 65, 1);
-  --error-press: rgba(255, 176, 171, 1);
+  --error-press: rgba(200, 68, 60, 1);
   --error-op-press: rgba(255, 176, 171, 0.2);
   --error-bg: rgba(255, 238, 237, 1);
   --success: rgba(0, 178, 113, 1);
@@ -51,7 +52,6 @@
   --text-03: rgba(139, 139, 139, 1);
   --text-placeholder: rgba(193, 193, 193, 1);
   --text-primary: rgba(22, 143, 255, 1);
-  --layer-01: rgba(36, 36, 36, 0);
   --text-error: rgba(241, 76, 65, 1);
   --text-success: rgba(0, 178, 113, 1);
   --text-warning: rgba(250, 140, 22, 1);
@@ -60,4 +60,5 @@
   --text-purple: rgba(144, 92, 255, 1);
   --text-teal: rgba(3, 182, 182, 1);
   --teat-cancel: rgba(193, 193, 193, 1);
+  --background-op-01: rgba(255, 255, 255, 0.8);
 }
