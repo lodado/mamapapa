@@ -1,10 +1,11 @@
 "use client";
 
-import React, { forwardRef, HTMLAttributes, InputHTMLAttributes, useEffect, useRef } from "react";
+import React, { forwardRef, InputHTMLAttributes, useEffect, useRef, useState } from "react";
 
 import { InputStyleVariants } from "./style";
 import { cn } from "@/shared/utils";
 import { useForkRef } from "@/shared/hooks";
+import Clear from "/public/Clear.svg";
 
 export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   wrapperClassName?: string;
@@ -23,19 +24,55 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 
   /** Data attribute indicating whether the input is invalid */
   "data-invalid"?: boolean;
+
+  /** Controlled value */
+  value?: string;
+
+  /** Setter function for the controlled value */
+  setValue?: (value: string) => void;
 }
 
 const Input = forwardRef<HTMLInputElement, InputProps>((props: InputProps, ref) => {
-  const { className, wrapperClassName, children, ...rest } = props;
+  const {
+    className,
+    wrapperClassName,
+    children,
+    value: controlledValue,
+    setValue: setControlledValue,
+    ...rest
+  } = props;
 
   const dataInvalid = props["data-invalid"];
   const variant = dataInvalid ? "invalid" : "default";
 
+  const [internalValue, setInternalValue] = useState(rest.defaultValue || "");
+  const isControlled = controlledValue !== undefined;
+
   const defaultRef = useRef<HTMLInputElement>(null);
   const inputRef = useForkRef(ref, defaultRef);
 
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const newValue = e.target.value;
+    if (isControlled) {
+      setControlledValue?.(newValue);
+    } else {
+      setInternalValue(newValue);
+    }
+  };
+
+  const handleClear = () => {
+    if (isControlled) {
+      setControlledValue?.("");
+    } else {
+      setInternalValue("");
+    }
+    if (defaultRef.current) {
+      defaultRef.current.value = "";
+      defaultRef.current.focus();
+    }
+  };
+
   const scrollToTop = () => {
-    // window.scrollTo({ top: 0, behavior: "smooth" });
     defaultRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
   };
 
@@ -53,9 +90,22 @@ const Input = forwardRef<HTMLInputElement, InputProps>((props: InputProps, ref) 
     };
   }, []);
 
+  const currentValue = isControlled ? controlledValue : internalValue;
+
   return (
-    <div className={cn("", wrapperClassName)}>
-      <input ref={inputRef} className={cn(InputStyleVariants({ variant, size: "medium" }), className)} {...rest} />
+    <div className={cn("relative", wrapperClassName)}>
+      <input
+        ref={inputRef}
+        className={cn(InputStyleVariants({ variant, size: "medium" }), className)}
+        {...rest}
+        value={currentValue}
+        onChange={handleChange}
+      />
+      {currentValue && (
+        <button type="button" onClick={handleClear} className="absolute right-4 top-1/2 transform -translate-y-1/2">
+          <Clear />
+        </button>
+      )}
       {children}
     </div>
   );
