@@ -5,23 +5,18 @@ import CrossHair from "/public/CrossHair.svg";
 import { ModelDownloader } from "@/features";
 
 import { ButtonLink } from "@/entities/Router";
-import { Button, ScrollLock } from "@/shared/ui";
-import FallBackHeader from "@/features/Navigation/ui/Header/FallBackHeader";
-import { PAGE_ROUTE } from "@/entities/Router/configs/route";
+import { Button } from "@/shared/ui";
 import { ImageContainer } from "@/features/ImageSelector";
 import { AnimatePresence } from "motion/react";
+
+import FacePageHeader from "./components/FacePageHeader";
 
 const Layout = ({ children }: PropsWithChildren) => {
   return (
     <>
       <ReactiveLayout>
         <div role="none presentation" className="w-full flex-shrink-0 h-[4rem]" />
-        <div className="z-header fixed w-full md:w-[768px] top-0 bg-background-op-01 border-b border-b-solid border-b-border-02">
-          <FallBackHeader fallbackUrl={PAGE_ROUTE.MAIN} />
-          <h1 className="md:w-[768px] top-[4rem] h-[3rem] display-2 pb-2 flex flex-row justify-start mb-2 w-full text-text-01 px-[1rem] items-center ">
-            <span className="h-[2.25rem]">닮은꼴 비교하기</span>
-          </h1>
-        </div>
+        <FacePageHeader />
 
         <div className="flex flex-row justify-between items-center text-center mt-[5rem] w-full px-4">
           <h2 className="subhead-3 flex flex-col items-center text-center text-text-01">비교할 사진을 선택해주세요</h2>
