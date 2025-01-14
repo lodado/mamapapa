@@ -4,25 +4,24 @@ import { ComponentProps } from "react";
 import { SubTrigger, Trigger } from "./radix";
 import { cn } from "@/shared/utils";
 import { rawButtonVariants } from "../../Button/style";
+import { ChevronDown } from "lucide-react";
+import { useDropdownContext } from "./Provider";
 
-const DropdownTrigger = (props: ComponentProps<typeof Trigger> & ComponentProps<typeof rawButtonVariants>) => {
-  const { children, className, variant = "primarySolid", ...rest } = props;
-
+const DropdownTrigger = (props: ComponentProps<typeof Trigger>) => {
+  const { children, className, ...rest } = props;
+  const { isVisible } = useDropdownContext();
   return (
     <Trigger
       className={
         !props.asChild
-          ? cn(
-              "inline-flex items-center rounded-md px-4 py-2 text-sm leading-none h-9 gap-2 bg-background text-color-text-default",
-              rawButtonVariants({ variant }),
-              "justify-between w-min",
-              className
-            )
+          ? cn("w-full flex justify-between items-center rounded bg-inherit text-text-01 subhead-2", className)
           : ""
       }
       {...rest}
     >
       {children}
+
+      <ChevronDown strokeWidth={1.2} className={isVisible ? "rotate-180" : ""} />
     </Trigger>
   );
 };
@@ -30,20 +29,11 @@ const DropdownTrigger = (props: ComponentProps<typeof Trigger> & ComponentProps<
 export const DropdownSubTrigger = (
   props: ComponentProps<typeof SubTrigger> & ComponentProps<typeof rawButtonVariants>
 ) => {
-  const { children, className, variant = "primarySolid", ...rest } = props;
+  const { children, className, ...rest } = props;
 
   return (
     <SubTrigger
-      className={
-        !props.asChild
-          ? cn(
-              "inline-flex items-center rounded-md px-4 py-2 text-sm leading-none h-9 gap-2 bg-background text-color-text-default",
-              rawButtonVariants({ variant }),
-              "justify-between w-min",
-              className
-            )
-          : ""
-      }
+      className={!props.asChild ? cn("w-full items-center rounded bg-inherit text-text-01 subhead-2", className) : ""}
       {...rest}
     >
       {children}

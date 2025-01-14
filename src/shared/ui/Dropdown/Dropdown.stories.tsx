@@ -21,25 +21,13 @@ export const DropdownExample: Story = {
     children: (
       <>
         <Dropdown>
-          <Dropdown.Trigger className="w-max">
-            trigger dropdown ! <ChevronDown />
-          </Dropdown.Trigger>
-          <Dropdown.Content className="w-[30rem]">
-            <Label> Dropdown Content</Label>
-            <Dropdown.Item>Item 1</Dropdown.Item>
-            <Dropdown.Item>Item 2</Dropdown.Item>
-            <Dropdown.Item>Item 3</Dropdown.Item>
-
-            <Dropdown.Sub>
-              <Dropdown.SubTrigger asChild>
-                <Dropdown.Item>Item 4</Dropdown.Item>
-              </Dropdown.SubTrigger>
-              <Dropdown.Content isSub>
-                <Dropdown.Item>Item 1</Dropdown.Item>
-                <Dropdown.Item>Item 2</Dropdown.Item>
-                <Dropdown.Item>Item 3</Dropdown.Item>
-              </Dropdown.Content>
-            </Dropdown.Sub>
+          <Dropdown.Trigger className="w-[10rem]">trigger dropdown !</Dropdown.Trigger>
+          <Dropdown.Content className="w-[10rem]">
+            <Dropdown.Item>Item 11</Dropdown.Item>
+            <Dropdown.Item>Item 21</Dropdown.Item>
+            <Dropdown.Item>Item 31</Dropdown.Item>
+            <Dropdown.Separator />
+            <Dropdown.Item>Item 41</Dropdown.Item>
           </Dropdown.Content>
         </Dropdown>
       </>
