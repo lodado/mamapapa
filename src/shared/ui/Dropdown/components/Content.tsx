@@ -5,7 +5,7 @@ import { Content, Portal, Arrow, SubContent } from "./radix";
 
 import { ComponentProps, PropsWithChildren } from "react";
 
-interface DropdownContentProps extends PropsWithChildren {
+interface DropdownContentProps extends ComponentProps<typeof Content> {
   className?: string;
   isSub?: boolean;
   [key: string]: any;
