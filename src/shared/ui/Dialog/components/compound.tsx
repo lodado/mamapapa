@@ -3,10 +3,19 @@
 import "../index.scss";
 import { X } from "lucide-react";
 
-import React, { CSSProperties, FormEvent, ReactNode, SyntheticEvent, useEffect, useState } from "react";
+import React, {
+  Component,
+  ComponentProps,
+  CSSProperties,
+  FormEvent,
+  ReactNode,
+  SyntheticEvent,
+  useEffect,
+  useState,
+} from "react";
 
 import { Close, Content, Overlay, Portal, Root, Trigger } from "./radix";
-import { contextBuildHelper, noop } from "@/shared";
+import { cn, contextBuildHelper, noop } from "@/shared";
 
 const [DialogProvider, useDialogContext] = contextBuildHelper<{
   isDialogVisible: boolean;
@@ -33,17 +42,27 @@ const DialogRoot = ({ children }: { children: ReactNode }) => {
   );
 };
 
-const DialogTrigger = ({ children }: { children: ReactNode }) => {
-  return <Trigger>{children}</Trigger>;
+const DialogTrigger = ({ children, ...rest }: ComponentProps<typeof Trigger>) => {
+  return <Trigger {...rest}>{children}</Trigger>;
 };
 
 const DialogContent = ({ children, style }: { children: ReactNode; style?: CSSProperties }) => {
   return (
     <Portal>
-      <Overlay className="fixed inset-0" />
+      <Overlay className="fixed top-0 left-0 right-0 bottom-0 bg-blank z-dialog" />
       <Content
         style={style}
-        className="fixed -translate-x-1/2 -translate-y-1/2 dialog-content z-dialog top-2/4 left-2/4"
+        className={cn(
+          `z-dialog
+        fixed left-1/2 bottom-0
+        transform -translate-x-1/2
+        shadow-md
+        rounded-t-2xl rounded-b-none
+        will-change-transform
+        w-screen md:w-[768px]
+        bg-background-01
+        `
+        )}
       >
         {children}
       </Content>

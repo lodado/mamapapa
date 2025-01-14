@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { Dialog, DialogProps } from './components/compound'
+import { cn } from "@/shared";
 
 export interface DialogTemplateProps extends DialogProps {
   Trigger?: () => JSX.Element
@@ -19,6 +20,6 @@ export const DialogTemplate = ({ Trigger, children, isVisible, onChangeVisible }
         <Dialog.Content>{children}</Dialog.Content>
       </Dialog.Root>
     </Dialog>
-  )
+  );
 }
 DialogTemplate.displayName = 'Dialog'

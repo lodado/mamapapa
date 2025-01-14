@@ -1,4 +1,3 @@
-import { Slot } from "@radix-ui/react-slot";
 import React, { PropsWithChildren, ReactNode, SyntheticEvent, use, useEffect } from "react";
 
 import { Button } from "../Button";
@@ -37,17 +36,17 @@ const SubmitForm = ({
 
   return (
     <Dialog.SubmitForm
-      className={cn("flex flex-col w-full px-4 gap-1 pb-2", className)}
+      className={cn("flex flex-row w-full items-center justify-center px-6 py-4 gap-2", className)}
       onClose={onClose}
       onSubmit={onSubmit}
       onError={onError}
     >
       {children}
 
-      <Button className="w-full mb-2" type="submit" variant="primarySolid" onClick={handleDialogSubmit}>
+      <Button className="grow h-full" type="button" variant="primarySolid" onClick={handleDialogSubmit}>
         {submitText}
       </Button>
-      <Button className="w-full" onClick={() => onChangeVisibleStatus(false)} type="button" variant="line">
+      <Button className="grow h-full" onClick={() => onChangeVisibleStatus(false)} type="button" variant="line">
         {cancelText}
       </Button>
     </Dialog.SubmitForm>
@@ -56,14 +55,23 @@ const SubmitForm = ({
 
 const DialogHeader = ({ children, className }: { children?: ReactNode; className?: string }) => {
   return (
-    <Title className={cn("flex flex-row justify-between w-full mb-3 heading-02 pt-6 px-4", className)}>
-      {children}
+    <Title className={cn("headline flex flex-col w-full pt-2 items-center gap-2")}>
+      <div role="none presentation" className="w-[3rem] h-1 rounded-[100px] bg-border-borderOpaque  " />
+
+      <div
+        className={cn(
+          "w-full py-[0.625rem] px-[1rem] text-text-01 flex flex-row justify-center items-center",
+          className
+        )}
+      >
+        {children}
+      </div>
     </Title>
   );
 };
 
 const DialogBody = ({ className, children }: { className?: string; children: ReactNode }) => {
-  return <div className={cn("flex w-full py-4 grow body-01 px-4 pb-8", className)}>{children}</div>;
+  return <div className={cn("flex w-full py-4 grow body-01 px-6", className)}>{children}</div>;
 };
 
 /**
@@ -89,14 +97,7 @@ export const AlertDescription = ({ className, children }: PropsWithChildren & { 
 export const AlertDialog = ({ Trigger, isVisible, onChangeVisible, children, className }: AlertDialogProps) => {
   return (
     <DialogTemplate isVisible={isVisible} onChangeVisible={onChangeVisible} Trigger={Trigger}>
-      <div
-        className={cn(
-          `text-text-default flex-col border-solid rounded-lg bg-background border-1 border-color-border-brand w-80 shadow-dropdown`,
-          className
-        )}
-      >
-        {children}
-      </div>
+      {children}
     </DialogTemplate>
   );
 };
