@@ -8,20 +8,22 @@ import { ChevronDown } from "lucide-react";
 import { useDropdownContext } from "./Provider";
 
 const DropdownTrigger = (props: ComponentProps<typeof Trigger>) => {
-  const { children, className, ...rest } = props;
+  const { children, className, asChild = false, ...rest } = props;
   const { isVisible } = useDropdownContext();
   return (
     <Trigger
       className={
-        !props.asChild
+        !asChild
           ? cn("w-full flex justify-between items-center rounded bg-inherit text-text-01 subhead-2", className)
           : ""
       }
       {...rest}
     >
-      {children}
+      <>
+        {children}
 
-      <ChevronDown strokeWidth={1.2} className={isVisible ? "rotate-180" : ""} />
+        {asChild ? null : <ChevronDown strokeWidth={1.2} className={isVisible ? "rotate-180" : ""} />}
+      </>
     </Trigger>
   );
 };

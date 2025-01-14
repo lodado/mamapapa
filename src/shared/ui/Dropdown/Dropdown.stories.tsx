@@ -21,8 +21,8 @@ export const DropdownExample: Story = {
     children: (
       <>
         <Dropdown>
-          <Dropdown.Trigger className="w-[10rem]">trigger dropdown !</Dropdown.Trigger>
-          <Dropdown.Content className="w-[10rem]">
+          <Dropdown.Trigger className="w-[15rem]">trigger dropdown !</Dropdown.Trigger>
+          <Dropdown.Content className="w-[15rem]">
             <Dropdown.Item>Item 11</Dropdown.Item>
             <Dropdown.Item>Item 21</Dropdown.Item>
             <Dropdown.Item>Item 31</Dropdown.Item>
@@ -38,7 +38,7 @@ export const DropdownExample: Story = {
 export const Template2 = () => (
   <Dropdown>
     <Dropdown.Trigger asChild>
-      <button> select! </button>
+      <button type="button"> select! </button>
     </Dropdown.Trigger>
     <Dropdown.Content>
       <Dropdown.Label>과일 선택</Dropdown.Label>
