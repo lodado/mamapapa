@@ -2561,10 +2561,10 @@
   dependencies:
     sparse-bitfield "^3.0.3"
 
-"@next/bundle-analyzer@^14.2.11":
-  version "14.2.11"
-  resolved "https://registry.yarnpkg.com/@next/bundle-analyzer/-/bundle-analyzer-14.2.11.tgz#503751572d768bbe9aa1a013d25f585b6c2f5780"
-  integrity sha512-wFPjuXVlLkheng8BTG/K8UN8lRg93E5ZdE9gSmxpRP0XwC58w1B8wITXWeTD/Js4ObxyhxhiCrZzt2X+QJrrMw==
+"@next/bundle-analyzer@^15.1.4":
+  version "15.1.4"
+  resolved "https://registry.yarnpkg.com/@next/bundle-analyzer/-/bundle-analyzer-15.1.4.tgz#17f000db3a16492180270b4d23a77ca78facacfa"
+  integrity sha512-W8X96jOW0U5VjLVAkFr1P37kH2f/Ma9zzwgX2o3Omft92pI0XHpFG8Xa9YUT3NlhRJCe4ZKznr1VxhSrFNA+BA==
   dependencies:
     webpack-bundle-analyzer "4.10.1"
 

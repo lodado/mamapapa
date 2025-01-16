@@ -12,6 +12,7 @@
     "start": "next start",
     "lint": "npx eslint --fix",
     "test": "vitest --run",
+    "bundle-analyze": "ANALYZE=true yarn build",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "postinstall": "husky",
@@ -52,7 +53,7 @@
   "devDependencies": {
     "@chromatic-com/storybook": "1.9.0",
     "@eslint/js": "^9.9.0",
-    "@next/bundle-analyzer": "^14.2.11",
+    "@next/bundle-analyzer": "^15.1.4",
     "@sentry/nextjs": "8",
     "@storybook/addon-essentials": "^8.3.0",
     "@storybook/addon-interactions": "^8.3.0",
