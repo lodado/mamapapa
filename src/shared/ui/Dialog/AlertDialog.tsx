@@ -42,12 +42,11 @@ const SubmitForm = ({
       onError={onError}
     >
       {children}
-
-      <Button className="grow h-full" type="button" variant="primarySolid" onClick={handleDialogSubmit}>
-        {submitText}
-      </Button>
       <Button className="grow h-full" onClick={() => onChangeVisibleStatus(false)} type="button" variant="line">
         {cancelText}
+      </Button>
+      <Button className="grow h-full" type="button" variant="primarySolid" onClick={handleDialogSubmit}>
+        {submitText}
       </Button>
     </Dialog.SubmitForm>
   );
@@ -71,7 +70,11 @@ const DialogHeader = ({ children, className }: { children?: ReactNode; className
 };
 
 const DialogBody = ({ className, children }: { className?: string; children: ReactNode }) => {
-  return <div className={cn("flex w-full py-4 grow body-01 px-6", className)}>{children}</div>;
+  return (
+    <div className={cn("flex w-full pt-4 grow body-01 px-6 pb-[calc(1rem+var(--safe-area-bottom))]", className)}>
+      {children}
+    </div>
+  );
 };
 
 /**

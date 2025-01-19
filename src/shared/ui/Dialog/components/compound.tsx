@@ -16,6 +16,7 @@ import React, {
 
 import { Close, Content, Overlay, Portal, Root, Trigger } from "./radix";
 import { cn, contextBuildHelper, noop } from "@/shared";
+import { Motion } from "../../animation/animation";
 
 const [DialogProvider, useDialogContext] = contextBuildHelper<{
   isDialogVisible: boolean;
@@ -50,22 +51,35 @@ const DialogContent = ({ children, style }: { children: ReactNode; style?: CSSPr
   return (
     <Portal>
       <Overlay className="fixed top-0 left-0 right-0 bottom-0 bg-blank z-dialog" />
-      <Content
-        style={style}
-        className={cn(
-          `z-dialog
-        fixed left-1/2 bottom-0
-        transform -translate-x-1/2
-        shadow-md
-        rounded-t-2xl rounded-b-none
-        will-change-transform
-        w-screen md:w-[768px]
-        bg-background-01
-        `
-        )}
+
+      <Motion
+        className="fixed bottom-0 left-0 w-screen flex flex-col items-center right-0 z-dialog"
+        componentType="div"
+        initial={{ y: "100%", opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        exit={{ y: "100%", opacity: 0 }}
+        transition={{
+          type: "spring",
+          stiffness: 300,
+          damping: 25,
+        }}
+        style={{ ...style }}
       >
-        {children}
-      </Content>
+        <Content
+          style={style}
+          className={cn(
+            "relative", // 위치 참조
+            "w-screen md:w-[768px]",
+            "will-change-transform", // 배경색
+            "rounded-t-2xl rounded-b-none", // 모서리 둥글게
+            "bg-background-01", // 내부 여백
+            "overflow-hidden" // 필요 시 오버플로우 처리
+          )}
+        >
+          {children}
+        </Content>
+        <div className="absolute w-screen md:w-[768px] bottom-[-2rem] h-10 bg-background-01"></div>
+      </Motion>
     </Portal>
   );
 };
