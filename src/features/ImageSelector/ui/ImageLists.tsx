@@ -41,7 +41,10 @@ const ImageLists = () => {
         const face = image.faceCoordinates;
 
         return (
-          <div key={image.id} className="relative cursor-pointer border border-solid w-full h-full">
+          <div
+            key={image.id}
+            className="relative cursor-pointer border border-solid w-full h-full min-h-[100px] max-h-[200px]"
+          >
             {face.width > 0 && face.height > 0 ? (
               <canvas
                 ref={(canvas) => {
