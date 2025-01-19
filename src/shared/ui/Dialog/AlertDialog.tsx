@@ -36,16 +36,21 @@ const SubmitForm = ({
 
   return (
     <Dialog.SubmitForm
-      className={cn("flex flex-row w-full items-center justify-center px-6 py-4 gap-2", className)}
+      className={cn("flex flex-row w-full  justify-center px-6 py-4 gap-2", className)}
       onClose={onClose}
       onSubmit={onSubmit}
       onError={onError}
     >
       {children}
-      <Button className="grow h-full" onClick={() => onChangeVisibleStatus(false)} type="button" variant="line">
+      <Button
+        className="rounded-[12px] grow h-full"
+        onClick={() => onChangeVisibleStatus(false)}
+        type="button"
+        variant="line"
+      >
         {cancelText}
       </Button>
-      <Button className="grow h-full" type="button" variant="primarySolid" onClick={handleDialogSubmit}>
+      <Button className="rounded-[12px] grow h-full" type="button" variant="primarySolid" onClick={handleDialogSubmit}>
         {submitText}
       </Button>
     </Dialog.SubmitForm>

@@ -57,7 +57,7 @@ const AlertDialogExample = () => {
       </button>
       <AlertDialog isVisible={isVisible} onChangeVisible={setVisible}>
         <AlertDialog.Header>Test</AlertDialog.Header>
-        <AlertDialog.Body>Test Body</AlertDialog.Body>
+        <AlertDialog.Body className="h-[250px]">Test Body</AlertDialog.Body>
         <AlertDialog.SubmitForm submitText="확인" cancelText="취소" onSubmit={async (e) => {}} />
       </AlertDialog>
     </>
@@ -121,7 +121,7 @@ const AlertDialogExample2 = () => {
     <>
       <AlertDialog Trigger={TriggerButton}>
         <AlertDialog.Header>Test</AlertDialog.Header>
-        <AlertDialog.Body>Test Body</AlertDialog.Body>
+        <AlertDialog.Body className="h-[500px]">Test Body</AlertDialog.Body>
         <AlertDialog.SubmitForm submitText="확인" cancelText="취소" onSubmit={async (e) => {}} />
       </AlertDialog>
     </>
