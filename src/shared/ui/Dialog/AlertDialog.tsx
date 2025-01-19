@@ -70,11 +70,7 @@ const DialogHeader = ({ children, className }: { children?: ReactNode; className
 };
 
 const DialogBody = ({ className, children }: { className?: string; children: ReactNode }) => {
-  return (
-    <div className={cn("flex w-full pt-4 grow body-01 px-6 pb-[calc(1rem+var(--safe-area-bottom))]", className)}>
-      {children}
-    </div>
-  );
+  return <div className={cn("flex w-full pt-4 grow body-01 px-6 ", className)}>{children}</div>;
 };
 
 /**

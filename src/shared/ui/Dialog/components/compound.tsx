@@ -73,7 +73,7 @@ const DialogContent = ({ children, style }: { children: ReactNode; style?: CSSPr
             "will-change-transform", // 배경색
             "rounded-t-2xl rounded-b-none", // 모서리 둥글게
             "bg-background-01", // 내부 여백
-            "overflow-hidden" // 필요 시 오버플로우 처리
+            "overflow-hidden pb-[calc(var(--safe-area-bottom))]" // 필요 시 오버플로우 처리
           )}
         >
           {children}
