@@ -15,7 +15,7 @@ import { ToastViewPort } from "@/features/Toast";
 const Layout = ({ children }: PropsWithChildren) => {
   return (
     <>
-      <ReactiveLayout>
+      <ReactiveLayout className="min-h-screen">
         <div role="none presentation" className="w-full flex-shrink-0 h-[4rem]" />
         <FacePageHeader />
 
