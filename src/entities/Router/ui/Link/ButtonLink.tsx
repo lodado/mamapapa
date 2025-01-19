@@ -16,7 +16,7 @@ const ButtonLink = (
     custom?: boolean;
   } & VariantProps<typeof rawButtonVariants>
 ) => {
-  const { href = "", subDomain: _subDomain, custom = false, className, ...rest } = props;
+  const { href = "", subDomain: _subDomain, custom = false, className, wrapperClassName, ...rest } = props;
   const linkHref = useLinkHref(props);
 
   const handleButtonClick = () => {
@@ -34,7 +34,7 @@ const ButtonLink = (
       whileHover={{ scale: 1.01 }}
       whileTap={{ scale: 0.98 }}
       transition={{ type: "spring", duration: 0.25 }}
-      className={props.wrapperClassName ?? ""}
+      className={wrapperClassName ?? ""}
     >
       <Link {...rest} className={cn(rawButtonVariants(rest), className)} href={linkHref!} onClick={handleButtonClick} />
     </Motion>

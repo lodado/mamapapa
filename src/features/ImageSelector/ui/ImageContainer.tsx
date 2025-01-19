@@ -1,7 +1,20 @@
+"use client";
+
 import React from "react";
+import EmptyImageContainer from "./EmptyImageContainer";
+import { useImageSelectorStore } from "../models";
+import ImageLists from "./ImageLists";
 
 const ImageContainer = () => {
-  return <div></div>;
+  const { images } = useImageSelectorStore();
+
+  return (
+    <div className="p-4 flex grow flex-col justify-center items-center">
+      <div className="w-full flex flex-col items-center ">
+        {images.length === 0 ? <EmptyImageContainer /> : <ImageLists />}
+      </div>
+    </div>
+  );
 };
 
 export default ImageContainer;

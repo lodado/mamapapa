@@ -1,18 +1,18 @@
 import { cva } from 'class-variance-authority'
 
 export const rawButtonVariants = cva(
-  `rounded-[0.75rem] select-none touch-none flex  py-2 justify-center items-center gap-0.5 head-3 flex-shrink-0 self-stretch cursor-pointer `,
+  `select-none touch-none flex  py-2 justify-center items-center gap-0.5 head-3 flex-shrink-0 self-stretch cursor-pointer disabled:cursor-not-allowed disabled:opacity-30`,
   {
     variants: {
       variant: {
-        errorSolid: "h-14 bg-error px-4 text-text-00 active:bg-error-press",
+        errorSolid: "rounded-[0.75rem]  h-14 bg-error px-4 text-text-00 active:bg-error-press",
         errorLine:
-          "border border-solid border-error h-14 px-4 bg-transparent active:bg-error-01-line-press text-text-error",
+          "rounded border border-solid border-error h-14 px-4 bg-transparent active:bg-error-01-line-press text-text-error",
 
-        primarySolid: "h-14 bg-primary-01 px-4 text-text-00 active:bg-primary-01-press",
+        primarySolid: "rounded-[0.75rem]  h-14 bg-primary-01 px-4 text-text-00 active:bg-primary-01-press",
         primaryLine:
-          "border border-solid border-primary-01 h-14 px-4 bg-transparent active:bg-primary-01-line-press text-text-primary",
-        line: "flex items-center h-[1.875rem] gap-[0.25rem] pl-[0.625rem] pr-[0.75rem]  border border-solid border-border-02 bg-background-01 active:bg-tertiary-op-press  ",
+          "rounded border border-solid border-primary-01 h-14 px-4 bg-transparent active:bg-primary-01-line-press text-text-primary",
+        line: "rounded flex items-center h-[1.875rem] gap-[0.25rem] pl-[0.625rem] pr-[0.75rem]  border border-solid border-border-02 bg-background-01 active:bg-tertiary-op-press  ",
         custom: "",
       },
     },

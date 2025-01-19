@@ -25,8 +25,8 @@ const Layout = ({ children }: PropsWithChildren) => {
             <CrossHair /> 사진 추가하기
           </Button>
         </div>
-        <main className="flex flex-col items-center w-full">
-          <div className="flex-grow w-full p-4">
+        <main className="flex flex-col items-center w-full min-h-inherit h-full justify-center flex-grow">
+          <div className="w-full h-full p-4">
             <AnimatePresence>
               <ImageContainer />
 
