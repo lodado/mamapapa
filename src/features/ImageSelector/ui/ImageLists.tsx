@@ -44,7 +44,7 @@ const ImageLists = () => {
         return (
           <div
             key={image.id}
-            className="relative flex items-center justify-center cursor-pointer border border-solid w-full h-[200px]"
+            className="relative flex items-center justify-center cursor-pointer border border-solid min-h-[150px]"
           >
             {isFaceDetected ? (
               <>
@@ -60,7 +60,7 @@ const ImageLists = () => {
                   ref={(canvas) => {
                     if (canvas) drawFaceOnCanvas(image.url, face, canvas);
                   }}
-                  className={`w-[${face.width}px] h-[${face.height}px] max-w-full max-h-full`}
+                  className={`w-full max-h-full`}
                 />
               </>
             ) : (
