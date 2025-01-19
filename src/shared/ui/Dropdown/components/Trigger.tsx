@@ -7,14 +7,17 @@ import { rawButtonVariants } from "../../Button/style";
 import { ChevronDown } from "lucide-react";
 import { useDropdownContext } from "./Provider";
 
-const DropdownTrigger = (props: ComponentProps<typeof Trigger>) => {
-  const { children, className, asChild = false, ...rest } = props;
+const DropdownTrigger = (props: ComponentProps<typeof Trigger> & { doesArrowNeed?: boolean }) => {
+  const { children, className, doesArrowNeed, asChild = false, ...rest } = props;
   const { isVisible } = useDropdownContext();
   return (
     <Trigger
       className={
         !asChild
-          ? cn("w-full flex justify-between items-center rounded bg-inherit text-text-01 subhead-2", className)
+          ? cn(
+              "w-full pl-1 h-7 flex justify-between items-center rounded bg-[var(--Secondary-OP)] text-text-00 subhead-2",
+              className
+            )
           : ""
       }
       {...rest}
@@ -22,7 +25,7 @@ const DropdownTrigger = (props: ComponentProps<typeof Trigger>) => {
       <>
         {children}
 
-        {asChild ? null : <ChevronDown strokeWidth={1.2} className={isVisible ? "rotate-180" : ""} />}
+        {asChild && doesArrowNeed ? null : <ChevronDown strokeWidth={1.2} className={isVisible ? "rotate-180" : ""} />}
       </>
     </Trigger>
   );

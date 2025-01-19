@@ -17,7 +17,7 @@ const DropdownContent: React.FC<DropdownContentProps> = ({ children, className, 
   return (
     <Portal>
       <Box
-        className={cn("mt-[10px] dropdown-shadow rounded bg-background-01 flex flex-col px-[4px] py-1", className)}
+        className={cn("mt-[4px] dropdown-shadow rounded bg-background-01 flex flex-col px-[4px] py-1", className)}
         {...rest}
       >
         {children}

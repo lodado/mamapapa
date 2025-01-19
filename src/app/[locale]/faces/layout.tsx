@@ -31,7 +31,7 @@ const Layout = ({ children }: PropsWithChildren) => {
             <AnimatePresence>
               {children}
 
-              <ToastViewPort className="bottom-[100px]" />
+              <ToastViewPort className="bottom-[6.25rem]" />
             </AnimatePresence>
           </div>
 
@@ -40,7 +40,7 @@ const Layout = ({ children }: PropsWithChildren) => {
           <div role="none presentation" className="h-[200px]"></div>
         </main>
         <nav
-          className={`z-nav flex bg-background-op-01 flex-col justify-center items-center  w-full md:w-[768px] gap-3 px-6 pt-6 fixed bottom-0 
+          className={`z-nav flex bg-background-op-01 flex-col justify-center items-center w-full md:w-[768px] gap-3 px-6 pt-6 fixed bottom-0 
             pb-[calc(1.5rem+var(--safe-area-bottom))]
         `}
         >
