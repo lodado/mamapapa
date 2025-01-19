@@ -6,3 +6,4 @@ export * from "./noop";
 export * from "./cn";
 export * from "./cloneWithPropsIfAbsent";
 export * from "./calculateBrowserSize";
+export * from "./canvas";
