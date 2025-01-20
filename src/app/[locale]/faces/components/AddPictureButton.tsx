@@ -6,7 +6,7 @@ import CrossHair from "/public/CrossHair.svg";
 import { FaceCoordinates, ImageMetadata, useImageSelectorStore } from "@/features/ImageSelector/models";
 import { useFaceModelStore } from "@/features/AiModel/model";
 import { useLoadingStore } from "@/shared/ui/LoadingSpinner";
-import { useToastStore } from "@/features/Toast/stores";
+import { useToastStore } from "@/shared/ui/Toast/stores";
 
 // Hook for handling face detection logic
 const useFaceDetection = () => {

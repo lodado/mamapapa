@@ -13,6 +13,8 @@ export interface ImageMetadata {
   file: File; // 원본 파일 객체
 
   faceCoordinates: FaceCoordinates;
+
+  selectedPlayer?: string;
 }
 
 export interface ImageSelectorState {
@@ -20,6 +22,8 @@ export interface ImageSelectorState {
   addImages: (image: ImageMetadata[]) => void;
   removeImage: (image: ImageMetadata) => void;
   clearImages: () => void;
+
+  handleUpdatePlayer: (image: ImageMetadata, player: string) => void;
 }
 
 export const useImageSelectorStore = create<ImageSelectorState>((set) => ({
@@ -27,4 +31,14 @@ export const useImageSelectorStore = create<ImageSelectorState>((set) => ({
   addImages: (newImages: ImageMetadata[]) => set((state) => ({ images: [...state.images, ...newImages] })),
   removeImage: (image) => set((state) => ({ images: state.images.filter((img) => img.url !== image.url) })),
   clearImages: () => set({ images: [] }),
+
+  handleUpdatePlayer: (image, player) => {
+    set((state) => {
+      const targetIndex = state.images.findIndex((img) => img.id === image.id);
+      const updatedImages = [...state.images];
+      updatedImages[targetIndex] = { ...image, selectedPlayer: player };
+
+      return { images: updatedImages };
+    });
+  },
 }));

@@ -8,7 +8,7 @@ import { ChevronDown } from "lucide-react";
 import { useDropdownContext } from "./Provider";
 
 const DropdownTrigger = (props: ComponentProps<typeof Trigger> & { doesArrowNeed?: boolean }) => {
-  const { children, className, doesArrowNeed, asChild = false, ...rest } = props;
+  const { children, className, asChild = false, doesArrowNeed = true, ...rest } = props;
   const { isVisible } = useDropdownContext();
   return (
     <Trigger
@@ -25,7 +25,7 @@ const DropdownTrigger = (props: ComponentProps<typeof Trigger> & { doesArrowNeed
       <>
         {children}
 
-        {asChild && doesArrowNeed ? null : <ChevronDown strokeWidth={1.2} className={isVisible ? "rotate-180" : ""} />}
+        {asChild ? null : doesArrowNeed && <ChevronDown strokeWidth={1.2} className={isVisible ? "rotate-180" : ""} />}
       </>
     </Trigger>
   );

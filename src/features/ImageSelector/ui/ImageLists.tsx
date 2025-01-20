@@ -4,12 +4,17 @@ import { useImageSelectorStore } from "../models";
 import { Dropdown } from "@/shared/ui";
 import { drawImageOnCanvas } from "@/shared/utils";
 
-import Delete from "/public/Delete.svg";
-import { useToastStore } from "@/features/Toast/stores";
+import CrossHair from "/public/CrossHair.svg";
+import Delete from "/public/delete.svg";
+
+import { useToastStore } from "@/shared/ui/Toast/stores";
+import { Ellipsis } from "lucide-react";
+import { usePlayerStore } from "@/entities";
 
 const ImageLists = () => {
-  const { images, removeImage } = useImageSelectorStore();
+  const { images, removeImage, handleUpdatePlayer } = useImageSelectorStore();
   const { addToast } = useToastStore();
+  const { players } = usePlayerStore();
 
   return (
     <div className="grid grid-cols-3 sm:grid-cols-4 gap-x-2 sm:gap-x-5 gap-y-4">
@@ -26,7 +31,37 @@ const ImageLists = () => {
               <>
                 <Dropdown>
                   <Dropdown.Trigger className="absolute top-1 left-1 w-[50%]">
-                    <span className="truncate w-[80%]">testtesttesttesttesttesttest</span>
+                    <span
+                      className={`truncate subhead-2 w-[80%] ${
+                        image.selectedPlayer ? "text-text-00" : "text-text-placeholder"
+                      }`}
+                    >
+                      {image.selectedPlayer ?? "미선택"}
+                    </span>
+                  </Dropdown.Trigger>
+                  <Dropdown.Content className="w-full">
+                    {Array.from(players.keys()).map((key: string) => {
+                      return (
+                        <Dropdown.Item key={key} onClick={() => handleUpdatePlayer(image, key)}>
+                          {key}
+                        </Dropdown.Item>
+                      );
+                    })}
+
+                    <Dropdown.Separator key={"sap"} />
+
+                    <Dropdown.Item key={"anew"}>
+                      <CrossHair /> 새로 추가하기
+                    </Dropdown.Item>
+                  </Dropdown.Content>
+                </Dropdown>
+
+                <Dropdown>
+                  <Dropdown.Trigger
+                    className="absolute flex justify-center items-center top-1 right-1 w-[28px] h-[28px]"
+                    doesArrowNeed={false}
+                  >
+                    <Ellipsis strokeWidth={2} size={15} />
                   </Dropdown.Trigger>
                   <Dropdown.Content className="w-full">
                     <Dropdown.Item>크롭 다시하기</Dropdown.Item>
@@ -47,7 +82,7 @@ const ImageLists = () => {
 
                 <canvas
                   ref={(canvas) => {
-                    if (canvas) drawImageOnCanvas(image.url, face, canvas);
+                    if (canvas) drawImageOnCanvas(image.url, face, canvas, face.width, face.height);
                   }}
                   className={`rounded-lg max-w-full max-h-full w-[${face.width}px] h-[172px]`}
                 />

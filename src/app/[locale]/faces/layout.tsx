@@ -10,7 +10,7 @@ import { AnimatePresence } from "motion/react";
 
 import FacePageHeader from "./components/FacePageHeader";
 import AddPictureButton from "./components/AddPictureButton";
-import { ToastViewPort } from "@/features/Toast";
+import { ToastViewPort } from "@/shared/ui/Toast";
 
 const Layout = ({ children }: PropsWithChildren) => {
   return (
@@ -28,11 +28,9 @@ const Layout = ({ children }: PropsWithChildren) => {
           <div className="flex-grow flex flex-col items-center w-full p-4">
             <ImageContainer key="imageContainer" />
 
-            <AnimatePresence>
-              {children}
+            <AnimatePresence key="ani">{children}</AnimatePresence>
 
-              <ToastViewPort className="bottom-[6.25rem]" />
-            </AnimatePresence>
+            <ToastViewPort key="viewPort" className="bottom-[6.25rem]" />
           </div>
 
           <ModelDownloader />
