@@ -17,7 +17,7 @@ const CropSettingDialog: React.FC<CropSettingDialogProps> = ({
 }) => {
   return (
     <AlertDialog className="h-[95vh]" isVisible={isVisible} onChangeVisible={onChangeVisible}>
-      <AlertDialog.Header className="flex flex-col gap-[1.125rem]">
+      <AlertDialog.Header className="flex flex-col gap-[1.1rem]">
         <h1>크롭 다시하기</h1>
         <div className="w-screen h-[1.9px] bg-border-borderOpaque"></div>
       </AlertDialog.Header>
