@@ -75,7 +75,7 @@ const DialogHeader = ({ children, className }: { children?: ReactNode; className
 };
 
 const DialogBody = ({ className, children }: { className?: string; children: ReactNode }) => {
-  return <div className={cn("flex w-full pt-4 grow body-01 px-6 ", className)}>{children}</div>;
+  return <div className={cn("flex w-full pt-4 grow body-01 px-6", className)}>{children}</div>;
 };
 
 /**
@@ -100,7 +100,7 @@ export const AlertDescription = ({ className, children }: PropsWithChildren & { 
 
 export const AlertDialog = ({ Trigger, isVisible, onChangeVisible, children, className }: AlertDialogProps) => {
   return (
-    <DialogTemplate isVisible={isVisible} onChangeVisible={onChangeVisible} Trigger={Trigger}>
+    <DialogTemplate className={className} isVisible={isVisible} onChangeVisible={onChangeVisible} Trigger={Trigger}>
       {children}
     </DialogTemplate>
   );

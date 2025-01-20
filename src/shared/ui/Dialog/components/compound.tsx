@@ -47,7 +47,15 @@ const DialogTrigger = ({ children, ...rest }: ComponentProps<typeof Trigger>) =>
   return <Trigger {...rest}>{children}</Trigger>;
 };
 
-const DialogContent = ({ children, style }: { children: ReactNode; style?: CSSProperties }) => {
+const DialogContent = ({
+  children,
+  className,
+  style,
+}: {
+  className?: string;
+  children: ReactNode;
+  style?: CSSProperties;
+}) => {
   return (
     <Portal>
       <Overlay className="fixed top-0 left-0 right-0 bottom-0 bg-blank z-dialog" />
@@ -68,17 +76,18 @@ const DialogContent = ({ children, style }: { children: ReactNode; style?: CSSPr
         <Content
           style={style}
           className={cn(
-            "relative", // 위치 참조
+            "flex flex-col relative", // 위치 참조
             "w-screen md:w-[768px]",
             "will-change-transform", // 배경색
             "rounded-t-2xl rounded-b-none", // 모서리 둥글게
             "bg-background-01", // 내부 여백
-            "overflow-hidden pb-[calc(var(--safe-area-bottom))]" // 필요 시 오버플로우 처리
+            "overflow-hidden pb-[calc(var(--safe-area-bottom))]", // 필요 시 오버플로우 처리,
+            className
           )}
         >
           {children}
         </Content>
-        <div className="absolute w-screen md:w-[768px] bottom-[-2rem] h-10 bg-background-01"></div>
+        <div className={cn("absolute w-screen md:w-[768px] bottom-[-2rem] h-10 bg-background-01")}></div>
       </Motion>
     </Portal>
   );

@@ -9,7 +9,7 @@ export interface DialogTemplateProps extends DialogProps {
   Trigger?: () => JSX.Element
 }
 
-export const DialogTemplate = ({ Trigger, children, isVisible, onChangeVisible }: DialogTemplateProps) => {
+export const DialogTemplate = ({ Trigger, className, children, isVisible, onChangeVisible }: DialogTemplateProps) => {
   return (
     <AnimatePresence>
       {isVisible && (
@@ -21,11 +21,11 @@ export const DialogTemplate = ({ Trigger, children, isVisible, onChangeVisible }
               </Dialog.Trigger>
             )}
 
-            <Dialog.Content>{children}</Dialog.Content>
+            <Dialog.Content className={className}>{children}</Dialog.Content>
           </Dialog.Root>
         </Dialog>
       )}
     </AnimatePresence>
   );
-}
+};
 DialogTemplate.displayName = 'Dialog'
