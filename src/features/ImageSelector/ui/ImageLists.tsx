@@ -33,6 +33,14 @@ const ImageLists = () => {
             >
               {isFaceDetected ? (
                 <>
+                  {isCropSettingDialogVisible && (
+                    <CropSettingDialog
+                      selectedImageForReCrop={image}
+                      isVisible={isCropSettingDialogVisible}
+                      onChangeVisible={setCropSettingDialogVisible}
+                    />
+                  )}
+
                   <Dropdown>
                     <Dropdown.Trigger className="absolute top-1 left-1 w-[50%]">
                       <span
@@ -106,11 +114,13 @@ const ImageLists = () => {
           );
         })}
       </div>
-      <CropSettingDialog
-        selectedImageForReCrop={selectedImageForReCrop}
-        isVisible={isCropSettingDialogVisible}
-        onChangeVisible={setCropSettingDialogVisible}
-      />
+      {
+        <CropSettingDialog
+          selectedImageForReCrop={selectedImageForReCrop}
+          isVisible={isCropSettingDialogVisible}
+          onChangeVisible={setCropSettingDialogVisible}
+        />
+      }
     </>
   );
 };
