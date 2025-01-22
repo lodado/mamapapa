@@ -11,12 +11,6 @@ import ScreenVhScript from "./ScreenVhScript";
 
 import { Inter } from "next/font/google";
 
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-  display: "block",
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-});
 
 /** TODO - GA 설치 */
 // import { GA } from "@/shared/lib/GA";
@@ -79,7 +73,7 @@ const RootLayout: React.FunctionComponent<LocaleProps> = ({ children, params: { 
         <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#5bbad5" />
       </Head>
 
-      <body className={`${inter.className}`}>
+      <body>
         <ThemeScript nonce={nonce} />
         <ScreenVhScript nonce={nonce} />
         <RootProvider>
