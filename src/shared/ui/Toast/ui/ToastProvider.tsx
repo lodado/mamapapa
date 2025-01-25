@@ -41,16 +41,15 @@ export default function ToastProvider({ children }: { children: React.ReactNode 
           >
             <Motion
               componentType="div"
-              // initial={{ y: 80, opacity: 0 }}
-              // 처음엔 빠르게 나오다가 이후에 느려지게
+              initial={{ y: 80, opacity: 0 }}
               animate={{ y: 0, opacity: 1, transition: { duration: 0.3, ease: "easeOut" } }}
-              // exit={{ y: 80, opacity: 0, transition: { duration: 0.3, ease: "easeIn" } }}
+              exit={{ y: 80, opacity: 0, transition: { duration: 0.3, ease: "easeIn" } }}
               layout
               className={cn(
                 toastVariants({ type: msg.type }) // 타입별 스타일 적용
               )}
             >
-              <div className="flex h-[50px] flex-row items-center">
+              <div className="flex mb-2 h-[50px] flex-row items-center">
                 {msg.type === "success" ? <Success /> : <Error />}
 
                 <div className="flex  flex-col ">
