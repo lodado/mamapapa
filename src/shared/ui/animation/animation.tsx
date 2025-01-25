@@ -1,5 +1,6 @@
 "use client";
 
+import { forwardRef } from "react";
 import { useIsClient } from "@/shared/hooks";
 import { AnimatePresence, motion, MotionProps } from "motion/react";
 
@@ -30,18 +31,18 @@ export const AnimationRoot = ({ children, initial: _initial, ...rest }: Componen
   );
 };
 
-export const Motion = <Tag extends keyof JSX.IntrinsicElements>({
-  componentType,
-  children,
-  className,
-  ...props
-}: CustomMotionProps<Tag>) => {
-  const Component = componentType ? (motion as any)[componentType] : motion.div; // Using 'any' as a temporary workaround
-  const id = useId();
+export const Motion = forwardRef(
+  <Tag extends keyof JSX.IntrinsicElements>(
+    { componentType, children, className, ...props }: CustomMotionProps<Tag>,
+    ref: React.Ref<any>
+  ) => {
+    const Component = componentType ? (motion as any)[componentType] : motion.div; // Using 'any' as a temporary workaround
+    const id = useId();
 
-  return (
-    <Component key={id} className={className} {...props}>
-      {children}
-    </Component>
-  );
-};
+    return (
+      <Component key={id} className={className} ref={ref} {...props}>
+        {children}
+      </Component>
+    );
+  }
+);

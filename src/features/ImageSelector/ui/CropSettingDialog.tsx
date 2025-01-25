@@ -3,6 +3,9 @@
 import { AlertDialog } from "@/shared/ui/Dialog";
 import React, { useEffect, useRef, useState } from "react";
 import { FaceCoordinates, ImageMetadata, useImageSelectorStore } from "../models";
+import { Cropper, ReactCropperElement } from "react-cropper";
+
+import "cropperjs/dist/cropper.css";
 
 interface CropSettingDialogProps {
   selectedImageForReCrop?: ImageMetadata;
@@ -15,159 +18,49 @@ const CropSettingDialog: React.FC<CropSettingDialogProps> = ({
   isVisible,
   onChangeVisible,
 }) => {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-
-  const [isDraggingOver, setIsDraggingOver] = useState<boolean>(false);
+  const cropperRef = useRef<HTMLImageElement>(null);
+  const [cropper, setCropper] = useState<Cropper>();
 
   const { updateImage, handleUpdatePlayer } = useImageSelectorStore();
 
-  // 크롭 관련 상태
-  const [isMouseDown, setIsMouseDown] = useState<boolean>(false);
-  const [startX, setStartX] = useState<number>(0);
-  const [startY, setStartY] = useState<number>(0);
-
+  const [imageSrc, setImageSrc] = useState<string>("");
   const [imageMetadata, setImageMetaData] = useState(selectedImageForReCrop);
-  const [cropRect, setCropRect] = useState<FaceCoordinates>(imageMetadata?.faceCoordinates!);
 
-  const [originalWidth, setOriginalWidth] = useState<number>(0);
-  const [originalHeight, setOriginalHeight] = useState<number>(0);
+  const handleCrop = () => {
+    if (!cropperRef.current) return;
 
-  // 이미지를 캔버스에 그릴 때 적용한 스케일
-  const [scale, setScale] = useState<number>(1);
+    const cropper = (cropperRef.current as any).cropper;
+    cropper.getCroppedCanvas().toBlob((blob: Blob | null) => {
+      if (!blob) return;
 
-  // 300×300 내부에서, 이미지가 실제로 그려지는 위치
-  // (이미지 비율이 다를 경우, 여백이 생길 수 있으므로 offsetX/Y로 가운데 정렬)
-  const [offsetX, setOffsetX] = useState<number>(0);
-  const [offsetY, setOffsetY] = useState<number>(0);
+      const data = cropper.getData(true); // 실제 원본 사이즈 기반
+      const updatedCoords: FaceCoordinates = {
+        x: data.x,
+        y: data.y,
+        width: data.width,
+        height: data.height,
+      };
+
+      updateImage({
+        ...imageMetadata!,
+        faceCoordinates: updatedCoords,
+      });
+    }, "image/jpeg");
+  };
 
   useEffect(() => {
     if (selectedImageForReCrop) {
       setImageMetaData(selectedImageForReCrop);
-      setCropRect(selectedImageForReCrop.faceCoordinates);
+
+      const image = selectedImageForReCrop.file;
+      const objectUrl = URL.createObjectURL(image);
+      setImageSrc(objectUrl);
+
+      return () => {
+        URL.revokeObjectURL(objectUrl);
+      };
     }
   }, [isVisible, selectedImageForReCrop]);
-
-  useEffect(() => {
-    if (canvasRef.current == undefined || !imageMetadata) return;
-
-    const canvas = canvasRef.current;
-    const ctx = canvas.getContext("2d");
-    if (!ctx) return;
-
-    const img = new Image();
-    img.src = imageMetadata.url;
-
-    console.log(img, img.src, "sibal");
-
-    img.onload = () => {
-      // Canvas 크기를 이미지 크기에 맞춤 (샘플에서는 단순 적용)
-      canvas.width = 300;
-      canvas.height = 300;
-
-      // 2) 원본 이미지 크기
-      const w = img.width;
-      const h = img.height;
-
-      const s = Math.min(300 / w, 300 / h);
-
-      const displayWidth = w * s;
-      const displayHeight = h * s;
-
-      const offX = (300 - displayWidth) / 2;
-      const offY = (300 - displayHeight) / 2;
-
-      ctx.fillStyle = "#ffffff";
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-      ctx.drawImage(img, offX, offY, displayWidth, displayHeight);
-
-      if (cropRect.width && cropRect.height) {
-        const cX = offX + cropRect.x;
-        const cY = offY + cropRect.y;
-        const cW = cropRect.width;
-        const cH = cropRect.height;
-
-        ctx.strokeStyle = "red";
-        ctx.lineWidth = 2;
-        ctx.strokeRect(cX, cY, cW, cH);
-      }
-
-      // ▼ 계산된 정보 state 저장(나중에 원본 좌표 환산에 사용)
-      setOriginalWidth(w);
-      setOriginalHeight(h);
-      setScale(s);
-      setOffsetX(offX);
-      setOffsetY(offY);
-    };
-  }, [isVisible, imageMetadata, cropRect]);
-
-  const onMouseDown = (e: React.MouseEvent<HTMLCanvasElement, MouseEvent>) => {
-    if (!canvasRef.current) return;
-    setIsMouseDown(true);
-
-    // Canvas 내에서의 좌표 계산
-    const rect = canvasRef.current.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-
-    setStartX(x);
-    setStartY(y);
-  };
-
-  const onMouseMove = (e: React.MouseEvent<HTMLCanvasElement, MouseEvent>) => {
-    if (!isMouseDown || !canvasRef.current) return;
-
-    const rect = canvasRef.current.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-
-    // startX/Y ~ 현재 마우스 위치까지 사각형
-    setCropRect({
-      x: Math.min(startX, x),
-      y: Math.min(startY, y),
-      width: Math.abs(x - startX),
-      height: Math.abs(y - startY),
-    });
-  };
-
-  const onMouseUp = (e: React.MouseEvent<HTMLCanvasElement, MouseEvent>) => {
-    setIsMouseDown(false);
-  };
-
-  const handleSubmit = async () => {
-    // 현재 cropRect (캔버스 기준)
-    const { x, y, width, height } = cropRect;
-
-    if (width <= 0 || height <= 0) {
-      alert("크롭 영역이 없습니다.");
-      return;
-    }
-
-    // 원본 이미지에서의 좌표/크기 (스케일 역산)
-    const realX = (x - offsetX) / scale;
-    const realY = (y - offsetY) / scale;
-    const realW = width / scale;
-    const realH = height / scale;
-
-    // 만약 음수(=이미지 밖)를 잘못 선택했을 경우 보정
-    const safeX = Math.max(0, realX);
-    const safeY = Math.max(0, realY);
-    const safeW = Math.min(realW, originalWidth - safeX);
-    const safeH = Math.min(realH, originalHeight - safeY);
-
-    console.log("원본 기준 크롭 좌표:", safeX, safeY, safeW, safeH);
-
-    updateImage({
-      ...imageMetadata!,
-
-      faceCoordinates: {
-        x: safeX,
-        y: safeY,
-        width: safeW,
-        height: safeH,
-      },
-    });
-  };
 
   return (
     <>
@@ -188,22 +81,30 @@ const CropSettingDialog: React.FC<CropSettingDialogProps> = ({
             </div>
 
             <div>
-              {
-                <div>
-                  <h3>이미지: {imageMetadata?.file.name}</h3>
-                  <canvas
-                    ref={canvasRef}
-                    className="w-[300px] h-[300px]"
-                    style={{ border: "1px solid black" }}
-                    onMouseDown={onMouseDown}
-                    onMouseMove={onMouseMove}
-                    onMouseUp={onMouseUp}
-                  />
-                </div>
-              }
+              <div>
+                <Cropper
+                  ref={cropperRef}
+                  style={{ height: 300, width: "100%" }}
+                  // file을 바로 넣을 수 없으므로 objectURL을 src에 전달
+                  src={imageSrc}
+                  guides={true}
+                  center={true}
+                  responsive={true}
+                  autoCrop={true}
+                  autoCropArea={0.8}
+                  viewMode={1}
+                  onInitialized={(instance) => setCropper(instance)}
+                />
+              </div>
             </div>
           </AlertDialog.Body>
-          <AlertDialog.SubmitForm submitText="확인" cancelText="취소" onSubmit={handleSubmit} />
+          <AlertDialog.SubmitForm
+            submitText="확인"
+            cancelText="취소"
+            onSubmit={async () => {
+              handleCrop();
+            }}
+          />
         </AlertDialog>
       }
     </>

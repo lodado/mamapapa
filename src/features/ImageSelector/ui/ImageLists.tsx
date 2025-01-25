@@ -31,85 +31,82 @@ const ImageLists = () => {
               key={image.id}
               className="rounded-lg relative flex items-center justify-center cursor-pointer w-full h-[172px]"
             >
-              {isFaceDetected ? (
-                <>
-                  {isCropSettingDialogVisible && (
-                    <CropSettingDialog
-                      selectedImageForReCrop={image}
-                      isVisible={isCropSettingDialogVisible}
-                      onChangeVisible={setCropSettingDialogVisible}
-                    />
-                  )}
+              <>
+                <CropSettingDialog
+                  selectedImageForReCrop={image}
+                  isVisible={isCropSettingDialogVisible}
+                  onChangeVisible={setCropSettingDialogVisible}
+                />
 
-                  <Dropdown>
-                    <Dropdown.Trigger className="absolute top-1 left-1 w-[50%]">
-                      <span
-                        className={`truncate subhead-2 w-[80%] ${
-                          image.selectedPlayer ? "text-text-00" : "text-text-placeholder"
-                        }`}
-                      >
-                        {image.selectedPlayer ?? "미선택"}
-                      </span>
-                    </Dropdown.Trigger>
-                    <Dropdown.Content className="w-full">
-                      {Array.from(players.keys()).map((key: string) => {
-                        return (
-                          <Dropdown.Item key={key} onClick={() => handleUpdatePlayer(image, key)}>
-                            {key}
-                          </Dropdown.Item>
-                        );
-                      })}
-
-                      <Dropdown.Separator key={"sap"} />
-
-                      <Dropdown.Item key={"anew"}>
-                        <CrossHair /> 새로 추가하기
-                      </Dropdown.Item>
-                    </Dropdown.Content>
-                  </Dropdown>
-
-                  <Dropdown>
-                    <Dropdown.Trigger
-                      className="absolute flex justify-center items-center top-1 right-1 w-[28px] h-[28px]"
-                      doesArrowNeed={false}
+                <Dropdown>
+                  <Dropdown.Trigger className="absolute top-1 left-1 w-[50%]">
+                    <span
+                      className={`truncate subhead-2 w-[80%] ${
+                        image.selectedPlayer ? "text-text-00" : "text-text-placeholder"
+                      }`}
                     >
-                      <Ellipsis strokeWidth={2} size={15} />
-                    </Dropdown.Trigger>
-                    <Dropdown.Content className="w-full">
-                      <Dropdown.Item
-                        onClick={() => {
-                          setSelectedImageForReCrop(image);
-                          setCropSettingDialogVisible(true);
-                        }}
-                      >
-                        크롭 다시하기
-                      </Dropdown.Item>
-                      <Dropdown.Item
-                        onClick={() => {
-                          removeImage(image);
-                          addToast({
-                            title: "이미지 삭제",
-                            type: "success",
-                            description: "사진 삭제에 성공했습니다.",
-                          });
-                        }}
-                      >
-                        <Delete /> 삭제하기
-                      </Dropdown.Item>
-                    </Dropdown.Content>
-                  </Dropdown>
+                      {image.selectedPlayer ?? "미선택"}
+                    </span>
+                  </Dropdown.Trigger>
+                  <Dropdown.Content className="w-full">
+                    {Array.from(players.keys()).map((key: string) => {
+                      return (
+                        <Dropdown.Item key={key} onClick={() => handleUpdatePlayer(image, key)}>
+                          {key}
+                        </Dropdown.Item>
+                      );
+                    })}
 
+                    <Dropdown.Separator key={"sap"} />
+
+                    <Dropdown.Item key={"anew"}>
+                      <CrossHair /> 새로 추가하기
+                    </Dropdown.Item>
+                  </Dropdown.Content>
+                </Dropdown>
+                <Dropdown>
+                  <Dropdown.Trigger
+                    className="absolute flex justify-center items-center top-1 right-1 w-[28px] h-[28px]"
+                    doesArrowNeed={false}
+                  >
+                    <Ellipsis strokeWidth={2} size={15} />
+                  </Dropdown.Trigger>
+                  <Dropdown.Content className="w-full">
+                    <Dropdown.Item
+                      onClick={() => {
+                        setSelectedImageForReCrop(image);
+                        setCropSettingDialogVisible(true);
+                      }}
+                    >
+                      크롭 다시하기
+                    </Dropdown.Item>
+                    <Dropdown.Item
+                      onClick={() => {
+                        removeImage(image);
+                        addToast({
+                          title: "이미지 삭제",
+                          type: "success",
+                          description: "사진 삭제에 성공했습니다.",
+                        });
+                      }}
+                    >
+                      <Delete /> 삭제하기
+                    </Dropdown.Item>
+                  </Dropdown.Content>
+                </Dropdown>
+                {isFaceDetected ? (
                   <canvas
                     ref={(canvas) => {
                       if (canvas) drawImageOnCanvas(image.url, face, canvas, face.width, face.height);
                     }}
                     className={`rounded-lg max-w-full max-h-full w-[${face.width}px] h-[172px]`}
                   />
-                </>
-              ) : (
-                // 얼굴 좌표가 없을 경우 원본 이미지 렌더링
-                <div>얼굴 사진 못찾음</div>
-              )}
+                ) : (
+                  <div className={`flex items-center justify-center w-[${Math.min(face.width, 172)}px] h-[172px]`}>
+                    얼굴을 찾지 못함!
+                  </div>
+                )}
+              </>
             </div>
           );
         })}
