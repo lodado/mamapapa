@@ -9,7 +9,7 @@ import Delete from "/public/delete.svg";
 
 import { useToastStore } from "@/shared/ui/Toast/stores";
 import { Ellipsis } from "lucide-react";
-import { usePlayerStore } from "@/entities";
+import { AddNewPlayerDialog, usePlayerStore } from "@/entities";
 import CropSettingDialog from "./CropSettingDialog";
 
 const ImageLists = () => {
@@ -18,6 +18,8 @@ const ImageLists = () => {
   const { players } = usePlayerStore();
   const [isCropSettingDialogVisible, setCropSettingDialogVisible] = useState(false);
   const [selectedImageForReCrop, setSelectedImageForReCrop] = useState<ImageMetadata>();
+
+  const [isAddNewPlayerDialogVisible, setAddNewPlayerDialogVisible] = useState(false);
 
   return (
     <>
@@ -53,7 +55,12 @@ const ImageLists = () => {
 
                     <Dropdown.Separator key={"sap"} />
 
-                    <Dropdown.Item key={"anew"}>
+                    <Dropdown.Item
+                      onClick={() => {
+                        setAddNewPlayerDialogVisible(true);
+                      }}
+                      key={"addNewPlayerDialog"}
+                    >
                       <CrossHair /> 새로 추가하기
                     </Dropdown.Item>
                   </Dropdown.Content>
@@ -105,13 +112,14 @@ const ImageLists = () => {
           );
         })}
       </div>
-      {
-        <CropSettingDialog
-          selectedImageForReCrop={selectedImageForReCrop}
-          isVisible={isCropSettingDialogVisible}
-          onChangeVisible={setCropSettingDialogVisible}
-        />
-      }
+
+      <CropSettingDialog
+        selectedImageForReCrop={selectedImageForReCrop}
+        isVisible={isCropSettingDialogVisible}
+        onChangeVisible={setCropSettingDialogVisible}
+      />
+
+      <AddNewPlayerDialog isVisible={isAddNewPlayerDialogVisible} onChangeVisible={setAddNewPlayerDialogVisible} />
     </>
   );
 };

@@ -1,4 +1,4 @@
-import React, { PropsWithChildren, ReactNode, SyntheticEvent, use, useEffect, useState } from "react";
+import React, { ComponentProps, PropsWithChildren, ReactNode, SyntheticEvent, use, useEffect, useState } from "react";
 
 import { Button } from "../Button";
 
@@ -12,6 +12,8 @@ interface DialogSubmitFormProps extends Omit<SubmitFormProps, "children"> {
   children?: ReactNode;
   submitText: string;
   cancelText: string;
+
+  submitButtonProps?: ComponentProps<typeof Button>;
 }
 
 const SubmitForm = ({
@@ -19,6 +21,9 @@ const SubmitForm = ({
   className,
   submitText,
   cancelText,
+
+  submitButtonProps = {},
+
   onSubmit,
   onClose,
   onError,
@@ -51,7 +56,13 @@ const SubmitForm = ({
       >
         {cancelText}
       </Button>
-      <Button className="rounded-[12px] grow h-full" type="button" variant="primarySolid" onClick={handleDialogSubmit}>
+      <Button
+        className="rounded-[12px] grow h-full"
+        type="button"
+        variant="primarySolid"
+        {...submitButtonProps}
+        onClick={handleDialogSubmit}
+      >
         {submitText}
       </Button>
     </Dialog.SubmitForm>
