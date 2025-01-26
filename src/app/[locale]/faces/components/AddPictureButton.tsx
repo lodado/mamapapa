@@ -123,7 +123,7 @@ const AddPictureButton = () => {
 
   return (
     <>
-      <Button variant="line" onClick={handleClick} disabled={!faceCropModel}>
+      <Button variant="line" onClick={handleClick} className="rounded" disabled={!faceCropModel}>
         <CrossHair />
         사진 추가하기
       </Button>
