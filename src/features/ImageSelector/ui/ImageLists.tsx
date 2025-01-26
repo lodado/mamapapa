@@ -32,12 +32,6 @@ const ImageLists = () => {
               className="rounded-lg relative flex items-center justify-center cursor-pointer w-full h-[172px]"
             >
               <>
-                <CropSettingDialog
-                  selectedImageForReCrop={image}
-                  isVisible={isCropSettingDialogVisible}
-                  onChangeVisible={setCropSettingDialogVisible}
-                />
-
                 <Dropdown>
                   <Dropdown.Trigger className="absolute top-1 left-1 w-[50%]">
                     <span
@@ -66,10 +60,10 @@ const ImageLists = () => {
                 </Dropdown>
                 <Dropdown>
                   <Dropdown.Trigger
-                    className="absolute flex justify-center items-center top-1 right-1 w-[28px] h-[28px]"
+                    className="absolute flex justify-center items-center p-0 top-1 right-1 w-[28px] h-[28px]"
                     doesArrowNeed={false}
                   >
-                    <Ellipsis strokeWidth={2} size={15} />
+                    <Ellipsis strokeWidth={2} size={12} />
                   </Dropdown.Trigger>
                   <Dropdown.Content className="w-full">
                     <Dropdown.Item

@@ -17,9 +17,15 @@ import React, {
 import { Close, Content, Overlay, Portal, Root, Trigger } from "./radix";
 import { cn, contextBuildHelper, noop } from "@/shared";
 import { Motion } from "../../animation/animation";
+import { useDrop } from "react-dnd";
+import { RESIZE_DRAG_TYPE } from "./Resize";
+import { useDialogResizer } from "../hooks/useDialogResizer";
 
 const [DialogProvider, useDialogContext] = contextBuildHelper<{
   isDialogVisible: boolean;
+  height: number;
+  setHeight: (heightPercent: number) => void;
+
   onChangeVisibleStatus: (newVisibleStatus: boolean) => void;
 }>({ id: "dialog" });
 
@@ -43,9 +49,15 @@ const DialogRoot = ({ children }: { children: ReactNode }) => {
   );
 };
 
-const DialogTrigger = ({ children, ...rest }: ComponentProps<typeof Trigger>) => {
-  return <Trigger {...rest}>{children}</Trigger>;
-};
+const DialogTrigger = React.forwardRef<HTMLButtonElement, ComponentProps<typeof Trigger>>(
+  ({ children, ...rest }, ref) => {
+    return (
+      <Trigger {...rest} ref={ref}>
+        {children}
+      </Trigger>
+    );
+  }
+);
 
 const DialogContent = ({
   children,
@@ -56,15 +68,18 @@ const DialogContent = ({
   children: ReactNode;
   style?: CSSProperties;
 }) => {
+  const { height: heightPercent } = useDialogContext();
+  const { dropRef } = useDialogResizer();
+
   return (
     <Portal>
-      <Overlay className="fixed top-0 left-0 right-0 bottom-0 bg-blank z-dialog" />
+      <Overlay ref={dropRef as any} className="fixed top-0 left-0 right-0 bottom-0 bg-blank z-dialog" />
 
       <Motion
         className="fixed bottom-0 left-0 w-screen flex flex-col items-center right-0 z-dialog"
         componentType="div"
         initial={{ y: "100%", opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
+        animate={{ y: `${heightPercent}px`, opacity: 1 }}
         exit={{ y: "100%", opacity: 0 }}
         transition={{
           type: "spring",
@@ -74,7 +89,11 @@ const DialogContent = ({
         style={{ ...style }}
       >
         <Content
-          style={style}
+          style={{
+            ...style,
+
+            overflow: "hidden",
+          }}
           className={cn(
             "flex flex-col relative", // 위치 참조
             "w-screen md:w-[768px]",
@@ -178,6 +197,7 @@ export interface DialogProps {
 
 export const Dialog = ({ isVisible = undefined, onChangeVisible, children }: DialogProps) => {
   const [open, setOpen] = useState(false);
+  const [height, setHeight] = useState(0);
 
   const isDialogVisible = isVisible ?? open;
   const handleChangeVisibleStatus = (newVisibleStatus: boolean) => {
@@ -191,7 +211,12 @@ export const Dialog = ({ isVisible = undefined, onChangeVisible, children }: Dia
   };
 
   return (
-    <DialogProvider isDialogVisible={isDialogVisible} onChangeVisibleStatus={handleChangeVisibleStatus}>
+    <DialogProvider
+      height={height}
+      setHeight={setHeight}
+      isDialogVisible={isDialogVisible}
+      onChangeVisibleStatus={handleChangeVisibleStatus}
+    >
       {children}
     </DialogProvider>
   );

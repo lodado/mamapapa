@@ -1,4 +1,4 @@
-import React, { PropsWithChildren, ReactNode, SyntheticEvent, use, useEffect } from "react";
+import React, { PropsWithChildren, ReactNode, SyntheticEvent, use, useEffect, useState } from "react";
 
 import { Button } from "../Button";
 
@@ -6,6 +6,7 @@ import { Dialog, SubmitFormProps, useDialogContext } from "./components/compound
 import { Description, Title } from "./components/radix";
 import { DialogTemplate, DialogTemplateProps } from "./DialogTemplate";
 import { cn } from "@/shared";
+import { ResizerHandle } from "./components/Resize";
 
 interface DialogSubmitFormProps extends Omit<SubmitFormProps, "children"> {
   children?: ReactNode;
@@ -59,8 +60,8 @@ const SubmitForm = ({
 
 const DialogHeader = ({ children, className }: { children?: ReactNode; className?: string }) => {
   return (
-    <Title className={cn("headline flex flex-col w-full pt-2 items-center gap-2")}>
-      <div role="none presentation" className="w-[3rem] h-1 rounded-[100px] bg-border-borderOpaque  " />
+    <Title className={cn("headline flex flex-col w-full  items-center gap-2")}>
+      <ResizerHandle />
 
       <div
         className={cn(
