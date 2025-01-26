@@ -1,6 +1,7 @@
-import "./globals.scss";
 import "../shared/libs/Figma/index.scss";
- 
+
+import "./globals.scss";
+
 import { PropsWithChildren } from "react";
 import { i18nOption } from "@/shared";
 
