@@ -90,7 +90,7 @@ const CropSettingDialog: React.FC<CropSettingDialogProps> = ({
                 <Dropdown.Trigger className="flex justify-between px-[0.625rem] items-center">
                   {imageMetadata?.selectedPlayer ?? "사람을 선택해주세요."}
                 </Dropdown.Trigger>
-                <Dropdown.Content className="w-screen md:w-[calc(768px-5rem)] z-[1000000]">
+                <Dropdown.Content className="w-screen md:w-[calc(768px-5rem)]  ">
                   {Array.from(players.keys()).map((key: string) => {
                     return (
                       <Dropdown.Item
