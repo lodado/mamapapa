@@ -2,7 +2,7 @@
 
 import { PropsWithChildren } from "react";
 
-import { ReactQueryProvider, RtlProvider, ThemeProvider } from "@/shared";
+import { ReactDndProvider, ReactQueryProvider, RtlProvider, ThemeProvider } from "@/shared";
 
 import { NextAuthSessionResponse } from "@/entities/Auth/server/type";
 import ToastProvider from "@/shared/ui/Toast/ui/ToastProvider";
@@ -14,11 +14,13 @@ const ClientProvider = ({
   session: NextAuthSessionResponse | undefined;
 }) => {
   return (
-    <ReactQueryProvider>
-      <ToastProvider>{children}</ToastProvider>
+    <ReactDndProvider>
+      <ReactQueryProvider>
+        <ToastProvider>{children}</ToastProvider>
 
-      <RtlProvider />
-    </ReactQueryProvider>
+        <RtlProvider />
+      </ReactQueryProvider>
+    </ReactDndProvider>
   );
 };
 
