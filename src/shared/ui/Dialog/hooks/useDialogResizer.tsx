@@ -25,6 +25,7 @@ export const useDialogResizer = () => {
 
       end: () => {
         heightRef.current = 0;
+        setHeight(0);
       },
     }),
     []
