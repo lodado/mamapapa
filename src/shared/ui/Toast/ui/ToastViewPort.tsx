@@ -10,6 +10,7 @@ const ToastViewPort = ({ className }: { className?: string }) => {
     transform -translate-x-1/2 
     flex flex-col items-center
     w-[calc(100%-3rem)] max-w-[29rem] 
+    gap-2
     z-50
   `,
         className
