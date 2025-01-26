@@ -14,6 +14,8 @@ interface DialogSubmitFormProps extends Omit<SubmitFormProps, "children"> {
   cancelText: string;
 
   submitButtonProps?: ComponentProps<typeof Button>;
+
+  cancelButtonProps?: ComponentProps<typeof Button>;
 }
 
 const SubmitForm = ({
@@ -23,6 +25,7 @@ const SubmitForm = ({
   cancelText,
 
   submitButtonProps = {},
+  cancelButtonProps = {},
 
   onSubmit,
   onClose,
@@ -49,15 +52,16 @@ const SubmitForm = ({
     >
       {children}
       <Button
-        className="rounded-[12px] grow h-full"
-        onClick={() => onChangeVisibleStatus(false)}
+        className="grow h-full"
         type="button"
         variant="line"
+        {...cancelButtonProps}
+        onClick={() => onChangeVisibleStatus(false)}
       >
         {cancelText}
       </Button>
       <Button
-        className="rounded-[12px] grow h-full"
+        className="grow h-full"
         type="button"
         variant="primarySolid"
         {...submitButtonProps}
