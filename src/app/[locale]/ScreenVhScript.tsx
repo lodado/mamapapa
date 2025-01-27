@@ -1,5 +1,23 @@
 import Script from "next/script";
 
+let prevVisualViewport = 0;
+
+function handleVisualViewportResize() {
+  const currentVisualViewport = window!.visualViewport!.height;
+
+  if (prevVisualViewport - 30 > currentVisualViewport && prevVisualViewport - 100 < currentVisualViewport) {
+    const scrollHeight = window!.document!.scrollingElement!.scrollHeight;
+    const scrollTop = scrollHeight - window.visualViewport!.height;
+
+    window.scrollTo(0, scrollTop); // 입력창이 키보드에 가려지지 않도록 조절
+  }
+
+  prevVisualViewport = window.visualViewport!.height;
+
+  window.visualViewport!.onresize = handleVisualViewportResize;
+}
+ 
+
 function code() {
   // Safe area insets
   const safeAreaTop = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--safe-area-top")) || 0;
@@ -12,6 +30,8 @@ function code() {
   document.documentElement.style.setProperty("--vh", adjustedVh + "px");
 
   window.addEventListener("resize", code);
+
+  handleVisualViewportResize();
 }
 
 const ScreenVhScript = ({ nonce }: { nonce: string }) => {
