@@ -7,6 +7,7 @@ import { Description, Title } from "./components/radix";
 import { DialogTemplate, DialogTemplateProps } from "./DialogTemplate";
 import { cn } from "@/shared";
 import { ResizerHandle } from "./components/Resize";
+import { useDialogResizer } from "./hooks/useDialogResizer";
 
 interface DialogSubmitFormProps extends Omit<SubmitFormProps, "children"> {
   children?: ReactNode;
@@ -74,8 +75,10 @@ const SubmitForm = ({
 };
 
 const DialogHeader = ({ children, className }: { children?: ReactNode; className?: string }) => {
+   
+
   return (
-    <Title className={cn("headline flex flex-col w-full  items-center gap-2")}>
+    <Title tabIndex={1} className={cn("headline flex flex-col w-full  items-center gap-2")}>
       <ResizerHandle />
 
       <div

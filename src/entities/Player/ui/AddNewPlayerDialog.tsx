@@ -18,7 +18,7 @@ const AddNewPlayerDialog = ({
   }, [isVisible]);
 
   return (
-    <AlertDialog className="h-[calc(30*var(--vh))]" isVisible={isVisible} onChangeVisible={onChangeVisible}>
+    <AlertDialog className="h-[calc(40*var(--vh))]" isVisible={isVisible} onChangeVisible={onChangeVisible}>
       <AlertDialog.Header className="flex flex-col gap-[1.1rem]">
         <h1>분류 항목 추가하기</h1>
         <div className="w-screen h-[1.9px] bg-border-borderOpaque"></div>

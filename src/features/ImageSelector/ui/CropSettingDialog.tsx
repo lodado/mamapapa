@@ -107,10 +107,10 @@ const CropSettingDialog: React.FC<CropSettingDialogProps> = ({
               </Dropdown>
             </div>
 
-            <div className="w-full flex items-center justify-center px-4">
+            <div className="flex items-center justify-center px-4 ">
               <Cropper
                 ref={cropperRef}
-                className="h-[300px] w-full px-[0.625rem]"
+                className="w-screen h-[300px]"
                 // file을 바로 넣을 수 없으므로 objectURL을 src에 전달
                 src={imageSrc}
                 guides={true}
