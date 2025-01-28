@@ -8,6 +8,11 @@ import { useLoadingStore } from "@/shared/ui/LoadingSpinner";
 import { USER_PLAYER_NAME } from "@/entities";
 import Image from "next/image";
 
+import Simliarity0 from "/public/similarity0.svg";
+import Simliarity20 from "/public/similarity20.svg";
+import Simliarity50 from "/public/similarity50.svg";
+import Simliarity80 from "/public/similarity80.svg";
+
 const ImagePrediction = () => {
   const { faceRecognitionModel } = useFaceModelStore();
   const { images, generateEmbeddings } = useImageSelectorStore();
@@ -23,10 +28,11 @@ const ImagePrediction = () => {
     handleGenerateEmbeddings();
   }, [images.map((element) => element.selectedPlayer ?? "-").join("/")]);
 
-  if (isLoading) return <div className="spinner">Loading...</div>;
+  if (isLoading) return <div className="spinner"></div>;
 
   const playerImage = images.find((image) => image.selectedPlayer === USER_PLAYER_NAME)!;
   const comparisons = images
+    .filter((image) => image.selectedPlayer)
     .filter((image) => image.id !== playerImage?.id && image.embedding)
     .map((image) => ({
       ...image,
@@ -38,7 +44,7 @@ const ImagePrediction = () => {
   return (
     <div className="w-full flex flex-col items-center p-4">
       {comparisons.map((comparison) => {
-        const isHighSimilarity = comparison.similarity >= 50;
+        const simliarity = comparison.similarity;
 
         return (
           <section
@@ -46,9 +52,21 @@ const ImagePrediction = () => {
             className="headline text-text-01 w-full flex-col max-w-md p-4 rounded-lg flex items-center space-x-4"
           >
             <div className="w-full flex flex-col items-center mb-[0.625rem]">
-              <p>
-                [{playerImage.selectedPlayer}]와 [{comparison.selectedPlayer}]는{" "}
-                <span className="underline">{comparison.similarity}%</span>
+              <p className="flex flex-row items-center gap-1">
+                {simliarity < 20 && <Simliarity0 />}
+                {simliarity >= 20 && simliarity < 50 && <Simliarity20 />}
+                {simliarity >= 50 && simliarity < 70 && <Simliarity50 />}
+                {simliarity >= 70 && <Simliarity80 />}[{playerImage.selectedPlayer}]와 [{comparison.selectedPlayer}]는{" "}
+                <span
+                  className={`underline
+                  ${simliarity < 20 ? "text-text-03" : ""}
+                  ${simliarity >= 20 && simliarity < 50 ? "text-text-error" : ""}
+                  ${simliarity >= 50 && simliarity < 70 ? "text-text-02" : ""}
+                  ${simliarity >= 70 ? "text-text-primary" : ""}
+                  `}
+                >
+                  {comparison.similarity}%
+                </span>
               </p>
 
               <p>닮았습니다.</p>

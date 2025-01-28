@@ -11,6 +11,6 @@ export function cosineSimilarity(a: Float32Array, b: Float32Array): number {
 }
 
 export function cosineToPercentage(cosine: number): number {
-  return Math.min(100, Math.round(((cosine + 1) / 2) * 100 * 100) / 100 + 10);
+  return Number(Math.min(100, ((cosine + 1) / 2) * 100 + 10).toFixed(2));
 }
 
