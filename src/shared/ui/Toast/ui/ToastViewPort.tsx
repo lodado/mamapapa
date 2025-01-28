@@ -1,3 +1,5 @@
+"use client";
+
 import { cn } from "@/shared";
 import { Viewport } from "@radix-ui/react-toast";
 

@@ -1,17 +1,15 @@
 import { ReactiveLayout } from "@/shared/ui/ReactiveLayout";
-import React, { PropsWithChildren } from "react";
+import React from "react";
 
 import { ModelDownloader } from "@/features";
 
-import { ButtonLink } from "@/entities/Router";
-
 import { ImageContainer } from "@/features/ImageSelector";
-import { AnimatePresence } from "motion/react";
 
 import FacePageHeader from "./components/FacePageHeader";
 import AddPictureButton from "./components/AddPictureButton";
 import { ToastViewPort } from "@/shared/ui/Toast";
 import { PAGE_ROUTE } from "@/entities/Router/configs/route";
+import CompareButtonLink from "./components/CompareButtonLink";
 
 const Page = () => {
   return (
@@ -39,9 +37,7 @@ const Page = () => {
             pb-[calc(1.5rem+var(--safe-area-bottom))]
         `}
         >
-          <ButtonLink wrapperClassName="w-full max-w-[29rem]" variant="primarySolid" href={PAGE_ROUTE.RESULT}>
-            비교하기
-          </ButtonLink>
+          <CompareButtonLink />
         </nav>
       </ReactiveLayout>
 
@@ -51,3 +47,4 @@ const Page = () => {
 };
 
 export default Page;
+ 

@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import * as Toast from "@radix-ui/react-toast";
 import { useToastStore } from "../stores/toastStore";
 import { AnimatePresence } from "motion/react";
@@ -10,10 +10,13 @@ import { toastDescriptionVariants, toastHeadVariants, toastVariants } from "./st
 
 import Error from "/public/Error.svg";
 import Success from "/public/Success.svg";
+import { usePathname } from "next/navigation";
 
 export default function ToastProvider({ children }: { children: React.ReactNode }) {
   // Zustand에서 메시지 목록, 제거 함수를 가져옴
-  const { messages, removeToast } = useToastStore();
+  const { messages, clearToast, removeToast } = useToastStore();
+  const pathname = usePathname();
+  const [mount, setMount] = useState(pathname);
 
   // onOpenChange 시점에 메시지를 제거하는 핸들러
   const handleOpenChange = (id: string | number) => (open: boolean) => {
@@ -22,17 +25,23 @@ export default function ToastProvider({ children }: { children: React.ReactNode 
     }
   };
 
+  useEffect(() => {
+    clearToast();
+    setMount(pathname);
+  }, [pathname]);
+
   return (
-    <Toast.Provider swipeDirection="down">
+    <Toast.Provider duration={6000} swipeDirection="down">
       {children}
 
-      <AnimatePresence>
+      {/* toast와 animation 간에 이상한 버그가 있어서 key로 명시적으로 rerendering 
+      시켜줌*/}
+      <AnimatePresence key={pathname + mount}>
         {messages.map((msg) => (
           <Toast.Root
             key={msg.id}
             open
             onOpenChange={handleOpenChange(msg.id)}
-            duration={6000} // 3초 후 자동 닫힘
             // Tailwind 스타일
 
             // 클릭 시 즉시 제거

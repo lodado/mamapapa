@@ -24,7 +24,7 @@ const ButtonLink = (
     navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate;
 
     if (navigator.vibrate) {
-      navigator.vibrate([200, 100, 200]);
+      navigator.vibrate([200]);
     }
   };
 
