@@ -67,7 +67,7 @@ export const useImageSelectorStore = create<ImageSelectorState>((set, get) => ({
     // 이미지를 순회하며 임베딩 계산
     const updatedImages = await Promise.all(
       images.map(async (image) => {
-        const embedding = await generateEmbeddingForImage(image.file, model);
+        const embedding = await generateEmbeddingForImage(image.file, model, image.faceCoordinates);
 
         return { ...image, embedding };
       })
@@ -78,7 +78,11 @@ export const useImageSelectorStore = create<ImageSelectorState>((set, get) => ({
   },
 }));
 
-async function generateEmbeddingForImage(file: File, model: tf.LayersModel): Promise<Float32Array | null> {
+async function generateEmbeddingForImage(
+  file: File,
+  model: tf.LayersModel,
+  faceCoordinates: FaceCoordinates
+): Promise<Float32Array | null> {
   const img = new Image();
 
   // File 객체를 읽어서 이미지로 로드
@@ -93,16 +97,37 @@ async function generateEmbeddingForImage(file: File, model: tf.LayersModel): Pro
 
   // 캔버스를 이용해 이미지 데이터를 Tensor로 변환
   const canvas = document.createElement("canvas");
-  canvas.width = 112; // 모델 입력 크기
-  canvas.height = 112;
   const ctx = canvas.getContext("2d");
   if (!ctx) return null;
 
-  // 이미지를 112x112로 리사이즈하여 캔버스에 그리기
-  ctx.drawImage(img, 0, 0, 112, 112);
-  const faceTensor = tf.browser.fromPixels(canvas).toFloat().div(255).expandDims(0); // [0,1] 정규화
+  // 원본 이미지를 기준으로 faceCoordinates 영역을 캔버스에 크롭
+  canvas.width = faceCoordinates.width;
+  canvas.height = faceCoordinates.height;
+  ctx.drawImage(
+    img,
+    faceCoordinates.x, // 시작 x 좌표
+    faceCoordinates.y, // 시작 y 좌표
+    faceCoordinates.width, // 크롭할 너비
+    faceCoordinates.height, // 크롭할 높이
+    0, // 캔버스에서의 x 시작 위치
+    0, // 캔버스에서의 y 시작 위치
+    faceCoordinates.width, // 크롭한 이미지를 캔버스 너비로 리사이즈
+    faceCoordinates.height // 크롭한 이미지를 캔버스 높이로 리사이즈
+  );
 
-  // GhostNet 모델로 임베딩 생성
+  // 크롭한 이미지를 112x112로 리사이즈하여 모델 입력 크기에 맞춤
+  const resizedCanvas = document.createElement("canvas");
+  resizedCanvas.width = 112; // 모델 입력 크기
+  resizedCanvas.height = 112;
+  const resizedCtx = resizedCanvas.getContext("2d");
+  if (!resizedCtx) return null;
+
+  resizedCtx.drawImage(canvas, 0, 0, 112, 112);
+
+  // [0,1] 정규화를 위한 Tensor 변환
+  const faceTensor = tf.browser.fromPixels(resizedCanvas).toFloat().div(255).expandDims(0);
+
+  // 모델을 사용해 임베딩 생성
   const prediction = model.predict(faceTensor) as tf.Tensor;
   const embedding = prediction.dataSync() as Float32Array;
 
