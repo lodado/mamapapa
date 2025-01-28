@@ -9,9 +9,6 @@ import Head from "next/head";
 import { GlobalDialogContainer } from "@/widgets";
 import ScreenVhScript from "./ScreenVhScript";
 
-import { Inter } from "next/font/google";
-
-
 /** TODO - GA 설치 */
 // import { GA } from "@/shared/lib/GA";
 // import GlobalAdapterServer from '@/shared/ui/GlobalAdapter/GlobalAdapter.server'

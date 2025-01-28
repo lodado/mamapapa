@@ -1,5 +1,5 @@
 export const PAGE_ROUTE = {
-  MAIN: "/main",
+  MAIN: "/",
   FACES: "/faces",
   RESULT: "/result",
 };

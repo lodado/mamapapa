@@ -8,6 +8,7 @@ import { Cropper, ReactCropperElement } from "react-cropper";
 import "cropperjs/dist/cropper.css";
 import { Button, Dropdown } from "@/shared/ui";
 import { usePlayerStore } from "@/entities";
+import { removeExifData } from "../utils/image";
 
 interface CropSettingDialogProps {
   selectedImageForReCrop?: ImageMetadata;
@@ -56,11 +57,16 @@ const CropSettingDialog: React.FC<CropSettingDialogProps> = ({
       setImageMetaData(selectedImageForReCrop);
 
       const image = selectedImageForReCrop.file;
-      const objectUrl = URL.createObjectURL(image);
-      setImageSrc(objectUrl);
+
+      let urlObjectUrl = URL.createObjectURL(image);
+
+      removeExifData(image).then((objectUrl) => {
+        urlObjectUrl = URL.createObjectURL(image);
+        setImageSrc(objectUrl); // EXIF 제거된 이미지 URL 설정
+      });
 
       return () => {
-        URL.revokeObjectURL(objectUrl);
+        if (urlObjectUrl) URL.revokeObjectURL(urlObjectUrl);
       };
     }
   }, [isVisible, selectedImageForReCrop]);
@@ -119,7 +125,11 @@ const CropSettingDialog: React.FC<CropSettingDialogProps> = ({
                 autoCrop={true}
                 autoCropArea={0.8}
                 viewMode={1}
-                onInitialized={(instance) => setCropper(instance)}
+                checkOrientation={true} // Exif 정보에 따라 자동으로 회전
+                onInitialized={(instance) => {
+                  setCropper(instance);
+                  instance.setData({ scaleX: 1 });
+                }}
               />
             </div>
           </AlertDialog.Body>
