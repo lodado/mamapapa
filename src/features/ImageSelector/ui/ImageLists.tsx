@@ -9,12 +9,14 @@ import Delete from "/public/delete.svg";
 
 import { useToastStore } from "@/shared/ui/Toast/stores";
 import { Ellipsis } from "lucide-react";
-import { AddNewPlayerDialog, usePlayerStore } from "@/entities";
+import { usePlayerStore } from "@/entities";
 import CropSettingDialog from "./CropSettingDialog";
+import AddNewPlayerDialog from "./AddNewPlayerDialog";
 
 const ImageLists = () => {
   const { images, removeImage, handleUpdatePlayer } = useImageSelectorStore();
   const { addToast } = useToastStore();
+
   const { players } = usePlayerStore();
   const [isCropSettingDialogVisible, setCropSettingDialogVisible] = useState(false);
   const [selectedImageForReCrop, setSelectedImageForReCrop] = useState<ImageMetadata>();
@@ -58,15 +60,17 @@ const ImageLists = () => {
 
                     <Dropdown.Separator key={"sap"} />
 
-                    <Dropdown.Item
-                      onClick={() => {
-                        setAddNewPlayerDialogVisible(true);
-                        setSelectedImageForPlayer(image);
-                      }}
-                      key={"addNewPlayerDialog"}
-                    >
-                      <CrossHair /> 새로 추가하기
-                    </Dropdown.Item>
+                    {players.size < 15 && (
+                      <Dropdown.Item
+                        onClick={() => {
+                          setAddNewPlayerDialogVisible(true);
+                          setSelectedImageForPlayer(image);
+                        }}
+                        key={"addNewPlayerDialog"}
+                      >
+                        <CrossHair /> 새로 추가하기
+                      </Dropdown.Item>
+                    )}
                   </Dropdown.Content>
                 </Dropdown>
                 <Dropdown>
