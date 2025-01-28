@@ -9,3 +9,8 @@ export function cosineSimilarity(a: Float32Array, b: Float32Array): number {
   }
   return dot / (Math.sqrt(normA) * Math.sqrt(normB));
 }
+
+export function cosineToPercentage(cosine: number): number {
+  return Math.round(((cosine + 1) / 2) * 100 * 100) / 100;
+}
+
