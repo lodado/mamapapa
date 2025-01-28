@@ -1,17 +1,13 @@
 import { ReactiveLayout } from "@/shared/ui/ReactiveLayout";
 import React, { PropsWithChildren } from "react";
-
-import { ModelDownloader } from "@/features";
-
+ 
 import { ButtonLink } from "@/entities/Router";
 
-import { ImageContainer } from "@/features/ImageSelector";
-import { AnimatePresence } from "motion/react";
-
 import FacePageHeader from "./components/FacePageHeader";
-import AddPictureButton from "./components/AddPictureButton";
+
 import { ToastViewPort } from "@/shared/ui/Toast";
 import { PAGE_ROUTE } from "@/entities/Router/configs/route";
+import ImagePrediction from "./components/ImagePrediction";
 
 const Page = ({ children }: PropsWithChildren) => {
   return (
@@ -22,6 +18,7 @@ const Page = ({ children }: PropsWithChildren) => {
 
         <main className="flex flex-col items-center w-full justify-center flex-grow ">
           <div className="flex-grow flex flex-col items-center w-full p-4">
+            <ImagePrediction />
             <ToastViewPort key="viewPort" className="bottom-[6.25rem]" />
           </div>
 
