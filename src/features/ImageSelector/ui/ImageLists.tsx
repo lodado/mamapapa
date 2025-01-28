@@ -32,7 +32,7 @@ const ImageLists = () => {
           return (
             <div
               key={image.id}
-              className="rounded-lg relative flex items-center justify-center cursor-pointer w-full h-[172px]"
+              className="rounded-lg relative flex items-center justify-center cursor-pointer w-full before:content-[''] before:block before:pb-[100%]"
             >
               <>
                 <Dropdown>
@@ -104,10 +104,15 @@ const ImageLists = () => {
                     ref={(canvas) => {
                       if (canvas) drawImageOnCanvas(image.url, face, canvas, face.width, face.height);
                     }}
-                    className={`rounded-lg max-w-full max-h-full w-[${face.width}px] h-[172px]`}
+                    className={`rounded-lg max-w-full max-h-full w-[${face.width}px] before:content-[''] before:block before:pb-[100%]`}
                   />
                 ) : (
-                  <div className={`flex items-center justify-center w-[${Math.min(face.width, 172)}px] h-[172px]`}>
+                  <div
+                    className={`flex items-center justify-center w-[${Math.min(
+                      face.width,
+                      172
+                    )}px] before:content-[''] before:block before:pb-[100%]`}
+                  >
                     얼굴을 찾지 못함!
                   </div>
                 )}
