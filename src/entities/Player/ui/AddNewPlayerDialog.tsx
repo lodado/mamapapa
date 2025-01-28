@@ -2,16 +2,21 @@ import { Input } from "@/shared/ui";
 import { AlertDialog } from "@/shared/ui/Dialog";
 import React, { useEffect, useState } from "react";
 import { usePlayerStore } from "../models";
+import { ImageMetadata, useImageSelectorStore } from "@/features/ImageSelector/models";
 
 const AddNewPlayerDialog = ({
   isVisible,
   onChangeVisible,
+  selectedImageForPlayer,
 }: {
   isVisible: boolean;
   onChangeVisible: (newVisibleStatus: boolean) => void;
+
+  selectedImageForPlayer: ImageMetadata;
 }) => {
   const [inputValue, setInputValue] = useState("");
   const { addPlayer } = usePlayerStore();
+  const { handleUpdatePlayer } = useImageSelectorStore();
 
   useEffect(() => {
     setInputValue("");
@@ -39,6 +44,7 @@ const AddNewPlayerDialog = ({
         cancelText="취소"
         onSubmit={async () => {
           addPlayer(inputValue, { id: inputValue, name: inputValue });
+          handleUpdatePlayer(selectedImageForPlayer!, inputValue);
         }}
       />
     </AlertDialog>

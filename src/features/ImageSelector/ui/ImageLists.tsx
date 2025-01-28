@@ -20,6 +20,7 @@ const ImageLists = () => {
   const [selectedImageForReCrop, setSelectedImageForReCrop] = useState<ImageMetadata>();
 
   const [isAddNewPlayerDialogVisible, setAddNewPlayerDialogVisible] = useState(false);
+  const [selectedImageForPlayer, setSelectedImageForPlayer] = useState<ImageMetadata>();
 
   return (
     <>
@@ -47,9 +48,11 @@ const ImageLists = () => {
                   <Dropdown.Content className="w-full">
                     {Array.from(players.keys()).map((key: string) => {
                       return (
-                        <Dropdown.Item key={key} onClick={() => handleUpdatePlayer(image, key)}>
-                          {key}
-                        </Dropdown.Item>
+                        <>
+                          <Dropdown.Item key={key} onClick={() => handleUpdatePlayer(image, key)}>
+                            {key}
+                          </Dropdown.Item>
+                        </>
                       );
                     })}
 
@@ -58,6 +61,7 @@ const ImageLists = () => {
                     <Dropdown.Item
                       onClick={() => {
                         setAddNewPlayerDialogVisible(true);
+                        setSelectedImageForPlayer(image);
                       }}
                       key={"addNewPlayerDialog"}
                     >
@@ -119,7 +123,11 @@ const ImageLists = () => {
         onChangeVisible={setCropSettingDialogVisible}
       />
 
-      <AddNewPlayerDialog isVisible={isAddNewPlayerDialogVisible} onChangeVisible={setAddNewPlayerDialogVisible} />
+      <AddNewPlayerDialog
+        selectedImageForPlayer={selectedImageForPlayer!}
+        isVisible={isAddNewPlayerDialogVisible}
+        onChangeVisible={setAddNewPlayerDialogVisible}
+      />
     </>
   );
 };
