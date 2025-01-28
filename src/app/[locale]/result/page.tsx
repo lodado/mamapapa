@@ -9,7 +9,7 @@ import { ToastViewPort } from "@/shared/ui/Toast";
 import { PAGE_ROUTE } from "@/entities/Router/configs/route";
 import ImagePrediction from "./components/ImagePrediction";
 
-const Page = ({ children }: PropsWithChildren) => {
+const Page = () => {
   return (
     <>
       <ReactiveLayout>
@@ -19,7 +19,6 @@ const Page = ({ children }: PropsWithChildren) => {
         <main className="flex flex-col items-center w-full justify-center flex-grow ">
           <div className="flex-grow flex flex-col items-center w-full p-4">
             <ImagePrediction />
-            <ToastViewPort key="viewPort" className="bottom-[6.25rem]" />
           </div>
 
           <div role="none presentation" className="h-[200px]"></div>
@@ -34,6 +33,8 @@ const Page = ({ children }: PropsWithChildren) => {
           </ButtonLink>
         </nav>
       </ReactiveLayout>
+
+      <ToastViewPort key="viewPort" className="bottom-[6.25rem]" />
     </>
   );
 };
