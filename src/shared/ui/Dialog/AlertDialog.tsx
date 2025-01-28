@@ -117,9 +117,22 @@ export const AlertDescription = ({ className, children }: PropsWithChildren & { 
   return <Description className={`${className}`}>{children}</Description>;
 };
 
-export const AlertDialog = ({ Trigger, isVisible, onChangeVisible, children, className }: AlertDialogProps) => {
+export const AlertDialog = ({
+  swipePercent,
+  Trigger,
+  isVisible,
+  onChangeVisible,
+  children,
+  className,
+}: AlertDialogProps) => {
   return (
-    <DialogTemplate className={className} isVisible={isVisible} onChangeVisible={onChangeVisible} Trigger={Trigger}>
+    <DialogTemplate
+      swipePercent={swipePercent}
+      className={className}
+      isVisible={isVisible}
+      onChangeVisible={onChangeVisible}
+      Trigger={Trigger}
+    >
       {children}
     </DialogTemplate>
   );

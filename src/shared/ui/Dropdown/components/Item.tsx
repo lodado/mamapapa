@@ -17,7 +17,7 @@ const DropdownItem = React.forwardRef<HTMLDivElement, SelectItemProps>(
       <Item
         className={cn(
           "hover:cursor-pointer",
-          "body-1 text-text-strong w-full flex py-[6px] pl-[6px] pr-[4px] align-center bg-tertiary",
+          "body-1 text-text-strong w-full h-[32px] flex gap-1 py-[6px] flex-shrink-0 pl-[6px] pr-[4px] align-center bg-tertiary",
           className
         )}
         {...props}

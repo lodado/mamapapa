@@ -9,8 +9,8 @@ import { debounce, throttle } from "lodash-es";
 export const RESIZE_DRAG_TYPE = "DIALOG_RESIZER";
 
 export const useDialogResizer = () => {
-  const { height, setHeight, onChangeVisibleStatus } = useDialogContext();
-  const [MAX_CHANGE_HEIGHT_LIMIT] = useState(window.innerHeight * 0.48);
+  const { height, setHeight, onChangeVisibleStatus, swipePercent } = useDialogContext();
+  const [MAX_CHANGE_HEIGHT_LIMIT] = useState(window.innerHeight * swipePercent!);
 
   const heightRef = useRef(0);
   const manager = useDragDropManager();

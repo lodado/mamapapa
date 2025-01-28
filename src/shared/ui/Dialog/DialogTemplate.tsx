@@ -1,19 +1,25 @@
 import React from 'react'
 
 import { Dialog, DialogProps } from './components/compound'
-import { cn } from "@/shared";
+ 
 import { AnimatePresence } from "motion/react";
-import { Motion } from "../animation/animation";
 
 export interface DialogTemplateProps extends DialogProps {
-  Trigger?: () => JSX.Element
+  Trigger?: () => JSX.Element;
 }
 
-export const DialogTemplate = ({ Trigger, className, children, isVisible, onChangeVisible }: DialogTemplateProps) => {
+export const DialogTemplate = ({
+  Trigger,
+  className,
+  children,
+  isVisible,
+  swipePercent,
+  onChangeVisible,
+}: DialogTemplateProps) => {
   return (
     <AnimatePresence>
       {isVisible && (
-        <Dialog isVisible={isVisible} onChangeVisible={onChangeVisible}>
+        <Dialog swipePercent={swipePercent} isVisible={isVisible} onChangeVisible={onChangeVisible}>
           <Dialog.Root>
             {Trigger && (
               <Dialog.Trigger>

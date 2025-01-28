@@ -13,28 +13,17 @@ import AddPictureButton from "./components/AddPictureButton";
 import { ToastViewPort } from "@/shared/ui/Toast";
 import { PAGE_ROUTE } from "@/entities/Router/configs/route";
 
-const Layout = ({ children }: PropsWithChildren) => {
+const Page = ({ children }: PropsWithChildren) => {
   return (
     <>
       <ReactiveLayout>
         <div role="none presentation" className="w-full flex-shrink-0 h-[4rem]" />
         <FacePageHeader />
 
-        <div className="flex flex-row justify-between items-center text-center mt-[5rem] w-full px-4">
-          <h2 className="subhead-3 flex flex-col items-center text-center text-text-01">비교할 사진을 선택해주세요</h2>
-
-          <AddPictureButton />
-        </div>
         <main className="flex flex-col items-center w-full justify-center flex-grow ">
           <div className="flex-grow flex flex-col items-center w-full p-4">
-            <ImageContainer key="imageContainer" />
-
-            <AnimatePresence key="ani">{children}</AnimatePresence>
-
             <ToastViewPort key="viewPort" className="bottom-[6.25rem]" />
           </div>
-
-          <ModelDownloader />
 
           <div role="none presentation" className="h-[200px]"></div>
         </main>
@@ -43,8 +32,8 @@ const Layout = ({ children }: PropsWithChildren) => {
             pb-[calc(1.5rem+var(--safe-area-bottom))]
         `}
         >
-          <ButtonLink wrapperClassName="w-full max-w-[29rem]" variant="primarySolid" href={PAGE_ROUTE.RESULT}>
-            비교하기
+          <ButtonLink wrapperClassName="w-full max-w-[29rem]" variant="primarySolid" href={PAGE_ROUTE.MAIN}>
+            처음 화면으로 돌아가기
           </ButtonLink>
         </nav>
       </ReactiveLayout>
@@ -52,4 +41,4 @@ const Layout = ({ children }: PropsWithChildren) => {
   );
 };
 
-export default Layout;
+export default Page;

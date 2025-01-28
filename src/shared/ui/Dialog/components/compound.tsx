@@ -27,6 +27,7 @@ const [DialogProvider, useDialogContext] = contextBuildHelper<{
   setHeight: (heightPercent: number) => void;
 
   onChangeVisibleStatus: (newVisibleStatus: boolean) => void;
+  swipePercent?: number;
 }>({ id: "dialog" });
 
 const DialogClose = ({ className }: { className: string }) => {
@@ -193,9 +194,11 @@ export interface DialogProps {
   onChangeVisible?: (newVisibleStatus: boolean) => void;
 
   className?: string;
+
+  swipePercent?: number;
 }
 
-export const Dialog = ({ isVisible = undefined, onChangeVisible, children }: DialogProps) => {
+export const Dialog = ({ isVisible = undefined, onChangeVisible, children, swipePercent = 0.5 }: DialogProps) => {
   const [open, setOpen] = useState(false);
   const [height, setHeight] = useState(0);
 
@@ -215,6 +218,7 @@ export const Dialog = ({ isVisible = undefined, onChangeVisible, children }: Dia
       height={height}
       setHeight={setHeight}
       isDialogVisible={isDialogVisible}
+      swipePercent={swipePercent}
       onChangeVisibleStatus={handleChangeVisibleStatus}
     >
       {children}
