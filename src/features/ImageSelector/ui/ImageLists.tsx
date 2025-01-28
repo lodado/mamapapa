@@ -48,7 +48,7 @@ const ImageLists = () => {
                     </span>
                   </Dropdown.Trigger>
                   <Dropdown.Content className="w-full">
-                    {Array.from(players.keys()).map((key: string) => {
+                    {Array.from(players.keys())?.map((key: string) => {
                       return (
                         <>
                           <Dropdown.Item key={key} onClick={() => handleUpdatePlayer(image, key)}>

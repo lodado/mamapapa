@@ -25,7 +25,7 @@ const AddNewPlayerDialog = ({
     setInputValue("");
   }, [isVisible]);
 
-  const isSamePlayerName = players.keys().some((player) => {
+  const isSamePlayerName = (Array.from(players?.keys()) ?? []).some((player) => {
     return player === inputValue;
   });
   const isTooLongName = inputValue.length >= 50;

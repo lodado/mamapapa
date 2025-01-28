@@ -97,7 +97,7 @@ const CropSettingDialog: React.FC<CropSettingDialogProps> = ({
                   {imageMetadata?.selectedPlayer ?? "사람을 선택해주세요."}
                 </Dropdown.Trigger>
                 <Dropdown.Content className="w-screen md:w-[calc(768px-5rem)]  ">
-                  {Array.from(players.keys()).map((key: string) => {
+                  {Array.from(players.keys())?.map((key: string) => {
                     return (
                       <Dropdown.Item
                         key={key}
