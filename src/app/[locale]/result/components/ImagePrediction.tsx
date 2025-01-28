@@ -5,8 +5,7 @@ import { useImageSelectorStore } from "@/features/ImageSelector/models";
 import React, { useLayoutEffect } from "react";
 import { cosineSimilarity } from "../utils/similarity";
 import { useLoadingStore } from "@/shared/ui/LoadingSpinner";
-
-const USER_PLAYER_NAME = "나";
+import { USER_PLAYER_NAME } from "@/entities";
 
 const ImagePrediction = () => {
   const { faceRecognitionModel } = useFaceModelStore();
