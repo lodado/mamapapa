@@ -7,7 +7,8 @@ import useLinkHref from "./useLinkHref";
 import useInterval from "./useInterval";
 import useServerAction from "./useServerAction";
 import useScrollDirection from "./useScrollDirection";
+import useScrollTrigger from "./useScrollTrigger";
 
-export { useErrorBoundary, useScrollDirection, useServerAction };
+export { useErrorBoundary, useScrollTrigger, useScrollDirection, useServerAction };
 
 export { useInterval, useIsClient, useLinkHref, useForkRef, useDebounce, useForceRenderer };

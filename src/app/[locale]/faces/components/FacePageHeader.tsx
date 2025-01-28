@@ -2,12 +2,11 @@
 
 import { PAGE_ROUTE } from "@/entities/Router/configs/route";
 import FallBackHeader from "@/features/Navigation/ui/Header/FallBackHeader";
-import { useScrollDirection } from "@/shared/hooks";
+import { useScrollDirection, useScrollTrigger } from "@/shared/hooks";
 import React from "react";
 
 const FacePageHeader = () => {
-  const { scrollDirection } = useScrollDirection(5);
-  const hideSecondLine = scrollDirection === "down";
+  const { triggered: hideSecondLine } = useScrollTrigger({ threshold: 150 });
 
   return (
     <div className="z-header fixed w-full md:w-[768px] top-0 bg-background-op-01 border-b border-b-solid border-b-border-02">
