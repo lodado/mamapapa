@@ -49,6 +49,7 @@ const CropSettingDialog: React.FC<CropSettingDialogProps> = ({
         ...imageMetadata!,
         faceCoordinates: updatedCoords,
       });
+      handleUpdatePlayer(imageMetadata!, imageMetadata?.selectedPlayer ?? "");
     }, "image/jpeg");
   };
 

@@ -50,10 +50,23 @@ export const useImageSelectorStore = create<ImageSelectorState>((set, get) => ({
 
   handleUpdatePlayer: (image, player) => {
     set((state) => {
+      let tempIndex;
+      let tempImage: ImageMetadata | undefined;
+
       const targetIndex = state.images.findIndex((img) => img.id === image.id);
-      let updatedImages = state.images.map((img) =>
-        img.selectedPlayer === player ? { ...img, selectedPlayer: undefined } : img
-      );
+      let updatedImages = state.images.map((img, index) => {
+        if (img.selectedPlayer === player) {
+          tempIndex = index;
+          tempImage = img;
+          return { ...img, selectedPlayer: undefined };
+        }
+
+        return img;
+      });
+
+      if (tempImage !== undefined && tempIndex !== undefined) {
+        updatedImages[tempIndex] = { ...tempImage, selectedPlayer: updatedImages[targetIndex].selectedPlayer };
+      }
 
       updatedImages[targetIndex] = { ...image, selectedPlayer: player };
 
