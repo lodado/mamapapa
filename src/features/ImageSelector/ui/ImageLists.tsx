@@ -6,6 +6,7 @@ import { drawImageOnCanvas } from "@/shared/utils";
 
 import CrossHair from "/public/CrossHair.svg";
 import Delete from "/public/delete.svg";
+import FaceOff from "/public/face_retouching_off.svg";
 
 import { useToastStore } from "@/shared/ui/Toast/stores";
 import { Ellipsis } from "lucide-react";
@@ -26,7 +27,7 @@ const ImageLists = () => {
 
   return (
     <>
-      <div className="grid grid-cols-3 sm:grid-cols-4 gap-x-2 sm:gap-x-5 gap-y-4">
+      <div className="w-full grid grid-cols-3 gap-x-2 sm:gap-x-5 gap-y-4">
         {images.map((image) => {
           const face = image.faceCoordinates;
           const isFaceDetected = face.width > 0 && face.height > 0;
@@ -38,7 +39,7 @@ const ImageLists = () => {
             >
               <>
                 <Dropdown>
-                  <Dropdown.Trigger className="absolute top-1 left-1 w-[50%]">
+                  <Dropdown.Trigger className="absolute top-1 left-1 w-[50%] z-10">
                     <span
                       className={`truncate subhead-2 w-[80%] ${
                         image.selectedPlayer ? "text-text-00" : "text-text-placeholder"
@@ -75,7 +76,7 @@ const ImageLists = () => {
                 </Dropdown>
                 <Dropdown>
                   <Dropdown.Trigger
-                    className="absolute flex justify-center items-center p-0 top-1 right-1 w-[28px] h-[28px]"
+                    className="z-10 absolute flex justify-center items-center p-0 top-1 right-1 w-[28px] h-[28px]"
                     doesArrowNeed={false}
                   >
                     <Ellipsis strokeWidth={2} size={12} />
@@ -112,12 +113,14 @@ const ImageLists = () => {
                   />
                 ) : (
                   <div
-                    className={`flex items-center justify-center w-[${Math.min(
-                      face.width,
+                    className={` relative rounded-lg flex-col  w-full h-full bg-tertiary-op-press flex items-center justify-center w-[${Math.min(
                       172
-                    )}px] before:content-[''] before:block before:pb-[100%]`}
+                    )}px] min-h-[172px] before:content-[''] before:block before:pb-[100%]`}
                   >
-                    얼굴을 찾지 못함!
+                    <div className="subhead-2 text-text-placeholder gap-1 flex flex-col justify-center items-center absolute top-0 right-0 left-0 bottom-0">
+                      <FaceOff />
+                      미인식
+                    </div>
                   </div>
                 )}
               </>

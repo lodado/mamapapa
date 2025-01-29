@@ -9,7 +9,7 @@ const FacePageHeader = () => {
   const { triggered: hideSecondLine } = useScrollTrigger({ threshold: 150 });
 
   return (
-    <div className="z-header fixed w-full md:w-[768px] top-0 bg-background-op-01 border-b border-b-solid border-b-border-02">
+    <div className="z-nav fixed w-full md:w-[768px] top-0 bg-background-op-01 border-b border-b-solid border-b-border-02">
       <FallBackHeader fallbackUrl={PAGE_ROUTE.MAIN} />
 
       <div

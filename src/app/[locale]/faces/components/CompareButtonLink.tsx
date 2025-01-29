@@ -33,6 +33,23 @@ const CompareButtonLink = () => {
       e.preventDefault();
       return;
     }
+
+    /**  */
+    if (
+      images
+        .filter((image) => !!image.selectedPlayer)
+        .some((image) => {
+          return image.faceCoordinates.height <= 0 && image.faceCoordinates.width <= 0;
+        })
+    ) {
+      addToast({
+        title: "에러",
+        description: "얼굴이 인식되지 않은 사진이 있습니다.",
+        type: "error",
+      });
+      e.preventDefault();
+      return;
+    }
   };
 
   return (

@@ -85,6 +85,8 @@ async function generateEmbeddingForImage(
 ): Promise<Float32Array | null> {
   const img = new Image();
 
+  if (faceCoordinates.width <= 0 || faceCoordinates.height <= 0) return null;
+
   // File 객체를 읽어서 이미지로 로드
   const url = URL.createObjectURL(file);
   img.src = url;
