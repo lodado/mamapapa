@@ -25,7 +25,7 @@ const CropSettingDialog: React.FC<CropSettingDialogProps> = ({
   const [cropper, setCropper] = useState<Cropper>();
 
   const { players } = usePlayerStore();
-  const { updateImage, handleUpdatePlayer } = useImageSelectorStore();
+  const { handleUpdatePlayer } = useImageSelectorStore();
 
   const [imageSrc, setImageSrc] = useState<string>("");
   const [imageMetadata, setImageMetaData] = useState(selectedImageForReCrop);
@@ -45,11 +45,13 @@ const CropSettingDialog: React.FC<CropSettingDialogProps> = ({
         height: data.height,
       };
 
-      updateImage({
-        ...imageMetadata!,
-        faceCoordinates: updatedCoords,
-      });
-      handleUpdatePlayer(imageMetadata!, imageMetadata?.selectedPlayer ?? "");
+      handleUpdatePlayer(
+        {
+          ...imageMetadata!,
+          faceCoordinates: updatedCoords,
+        },
+        imageMetadata?.selectedPlayer ?? ""
+      );
     }, "image/jpeg");
   };
 
