@@ -8,6 +8,7 @@ import { useImageSelectorStore } from "@/features/ImageSelector/models";
 import { useToastStore } from "@/shared/ui/Toast/stores";
 
 import React from "react";
+import { START_COMPARE_LINK_ID } from "../configs/constant";
 
 const CompareButtonLink = () => {
   const { addToast } = useToastStore();
@@ -15,9 +16,12 @@ const CompareButtonLink = () => {
   const { faceRecognitionModel } = useFaceModelStore();
 
   const modelNotFound = !faceRecognitionModel;
+
   const isUserPlayerNotSelected = images.every((image) => image.selectedPlayer !== USER_PLAYER_NAME);
+
   const isLessThanTwoPlayersSelected =
     new Set(images.filter((image) => !!image.selectedPlayer).map((image) => image.selectedPlayer)).size <= 1;
+
   const isAnyFaceNotRecognized = images
     .filter((image) => !!image.selectedPlayer)
     .some((image) => image.faceCoordinates.height <= 0 && image.faceCoordinates.width <= 0);
@@ -69,6 +73,7 @@ const CompareButtonLink = () => {
 
   return (
     <ButtonLink
+      id={START_COMPARE_LINK_ID}
       aria-disabled={disabled}
       onClickCapture={handleValidationSubmit}
       wrapperClassName="w-full max-w-[29rem]"

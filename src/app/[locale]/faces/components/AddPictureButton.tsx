@@ -7,6 +7,7 @@ import { FaceCoordinates, ImageMetadata, useImageSelectorStore } from "@/feature
 import { useFaceModelStore } from "@/features/AiModel/model";
 import { useLoadingStore } from "@/shared/ui/LoadingSpinner";
 import { useToastStore } from "@/shared/ui/Toast/stores";
+import { ADD_PICTURE_BUTTON_ID } from "../configs/constant";
 
 // Hook for handling face detection logic
 const useFaceDetection = () => {
@@ -123,7 +124,13 @@ const AddPictureButton = () => {
 
   return (
     <>
-      <Button variant="line" onClick={handleClick} className="rounded" disabled={!faceCropModel}>
+      <Button
+        id={ADD_PICTURE_BUTTON_ID}
+        variant="line"
+        onClick={handleClick}
+        className="rounded"
+        disabled={!faceCropModel}
+      >
         <CrossHair />
         사진 추가하기
       </Button>

@@ -1,32 +1,57 @@
 "use client";
 
+import "./style.scss";
+
 import { useIsClient } from "@/shared/hooks";
 import { ComponentProps, useMemo } from "react";
 import Joyride, { CallBackProps, STATUS } from "react-joyride";
-import { useTutorialStore } from "../stores";
+import { TutorialStep, useTutorialStore } from "../stores";
+import { preload } from "react-dom";
 
-interface ReactTutorialProps extends Omit<ComponentProps<typeof Joyride>, "run"> {}
+interface ReactTutorialProps extends Omit<ComponentProps<typeof Joyride>, "run"> {
+  steps: TutorialStep[];
+}
 
 interface JoyrideCallbackData extends CallBackProps {}
 
+const defaultOptions = {
+  backgroundColor: "transparent",
+  beaconSize: 36,
+  overlayColor: "rgba(0, 0, 0, 0.5)",
+  primaryColor: "var(--Primary-01)",
+  spotlightShadow: "0 0 15px rgba(0, 0, 0, 0.5)",
+  textColor: "var(--Text-00)",
+  width: "max-content",
+  height: "max-content",
+};
+
 const Tutorial = ({ steps, ...rest }: ReactTutorialProps) => {
   const isClient = useIsClient();
-  const { run, setRuns: onChangeRun } = useTutorialStore();
+  const { run, setRuns } = useTutorialStore();
+  preload("https://qmwtuvttspuxwuwrsuci.supabase.co/storage/v1/object/public/pokitokiStorage//finger.webp");
 
   const handleJoyrideCallback = (data: JoyrideCallbackData) => {
-    const { status, type } = data;
+    const { lifecycle, status, index, type } = data;
     const finishedStatuses = [STATUS.FINISHED, STATUS.SKIPPED];
+    const step = steps[index];
+
+    if (type === "step:before") {
+      step.callbackBeforeStart?.(index);
+    }
+
+    if (type === "step:after") {
+      step.callbackAfterStart?.(index);
+    }
 
     // @ts-ignore
     if (finishedStatuses.includes(status)) {
-      onChangeRun(false);
+      setRuns(false);
     }
   };
 
   const preprocessedSteps = useMemo(() => {
     return steps.map((step) => {
       return {
-        disableBeacon: true,
         ...step,
       };
     });
@@ -37,14 +62,24 @@ const Tutorial = ({ steps, ...rest }: ReactTutorialProps) => {
       {isClient && (
         <Joyride
           steps={preprocessedSteps}
-          continuous
+          continuous={false} // Next 버튼 제거
+          showProgress={false} // 진행 상황 숨김
+          showSkipButton={false} // Skip 버튼 숨김
           run={run}
-          scrollToFirstStep
-          showProgress
-          showSkipButton
+          scrollToFirstStep={false}
+          disableScrolling={true}
+          floaterProps={{}}
           styles={{
-            options: {
-              zIndex: 50,
+            options: defaultOptions,
+            tooltip: {},
+            buttonNext: {
+              display: "none", // Next 버튼 숨기기
+            },
+            buttonBack: {
+              display: "none", // Back 버튼 숨기기
+            },
+            buttonClose: {
+              display: "none", // 닫기 버튼 숨기기
             },
           }}
           {...rest}

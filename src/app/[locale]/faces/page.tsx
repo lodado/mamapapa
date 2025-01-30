@@ -10,20 +10,7 @@ import AddPictureButton from "./components/AddPictureButton";
 import { ToastViewPort } from "@/shared/ui/Toast";
 import { PAGE_ROUTE } from "@/entities/Router/configs/route";
 import CompareButtonLink from "./components/CompareButtonLink";
-import { TutorialConnector, TutorialStep } from "@/entities/Tutorial";
-
-const someSteps: TutorialStep[] = [
-  {
-    target: "#first-element",
-    content: "첫 번째 요소 설명",
-    disableBeacon: true,
-  },
-  {
-    target: "#second-element",
-    content: "두 번째 요소 설명",
-    disableBeacon: false,
-  },
-];
+import FacePageTutorialConnector from "./components/FacePageTutorialConnector";
 
 const Page = () => {
   return (
@@ -56,7 +43,7 @@ const Page = () => {
       </ReactiveLayout>
 
       <ToastViewPort key="viewPort" className="bottom-[6.25rem]" />
-      <TutorialConnector steps={someSteps} />
+      <FacePageTutorialConnector />
     </>
   );
 };

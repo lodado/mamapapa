@@ -14,6 +14,7 @@ import { usePlayerStore } from "@/entities";
 import CropSettingDialog from "./CropSettingDialog";
 import AddNewPlayerDialog from "./AddNewPlayerDialog";
 import RemoveImageDialog from "./RemoveImageDialog";
+import { PLAYER_SELECTOR_ID } from "../configs/constant";
 
 const ImageLists = () => {
   const { images, handleUpdatePlayer } = useImageSelectorStore();
@@ -36,12 +37,13 @@ const ImageLists = () => {
 
           return (
             <div
+              id={image.id}
               key={image.id}
               className="rounded-lg relative flex items-center justify-center cursor-pointer min-w-[16vw] min-h-[16vw] w-full before:content-[''] before:block before:pb-[100%]"
             >
               <>
                 <Dropdown>
-                  <Dropdown.Trigger className="absolute top-1 left-1 w-[50%] z-10">
+                  <Dropdown.Trigger id={PLAYER_SELECTOR_ID} className="absolute top-1 left-1 w-[50%] z-10">
                     <span
                       className={`truncate subhead-2 w-[80%] ${
                         image.selectedPlayer ? "text-text-00" : "text-text-placeholder"
