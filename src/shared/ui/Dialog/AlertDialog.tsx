@@ -78,7 +78,7 @@ const DialogHeader = ({ children, className }: { children?: ReactNode; className
    
 
   return (
-    <Title tabIndex={1} className={cn("headline flex flex-col w-full  items-center gap-2")}>
+    <Title tabIndex={0} className={cn("headline flex flex-col w-full  items-center gap-2")}>
       <ResizerHandle />
 
       <div
