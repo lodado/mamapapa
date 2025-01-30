@@ -1,6 +1,6 @@
 "use client";
 
-import { useLinkHref } from "@/shared/hooks";
+import { useIsMount, useLinkHref } from "@/shared/hooks";
 import { VariantProps } from "class-variance-authority";
 import Link from "next/link";
 import React, { ComponentProps } from "react";
@@ -18,6 +18,7 @@ const ButtonLink = (
 ) => {
   const { href = "", subDomain: _subDomain, custom = false, className, wrapperClassName, ...rest } = props;
   const linkHref = useLinkHref(props);
+  const isMount = useIsMount();
 
   const handleButtonClick = () => {
     // @ts-ignore
@@ -34,7 +35,17 @@ const ButtonLink = (
       whileHover={{ scale: 1.01 }}
       whileTap={{ scale: 0.98 }}
       transition={{ type: "spring", duration: 0.25 }}
-      className={wrapperClassName ?? ""}
+      className={cn(
+        "relative",
+        isMount
+          ? ""
+          : `
+        after:content-['']
+        after:absolute after:left-0 after:top-0 after:right-0 after:bottom-0
+        after:z-10
+        `,
+        wrapperClassName
+      )}
     >
       <Link {...rest} className={cn(rawButtonVariants(rest), className)} href={linkHref!} onClick={handleButtonClick} />
     </Motion>

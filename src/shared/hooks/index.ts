@@ -8,7 +8,8 @@ import useInterval from "./useInterval";
 import useServerAction from "./useServerAction";
 import useScrollDirection from "./useScrollDirection";
 import useScrollTrigger from "./useScrollTrigger";
+import useIsMount from "./useIsMount";
 
-export { useErrorBoundary, useScrollTrigger, useScrollDirection, useServerAction };
+export { useIsMount, useErrorBoundary, useScrollTrigger, useScrollDirection, useServerAction };
 
 export { useInterval, useIsClient, useLinkHref, useForkRef, useDebounce, useForceRenderer };

@@ -6,15 +6,23 @@ import { PAGE_ROUTE } from "@/entities/Router/configs/route";
 import { useImageSelectorStore } from "@/features/ImageSelector/models";
 import { useToastStore } from "@/shared/ui/Toast/stores";
 
-import { usePathname } from "next/navigation";
 import React from "react";
 
 const CompareButtonLink = () => {
   const { addToast } = useToastStore();
   const { images } = useImageSelectorStore();
 
+  const isUserPlayerNotSelected = images.every((image) => image.selectedPlayer !== USER_PLAYER_NAME);
+  const isLessThanTwoPlayersSelected =
+    new Set(images.filter((image) => !!image.selectedPlayer).map((image) => image.selectedPlayer)).size <= 1;
+  const isAnyFaceNotRecognized = images
+    .filter((image) => !!image.selectedPlayer)
+    .some((image) => image.faceCoordinates.height <= 0 && image.faceCoordinates.width <= 0);
+
+  const disabled = isUserPlayerNotSelected || isLessThanTwoPlayersSelected || isAnyFaceNotRecognized;
+
   const handleValidationSubmit = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
-    if (images.every((image) => image.selectedPlayer !== USER_PLAYER_NAME)) {
+    if (isUserPlayerNotSelected) {
       addToast({
         title: "에러",
         description: "비교 대상(나)를 지정해주세요.",
@@ -24,7 +32,7 @@ const CompareButtonLink = () => {
       return;
     }
 
-    if (new Set(images.filter((image) => !!image.selectedPlayer).map((image) => image.selectedPlayer)).size <= 1) {
+    if (isLessThanTwoPlayersSelected) {
       addToast({
         title: "에러",
         description: "최소 두명 이상의 비교 대상을 지정해주세요.",
@@ -35,13 +43,7 @@ const CompareButtonLink = () => {
     }
 
     /**  */
-    if (
-      images
-        .filter((image) => !!image.selectedPlayer)
-        .some((image) => {
-          return image.faceCoordinates.height <= 0 && image.faceCoordinates.width <= 0;
-        })
-    ) {
+    if (isAnyFaceNotRecognized) {
       addToast({
         title: "에러",
         description: "얼굴이 인식되지 않은 사진이 있습니다.",
@@ -54,6 +56,7 @@ const CompareButtonLink = () => {
 
   return (
     <ButtonLink
+      aria-disabled={disabled}
       onClickCapture={handleValidationSubmit}
       wrapperClassName="w-full max-w-[29rem]"
       variant="primarySolid"
