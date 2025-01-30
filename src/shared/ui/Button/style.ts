@@ -5,6 +5,7 @@ export const rawButtonVariants = cva(
   {
     variants: {
       variant: {
+        link: "h-14 px-4 text-text-primary flex flex-row gap-1",
         errorSolid: " h-14 bg-error px-4 text-text-00 active:bg-error-press",
         errorLine:
           " border border-solid border-error h-14 px-4 bg-transparent active:bg-error-01-line-press text-text-error",

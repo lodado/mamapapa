@@ -1,7 +1,10 @@
+"use client";
+
 import React from "react";
 import Header from "./Header";
-import { LocaleLink, ServerLocaleLink } from "@/entities/Router/index.server";
+import { LocaleLink } from "@/entities/Router/index.server";
 import { ChevronLeft } from "lucide-react";
+import { Button } from "@/shared/ui";
 
 const FallBackHeader = ({ fallbackUrl }: { fallbackUrl: string }) => {
   return (
@@ -12,9 +15,9 @@ const FallBackHeader = ({ fallbackUrl }: { fallbackUrl: string }) => {
           뒤로 가기
         </LocaleLink>
 
-        <LocaleLink className="py-[11px] px-4 text-text-primary flex flex-row gap-1" href="/help">
+        <Button variant="link" className="py-[11px] px-4 text-text-primary flex flex-row gap-1">
           도움말
-        </LocaleLink>
+        </Button>
       </Header>
       <div className="w-full h-[4rem] flex-shrink-0" role="none presentation" />
     </>
