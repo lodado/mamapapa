@@ -13,19 +13,26 @@ const LoginForm = () => {
   const { isPending, onSubmit } = useServerAction(authenticateAction);
 
   return (
-    <div className="flex flex-col items-start gap-3 relative self-stretch w-full h-[220px] flex-[0_0_auto]">
-      <form action={onSubmit} className="flex flex-col w-full gap-1 space-y-3">
+    <div className="w-full flex flex-col items-start gap-2.5 relative self-stretch h-[220px] flex-[0_0_auto]">
+      <div className="w-full flex flex-col justify-center items-center text-center body-2 text-black">
+        <span>닮은꼴 비교하기를 서로 공유하고</span>
+        <span>피드백을 받아볼 수 있습니다.</span>
+      </div>
+
+      <p className="w-full flex justify-center items-center text-center head-2 text-black">SNS 간편 로그인</p>
+
+      <form action={onSubmit} className="flex justify-center items-center flex-row w-full gap-2">
         <input className="hidden" hidden name="href" value={window?.location.href ?? ""} />
         <Oauth2LoginButton value="kakao">
-          <ICON_KAKAO /> {t("KakaoButton")}
+          <ICON_KAKAO />
         </Oauth2LoginButton>
 
         <Oauth2LoginButton value="google">
-          <ICON_GOOGLE /> {t("GoogleButton")}
+          <ICON_GOOGLE />
         </Oauth2LoginButton>
 
         <Oauth2LoginButton value="github">
-          <ICON_GITHUB /> {t("GithubButton")}
+          <ICON_GITHUB />
         </Oauth2LoginButton>
       </form>
     </div>

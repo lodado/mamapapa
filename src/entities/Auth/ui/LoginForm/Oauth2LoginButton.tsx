@@ -13,19 +13,16 @@ interface LoginButtonProps {
   children: ReactNode;
 }
 
-const LoginButtonStyles = cva(
-  "shadow-button flex gap-2 body-03 w-full justify-center align-middle p-4 h-14 rounded-md",
-  {
-    variants: {
-      value: {
-        kakao: "bg-[#FEE500] text-color-[#000]",
-        google: `bg-[#fff] text-color-#000`,
-        github: "bg-[#24292F] text-[#fff]",
-      },
+const LoginButtonStyles = cva("flex gap-2 w-[3.75rem] h-[3.75rem] justify-center items-center p-4  rounded-full", {
+  variants: {
+    value: {
+      kakao: "bg-[#FEE500] text-color-[#000]",
+      google: `bg-[#F5F5F5] text-color-#000`,
+      github: "bg-[#24292F] text-[#fff]",
     },
-    defaultVariants: {},
-  }
-);
+  },
+  defaultVariants: {},
+});
 
 const userInfo = new StorageController<Record<string, LoginButtonProps["value"]>>(
   new LocalStorageStrategy("/login/userinfo")
@@ -40,42 +37,18 @@ const Oauth2LoginButton = ({ value, children }: LoginButtonProps) => {
     userInfo.update({ value });
   };
 
-  /** radix ToolTip에 hydration bug가 있음 */
-  if (!isClient)
-    return (
-      <Button
-        type="submit"
-        name={LOGIN_METHOD}
-        variant="custom"
-        size="custom"
-        value={value}
-        className={LoginButtonStyles({ value })}
-        onClick={handleUpdateLoginUserInfo}
-      >
-        {children}
-      </Button>
-    );
-
   return (
-    <Tooltip defaultOpen={lastLoginInfo === value}>
-      <Tooltip.Trigger>
-        <Button
-          type="submit"
-          name={LOGIN_METHOD}
-          variant="custom"
-          size="custom"
-          value={value}
-          className={LoginButtonStyles({ value })}
-          onClick={handleUpdateLoginUserInfo}
-        >
-          {children}
-        </Button>
-      </Tooltip.Trigger>
-
-      <Tooltip.Content side="bottom" align="center" className="z-100 text-color-text-default body-01">
-        {lastLoginInfo === value ? t("TOOLTIP-LASTLOGINTEXT") : t("TOOLTIP-TEXT")}
-      </Tooltip.Content>
-    </Tooltip>
+    <Button
+      type="submit"
+      name={LOGIN_METHOD}
+      variant="custom"
+      size="custom"
+      value={value}
+      className={LoginButtonStyles({ value })}
+      onClick={handleUpdateLoginUserInfo}
+    >
+      {children}
+    </Button>
   );
 };
 

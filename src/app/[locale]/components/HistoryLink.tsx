@@ -5,7 +5,7 @@ import { ButtonLink } from "@/entities/Router";
 import React, { MouseEventHandler } from "react";
 
 const HistoryLink = () => {
-  const { isLogin, session, isLoginFormDialogVisible, setLoginFormDialogVisible } = useAuthStore();
+  const { isLogin, setLoginFormDialogVisible } = useAuthStore();
 
   const handleSubmitValidation = (e: React.MouseEvent<HTMLAnchorElement>) => {
     if (!isLogin) {
