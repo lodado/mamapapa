@@ -35,7 +35,7 @@ const ImageLists = () => {
           return (
             <div
               key={image.id}
-              className="rounded-lg relative flex items-center justify-center cursor-pointer w-full before:content-[''] before:block before:pb-[100%]"
+              className="rounded-lg relative flex items-center justify-center cursor-pointer min-w-[16vw] min-h-[16vw] w-full before:content-[''] before:block before:pb-[100%]"
             >
               <>
                 <Dropdown>
@@ -115,7 +115,7 @@ const ImageLists = () => {
                   <div
                     className={` relative rounded-lg flex-col  w-full h-full bg-tertiary-op-press flex items-center justify-center w-[${Math.min(
                       172
-                    )}px] min-h-[172px] before:content-[''] before:block before:pb-[100%]`}
+                    )}px]  before:content-[''] before:block before:pb-[100%]`}
                   >
                     <div className="subhead-2 text-text-placeholder gap-1 flex flex-col justify-center items-center absolute top-0 right-0 left-0 bottom-0">
                       <FaceOff />
