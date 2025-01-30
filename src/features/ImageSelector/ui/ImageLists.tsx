@@ -14,7 +14,7 @@ import { usePlayerStore } from "@/entities";
 import CropSettingDialog from "./CropSettingDialog";
 import AddNewPlayerDialog from "./AddNewPlayerDialog";
 import RemoveImageDialog from "./RemoveImageDialog";
-import { PLAYER_SELECTOR_ID } from "../configs/constant";
+import { ADDITIONAL_OPTION_DROPDOWN_ID, PLAYER_SELECTOR_ID } from "../configs/constant";
 
 const ImageLists = () => {
   const { images, handleUpdatePlayer } = useImageSelectorStore();
@@ -39,7 +39,7 @@ const ImageLists = () => {
             <div
               id={image.id}
               key={image.id}
-              className="rounded-lg relative flex items-center justify-center cursor-pointer min-w-[16vw] min-h-[16vw] w-full before:content-[''] before:block before:pb-[100%]"
+              className="rounded-lg relative flex items-center justify-center cursor-pointer min-w-[10vw] min-h-[10vw] max-w-[22vw] max-h-[22vw] w-full before:content-[''] before:block before:pb-[100%]"
             >
               <>
                 <Dropdown>
@@ -80,6 +80,7 @@ const ImageLists = () => {
                 </Dropdown>
                 <Dropdown>
                   <Dropdown.Trigger
+                    id={ADDITIONAL_OPTION_DROPDOWN_ID}
                     className="z-10 absolute flex justify-center items-center p-0 top-1 right-1 w-[28px] h-[28px]"
                     doesArrowNeed={false}
                   >

@@ -37,6 +37,12 @@ const Tutorial = ({ steps, ...rest }: ReactTutorialProps) => {
 
     if (type === "step:before") {
       step.callbackBeforeStart?.(index);
+
+      const element = document.querySelector(step.target);
+
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
     }
 
     if (type === "step:after") {

@@ -21,7 +21,7 @@
 .__floater[x-placement^="bottom"] .__floater__arrow * {
   bottom: 100%;
   left: 50%;
-  transform: translateX(-50%) translateY(0px);
+  transform: translateX(30%) translateY(0px);
 }
 
 .__floater[x-placement^="top"] .__floater__arrow * {
