@@ -24,7 +24,7 @@ const RemoveImageDialog = ({
   return (
     <AlertDialog
       swipePercent={0.2}
-      className="h-[calc(20*var(--vh))] min-h-max"
+      className="h-[calc(37*var(--vh))] min-h-max"
       isVisible={isVisible}
       onChangeVisible={onChangeVisible}
     >
