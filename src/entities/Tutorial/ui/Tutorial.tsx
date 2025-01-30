@@ -3,7 +3,7 @@
 import "./style.scss";
 
 import { useIsClient } from "@/shared/hooks";
-import { ComponentProps, useMemo } from "react";
+import { ComponentProps, useEffect, useMemo } from "react";
 import Joyride, { CallBackProps, STATUS } from "react-joyride";
 import { TutorialStep, useTutorialStore } from "../stores";
 import { preload } from "react-dom";
@@ -28,7 +28,6 @@ const defaultOptions = {
 const Tutorial = ({ steps, ...rest }: ReactTutorialProps) => {
   const isClient = useIsClient();
   const { run, setRuns } = useTutorialStore();
-  preload("https://qmwtuvttspuxwuwrsuci.supabase.co/storage/v1/object/public/pokitokiStorage//finger.webp");
 
   const handleJoyrideCallback = (data: JoyrideCallbackData) => {
     const { lifecycle, status, index, type } = data;
@@ -62,6 +61,14 @@ const Tutorial = ({ steps, ...rest }: ReactTutorialProps) => {
       };
     });
   }, [steps]);
+
+  useEffect(() => {
+    /** cursor image preload */
+    preload("https://qmwtuvttspuxwuwrsuci.supabase.co/storage/v1/object/public/pokitokiStorage//finger.webp", {
+      as: "image",
+      fetchPriority: "low",
+    });
+  }, []);
 
   return (
     <>

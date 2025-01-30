@@ -1,5 +1,6 @@
 import NextImage from 'next/image'
 import { ComponentProps } from 'react'
+import { preload, PreloadOptions } from "react-dom";
 
 /**
  * Interface for the properties of a image component.
@@ -16,10 +17,13 @@ import { ComponentProps } from 'react'
  * @property {number} [height] - The height of the image in pixels. This is an optional property.
  */
 export interface ImageProps extends ComponentProps<typeof NextImage> {
-  src: string
-  alt: string
-  width?: number
-  height?: number
+  src: string;
+  alt: string;
+  width?: number;
+  height?: number;
+
+  isPreload?: boolean;
+  preloadOptions?: PreloadOptions;
 }
 /**
  * `Image` is a wrapper component around Next.js's `Image` component,
@@ -43,8 +47,28 @@ export interface ImageProps extends ComponentProps<typeof NextImage> {
  * />
  * ```
  */
-const Image = ({ src, className, alt, width, height, ...rest }: ImageProps) => {
-  // Render the Image component from Next.js with provided props or default size.
+const Image = ({
+  isPreload = false,
+  preloadOptions = {
+    as: "image",
+    fetchPriority: "low",
+  },
+  src,
+  className,
+  alt,
+  width,
+  height,
+  ...rest
+}: ImageProps) => {
+  if (isPreload) {
+    preload(src, {
+      //@ts-ignore
+      as: "image",
+      fetchPriority: "low",
+      ...preloadOptions,
+    });
+  }
+
   return (
     <NextImage
       className={className}
@@ -55,7 +79,7 @@ const Image = ({ src, className, alt, width, height, ...rest }: ImageProps) => {
       height={height || 500}
       {...rest}
     />
-  )
-}
+  );
+};
 
 export default Image

@@ -4,7 +4,6 @@ import React from "react";
 import { ImageMetadata, useImageSelectorStore } from "@/features/ImageSelector/models";
 import { useToastStore } from "@/shared/ui/Toast/stores";
 import { Image } from "@/shared/ui";
-import { preload } from "react-dom";
 
 const PHONE_INFO_IMAGE_URL =
   "https://qmwtuvttspuxwuwrsuci.supabase.co/storage/v1/object/public/pokitokiStorage/phone_info_1.webp";
@@ -21,7 +20,6 @@ const RemoveImageDialog = ({
 }) => {
   const { removeImage } = useImageSelectorStore();
   const { addToast } = useToastStore();
-  preload(PHONE_INFO_IMAGE_URL, { as: "image", fetchPriority: "high" });
 
   return (
     <AlertDialog
@@ -40,7 +38,15 @@ const RemoveImageDialog = ({
           <p>삭제를 완료후 되돌리기 어렵습니다.</p>
         </div>
         <div>
-          <Image width={72} height={72} src={PHONE_INFO_IMAGE_URL} alt={"warning message image"} priority={true} />
+          <Image
+            isPreload={true}
+            preloadOptions={{ as: "image", fetchPriority: "high" }}
+            width={72}
+            height={72}
+            src={PHONE_INFO_IMAGE_URL}
+            alt={"warning message image"}
+            priority={true}
+          />
         </div>
       </AlertDialog.Body>
       <AlertDialog.SubmitForm
