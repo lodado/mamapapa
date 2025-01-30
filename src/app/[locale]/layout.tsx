@@ -53,6 +53,18 @@ const RootLayout: React.FunctionComponent<LocaleProps> = ({ children, params: { 
   return (
     <html lang={locale} suppressHydrationWarning>
       <Head>
+        {/* Preload Spoqa Han Sans Neo */}
+        <link rel="preload" href="//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css" as="style" />
+        <link rel="stylesheet" href="//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css" />
+
+        {/* Preload Spoqa Han Sans JP */}
+        <link rel="preload" href="//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-jp.css" as="style" />
+        <link rel="stylesheet" href="//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-jp.css" />
+
+        {/* Preload Spoqa Han Sans KR */}
+        <link rel="preload" href="//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css" as="style" />
+        <link rel="stylesheet" href="//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css" />
+
         <meta httpEquiv="X-UA-Compatible" content="IE=Edge" />
         <meta name="application-name" content="pokitoki" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
