@@ -37,6 +37,11 @@ const Tutorial = ({ steps, ...rest }: ReactTutorialProps) => {
     if (type === "step:before") {
       step.callbackBeforeStart?.(index);
 
+      /* 
+          Using querySelector in React might feel nasty,
+          but since react-joyride uses element Id as targets, 
+          it's effective in this case.
+        */
       const element = document.querySelector(step.target);
 
       if (element) {
