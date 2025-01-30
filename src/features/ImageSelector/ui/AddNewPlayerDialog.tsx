@@ -35,7 +35,7 @@ const AddNewPlayerDialog = ({
   return (
     <AlertDialog
       swipePercent={0.2}
-      className="h-[calc(37*var(--vh))]"
+      className="h-[calc(37*var(--vh))] min-h-[15rem]"
       isVisible={isVisible}
       onChangeVisible={onChangeVisible}
     >

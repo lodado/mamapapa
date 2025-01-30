@@ -43,7 +43,11 @@ const ImageLists = () => {
             >
               <>
                 <Dropdown>
-                  <Dropdown.Trigger id={PLAYER_SELECTOR_ID} className="absolute top-1 left-1 w-[50%] z-10">
+                  <Dropdown.Trigger
+                    key={PLAYER_SELECTOR_ID}
+                    id={PLAYER_SELECTOR_ID}
+                    className="absolute top-1 left-1 w-[50%] z-10"
+                  >
                     <span
                       className={`truncate subhead-2 w-[80%] ${
                         image.selectedPlayer ? "text-text-00" : "text-text-placeholder"
@@ -80,6 +84,7 @@ const ImageLists = () => {
                 </Dropdown>
                 <Dropdown>
                   <Dropdown.Trigger
+                    key={ADDITIONAL_OPTION_DROPDOWN_ID}
                     id={ADDITIONAL_OPTION_DROPDOWN_ID}
                     className="z-10 absolute flex justify-center items-center p-0 top-1 right-1 w-[28px] h-[28px]"
                     doesArrowNeed={false}
@@ -88,6 +93,7 @@ const ImageLists = () => {
                   </Dropdown.Trigger>
                   <Dropdown.Content className="w-full">
                     <Dropdown.Item
+                      key={"recrop-item"}
                       onClick={() => {
                         setSelectedImageForReCrop(image);
                         setCropSettingDialogVisible(true);
@@ -96,6 +102,7 @@ const ImageLists = () => {
                       크롭 다시하기
                     </Dropdown.Item>
                     <Dropdown.Item
+                      key={"remove-item"}
                       onClick={() => {
                         setSelectedImageForPlayer(image);
                         setRemoveImageDialogVisible(true);
