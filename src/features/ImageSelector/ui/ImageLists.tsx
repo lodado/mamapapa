@@ -13,6 +13,7 @@ import { Ellipsis } from "lucide-react";
 import { usePlayerStore } from "@/entities";
 import CropSettingDialog from "./CropSettingDialog";
 import AddNewPlayerDialog from "./AddNewPlayerDialog";
+import RemoveImageDialog from "./RemoveImageDialog";
 
 const ImageLists = () => {
   const { images, removeImage, handleUpdatePlayer } = useImageSelectorStore();
@@ -23,6 +24,8 @@ const ImageLists = () => {
   const [selectedImageForReCrop, setSelectedImageForReCrop] = useState<ImageMetadata>();
 
   const [isAddNewPlayerDialogVisible, setAddNewPlayerDialogVisible] = useState(false);
+  const [isRemoveImageDialogVisible, setRemoveImageDialogVisible] = useState(false);
+
   const [selectedImageForPlayer, setSelectedImageForPlayer] = useState<ImageMetadata>();
 
   return (
@@ -92,12 +95,8 @@ const ImageLists = () => {
                     </Dropdown.Item>
                     <Dropdown.Item
                       onClick={() => {
-                        removeImage(image);
-                        addToast({
-                          title: "이미지 삭제",
-                          type: "success",
-                          description: "사진 삭제에 성공했습니다.",
-                        });
+                        setSelectedImageForPlayer(image);
+                        setRemoveImageDialogVisible(true);
                       }}
                     >
                       <Delete /> 삭제하기
@@ -139,6 +138,12 @@ const ImageLists = () => {
         selectedImageForPlayer={selectedImageForPlayer!}
         isVisible={isAddNewPlayerDialogVisible}
         onChangeVisible={setAddNewPlayerDialogVisible}
+      />
+
+      <RemoveImageDialog
+        isVisible={isRemoveImageDialogVisible}
+        onChangeVisible={setRemoveImageDialogVisible}
+        selectedImage={selectedImageForPlayer!}
       />
     </>
   );
