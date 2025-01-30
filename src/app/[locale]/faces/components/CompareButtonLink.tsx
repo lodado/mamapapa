@@ -3,6 +3,7 @@
 import { USER_PLAYER_NAME } from "@/entities";
 import { ButtonLink } from "@/entities/Router";
 import { PAGE_ROUTE } from "@/entities/Router/configs/route";
+import { useFaceModelStore } from "@/features/AiModel/model";
 import { useImageSelectorStore } from "@/features/ImageSelector/models";
 import { useToastStore } from "@/shared/ui/Toast/stores";
 
@@ -11,7 +12,9 @@ import React from "react";
 const CompareButtonLink = () => {
   const { addToast } = useToastStore();
   const { images } = useImageSelectorStore();
+  const { faceRecognitionModel } = useFaceModelStore();
 
+  const modelNotFound = !faceRecognitionModel;
   const isUserPlayerNotSelected = images.every((image) => image.selectedPlayer !== USER_PLAYER_NAME);
   const isLessThanTwoPlayersSelected =
     new Set(images.filter((image) => !!image.selectedPlayer).map((image) => image.selectedPlayer)).size <= 1;
@@ -19,9 +22,19 @@ const CompareButtonLink = () => {
     .filter((image) => !!image.selectedPlayer)
     .some((image) => image.faceCoordinates.height <= 0 && image.faceCoordinates.width <= 0);
 
-  const disabled = isUserPlayerNotSelected || isLessThanTwoPlayersSelected || isAnyFaceNotRecognized;
+  const disabled = modelNotFound || isUserPlayerNotSelected || isLessThanTwoPlayersSelected || isAnyFaceNotRecognized;
 
   const handleValidationSubmit = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+    if (modelNotFound) {
+      addToast({
+        title: "에러",
+        description: "얼굴 인식 모델을 다운로드 중입니다.",
+        type: "error",
+      });
+      e.preventDefault();
+      return;
+    }
+
     if (isUserPlayerNotSelected) {
       addToast({
         title: "에러",
