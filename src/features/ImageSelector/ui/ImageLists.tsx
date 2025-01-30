@@ -16,8 +16,7 @@ import AddNewPlayerDialog from "./AddNewPlayerDialog";
 import RemoveImageDialog from "./RemoveImageDialog";
 
 const ImageLists = () => {
-  const { images, removeImage, handleUpdatePlayer } = useImageSelectorStore();
-  const { addToast } = useToastStore();
+  const { images, handleUpdatePlayer } = useImageSelectorStore();
 
   const { players } = usePlayerStore();
   const [isCropSettingDialogVisible, setCropSettingDialogVisible] = useState(false);
@@ -30,7 +29,7 @@ const ImageLists = () => {
 
   return (
     <>
-      <div className="w-full grid grid-cols-3 gap-x-2 sm:gap-x-5 gap-y-4">
+      <div className="w-full grid grid-cols-2 very-small:grid-cols-3 gap-x-2 sm:gap-x-5 gap-y-4">
         {images.map((image) => {
           const face = image.faceCoordinates;
           const isFaceDetected = face.width > 0 && face.height > 0;

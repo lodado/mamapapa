@@ -1,8 +1,8 @@
 "use client";
 
 import { PAGE_ROUTE } from "@/entities/Router/configs/route";
-import FallBackHeader from "@/features/Navigation/ui/Header/FallBackHeader";
-import { useScrollDirection, useScrollTrigger } from "@/shared/hooks";
+import FallBackHeader from "./FallBackHeader";
+import { useScrollTrigger } from "@/shared/hooks";
 import React from "react";
 
 const FacePageHeader = () => {

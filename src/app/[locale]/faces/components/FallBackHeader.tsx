@@ -1,12 +1,16 @@
 "use client";
 
 import React from "react";
-import Header from "./Header";
+
 import { LocaleLink } from "@/entities/Router/index.server";
 import { ChevronLeft } from "lucide-react";
 import { Button } from "@/shared/ui";
+import { Header } from "@/features";
+import { useTutorialStore } from "@/entities/Tutorial";
 
 const FallBackHeader = ({ fallbackUrl }: { fallbackUrl: string }) => {
+  const { setRuns } = useTutorialStore();
+
   return (
     <>
       <Header className="z-header w-full md:w-[768px] h-[2.75rem] fixed top-0 flex flex-row justify-between items-center">
@@ -15,7 +19,13 @@ const FallBackHeader = ({ fallbackUrl }: { fallbackUrl: string }) => {
           뒤로 가기
         </LocaleLink>
 
-        <Button variant="link" className="py-[11px] px-4 text-text-primary flex flex-row gap-1">
+        <Button
+          onClick={() => {
+            setRuns(true);
+          }}
+          variant="link"
+          className="py-[11px] px-4 text-text-primary flex flex-row gap-1"
+        >
           도움말
         </Button>
       </Header>

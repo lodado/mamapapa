@@ -51,6 +51,7 @@ export default {
   theme: {
     extend: {
       screens: {
+        "very-small": "360px",
         sm: "550px",
       },
 
