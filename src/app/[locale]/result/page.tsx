@@ -1,6 +1,8 @@
+"use client";
+
 import { ReactiveLayout } from "@/shared/ui/ReactiveLayout";
 import React, { PropsWithChildren } from "react";
- 
+
 import { ButtonLink } from "@/entities/Router";
 
 import FacePageHeader from "./components/FacePageHeader";
@@ -8,17 +10,10 @@ import FacePageHeader from "./components/FacePageHeader";
 import { ToastViewPort } from "@/shared/ui/Toast";
 import { PAGE_ROUTE } from "@/entities/Router/configs/route";
 import ImagePrediction from "./components/ImagePrediction";
-import { getLocalesListsForStateParams } from "@/shared/index.server";
-import { setRequestLocale } from "next-intl/server";
 import ShareButton from "./components/ShareButton";
 import { ModelDownloader } from "@/features";
 
-export async function generateStaticParams() {
-  return getLocalesListsForStateParams();
-}
-
 const Page = ({ params }: { params: { locale: string } }) => {
-  setRequestLocale(params.locale);
   return (
     <>
       <ReactiveLayout>

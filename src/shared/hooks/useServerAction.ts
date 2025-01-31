@@ -10,17 +10,21 @@ const useServerAction = (action: (formData: FormData) => Promise<any | undefined
   const { setError } = useErrorBoundary();
 
   const onSubmit = async (formData: FormData) => {
-    startTransition(async () => {
-      try {
-        // dispatch(SET_PAGE_LOADING(true));
-        await action(formData);
-      } catch (e) {
-        setError(e);
-      } finally {
-        // dispatch(SET_PAGE_LOADING(false));
 
-        afterCallback?.();
-      }
+    return new Promise((resolve, reject) => {
+      startTransition(async () => {
+        try {
+          // dispatch(SET_PAGE_LOADING(true));
+          resolve(await action(formData));
+        } catch (e) {
+          setError(e);
+          reject(e);
+        } finally {
+          // dispatch(SET_PAGE_LOADING(false));
+
+          afterCallback?.();
+        }
+      });
     });
   };
 

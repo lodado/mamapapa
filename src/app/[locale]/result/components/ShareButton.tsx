@@ -6,32 +6,49 @@ import React, { useCallback, useEffect, useMemo } from "react";
 import { useRouter } from "next/navigation";
 import { IndexedDBController, request } from "@/shared";
 import { ImageMetadata, useImageSelectorStore } from "@/features/ImageSelector/models";
+import { useServerAction } from "@/shared/hooks";
+
+import { picturesSubmitApi } from "../api/picturesSubmitApi";
 
 const ShareButton = () => {
   const imageContainer = useMemo(() => new IndexedDBController<ImageMetadata[]>("IMG_CONTAINER"), []);
+  const { onSubmit } = useServerAction(picturesSubmitApi);
 
   const { isLogin, setIsLogin } = useAuthStore();
   const { images, setImages } = useImageSelectorStore();
   const router = useRouter();
 
-  useEffect(() => {
-    const req = async () => {
-      try {
-        const data = await request({
-          method: "POST",
-          url: "/api/images",
-          data: images,
+  const handleSubmitFormData = async () => {
+    try {
+      const formData = new FormData();
+      images.forEach((image, index) => {
+        Object.entries(image).forEach(([key, value]) => {
+          if (!Array.isArray(value)) {
+            formData.append(`images[${index}][${key}]`, value);
+          }
+          if (value instanceof Object) {
+            formData.append(`images[${index}][${key}]`, JSON.stringify(value));
+          }
         });
+      });
 
-        console.log(data);
-      } catch (e) {
-        console.log(e);
-      }
-    };
-    req();
+      formData.append("size", images.length.toString());
+
+      const data = await onSubmit(formData);
+
+      console.log(data, " 123");
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
+  useEffect(() => {
+    handleSubmitFormData();
   }, []);
 
   const handleShareButtonClick = useCallback(async () => {
+    handleSubmitFormData();
+
     if (!isLogin) {
       // 팝업(새 창)을 연다.
       const popup = window.open(

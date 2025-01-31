@@ -5,7 +5,7 @@ import React from "react";
 
 export default function LoginPopupPage() {
   const handleLogin = () => {
-    window.opener?.postMessage("LOGIN_SUCCESS", "*");
+    // window.opener?.postMessage("LOGIN_SUCCESS", "*");
   };
 
   return (
