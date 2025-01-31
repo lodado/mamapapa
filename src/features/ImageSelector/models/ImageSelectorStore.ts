@@ -23,6 +23,7 @@ export interface ImageMetadata {
 
 export interface ImageSelectorState {
   images: ImageMetadata[];
+  setImages: (images: ImageMetadata[]) => void;
   addImages: (image: ImageMetadata[]) => void;
   removeImage: (image: ImageMetadata) => void;
   updateImage: (image: ImageMetadata) => void;
@@ -35,6 +36,9 @@ export interface ImageSelectorState {
 
 export const useImageSelectorStore = create<ImageSelectorState>((set, get) => ({
   images: [],
+
+  setImages: (images: ImageMetadata[]) => set({ images }),
+
   addImages: (newImages: ImageMetadata[]) => set((state) => ({ images: [...state.images, ...newImages] })),
   removeImage: (image) => set((state) => ({ images: state.images.filter((img) => img.url !== image.url) })),
   clearImages: () => set({ images: [] }),

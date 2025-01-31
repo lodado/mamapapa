@@ -59,7 +59,7 @@ export default class IndexedDBController<T = any> {
     });
   };
 
-  read = async ({ id }: { id: string }): Promise<{ id: string; data: T } | undefined> => {
+  read = async ({ id }: { id: string }): Promise<{ data: T } | undefined> => {
     if (!this.db) {
       await this.open();
     }

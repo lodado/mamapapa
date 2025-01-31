@@ -25,10 +25,10 @@ const ImagePrediction = () => {
   };
 
   useLayoutEffect(() => {
-    if (faceRecognitionModel) handleGenerateEmbeddings();
-  }, [!faceRecognitionModel, images.map((element) => element.selectedPlayer ?? "-").join("/")]);
+    handleGenerateEmbeddings();
+  }, [images.map((element) => element.selectedPlayer ?? "-").join("/")]);
 
-  if (isLoading || !faceRecognitionModel) return <div className="spinner"></div>;
+  if (isLoading) return <div className="spinner"></div>;
 
   const playerImage = images.find((image) => image.selectedPlayer === USER_PLAYER_NAME)!;
   const comparisons = images

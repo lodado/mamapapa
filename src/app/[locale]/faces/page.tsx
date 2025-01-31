@@ -8,11 +8,18 @@ import { ImageContainer } from "@/features/ImageSelector";
 import FacePageHeader from "./components/FacePageHeader";
 import AddPictureButton from "./components/AddPictureButton";
 import { ToastViewPort } from "@/shared/ui/Toast";
-import { PAGE_ROUTE } from "@/entities/Router/configs/route";
+ 
 import CompareButtonLink from "./components/CompareButtonLink";
 import FacePageTutorialConnector from "./components/FacePageTutorialConnector";
+import { getLocalesListsForStateParams } from "@/shared/index.server";
+import { setRequestLocale } from "next-intl/server";
 
-const Page = () => {
+export async function generateStaticParams() {
+  return getLocalesListsForStateParams();
+}
+
+const Page = ({ params }: { params: { locale: string } }) => {
+  setRequestLocale(params.locale);
   return (
     <>
       <ReactiveLayout>

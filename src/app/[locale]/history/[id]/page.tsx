@@ -8,17 +8,8 @@ import FacePageHeader from "./components/FacePageHeader";
 import { ToastViewPort } from "@/shared/ui/Toast";
 import { PAGE_ROUTE } from "@/entities/Router/configs/route";
 import ImagePrediction from "./components/ImagePrediction";
-import { getLocalesListsForStateParams } from "@/shared/index.server";
-import { setRequestLocale } from "next-intl/server";
-import ShareButton from "./components/ShareButton";
-import { ModelDownloader } from "@/features";
 
-export async function generateStaticParams() {
-  return getLocalesListsForStateParams();
-}
-
-const Page = ({ params }: { params: { locale: string } }) => {
-  setRequestLocale(params.locale);
+const Page = () => {
   return (
     <>
       <ReactiveLayout>
@@ -41,12 +32,13 @@ const Page = ({ params }: { params: { locale: string } }) => {
             처음 화면으로 돌아가기
           </ButtonLink>
 
-          <ShareButton />
+          <ButtonLink wrapperClassName="w-full max-w-[29rem]" variant="primaryLine" href={PAGE_ROUTE.MAIN}>
+            공유하기
+          </ButtonLink>
         </nav>
       </ReactiveLayout>
 
       <ToastViewPort key="viewPort" className="bottom-[6.25rem]" />
-      <ModelDownloader className="hidden" />
     </>
   );
 };

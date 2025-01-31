@@ -43,7 +43,7 @@ const FacePageTutorialConnector = () => {
         content: (
           <div>
             <p>사진에서 얼굴만 추출해서 </p>
-            <p>확인 가능해요!.</p>
+            <p>확인 가능해요!</p>
           </div>
         ),
         disableBeacon: true,
@@ -58,7 +58,7 @@ const FacePageTutorialConnector = () => {
         content: (
           <div>
             <p>나를 필수 선택하고 비교할 대상을</p>
-            <p>최소 1명이상 분류해주세요</p>
+            <p>최소 1명이상 분류해주세요.</p>
           </div>
         ),
 

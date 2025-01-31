@@ -1,5 +1,5 @@
 import { ReactiveLayout } from "@/shared/ui/ReactiveLayout";
-import React, { PropsWithChildren } from "react";
+import React from "react";
  
 import { ButtonLink } from "@/entities/Router";
 

@@ -73,7 +73,7 @@ storageLRUPubsubManager.subscribe(AUTH_STORAGE_INIT, async ({ id }) => {
 
   const threshold = currentTime - 90 * 24 * 60 * 60 * 1000; // 90일
   let data = cloneDeep(originalData);
-  data[id] = currentTime;
+  // data[id] = currentTime;
 
   data = Object.fromEntries(
     Object.entries(data)

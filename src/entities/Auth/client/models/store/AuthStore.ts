@@ -10,6 +10,8 @@ type AuthState = {
 
   isLogin: boolean;
 
+  setIsLogin: (isLogin: boolean) => void;
+
   isLoginFormDialogVisible: boolean;
 
   setLoginFormDialogVisible: (visible: boolean) => void;
@@ -21,6 +23,8 @@ export const useAuthStore = create<AuthState>((set, get) => ({
   isLoginFormDialogVisible: false,
 
   isLogin: false,
+
+  setIsLogin: (isLogin: boolean) => set(() => ({ isLogin })),
 
   setSession: (session) =>
     set(() => {
