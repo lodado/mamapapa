@@ -75,8 +75,10 @@ const ShareButton = () => {
            * 보안 상의 이유로 event.origin 체크 로직을 추가하는 것을 추천합니다.
            * 예: if (event.origin !== "https://내도메인") return;
            */
+
           if (event.data === "LOGIN_SUCCESS") {
             // 로그인 성공 시, AuthStore 등에서 상태 갱신
+
             setIsLogin(true);
 
             try {
