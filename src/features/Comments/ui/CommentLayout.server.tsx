@@ -1,10 +1,11 @@
 import React from "react";
 import { CommentsProps } from "./type";
-import Comments from "./Comments";
+import CommentList from "./CommentList";
 import { getQueryClient } from "@/shared";
 import { getParsedBoardKey } from "../utils/constant";
 import { fetchComments } from "../api/fetchComments";
 import { dehydrate, HydrationBoundary } from "@tanstack/react-query";
+import CommentInput from "./CommentInput";
 
 const CommentLayout = async ({ userId, boardId }: CommentsProps) => {
   const queryClient = getQueryClient();
@@ -16,7 +17,9 @@ const CommentLayout = async ({ userId, boardId }: CommentsProps) => {
 
   return (
     <HydrationBoundary state={dehydrate(queryClient)}>
-      <Comments userId={userId} boardId={boardId} />
+      <CommentInput userId={userId} boardId={boardId} />
+
+      <CommentList userId={userId} boardId={boardId} />
     </HydrationBoundary>
   );
 };

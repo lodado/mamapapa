@@ -6,7 +6,7 @@ import { GetUserInfoUseCase } from "@/entities/Auth/core";
 import { EDGE_DI_REPOSITORY } from "@/DI/edge.server";
 import setCircuitBreaker from "@/shared/libs/Redis/setCircuitBreaker";
 
-const PAGE_SIZE = 50;
+const PAGE_SIZE = 100;
 
 // GET: 페이지네이션을 통한 댓글 목록 조회
 export async function GET(request: NextRequest) {
