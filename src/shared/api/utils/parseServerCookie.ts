@@ -12,6 +12,6 @@ const rawParseServerCookie = async () => {
   return cookieString;
 };
 
-export const parseServerCookie = () => {
-  return rawParseServerCookie;
+export const parseServerCookie = async () => {
+  return rawParseServerCookie();
 };

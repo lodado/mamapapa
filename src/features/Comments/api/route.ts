@@ -1,0 +1,90 @@
+// app/api/comments/route.ts
+import { supabaseInstance } from "@/shared/index.server";
+import { NextRequest, NextResponse } from "next/server";
+import { Comment } from "../stores/type";
+import { GetUserInfoUseCase } from "@/entities/Auth/core";
+import { EDGE_DI_REPOSITORY } from "@/DI/edge.server";
+import setCircuitBreaker from "@/shared/libs/Redis/setCircuitBreaker";
+
+const PAGE_SIZE = 50;
+
+// GET: 페이지네이션을 통한 댓글 목록 조회
+export async function GET(request: NextRequest) {
+  // 쿼리 파라미터 'cursor'를 offset으로 사용 (기본값 0)
+  const cursorParam = request.nextUrl.searchParams.get("cursor") ?? "0";
+  const boardId = request.nextUrl.searchParams.get("boardId") ?? "0";
+  const cursor = parseInt(cursorParam, 10);
+
+  // Supabase의 .range() 메서드는 [start, end] 인덱스를 지정합니다.
+  const start = cursor;
+  const end = cursor + PAGE_SIZE - 1;
+
+  // 댓글 조회: 최신 댓글이 먼저 보이도록 createdAt 기준 내림차순 정렬
+  const {
+    data: comments,
+    error,
+    count,
+  } = await supabaseInstance
+    .from("simminyComments")
+    .select("id, content, createdAt", { count: "exact" })
+    .order("createdAt", { ascending: false })
+    .eq("boardId", boardId)
+    .range(start, end);
+
+  if (error) {
+    return NextResponse.json({ error: error.message }, { status: 500 });
+  }
+
+  // 다음 페이지가 있는 경우 다음 커서(offset) 계산
+  let nextCursor: number | null = null;
+  if (count !== null && cursor + PAGE_SIZE < count) {
+    nextCursor = cursor + PAGE_SIZE;
+  }
+
+  return NextResponse.json({ comments, nextCursor });
+}
+
+// POST: 새 댓글 추가
+export async function POST(request: NextRequest) {
+  try {
+    const body: Comment = await request.json();
+    const { content, userId, boardId } = body;
+
+    const { error: circuitBreakerError, message } = await setCircuitBreaker(`commentsApiUser${userId}`, 35);
+
+    if (circuitBreakerError) {
+      return NextResponse.json({ error: message }, { status: 429 });
+    }
+
+    const auth = await new GetUserInfoUseCase(new EDGE_DI_REPOSITORY.Auth()).execute();
+
+    if (!auth) {
+      return NextResponse.json({ error: "User not found" }, { status: 404 });
+    }
+
+    if (auth.id !== userId) {
+      return NextResponse.json({ error: "bad request" }, { status: 400 });
+    }
+
+    if (!content) {
+      return NextResponse.json({ error: "Content is required" }, { status: 400 });
+    }
+
+    // 새로운 댓글을 데이터베이스에 추가
+    // userId, boardId 등 다른 컬럼은 필요에 따라 추가할 수 있습니다.
+    const { data, error } = await supabaseInstance
+      .from("simminyComments")
+      .insert([{ userId, boardId, content }])
+      // 새로 생성된 행의 데이터를 받아오기 위해 select 사용
+      .select("id, boardId, content, createdAt")
+      .single();
+
+    if (error) {
+      return NextResponse.json({ error: error.message }, { status: 500 });
+    }
+
+    return NextResponse.json(data, { status: 201 });
+  } catch (err: any) {
+    return NextResponse.json({ error: err.message }, { status: 500 });
+  }
+}

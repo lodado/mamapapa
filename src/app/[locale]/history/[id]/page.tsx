@@ -1,6 +1,6 @@
 import { ReactiveLayout } from "@/shared/ui/ReactiveLayout";
-import React, { PropsWithChildren } from "react";
- 
+import React from "react";
+
 import { ButtonLink } from "@/entities/Router";
 
 import HistoryPageHeader from "./components/HistoryPageHeader";
@@ -14,7 +14,11 @@ import { ComparisonMetaData } from "@/features/ImageSelector/models";
 import { ImagePrediction } from "@/widgets/ImagePrediction";
 import { unstable_cache } from "next/cache";
 
-export const revalidate = 7200000; // 2 hours 
+import { GetUserInfoUseCase } from "@/entities/Auth/core";
+import { EDGE_DI_REPOSITORY } from "@/DI/edge.server";
+import { CommentLayout } from "@/features/Comments/index.server";
+
+export const revalidate = 7200000; // 2 hours
 export const dynamicParams = true;
 
 const getCachedPosts = (id: string) =>
@@ -37,7 +41,10 @@ const getCachedPosts = (id: string) =>
   );
 
 const Page = async ({ params }: { params: { id: string } }) => {
-  const { data, error } = await getCachedPosts(params.id)();
+  const { id } = params;
+  const { data, error } = await getCachedPosts(id)();
+
+  const user = await new GetUserInfoUseCase(new EDGE_DI_REPOSITORY.Auth()).execute();
 
   if (error) {
     return <>page not found!</>;
@@ -58,6 +65,8 @@ const Page = async ({ params }: { params: { id: string } }) => {
               comparisons={comparisonList.filter((image) => image !== playerImage)}
               playerImage={playerImage}
             />
+
+            <CommentLayout userId={user?.id ?? "-1"} boardId={id} />
           </div>
 
           <div role="none presentation" className="h-[200px]"></div>

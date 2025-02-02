@@ -6,6 +6,10 @@ class MockController {
   abort() {}
 }
 
+/**
+ *  data fetch를 위한 request 함수
+ *  data (body)는 string으로 넣을것
+ */
 const request = async <T>({
   method = "GET",
   url = "",
@@ -17,12 +21,13 @@ const request = async <T>({
   ...options
 }: {
   url: string;
-  data?: Record<string, unknown> | Array<unknown> | FormData;
+  data?: Record<string, unknown> | Array<unknown> | FormData | string;
   params?: Record<string, unknown>;
   timeout?: number;
   isSignalRequired?: boolean;
 } & RequestInit): Promise<T> => {
   const controller = isServerSide() ? new AbortController() : (new MockController() as AbortController);
+
   const body = ["GET", "HEAD"].includes(method) ? undefined : data;
   const requestHeaders: Record<string, any> = { "Content-Type": "application/json", ...headers };
 

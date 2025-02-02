@@ -9,7 +9,8 @@ import useServerAction from "./useServerAction";
 import useScrollDirection from "./useScrollDirection";
 import useScrollTrigger from "./useScrollTrigger";
 import useIsMount from "./useIsMount";
+import useIntersectionObserver from "./useIntersectionObserver";
 
-export { useIsMount, useErrorBoundary, useScrollTrigger, useScrollDirection, useServerAction };
+export { useIntersectionObserver, useIsMount, useErrorBoundary, useScrollTrigger, useScrollDirection, useServerAction };
 
 export { useInterval, useIsClient, useLinkHref, useForkRef, useDebounce, useForceRenderer };
