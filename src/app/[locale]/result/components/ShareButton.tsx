@@ -9,6 +9,8 @@ import { ImageMetadata, useImageSelectorStore } from "@/features/ImageSelector/m
 import { useServerAction } from "@/shared/hooks";
 
 import { picturesSubmitApi } from "../api/picturesSubmitApi";
+import { USER_PLAYER_NAME } from "@/entities";
+import { cosineSimilarity, cosineToPercentage } from "../utils/similarity";
 
 const ShareButton = () => {
   const imageContainer = useMemo(() => new IndexedDBController<ImageMetadata[]>("IMG_CONTAINER"), []);
@@ -19,10 +21,20 @@ const ShareButton = () => {
   const router = useRouter();
 
   const handleSubmitFormData = async () => {
+    const playerImage = images.find((image) => image.selectedPlayer === USER_PLAYER_NAME)!;
+
     try {
       const formData = new FormData();
       images.forEach((image, index) => {
         Object.entries(image).forEach(([key, value]) => {
+          if (key === "embedding") {
+            const similarity = image?.embedding
+              ? cosineToPercentage(cosineSimilarity(playerImage!.embedding!, image.embedding!))
+              : 0;
+            formData.append(`images[${index}][similarity]`, String(similarity ?? 0));
+            return;
+          }
+
           if (!Array.isArray(value)) {
             formData.append(`images[${index}][${key}]`, value);
           }
@@ -34,21 +46,17 @@ const ShareButton = () => {
 
       formData.append("size", images.length.toString());
 
-      const data = await onSubmit(formData);
+      const data = (await onSubmit(formData)) as { id: string | number };
 
-      console.log(data, " 123");
+      const { id } = data;
+
+      router.push(`/result/${id}`);
     } catch (e) {
       console.log(e);
     }
   };
 
-  useEffect(() => {
-    handleSubmitFormData();
-  }, []);
-
   const handleShareButtonClick = useCallback(async () => {
-    handleSubmitFormData();
-
     if (!isLogin) {
       // 팝업(새 창)을 연다.
       const popup = window.open(
@@ -67,10 +75,9 @@ const ShareButton = () => {
           if (event.data === "LOGIN_SUCCESS") {
             // 로그인 성공 시, AuthStore 등에서 상태 갱신
             setIsLogin(true);
-            popup.close();
+
             try {
-              const data = await request({ method: "POST", url: "/api/images" });
-              console.log(data);
+              handleSubmitFormData();
             } catch (e) {
               console.log(e);
             }
