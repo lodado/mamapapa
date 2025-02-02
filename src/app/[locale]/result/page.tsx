@@ -1,7 +1,5 @@
-"use client";
-
 import { ReactiveLayout } from "@/shared/ui/ReactiveLayout";
-import React, { PropsWithChildren } from "react";
+import React from "react";
 
 import { ButtonLink } from "@/entities/Router";
 
@@ -9,11 +7,18 @@ import FacePageHeader from "./components/FacePageHeader";
 
 import { ToastViewPort } from "@/shared/ui/Toast";
 import { PAGE_ROUTE } from "@/entities/Router/configs/route";
-import ImagePrediction from "./components/ImagePrediction";
+import ResultPageImagePrediction from "./components/ResultPageImagePrediction";
 import ShareButton from "./components/ShareButton";
 import { ModelDownloader } from "@/features";
+import { getLocalesListsForStateParams } from "@/shared/index.server";
+import { setRequestLocale } from "next-intl/server";
+
+export async function generateStaticParams() {
+  return getLocalesListsForStateParams();
+}
 
 const Page = ({ params }: { params: { locale: string } }) => {
+  setRequestLocale(params.locale);
   return (
     <>
       <ReactiveLayout>
@@ -22,7 +27,7 @@ const Page = ({ params }: { params: { locale: string } }) => {
 
         <main className="flex flex-col items-center w-full justify-center flex-grow ">
           <div className="flex-grow flex flex-col items-center w-full p-4">
-            <ImagePrediction />
+            <ResultPageImagePrediction />
           </div>
 
           <div role="none presentation" className="h-[200px]"></div>

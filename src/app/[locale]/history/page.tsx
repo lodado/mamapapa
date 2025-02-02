@@ -3,11 +3,10 @@ import React from "react";
  
 import { ButtonLink } from "@/entities/Router";
 
-import FacePageHeader from "./components/FacePageHeader";
 
 import { ToastViewPort } from "@/shared/ui/Toast";
 import { PAGE_ROUTE } from "@/entities/Router/configs/route";
-import ImagePrediction from "./components/ImagePrediction";
+import FacePageHeader from "./components/FacePageHeader";
 
 const Page = () => {
   return (
@@ -17,9 +16,7 @@ const Page = () => {
         <FacePageHeader />
 
         <main className="flex flex-col items-center w-full justify-center flex-grow ">
-          <div className="flex-grow flex flex-col items-center w-full p-4">
-            <ImagePrediction />
-          </div>
+          <div className="flex-grow flex flex-col items-center w-full p-4"></div>
 
           <div role="none presentation" className="h-[200px]"></div>
         </main>

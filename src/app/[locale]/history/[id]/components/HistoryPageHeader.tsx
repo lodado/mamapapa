@@ -9,7 +9,7 @@ import SimminIcon from "/public/SimminIcon.svg";
 import React from "react";
 import { useScrollTrigger } from "@/shared/hooks";
 
-const FacePageHeader = () => {
+const HistoryPageHeader = () => {
   const { triggered: hideSecondLine } = useScrollTrigger({ threshold: 150 });
 
   return (
@@ -33,4 +33,4 @@ const FacePageHeader = () => {
   );
 };
 
-export default FacePageHeader;
+export default HistoryPageHeader;

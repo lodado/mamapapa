@@ -10,13 +10,14 @@ import { useServerAction } from "@/shared/hooks";
 
 import { picturesSubmitApi } from "../api/picturesSubmitApi";
 import { USER_PLAYER_NAME } from "@/entities";
-import { cosineSimilarity, cosineToPercentage } from "../utils/similarity";
+
 import { useLoadingStore } from "@/shared/ui/LoadingSpinner";
+import { cosineSimilarity, cosineToPercentage } from "@/widgets/ImagePrediction";
 
 const ShareButton = () => {
   const imageContainer = useMemo(() => new IndexedDBController<ImageMetadata[]>("IMG_CONTAINER"), []);
   const { onSubmit } = useServerAction(picturesSubmitApi);
-  const { isLoading, setLoading } = useLoadingStore();
+  const { isLoading } = useLoadingStore();
 
   const { isLogin, setIsLogin } = useAuthStore();
   const { images, setImages } = useImageSelectorStore();

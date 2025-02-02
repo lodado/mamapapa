@@ -3,28 +3,43 @@ import React, { PropsWithChildren } from "react";
  
 import { ButtonLink } from "@/entities/Router";
 
-import FacePageHeader from "./components/FacePageHeader";
+import HistoryPageHeader from "./components/HistoryPageHeader";
 
 import { ToastViewPort } from "@/shared/ui/Toast";
 import { PAGE_ROUTE } from "@/entities/Router/configs/route";
-import ImagePrediction from "./components/ImagePrediction";
+
 import { supabaseInstance } from "@/shared/index.server";
 import { USER_PLAYER_NAME } from "@/entities";
 import { ComparisonMetaData } from "@/features/ImageSelector/models";
+import { ImagePrediction } from "@/widgets/ImagePrediction";
+import { unstable_cache } from "next/cache";
 
-export const revalidate = 7200000; // 2 hours in milliseconds
+// export const revalidate = 7200000; // 2 hours in milliseconds
 export const dynamicParams = true;
 
-const Page = async ({ params }: { params: { id: string } }) => {
-  const { data, error } = await supabaseInstance
-    .from("simminyResults")
-    .select(
-      `
+const getCachedPosts = (id: string) =>
+  unstable_cache(
+    async () => {
+      const result = await supabaseInstance
+        .from("simminyResults")
+        .select(
+          `
       *
     `
-    )
-    .eq("id", params.id)
-    .single();
+        )
+        .eq("id", id)
+        .single();
+
+      console.log(result);
+
+      return result;
+    },
+    ["history", id],
+    { revalidate: 20, tags: ["history", id] }
+  );
+
+const Page = async ({ params }: { params: { id: string } }) => {
+  const { data, error } = await getCachedPosts(params.id)();
 
   if (error) {
     return <>page not found!</>;
@@ -37,7 +52,7 @@ const Page = async ({ params }: { params: { id: string } }) => {
     <>
       <ReactiveLayout>
         <div role="none presentation" className="w-full flex-shrink-0 h-[4rem]" />
-        <FacePageHeader />
+        <HistoryPageHeader />
 
         <main className="flex flex-col items-center w-full justify-center flex-grow ">
           <div className="flex-grow flex flex-col items-center w-full p-4">
