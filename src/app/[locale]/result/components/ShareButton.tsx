@@ -2,19 +2,21 @@
 
 import { useAuthStore } from "@/entities/Auth/client/models/store/AuthStore";
 import { Button } from "@/shared/ui";
-import React, { useCallback, useEffect, useMemo } from "react";
+import React, { useCallback, useMemo } from "react";
 import { useRouter } from "next/navigation";
-import { IndexedDBController, request } from "@/shared";
+import { IndexedDBController } from "@/shared";
 import { ImageMetadata, useImageSelectorStore } from "@/features/ImageSelector/models";
 import { useServerAction } from "@/shared/hooks";
 
 import { picturesSubmitApi } from "../api/picturesSubmitApi";
 import { USER_PLAYER_NAME } from "@/entities";
 import { cosineSimilarity, cosineToPercentage } from "../utils/similarity";
+import { useLoadingStore } from "@/shared/ui/LoadingSpinner";
 
 const ShareButton = () => {
   const imageContainer = useMemo(() => new IndexedDBController<ImageMetadata[]>("IMG_CONTAINER"), []);
   const { onSubmit } = useServerAction(picturesSubmitApi);
+  const { isLoading, setLoading } = useLoadingStore();
 
   const { isLogin, setIsLogin } = useAuthStore();
   const { images, setImages } = useImageSelectorStore();
@@ -46,11 +48,11 @@ const ShareButton = () => {
 
       formData.append("size", images.length.toString());
 
-      const data = (await onSubmit(formData)) as { id: string | number };
+      const data = (await onSubmit(formData)) as { data: { id: string | number }[] };
 
-      const { id } = data;
-
-      router.push(`/result/${id}`);
+      const { id } = data?.data?.[0];
+      setImages([]);
+      router.push(`/history/${id}`);
     } catch (e) {
       console.log(e);
     }
@@ -96,12 +98,18 @@ const ShareButton = () => {
         }, 500);
       }
     } else {
+      handleSubmitFormData();
     }
-  }, [isLogin, setIsLogin]);
+  }, [isLogin, setIsLogin, images]);
 
   return (
     <div className="w-full flex items-center max-w-[29rem]">
-      <Button className="w-full" variant="primaryLine" onClick={handleShareButtonClick}>
+      <Button
+        className="w-full"
+        variant="primaryLine"
+        onClick={handleShareButtonClick}
+        disabled={isLoading && !images.every((image) => image.embedding != undefined)}
+      >
         공유하기
       </Button>
     </div>

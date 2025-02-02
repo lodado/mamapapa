@@ -1,6 +1,5 @@
 import { create } from "zustand";
 import * as tf from "@tensorflow/tfjs";
-import { USER_PLAYER_NAME } from "@/entities";
 
 export interface FaceCoordinates {
   x: number;
@@ -9,7 +8,7 @@ export interface FaceCoordinates {
   height: number;
 }
 
-export interface ImageMetadata {
+export interface RawImageMetadata {
   id: string; // 고유 ID (ex: uuid or timestamp)
   url: string; // 미리보기 URL
   file: File; // 원본 파일 객체
@@ -17,9 +16,16 @@ export interface ImageMetadata {
   faceCoordinates: FaceCoordinates;
 
   selectedPlayer?: string;
+}
 
+export interface ImageMetadata extends RawImageMetadata {
   embedding?: Float32Array | null; // 예측 모델에서 생성한 임베딩 벡터
 }
+
+export interface ComparisonMetaData extends RawImageMetadata {
+  similarity: number;
+}
+
 
 export interface ImageSelectorState {
   images: ImageMetadata[];

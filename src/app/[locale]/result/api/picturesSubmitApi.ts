@@ -37,7 +37,7 @@ export async function picturesSubmitApi(formData: FormData) {
       const selectedPlayer = formData.get(`images[${index}][selectedPlayer]`) as string;
       const file = formData.get(`images[${index}][file]`) as File;
 
-      const similarity = formData.getAll(`images[${index}][similarity]`);
+      const similarity = formData.get(`images[${index}][similarity]`);
 
       return {
         id,
@@ -83,6 +83,7 @@ export async function picturesSubmitApi(formData: FormData) {
           id: image.id,
           url: image.url,
           selectedPlayer: image.selectedPlayer ?? null,
+          similarity: image.similarity ?? 0,
         }))
       ),
       userId: user.id,

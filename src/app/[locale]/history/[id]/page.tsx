@@ -8,8 +8,31 @@ import FacePageHeader from "./components/FacePageHeader";
 import { ToastViewPort } from "@/shared/ui/Toast";
 import { PAGE_ROUTE } from "@/entities/Router/configs/route";
 import ImagePrediction from "./components/ImagePrediction";
+import { supabaseInstance } from "@/shared/index.server";
+import { USER_PLAYER_NAME } from "@/entities";
+import { ComparisonMetaData } from "@/features/ImageSelector/models";
 
-const Page = () => {
+export const revalidate = 7200000; // 2 hours in milliseconds
+export const dynamicParams = true;
+
+const Page = async ({ params }: { params: { id: string } }) => {
+  const { data, error } = await supabaseInstance
+    .from("simminyResults")
+    .select(
+      `
+      *
+    `
+    )
+    .eq("id", params.id)
+    .single();
+
+  if (error) {
+    return <>page not found!</>;
+  }
+
+  const comparisonList = JSON.parse(data?.imageList || []) as ComparisonMetaData[];
+  const playerImage = comparisonList.find((image) => image.selectedPlayer === USER_PLAYER_NAME)!;
+
   return (
     <>
       <ReactiveLayout>
@@ -18,7 +41,10 @@ const Page = () => {
 
         <main className="flex flex-col items-center w-full justify-center flex-grow ">
           <div className="flex-grow flex flex-col items-center w-full p-4">
-            <ImagePrediction />
+            <ImagePrediction
+              comparisons={comparisonList.filter((image) => image !== playerImage)}
+              playerImage={playerImage}
+            />
           </div>
 
           <div role="none presentation" className="h-[200px]"></div>
