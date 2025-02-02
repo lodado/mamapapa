@@ -5,6 +5,8 @@ import { GetUserInfoUseCase } from "@/entities/Auth/core";
 import { ImageMetadata } from "@/features/ImageSelector/models";
 import { STORAGE_PATH } from "@/shared";
 import { supabaseInstance } from "@/shared/index.server";
+
+import setCircuitBreaker from "@/shared/libs/Redis/setCircuitBreaker";
 import { v4 as uuidv4 } from "uuid";
 
 const getUniqueFileName = (originalFileName: string) => {
@@ -16,6 +18,9 @@ const getUniqueFileName = (originalFileName: string) => {
   return `${baseFileName}-${uniqueId}.${fileExtension}`;
 };
 
+const getCircuitBreakerId = (id: string | number) => `picturesSubmitApiUser${id}`;
+const CIRCUIT_BREAKER_LIMIT = 12;
+
 // eslint-disable-next-line consistent-return
 export async function picturesSubmitApi(formData: FormData) {
   try {
@@ -24,6 +29,17 @@ export async function picturesSubmitApi(formData: FormData) {
     if (!user) {
       return {
         message: "User not found",
+      };
+    }
+
+    const { error: circutBreakError, message } = await setCircuitBreaker(
+      getCircuitBreakerId(user.id),
+      CIRCUIT_BREAKER_LIMIT
+    );
+
+    if (circutBreakError) {
+      return {
+        message: message,
       };
     }
 
@@ -72,7 +88,6 @@ export async function picturesSubmitApi(formData: FormData) {
     }
 
     // (2) Supabase DB에 메타데이터 저장
-    //     - faceCoordinates와 embedding 등을 JSON/배열 형태로 삽입
 
     const insertData = {
       title: "이미지 비교 결과",

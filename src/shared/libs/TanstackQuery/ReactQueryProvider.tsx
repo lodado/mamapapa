@@ -1,5 +1,4 @@
-"use client";
-
+import { cache } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 // import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
@@ -13,7 +12,7 @@ export function makeQueryClient() {
 
 let browserQueryClient: QueryClient | undefined;
 
-export function getQueryClient() {
+export const getQueryClient = () => {
   if (typeof window === "undefined") {
     // Server: always make a new query client
     return makeQueryClient();
@@ -24,7 +23,7 @@ export function getQueryClient() {
   // have a suspense boundary BELOW the creation of the query client
   if (!browserQueryClient) browserQueryClient = makeQueryClient();
   return browserQueryClient;
-}
+};
 
 export const ReactQueryProvider = ({ children }: PropsWithChildren) => {
   const queryClient = getQueryClient();
