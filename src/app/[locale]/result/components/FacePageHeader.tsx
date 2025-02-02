@@ -5,10 +5,8 @@ import { PAGE_ROUTE } from "@/entities/Router/configs/route";
 import { Header } from "@/features";
 import { ChevronLeft } from "lucide-react";
 
-import SimminIcon from "/public/SimminIcon.svg";
 import React from "react";
 import { useScrollTrigger } from "@/shared/hooks";
-import FallBackHeader from "../../faces/components/FallBackHeader";
 
 const FacePageHeader = () => {
   const { triggered: hideSecondLine } = useScrollTrigger({ threshold: 150 });

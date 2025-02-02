@@ -30,8 +30,6 @@ const getCachedPosts = (id: string) =>
         .eq("id", id)
         .single();
 
-      console.log(result);
-
       return result;
     },
     ["history", id],
