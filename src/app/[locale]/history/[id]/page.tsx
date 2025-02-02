@@ -14,7 +14,7 @@ import { ComparisonMetaData } from "@/features/ImageSelector/models";
 import { ImagePrediction } from "@/widgets/ImagePrediction";
 import { unstable_cache } from "next/cache";
 
-// export const revalidate = 7200000; // 2 hours in milliseconds
+export const revalidate = 7200000; // 2 hours 
 export const dynamicParams = true;
 
 const getCachedPosts = (id: string) =>

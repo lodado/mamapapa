@@ -8,7 +8,6 @@ import CrossHair from "/public/CrossHair.svg";
 import Delete from "/public/delete.svg";
 import FaceOff from "/public/face_retouching_off.svg";
 
-import { useToastStore } from "@/shared/ui/Toast/stores";
 import { Ellipsis } from "lucide-react";
 import { usePlayerStore } from "@/entities";
 import CropSettingDialog from "./CropSettingDialog";
@@ -39,7 +38,7 @@ const ImageLists = () => {
             <div
               id={image.id}
               key={image.id}
-              className="rounded-lg relative flex items-center justify-center cursor-pointer min-w-[10vw] min-h-[10vw] w-full before:content-[''] before:block before:pb-[100%]"
+              className="rounded-lg relative flex items-center justify-center cursor-pointer min-w-[150px] min-h-[150px] w-full before:content-[''] before:block before:pb-[100%]"
             >
               <>
                 <Dropdown>
