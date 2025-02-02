@@ -50,7 +50,7 @@ export async function POST(request: NextRequest) {
     const body: Comment = await request.json();
     const { content, userId, boardId } = body;
 
-    const { error: circuitBreakerError, message } = await setCircuitBreaker(`commentsApiUser${userId}`, 35);
+    const { error: circuitBreakerError, message } = await setCircuitBreaker(`commentsApiUser${userId}`, 35, 10 * 60);
 
     if (circuitBreakerError) {
       return NextResponse.json({ error: message }, { status: 429 });

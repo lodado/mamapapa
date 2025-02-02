@@ -17,13 +17,14 @@ import { cosineSimilarity, cosineToPercentage } from "@/widgets/ImagePrediction"
 const ShareButton = () => {
   const imageContainer = useMemo(() => new IndexedDBController<ImageMetadata[]>("IMG_CONTAINER"), []);
   const { onSubmit } = useServerAction(picturesSubmitApi);
-  const { isLoading } = useLoadingStore();
+  const { isLoading, setLoading } = useLoadingStore();
 
   const { isLogin, setIsLogin } = useAuthStore();
   const { images, setImages } = useImageSelectorStore();
   const router = useRouter();
 
   const handleSubmitFormData = async () => {
+    setLoading(true);
     const playerImage = images.find((image) => image.selectedPlayer === USER_PLAYER_NAME)!;
 
     try {

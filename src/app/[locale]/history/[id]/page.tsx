@@ -42,10 +42,12 @@ const getCachedPosts = (id: string) =>
 
 const Page = async ({ params }: { params: { id: string } }) => {
   const { id } = params;
+ 
   const { data, error } = await getCachedPosts(id)();
 
   const user = await new GetUserInfoUseCase(new EDGE_DI_REPOSITORY.Auth()).execute();
 
+  
   if (error) {
     return <>page not found!</>;
   }
