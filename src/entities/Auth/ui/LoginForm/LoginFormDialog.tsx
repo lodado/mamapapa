@@ -13,7 +13,7 @@ const LoginFormDialog = ({}) => {
   return (
     <AlertDialog
       swipePercent={0.4}
-      className="h-[calc(45*var(--vh))] min-h-[300px]"
+      className="h-[300px]"
       isVisible={isLoginFormDialogVisible}
       onChangeVisible={setLoginFormDialogVisible}
     >

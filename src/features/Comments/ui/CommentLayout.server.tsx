@@ -19,9 +19,9 @@ const CommentLayout = async ({ userId, boardId }: CommentsProps) => {
 
   return (
     <HydrationBoundary state={dehydrate(queryClient)}>
-      <CommentInput userId={userId} boardId={boardId} />
-
-      <CommentList userId={userId} boardId={boardId} />
+      <div className="w-full bg-red-100">
+        <CommentList userId={userId} boardId={boardId} />
+      </div>
     </HydrationBoundary>
   );
 };

@@ -4,6 +4,7 @@ import { useMutation } from "@tanstack/react-query";
 import { useState } from "react";
 
 import { getQueryClient } from "@/shared";
+import { Input } from "@/shared/ui";
 import { useToastStore } from "@/shared/ui/Toast/stores";
 
 import { updateComments } from "../api/fetchComments";
@@ -39,17 +40,15 @@ const CommentInput = ({ userId, boardId }: { userId: string; boardId: string }) 
   };
 
   return (
-    <form onSubmit={handleSubmit} style={{ marginBottom: "20px" }}>
-      <textarea
+    <form onSubmit={handleSubmit} className="flex justify-center items-center w-full px-4">
+      <Input
+        wrapperClassName="w-full"
         value={content}
-        onChange={(e) => setContent(e.target.value)}
+        setValue={(newValue) => {
+          setContent(newValue);
+        }}
         placeholder="댓글을 입력하세요..."
-        rows={3}
-        style={{ width: "100%", padding: "10px" }}
       />
-      <button type="submit" style={{ marginTop: "10px" }}>
-        등록
-      </button>
     </form>
   );
 };
