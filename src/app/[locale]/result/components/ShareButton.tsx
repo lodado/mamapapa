@@ -53,7 +53,6 @@ const ShareButton = () => {
       const data = (await onSubmit(formData)) as { data: { id: string | number }[] };
 
       const { id } = data?.data?.[0];
-      setImages([]);
       router.push(`/history/${id}`);
     } catch (e) {
       console.log(e);
@@ -81,12 +80,6 @@ const ShareButton = () => {
             // 로그인 성공 시, AuthStore 등에서 상태 갱신
 
             setIsLogin(true);
-
-            try {
-              handleSubmitFormData();
-            } catch (e) {
-              console.log(e);
-            }
           }
         };
 

@@ -38,7 +38,7 @@ const ImageLists = () => {
             <div
               id={image.id}
               key={image.id}
-              className="rounded-lg relative flex items-center justify-center cursor-pointer min-w-[150px] min-h-[150px] w-full before:content-[''] before:block before:pb-[100%]"
+              className="rounded-lg relative flex items-center justify-center cursor-pointer min-w-[15vw] min-h-[15vw] w-full before:content-[''] before:block before:pb-[100%]"
             >
               <>
                 <Dropdown>
