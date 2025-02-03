@@ -1,9 +1,11 @@
 "use client";
 
-import React from "react";
 import { useInfiniteQuery } from "@tanstack/react-query";
-import { fetchComments } from "../api/fetchComments";
+import React from "react";
+
 import { useIntersectionObserver } from "@/shared/hooks";
+
+import { fetchComments } from "../api/fetchComments";
 import { getParsedBoardKey } from "../utils/constant";
 
 const CommentList = ({ boardId, userId }: { boardId: string; userId: string }) => {

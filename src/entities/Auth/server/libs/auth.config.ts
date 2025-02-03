@@ -1,10 +1,10 @@
-import { IS_DEPLOYMENT } from "./../../../../shared/constants/constant";
 // import Credentials from "next-auth/providers/credentials";
 import GithubProvider from "next-auth/providers/github";
 import GoogleProvider from "next-auth/providers/google";
 import KakaoProvider from "next-auth/providers/kakao";
 import NaverProvider from "next-auth/providers/naver";
 
+import { IS_DEPLOYMENT } from "./../../../../shared/constants/constant";
 import { AuthPort } from "./Port/index.server";
 import AuthService from "./service/AuthService";
 

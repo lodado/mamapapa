@@ -1,10 +1,11 @@
-import { create } from "zustand";
-import { LayersModel, regularizers, serialization, loadLayersModel } from "@tensorflow/tfjs";
-
 import "@tensorflow/tfjs-backend-cpu";
 import "@tensorflow/tfjs-backend-webgl";
-import BaseAsyncStore, { BaseAsyncState } from "@/shared/models/zustand/BaseAsyncStore";
+
+import { LayersModel, loadLayersModel,regularizers, serialization } from "@tensorflow/tfjs";
 import * as blazeface from "@tensorflow-models/blazeface";
+import { create } from "zustand";
+
+import BaseAsyncStore, { BaseAsyncState } from "@/shared/models/zustand/BaseAsyncStore";
 
 const MODEL_ID = "GHOST_FACE_NET_2";
 

@@ -4,8 +4,9 @@ import { cva } from "class-variance-authority";
 import React, { ReactNode, useState } from "react";
 
 import { LocalStorageStrategy, StorageController, useI18n } from "@/shared";
-import { Button, Tooltip } from "@/shared/ui";
 import { useIsClient } from "@/shared/hooks";
+import { Button, Tooltip } from "@/shared/ui";
+
 import { LOGIN_METHOD } from "../../api/constant";
 
 interface LoginButtonProps {

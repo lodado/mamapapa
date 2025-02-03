@@ -1,5 +1,5 @@
-import { create } from "zustand";
 import * as tf from "@tensorflow/tfjs";
+import { create } from "zustand";
 
 export interface FaceCoordinates {
   x: number;
@@ -64,7 +64,7 @@ export const useImageSelectorStore = create<ImageSelectorState>((set, get) => ({
       let tempImage: ImageMetadata | undefined;
 
       const targetIndex = state.images.findIndex((img) => img.id === image.id);
-      let updatedImages = state.images.map((img, index) => {
+      const updatedImages = state.images.map((img, index) => {
         if (img.selectedPlayer === player) {
           tempIndex = index;
           tempImage = img;

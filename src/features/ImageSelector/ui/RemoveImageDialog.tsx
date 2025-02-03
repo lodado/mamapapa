@@ -1,9 +1,9 @@
-import { AlertDialog } from "@/shared/ui/Dialog";
 import React from "react";
 
 import { ImageMetadata, useImageSelectorStore } from "@/features/ImageSelector/models";
-import { useToastStore } from "@/shared/ui/Toast/stores";
 import { Image } from "@/shared/ui";
+import { AlertDialog } from "@/shared/ui/Dialog";
+import { useToastStore } from "@/shared/ui/Toast/stores";
 
 const PHONE_INFO_IMAGE_URL =
   "https://qmwtuvttspuxwuwrsuci.supabase.co/storage/v1/object/public/pokitokiStorage/phone_info_1.webp";

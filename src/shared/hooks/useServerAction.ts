@@ -1,11 +1,11 @@
 "use client";
 
 import { useTransition } from "react";
- 
+
 import useErrorBoundary from "./useErrorBoundary";
 
 const useServerAction = (action: (formData: FormData) => Promise<any | undefined>, afterCallback?: () => void) => {
-  let [isPending, startTransition] = useTransition();
+  const [isPending, startTransition] = useTransition();
   // const dispatch = useDispatch();
   const { setError } = useErrorBoundary();
 

@@ -1,9 +1,10 @@
 // TooltipExample.stories.tsx
 
-import React from "react";
 import { Meta } from "@storybook/react";
-import Tooltip from "./Tooltip";
+import React from "react";
+
 import { TooltipContent } from "./components/compound";
+import Tooltip from "./Tooltip";
 
 interface TooltipExampleProps {
   side?: "top" | "right" | "bottom" | "left";

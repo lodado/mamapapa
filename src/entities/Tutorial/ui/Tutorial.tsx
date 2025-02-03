@@ -2,11 +2,13 @@
 
 import "./style.scss";
 
-import { useIsClient } from "@/shared/hooks";
 import { ComponentProps, useEffect, useMemo } from "react";
-import Joyride, { CallBackProps, STATUS } from "react-joyride";
-import { TutorialStep, useTutorialStore } from "../stores";
 import { preload } from "react-dom";
+import Joyride, { CallBackProps, STATUS } from "react-joyride";
+
+import { useIsClient } from "@/shared/hooks";
+
+import { TutorialStep, useTutorialStore } from "../stores";
 
 interface ReactTutorialProps extends Omit<ComponentProps<typeof Joyride>, "run"> {
   steps: TutorialStep[];

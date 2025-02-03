@@ -1,8 +1,7 @@
+import { AnimatePresence } from "motion/react";
 import React from 'react'
 
 import { Dialog, DialogProps } from './components/compound'
- 
-import { AnimatePresence } from "motion/react";
 
 export interface DialogTemplateProps extends DialogProps {
   Trigger?: () => JSX.Element;

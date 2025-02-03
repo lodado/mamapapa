@@ -1,10 +1,10 @@
-import { Input } from "@/shared/ui";
-import { AlertDialog } from "@/shared/ui/Dialog";
 import React, { useEffect, useState } from "react";
 
-import { ImageMetadata, useImageSelectorStore } from "@/features/ImageSelector/models";
-import { useToastStore } from "@/shared/ui/Toast/stores";
 import { usePlayerStore } from "@/entities/Player";
+import { ImageMetadata, useImageSelectorStore } from "@/features/ImageSelector/models";
+import { Input } from "@/shared/ui";
+import { AlertDialog } from "@/shared/ui/Dialog";
+import { useToastStore } from "@/shared/ui/Toast/stores";
 
 const AddNewPlayerDialog = ({
   isVisible,

@@ -1,14 +1,13 @@
 "use client";
 
-import { ComparisonMetaData } from "@/features/ImageSelector/models";
-import React from "react";
-
 import Image from "next/image";
+import React from "react";
 
 import Simliarity0 from "/public/similarity0.svg";
 import Simliarity20 from "/public/similarity20.svg";
 import Simliarity50 from "/public/similarity50.svg";
 import Simliarity80 from "/public/similarity80.svg";
+import { ComparisonMetaData } from "@/features/ImageSelector/models";
 
 const ImagePrediction = ({
   playerImage,

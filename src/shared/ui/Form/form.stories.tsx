@@ -1,8 +1,9 @@
 import "./example.css";
 
 import type { Meta, StoryObj } from "@storybook/react";
-import Form from "./Form";
+
 import { Input } from "../Input";
+import Form from "./Form";
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
 const meta: Meta<typeof Form> = {

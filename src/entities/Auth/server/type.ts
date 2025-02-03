@@ -1,8 +1,8 @@
 import { NextRequest } from "next/server";
+import { Account, Profile, Session } from "next-auth";
 import { CredentialInput } from "next-auth/providers/credentials";
 
 import { UserEntity } from "@/entities/Auth/core";
-import { Account, Profile, Session } from "next-auth";
 
 export type JWT = {
   user: UserEntity;

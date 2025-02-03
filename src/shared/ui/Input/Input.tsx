@@ -2,10 +2,11 @@
 
 import React, { forwardRef, InputHTMLAttributes, useEffect, useRef, useState } from "react";
 
-import { InputStyleVariants } from "./style";
-import { cn } from "@/shared/utils";
-import { useForkRef } from "@/shared/hooks";
 import Clear from "/public/Clear.svg";
+import { useForkRef } from "@/shared/hooks";
+import { cn } from "@/shared/utils";
+
+import { InputStyleVariants } from "./style";
 
 export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   wrapperClassName?: string;

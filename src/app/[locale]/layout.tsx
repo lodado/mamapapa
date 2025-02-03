@@ -1,12 +1,13 @@
 import type { Metadata, Viewport } from "next";
+import Head from "next/head";
 import { headers } from "next/headers";
 import { NextIntlClientProvider, useMessages } from "next-intl";
 import React from "react";
+
 import { LocaleProps, ThemeScript } from "@/shared";
+import { GlobalDialogContainer } from "@/widgets";
 
 import { RootProvider } from "../provider";
-import Head from "next/head";
-import { GlobalDialogContainer } from "@/widgets";
 import ScreenVhScript from "./ScreenVhScript";
 
 /** TODO - GA 설치 */

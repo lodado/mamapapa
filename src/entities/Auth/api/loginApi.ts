@@ -1,11 +1,13 @@
 "use server";
 
-import { LOGIN_METHOD } from "./constant";
 import { AuthError } from "next-auth";
-import { Oauth2LoginUsecase } from "@/entities/Auth/core";
-import { EDGE_DI_REPOSITORY } from "@/DI/edge.server";
 
-// eslint-disable-next-line consistent-return
+import { EDGE_DI_REPOSITORY } from "@/DI/edge.server";
+import { Oauth2LoginUsecase } from "@/entities/Auth/core";
+
+import { LOGIN_METHOD } from "./constant";
+
+ 
 export async function authenticateAction(formData: FormData) {
   const signupMethod = formData.get(LOGIN_METHOD);
   const href = formData.get("href") as string;

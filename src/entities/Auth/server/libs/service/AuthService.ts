@@ -1,9 +1,10 @@
-/* eslint-disable camelcase */
+ 
+
+import { sanitizeUrl } from "@/shared/utils/sanitizeUrl";
 
 import { AuthorizedParams, JWT, JWTParams, NextAuthSessionResponse, SessionParams, SignInParams } from "../../type";
-import refreshTokenFactory from "./refresh/refreshTokenFactory";
 import { AuthPort } from "../Port/index.server";
-import { sanitizeUrl } from "@/shared/utils/sanitizeUrl";
+import refreshTokenFactory from "./refresh/refreshTokenFactory";
 
 class AuthService {
   private AuthPort: typeof AuthPort;

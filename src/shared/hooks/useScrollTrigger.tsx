@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import throttle from "lodash/throttle";
+import { useEffect, useState } from "react";
 
 export type UseScrollTriggerOptions = {
   threshold: number; // 스크롤 트리거 임계값 (px)

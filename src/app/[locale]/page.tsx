@@ -1,17 +1,17 @@
-import { ReactiveLayout } from "@/shared/ui/ReactiveLayout";
 import { setRequestLocale } from "next-intl/server";
 import React from "react";
 
-import BodySvg from "./BODY.svg";
-import HeadSvg from "./HEAD.svg";
-import { Motion } from "@/shared/ui/animation/animation";
-import { ModelDownloader } from "@/features";
-
 import { ButtonLink } from "@/entities/Router";
-import { ScrollLock } from "@/shared/ui";
 import { PAGE_ROUTE } from "@/entities/Router/configs/route";
+import { ModelDownloader } from "@/features";
 import { getLocalesListsForStateParams } from "@/shared/libs/i18n/server/getLocalesListsForStateParams";
+import { ScrollLock } from "@/shared/ui";
+import { Motion } from "@/shared/ui/animation/animation";
+import { ReactiveLayout } from "@/shared/ui/ReactiveLayout";
+
+import BodySvg from "./BODY.svg";
 import HistoryLink from "./components/HistoryLink";
+import HeadSvg from "./HEAD.svg";
 
 export async function generateStaticParams() {
   return getLocalesListsForStateParams();

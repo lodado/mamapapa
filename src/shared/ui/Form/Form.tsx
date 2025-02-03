@@ -1,7 +1,8 @@
 import React, { ComponentProps, forwardRef, PropsWithChildren } from 'react'
 
-import { Control, Field, Label, Message, Root, Submit } from './components/radix'
 import { cn } from '@/shared/utils'
+
+import { Control, Field, Label, Message, Root, Submit } from './components/radix'
 
 // Root 컴포넌트 타입 정의
 export type FormProps = ComponentProps<typeof Root>

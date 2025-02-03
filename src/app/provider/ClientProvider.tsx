@@ -2,9 +2,8 @@
 
 import { PropsWithChildren } from "react";
 
-import { ReactDndProvider, ReactQueryProvider, RtlProvider, ThemeProvider } from "@/shared";
-
 import { NextAuthSessionResponse } from "@/entities/Auth/server/type";
+import { ReactDndProvider, ReactQueryProvider, RtlProvider, ThemeProvider } from "@/shared";
 import ToastProvider from "@/shared/ui/Toast/ui/ToastProvider";
 
 const ClientProvider = ({

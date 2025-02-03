@@ -13,7 +13,7 @@ if (!uri) {
 
 if (process.env.NODE_ENV === 'development') {
   // In development mode, reuse the MongoClient instance.
-  let globalWithMongo = global as typeof globalThis & {
+  const globalWithMongo = global as typeof globalThis & {
     _mongoClientPromise: Promise<MongoClient>;
   };
 

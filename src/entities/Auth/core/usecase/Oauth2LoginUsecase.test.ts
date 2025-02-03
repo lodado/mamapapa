@@ -1,9 +1,10 @@
-import { describe, it, expect, beforeEach } from "vitest";
-import { Oauth2LoginUsecase } from "./Oauth2LoginUsecase";
+import { beforeEach,describe, expect, it } from "vitest";
 
 import { mapRepositoryErrorToUseCaseError } from "@/shared";
-import { AuthRepositoryImpl } from "../repository";
+
 import { UserEntity } from "../entity";
+import { AuthRepositoryImpl } from "../repository";
+import { Oauth2LoginUsecase } from "./Oauth2LoginUsecase";
 
 // In-memory AuthRepository implementation for testing
 class InMemoryAuthRepository implements AuthRepositoryImpl {

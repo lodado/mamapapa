@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+
 import { noop } from "../utils";
 
 export type useIsClientParams = Function;

@@ -1,5 +1,7 @@
 "use client";
 
+import React from "react";
+
 import { USER_PLAYER_NAME } from "@/entities";
 import { ButtonLink } from "@/entities/Router";
 import { PAGE_ROUTE } from "@/entities/Router/configs/route";
@@ -7,7 +9,6 @@ import { useFaceModelStore } from "@/features/AiModel/model";
 import { useImageSelectorStore } from "@/features/ImageSelector/models";
 import { useToastStore } from "@/shared/ui/Toast/stores";
 
-import React from "react";
 import { START_COMPARE_LINK_ID } from "../configs/constant";
 
 const CompareButtonLink = () => {

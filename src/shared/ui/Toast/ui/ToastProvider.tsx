@@ -1,16 +1,17 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
 import * as Toast from "@radix-ui/react-toast";
-import { useToastStore } from "../stores/toastStore";
 import { AnimatePresence } from "motion/react";
-import { Motion } from "@/shared/ui/animation/animation";
-import { cn } from "@/shared";
-import { toastDescriptionVariants, toastHeadVariants, toastVariants } from "./style";
+import { usePathname } from "next/navigation";
+import React, { useEffect, useState } from "react";
 
 import Error from "/public/Error.svg";
 import Success from "/public/Success.svg";
-import { usePathname } from "next/navigation";
+import { cn } from "@/shared";
+import { Motion } from "@/shared/ui/animation/animation";
+
+import { useToastStore } from "../stores/toastStore";
+import { toastDescriptionVariants, toastHeadVariants, toastVariants } from "./style";
 
 export default function ToastProvider({ children }: { children: React.ReactNode }) {
   // Zustand에서 메시지 목록, 제거 함수를 가져옴

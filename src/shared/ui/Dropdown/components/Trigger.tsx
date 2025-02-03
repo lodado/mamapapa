@@ -1,11 +1,13 @@
 "use client";
 
-import { ComponentProps } from "react";
-import { SubTrigger, Trigger } from "./radix";
-import { cn } from "@/shared/utils";
-import { rawButtonVariants } from "../../Button/style";
 import { ChevronDown } from "lucide-react";
+import { ComponentProps } from "react";
+
+import { cn } from "@/shared/utils";
+
+import { rawButtonVariants } from "../../Button/style";
 import { useDropdownContext } from "./Provider";
+import { SubTrigger, Trigger } from "./radix";
 
 const DropdownTrigger = (props: ComponentProps<typeof Trigger> & { doesArrowNeed?: boolean }) => {
   const { children, className, asChild = false, doesArrowNeed = true, ...rest } = props;

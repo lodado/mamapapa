@@ -1,9 +1,11 @@
 "use client";
 
-import { AlertDialog } from "@/shared/ui/Dialog";
 import React from "react";
-import LoginForm from "./LoginForm";
+
+import { AlertDialog } from "@/shared/ui/Dialog";
+
 import { useAuthStore } from "../../client/models/store/AuthStore";
+import LoginForm from "./LoginForm";
 
 const LoginFormDialog = ({}) => {
   const { isLoginFormDialogVisible, setLoginFormDialogVisible } = useAuthStore();

@@ -1,17 +1,17 @@
 "use client";
 
 export {
-  Root,
-  Trigger,
+  Arrow,
   Content,
+  Group,
   Item,
   ItemIndicator,
-  Group,
   Label,
-  Separator,
   Portal,
-  Arrow,
+  Root,
+  Separator,
   Sub,
-  SubTrigger,
   SubContent,
+  SubTrigger,
+  Trigger,
 } from "@radix-ui/react-dropdown-menu";

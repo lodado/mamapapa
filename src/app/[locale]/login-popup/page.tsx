@@ -1,8 +1,9 @@
 "use client";
 
+import React from "react";
+
 import { useAuthStore } from "@/entities/Auth/client/models/store/AuthStore";
 import LoginForm from "@/entities/Auth/ui/LoginForm/LoginForm";
-import React from "react";
 
 export default function LoginPopupPage() {
   const { isLogin } = useAuthStore();

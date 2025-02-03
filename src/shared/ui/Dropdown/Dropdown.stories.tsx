@@ -1,8 +1,9 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import React from "react";
-import Dropdown from "./Dropdown";
 import { Label } from "@radix-ui/react-dropdown-menu";
+import type { Meta, StoryObj } from "@storybook/react";
 import { ChevronDown } from "lucide-react";
+import React from "react";
+
+import Dropdown from "./Dropdown";
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
 const meta: Meta<typeof Dropdown> = {

@@ -1,13 +1,13 @@
 "use server";
 
+import { v4 as uuidv4 } from "uuid";
+
 import { EDGE_DI_REPOSITORY } from "@/DI/edge.server";
 import { GetUserInfoUseCase } from "@/entities/Auth/core";
 import { ImageMetadata } from "@/features/ImageSelector/models";
 import { STORAGE_PATH } from "@/shared";
 import { supabaseInstance } from "@/shared/index.server";
-
 import setCircuitBreaker from "@/shared/libs/Redis/setCircuitBreaker";
-import { v4 as uuidv4 } from "uuid";
 
 const getUniqueFileName = (originalFileName: string) => {
   const fileExtension = originalFileName?.split(".")?.pop() ?? "jpg"; // 확장자 추출
@@ -21,7 +21,7 @@ const getUniqueFileName = (originalFileName: string) => {
 const getCircuitBreakerId = (id: string | number) => `picturesSubmitApiUser${id}`;
 const CIRCUIT_BREAKER_LIMIT = 12;
 
-// eslint-disable-next-line consistent-return
+ 
 export async function picturesSubmitApi(formData: FormData) {
   try {
     const user = await new GetUserInfoUseCase(new EDGE_DI_REPOSITORY.Auth()).execute();

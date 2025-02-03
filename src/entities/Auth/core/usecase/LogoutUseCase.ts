@@ -1,4 +1,5 @@
 import { mapRepositoryErrorToUseCaseError } from "@/shared";
+
 import { AuthRepositoryImpl } from "../repository";
 
 export class LogoutUseCase {

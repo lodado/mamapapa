@@ -1,17 +1,16 @@
-import { ReactiveLayout } from "@/shared/ui/ReactiveLayout";
+import { setRequestLocale } from "next-intl/server";
 import React from "react";
 
 import { ButtonLink } from "@/entities/Router";
-
-import FacePageHeader from "./components/FacePageHeader";
-
-import { ToastViewPort } from "@/shared/ui/Toast";
 import { PAGE_ROUTE } from "@/entities/Router/configs/route";
-import ResultPageImagePrediction from "./components/ResultPageImagePrediction";
-import ShareButton from "./components/ShareButton";
 import { ModelDownloader } from "@/features";
 import { getLocalesListsForStateParams } from "@/shared/index.server";
-import { setRequestLocale } from "next-intl/server";
+import { ReactiveLayout } from "@/shared/ui/ReactiveLayout";
+import { ToastViewPort } from "@/shared/ui/Toast";
+
+import FacePageHeader from "./components/FacePageHeader";
+import ResultPageImagePrediction from "./components/ResultPageImagePrediction";
+import ShareButton from "./components/ShareButton";
 
 export async function generateStaticParams() {
   return getLocalesListsForStateParams();

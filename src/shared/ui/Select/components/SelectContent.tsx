@@ -1,12 +1,13 @@
 "use client";
 
-import { cn } from "@/shared/utils";
-import { Content, Portal, ScrollDownButton, ScrollUpButton, Viewport } from "./radix";
+import "../index.scss";
 
-import { ChevronUp, ChevronDown } from "lucide-react";
+import { ChevronDown,ChevronUp } from "lucide-react";
 import { ComponentProps, PropsWithChildren } from "react";
 
-import "../index.scss";
+import { cn } from "@/shared/utils";
+
+import { Content, Portal, ScrollDownButton, ScrollUpButton, Viewport } from "./radix";
 
  
 const SelectContent = ({

@@ -1,11 +1,11 @@
 "use client";
 
+import { ChevronLeft } from "lucide-react";
+import React from "react";
+
 import { LocaleLink } from "@/entities/Router";
 import { PAGE_ROUTE } from "@/entities/Router/configs/route";
 import { Header } from "@/features";
-import { ChevronLeft } from "lucide-react";
-
-import React from "react";
 import { useScrollTrigger } from "@/shared/hooks";
 
 const FacePageHeader = () => {

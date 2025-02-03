@@ -1,7 +1,8 @@
 "use client";
 
-import { cn } from "@/shared";
 import { Viewport } from "@radix-ui/react-toast";
+
+import { cn } from "@/shared";
 
 const ToastViewPort = ({ className }: { className?: string }) => {
   return (

@@ -1,10 +1,10 @@
 "use client";
 
-import { useDrag, useDragDropManager, useDrop } from "react-dnd";
-import { useDialogContext } from "../components";
-
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { debounce, throttle } from "lodash-es";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useDrag, useDragDropManager, useDrop } from "react-dnd";
+
+import { useDialogContext } from "../components";
 
 export const RESIZE_DRAG_TYPE = "DIALOG_RESIZER";
 

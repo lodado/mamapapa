@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+
 import { supabaseProjectId } from "../../shared/libs/supabase/projectId";
 
 export const cspMiddleware = (request: NextRequest, response: NextResponse) => {

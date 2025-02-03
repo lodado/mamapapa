@@ -1,8 +1,8 @@
 "use client";
 
 import "../index.scss";
-import { X } from "lucide-react";
 
+import { X } from "lucide-react";
 import React, {
   Component,
   ComponentProps,
@@ -13,13 +13,14 @@ import React, {
   useEffect,
   useState,
 } from "react";
-
-import { Close, Content, Overlay, Portal, Root, Trigger } from "./radix";
-import { cn, contextBuildHelper, noop } from "@/shared";
-import { Motion } from "../../animation/animation";
 import { useDrop } from "react-dnd";
-import { RESIZE_DRAG_TYPE } from "./Resize";
+
+import { cn, contextBuildHelper, noop } from "@/shared";
+
+import { Motion } from "../../animation/animation";
 import { useDialogResizer } from "../hooks/useDialogResizer";
+import { Close, Content, Overlay, Portal, Root, Trigger } from "./radix";
+import { RESIZE_DRAG_TYPE } from "./Resize";
 
 const [DialogProvider, useDialogContext] = contextBuildHelper<{
   isDialogVisible: boolean;

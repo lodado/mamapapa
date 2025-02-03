@@ -1,18 +1,16 @@
-import { ReactiveLayout } from "@/shared/ui/ReactiveLayout";
+import { setRequestLocale } from "next-intl/server";
 import React from "react";
 
 import { ModelDownloader } from "@/features";
-
 import { ImageContainer } from "@/features/ImageSelector";
-
-import FacePageHeader from "./components/FacePageHeader";
-import AddPictureButton from "./components/AddPictureButton";
-import { ToastViewPort } from "@/shared/ui/Toast";
- 
-import CompareButtonLink from "./components/CompareButtonLink";
-import FacePageTutorialConnector from "./components/FacePageTutorialConnector";
 import { getLocalesListsForStateParams } from "@/shared/index.server";
-import { setRequestLocale } from "next-intl/server";
+import { ReactiveLayout } from "@/shared/ui/ReactiveLayout";
+import { ToastViewPort } from "@/shared/ui/Toast";
+
+import AddPictureButton from "./components/AddPictureButton";
+import CompareButtonLink from "./components/CompareButtonLink";
+import FacePageHeader from "./components/FacePageHeader";
+import FacePageTutorialConnector from "./components/FacePageTutorialConnector";
 
 export async function generateStaticParams() {
   return getLocalesListsForStateParams();

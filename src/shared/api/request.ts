@@ -1,5 +1,4 @@
 import { isServerSide } from "../utils";
-
 import { parseServerCookie } from "./utils/parseServerCookie";
 
 class MockController {

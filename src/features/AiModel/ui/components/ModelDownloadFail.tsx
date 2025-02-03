@@ -1,8 +1,9 @@
 import React from "react";
 
-import Error from "./Error.svg";
 import { Button } from "@/shared/ui";
+
 import { useFaceModelStore } from "../../model/faceModelStore";
+import Error from "./Error.svg";
 
 const ModelDownloadFail = () => {
   const { loadModelWithProgress } = useFaceModelStore();

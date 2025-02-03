@@ -1,5 +1,6 @@
-import { NextAuthSessionResponse } from "@/entities/Auth/server/type";
 import { create } from "zustand";
+
+import { NextAuthSessionResponse } from "@/entities/Auth/server/type";
 
 type AuthState = {
   session: NextAuthSessionResponse | null;

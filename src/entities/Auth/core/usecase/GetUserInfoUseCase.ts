@@ -1,6 +1,7 @@
 import { mapRepositoryErrorToUseCaseError } from "@/shared";
-import { AuthRepositoryImpl } from "../repository";
+
 import { UserEntity } from "../entity";
+import { AuthRepositoryImpl } from "../repository";
 
 export class GetUserInfoUseCase {
   constructor(private userAuthRepository: AuthRepositoryImpl) {}

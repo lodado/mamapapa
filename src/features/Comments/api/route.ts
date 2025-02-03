@@ -1,10 +1,12 @@
 // app/api/comments/route.ts
-import { supabaseInstance } from "@/shared/index.server";
 import { NextRequest, NextResponse } from "next/server";
-import { Comment } from "../stores/type";
-import { GetUserInfoUseCase } from "@/entities/Auth/core";
+
 import { EDGE_DI_REPOSITORY } from "@/DI/edge.server";
+import { GetUserInfoUseCase } from "@/entities/Auth/core";
+import { supabaseInstance } from "@/shared/index.server";
 import setCircuitBreaker from "@/shared/libs/Redis/setCircuitBreaker";
+
+import { Comment } from "../stores/type";
 
 const PAGE_SIZE = 100;
 

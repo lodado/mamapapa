@@ -1,18 +1,19 @@
 "use client";
 
+import { useLocale } from "next-intl";
 import { ComponentProps } from "react";
 
 import useUrl from "@/shared/hooks/useUrl";
 import { sanitizeUrl } from "@/shared/utils/sanitizeUrl";
+
 import { LocaleLink } from "../../entities/Router/ui/Link";
-import { useLocale } from "next-intl";
 
 const useLinkHref = (props: ComponentProps<typeof LocaleLink>) => {
   const { href = "", subDomain: _subDomain, custom = false, ...rest } = props;
   const { params } = useUrl();
   const locale = useLocale();
 
-  let _href = href;
+  const _href = href;
   let { subDomain = "" /* www */ } = params;
   subDomain = _subDomain || subDomain;
 

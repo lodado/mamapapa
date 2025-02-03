@@ -1,9 +1,10 @@
 "use client";
 
-import { cn } from "@/shared/utils";
-import { Content, Portal, Arrow, SubContent } from "./radix";
-
 import { ComponentProps, PropsWithChildren } from "react";
+
+import { cn } from "@/shared/utils";
+
+import { Arrow, Content, Portal, SubContent } from "./radix";
 
 interface DropdownContentProps extends ComponentProps<typeof Content> {
   className?: string;

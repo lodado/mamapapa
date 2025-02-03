@@ -1,9 +1,11 @@
 "use client";
 
 import { ComponentProps } from "react";
-import { Trigger } from "./radix";
+
 import { cn } from "@/shared/utils";
+
 import { rawButtonVariants } from "../../Button/style";
+import { Trigger } from "./radix";
 
 const SelectTrigger = (props: ComponentProps<typeof Trigger> & ComponentProps<typeof rawButtonVariants>) => {
   const { children, className, variant = "primarySolid", ...rest } = props;

@@ -1,9 +1,9 @@
 import React, { ComponentProps, PropsWithChildren } from 'react'
 
 import { Content, Item, Root, Sub } from "./components";
+import DropdownLabel from "./components/Label";
 import { DropdownRootProps } from "./components/Root";
 import DropdownSeparator from "./components/Separator";
-import DropdownLabel from "./components/Label";
 import DropdownTrigger, { DropdownSubTrigger } from "./components/Trigger";
 
 export interface DropdownProps extends PropsWithChildren, DropdownRootProps {}

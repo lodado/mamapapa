@@ -2,11 +2,12 @@
 
 import { useEffect, useState } from "react";
 
-import { useFaceModelStore } from "../model/faceModelStore";
-import ModelDownloadLoading from "./components/ModelDownloadLoading";
-import ModelDownloadFail from "./components/ModelDownloadFail";
-import ModelDownloadSuccess from "./components/ModelDownloadSuccess";
 import { cn } from "@/shared";
+
+import { useFaceModelStore } from "../model/faceModelStore";
+import ModelDownloadFail from "./components/ModelDownloadFail";
+import ModelDownloadLoading from "./components/ModelDownloadLoading";
+import ModelDownloadSuccess from "./components/ModelDownloadSuccess";
 
 const ModelDownloader = ({ className }: { className?: string }) => {
   const { progress, faceRecognitionModel: model, isError, isLoading, loadModelWithProgress } = useFaceModelStore();
@@ -18,7 +19,7 @@ const ModelDownloader = ({ className }: { className?: string }) => {
 
   useEffect(() => {
     if (model) {
-      let id = setTimeout(() => {
+      const id = setTimeout(() => {
         setVisible(false);
       }, 1500);
 

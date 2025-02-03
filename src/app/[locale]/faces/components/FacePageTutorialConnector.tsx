@@ -1,10 +1,12 @@
 "use client";
 
-import { TutorialConnector, TutorialStep } from "@/entities/Tutorial";
-import { useImageSelectorStore } from "@/features/ImageSelector/models";
 import React, { useMemo } from "react";
-import { ADD_PICTURE_BUTTON_ID, EXAMPLE_IMAGE_DATA_ID, START_COMPARE_LINK_ID } from "../configs/constant";
+
+import { TutorialConnector, TutorialStep } from "@/entities/Tutorial";
 import { ADDITIONAL_OPTION_DROPDOWN_ID, PLAYER_SELECTOR_ID } from "@/features";
+import { useImageSelectorStore } from "@/features/ImageSelector/models";
+
+import { ADD_PICTURE_BUTTON_ID, EXAMPLE_IMAGE_DATA_ID, START_COMPARE_LINK_ID } from "../configs/constant";
 
 const EXAMPLE_IMAGE = {
   id: EXAMPLE_IMAGE_DATA_ID,

@@ -1,8 +1,9 @@
+import { getLocale } from "next-intl/server";
 import { ComponentProps } from "react";
-import SeverLocaleLink from "../../entities/Router/ui/Link/ServerLocaleLink.server";
 
 import { sanitizeUrl } from "@/shared/utils/sanitizeUrl";
-import { getLocale } from "next-intl/server";
+
+import SeverLocaleLink from "../../entities/Router/ui/Link/ServerLocaleLink.server";
 import { IS_DEPLOYMENT } from "../constants";
 
 const isLocalhost = !IS_DEPLOYMENT;
@@ -12,7 +13,7 @@ export const getLinkHref = async (props: ComponentProps<typeof SeverLocaleLink>)
 
   const locale = await getLocale();
 
-  let _href = href;
+  const _href = href;
 
   let subDomain = ""; // wwww
   subDomain = _subDomain || subDomain;

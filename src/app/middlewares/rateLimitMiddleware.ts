@@ -1,7 +1,7 @@
-import { IS_DEPLOYMENT } from "./../../shared/constants/constant";
 import { Redis } from "@upstash/redis";
-
 import { NextRequest, NextResponse } from "next/server";
+
+import { IS_DEPLOYMENT } from "./../../shared/constants/constant";
 
 export const runtime = "nodejs";
 

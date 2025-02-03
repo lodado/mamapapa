@@ -46,7 +46,7 @@ const code = function code() {
     } catch (err) {}
   };
 
-  let darkQuery = window.matchMedia("(prefers-color-scheme: dark)");
+  const darkQuery = window.matchMedia("(prefers-color-scheme: dark)");
 
   darkQuery.addEventListener("change", function () {
     if (window.__theme === "system") {

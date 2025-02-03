@@ -1,5 +1,6 @@
-import { useDebounce } from "@/shared/hooks";
 import { useQueryClient } from "@tanstack/react-query";
+
+import { useDebounce } from "@/shared/hooks";
 
 const useDebouncedQueryInvalidate = ({ queryKey }: { queryKey: string }) => {
   const queryClient = useQueryClient();

@@ -1,8 +1,9 @@
 // /c:/Users/chungheonlee/Desktop/programming/next-lotion/src/shared/libs/Figma/designVariables/font.stories.tsx
 
-import React from "react";
-import { Meta } from "@storybook/react";
 import "./font.css";
+
+import { Meta } from "@storybook/react";
+import React from "react";
 
 const FontStories = ({ font, children }: { font: string; children: string }) => {
   return (

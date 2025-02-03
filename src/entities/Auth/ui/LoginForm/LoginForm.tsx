@@ -1,10 +1,11 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import React from "react";
 
-import { useTranslations } from "next-intl";
-import { ICON_GITHUB, ICON_GOOGLE, ICON_KAKAO } from "@/shared/ui";
 import { useIsClient, useServerAction } from "@/shared/hooks";
+import { ICON_GITHUB, ICON_GOOGLE, ICON_KAKAO } from "@/shared/ui";
+
 import { authenticateAction } from "../../api/loginApi";
 import Oauth2LoginButton from "./Oauth2LoginButton";
 

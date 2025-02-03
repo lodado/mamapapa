@@ -1,8 +1,8 @@
 import { cache } from "react";
 
-import { NextAuthSessionResponse } from "../../type";
 import { mapRepositoryErrorToUseCaseError } from "@/shared/constants/error/error";
 
+import { NextAuthSessionResponse } from "../../type";
 import { AuthServerRepository } from "../index.server";
 
 export class GetUserSessionInfoUseCase {

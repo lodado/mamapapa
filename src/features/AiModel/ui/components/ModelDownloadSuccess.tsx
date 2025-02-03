@@ -1,7 +1,7 @@
+import { Check } from "lucide-react";
 import React from "react";
 
 import Spinner from "./Spinner.svg";
-import { Check } from "lucide-react";
 
 const ModelDownloadSuccess = () => {
   return (

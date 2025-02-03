@@ -1,10 +1,12 @@
 "use client";
 
-import { useToastStore } from "@/shared/ui/Toast/stores";
 import { useMutation } from "@tanstack/react-query";
 import { useState } from "react";
-import { updateComments } from "../api/fetchComments";
+
 import { getQueryClient } from "@/shared";
+import { useToastStore } from "@/shared/ui/Toast/stores";
+
+import { updateComments } from "../api/fetchComments";
 import { getParsedBoardKey } from "../utils/constant";
 
 const CommentInput = ({ userId, boardId }: { userId: string; boardId: string }) => {

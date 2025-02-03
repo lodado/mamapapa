@@ -3,12 +3,11 @@ import "../src/shared/libs/Figma/index.scss";
 
 import type { Preview } from "@storybook/react";
 import React, { useEffect } from "react";
- 
-import ClientProvider from "../src/app/provider/ClientProvider";
 import { useDarkMode } from "storybook-dark-mode";
-import nextIntl from "./next-intl";
 
+import ClientProvider from "../src/app/provider/ClientProvider";
 import ThemeScript from "../src/shared/libs/CustomTheme/ui/ThemeScript";
+import nextIntl from "./next-intl";
 
 const preview: Preview = {
   initialGlobals: {

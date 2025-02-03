@@ -1,5 +1,6 @@
-import { AuthRepositoryImpl, UserEntity } from "@/entities/Auth/core";
 import { signOut } from "next-auth/react";
+
+import { AuthRepositoryImpl, UserEntity } from "@/entities/Auth/core";
 
 export default class AuthClientRepository implements AuthRepositoryImpl {
   private user: UserEntity;

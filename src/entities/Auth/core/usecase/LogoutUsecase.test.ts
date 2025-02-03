@@ -1,9 +1,10 @@
-import { describe, it, expect, beforeEach } from "vitest";
-import { LogoutUseCase } from "./LogoutUseCase";
+import { beforeEach,describe, expect, it } from "vitest";
 
 import { mapRepositoryErrorToUseCaseError } from "@/shared";
-import { AuthRepositoryImpl } from "../repository";
+
 import { UserEntity } from "../entity";
+import { AuthRepositoryImpl } from "../repository";
+import { LogoutUseCase } from "./LogoutUseCase";
 
 // In-memory AuthRepository implementation for testing
 class InMemoryAuthRepository implements AuthRepositoryImpl {

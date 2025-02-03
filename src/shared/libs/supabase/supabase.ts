@@ -1,7 +1,8 @@
 import { createClient } from "@supabase/supabase-js";
 
-import Database from "./type";
 import { isServerSide } from "@/shared/utils";
+
+import Database from "./type";
 
 export const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL!;
 

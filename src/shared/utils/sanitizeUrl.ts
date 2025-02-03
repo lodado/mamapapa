@@ -12,7 +12,7 @@ export function isUrl(text: string, options?: { requireHostname: boolean }) {
 
   try {
     const url = new URL(text)
-    // eslint-disable-next-line no-script-url
+     
     const blockedProtocols = ['javascript:', 'file:', 'vbscript:', 'data:']
 
     if (blockedProtocols.includes(url.protocol)) {

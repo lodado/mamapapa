@@ -1,7 +1,7 @@
 import { cloneDeep, debounce, isNil } from "lodash-es";
 
-import { PubSubManager } from "../PubSubManager";
 import IndexedDBController from "../../IndexedDBController";
+import { PubSubManager } from "../PubSubManager";
 
 const BATCH_USER_THRESHOLD = 50;
 
@@ -78,7 +78,7 @@ storageLRUPubsubManager.subscribe(AUTH_STORAGE_INIT, async ({ id }) => {
   data = Object.fromEntries(
     Object.entries(data)
 
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+       
       .filter(([key, timestamp]) => {
         return timestamp >= threshold;
       })

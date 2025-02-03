@@ -1,10 +1,9 @@
 "use client";
 
-import { useSwitchTheme } from "@/shared";
-import React from "react";
- 
 import { ChevronDown } from "lucide-react";
+import React from "react";
 
+import { useSwitchTheme } from "@/shared";
 import { Select } from "@/shared/ui";
 
 const ThemeSelector = () => {

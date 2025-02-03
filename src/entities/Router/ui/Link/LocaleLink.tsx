@@ -1,10 +1,9 @@
 "use client";
 
-import { useLinkHref } from "@/shared/hooks";
- 
 import Link from "next/link";
 import React, { ComponentProps } from "react";
 
+import { useLinkHref } from "@/shared/hooks";
 import { cn } from "@/shared/utils";
 
 const LocaleLink = (props: ComponentProps<typeof Link> & { href?: string; subDomain?: string; custom?: boolean }) => {

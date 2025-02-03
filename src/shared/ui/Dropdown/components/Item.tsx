@@ -1,9 +1,10 @@
 "use client";
 
-import React from "react";
 import { Check } from "lucide-react";
+import React from "react";
 
 import { cn } from "@/shared/utils";
+
 import { Item } from "./radix";
 
 interface SelectItemProps extends React.ComponentPropsWithoutRef<typeof Item> {

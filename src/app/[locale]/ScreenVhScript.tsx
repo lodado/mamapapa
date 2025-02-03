@@ -1,5 +1,3 @@
-import Script from "next/script";
-
 function code() {
   // Safe area insets
   const safeAreaTop = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--safe-area-top")) || 0;

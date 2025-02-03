@@ -1,18 +1,18 @@
 "use client";
 
-import { useAuthStore } from "@/entities/Auth/client/models/store/AuthStore";
-import { Button } from "@/shared/ui";
-import React, { useCallback, useMemo } from "react";
 import { useRouter } from "next/navigation";
-import { IndexedDBController } from "@/shared";
-import { ImageMetadata, useImageSelectorStore } from "@/features/ImageSelector/models";
-import { useServerAction } from "@/shared/hooks";
+import React, { useCallback, useMemo } from "react";
 
-import { picturesSubmitApi } from "../api/picturesSubmitApi";
 import { USER_PLAYER_NAME } from "@/entities";
-
+import { useAuthStore } from "@/entities/Auth/client/models/store/AuthStore";
+import { ImageMetadata, useImageSelectorStore } from "@/features/ImageSelector/models";
+import { IndexedDBController } from "@/shared";
+import { useServerAction } from "@/shared/hooks";
+import { Button } from "@/shared/ui";
 import { useLoadingStore } from "@/shared/ui/LoadingSpinner";
 import { cosineSimilarity, cosineToPercentage } from "@/widgets/ImagePrediction";
+
+import { picturesSubmitApi } from "../api/picturesSubmitApi";
 
 const ShareButton = () => {
   const imageContainer = useMemo(() => new IndexedDBController<ImageMetadata[]>("IMG_CONTAINER"), []);

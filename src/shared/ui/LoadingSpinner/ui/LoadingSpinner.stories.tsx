@@ -1,6 +1,7 @@
 import React from "react";
-import LoadingSpinner from "./LoadingSpinner";
+
 import { useLoadingStore } from "../models/loadingStore";
+import LoadingSpinner from "./LoadingSpinner";
 
 export default {
   title: "shared/LoadingSpinner",

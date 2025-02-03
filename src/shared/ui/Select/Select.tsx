@@ -1,9 +1,9 @@
 import React, { ComponentProps, PropsWithChildren } from "react";
-import { Group, Icon, Root, Value } from "./components/radix";
-import SelectContent from "./components/SelectContent";
 
 import SelectItem from "./components/Item";
 import SelectLabel from "./components/Label";
+import { Group, Icon, Root, Value } from "./components/radix";
+import SelectContent from "./components/SelectContent";
 import SelectSeparator from "./components/Separator";
 import SelectTrigger from "./components/Trigger";
 

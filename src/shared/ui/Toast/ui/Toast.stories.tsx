@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import React from "react";
 
+import { useToastStore } from "../stores/toastStore";
 import ToastProvider from "./ToastProvider";
 import ToastViewPort from "./ToastViewPort";
-import { useToastStore } from "../stores/toastStore";
 
 const meta: Meta = {
   title: "Example/ToastMultiple",

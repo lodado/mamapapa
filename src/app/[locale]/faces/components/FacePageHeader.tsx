@@ -1,9 +1,11 @@
 "use client";
 
-import { PAGE_ROUTE } from "@/entities/Router/configs/route";
-import FallBackHeader from "./FallBackHeader";
-import { useScrollTrigger } from "@/shared/hooks";
 import React from "react";
+
+import { PAGE_ROUTE } from "@/entities/Router/configs/route";
+import { useScrollTrigger } from "@/shared/hooks";
+
+import FallBackHeader from "./FallBackHeader";
 
 const FacePageHeader = () => {
   const { triggered: hideSecondLine } = useScrollTrigger({ threshold: 150 });

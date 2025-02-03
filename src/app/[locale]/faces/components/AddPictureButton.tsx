@@ -1,12 +1,14 @@
 "use client";
 
 import React, { useRef } from "react";
-import { Button } from "@/shared/ui";
+
 import CrossHair from "/public/CrossHair.svg";
-import { FaceCoordinates, ImageMetadata, useImageSelectorStore } from "@/features/ImageSelector/models";
 import { useFaceModelStore } from "@/features/AiModel/model";
+import { FaceCoordinates, ImageMetadata, useImageSelectorStore } from "@/features/ImageSelector/models";
+import { Button } from "@/shared/ui";
 import { useLoadingStore } from "@/shared/ui/LoadingSpinner";
 import { useToastStore } from "@/shared/ui/Toast/stores";
+
 import { ADD_PICTURE_BUTTON_ID } from "../configs/constant";
 
 // Hook for handling face detection logic

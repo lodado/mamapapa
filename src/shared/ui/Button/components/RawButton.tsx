@@ -2,8 +2,8 @@
 
 import { forwardRef } from "react";
 
-import { RawButtonProps } from "../type";
 import { Motion } from "../../animation/animation";
+import { RawButtonProps } from "../type";
 
 const RawButton = forwardRef<HTMLButtonElement, RawButtonProps>(
   ({ variant, componentType = "button", children, onClick, ...props }, ref) => {

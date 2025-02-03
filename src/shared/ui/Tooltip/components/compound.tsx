@@ -1,9 +1,10 @@
-import { cva, VariantProps } from "class-variance-authority";
-import React, { HTMLAttributes, ReactNode, ComponentProps } from "react";
 import { PopperContentProps } from "@radix-ui/react-popper";
-import { Arrow, Content, Portal, Provider, Root, Trigger } from "./radix";
+import { cva, VariantProps } from "class-variance-authority";
+import React, { ComponentProps,HTMLAttributes, ReactNode } from "react";
 
 import { cn } from "@/shared";
+
+import { Arrow, Content, Portal, Provider, Root, Trigger } from "./radix";
 
 // Define styles using class-variance-authority (cva)
 const tooltipContentStyles = cva(

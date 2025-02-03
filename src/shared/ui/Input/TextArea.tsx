@@ -2,9 +2,10 @@
 
 import React, { forwardRef, useEffect, useRef } from "react";
 
-import { InputStyleVariants } from "./style";
-import { cn } from "@/shared/utils";
 import { useForkRef } from "@/shared/hooks";
+import { cn } from "@/shared/utils";
+
+import { InputStyleVariants } from "./style";
 
 export interface TextAreaProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
   /** Additional CSS class name */

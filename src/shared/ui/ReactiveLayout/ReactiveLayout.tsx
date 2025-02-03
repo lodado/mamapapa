@@ -1,5 +1,6 @@
-import { cn } from "@/shared/utils";
 import React, { PropsWithChildren } from "react";
+
+import { cn } from "@/shared/utils";
 
 const ReactiveLayout = ({ children, className }: { className?: string } & PropsWithChildren) => {
   return (

@@ -1,9 +1,9 @@
 // Button.stories.tsx
-import React from "react";
 import { Meta, StoryObj } from "@storybook/react";
+import React from "react";
 
-import TestIcon from "./TestIcon";
 import Button from "./Button";
+import TestIcon from "./TestIcon";
 
 const meta: Meta<typeof Button> = {
   title: "Example/Button",

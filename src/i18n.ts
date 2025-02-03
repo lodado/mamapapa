@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import { getRequestConfig as getRequestConfigNextInti } from "next-intl/server";
+
 import i18nOption, { LANGUAGE_LIST } from "./shared/libs/i18n/lib/option";
 
 const { locales } = i18nOption;

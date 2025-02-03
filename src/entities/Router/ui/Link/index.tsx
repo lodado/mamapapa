@@ -1,5 +1,5 @@
-import LocaleLink from "./LocaleLink";
 import ButtonLink from "./ButtonLink";
+import LocaleLink from "./LocaleLink";
 
 
 export { ButtonLink, LocaleLink };

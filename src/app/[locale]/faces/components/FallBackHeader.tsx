@@ -1,12 +1,12 @@
 "use client";
 
+import { ChevronLeft } from "lucide-react";
 import React from "react";
 
 import { LocaleLink } from "@/entities/Router/index.server";
-import { ChevronLeft } from "lucide-react";
-import { Button } from "@/shared/ui";
-import { Header } from "@/features";
 import { useTutorialStore } from "@/entities/Tutorial";
+import { Header } from "@/features";
+import { Button } from "@/shared/ui";
 
 const FallBackHeader = ({ fallbackUrl }: { fallbackUrl: string }) => {
   const { setRuns } = useTutorialStore();

@@ -1,13 +1,15 @@
 "use client";
 
-import { AlertDialog } from "@/shared/ui/Dialog";
+import "cropperjs/dist/cropper.css";
+
 import React, { useEffect, useRef, useState } from "react";
-import { FaceCoordinates, ImageMetadata, useImageSelectorStore } from "../models";
 import { Cropper, ReactCropperElement } from "react-cropper";
 
-import "cropperjs/dist/cropper.css";
-import { Button, Dropdown } from "@/shared/ui";
 import { usePlayerStore } from "@/entities";
+import { Button, Dropdown } from "@/shared/ui";
+import { AlertDialog } from "@/shared/ui/Dialog";
+
+import { FaceCoordinates, ImageMetadata, useImageSelectorStore } from "../models";
 import { removeExifData } from "../utils/image";
 
 interface CropSettingDialogProps {

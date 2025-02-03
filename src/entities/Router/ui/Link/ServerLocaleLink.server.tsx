@@ -1,9 +1,9 @@
-import { getLinkHref } from "@/shared/api";
-import { Motion } from "@/shared/ui/animation/animation";
-
-import { cn } from "@/shared/utils";
 import Link from "next/link";
 import React, { ComponentProps } from "react";
+
+import { getLinkHref } from "@/shared/api";
+import { Motion } from "@/shared/ui/animation/animation";
+import { cn } from "@/shared/utils";
 
 const ServerLocaleLink = async (
   props: ComponentProps<typeof Link> & { href?: string; subDomain?: string; custom?: boolean }

@@ -1,4 +1,5 @@
 import exp from "constants";
+
 import { UserEntity } from "../entity";
 
 interface AuthRepositoryImpl {

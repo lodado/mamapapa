@@ -1,12 +1,11 @@
 "use client";
 
-import { useFaceModelStore } from "@/features/AiModel/model";
-import { ComparisonMetaData, useImageSelectorStore } from "@/features/ImageSelector/models";
 import React, { useLayoutEffect } from "react";
 
-import { useLoadingStore } from "@/shared/ui/LoadingSpinner";
 import { USER_PLAYER_NAME } from "@/entities";
-
+import { useFaceModelStore } from "@/features/AiModel/model";
+import { ComparisonMetaData, useImageSelectorStore } from "@/features/ImageSelector/models";
+import { useLoadingStore } from "@/shared/ui/LoadingSpinner";
 import { ImagePrediction } from "@/widgets/ImagePrediction";
 import { cosineSimilarity, cosineToPercentage } from "@/widgets/ImagePrediction/utils/similarity";
 

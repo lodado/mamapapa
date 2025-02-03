@@ -1,11 +1,11 @@
 "use client";
 
-import { forwardRef } from "react";
-import { useIsClient } from "@/shared/hooks";
 import { AnimatePresence, motion, MotionProps } from "motion/react";
-
+import { forwardRef } from "react";
 import React, { ComponentProps, PropsWithChildren, useEffect, useId, useState } from "react";
 import { startTransition } from "react";
+
+import { useIsClient } from "@/shared/hooks";
 
 interface CustomMotionProps<Tag extends keyof JSX.IntrinsicElements> extends MotionProps {
   componentType?: Tag;

@@ -1,9 +1,9 @@
+import { SupabaseAdapter } from "@auth/supabase-adapter";
+import { createClient } from "@supabase/supabase-js";
+
 import { USER_ID_SPLITTER } from "@/shared";
 import { SUPABASE_KEY, SUPABASE_URL, supabaseInstance } from "@/shared/index.server";
 import Database from "@/shared/libs/supabase/type";
-import { SupabaseAdapter } from "@auth/supabase-adapter";
-
-import { createClient } from "@supabase/supabase-js";
 
 const columnNames = [
   "expires_at",
@@ -76,8 +76,6 @@ const supabaseAdapterWrapper = () => {
       });
 
       await supaAdapter.linkAccount(newAccount);
-
-      supabaseInstance;
 
       return true;
     };

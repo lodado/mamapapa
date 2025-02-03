@@ -1,12 +1,12 @@
 import React, { ComponentProps, PropsWithChildren, ReactNode, SyntheticEvent, use, useEffect, useState } from "react";
 
-import { Button } from "../Button";
+import { cn } from "@/shared";
 
+import { Button } from "../Button";
 import { Dialog, SubmitFormProps, useDialogContext } from "./components/compound";
 import { Description, Title } from "./components/radix";
-import { DialogTemplate, DialogTemplateProps } from "./DialogTemplate";
-import { cn } from "@/shared";
 import { ResizerHandle } from "./components/Resize";
+import { DialogTemplate, DialogTemplateProps } from "./DialogTemplate";
 import { useDialogResizer } from "./hooks/useDialogResizer";
 
 interface DialogSubmitFormProps extends Omit<SubmitFormProps, "children"> {

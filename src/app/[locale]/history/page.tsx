@@ -1,11 +1,10 @@
-import { ReactiveLayout } from "@/shared/ui/ReactiveLayout";
 import React from "react";
- 
+
 import { ButtonLink } from "@/entities/Router";
-
-
-import { ToastViewPort } from "@/shared/ui/Toast";
 import { PAGE_ROUTE } from "@/entities/Router/configs/route";
+import { ReactiveLayout } from "@/shared/ui/ReactiveLayout";
+import { ToastViewPort } from "@/shared/ui/Toast";
+
 import FacePageHeader from "./components/FacePageHeader";
 
 const Page = () => {

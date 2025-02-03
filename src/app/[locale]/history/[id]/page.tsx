@@ -1,22 +1,19 @@
-import { ReactiveLayout } from "@/shared/ui/ReactiveLayout";
+import { unstable_cache } from "next/cache";
 import React from "react";
 
+import { EDGE_DI_REPOSITORY } from "@/DI/edge.server";
+import { USER_PLAYER_NAME } from "@/entities";
+import { GetUserInfoUseCase } from "@/entities/Auth/core";
 import { ButtonLink } from "@/entities/Router";
+import { PAGE_ROUTE } from "@/entities/Router/configs/route";
+import { CommentLayout } from "@/features/Comments/index.server";
+import { ComparisonMetaData } from "@/features/ImageSelector/models";
+import { supabaseInstance } from "@/shared/index.server";
+import { ReactiveLayout } from "@/shared/ui/ReactiveLayout";
+import { ToastViewPort } from "@/shared/ui/Toast";
+import { ImagePrediction } from "@/widgets/ImagePrediction";
 
 import HistoryPageHeader from "./components/HistoryPageHeader";
-
-import { ToastViewPort } from "@/shared/ui/Toast";
-import { PAGE_ROUTE } from "@/entities/Router/configs/route";
-
-import { supabaseInstance } from "@/shared/index.server";
-import { USER_PLAYER_NAME } from "@/entities";
-import { ComparisonMetaData } from "@/features/ImageSelector/models";
-import { ImagePrediction } from "@/widgets/ImagePrediction";
-import { unstable_cache } from "next/cache";
-
-import { GetUserInfoUseCase } from "@/entities/Auth/core";
-import { EDGE_DI_REPOSITORY } from "@/DI/edge.server";
-import { CommentLayout } from "@/features/Comments/index.server";
 
 export const revalidate = 7200000; // 2 hours
 export const dynamicParams = true;

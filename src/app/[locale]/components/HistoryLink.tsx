@@ -1,8 +1,9 @@
 "use client";
 
+import React, { MouseEventHandler } from "react";
+
 import { useAuthStore } from "@/entities/Auth/client/models/store/AuthStore";
 import { ButtonLink } from "@/entities/Router";
-import React, { MouseEventHandler } from "react";
 
 const HistoryLink = () => {
   const { isLogin, setLoginFormDialogVisible } = useAuthStore();

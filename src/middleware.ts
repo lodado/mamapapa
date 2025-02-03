@@ -1,8 +1,6 @@
-/* eslint-disable turbo/no-undeclared-env-vars */
-
-  
 import { NextMiddlewareResult } from "next/dist/server/web/types";
 import { NextRequest, NextResponse } from "next/server";
+
 import { i18nMiddleware, withAuthApiMiddleware } from "./app/middlewares/index.server";
 import { rateLimitMiddleware } from "./app/middlewares/rateLimitMiddleware";
 

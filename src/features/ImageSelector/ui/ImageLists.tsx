@@ -1,19 +1,19 @@
 "use client";
+import { Ellipsis } from "lucide-react";
 import React, { useState } from "react";
-import { ImageMetadata, useImageSelectorStore } from "../models";
-import { Dropdown } from "@/shared/ui";
-import { drawImageOnCanvas } from "@/shared/utils";
 
 import CrossHair from "/public/CrossHair.svg";
 import Delete from "/public/delete.svg";
 import FaceOff from "/public/face_retouching_off.svg";
-
-import { Ellipsis } from "lucide-react";
 import { usePlayerStore } from "@/entities";
-import CropSettingDialog from "./CropSettingDialog";
-import AddNewPlayerDialog from "./AddNewPlayerDialog";
-import RemoveImageDialog from "./RemoveImageDialog";
+import { Dropdown } from "@/shared/ui";
+import { drawImageOnCanvas } from "@/shared/utils";
+
 import { ADDITIONAL_OPTION_DROPDOWN_ID, PLAYER_SELECTOR_ID } from "../configs/constant";
+import { ImageMetadata, useImageSelectorStore } from "../models";
+import AddNewPlayerDialog from "./AddNewPlayerDialog";
+import CropSettingDialog from "./CropSettingDialog";
+import RemoveImageDialog from "./RemoveImageDialog";
 
 const ImageLists = () => {
   const { images, handleUpdatePlayer } = useImageSelectorStore();

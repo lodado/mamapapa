@@ -2,8 +2,9 @@
 
 import React from "react";
 
-import { useLoadingStore } from "../models/loadingStore";
 import { cn } from "@/shared/utils";
+
+import { useLoadingStore } from "../models/loadingStore";
 
 const LoadingSpinner = () => {
   const { isLoading } = useLoadingStore();

@@ -1,8 +1,8 @@
 import "../shared/libs/Figma/index.scss";
-
 import "./globals.scss";
 
 import { PropsWithChildren } from "react";
+
 import { i18nOption } from "@/shared";
 
 const webUrl = process.env.NEXT_PUBLIC_CLIENT_URL;

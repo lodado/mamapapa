@@ -1,4 +1,5 @@
 import React, { PropsWithChildren } from "react";
+
 import { Label } from "./radix";
 
 const SelectLabel = ({ children }: PropsWithChildren) => (
