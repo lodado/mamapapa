@@ -8,21 +8,25 @@ import { useImageSelectorStore } from "@/features/ImageSelector/models";
 
 import { ADD_PICTURE_BUTTON_ID, EXAMPLE_IMAGE_DATA_ID, START_COMPARE_LINK_ID } from "../configs/constant";
 
-const EXAMPLE_IMAGE = {
-  id: EXAMPLE_IMAGE_DATA_ID,
-  url: "https://qmwtuvttspuxwuwrsuci.supabase.co/storage/v1/object/public/pokitokiStorage//iu.jpg",
-  file: new File([""], "https://qmwtuvttspuxwuwrsuci.supabase.co/storage/v1/object/public/pokitokiStorage//iu.jpg"),
-  faceCoordinates: {
-    x: 100,
-    y: 150,
-    width: 600,
-    height: 600,
-  },
-  selectedPlayer: undefined,
-};
+
 
 const FacePageTutorialConnector = () => {
   const { addImages, removeImage } = useImageSelectorStore();
+
+  const EXAMPLE_IMAGE = useMemo(() => {
+    return {
+      id: EXAMPLE_IMAGE_DATA_ID,
+      url: "https://qmwtuvttspuxwuwrsuci.supabase.co/storage/v1/object/public/pokitokiStorage//iu.jpg",
+      file: new File([""], "https://qmwtuvttspuxwuwrsuci.supabase.co/storage/v1/object/public/pokitokiStorage//iu.jpg"),
+      faceCoordinates: {
+        x: 100,
+        y: 150,
+        width: 600,
+        height: 600,
+      },
+      selectedPlayer: undefined,
+    };
+  }, []);
 
   const steps: TutorialStep[] = useMemo(
     () => [

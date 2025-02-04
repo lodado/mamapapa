@@ -12,7 +12,7 @@ export default class AuthServerRepository implements AuthRepositoryImpl {
 
     if (session?.user) {
       session.user = {
-        id: session.user.id.split(USER_ID_SPLITTER)[0],
+        id: session.user.id,
         name: session.user.name,
         email: session.user.email,
         picture: session.user.picture,
