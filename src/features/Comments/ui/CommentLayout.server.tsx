@@ -21,7 +21,7 @@ const CommentLayout = async ({ userId, boardId }: CommentsProps) => {
   return (
     <HydrationBoundary state={dehydrate(queryClient)}>
       <div className="w-full ">
-        <EmotionList />
+        <EmotionList userId={userId} boardId={boardId} />
         <CommentList userId={userId} boardId={boardId} />
       </div>
     </HydrationBoundary>
