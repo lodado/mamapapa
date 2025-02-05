@@ -21,14 +21,13 @@ export async function GET(request: NextRequest) {
   const start = cursor;
   const end = cursor + PAGE_SIZE - 1;
 
-  // 댓글 조회: 최신 댓글이 먼저 보이도록 createdAt 기준 내림차순 정렬
   const {
     data: comments,
     error,
     count,
   } = await supabaseInstance
-    .from("simminyComments")
-    .select("id, content, createdAt", { count: "exact" })
+    .from("simminnycomments_with_user")
+    .select(`*`, { count: "exact" })
     .order("createdAt", { ascending: false })
     .eq("boardId", boardId)
     .range(start, end);

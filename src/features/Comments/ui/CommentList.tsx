@@ -30,20 +30,38 @@ const CommentList = ({ boardId, userId }: { boardId: string; userId: string }) =
       {/* 댓글 리스트 */}
       {data?.pages.map((page, pageIndex) => (
         <React.Fragment key={pageIndex}>
-          {page.comments.map((comment: any) => (
-            <div
-              key={comment.id}
-              style={{
-                border: "1px solid #ccc",
-                borderRadius: "5px",
-                padding: "10px",
-                marginBottom: "10px",
-              }}
-            >
-              <p>{comment.content}</p>
-              <small>{new Date(comment.createdAt!).toLocaleString()}</small>
-            </div>
-          ))}
+          {page.comments.map((comment) => {
+            console.log(comment, "comment");
+
+            return (
+              <div
+                key={comment.id}
+                style={{
+                  border: "1px solid #ccc",
+                  borderRadius: "5px",
+                  padding: "10px",
+                  marginBottom: "10px",
+                }}
+              >
+                {comment.image && (
+                  <img
+                    src={comment.image}
+                    alt="comment"
+                    style={{
+                      maxWidth: "100%",
+                      height: "auto",
+                      marginBottom: "10px",
+                    }}
+                  />
+                )}
+
+                <p>{comment.name}</p>
+                <p>{comment.content}</p>
+
+                <small>{new Date(comment.createdAt!).toLocaleString()}</small>
+              </div>
+            );
+          })}
         </React.Fragment>
       ))}
 

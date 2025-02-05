@@ -7,7 +7,8 @@ export const cspMiddleware = (request: NextRequest, response: NextResponse) => {
   const cspHeader = `
     default-src 'self';
     style-src 'self' 'unsafe-inline' spoqa.github.io cdn.jsdelivr.net data:;
-    img-src 'self' blob: data: ${supabaseProjectId}.supabase.co vercel.live vercel.com https://6gy9systudbmcbju.public.blob.vercel-storage.com;
+    img-src 'self' blob: data: ${supabaseProjectId}.supabase.co vercel.live vercel.com https://lh3.googleusercontent.com
+    https://k.kakaocdn.net https://avatars.githubusercontent.com;
     font-src 'self' cdnjs.cloudflare.com spoqa.github.io cdn.jsdelivr.net data:;
     script-src 'self' ${
       process.env.NODE_ENV !== "production" ? `'unsafe-eval'` : ""

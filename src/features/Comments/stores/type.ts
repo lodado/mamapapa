@@ -4,9 +4,16 @@ export interface Comment {
   boardId: string;
   content: string;
   createdAt?: string;
+  updatedAt?: string;
+}
+
+export interface CommentWithUserInformation extends Comment {
+  email: string;
+  name: string;
+  image?: string;
 }
 
 export interface CommentsResponse {
-  comments: Comment[];
+  comments: CommentWithUserInformation[];
   nextCursor: number | null;
 }
