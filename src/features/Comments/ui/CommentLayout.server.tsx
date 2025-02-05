@@ -7,6 +7,7 @@ import { fetchComments } from "../api/fetchComments";
 import { getParsedBoardKey } from "../utils/constant";
 import CommentInput from "./CommentInput";
 import CommentList from "./CommentList";
+import EmotionList from "./EmotionList";
 import { CommentsProps } from "./type";
 
 const CommentLayout = async ({ userId, boardId }: CommentsProps) => {
@@ -20,6 +21,7 @@ const CommentLayout = async ({ userId, boardId }: CommentsProps) => {
   return (
     <HydrationBoundary state={dehydrate(queryClient)}>
       <div className="w-full ">
+        <EmotionList />
         <CommentList userId={userId} boardId={boardId} />
       </div>
     </HydrationBoundary>
