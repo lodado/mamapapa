@@ -4,6 +4,7 @@ import { useInfiniteQuery } from "@tanstack/react-query";
 import React from "react";
 
 import { useIntersectionObserver } from "@/shared/hooks";
+import { Image } from "@/shared/ui";
 
 import { fetchComments } from "../api/fetchComments";
 import { getParsedBoardKey } from "../utils/constant";
@@ -19,7 +20,7 @@ const CommentList = ({ boardId, userId }: { boardId: string; userId: string }) =
   const loadMoreRef = useIntersectionObserver(
     () => {
       if (hasNextPage && !isFetchingNextPage) {
-        fetchNextPage(); // 다음 페이지 로드
+        // fetchNextPage(); // 다음 페이지 로드
       }
     },
     { threshold: 1.0 }
@@ -29,49 +30,44 @@ const CommentList = ({ boardId, userId }: { boardId: string; userId: string }) =
     <div>
       {/* 댓글 리스트 */}
       {data?.pages.map((page, pageIndex) => (
-        <React.Fragment key={pageIndex}>
+        <div key={pageIndex}>
           {page.comments.map((comment) => {
-            console.log(comment, "comment");
-
             return (
-              <div
-                key={comment.id}
-                style={{
-                  border: "1px solid #ccc",
-                  borderRadius: "5px",
-                  padding: "10px",
-                  marginBottom: "10px",
-                }}
-              >
-                {comment.image && (
-                  <img
-                    src={comment.image}
+              <div key={comment.id} className="w-full p-3 gap-4 flex flex-row items-center">
+                <div>
+                  <Image
+                    className="rounded-full"
+                    isPreload={false}
+                    width={40}
+                    height={40}
+                    src={comment.image ?? ""}
                     alt="comment"
-                    style={{
-                      maxWidth: "100%",
-                      height: "auto",
-                      marginBottom: "10px",
-                    }}
                   />
-                )}
+                </div>
 
-                <p>{comment.name}</p>
-                <p>{comment.content}</p>
+                <div className="flex flex-col justify-between h-full w-full">
+                  <div className="flex flex-row gap-1">
+                    <p className="text-text-01 caption-2">{comment.name}</p>
+                    <p className="text-text-03 caption-2">{new Date(comment.createdAt!).toLocaleString()}</p>
+                  </div>
 
-                <small>{new Date(comment.createdAt!).toLocaleString()}</small>
+                  <span className="text-text-01 body-2">{comment.content}</span>
+                </div>
               </div>
             );
           })}
-        </React.Fragment>
+        </div>
       ))}
 
       {/* 로드 상태 표시 */}
-      <div ref={loadMoreRef} style={{ textAlign: "center", padding: "20px" }}>
-        {isFetchingNextPage
+      <div ref={loadMoreRef} style={{ textAlign: "center", padding: "1px" }}>
+        {/** 
+         *  {isFetchingNextPage
           ? "불러오는 중..."
           : hasNextPage
           ? "스크롤 다운하여 더 불러오기"
           : "더 이상 댓글이 없습니다."}
+         */}
       </div>
     </div>
   );
