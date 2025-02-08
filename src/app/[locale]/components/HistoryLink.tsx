@@ -4,6 +4,7 @@ import React, { MouseEventHandler } from "react";
 
 import { useAuthStore } from "@/entities/Auth/client/models/store/AuthStore";
 import { ButtonLink } from "@/entities/Router";
+import { PAGE_ROUTE } from "@/entities/Router/configs/route";
 
 const HistoryLink = () => {
   const { isLogin, setLoginFormDialogVisible } = useAuthStore();
@@ -18,7 +19,12 @@ const HistoryLink = () => {
   };
 
   return (
-    <ButtonLink aria-disabled={!isLogin} onClickCapture={handleSubmitValidation} href={"/"} variant="primaryLine">
+    <ButtonLink
+      aria-disabled={!isLogin}
+      onClickCapture={handleSubmitValidation}
+      href={PAGE_ROUTE.HISTORY_LIST}
+      variant="primaryLine"
+    >
       공유 내역 확인하기
     </ButtonLink>
   );

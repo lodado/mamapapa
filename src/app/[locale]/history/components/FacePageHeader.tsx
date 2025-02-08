@@ -15,7 +15,7 @@ const FacePageHeader = () => {
         <Header className="z-header w-full md:w-[768px] h-[2.75rem] fixed top-0 flex flex-row justify-between items-center">
           <LocaleLink
             className="py-[11px] px-2 text-text-primary flex flex-row items-center gap-1"
-            href={PAGE_ROUTE.FACES}
+            href={PAGE_ROUTE.MAIN}
           >
             <ChevronLeft width={20} height={24} strokeWidth={3} />
             <SimminIcon width="32px" height="32px" />

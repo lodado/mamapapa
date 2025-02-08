@@ -1,6 +1,7 @@
 "use client";
 
 import { ChevronLeft, Ellipsis } from "lucide-react";
+import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 
 import Delete from "/public/delete.svg";
@@ -10,7 +11,7 @@ import { LocaleLink } from "@/entities/Router";
 import { PAGE_ROUTE } from "@/entities/Router/configs/route";
 import { Header } from "@/features";
 import { timestampToTimeFormat } from "@/shared";
-import { Dropdown } from "@/shared/ui";
+import { Button, Dropdown } from "@/shared/ui";
 
 import RemoveHistoryDialog from "./RemoveHisoryDialog";
 import UpdateHistoryTitleDialog from "./UpdateHistoryTitleDialog";
@@ -22,6 +23,7 @@ const HistoryPageHeader = ({ userId, title, updatedAt }: { userId?: string; titl
   const { session } = useAuthStore();
 
   const isOwner = userId === session?.user?.id;
+  const router = useRouter();
 
   return (
     <>
@@ -29,13 +31,17 @@ const HistoryPageHeader = ({ userId, title, updatedAt }: { userId?: string; titl
         <>
           <Header className="z-header w-full md:w-[768px] h-[2.75rem] fixed top-0 flex flex-row justify-between items-center">
             <div className="flex flex-row items-center">
-              <LocaleLink
+              <Button
+                variant="link"
+                type="button"
                 className="py-[11px] px-2 text-text-primary flex flex-row items-center gap-1"
-                href={PAGE_ROUTE.FACES}
+                onClick={() => {
+                  router.back();
+                }}
               >
                 <ChevronLeft width={20} height={24} strokeWidth={3} />
                 <SimminIcon />
-              </LocaleLink>
+              </Button>
 
               <div className="h-full flex flex-col items-start">
                 <h1 className="head-3 text-text-01">{title}</h1>
