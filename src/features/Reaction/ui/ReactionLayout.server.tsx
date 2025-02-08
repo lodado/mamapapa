@@ -12,7 +12,7 @@ const ReactionLayout = async ({ userId, boardId }: ReactionProps) => {
   const queryClient = getQueryClient();
   await queryClient.fetchQuery({
     queryKey: getParsedReactionKey({ boardId, userId }),
-    queryFn: () => fetchReaction({ boardId, userId }),
+    queryFn: ({}) => fetchReaction({ boardId, userId }),
   });
 
   return (

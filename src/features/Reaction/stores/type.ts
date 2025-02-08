@@ -11,7 +11,7 @@ export interface Reaction {
   updatedAt?: string;
 }
 
-export interface EmotionResponse {
+export interface ReactionResponse {
   likeCount: number;
   thumbsUpCount: number;
   bbangparayCount: number;

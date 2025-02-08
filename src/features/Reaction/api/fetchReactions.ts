@@ -1,6 +1,6 @@
 import { request } from "@/shared";
 
-import { EmotionResponse } from "../stores/type";
+import { ReactionResponse } from "../stores/type";
 
 export async function fetchReaction({
   boardId,
@@ -8,8 +8,8 @@ export async function fetchReaction({
 }: {
   boardId: string | number;
   userId: string;
-}): Promise<EmotionResponse> {
-  const res = await request<EmotionResponse>({
+}): Promise<ReactionResponse> {
+  const res = await request<ReactionResponse>({
     url: `/api/reactions/${boardId}`,
     method: "GET",
     params: {

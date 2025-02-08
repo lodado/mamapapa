@@ -1,6 +1,5 @@
 "use client";
 
-import { useQueryClient } from "@tanstack/react-query";
 import React, { ButtonHTMLAttributes, ReactNode } from "react";
 
 import BbangparayEmoticon from "/public/emoticon/BbangparayEmoticon.svg";
@@ -13,6 +12,7 @@ import { useQueryContainer } from "@/shared/ui";
 
 import { fetchReaction, postReaction } from "../api/fetchReactions";
 import { getParsedReactionKey } from "../utils/constant";
+import { getOptimisticUpdateReactions } from "../utils/getOptimisticUpdateReactions";
 
 const IconButton = ({ children, ...rest }: { children: ReactNode } & ButtonHTMLAttributes<HTMLButtonElement>) => {
   return (
@@ -27,7 +27,6 @@ const IconButton = ({ children, ...rest }: { children: ReactNode } & ButtonHTMLA
 };
 
 const ReactionList = ({ userId, boardId }: { userId: string; boardId: string }) => {
-  const queryClient = useQueryClient();
   const { isLogin } = useAuthStore();
 
   const auth = isLogin
@@ -40,24 +39,13 @@ const ReactionList = ({ userId, boardId }: { userId: string; boardId: string }) 
 
   const {
     query: { data },
+    handleOptimisticUpdate: handleOptimisticReactionUpdate,
+    revertOptimisticUpdate: revertOptimisticReactionUpdate,
   } = useQueryContainer({
     queryKey: getParsedReactionKey({ boardId, userId }),
     queryFn: () => fetchReaction({ boardId, userId }),
     queryOptions: {
       staleTime: Infinity,
-      placeholderData: {
-        likeCount: 0,
-        thumbsUpCount: 0,
-        bbangparayCount: 0,
-        userReaction: {
-          id: 0,
-          userId: "",
-          boardId: "",
-          liked: false,
-          thumbsUp: false,
-          bbangparay: false,
-        },
-      },
     },
   });
 
@@ -65,12 +53,14 @@ const ReactionList = ({ userId, boardId }: { userId: string; boardId: string }) 
 
   const { mutate } = useMutationWithNotification({
     mutationFn: async ({ liked, thumbsUp, bbangparay }: { liked: boolean; thumbsUp: boolean; bbangparay: boolean }) => {
+      handleOptimisticReactionUpdate(getOptimisticUpdateReactions({ userReaction, liked, thumbsUp, bbangparay }));
+
       return postReaction({ boardId, userId, liked, thumbsUp, bbangparay });
     },
-    onSuccess: async () => {
-      await queryClient.refetchQueries({ queryKey: [getParsedReactionKey({ boardId, userId })] });
+    onSuccess: async () => {},
+    onError: async () => {
+      revertOptimisticReactionUpdate();
     },
-    onError: async () => {},
   });
 
   return (
