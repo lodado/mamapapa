@@ -10,7 +10,6 @@ const useServerAction = (action: (formData: FormData) => Promise<any | undefined
   const { setError } = useErrorBoundary();
 
   const onSubmit = async (formData: FormData) => {
-
     return new Promise((resolve, reject) => {
       startTransition(async () => {
         try {

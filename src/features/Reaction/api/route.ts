@@ -30,7 +30,11 @@ export async function GET(request: Request, { params }: { params: { boardId: str
   const thumbsUpCount = countData.filter((reaction) => reaction.thumbsUp).length;
   const bbangparayCount = countData.filter((reaction) => reaction.bbangparay).length;
 
-  const userReaction = countData.find((reaction) => reaction.userId === userId);
+  const userReaction = countData.find((reaction) => reaction.userId === userId) ?? {
+    liked: false,
+    thumbsUp: false,
+    bbangparay: false,
+  };
 
   return NextResponse.json({
     likeCount,

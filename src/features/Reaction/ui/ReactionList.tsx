@@ -44,9 +44,7 @@ const ReactionList = ({ userId, boardId }: { userId: string; boardId: string }) 
   } = useQueryContainer({
     queryKey: getParsedReactionKey({ boardId, userId }),
     queryFn: () => fetchReaction({ boardId, userId }),
-    queryOptions: {
-      staleTime: Infinity,
-    },
+    queryOptions: {},
   });
 
   const userReaction = data!.userReaction!;
@@ -72,7 +70,7 @@ const ReactionList = ({ userId, boardId }: { userId: string; boardId: string }) 
       <IconButton
         type="button"
         onClick={() => {
-          mutate({ ...userReaction, thumbsUp: !userReaction?.thumbsUp });
+          mutate({ ...userReaction, thumbsUp: !userReaction.thumbsUp });
         }}
         disabled={!auth.canUpdateReaction}
       >
@@ -81,7 +79,7 @@ const ReactionList = ({ userId, boardId }: { userId: string; boardId: string }) 
 
       <IconButton
         onClick={() => {
-          mutate({ ...userReaction, liked: !userReaction?.liked });
+          mutate({ ...userReaction, liked: !userReaction.liked });
         }}
         disabled={!auth.canUpdateReaction}
       >
@@ -90,7 +88,7 @@ const ReactionList = ({ userId, boardId }: { userId: string; boardId: string }) 
 
       <IconButton
         onClick={() => {
-          mutate({ ...userReaction, bbangparay: !userReaction?.bbangparay });
+          mutate({ ...userReaction, bbangparay: !userReaction.bbangparay });
         }}
         disabled={!auth.canUpdateReaction}
       >

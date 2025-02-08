@@ -13,7 +13,7 @@ import { ReactiveLayout } from "@/shared/ui/ReactiveLayout";
 import { ToastViewPort } from "@/shared/ui/Toast";
 import { ImagePrediction } from "@/widgets/ImagePrediction";
 
-import { getCachedPosts } from "./api/getCachedPosts";
+import { getCachedCompareHistory } from "./api/compareHistory";
 import HistoryPageHeader from "./components/HistoryPageHeader";
 
 export const revalidate = 7200000; // 2 hours
@@ -22,7 +22,7 @@ export const dynamicParams = true;
 const Page = async ({ params }: { params: { id: string } }) => {
   const { id } = params;
 
-  const { data, error } = await getCachedPosts(id)();
+  const { data, error } = await getCachedCompareHistory(id)();
 
   const user = await new GetUserInfoUseCase(new EDGE_DI_REPOSITORY.Auth()).execute();
   const isLogin = user?.id;
@@ -42,7 +42,7 @@ const Page = async ({ params }: { params: { id: string } }) => {
     <>
       <ReactiveLayout>
         <div role="none presentation" className="w-full flex-shrink-0 h-[4rem]" />
-        <HistoryPageHeader title={title} updatedAt={updatedAt} />
+        <HistoryPageHeader userId={user?.id} title={title} updatedAt={updatedAt} />
 
         <main className="flex flex-col items-center w-full justify-center flex-grow ">
           <div className="flex-grow flex flex-col items-center w-full px-4">

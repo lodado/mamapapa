@@ -1,3 +1,3 @@
+import AddTemplateDialog from "./AddTemplateDialog";
 import RemoveTemplateDialog from "./RemoveTemplateDialog";
-
-export { RemoveTemplateDialog };
+export { AddTemplateDialog, RemoveTemplateDialog };

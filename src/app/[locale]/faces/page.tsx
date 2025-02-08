@@ -31,7 +31,7 @@ const Page = ({ params }: { params: { locale: string } }) => {
         </div>
         <main className="flex flex-col items-center w-full justify-center flex-grow ">
           <div className="flex-grow flex flex-col items-center w-full p-4">
-            <ImageContainer key="imageContainer" />
+            <ImageContainer />
           </div>
 
           <ModelDownloader />

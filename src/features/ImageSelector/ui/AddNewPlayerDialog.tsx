@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 
 import { usePlayerStore } from "@/entities/Player";
 import { ImageMetadata, useImageSelectorStore } from "@/features/ImageSelector/models";
-import AddTemplateDialog from "@/shared/ui/Dialog/templates/AddTemplateDialog";
+import { AddTemplateDialog } from "@/shared/ui/Dialog";
 import { useToastStore } from "@/shared/ui/Toast/stores";
 
 interface AddNewPlayerDialogContainerProps {
@@ -33,13 +33,13 @@ interface AddNewPlayerDialogContainerProps {
   successToastDescription?: string;
 }
 
-function AddNewPlayerDialog({ isVisible, onChangeVisible, selectedImageForPlayer }: AddNewPlayerDialogContainerProps) {
-  const title = "분류 항목 추가하기";
-  const placeholder = "입력해주세요";
-  const maxNameLength = 50;
-  const successToastTitle = "저장에 성공했습니다";
-  const successToastDescription = "분류 항목 추가가 성공했습니다.";
+const successToastTitle = "저장에 성공했습니다";
+const successToastDescription = "분류 항목 추가가 성공했습니다.";
+const title = "분류 항목 추가하기";
+const placeholder = "입력해주세요";
+const maxNameLength = 50;
 
+function AddNewPlayerDialog({ isVisible, onChangeVisible, selectedImageForPlayer }: AddNewPlayerDialogContainerProps) {
   const [inputValue, setInputValue] = useState("");
 
   const { players, addPlayer } = usePlayerStore();

@@ -1,5 +1,6 @@
 function vhCode() {
   // Safe area insets
+
   const safeAreaTop = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--safe-area-top")) || 0;
   const safeAreaBottom =
     parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--safe-area-bottom")) || 0;
