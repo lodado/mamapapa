@@ -3,6 +3,7 @@ import { NextRequest, NextResponse } from "next/server";
 
 import { EDGE_DI_REPOSITORY } from "@/DI/edge.server";
 import { GetUserInfoUseCase } from "@/entities/Auth/core";
+import { isValidUserId } from "@/entities/index.server";
 import { supabaseInstance } from "@/shared/index.server";
 import setCircuitBreaker from "@/shared/libs/Redis/setCircuitBreaker";
 
@@ -57,15 +58,8 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: message }, { status: 429 });
     }
 
-    const auth = await new GetUserInfoUseCase(new EDGE_DI_REPOSITORY.Auth()).execute();
-
-    if (!auth) {
-      return NextResponse.json({ error: "User not found" }, { status: 404 });
-    }
-
-    if (auth.id !== userId) {
-      return NextResponse.json({ error: "bad request" }, { status: 400 });
-    }
+    const authErrorResponse = await isValidUserId({ userId: userId! });
+    if (authErrorResponse) return authErrorResponse;
 
     if (!content) {
       return NextResponse.json({ error: "Content is required" }, { status: 400 });

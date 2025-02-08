@@ -2,14 +2,13 @@ import React from "react";
 
 import { EDGE_DI_REPOSITORY } from "@/DI/edge.server";
 import { LoginButton, USER_PLAYER_NAME } from "@/entities";
-import { useAuthStore } from "@/entities/Auth/client/models/store/AuthStore";
 import { GetUserInfoUseCase } from "@/entities/Auth/core";
 import { ButtonLink } from "@/entities/Router";
 import { PAGE_ROUTE } from "@/entities/Router/configs/route";
 import { CommentLayout } from "@/features/Comments/index.server";
 import CommentInput from "@/features/Comments/ui/CommentInput";
 import { ComparisonMetaData } from "@/features/ImageSelector/models";
-import { Input } from "@/shared/ui";
+import { ReactionLayout } from "@/features/Reaction/index.server";
 import { ReactiveLayout } from "@/shared/ui/ReactiveLayout";
 import { ToastViewPort } from "@/shared/ui/Toast";
 import { ImagePrediction } from "@/widgets/ImagePrediction";
@@ -51,6 +50,8 @@ const Page = async ({ params }: { params: { id: string } }) => {
               comparisons={comparisonList.filter((image) => image !== playerImage)}
               playerImage={playerImage}
             />
+
+            <ReactionLayout userId={user?.id ?? "-1"} boardId={id} />
 
             <CommentLayout userId={user?.id ?? "-1"} boardId={id} />
           </div>
