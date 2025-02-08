@@ -7,6 +7,7 @@ import BbangparayEmoticon from "/public/emoticon/BbangparayEmoticon.svg";
 import LoveEmoticon from "/public/emoticon/LoveEmoticon.svg";
 import ThumbsUpEmoticon from "/public/emoticon/ThumbsUpEmoticon.svg";
 import ShardLink from "/public/ShareLink.svg";
+import { useAuthStore } from "@/entities/Auth/client/models/store/AuthStore";
 import { useMutationWithNotification } from "@/shared/hooks";
 import { useQueryContainer } from "@/shared/ui";
 
@@ -27,6 +28,15 @@ const IconButton = ({ children, ...rest }: { children: ReactNode } & ButtonHTMLA
 
 const ReactionList = ({ userId, boardId }: { userId: string; boardId: string }) => {
   const queryClient = useQueryClient();
+  const { isLogin } = useAuthStore();
+
+  const auth = isLogin
+    ? {
+        canUpdateReaction: true,
+      }
+    : {
+        canUpdateReaction: false,
+      };
 
   const {
     query: { data },
@@ -74,6 +84,7 @@ const ReactionList = ({ userId, boardId }: { userId: string; boardId: string }) 
         onClick={() => {
           mutate({ ...userReaction, thumbsUp: !userReaction?.thumbsUp });
         }}
+        disabled={!auth.canUpdateReaction}
       >
         <ThumbsUpEmoticon /> {data?.thumbsUpCount}
       </IconButton>
@@ -82,6 +93,7 @@ const ReactionList = ({ userId, boardId }: { userId: string; boardId: string }) 
         onClick={() => {
           mutate({ ...userReaction, liked: !userReaction?.liked });
         }}
+        disabled={!auth.canUpdateReaction}
       >
         <LoveEmoticon /> {data?.likeCount}
       </IconButton>
@@ -90,6 +102,7 @@ const ReactionList = ({ userId, boardId }: { userId: string; boardId: string }) 
         onClick={() => {
           mutate({ ...userReaction, bbangparay: !userReaction?.bbangparay });
         }}
+        disabled={!auth.canUpdateReaction}
       >
         <BbangparayEmoticon /> {data?.bbangparayCount}
       </IconButton>
