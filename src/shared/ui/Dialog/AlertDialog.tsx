@@ -6,8 +6,7 @@ import { Button } from "../Button";
 import { Dialog, SubmitFormProps, useDialogContext } from "./components/compound";
 import { Description, Title } from "./components/radix";
 import { ResizerHandle } from "./components/Resize";
-import { DialogTemplate, DialogTemplateProps } from "./DialogTemplate";
-import { useDialogResizer } from "./hooks/useDialogResizer";
+import { DialogTemplate, DialogTemplateProps } from "./templates/DialogTemplate";
 
 interface DialogSubmitFormProps extends Omit<SubmitFormProps, "children"> {
   children?: ReactNode;

@@ -1,7 +1,7 @@
 import { AnimatePresence } from "motion/react";
-import React from 'react'
+import React from "react";
 
-import { Dialog, DialogProps } from './components/compound'
+import { Dialog, DialogProps } from "../components/compound";
 
 export interface DialogTemplateProps extends DialogProps {
   Trigger?: () => JSX.Element;
@@ -33,4 +33,4 @@ export const DialogTemplate = ({
     </AnimatePresence>
   );
 };
-DialogTemplate.displayName = 'Dialog'
+DialogTemplate.displayName = "Dialog";
