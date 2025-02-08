@@ -9,17 +9,21 @@ import HistoryList from "./HistoryList";
 
 const HistoryListLayout = async ({ userId }: { userId: string }) => {
   const queryClient = getQueryClient();
+
+  /*
+  굳이 server에서 해야하나? 
   await queryClient.fetchInfiniteQuery({
     queryKey: getParsedHistoryListKey({ userId }),
     queryFn: ({ pageParam }) => getUserHistoryList({ userId, pageParam })(),
     initialPageParam: 0,
   });
+  */
 
   return (
     <HydrationBoundary state={dehydrate(queryClient)}>
-      <div className="w-full ">
+      <>
         <HistoryList userId={userId} />
-      </div>
+      </>
     </HydrationBoundary>
   );
 };

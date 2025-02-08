@@ -8,7 +8,12 @@ import { IconButtonProps } from "./type";
 
 const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(({ children, className = "", ...props }, ref) => {
   return (
-    <RawButton className={cn(rawButtonVariants(props), iconButtonVariants(props), className)} ref={ref} {...props}>
+    <RawButton
+      className={cn(rawButtonVariants(props), iconButtonVariants(props), className)}
+      ref={ref}
+      hoverAnimationDisabled
+      {...props}
+    >
       <span className={LeftButtonIconVariants(props)} role="none presentation" aria-hidden="true">
         {children}
       </span>

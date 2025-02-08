@@ -7,7 +7,6 @@ import { PAGE_ROUTE } from "@/entities/Router/configs/route";
 import { ReactiveLayout } from "@/shared/ui/ReactiveLayout";
 import { ToastViewPort } from "@/shared/ui/Toast";
 
-import { getUserHistoryList } from "./api/userHistoryList";
 import FacePageHeader from "./components/FacePageHeader";
 import HistoryListLayout from "./components/HistoryListLayout.server";
 
@@ -24,8 +23,8 @@ const Page = async () => {
         <div role="none presentation" className="w-full flex-shrink-0 h-[2rem]" />
         <FacePageHeader />
 
-        <main className="flex flex-col items-center w-full justify-center flex-grow ">
-          <div className="flex-grow flex flex-col items-center w-full p-4"></div>
+        <main className="flex flex-col items-center w-full justify-center flex-grow">
+          <div className="flex-grow flex flex-col items-center w-full p-4 h-full"></div>
 
           <HistoryListLayout userId={auth.id} />
 

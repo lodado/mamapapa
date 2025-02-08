@@ -33,6 +33,8 @@ export interface RawButtonProps extends ButtonElement, VariantProps<typeof rawBu
    * @default false
    */
   disabled?: boolean;
+
+  hoverAnimationDisabled?: boolean;
 }
 
 /**

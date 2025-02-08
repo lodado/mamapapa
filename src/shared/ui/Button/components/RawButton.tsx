@@ -20,8 +20,8 @@ const RawButton = forwardRef<HTMLButtonElement, RawButtonProps>(
     return (
       <Motion
         componentType={componentType}
-        whileHover={{ scale: 1.01 }}
-        whileTap={{ scale: 0.98 }}
+        whileHover={!props.hoverAnimationDisabled ? { scale: 1.01 } : {}}
+        whileTap={!props.hoverAnimationDisabled ? { scale: 0.98 } : {}}
         transition={{ type: "spring", duration: 0.25 }}
         ref={ref}
         {...(props as any)}
