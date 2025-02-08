@@ -1,10 +1,11 @@
 "use client";
 
 import { useMutation } from "@tanstack/react-query";
+import { SquarePlus } from "lucide-react";
 import { useState } from "react";
 
 import { getQueryClient } from "@/shared";
-import { Input } from "@/shared/ui";
+import { Button, IconButton, Input } from "@/shared/ui";
 import { useToastStore } from "@/shared/ui/Toast/stores";
 
 import { updateComments } from "../api/fetchComments";
@@ -40,7 +41,7 @@ const CommentInput = ({ userId, boardId }: { userId: string; boardId: string }) 
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex justify-center items-center w-full px-4">
+    <form onSubmit={handleSubmit} className="flex flex-row  justify-center items-center h-full w-full px-4 gap-3">
       <Input
         wrapperClassName="w-full"
         value={content}
@@ -49,6 +50,12 @@ const CommentInput = ({ userId, boardId }: { userId: string; boardId: string }) 
         }}
         placeholder="댓글을 입력하세요..."
       />
+
+      <div>
+        <IconButton variant="primarySolid" type="submit" className="w-7 h-7 rounded-full flex-shrink-0">
+          <SquarePlus />
+        </IconButton>
+      </div>
     </form>
   );
 };

@@ -1,3 +1,5 @@
+"use client";
+
 import { useQuery, UseQueryOptions } from "@tanstack/react-query";
 import { useRef } from "react";
 
@@ -47,4 +49,3 @@ export function useQueryContainer<RESPONSE>({
 
   return { parsedQueryKey, query, handleOptimisticUpdate, revertOptimisticUpdate };
 }
- 
