@@ -1,4 +1,4 @@
-function code() {
+function vhCode() {
   // Safe area insets
   const safeAreaTop = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--safe-area-top")) || 0;
   const safeAreaBottom =
@@ -9,7 +9,10 @@ function code() {
 
   document.documentElement.style.setProperty("--vh", adjustedVh + "px");
 
-  window.addEventListener("resize", code);
+  window.addEventListener("resize", vhCode);
+}
+
+function viewportCode() {
   let prevVisualViewport = 0;
 
   function handleVisualViewportResize() {
@@ -29,7 +32,12 @@ function code() {
 }
 
 const ScreenVhScript = ({ nonce }: { nonce: string }) => {
-  return <script type="text/javascript" nonce={nonce} dangerouslySetInnerHTML={{ __html: `(${code})();` }} />;
+  return (
+    <>
+      <script type="text/javascript" nonce={nonce} dangerouslySetInnerHTML={{ __html: `(${vhCode})();` }} />
+      <script type="text/javascript" nonce={nonce} dangerouslySetInnerHTML={{ __html: `(${viewportCode})();` }} />
+    </>
+  );
 };
 
 export default ScreenVhScript;

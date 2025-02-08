@@ -23,7 +23,7 @@ const RemoveImageDialog = ({
       title={"사진 삭제"}
       description={"비교할 사진을 정말로 삭제하시겠습니까?"}
       onChangeVisible={onChangeVisible}
-      onSubmit={() => {
+      onSubmit={async () => {
         removeImage(selectedImage);
         addToast({
           title: "삭제 성공",

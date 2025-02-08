@@ -15,7 +15,7 @@ interface RemoveTemplateDialogProps {
 
   onChangeVisible: (newVisibleStatus: boolean) => void;
 
-  onSubmit: () => void;
+  onSubmit: () => Promise<void>;
 }
 
 const RemoveTemplateDialog: React.FC<RemoveTemplateDialogProps> = ({
