@@ -37,12 +37,13 @@ const Page = async ({ params }: { params: { id: string } }) => {
   const title = data.title;
   const createdAt = data.createdAt;
   const updatedAt = data.updatedAt;
+  const creatorUserId = data.userId;
 
   return (
     <>
       <ReactiveLayout>
         <div role="none presentation" className="w-full flex-shrink-0 h-[4rem]" />
-        <HistoryPageHeader userId={user?.id} title={title} updatedAt={updatedAt} />
+        <HistoryPageHeader creatorUserId={creatorUserId} title={title} updatedAt={updatedAt} />
 
         <main className="flex flex-col items-center w-full justify-center flex-grow ">
           <div className="flex-grow flex flex-col items-center w-full px-4">

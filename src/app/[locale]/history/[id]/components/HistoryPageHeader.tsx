@@ -16,13 +16,21 @@ import { Button, Dropdown } from "@/shared/ui";
 import RemoveHistoryDialog from "./RemoveHisoryDialog";
 import UpdateHistoryTitleDialog from "./UpdateHistoryTitleDialog";
 
-const HistoryPageHeader = ({ userId, title, updatedAt }: { userId?: string; title: string; updatedAt: string }) => {
+const HistoryPageHeader = ({
+  creatorUserId,
+  title,
+  updatedAt,
+}: {
+  creatorUserId?: string;
+  title: string;
+  updatedAt: string;
+}) => {
   const [isRemoveDialogOpen, setIsRemoveDialogOpen] = useState(false);
   const [isUpdateDialogOpen, setIsUpdateDialogOpen] = useState(false);
 
   const { session } = useAuthStore();
 
-  const isOwner = userId === session?.user?.id;
+  const isOwner = creatorUserId === session?.user?.id;
   const router = useRouter();
 
   return (

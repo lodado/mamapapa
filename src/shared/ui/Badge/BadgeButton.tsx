@@ -1,7 +1,7 @@
-import { cn } from "@/shared/utils";
+import { cva, VariantProps } from "class-variance-authority";
 import { ButtonHTMLAttributes, ReactNode } from "react";
 
-import { cva, VariantProps } from "class-variance-authority";
+import { cn } from "@/shared/utils";
 
 export const badgeButtonVariants = cva(
   `flex flex-row h-7 min-w-[2.8rem] gap-1 px-2 py-1 rounded-2xl items-center justify-center`,

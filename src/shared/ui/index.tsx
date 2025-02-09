@@ -1,4 +1,5 @@
 export * from "./animation";
+export * from "./Badge";
 export * from "./Button";
 export * from "./Children";
 export * from "./Dropdown";
@@ -12,4 +13,3 @@ export * from "./ScrollArea";
 export * from "./Select";
 export * from "./Switch";
 export * from "./Tooltip";
-export * from "./Badge";
