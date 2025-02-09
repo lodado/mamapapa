@@ -8,23 +8,11 @@ import ThumbsUpEmoticon from "/public/emoticon/ThumbsUpEmoticon.svg";
 import ShardLink from "/public/ShareLink.svg";
 import { useAuthStore } from "@/entities/Auth/client/models/store/AuthStore";
 import { useMutationWithNotification } from "@/shared/hooks";
-import { useQueryContainer } from "@/shared/ui";
+import { BadgeButton, useQueryContainer } from "@/shared/ui";
 
 import { fetchReaction, postReaction } from "../api/fetchReactions";
 import { getParsedReactionKey } from "../utils/constant";
 import { getOptimisticUpdateReactions } from "../utils/getOptimisticUpdateReactions";
-
-const IconButton = ({ children, ...rest }: { children: ReactNode } & ButtonHTMLAttributes<HTMLButtonElement>) => {
-  return (
-    <button
-      className="flex flex-row h-7 min-w-[2.8rem] bg-background-01 gap-1 px-2 py-1 rounded-2xl border border-border-02 items-center justify-center text-text-03"
-      type="button"
-      {...rest}
-    >
-      {children}
-    </button>
-  );
-};
 
 const ReactionList = ({ userId, boardId }: { userId: string; boardId: string }) => {
   const { isLogin } = useAuthStore();
@@ -67,33 +55,38 @@ const ReactionList = ({ userId, boardId }: { userId: string; boardId: string }) 
         <ShardLink />
       </button>
 
-      <IconButton
+      <BadgeButton
         type="button"
+        variant={userReaction.thumbsUp ? "isSelected" : "line"}
         onClick={() => {
           mutate({ ...userReaction, thumbsUp: !userReaction.thumbsUp });
         }}
         disabled={!auth.canUpdateReaction}
       >
         <ThumbsUpEmoticon /> {data?.thumbsUpCount}
-      </IconButton>
+      </BadgeButton>
 
-      <IconButton
+      <BadgeButton
+        type="button"
+        variant={userReaction.liked ? "isSelected" : "line"}
         onClick={() => {
           mutate({ ...userReaction, liked: !userReaction.liked });
         }}
         disabled={!auth.canUpdateReaction}
       >
         <LoveEmoticon /> {data?.likeCount}
-      </IconButton>
+      </BadgeButton>
 
-      <IconButton
+      <BadgeButton
+        type="button"
+        variant={userReaction.bbangparay ? "isSelected" : "line"}
         onClick={() => {
           mutate({ ...userReaction, bbangparay: !userReaction.bbangparay });
         }}
         disabled={!auth.canUpdateReaction}
       >
         <BbangparayEmoticon /> {data?.bbangparayCount}
-      </IconButton>
+      </BadgeButton>
     </div>
   );
 };

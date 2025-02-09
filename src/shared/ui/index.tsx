@@ -12,3 +12,4 @@ export * from "./ScrollArea";
 export * from "./Select";
 export * from "./Switch";
 export * from "./Tooltip";
+export * from "./Badge";
