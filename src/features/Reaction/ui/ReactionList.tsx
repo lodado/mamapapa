@@ -1,11 +1,11 @@
 "use client";
 
-import React, { ButtonHTMLAttributes, ReactNode } from "react";
+import React from "react";
 
 import BbangparayEmoticon from "/public/emoticon/BbangparayEmoticon.svg";
 import LoveEmoticon from "/public/emoticon/LoveEmoticon.svg";
 import ThumbsUpEmoticon from "/public/emoticon/ThumbsUpEmoticon.svg";
-import ShardLink from "/public/ShareLink.svg";
+
 import { useAuthStore } from "@/entities/Auth/client/models/store/AuthStore";
 import { useMutationWithNotification } from "@/shared/hooks";
 import { BadgeButton, useQueryContainer } from "@/shared/ui";
@@ -13,6 +13,7 @@ import { BadgeButton, useQueryContainer } from "@/shared/ui";
 import { fetchReaction, postReaction } from "../api/fetchReactions";
 import { getParsedReactionKey } from "../utils/constant";
 import { getOptimisticUpdateReactions } from "../utils/getOptimisticUpdateReactions";
+import CopyLinkButton from "./CopyLinkButton";
 
 const ReactionList = ({ userId, boardId }: { userId: string; boardId: string }) => {
   const { isLogin } = useAuthStore();
@@ -51,9 +52,7 @@ const ReactionList = ({ userId, boardId }: { userId: string; boardId: string }) 
 
   return (
     <div className="px-4 flex flex-row w-full h-12 gap-1 items-center">
-      <button type="button">
-        <ShardLink />
-      </button>
+      <CopyLinkButton />
 
       <BadgeButton
         type="button"
