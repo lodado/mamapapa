@@ -10,12 +10,12 @@ import CommentInput from "@/features/Comments/ui/CommentInput";
 import { ComparisonMetaData } from "@/features/ImageSelector/models";
 import { ReactionLayout } from "@/features/Reaction/index.server";
 import { ReactiveLayout } from "@/shared/ui/ReactiveLayout";
+import Skeleton from "@/shared/ui/Skeleton/Skeleton";
 import { ToastViewPort } from "@/shared/ui/Toast";
 import { ImagePrediction } from "@/widgets/ImagePrediction";
 
 import { getCachedCompareHistory } from "./api/compareHistory";
 import HistoryPageHeader from "./components/HistoryPageHeader";
-import Skeleton from "@/shared/ui/Skeleton/Skeleton";
 
 const Loading = async ({ params }: { params: { id: string } }) => {
   return (

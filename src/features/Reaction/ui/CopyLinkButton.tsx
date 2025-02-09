@@ -1,9 +1,10 @@
 "use client";
 
 import React from "react";
+import { CopyToClipboard } from "react-copy-to-clipboard";
+
 import ShardLink from "/public/ShareLink.svg";
 import { useToastStore } from "@/shared/ui/Toast/stores";
-import { CopyToClipboard } from "react-copy-to-clipboard";
 
 const CopyLinkButton = () => {
   const { addToast } = useToastStore();

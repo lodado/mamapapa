@@ -5,7 +5,6 @@ import React from "react";
 import BbangparayEmoticon from "/public/emoticon/BbangparayEmoticon.svg";
 import LoveEmoticon from "/public/emoticon/LoveEmoticon.svg";
 import ThumbsUpEmoticon from "/public/emoticon/ThumbsUpEmoticon.svg";
-
 import { useAuthStore } from "@/entities/Auth/client/models/store/AuthStore";
 import { useMutationWithNotification } from "@/shared/hooks";
 import { BadgeButton, useQueryContainer } from "@/shared/ui";
