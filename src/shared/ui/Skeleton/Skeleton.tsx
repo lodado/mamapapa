@@ -1,21 +1,15 @@
-// Skeleton.tsx
+import "./skeleton.scss";
+
 import React from "react";
 
-export interface SkeletonProps {
-  /** "rect" (직사각형) 또는 "circle" (원형) */
-  shape?: "rect" | "circle";
+import { cn } from "@/shared/utils";
 
-  /** 추가로 적용할 Tailwind CSS 클래스 */
+interface ContainerSkeletonProps {
   className?: string;
 }
 
-const Skeleton: React.FC<SkeletonProps> = ({ shape = "rect", className = "" }) => {
-  // shape에 따라 테두리 반경을 설정
-  const borderRadiusClass = shape === "circle" ? "rounded-full" : "rounded";
-
-  return (
-    <div className={`relative overflow-hidden bg-tertiary-press animate-pulse ${borderRadiusClass} ${className}`} />
-  );
+const Skeleton: React.FC<ContainerSkeletonProps> = ({ className }) => {
+  return <div className={cn("container-skeleton", "rounded-e-xl", className)}></div>;
 };
 
 export default Skeleton;

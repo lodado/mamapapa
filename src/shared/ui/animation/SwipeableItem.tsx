@@ -56,7 +56,7 @@ const SwipeableItem: React.FC<SwipeableItemProps> = ({
         style={{ x }}
         animate={controls}
         onDrag={handleDrag}
-        className="relative z-1"
+        className="relative z-10"
       >
         {children}
       </motion.div>

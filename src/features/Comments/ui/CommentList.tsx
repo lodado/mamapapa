@@ -3,6 +3,7 @@
 import { useInfiniteQuery } from "@tanstack/react-query";
 import React from "react";
 
+import { useAuthStore } from "@/entities/Auth/client/models/store/AuthStore";
 import { useIntersectionObserver } from "@/shared/hooks";
 import { Image } from "@/shared/ui";
 

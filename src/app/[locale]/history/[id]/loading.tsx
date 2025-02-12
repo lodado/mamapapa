@@ -22,7 +22,7 @@ const Loading = async ({ params }: { params: { id: string } }) => {
     <>
       <ReactiveLayout>
         <main className="flex flex-col items-center w-full justify-center flex-grow ">
-          <div className="flex-grow flex flex-col items-center w-full px-4 gap-2">
+          <div className="flex-grow flex flex-col items-center w-full px-16 gap-2">
             <Skeleton className="w-full h-[100px]" />
             <Skeleton className="w-full h-[100px]" />
             <Skeleton className="w-full h-[100px]" />
