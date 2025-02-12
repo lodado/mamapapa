@@ -6,8 +6,6 @@ import React from "react";
 import { Virtuoso } from "react-virtuoso";
 
 import Delete from "/public/delete.svg";
-import { makeQueryClient } from "@/shared";
-import { useIntersectionObserver } from "@/shared/hooks";
 import { Dropdown, Image } from "@/shared/ui";
 
 import { fetchComments } from "../api/fetchComments";
@@ -16,10 +14,14 @@ import { getParsedBoardKey } from "../utils/constant";
 import RemoveCommentDialog from "./RemoveCommentDialog";
 import UpdateCommentDialog from "./UpdateCommentDialog";
 
-const CommentItem = (comment: CommentWithUserInformation & { refetch: () => void }) => {
+const CommentItem = (comment: CommentWithUserInformation & { ownerId: string; refetch: () => void }) => {
   // 각 댓글마다 별도의 다이얼로그 open 상태를 관리
   const [isRemoveDialogOpen, setIsRemoveDialogOpen] = React.useState(false);
   const [isUpdateDialogOpen, setIsUpdateDialogOpen] = React.useState(false);
+
+  const auth = {
+    canUpdateComment: comment.ownerId === comment.userId,
+  };
 
   return (
     <div className="relative w-full flex flex-row items-center justify-between">
@@ -44,23 +46,25 @@ const CommentItem = (comment: CommentWithUserInformation & { refetch: () => void
         </div>
       </div>
 
-      <Dropdown>
-        <Dropdown.Trigger
-          variant="outline"
-          className="z-10 flex justify-center items-center p-0 w-[28px] h-[28px] fill-text-03 text-text-03"
-          doesArrowNeed={false}
-        >
-          <Ellipsis className="fill-text-03" strokeWidth={2} size={12} />
-        </Dropdown.Trigger>
-        <Dropdown.Content className="w-full">
-          <Dropdown.Item key="recrop-item" onClick={() => setIsUpdateDialogOpen(true)}>
-            크롭 다시하기
-          </Dropdown.Item>
-          <Dropdown.Item key="remove-item" onClick={() => setIsRemoveDialogOpen(true)}>
-            <Delete /> 삭제하기
-          </Dropdown.Item>
-        </Dropdown.Content>
-      </Dropdown>
+      {auth.canUpdateComment && (
+        <Dropdown>
+          <Dropdown.Trigger
+            variant="outline"
+            className="z-10 flex justify-center items-center p-0 w-[28px] h-[28px] fill-text-03 text-text-03"
+            doesArrowNeed={false}
+          >
+            <Ellipsis className="fill-text-03" strokeWidth={2} size={12} />
+          </Dropdown.Trigger>
+          <Dropdown.Content className="w-full">
+            <Dropdown.Item key="update-comment" onClick={() => setIsUpdateDialogOpen(true)}>
+              댓글 수정하기
+            </Dropdown.Item>
+            <Dropdown.Item key="remove-comment" onClick={() => setIsRemoveDialogOpen(true)}>
+              <Delete /> 삭제하기
+            </Dropdown.Item>
+          </Dropdown.Content>
+        </Dropdown>
+      )}
 
       {/* 댓글마다 별도로 다이얼로그 렌더링 */}
       <RemoveCommentDialog
@@ -107,6 +111,7 @@ const CommentList = ({ boardId, userId }: { boardId: string; userId: string }) =
       itemContent={(index, comment: CommentWithUserInformation) => (
         <CommentItem
           key={comment.id}
+          ownerId={userId}
           refetch={() => {
             refetch();
           }}
