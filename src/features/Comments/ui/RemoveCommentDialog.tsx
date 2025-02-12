@@ -1,11 +1,10 @@
 import { useParams, useRouter } from "next/navigation";
 import React from "react";
 
-import { PAGE_ROUTE } from "@/entities/Router/configs/route";
 import { RemoveTemplateDialog } from "@/shared/ui/Dialog";
 import { useToastStore } from "@/shared/ui/Toast/stores";
 
-import { removeCompareHistory } from "../[id]/api/compareHistory";
+import { removeCommentById } from "../api/fetchComments";
 
 const RemoveCommentDialog = ({
   isVisible,
@@ -19,7 +18,6 @@ const RemoveCommentDialog = ({
   onAfterSubmit?: () => void;
 }) => {
   const { addToast } = useToastStore();
-  const router = useRouter();
 
   return (
     <RemoveTemplateDialog
@@ -28,7 +26,7 @@ const RemoveCommentDialog = ({
       description={"결과를 정말로 삭제하시겠습니까?"}
       onChangeVisible={onChangeVisible}
       onSubmit={async () => {
-        await removeCompareHistory(id as string);
+        await removeCommentById({ id });
 
         addToast({
           title: "삭제 성공",

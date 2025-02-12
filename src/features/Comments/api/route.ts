@@ -83,3 +83,57 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: err.message }, { status: 500 });
   }
 }
+
+// POST: 댓글 업데이트 by id
+export async function PUT_BY_ID(request: NextRequest,  { params }: { params: { id: string } }) {
+  const { id } = params; 
+
+  try {
+    const body: Comment = await request.json();
+    const { content } = body;
+ 
+    if (!content) {
+      return NextResponse.json({ error: "Content is required" }, { status: 400 });
+    }
+ 
+    const { data, error } = await supabaseInstance
+      .from("simminyComments")
+      .update({ content })
+      .eq('id', id)
+      // 새로 생성된 행의 데이터를 받아오기 위해 select 사용
+      .select("id, boardId, content, createdAt")
+      .single();
+
+    if (error) {
+      return NextResponse.json({ error: error.message }, { status: 500 });
+    }
+
+    return NextResponse.json(data, { status: 201 });
+  } catch (err: any) {
+    return NextResponse.json({ error: err.message }, { status: 500 });
+  }
+}
+
+// POST: 댓글 업데이트 by id
+export async function DELETE_BY_ID(request: NextRequest,  { params }: { params: { id: string } }) {
+
+
+  try {
+    const { id } = params;
+   
+    const { data, error } = await supabaseInstance
+      .from("simminyComments")
+      .delete()
+      .eq('id', id)
+ 
+    if (error) {
+      return NextResponse.json({ error: error.message }, { status: 500 });
+    }
+
+    return NextResponse.json(data, { status: 201 });
+  } catch (err: any) {
+ 
+
+    return NextResponse.json({ error: err.message }, { status: 500 });
+  }
+}

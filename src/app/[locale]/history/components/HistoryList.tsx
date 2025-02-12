@@ -13,7 +13,7 @@ import { SwipeableItem } from "@/shared/ui";
 
 import { getUserHistoryList } from "../api/userHistoryList";
 import { getParsedHistoryListKey } from "../utils/getParsedHistoryListKey";
-import RemoveHistoryDialog from "./RemoveHisoryDialog";
+import RemoveCommentDialog from "./RemoveHisoryDialog";
 
 const SwipeOption = ({ id, userId }: { id: string; userId: string }) => {
   const [isRemoveDialogOpen, setIsRemoveDialogOpen] = useState(false);
@@ -31,11 +31,11 @@ const SwipeOption = ({ id, userId }: { id: string; userId: string }) => {
       >
         삭제
       </button>
-      <RemoveHistoryDialog
+      <RemoveCommentDialog
         id={id as string}
         isVisible={isRemoveDialogOpen}
         onChangeVisible={setIsRemoveDialogOpen}
-        OnAfterSubmit={() => {
+        onAfterSubmit={() => {
           queryClient.refetchQueries({
             queryKey: getParsedHistoryListKey({ userId }),
           });
@@ -56,11 +56,6 @@ const HistoryList = ({ userId }: { userId: string }) => {
   const router = useRouter();
   const items = data ? data.pages.flat() : [];
 
-  const handleSwipeLeft = (item: any) => {
-    console.log("Swiped left on item:", item.id);
-    // 추가 동작 구현 가능
-  };
-
   return (
     <div className="px-2 py-3 flex w-full h-[calc(80*var(--vh))] flex-col gap-2">
       <Virtuoso
@@ -75,7 +70,6 @@ const HistoryList = ({ userId }: { userId: string }) => {
           <SwipeableItem
             leftSwipeLimit={-74}
             key={item.id}
-            onSwipeLeft={() => handleSwipeLeft(item)}
             swipeOptionChildren={<SwipeOption id={item.id} userId={userId} />}
           >
             <div

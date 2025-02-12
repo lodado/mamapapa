@@ -48,3 +48,25 @@ export async function updateComments({
 
   return res;
 }
+ 
+export async function removeCommentById({ id }: { id: string }): Promise<Comment> {
+  const res = await request<Comment>({
+    url: `/api/comments/${id}`,
+    method: "DELETE",
+    params: {},
+  });
+
+  return res;
+}
+
+export async function updateCommentById({ id, content }: { id: string; content: string }): Promise<Comment> {
+  const res = await request<Comment>({
+    url: `/api/comments/${id}`,
+    method: "PUT",
+    data: JSON.stringify({
+      content,
+    }),
+  });
+
+  return res;
+}

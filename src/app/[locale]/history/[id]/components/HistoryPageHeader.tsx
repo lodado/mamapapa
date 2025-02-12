@@ -12,7 +12,7 @@ import { Header } from "@/features";
 import { timestampToTimeFormat } from "@/shared";
 import { Button, Dropdown } from "@/shared/ui";
 
-import RemoveHistoryDialog from "../../components/RemoveHisoryDialog";
+import RemoveCommentDialog from "../../components/RemoveHisoryDialog";
 import UpdateHistoryTitleDialog from "../../components/UpdateHistoryTitleDialog";
 
 const HistoryPageHeader = ({
@@ -92,11 +92,11 @@ const HistoryPageHeader = ({
         </>
       </div>
 
-      <RemoveHistoryDialog
+      <RemoveCommentDialog
         id={id as string}
         isVisible={isRemoveDialogOpen}
         onChangeVisible={setIsRemoveDialogOpen}
-        OnAfterSubmit={() => {
+        onAfterSubmit={() => {
           router.push(PAGE_ROUTE.MAIN);
         }}
       />

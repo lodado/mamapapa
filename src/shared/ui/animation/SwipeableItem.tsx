@@ -8,7 +8,7 @@ interface SwipeableItemProps {
   children: React.ReactNode;
   swipeOptionChildren: React.ReactNode;
 
-  onSwipeLeft: () => void;
+  onSwipeLeft?: () => void;
 }
 
 export const SwipeOptionContainer = ({ isSwiped, children }: PropsWithChildren & { isSwiped: boolean }) => {
@@ -40,7 +40,7 @@ const SwipeableItem: React.FC<SwipeableItemProps> = ({
     if (info.offset.x < leftSwipeLimit) {
       await controls.start({ x: leftSwipeLimit });
       setIsSwiped(true);
-      onSwipeLeft();
+      onSwipeLeft?.();
     } else {
       controls.start({ x: 0 });
       setIsSwiped(false);
