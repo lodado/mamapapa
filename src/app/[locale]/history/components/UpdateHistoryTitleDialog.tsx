@@ -8,7 +8,7 @@ import { useServerAction } from "@/shared/hooks";
 import { AddTemplateDialog } from "@/shared/ui/Dialog";
 import { useToastStore } from "@/shared/ui/Toast/stores";
 
-import { updateCompareHistory } from "../api/compareHistory";
+import { updateCompareHistory } from "../[id]/api/compareHistory";
 
 interface AddNewPlayerDialogContainerProps {
   isVisible: boolean;

@@ -5,18 +5,21 @@ import { PAGE_ROUTE } from "@/entities/Router/configs/route";
 import { RemoveTemplateDialog } from "@/shared/ui/Dialog";
 import { useToastStore } from "@/shared/ui/Toast/stores";
 
-import { removeCompareHistory } from "../api/compareHistory";
+import { removeCompareHistory } from "../[id]/api/compareHistory";
 
 const RemoveHistoryDialog = ({
   isVisible,
   onChangeVisible,
+  OnAfterSubmit,
+  id,
 }: {
+  id: string;
   isVisible: boolean;
   onChangeVisible: (newVisibleStatus: boolean) => void;
+  OnAfterSubmit?: () => void;
 }) => {
   const { addToast } = useToastStore();
   const router = useRouter();
-  const { id } = useParams();
 
   return (
     <RemoveTemplateDialog
@@ -33,7 +36,7 @@ const RemoveHistoryDialog = ({
           description: "삭제에 성공했습니다.",
         });
         onChangeVisible(false);
-        router.push(PAGE_ROUTE.MAIN);
+        OnAfterSubmit?.();
       }}
     />
   );

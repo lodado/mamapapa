@@ -1,20 +1,19 @@
 "use client";
 
 import { ChevronLeft, Ellipsis } from "lucide-react";
-import { useRouter } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import React, { useState } from "react";
 
 import Delete from "/public/delete.svg";
 import SimminIcon from "/public/SimminIcon.svg";
 import { useAuthStore } from "@/entities/Auth/client/models/store/AuthStore";
-import { LocaleLink } from "@/entities/Router";
 import { PAGE_ROUTE } from "@/entities/Router/configs/route";
 import { Header } from "@/features";
 import { timestampToTimeFormat } from "@/shared";
 import { Button, Dropdown } from "@/shared/ui";
 
-import RemoveHistoryDialog from "./RemoveHisoryDialog";
-import UpdateHistoryTitleDialog from "./UpdateHistoryTitleDialog";
+import RemoveHistoryDialog from "../../components/RemoveHisoryDialog";
+import UpdateHistoryTitleDialog from "../../components/UpdateHistoryTitleDialog";
 
 const HistoryPageHeader = ({
   creatorUserId,
@@ -32,6 +31,7 @@ const HistoryPageHeader = ({
 
   const isOwner = creatorUserId === session?.user?.id;
   const router = useRouter();
+  const { id } = useParams();
 
   return (
     <>
@@ -92,7 +92,14 @@ const HistoryPageHeader = ({
         </>
       </div>
 
-      <RemoveHistoryDialog isVisible={isRemoveDialogOpen} onChangeVisible={setIsRemoveDialogOpen} />
+      <RemoveHistoryDialog
+        id={id as string}
+        isVisible={isRemoveDialogOpen}
+        onChangeVisible={setIsRemoveDialogOpen}
+        OnAfterSubmit={() => {
+          router.push(PAGE_ROUTE.MAIN);
+        }}
+      />
       <UpdateHistoryTitleDialog
         previousTitle={title}
         isVisible={isUpdateDialogOpen}

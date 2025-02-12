@@ -1,18 +1,49 @@
 // components/HistoryList.tsx
 "use client";
 
-import { useInfiniteQuery } from "@tanstack/react-query";
+import { useInfiniteQuery, useQueryClient } from "@tanstack/react-query";
 import { MessageSquareText } from "lucide-react";
-import { useRouter } from "next/navigation";
-import React from "react";
+import { useParams, useRouter } from "next/navigation";
+import React, { useState } from "react";
 import { Virtuoso } from "react-virtuoso";
 
 import SimminIcon from "/public/SimminIcon.svg";
 import { timestampToTimeFormat } from "@/shared";
+import { SwipeableItem } from "@/shared/ui";
 
 import { getUserHistoryList } from "../api/userHistoryList";
 import { getParsedHistoryListKey } from "../utils/getParsedHistoryListKey";
-import SwipeableItem from "./SwipeableItem";
+import RemoveHistoryDialog from "./RemoveHisoryDialog";
+
+const SwipeOption = ({ id, userId }: { id: string; userId: string }) => {
+  const [isRemoveDialogOpen, setIsRemoveDialogOpen] = useState(false);
+
+  const queryClient = useQueryClient();
+
+  return (
+    <>
+      <button
+        type="button"
+        className="w-[64px] flex items-center justify-center h-full head-3 text-text-error px-4 rounded-xl border border-solid border-error"
+        onClick={() => {
+          setIsRemoveDialogOpen(true);
+        }}
+      >
+        삭제
+      </button>
+      <RemoveHistoryDialog
+        id={id as string}
+        isVisible={isRemoveDialogOpen}
+        onChangeVisible={setIsRemoveDialogOpen}
+        OnAfterSubmit={() => {
+          queryClient.refetchQueries({
+            queryKey: getParsedHistoryListKey({ userId }),
+          });
+        }}
+      />
+    </>
+  );
+};
 
 const HistoryList = ({ userId }: { userId: string }) => {
   const { data, fetchNextPage, hasNextPage, isFetchingNextPage } = useInfiniteQuery({
@@ -41,9 +72,14 @@ const HistoryList = ({ userId }: { userId: string }) => {
           }
         }}
         itemContent={(index, item) => (
-          <SwipeableItem key={item.id} onSwipeLeft={() => handleSwipeLeft(item)}>
+          <SwipeableItem
+            leftSwipeLimit={-74}
+            key={item.id}
+            onSwipeLeft={() => handleSwipeLeft(item)}
+            swipeOptionChildren={<SwipeOption id={item.id} userId={userId} />}
+          >
             <div
-              onClick={() => router.push(`/history/${item.id}`)}
+              onDoubleClick={() => router.push(`/history/${item.id}`)}
               className="mb-2 justify-between cursor-pointer border rounded-xl border-solid border-border-01 bg-tertiary flex flex-row items-center w-full h-[5.6rem] px-2"
             >
               <div className="flex flex-row gap-2 items-center">
