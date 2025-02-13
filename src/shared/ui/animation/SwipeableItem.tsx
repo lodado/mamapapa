@@ -37,7 +37,7 @@ const SwipeableItem: React.FC<SwipeableItemProps> = ({
 
   // throttle 내부적으로 적용
   const handleDrag = async (event: any, info: { offset: { x: number } }) => {
-    if (info.offset.x < leftSwipeLimit) {
+    if (info.offset.x < leftSwipeLimit / 2) {
       await controls.start({ x: leftSwipeLimit });
       setIsSwiped(true);
       onSwipeLeft?.();
@@ -52,10 +52,10 @@ const SwipeableItem: React.FC<SwipeableItemProps> = ({
       <motion.div
         drag="x"
         dragConstraints={{ left: leftSwipeLimit, right: 0 }}
-        dragElastic={0.004}
+        dragElastic={0}
         style={{ x }}
         animate={controls}
-        onDrag={handleDrag}
+        onDragEnd={handleDrag}
         className="relative z-10"
       >
         {children}
