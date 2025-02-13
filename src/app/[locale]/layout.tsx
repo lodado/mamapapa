@@ -38,9 +38,11 @@ export function generateViewport(): Viewport {
 export function generateMetadata(): Metadata {
   return {
     title: "Simmey",
-    icons: {
-      icon: "/Logo.svg",
-    },
+
+    icons: [
+      { rel: "apple-touch-icon", url: "/Logo.svg" },
+      { rel: "icon", url: "/Logo.svg" },
+    ],
   };
 }
 
