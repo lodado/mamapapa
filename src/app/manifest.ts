@@ -14,15 +14,15 @@ export default function manifest(): MetadataRoute.Manifest {
 
     icons: [
       {
-        purpose: "maskable",
+        purpose: "any",
         sizes: "75x75",
         src: "/Logo.svg",
         type: "image/svg",
       },
       {
         purpose: "maskable",
-        sizes: "150x150",
-        src: "/Logo.svg",
+        sizes: "150x165",
+        src: "/simmeyIcon.svg",
         type: "image/svg",
       },
     ],
