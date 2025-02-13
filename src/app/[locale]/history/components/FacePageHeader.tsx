@@ -10,7 +10,7 @@ import { Header } from "@/features";
 
 const FacePageHeader = () => {
   return (
-    <div className="z-header fixed w-full md:w-[768px] top-0 bg-background-op-01 border-b border-b-solid border-b-border-02">
+    <div className="z-50 fixed w-full md:w-[768px] top-0 bg-background-op-01 border-b border-b-solid border-b-border-02">
       <>
         <Header className="z-header w-full md:w-[768px] h-[2.75rem] fixed top-0 flex flex-row justify-between items-center">
           <LocaleLink
