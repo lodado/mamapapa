@@ -1,5 +1,6 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import React from "react";
 
 import { USER_PLAYER_NAME } from "@/entities";
@@ -12,17 +13,15 @@ import { useToastStore } from "@/shared/ui/Toast/stores";
 import { START_COMPARE_LINK_ID } from "../configs/constant";
 
 const CompareButtonLink = () => {
+  const t = useTranslations();
   const { addToast } = useToastStore();
   const { images } = useImageSelectorStore();
   const { faceRecognitionModel } = useFaceModelStore();
 
   const modelNotFound = !faceRecognitionModel;
-
   const isUserPlayerNotSelected = images.every((image) => image.selectedPlayer !== USER_PLAYER_NAME);
-
   const isLessThanTwoPlayersSelected =
     new Set(images.filter((image) => !!image.selectedPlayer).map((image) => image.selectedPlayer)).size <= 1;
-
   const isAnyFaceNotRecognized = images
     .filter((image) => !!image.selectedPlayer)
     .some((image) => image.faceCoordinates.height <= 0 && image.faceCoordinates.width <= 0);
@@ -32,8 +31,8 @@ const CompareButtonLink = () => {
   const handleValidationSubmit = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
     if (modelNotFound) {
       addToast({
-        title: "에러",
-        description: "얼굴 인식 모델을 다운로드 중입니다.",
+        title: t("COMPARE.ERROR-TITLE"),
+        description: t("COMPARE.ERROR-MODEL-NOT-FOUND"),
         type: "error",
       });
       e.preventDefault();
@@ -42,8 +41,8 @@ const CompareButtonLink = () => {
 
     if (isUserPlayerNotSelected) {
       addToast({
-        title: "에러",
-        description: "비교 대상(나)를 지정해주세요.",
+        title: t("COMPARE.ERROR-TITLE"),
+        description: t("COMPARE.ERROR-USER-NOT-SELECTED"),
         type: "error",
       });
       e.preventDefault();
@@ -52,19 +51,18 @@ const CompareButtonLink = () => {
 
     if (isLessThanTwoPlayersSelected) {
       addToast({
-        title: "에러",
-        description: "최소 두명 이상의 비교 대상을 지정해주세요.",
+        title: t("COMPARE.ERROR-TITLE"),
+        description: t("COMPARE.ERROR-MIN-TWO-PLAYERS"),
         type: "error",
       });
       e.preventDefault();
       return;
     }
 
-    /**  */
     if (isAnyFaceNotRecognized) {
       addToast({
-        title: "에러",
-        description: "얼굴이 인식되지 않은 사진이 있습니다.",
+        title: t("COMPARE.ERROR-TITLE"),
+        description: t("COMPARE.ERROR-FACE-NOT-RECOGNIZED"),
         type: "error",
       });
       e.preventDefault();
@@ -81,7 +79,7 @@ const CompareButtonLink = () => {
       variant="primarySolid"
       href={PAGE_ROUTE.RESULT}
     >
-      비교하기
+      {t("COMPARE.BUTTON")}
     </ButtonLink>
   );
 };

@@ -68,5 +68,29 @@
     "DOWNLOAD-RESUME": "Resume",
     "DOWNLOAD-SUCCESS": "AI model download completed",
     "DOWNLOAD-COMPLETE": "Download completed. (100%)"
+  },
+  "ADD": {
+    "PICTURE-BUTTON": "Add Picture",
+    "PICTURE-SUCCESS": "Save Successful",
+    "PICTURE-SUCCESS-DESC": "Successfully added a new picture.",
+    "PICTURE-FAIL": "Save Failed",
+    "PICTURE-FAIL-DESC": "Failed to add a new picture."
+  },
+  "COMPARE": {
+    "BUTTON": "Compare",
+    "ERROR-TITLE": "Error",
+    "ERROR-MODEL-NOT-FOUND": "Face recognition model is downloading.",
+    "ERROR-USER-NOT-SELECTED": "Please select yourself as a comparison target.",
+    "ERROR-MIN-TWO-PLAYERS": "Please select at least two comparison targets.",
+    "ERROR-FACE-NOT-RECOGNIZED": "There is a photo where the face is not recognized."
+  },
+  "FACES": {
+    "PAGE-HEADER": "Compare Look-Alikes",
+    "TUTORIAL-STEP-1": "Please add the photos you want to compare.",
+    "TUTORIAL-STEP-2": "You can extract and check only faces from the photos!",
+    "TUTORIAL-STEP-3": "Select yourself as required and classify at least one comparison target.",
+    "TUTORIAL-STEP-4": "You can manually recrop or delete images!",
+    "BUTTON-BACK": "Go Back",
+    "BUTTON-HELP": "Help"
   }
 }

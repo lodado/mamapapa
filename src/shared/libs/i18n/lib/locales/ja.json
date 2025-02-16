@@ -68,5 +68,29 @@
     "DOWNLOAD-RESUME": "再開",
     "DOWNLOAD-SUCCESS": "比較のためのAIモデルのダウンロードが完了しました",
     "DOWNLOAD-COMPLETE": "ダウンロードが完了しました。(100%)"
+  },
+  "ADD": {
+    "PICTURE-BUTTON": "写真を追加する",
+    "PICTURE-SUCCESS": "保存成功",
+    "PICTURE-SUCCESS-DESC": "新しい写真の追加に成功しました。",
+    "PICTURE-FAIL": "保存失敗",
+    "PICTURE-FAIL-DESC": "新しい写真の追加に失敗しました。"
+  },
+  "COMPARE": {
+    "BUTTON": "比較する",
+    "ERROR-TITLE": "エラー",
+    "ERROR-MODEL-NOT-FOUND": "顔認識モデルをダウンロード中です。",
+    "ERROR-USER-NOT-SELECTED": "比較対象（自分）を指定してください。",
+    "ERROR-MIN-TWO-PLAYERS": "少なくとも2人の比較対象を指定してください。",
+    "ERROR-FACE-NOT-RECOGNIZED": "顔が認識されていない写真があります。"
+  },
+  "FACES": {
+    "PAGE-HEADER": "そっくり比較",
+    "TUTORIAL-STEP-1": "比較したい写真を追加してください。",
+    "TUTORIAL-STEP-2": "写真から顔だけを抽出して確認できます！",
+    "TUTORIAL-STEP-3": "自分を必ず選択し、比較対象を最低1人以上分類してください。",
+    "TUTORIAL-STEP-4": "手動でクロップを再度行うか、画像を削除できます！",
+    "BUTTON-BACK": "戻る",
+    "BUTTON-HELP": "ヘルプ"
   }
 }

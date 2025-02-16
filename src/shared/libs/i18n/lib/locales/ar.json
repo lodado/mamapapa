@@ -68,5 +68,29 @@
     "DOWNLOAD-RESUME": "استئناف",
     "DOWNLOAD-SUCCESS": "اكتمل تنزيل نموذج الذكاء الاصطناعي",
     "DOWNLOAD-COMPLETE": "اكتمل التنزيل. (100%)"
+  },
+  "ADD": {
+    "PICTURE-BUTTON": "إضافة صورة",
+    "PICTURE-SUCCESS": "تم الحفظ بنجاح",
+    "PICTURE-SUCCESS-DESC": "تمت إضافة صورة جديدة بنجاح.",
+    "PICTURE-FAIL": "فشل الحفظ",
+    "PICTURE-FAIL-DESC": "فشل في إضافة صورة جديدة."
+  },
+  "COMPARE": {
+    "BUTTON": "قارن",
+    "ERROR-TITLE": "خطأ",
+    "ERROR-MODEL-NOT-FOUND": "يتم تنزيل نموذج التعرف على الوجه.",
+    "ERROR-USER-NOT-SELECTED": "يرجى تحديد نفسك كهدف للمقارنة.",
+    "ERROR-MIN-TWO-PLAYERS": "يرجى تحديد ما لا يقل عن هدفين للمقارنة.",
+    "ERROR-FACE-NOT-RECOGNIZED": "هناك صورة لم يتم التعرف على الوجه فيها."
+  },
+  "FACES": {
+    "PAGE-HEADER": "مقارنة الشبه",
+    "TUTORIAL-STEP-1": "يرجى إضافة الصور التي تريد مقارنتها.",
+    "TUTORIAL-STEP-2": "يمكنك استخراج والتحقق فقط من الوجوه في الصور!",
+    "TUTORIAL-STEP-3": "يجب عليك اختيار نفسك وتصنيف هدف مقارنة واحد على الأقل.",
+    "TUTORIAL-STEP-4": "يمكنك إعادة اقتصاص الصور يدويًا أو حذفها!",
+    "BUTTON-BACK": "العودة",
+    "BUTTON-HELP": "مساعدة"
   }
 }

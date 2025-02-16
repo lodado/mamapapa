@@ -68,5 +68,29 @@
     "DOWNLOAD-RESUME": "Riprendi",
     "DOWNLOAD-SUCCESS": "Download del modello AI completato",
     "DOWNLOAD-COMPLETE": "Download completato. (100%)"
+  },
+  "ADD": {
+    "PICTURE-BUTTON": "Aggiungi foto",
+    "PICTURE-SUCCESS": "Salvataggio riuscito",
+    "PICTURE-SUCCESS-DESC": "Nuova foto aggiunta con successo.",
+    "PICTURE-FAIL": "Salvataggio fallito",
+    "PICTURE-FAIL-DESC": "Impossibile aggiungere una nuova foto."
+  },
+  "COMPARE": {
+    "BUTTON": "Confronta",
+    "ERROR-TITLE": "Errore",
+    "ERROR-MODEL-NOT-FOUND": "Il modello di riconoscimento facciale è in fase di download.",
+    "ERROR-USER-NOT-SELECTED": "Seleziona te stesso come obiettivo di confronto.",
+    "ERROR-MIN-TWO-PLAYERS": "Seleziona almeno due obiettivi di confronto.",
+    "ERROR-FACE-NOT-RECOGNIZED": "C'è una foto in cui il volto non è riconosciuto."
+  },
+  "FACES": {
+    "PAGE-HEADER": "Confronta Somiglianze",
+    "TUTORIAL-STEP-1": "Aggiungi le foto che vuoi confrontare.",
+    "TUTORIAL-STEP-2": "Puoi estrarre e controllare solo i volti dalle foto!",
+    "TUTORIAL-STEP-3": "Selezionati obbligatoriamente e classifica almeno un obiettivo di confronto.",
+    "TUTORIAL-STEP-4": "Puoi ritagliare manualmente o eliminare immagini!",
+    "BUTTON-BACK": "Torna indietro",
+    "BUTTON-HELP": "Aiuto"
   }
 }

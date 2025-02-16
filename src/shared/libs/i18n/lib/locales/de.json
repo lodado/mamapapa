@@ -68,5 +68,29 @@
     "DOWNLOAD-RESUME": "Fortsetzen",
     "DOWNLOAD-SUCCESS": "KI-Modell-Download abgeschlossen",
     "DOWNLOAD-COMPLETE": "Download abgeschlossen. (100%)"
+  },
+  "ADD": {
+    "PICTURE-BUTTON": "Bild hinzufügen",
+    "PICTURE-SUCCESS": "Speichern erfolgreich",
+    "PICTURE-SUCCESS-DESC": "Neues Bild erfolgreich hinzugefügt.",
+    "PICTURE-FAIL": "Speichern fehlgeschlagen",
+    "PICTURE-FAIL-DESC": "Neues Bild konnte nicht hinzugefügt werden."
+  },
+  "COMPARE": {
+    "BUTTON": "Vergleichen",
+    "ERROR-TITLE": "Fehler",
+    "ERROR-MODEL-NOT-FOUND": "Das Gesichtserkennungsmodell wird heruntergeladen.",
+    "ERROR-USER-NOT-SELECTED": "Bitte wählen Sie sich selbst als Vergleichsziel aus.",
+    "ERROR-MIN-TWO-PLAYERS": "Bitte wählen Sie mindestens zwei Vergleichsziele aus.",
+    "ERROR-FACE-NOT-RECOGNIZED": "Es gibt ein Foto, auf dem das Gesicht nicht erkannt wurde."
+  },
+  "FACES": {
+    "PAGE-HEADER": "Ähnlichkeiten vergleichen",
+    "TUTORIAL-STEP-1": "Bitte fügen Sie die Fotos hinzu, die Sie vergleichen möchten.",
+    "TUTORIAL-STEP-2": "Sie können nur Gesichter aus den Fotos extrahieren und überprüfen!",
+    "TUTORIAL-STEP-3": "Wählen Sie sich selbst als erforderlich aus und klassifizieren Sie mindestens ein Vergleichsziel.",
+    "TUTORIAL-STEP-4": "Sie können Bilder manuell zuschneiden oder löschen!",
+    "BUTTON-BACK": "Zurück",
+    "BUTTON-HELP": "Hilfe"
   }
 }

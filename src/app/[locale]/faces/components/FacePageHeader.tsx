@@ -1,5 +1,6 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import React from "react";
 
 import { PAGE_ROUTE } from "@/entities/Router/configs/route";
@@ -8,6 +9,7 @@ import { useScrollTrigger } from "@/shared/hooks";
 import FallBackHeader from "./FallBackHeader";
 
 const FacePageHeader = () => {
+  const t = useTranslations();
   const { triggered: hideSecondLine } = useScrollTrigger({ threshold: 150 });
 
   return (
@@ -22,7 +24,7 @@ const FacePageHeader = () => {
       `}
       >
         <h1 className="md:w-[768px] top-[4rem] h-[3rem] display-2 pb-2 flex flex-row justify-start mb-2 w-full text-text-01 px-[1rem] items-center ">
-          <span className="h-[2.25rem]">닮은꼴 비교하기</span>
+          <span className="h-[2.25rem]">{t("FACES.PAGE-HEADER")}</span>
         </h1>
       </div>
     </div>

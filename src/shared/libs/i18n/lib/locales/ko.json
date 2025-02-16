@@ -68,5 +68,29 @@
     "DOWNLOAD-RESUME": "재개",
     "DOWNLOAD-SUCCESS": "비교를 위한 AI 모델을 다운로드 완료",
     "DOWNLOAD-COMPLETE": "다운로드가 완료되었습니다. (100%)"
+  },
+  "ADD": {
+    "PICTURE-BUTTON": "사진 추가하기",
+    "PICTURE-SUCCESS": "저장 성공",
+    "PICTURE-SUCCESS-DESC": "새로 추가하기를 성공했습니다.",
+    "PICTURE-FAIL": "저장 실패",
+    "PICTURE-FAIL-DESC": "새로 추가하기를 실패했습니다."
+  },
+  "COMPARE": {
+    "BUTTON": "비교하기",
+    "ERROR-TITLE": "에러",
+    "ERROR-MODEL-NOT-FOUND": "얼굴 인식 모델을 다운로드 중입니다.",
+    "ERROR-USER-NOT-SELECTED": "비교 대상(나)를 지정해주세요.",
+    "ERROR-MIN-TWO-PLAYERS": "최소 두명 이상의 비교 대상을 지정해주세요.",
+    "ERROR-FACE-NOT-RECOGNIZED": "얼굴이 인식되지 않은 사진이 있습니다."
+  },
+  "FACES": {
+    "PAGE-HEADER": "닮은꼴 비교하기",
+    "TUTORIAL-STEP-1": "비교하고 싶은 사진들을 넣어주세요.",
+    "TUTORIAL-STEP-2": "사진에서 얼굴만 추출해서 확인 가능해요!",
+    "TUTORIAL-STEP-3": "나를 필수 선택하고 비교할 대상을 최소 1명이상 분류해주세요.",
+    "TUTORIAL-STEP-4": "크롭을 다시 수동으로 하거나 이미지를 삭제 가능해요!",
+    "BUTTON-BACK": "뒤로 가기",
+    "BUTTON-HELP": "도움말"
   }
 }

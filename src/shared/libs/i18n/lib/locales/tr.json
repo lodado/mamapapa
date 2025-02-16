@@ -68,5 +68,29 @@
     "DOWNLOAD-RESUME": "Devam et",
     "DOWNLOAD-SUCCESS": "Yapay zeka modeli indirme tamamlandı",
     "DOWNLOAD-COMPLETE": "İndirme tamamlandı. (100%)"
+  },
+  "ADD": {
+    "PICTURE-BUTTON": "Resim Ekle",
+    "PICTURE-SUCCESS": "Kaydetme başarılı",
+    "PICTURE-SUCCESS-DESC": "Yeni resim başarıyla eklendi.",
+    "PICTURE-FAIL": "Kaydetme başarısız oldu",
+    "PICTURE-FAIL-DESC": "Yeni resim eklenemedi."
+  },
+  "COMPARE": {
+    "BUTTON": "Karşılaştır",
+    "ERROR-TITLE": "Hata",
+    "ERROR-MODEL-NOT-FOUND": "Yüz tanıma modeli indiriliyor.",
+    "ERROR-USER-NOT-SELECTED": "Lütfen kendinizi karşılaştırma hedefi olarak seçin.",
+    "ERROR-MIN-TWO-PLAYERS": "Lütfen en az iki karşılaştırma hedefi seçin.",
+    "ERROR-FACE-NOT-RECOGNIZED": "Yüzün tanınmadığı bir fotoğraf var."
+  },
+  "FACES": {
+    "PAGE-HEADER": "Benzerlikleri Karşılaştır",
+    "TUTORIAL-STEP-1": "Lütfen karşılaştırmak istediğiniz fotoğrafları ekleyin.",
+    "TUTORIAL-STEP-2": "Fotoğraflardan sadece yüzleri çıkarabilir ve kontrol edebilirsiniz!",
+    "TUTORIAL-STEP-3": "Kendinizi zorunlu olarak seçin ve en az bir karşılaştırma hedefi sınıflandırın.",
+    "TUTORIAL-STEP-4": "Resimleri manuel olarak yeniden kırpabilir veya silebilirsiniz!",
+    "BUTTON-BACK": "Geri Git",
+    "BUTTON-HELP": "Yardım"
   }
 }

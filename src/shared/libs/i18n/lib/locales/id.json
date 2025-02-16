@@ -68,5 +68,29 @@
     "DOWNLOAD-RESUME": "Lanjutkan",
     "DOWNLOAD-SUCCESS": "Pengunduhan model AI selesai",
     "DOWNLOAD-COMPLETE": "Unduhan selesai. (100%)"
+  },
+  "ADD": {
+    "PICTURE-BUTTON": "Tambahkan Gambar",
+    "PICTURE-SUCCESS": "Berhasil disimpan",
+    "PICTURE-SUCCESS-DESC": "Gambar baru berhasil ditambahkan.",
+    "PICTURE-FAIL": "Gagal menyimpan",
+    "PICTURE-FAIL-DESC": "Gagal menambahkan gambar baru."
+  },
+  "COMPARE": {
+    "BUTTON": "Bandingkan",
+    "ERROR-TITLE": "Kesalahan",
+    "ERROR-MODEL-NOT-FOUND": "Model pengenalan wajah sedang diunduh.",
+    "ERROR-USER-NOT-SELECTED": "Silakan pilih diri Anda sebagai target perbandingan.",
+    "ERROR-MIN-TWO-PLAYERS": "Silakan pilih setidaknya dua target perbandingan.",
+    "ERROR-FACE-NOT-RECOGNIZED": "Ada foto yang wajahnya tidak dikenali."
+  },
+  "FACES": {
+    "PAGE-HEADER": "Bandingkan Kemiripan",
+    "TUTORIAL-STEP-1": "Silakan tambahkan foto yang ingin Anda bandingkan.",
+    "TUTORIAL-STEP-2": "Anda dapat mengekstrak dan memeriksa hanya wajah dari foto!",
+    "TUTORIAL-STEP-3": "Pilih diri Anda sebagai wajib dan klasifikasikan setidaknya satu target perbandingan.",
+    "TUTORIAL-STEP-4": "Anda dapat memotong ulang secara manual atau menghapus gambar!",
+    "BUTTON-BACK": "Kembali",
+    "BUTTON-HELP": "Bantuan"
   }
 }

@@ -68,5 +68,29 @@
     "DOWNLOAD-RESUME": "恢复",
     "DOWNLOAD-SUCCESS": "用于比较的AI模型下载完成",
     "DOWNLOAD-COMPLETE": "下载已完成。(100%)"
+  },
+  "ADD": {
+    "PICTURE-BUTTON": "添加照片",
+    "PICTURE-SUCCESS": "保存成功",
+    "PICTURE-SUCCESS-DESC": "成功添加了新照片。",
+    "PICTURE-FAIL": "保存失败",
+    "PICTURE-FAIL-DESC": "添加新照片失败。"
+  },
+  "COMPARE": {
+    "BUTTON": "比较",
+    "ERROR-TITLE": "错误",
+    "ERROR-MODEL-NOT-FOUND": "正在下载人脸识别模型。",
+    "ERROR-USER-NOT-SELECTED": "请指定自己作为比较对象。",
+    "ERROR-MIN-TWO-PLAYERS": "请至少选择两个比较对象。",
+    "ERROR-FACE-NOT-RECOGNIZED": "有照片未识别到人脸。"
+  },
+  "FACES": {
+    "PAGE-HEADER": "比较相似度",
+    "TUTORIAL-STEP-1": "请添加您想要比较的照片。",
+    "TUTORIAL-STEP-2": "您可以从照片中提取并检查面部！",
+    "TUTORIAL-STEP-3": "必须选择自己，并至少分类一个比较对象。",
+    "TUTORIAL-STEP-4": "您可以手动重新裁剪或删除图片！",
+    "BUTTON-BACK": "返回",
+    "BUTTON-HELP": "帮助"
   }
 }

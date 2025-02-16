@@ -1,4 +1,4 @@
-import { setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import React from "react";
 
 import { ModelDownloader } from "@/features";
@@ -16,8 +16,10 @@ export async function generateStaticParams() {
   return getLocalesListsForStateParams();
 }
 
-const Page = ({ params }: { params: { locale: string } }) => {
+const Page = async ({ params }: { params: { locale: string } }) => {
   setRequestLocale(params.locale);
+  const t = await getTranslations("FACES");
+
   return (
     <>
       <ReactiveLayout>
@@ -25,7 +27,7 @@ const Page = ({ params }: { params: { locale: string } }) => {
         <FacePageHeader />
 
         <div className="flex flex-row justify-between items-center text-center mt-[5rem] w-full px-4">
-          <h2 className="subhead-3 flex flex-col items-center text-center text-text-01">비교할 사진을 선택해주세요</h2>
+          <h2 className="subhead-3 flex flex-col items-center text-center text-text-01">{t("SELECT-PICTURE-TITLE")}</h2>
 
           <AddPictureButton />
         </div>
@@ -54,4 +56,3 @@ const Page = ({ params }: { params: { locale: string } }) => {
 };
 
 export default Page;
- 

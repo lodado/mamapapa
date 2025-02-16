@@ -68,5 +68,29 @@
     "DOWNLOAD-RESUME": "Reanudar",
     "DOWNLOAD-SUCCESS": "Descarga del modelo de IA completada",
     "DOWNLOAD-COMPLETE": "Descarga completada. (100%)"
+  },
+  "ADD": {
+    "PICTURE-BUTTON": "Agregar foto",
+    "PICTURE-SUCCESS": "Guardado exitoso",
+    "PICTURE-SUCCESS-DESC": "Nueva foto agregada con éxito.",
+    "PICTURE-FAIL": "Error al guardar",
+    "PICTURE-FAIL-DESC": "No se pudo agregar la nueva foto."
+  },
+  "COMPARE": {
+    "BUTTON": "Comparar",
+    "ERROR-TITLE": "Error",
+    "ERROR-MODEL-NOT-FOUND": "El modelo de reconocimiento facial se está descargando.",
+    "ERROR-USER-NOT-SELECTED": "Por favor, selecciónese como objetivo de comparación.",
+    "ERROR-MIN-TWO-PLAYERS": "Seleccione al menos dos objetivos de comparación.",
+    "ERROR-FACE-NOT-RECOGNIZED": "Hay una foto en la que la cara no se reconoce."
+  },
+  "FACES": {
+    "PAGE-HEADER": "Comparar Parecidos",
+    "TUTORIAL-STEP-1": "Por favor, agregue las fotos que desea comparar.",
+    "TUTORIAL-STEP-2": "¡Puedes extraer y verificar solo las caras de las fotos!",
+    "TUTORIAL-STEP-3": "Selecciónese a sí mismo como obligatorio y clasifique al menos un objetivo de comparación.",
+    "TUTORIAL-STEP-4": "¡Puedes recortar manualmente o eliminar imágenes!",
+    "BUTTON-BACK": "Volver",
+    "BUTTON-HELP": "Ayuda"
   }
 }

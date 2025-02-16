@@ -1,5 +1,6 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import React, { useRef } from "react";
 
 import CrossHair from "/public/CrossHair.svg";
@@ -56,8 +57,8 @@ const useFaceDetection = () => {
 // Hook for handling image selection logic
 const useImageSelection = () => {
   const { addImages } = useImageSelectorStore();
-
   const { addToast } = useToastStore();
+  const t = useTranslations("ADD");
 
   const processFiles = async (files: File[], detectFaces: (file: File) => Promise<FaceCoordinates | undefined>) => {
     const newImages: ImageMetadata[] = [];
@@ -82,14 +83,14 @@ const useImageSelection = () => {
       addImages(newImages);
 
       addToast({
-        title: "저장 성공",
-        description: "새로 추가하기를 성공했습니다.",
+        title: t("PICTURE-SUCCESS"),
+        description: t("PICTURE-SUCCESS-DESC"),
         type: "success",
       });
     } catch (e) {
       addToast({
-        title: "저장 실패",
-        description: "새로 추가하기를 실패했습니다.",
+        title: t("PICTURE-FAIL"),
+        description: t("PICTURE-FAIL-DESC"),
         type: "error",
       });
     }
@@ -99,8 +100,8 @@ const useImageSelection = () => {
 };
 
 const AddPictureButton = () => {
+  const t = useTranslations("ADD");
   const fileInputRef = useRef<HTMLInputElement>(null);
-
   const { setLoading } = useLoadingStore();
   const { faceCropModel, detectFaces } = useFaceDetection();
   const { processFiles } = useImageSelection();
@@ -134,7 +135,7 @@ const AddPictureButton = () => {
         disabled={!faceCropModel}
       >
         <CrossHair />
-        사진 추가하기
+        {t("PICTURE-BUTTON")}
       </Button>
 
       <input ref={fileInputRef} type="file" accept="image/*" onChange={handleFileChange} style={{ display: "none" }} />

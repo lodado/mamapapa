@@ -68,5 +68,29 @@
     "DOWNLOAD-RESUME": "Tiếp tục",
     "DOWNLOAD-SUCCESS": "Tải xuống mô hình AI hoàn tất",
     "DOWNLOAD-COMPLETE": "Tải xuống hoàn tất. (100%)"
+  },
+  "ADD": {
+    "PICTURE-BUTTON": "Thêm ảnh",
+    "PICTURE-SUCCESS": "Lưu thành công",
+    "PICTURE-SUCCESS-DESC": "Ảnh mới đã được thêm thành công.",
+    "PICTURE-FAIL": "Lưu thất bại",
+    "PICTURE-FAIL-DESC": "Thêm ảnh mới thất bại."
+  },
+  "COMPARE": {
+    "BUTTON": "So sánh",
+    "ERROR-TITLE": "Lỗi",
+    "ERROR-MODEL-NOT-FOUND": "Mô hình nhận dạng khuôn mặt đang được tải xuống.",
+    "ERROR-USER-NOT-SELECTED": "Vui lòng chọn bản thân làm đối tượng so sánh.",
+    "ERROR-MIN-TWO-PLAYERS": "Vui lòng chọn ít nhất hai đối tượng so sánh.",
+    "ERROR-FACE-NOT-RECOGNIZED": "Có một bức ảnh không nhận diện được khuôn mặt."
+  },
+  "FACES": {
+    "PAGE-HEADER": "So sánh độ giống nhau",
+    "TUTORIAL-STEP-1": "Vui lòng thêm ảnh bạn muốn so sánh.",
+    "TUTORIAL-STEP-2": "Bạn có thể trích xuất và kiểm tra chỉ khuôn mặt từ ảnh!",
+    "TUTORIAL-STEP-3": "Chọn bản thân là bắt buộc và phân loại ít nhất một đối tượng so sánh.",
+    "TUTORIAL-STEP-4": "Bạn có thể tự chỉnh sửa lại hoặc xóa hình ảnh!",
+    "BUTTON-BACK": "Quay lại",
+    "BUTTON-HELP": "Trợ giúp"
   }
 }
