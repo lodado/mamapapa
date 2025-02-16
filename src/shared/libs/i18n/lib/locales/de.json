@@ -51,22 +51,22 @@
     "de": "Deutsch",
     "tr": "Türkisch"
   },
-  "LanguageSelector": {
-    "mainLanguage": "Hauptsprache",
-    "tooltipContent": "Geben Sie die Hauptsprache des Blogs ein. Sie wird im kanonischen Tag verwendet.",
-    "placeholder": "Blog, Technologie, Leben",
-    "selectLabel": "Sprache"
+  "MAINPAGE": {
+    "TITLE": "Starten Sie Ihren Ähnlichkeitsvergleich",
+    "DESCRIPTION-1": "Aktualisieren Sie ein Foto für den Ähnlichkeitsvergleich und fahren Sie mit dem Vergleich fort.",
+    "DESCRIPTION-2": "Sie können überprüfen, wem Sie mehr ähneln.",
+    "BUTTON-START-COMPARISON": "Vergleich der Ähnlichkeit starten"
   },
-  "errorpage": {
-    "title": "Fehler aufgetreten",
-    "defaultError": "Ein unbekannter Fehler ist aufgetreten.",
-    "returnHome": "Zurück zur Startseite"
+  "BUTTON": {
+    "CHECK-HISTORY": "Überprüfen Sie die geteilte Historie"
   },
-  "LOGIN": {
-    "TOOLTIP-LASTLOGINTEXT": "🔑 Letzte Anmeldung",
-    "TOOLTIP-TEXT": "⚡️ Beginnen Sie in 3 Sekunden mit der Anmeldung"
-  },
-  "CreateBlogPostLink": {
-    "title": "Blogbeitrag erstellen"
+  "MODEL": {
+    "DOWNLOAD-LOADING": "Herunterladen des KI-Modells für den Vergleich",
+    "DOWNLOAD-WAIT": "Bitte warten Sie...",
+    "DOWNLOAD-FAIL": "KI-Modell-Download unterbrochen",
+    "DOWNLOAD-RETRY": "Bitte versuchen Sie es erneut (0%)",
+    "DOWNLOAD-RESUME": "Fortsetzen",
+    "DOWNLOAD-SUCCESS": "KI-Modell-Download abgeschlossen",
+    "DOWNLOAD-COMPLETE": "Download abgeschlossen. (100%)"
   }
 }

@@ -51,22 +51,22 @@
     "de": "德语",
     "tr": "土耳其语"
   },
-  "LanguageSelector": {
-    "mainLanguage": "主要语言",
-    "tooltipContent": "请输入博客的主要语言。它将用于规范标签。",
-    "placeholder": "博客、技术、生活",
-    "selectLabel": "语言"
+  "MAINPAGE": {
+    "TITLE": "开始你的相似度比较",
+    "DESCRIPTION-1": "更新照片进行相似度比较，然后继续比较。",
+    "DESCRIPTION-2": "你可以看看你更像谁。",
+    "BUTTON-START-COMPARISON": "开始相似度比较"
   },
-  "errorpage": {
-    "title": "发生错误",
-    "defaultError": "发生了未知错误",
-    "returnHome": "返回主页"
+  "BUTTON": {
+    "CHECK-HISTORY": "查看共享历史"
   },
-  "LOGIN": {
-    "TOOLTIP-LASTLOGINTEXT": "🔑 上次登录",
-    "TOOLTIP-TEXT": "⚡️ 3秒内开始登录"
-  },
-  "CreateBlogPostLink": {
-    "title": "创建博客文章"
+  "MODEL": {
+    "DOWNLOAD-LOADING": "正在下载用于比较的AI模型",
+    "DOWNLOAD-WAIT": "请稍等...",
+    "DOWNLOAD-FAIL": "用于比较的AI模型下载中断",
+    "DOWNLOAD-RETRY": "请重试 (0%)",
+    "DOWNLOAD-RESUME": "恢复",
+    "DOWNLOAD-SUCCESS": "用于比较的AI模型下载完成",
+    "DOWNLOAD-COMPLETE": "下载已完成。(100%)"
   }
 }

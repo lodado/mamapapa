@@ -51,22 +51,22 @@
     "de": "ドイツ語",
     "tr": "トルコ語"
   },
-  "LanguageSelector": {
-    "mainLanguage": "主要言語",
-    "tooltipContent": "ブログの主な言語を入力してください。カノニカルタグで使用されます。",
-    "placeholder": "ブログ、技術、生活",
-    "selectLabel": "言語"
+  "MAINPAGE": {
+    "TITLE": "そっくり比較を始めましょう",
+    "DESCRIPTION-1": "そっくり比較のための写真を更新して比較を進めてください。",
+    "DESCRIPTION-2": "誰に似ているか確認できます。",
+    "BUTTON-START-COMPARISON": "そっくり比較を始める"
   },
-  "errorpage": {
-    "title": "エラーが発生しました",
-    "defaultError": "不明なエラーが発生しました",
-    "returnHome": "ホームページに戻る"
+  "BUTTON": {
+    "CHECK-HISTORY": "共有履歴を確認する"
   },
-  "LOGIN": {
-    "TOOLTIP-LASTLOGINTEXT": "🔑 最後のログイン",
-    "TOOLTIP-TEXT": "⚡️ 3秒でログインを開始してください"
-  },
-  "CreateBlogPostLink": {
-    "title": "ブログ投稿を作成する"
+  "MODEL": {
+    "DOWNLOAD-LOADING": "比較のためのAIモデルをダウンロード中",
+    "DOWNLOAD-WAIT": "少々お待ちください...",
+    "DOWNLOAD-FAIL": "比較のためのAIモデルのダウンロードが中断されました",
+    "DOWNLOAD-RETRY": "再試行してください (0%)",
+    "DOWNLOAD-RESUME": "再開",
+    "DOWNLOAD-SUCCESS": "比較のためのAIモデルのダウンロードが完了しました",
+    "DOWNLOAD-COMPLETE": "ダウンロードが完了しました。(100%)"
   }
 }

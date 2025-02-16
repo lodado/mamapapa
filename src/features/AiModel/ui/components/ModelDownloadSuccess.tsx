@@ -1,9 +1,12 @@
+"use client";
+
 import { Check } from "lucide-react";
+import { useTranslations } from "next-intl";
 import React from "react";
 
-import Spinner from "./Spinner.svg";
-
 const ModelDownloadSuccess = () => {
+  const t = useTranslations();
+
   return (
     <>
       <div className="ml-2 rounded-full h-full flex items-center justify-center pl-2 text-text-success">
@@ -11,8 +14,8 @@ const ModelDownloadSuccess = () => {
       </div>
 
       <div className="mr-[1.75rem]">
-        <p className="text-text-success subhead-2">비교를 위한 AI 모델을 다운로드 완료</p>
-        <p className="body-1 text-text-03">다운로드가 완료되었습니다. (100%)</p>
+        <p className="text-text-success subhead-2">{t("MODEL.DOWNLOAD-SUCCESS")}</p>
+        <p className="body-1 text-text-03">{t("MODEL.DOWNLOAD-COMPLETE")}</p>
       </div>
     </>
   );

@@ -51,22 +51,22 @@
     "de": "Tiếng Đức",
     "tr": "Tiếng Thổ Nhĩ Kỳ"
   },
-  "LanguageSelector": {
-    "mainLanguage": "Ngôn ngữ chính",
-    "tooltipContent": "Nhập ngôn ngữ chính của blog. Nó sẽ được sử dụng trong thẻ chuẩn.",
-    "placeholder": "Blog, Công nghệ, Cuộc sống",
-    "selectLabel": "Ngôn ngữ"
+  "MAINPAGE": {
+    "TITLE": "Bắt đầu so sánh giống nhau của bạn",
+    "DESCRIPTION-1": "Cập nhật ảnh để so sánh giống nhau và tiếp tục so sánh.",
+    "DESCRIPTION-2": "Bạn có thể kiểm tra xem bạn giống ai hơn.",
+    "BUTTON-START-COMPARISON": "Bắt đầu so sánh giống nhau"
   },
-  "errorpage": {
-    "title": "Đã xảy ra lỗi",
-    "defaultError": "Đã xảy ra lỗi không xác định",
-    "returnHome": "Quay lại trang chủ"
+  "BUTTON": {
+    "CHECK-HISTORY": "Kiểm tra lịch sử đã chia sẻ"
   },
-  "LOGIN": {
-    "TOOLTIP-LASTLOGINTEXT": "🔑 Đăng nhập lần cuối",
-    "TOOLTIP-TEXT": "⚡️ Bắt đầu đăng nhập trong 3 giây"
-  },
-  "CreateBlogPostLink": {
-    "title": "tạo bài viết blog"
+  "MODEL": {
+    "DOWNLOAD-LOADING": "Đang tải xuống mô hình AI để so sánh",
+    "DOWNLOAD-WAIT": "Vui lòng chờ...",
+    "DOWNLOAD-FAIL": "Tải xuống mô hình AI bị gián đoạn",
+    "DOWNLOAD-RETRY": "Vui lòng thử lại (0%)",
+    "DOWNLOAD-RESUME": "Tiếp tục",
+    "DOWNLOAD-SUCCESS": "Tải xuống mô hình AI hoàn tất",
+    "DOWNLOAD-COMPLETE": "Tải xuống hoàn tất. (100%)"
   }
 }

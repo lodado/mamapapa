@@ -51,22 +51,22 @@
     "de": "German",
     "tr": "Turkish"
   },
-  "LanguageSelector": {
-    "mainLanguage": "Main Language",
-    "tooltipContent": "Enter the primary language of the blog. It will be used in the canonical tag.",
-    "placeholder": "Blog, Technology, Life",
-    "selectLabel": "Language"
+  "MAINPAGE": {
+    "TITLE": "Start Your Look-Alike Comparison",
+    "DESCRIPTION-1": "Update a photo for look-alike comparison and proceed with the comparison.",
+    "DESCRIPTION-2": "You can check who you resemble more.",
+    "BUTTON-START-COMPARISON": "Start Look-Alike Comparison"
   },
-  "errorpage": {
-    "title": "Error Occurred",
-    "defaultError": "An unknown error has occurred.",
-    "returnHome": "Return to Homepage"
+  "BUTTON": {
+    "CHECK-HISTORY": "Check Shared History"
   },
-  "LOGIN": {
-    "TOOLTIP-LASTLOGINTEXT": "🔑 Last Login",
-    "TOOLTIP-TEXT": "⚡️ Start logging in within 3 seconds"
-  },
-  "CreateBlogPostLink": {
-    "title": "create blog post"
+  "MODEL": {
+    "DOWNLOAD-LOADING": "Downloading AI model for comparison",
+    "DOWNLOAD-WAIT": "Please wait a moment...",
+    "DOWNLOAD-FAIL": "AI model download interrupted",
+    "DOWNLOAD-RETRY": "Please try again (0%)",
+    "DOWNLOAD-RESUME": "Resume",
+    "DOWNLOAD-SUCCESS": "AI model download completed",
+    "DOWNLOAD-COMPLETE": "Download completed. (100%)"
   }
 }

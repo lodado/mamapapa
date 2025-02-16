@@ -51,22 +51,22 @@
     "de": "Bahasa Jerman",
     "tr": "Bahasa Turki"
   },
-  "LanguageSelector": {
-    "mainLanguage": "Bahasa Utama",
-    "tooltipContent": "Masukkan bahasa utama blog. Ia akan digunakan dalam tag kanonik.",
-    "placeholder": "Blog, Teknologi, Kehidupan",
-    "selectLabel": "Bahasa"
+  "MAINPAGE": {
+    "TITLE": "Mulakan Perbandingan Keserupaan Anda",
+    "DESCRIPTION-1": "Kemas kini foto untuk perbandingan keserupaan dan teruskan perbandingan.",
+    "DESCRIPTION-2": "Anda boleh melihat siapa yang lebih serupa dengan anda.",
+    "BUTTON-START-COMPARISON": "Mulakan Perbandingan Keserupaan"
   },
-  "errorpage": {
-    "title": "Kesalahan Berlaku",
-    "defaultError": "Kesalahan tidak diketahui telah berlaku",
-    "returnHome": "Kembali ke Laman Utama"
+  "BUTTON": {
+    "CHECK-HISTORY": "Semak Sejarah yang Dikongsi"
   },
-  "LOGIN": {
-    "TOOLTIP-LASTLOGINTEXT": "🔑 Log masuk terakhir",
-    "TOOLTIP-TEXT": "⚡️ Mula log masuk dalam 3 saat"
-  },
-  "CreateBlogPostLink": {
-    "title": "buat catatan blog"
+  "MODEL": {
+    "DOWNLOAD-LOADING": "Memuat turun model AI untuk perbandingan",
+    "DOWNLOAD-WAIT": "Sila tunggu sebentar...",
+    "DOWNLOAD-FAIL": "Muat turun model AI terganggu",
+    "DOWNLOAD-RETRY": "Sila cuba lagi (0%)",
+    "DOWNLOAD-RESUME": "Sambung semula",
+    "DOWNLOAD-SUCCESS": "Muat turun model AI selesai",
+    "DOWNLOAD-COMPLETE": "Muat turun selesai. (100%)"
   }
 }

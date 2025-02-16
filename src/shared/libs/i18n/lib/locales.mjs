@@ -5,7 +5,7 @@ import fetch from "node-fetch";
 
 const KEY_MARKER = "key";
 const DEPTH_SEPARATOR = "-";
-const SPREAD_SHEET_ID = "1P7q5_khP76g5_cqG6alcj9HUbUmwB3mTYZso2unLiW8";
+const SPREAD_SHEET_ID = "1coJRqE-8hdXjvhoW4AkqjlqEJ216qfxKRZOBCePEiF4";
 
 const commaSplitterRegex = /(['"])((?:\\.|(?:(?!\1)[^\\]))*)\1/g;
 const removeSideCommaRegex = /^"|"$/g;
@@ -29,6 +29,8 @@ const getKeysAndRows = (text) => {
 const mapKeysAndValues = ({ keys, rows, length }) => {
   const locales = keys.filter((key) => key && !key.includes(KEY_MARKER));
   const fileMap = locales.reduce((obj, key) => ({ ...obj, [key]: {} }), {});
+
+  console.log(rows, " 123");
 
   for (const row of rows) {
     let keyName = "";

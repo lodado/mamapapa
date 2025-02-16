@@ -1,3 +1,6 @@
+"use client";
+
+import { useTranslations } from "next-intl";
 import React from "react";
 
 import { Button } from "@/shared/ui";
@@ -6,6 +9,7 @@ import { useFaceModelStore } from "../../model/faceModelStore";
 import Error from "./Error.svg";
 
 const ModelDownloadFail = () => {
+  const t = useTranslations();
   const { loadModelWithProgress } = useFaceModelStore();
 
   return (
@@ -15,13 +19,13 @@ const ModelDownloadFail = () => {
       </div>
 
       <div className="">
-        <p className="text-text-01 subhead-2">비교를 위한 AI 모델 다운로드 중단</p>
-        <p className="body-1 text-text-03">다시 시도해주세요 (0%)</p>
+        <p className="text-text-01 subhead-2">{t("MODEL.DOWNLOAD-FAIL")}</p>
+        <p className="body-1 text-text-03">{t("MODEL.DOWNLOAD-RETRY")}</p>
       </div>
 
       <div>
         <Button className="mr-[1.75rem]" variant="line" onClick={loadModelWithProgress}>
-          재개
+          {t("MODEL.DOWNLOAD-RESUME")}
         </Button>
       </div>
     </>

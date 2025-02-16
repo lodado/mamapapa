@@ -51,22 +51,22 @@
     "de": "Almanca",
     "tr": "Türkçe"
   },
-  "LanguageSelector": {
-    "mainLanguage": "Ana Dil",
-    "tooltipContent": "Blog'un ana dilini girin. Kanonik etiket için kullanılacaktır.",
-    "placeholder": "Blog, Teknoloji, Yaşam",
-    "selectLabel": "Dil"
+  "MAINPAGE": {
+    "TITLE": "Benzerlik Karşılaştırmanızı Başlatın",
+    "DESCRIPTION-1": "Benzerlik karşılaştırması için bir fotoğraf güncelleyin ve karşılaştırmaya devam edin.",
+    "DESCRIPTION-2": "Kime daha çok benzediğinizi kontrol edebilirsiniz.",
+    "BUTTON-START-COMPARISON": "Benzerlik Karşılaştırmasını Başlat"
   },
-  "errorpage": {
-    "title": "Hata Oluştu",
-    "defaultError": "Bilinmeyen bir hata oluştu",
-    "returnHome": "Ana sayfaya dön"
+  "BUTTON": {
+    "CHECK-HISTORY": "Paylaşılan Geçmişi Kontrol Et"
   },
-  "LOGIN": {
-    "TOOLTIP-LASTLOGINTEXT": "🔑 Son Giriş",
-    "TOOLTIP-TEXT": "⚡️ 3 saniye içinde giriş yapmaya başlayın"
-  },
-  "CreateBlogPostLink": {
-    "title": "blog yazısı oluştur"
+  "MODEL": {
+    "DOWNLOAD-LOADING": "Karşılaştırma için AI modeli indiriliyor",
+    "DOWNLOAD-WAIT": "Lütfen bekleyin...",
+    "DOWNLOAD-FAIL": "Yapay zeka modeli indirme kesildi",
+    "DOWNLOAD-RETRY": "Lütfen tekrar deneyin (0%)",
+    "DOWNLOAD-RESUME": "Devam et",
+    "DOWNLOAD-SUCCESS": "Yapay zeka modeli indirme tamamlandı",
+    "DOWNLOAD-COMPLETE": "İndirme tamamlandı. (100%)"
   }
 }

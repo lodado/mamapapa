@@ -1,4 +1,4 @@
-import { setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import React from "react";
 
 import { ButtonLink } from "@/entities/Router";
@@ -17,8 +17,9 @@ export async function generateStaticParams() {
   return getLocalesListsForStateParams();
 }
 
-const page = ({ params }: { params: { locale: string } }) => {
+const Page = async ({ params }: { params: { locale: string } }) => {
   setRequestLocale(params.locale);
+  const t = await getTranslations("MAINPAGE");
 
   return (
     <>
@@ -33,12 +34,12 @@ const page = ({ params }: { params: { locale: string } }) => {
                 animate={{ y: [-32, -38] }}
                 transition={{
                   type: "tween",
-                  stiffness: 300, // 스프링 강도를 증가시켜 더 빠르게 이동
-                  damping: 15, // 감쇠 계수를 낮춰 통통 튀는 효과
-                  duration: 0.35, // 키프레임 전환 시간을 짧게 설정
+                  stiffness: 300,
+                  damping: 15,
+                  duration: 0.35,
                   repeat: Infinity,
                   repeatType: "mirror",
-                  repeatDelay: 0, // 반복 간의 지연 시간을 제거
+                  repeatDelay: 0,
                 }}
               >
                 <HeadSvg />
@@ -47,16 +48,12 @@ const page = ({ params }: { params: { locale: string } }) => {
             </div>
 
             <h1 className="display-1 flex flex-row justify-center mb-2 w-full text-text-01 items-center">
-              닮은꼴 비교를 시작해보세요
+              {t("TITLE")}
             </h1>
 
             <div className="flex flex-col items-center text-center mb-4 w-full">
-              <p className="body-2 flex flex-col items-center text-center text-text-03">
-                닮은꼴 비교를 위한 사진을 업데이트를 하고 닮은꼴 비교를 진행해보세요.
-              </p>
-              <p className="body-2 flex flex-col items-center text-center text-text-03">
-                누구를 더 닮았는지 확인해볼 수 있습니다.
-              </p>
+              <p className="body-2 flex flex-col items-center text-center text-text-03">{t("DESCRIPTION-1")}</p>
+              <p className="body-2 flex flex-col items-center text-center text-text-03">{t("DESCRIPTION-2")}</p>
             </div>
 
             <ModelDownloader />
@@ -64,9 +61,9 @@ const page = ({ params }: { params: { locale: string } }) => {
             <div role="none presentation" className="h-[200px]"></div>
           </main>
 
-          <nav className="flex bg-background-op-01 flex-col w-full max-w-[29rem] md:w-[768px] gap-3 p-6 fixed bottom-0 mb-[var(--safe-area-bottom)] ">
+          <nav className="flex bg-background-op-01 flex-col w-full max-w-[29rem] md:w-[768px] gap-3 p-6 fixed bottom-0 mb-[var(--safe-area-bottom)]">
             <ButtonLink variant="primarySolid" href={PAGE_ROUTE.FACES}>
-              닮은꼴 비교 시작하기
+              {t("BUTTON-START-COMPARISON")}
             </ButtonLink>
             <HistoryLink />
           </nav>
@@ -76,4 +73,4 @@ const page = ({ params }: { params: { locale: string } }) => {
   );
 };
 
-export default page;
+export default Page;

@@ -51,22 +51,22 @@
     "de": "Allemand",
     "tr": "Turc"
   },
-  "LanguageSelector": {
-    "mainLanguage": "Langue principale",
-    "tooltipContent": "Entrez la langue principale du blog. Elle sera utilisée dans la balise canonique.",
-    "placeholder": "Blog, Technologie, Vie",
-    "selectLabel": "Langue"
+  "MAINPAGE": {
+    "TITLE": "Commencez votre comparaison de ressemblances",
+    "DESCRIPTION-1": "Mettez à jour une photo pour la comparaison de ressemblances et poursuivez la comparaison.",
+    "DESCRIPTION-2": "Vous pouvez voir à qui vous ressemblez le plus.",
+    "BUTTON-START-COMPARISON": "Commencer la comparaison de ressemblances"
   },
-  "errorpage": {
-    "title": "Erreur survenue",
-    "defaultError": "Une erreur inconnue est survenue.",
-    "returnHome": "Retourner à la page d'accueil"
+  "BUTTON": {
+    "CHECK-HISTORY": "Vérifier l’historique partagé"
   },
-  "LOGIN": {
-    "TOOLTIP-LASTLOGINTEXT": "🔑 Dernière connexion",
-    "TOOLTIP-TEXT": "⚡️ Commencez à vous connecter en 3 secondes"
-  },
-  "CreateBlogPostLink": {
-    "title": "créer un article de blog"
+  "MODEL": {
+    "DOWNLOAD-LOADING": "Téléchargement du modèle IA pour la comparaison",
+    "DOWNLOAD-WAIT": "Veuillez patienter...",
+    "DOWNLOAD-FAIL": "Téléchargement du modèle IA interrompu",
+    "DOWNLOAD-RETRY": "Veuillez réessayer (0%)",
+    "DOWNLOAD-RESUME": "Reprendre",
+    "DOWNLOAD-SUCCESS": "Téléchargement du modèle IA terminé",
+    "DOWNLOAD-COMPLETE": "Téléchargement terminé. (100%)"
   }
 }
