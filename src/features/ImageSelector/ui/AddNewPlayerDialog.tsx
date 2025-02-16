@@ -35,7 +35,7 @@ function AddNewPlayerDialog({ isVisible, onChangeVisible, selectedImageForPlayer
     }
   }, [isVisible]);
 
-  const isSamePlayerName = (Array.from(players?.keys()) ?? []).includes(inputValue);
+  const isSamePlayerName = (Array.from(players?.values()) ?? []).includes(inputValue);
   const isTooLongName = inputValue.length >= maxNameLength;
   const isInvalid = isSamePlayerName || isTooLongName;
 

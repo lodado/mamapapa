@@ -10,9 +10,13 @@
 
 /* RTL 기본 스타일 */
 html[dir='rtl'] {
-  direction: rtl;  
+  direction: rtl; 
+  
+  svg {
+    transform: scaleX(-1);
+  }
 }
-
+ 
 /* LTR 기본 스타일 (기본값으로 사용할 수 있음) */
 html[dir='ltr'] {
   direction: ltr;

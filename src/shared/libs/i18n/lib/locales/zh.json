@@ -127,5 +127,16 @@
     "warning": "删除后将无法撤销此操作。",
     "confirm": "确认",
     "cancel": "取消"
+  },
+  "PLAYERS": {
+    "Myself": "我",
+    "Mama": "妈妈",
+    "Papa": "爸爸"
+  },
+  "AddTemplateDialog": {
+    "title": "添加分类项目",
+    "placeholder": "请输入",
+    "confirm": "确认",
+    "cancel": "取消"
   }
 }

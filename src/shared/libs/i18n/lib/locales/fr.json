@@ -127,5 +127,16 @@
     "warning": "Une fois supprimé, cette action ne peut pas être annulée.",
     "confirm": "Confirmer",
     "cancel": "Annuler"
+  },
+  "PLAYERS": {
+    "Myself": "Moi-même",
+    "Mama": "Maman",
+    "Papa": "Papa"
+  },
+  "AddTemplateDialog": {
+    "title": "Ajouter un élément de catégorie",
+    "placeholder": "Veuillez entrer",
+    "confirm": "Confirmer",
+    "cancel": "Annuler"
   }
 }

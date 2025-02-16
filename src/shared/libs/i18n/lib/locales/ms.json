@@ -127,5 +127,16 @@
     "warning": "Setelah dipadam, tindakan ini tidak boleh dibatalkan.",
     "confirm": "Sahkan",
     "cancel": "Batal"
+  },
+  "PLAYERS": {
+    "Myself": "Diri sendiri",
+    "Mama": "Ibu",
+    "Papa": "Ayah"
+  },
+  "AddTemplateDialog": {
+    "title": "Tambah Item Kategori",
+    "placeholder": "Sila masukkan",
+    "confirm": "Sahkan",
+    "cancel": "Batal"
   }
 }

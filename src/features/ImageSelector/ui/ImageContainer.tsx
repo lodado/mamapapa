@@ -1,6 +1,8 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
+
+import { usePlayerStore } from "@/entities";
 
 import { useImageSelectorStore } from "../models";
 import EmptyImageContainer from "./EmptyImageContainer";

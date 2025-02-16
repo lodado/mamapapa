@@ -127,5 +127,16 @@
     "warning": "Una vez eliminado, esta acción no se puede deshacer.",
     "confirm": "Confirmar",
     "cancel": "Cancelar"
+  },
+  "PLAYERS": {
+    "Myself": "Yo",
+    "Mama": "Mamá",
+    "Papa": "Papá"
+  },
+  "AddTemplateDialog": {
+    "title": "Agregar elemento de categoría",
+    "placeholder": "Por favor ingrese",
+    "confirm": "Confirmar",
+    "cancel": "Cancelar"
   }
 }

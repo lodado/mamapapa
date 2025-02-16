@@ -127,5 +127,16 @@
     "warning": "Uma vez excluído, esta ação não pode ser desfeita.",
     "confirm": "Confirmar",
     "cancel": "Cancelar"
+  },
+  "PLAYERS": {
+    "Myself": "Eu mesmo",
+    "Mama": "Mamãe",
+    "Papa": "Papai"
+  },
+  "AddTemplateDialog": {
+    "title": "Adicionar item de categoria",
+    "placeholder": "Por favor, insira",
+    "confirm": "Confirmar",
+    "cancel": "Cancelar"
   }
 }

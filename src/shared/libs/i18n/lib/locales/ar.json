@@ -127,5 +127,16 @@
     "warning": "بمجرد الحذف، لا يمكن التراجع عن هذا الإجراء.",
     "confirm": "تأكيد",
     "cancel": "إلغاء"
+  },
+  "PLAYERS": {
+    "Myself": "نفسي",
+    "Mama": "أمي",
+    "Papa": "أبي"
+  },
+  "AddTemplateDialog": {
+    "title": "إضافة عنصر فئة",
+    "placeholder": "يرجى الإدخال",
+    "confirm": "تأكيد",
+    "cancel": "إلغاء"
   }
 }

@@ -4,6 +4,7 @@ import { headers } from "next/headers";
 import { NextIntlClientProvider, useMessages } from "next-intl";
 import React from "react";
 
+import HydratePlayerStore from "@/entities/Player/ui/HydratePlayerStore";
 import { LocaleProps, ThemeScript } from "@/shared";
 import { GlobalDialogContainer } from "@/widgets";
 
@@ -300,6 +301,8 @@ const RootLayout: React.FunctionComponent<LocaleProps> = ({ children, params: { 
           <NextIntlClientProvider locale={locale} messages={messages}>
             {children}
             <GlobalDialogContainer />
+
+            <HydratePlayerStore />
           </NextIntlClientProvider>
         </RootProvider>
         {/* <GA nonce={nonce} /> */}

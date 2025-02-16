@@ -127,5 +127,16 @@
     "warning": "Silindikten sonra bu işlem geri alınamaz.",
     "confirm": "Onayla",
     "cancel": "İptal"
+  },
+  "PLAYERS": {
+    "Myself": "Kendim",
+    "Mama": "Anne",
+    "Papa": "Baba"
+  },
+  "AddTemplateDialog": {
+    "title": "Kategori Öğesi Ekle",
+    "placeholder": "Lütfen girin",
+    "confirm": "Onayla",
+    "cancel": "İptal"
   }
 }

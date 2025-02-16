@@ -127,5 +127,16 @@
     "warning": "削除を完了すると、元に戻すことはできません。",
     "confirm": "確認",
     "cancel": "キャンセル"
+  },
+  "PLAYERS": {
+    "Myself": "私",
+    "Mama": "ママ",
+    "Papa": "パパ"
+  },
+  "AddTemplateDialog": {
+    "title": "カテゴリ項目を追加",
+    "placeholder": "入力してください",
+    "confirm": "確認",
+    "cancel": "キャンセル"
   }
 }

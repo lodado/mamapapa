@@ -6,38 +6,36 @@ export interface Player {
 }
 
 export interface PlayerStore {
-  players: Map<string, Map<string, Player>>;
+  players: Map<string, string>;
+  initPlayers: (players: Map<string, string>) => void;
   addPlayer: (parentId: string, player: Player) => void;
   removePlayer: (parentId: string, playerId: string) => void;
 }
 
 export const usePlayerStore = create<PlayerStore>((set) => ({
   players: new Map([
-    ["나", new Map()],
-    ["엄마", new Map()],
-    ["아빠", new Map()],
+    ["나", "나"],
+    ["엄마", "엄마"],
+    ["아빠", "아빠"],
   ]),
+
+  initPlayers: (players) => {
+    set((state) => {
+      return { players };
+    });
+  },
 
   addPlayer: (parentId, player) =>
     set((state) => {
       const newPlayers = new Map(state.players);
-      const parentPlayers = newPlayers.get(parentId) || new Map();
-      parentPlayers.set(player.id, player);
-      newPlayers.set(parentId, parentPlayers);
+      newPlayers.set(parentId, player.name);
       return { players: newPlayers };
     }),
-  removePlayer: (parentId, playerId) =>
+  removePlayer: (parentId) =>
     set((state) => {
       const newPlayers = new Map(state.players);
-      const parentPlayers = newPlayers.get(parentId);
-      if (parentPlayers) {
-        parentPlayers.delete(playerId);
-        if (parentPlayers.size === 0) {
-          newPlayers.delete(parentId);
-        } else {
-          newPlayers.set(parentId, parentPlayers);
-        }
-      }
+      newPlayers.delete(parentId);
+
       return { players: newPlayers };
     }),
 }));

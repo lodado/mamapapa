@@ -127,5 +127,16 @@
     "warning": "Sau khi xóa, hành động này không thể được hoàn tác.",
     "confirm": "Xác nhận",
     "cancel": "Hủy"
+  },
+  "PLAYERS": {
+    "Myself": "Bản thân tôi",
+    "Mama": "Mẹ",
+    "Papa": "Bố"
+  },
+  "AddTemplateDialog": {
+    "title": "Thêm mục danh mục",
+    "placeholder": "Vui lòng nhập",
+    "confirm": "Xác nhận",
+    "cancel": "Hủy"
   }
 }

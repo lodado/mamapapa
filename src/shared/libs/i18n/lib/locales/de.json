@@ -127,5 +127,16 @@
     "warning": "Nach dem Löschen kann diese Aktion nicht rückgängig gemacht werden.",
     "confirm": "Bestätigen",
     "cancel": "Abbrechen"
+  },
+  "PLAYERS": {
+    "Myself": "Ich selbst",
+    "Mama": "Mama",
+    "Papa": "Papa"
+  },
+  "AddTemplateDialog": {
+    "title": "Kategorieelement hinzufügen",
+    "placeholder": "Bitte eingeben",
+    "confirm": "Bestätigen",
+    "cancel": "Abbrechen"
   }
 }

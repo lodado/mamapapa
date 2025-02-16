@@ -127,5 +127,16 @@
     "warning": "Once deleted, this action cannot be undone.",
     "confirm": "Confirm",
     "cancel": "Cancel"
+  },
+  "PLAYERS": {
+    "Myself": "Myself",
+    "Mama": "Mama",
+    "Papa": "Papa"
+  },
+  "AddTemplateDialog": {
+    "title": "Add Category Item",
+    "placeholder": "Please enter",
+    "confirm": "Confirm",
+    "cancel": "Cancel"
   }
 }

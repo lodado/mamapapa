@@ -127,5 +127,16 @@
     "warning": "삭제를 완료 후 되돌리기 어렵습니다.",
     "confirm": "확인",
     "cancel": "취소"
+  },
+  "PLAYERS": {
+    "Myself": "나",
+    "Mama": "엄마",
+    "Papa": "아빠"
+  },
+  "AddTemplateDialog": {
+    "title": "분류 항목 추가하기",
+    "placeholder": "입력해주세요",
+    "confirm": "확인",
+    "cancel": "취소"
   }
 }
