@@ -90,7 +90,28 @@
     "TUTORIAL-STEP-2": "Puoi estrarre e controllare solo i volti dalle foto!",
     "TUTORIAL-STEP-3": "Selezionati obbligatoriamente e classifica almeno un obiettivo di confronto.",
     "TUTORIAL-STEP-4": "Puoi ritagliare manualmente o eliminare immagini!",
+    "TUTORIAL-STEP-5": "Una volta completata la selezione, premi il pulsante!",
     "BUTTON-BACK": "Torna indietro",
-    "BUTTON-HELP": "Aiuto"
+    "BUTTON-HELP": "Aiuto",
+    "SELECT-PICTURE-TITLE": "Seleziona le foto da confrontare"
+  },
+  "IMAGES": {
+    "EMPTY-IMAGE-TITLE": "Aggiungi foto da confrontare.",
+    "EMPTY-IMAGE-DESCRIPTION-1": "Aggiungi foto da confrontare",
+    "EMPTY-IMAGE-DESCRIPTION-2": "Classifica le foto.",
+    "DIALOG-TITLE": "Aggiungi elemento di classificazione",
+    "DIALOG-PLACEHOLDER": "Si prega di inserire",
+    "DIALOG-SUCCESS-TITLE": "Salvataggio riuscito",
+    "DIALOG-SUCCESS-DESCRIPTION": "L'elemento di classificazione è stato aggiunto con successo.",
+    "DIALOG-ERROR-NAME-EXISTS": "Questo nome esiste già.",
+    "DIALOG-ERROR-NAME-TOO-LONG": "Si prega di inserire entro 50 caratteri.",
+    "CROP-DIALOG-TITLE": "Ritaglia di nuovo",
+    "CROP-DIALOG-SELECT-AREA": "Seleziona l'area da ritagliare",
+    "CROP-DIALOG-INSTRUCTIONS-1": "Ridefinisci l'area di ritaglio dalla foto originale.",
+    "CROP-DIALOG-INSTRUCTIONS-2": "Regola l'area blu per specificare la regione di ritaglio.",
+    "CROP-DIALOG-SELECT-PLAYER": "Si prega di selezionare un giocatore",
+    "CROP-DIALOG-SELECT-PERSON": "Si prega di selezionare una persona",
+    "CROP-DIALOG-CONFIRM": "Conferma",
+    "CROP-DIALOG-CANCEL": "Annulla"
   }
 }

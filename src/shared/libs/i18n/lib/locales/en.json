@@ -90,7 +90,28 @@
     "TUTORIAL-STEP-2": "You can extract and check only faces from the photos!",
     "TUTORIAL-STEP-3": "Select yourself as required and classify at least one comparison target.",
     "TUTORIAL-STEP-4": "You can manually recrop or delete images!",
+    "TUTORIAL-STEP-5": "Once selection is complete, press the button!",
     "BUTTON-BACK": "Go Back",
-    "BUTTON-HELP": "Help"
+    "BUTTON-HELP": "Help",
+    "SELECT-PICTURE-TITLE": "Please select photos to compare"
+  },
+  "IMAGES": {
+    "EMPTY-IMAGE-TITLE": "Please add photos to compare.",
+    "EMPTY-IMAGE-DESCRIPTION-1": "Add photos to compare",
+    "EMPTY-IMAGE-DESCRIPTION-2": "Classify the photos.",
+    "DIALOG-TITLE": "Add Classification Item",
+    "DIALOG-PLACEHOLDER": "Please enter",
+    "DIALOG-SUCCESS-TITLE": "Successfully saved",
+    "DIALOG-SUCCESS-DESCRIPTION": "The classification item was successfully added.",
+    "DIALOG-ERROR-NAME-EXISTS": "This name already exists.",
+    "DIALOG-ERROR-NAME-TOO-LONG": "Please enter within 50 characters.",
+    "CROP-DIALOG-TITLE": "Redo Crop",
+    "CROP-DIALOG-SELECT-AREA": "Please select the area to crop",
+    "CROP-DIALOG-INSTRUCTIONS-1": "Please redefine the crop area from the original photo.",
+    "CROP-DIALOG-INSTRUCTIONS-2": "Adjust the blue area to specify the crop region.",
+    "CROP-DIALOG-SELECT-PLAYER": "Please select a player",
+    "CROP-DIALOG-SELECT-PERSON": "Please select a person",
+    "CROP-DIALOG-CONFIRM": "Confirm",
+    "CROP-DIALOG-CANCEL": "Cancel"
   }
 }

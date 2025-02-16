@@ -90,7 +90,28 @@
     "TUTORIAL-STEP-2": "Anda dapat mengekstrak dan memeriksa hanya wajah dari foto!",
     "TUTORIAL-STEP-3": "Pilih diri Anda sebagai wajib dan klasifikasikan setidaknya satu target perbandingan.",
     "TUTORIAL-STEP-4": "Anda dapat memotong ulang secara manual atau menghapus gambar!",
+    "TUTORIAL-STEP-5": "Setelah pemilihan selesai, tekan tombol!",
     "BUTTON-BACK": "Kembali",
-    "BUTTON-HELP": "Bantuan"
+    "BUTTON-HELP": "Bantuan",
+    "SELECT-PICTURE-TITLE": "Silakan pilih foto untuk dibandingkan"
+  },
+  "IMAGES": {
+    "EMPTY-IMAGE-TITLE": "Silakan tambahkan foto untuk dibandingkan.",
+    "EMPTY-IMAGE-DESCRIPTION-1": "Tambahkan foto untuk dibandingkan",
+    "EMPTY-IMAGE-DESCRIPTION-2": "Klasifikasikan foto.",
+    "DIALOG-TITLE": "Tambahkan item klasifikasi",
+    "DIALOG-PLACEHOLDER": "Silakan masukkan",
+    "DIALOG-SUCCESS-TITLE": "Berhasil disimpan",
+    "DIALOG-SUCCESS-DESCRIPTION": "Item klasifikasi berhasil ditambahkan.",
+    "DIALOG-ERROR-NAME-EXISTS": "Nama ini sudah ada.",
+    "DIALOG-ERROR-NAME-TOO-LONG": "Silakan masukkan dalam 50 karakter.",
+    "CROP-DIALOG-TITLE": "Ulangi Pemotongan",
+    "CROP-DIALOG-SELECT-AREA": "Silakan pilih area yang akan dipotong",
+    "CROP-DIALOG-INSTRUCTIONS-1": "Harap tentukan ulang area pemotongan dari foto asli.",
+    "CROP-DIALOG-INSTRUCTIONS-2": "Sesuaikan area biru untuk menentukan wilayah pemotongan.",
+    "CROP-DIALOG-SELECT-PLAYER": "Silakan pilih pemain",
+    "CROP-DIALOG-SELECT-PERSON": "Silakan pilih orang",
+    "CROP-DIALOG-CONFIRM": "Konfirmasi",
+    "CROP-DIALOG-CANCEL": "Batal"
   }
 }

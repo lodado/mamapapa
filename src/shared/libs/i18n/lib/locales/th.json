@@ -90,7 +90,28 @@
     "TUTORIAL-STEP-2": "คุณสามารถแยกและตรวจสอบเฉพาะใบหน้าจากรูปภาพได้!",
     "TUTORIAL-STEP-3": "เลือกตัวเองเป็นข้อบังคับและจัดหมวดหมู่อย่างน้อยหนึ่งเป้าหมายเปรียบเทียบ",
     "TUTORIAL-STEP-4": "คุณสามารถครอบตัดใหม่ด้วยตนเองหรือลบรูปภาพได้!",
+    "TUTORIAL-STEP-5": "เมื่อเลือกเสร็จแล้ว ให้กดปุ่ม!",
     "BUTTON-BACK": "ย้อนกลับ",
-    "BUTTON-HELP": "ช่วยเหลือ"
+    "BUTTON-HELP": "ช่วยเหลือ",
+    "SELECT-PICTURE-TITLE": "กรุณาเลือกภาพที่ต้องการเปรียบเทียบ"
+  },
+  "IMAGES": {
+    "EMPTY-IMAGE-TITLE": "กรุณาเพิ่มรูปภาพเพื่อเปรียบเทียบ",
+    "EMPTY-IMAGE-DESCRIPTION-1": "เพิ่มรูปภาพเพื่อเปรียบเทียบ",
+    "EMPTY-IMAGE-DESCRIPTION-2": "จัดหมวดหมู่รูปภาพ",
+    "DIALOG-TITLE": "เพิ่มรายการการจัดหมวดหมู่",
+    "DIALOG-PLACEHOLDER": "กรุณากรอก",
+    "DIALOG-SUCCESS-TITLE": "บันทึกสำเร็จ",
+    "DIALOG-SUCCESS-DESCRIPTION": "เพิ่มรายการการจัดหมวดหมู่สำเร็จแล้ว",
+    "DIALOG-ERROR-NAME-EXISTS": "ชื่อนี้มีอยู่แล้ว",
+    "DIALOG-ERROR-NAME-TOO-LONG": "กรุณากรอกไม่เกิน 50 ตัวอักษร",
+    "CROP-DIALOG-TITLE": "ครอบตัดใหม่",
+    "CROP-DIALOG-SELECT-AREA": "โปรดเลือกพื้นที่ที่ต้องการครอบตัด",
+    "CROP-DIALOG-INSTRUCTIONS-1": "โปรดกำหนดพื้นที่ครอบตัดใหม่จากภาพต้นฉบับ",
+    "CROP-DIALOG-INSTRUCTIONS-2": "ปรับขนาดพื้นที่สีน้ำเงินเพื่อกำหนดบริเวณที่ต้องการครอบตัด",
+    "CROP-DIALOG-SELECT-PLAYER": "โปรดเลือกผู้เล่น",
+    "CROP-DIALOG-SELECT-PERSON": "โปรดเลือกบุคคล",
+    "CROP-DIALOG-CONFIRM": "ยืนยัน",
+    "CROP-DIALOG-CANCEL": "ยกเลิก"
   }
 }

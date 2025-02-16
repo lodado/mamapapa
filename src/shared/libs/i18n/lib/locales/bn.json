@@ -90,7 +90,28 @@
     "TUTORIAL-STEP-2": "আপনি শুধুমাত্র ফটো থেকে মুখগুলি বের করতে এবং পরীক্ষা করতে পারেন!",
     "TUTORIAL-STEP-3": "নিজেকে বাধ্যতামূলকভাবে নির্বাচন করুন এবং অন্তত একটি তুলনার লক্ষ্য শ্রেণীবদ্ধ করুন।",
     "TUTORIAL-STEP-4": "আপনি ম্যানুয়ালি ক্রপ পুনরায় করতে বা ছবি মুছতে পারেন!",
+    "TUTORIAL-STEP-5": "নির্বাচন সম্পূর্ণ হলে, বোতাম টিপুন!",
     "BUTTON-BACK": "ফিরে যান",
-    "BUTTON-HELP": "সাহায্য"
+    "BUTTON-HELP": "সাহায্য",
+    "SELECT-PICTURE-TITLE": "দয়া করে তুলনা করার জন্য ফটো নির্বাচন করুন"
+  },
+  "IMAGES": {
+    "EMPTY-IMAGE-TITLE": "অনুগ্রহ করে তুলনার জন্য ছবি যোগ করুন।",
+    "EMPTY-IMAGE-DESCRIPTION-1": "তুলনার জন্য ছবি যোগ করুন",
+    "EMPTY-IMAGE-DESCRIPTION-2": "অনুগ্রহ করে ছবিগুলি শ্রেণীবদ্ধ করুন।",
+    "DIALOG-TITLE": "শ্রেণীবিভাগ আইটেম যোগ করুন",
+    "DIALOG-PLACEHOLDER": "অনুগ্রহ করে লিখুন",
+    "DIALOG-SUCCESS-TITLE": "সফলভাবে সংরক্ষণ করা হয়েছে",
+    "DIALOG-SUCCESS-DESCRIPTION": "শ্রেণীবিভাগ আইটেম সফলভাবে যোগ করা হয়েছে।",
+    "DIALOG-ERROR-NAME-EXISTS": "এই নামটি ইতিমধ্যে বিদ্যমান।",
+    "DIALOG-ERROR-NAME-TOO-LONG": "অনুগ্রহ করে ৫০ অক্ষরের মধ্যে লিখুন।",
+    "CROP-DIALOG-TITLE": "ক্রপ পুনরায় করুন",
+    "CROP-DIALOG-SELECT-AREA": "দয়া করে ক্রপ করার জন্য অঞ্চল নির্বাচন করুন",
+    "CROP-DIALOG-INSTRUCTIONS-1": "অনুগ্রহ করে মূল ফটো থেকে ক্রপ এলাকা পুনরায় সংজ্ঞায়িত করুন।",
+    "CROP-DIALOG-INSTRUCTIONS-2": "ক্রপ অঞ্চল নির্দিষ্ট করতে নীল এলাকার আকার সমন্বয় করুন।",
+    "CROP-DIALOG-SELECT-PLAYER": "একজন খেলোয়াড় নির্বাচন করুন",
+    "CROP-DIALOG-SELECT-PERSON": "একজন ব্যক্তিকে নির্বাচন করুন",
+    "CROP-DIALOG-CONFIRM": "নিশ্চিত করুন",
+    "CROP-DIALOG-CANCEL": "বাতিল করুন"
   }
 }

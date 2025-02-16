@@ -90,7 +90,28 @@
     "TUTORIAL-STEP-2": "Anda boleh mengekstrak dan menyemak hanya wajah dari foto!",
     "TUTORIAL-STEP-3": "Pilih diri anda sebagai keperluan dan klasifikasikan sekurang-kurangnya satu sasaran perbandingan.",
     "TUTORIAL-STEP-4": "Anda boleh memotong semula secara manual atau memadam imej!",
+    "TUTORIAL-STEP-5": "Setelah pilihan selesai, tekan butang!",
     "BUTTON-BACK": "Kembali",
-    "BUTTON-HELP": "Bantuan"
+    "BUTTON-HELP": "Bantuan",
+    "SELECT-PICTURE-TITLE": "Sila pilih foto untuk dibandingkan"
+  },
+  "IMAGES": {
+    "EMPTY-IMAGE-TITLE": "Sila tambah foto untuk dibandingkan.",
+    "EMPTY-IMAGE-DESCRIPTION-1": "Tambah foto untuk dibandingkan",
+    "EMPTY-IMAGE-DESCRIPTION-2": "Klasifikasikan foto.",
+    "DIALOG-TITLE": "Tambah item klasifikasi",
+    "DIALOG-PLACEHOLDER": "Sila masukkan",
+    "DIALOG-SUCCESS-TITLE": "Berjaya disimpan",
+    "DIALOG-SUCCESS-DESCRIPTION": "Item klasifikasi berjaya ditambah.",
+    "DIALOG-ERROR-NAME-EXISTS": "Nama ini sudah wujud.",
+    "DIALOG-ERROR-NAME-TOO-LONG": "Sila masukkan dalam 50 aksara.",
+    "CROP-DIALOG-TITLE": "Potong Semula",
+    "CROP-DIALOG-SELECT-AREA": "Sila pilih kawasan untuk dipotong",
+    "CROP-DIALOG-INSTRUCTIONS-1": "Sila tentukan semula kawasan potong dari foto asal.",
+    "CROP-DIALOG-INSTRUCTIONS-2": "Laraskan kawasan biru untuk menentukan wilayah potong.",
+    "CROP-DIALOG-SELECT-PLAYER": "Sila pilih pemain",
+    "CROP-DIALOG-SELECT-PERSON": "Sila pilih seseorang",
+    "CROP-DIALOG-CONFIRM": "Sahkan",
+    "CROP-DIALOG-CANCEL": "Batal"
   }
 }

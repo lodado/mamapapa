@@ -90,7 +90,28 @@
     "TUTORIAL-STEP-2": "Sie können nur Gesichter aus den Fotos extrahieren und überprüfen!",
     "TUTORIAL-STEP-3": "Wählen Sie sich selbst als erforderlich aus und klassifizieren Sie mindestens ein Vergleichsziel.",
     "TUTORIAL-STEP-4": "Sie können Bilder manuell zuschneiden oder löschen!",
+    "TUTORIAL-STEP-5": "Sobald die Auswahl abgeschlossen ist, drücken Sie die Taste!",
     "BUTTON-BACK": "Zurück",
-    "BUTTON-HELP": "Hilfe"
+    "BUTTON-HELP": "Hilfe",
+    "SELECT-PICTURE-TITLE": "Bitte wählen Sie Fotos zum Vergleichen aus"
+  },
+  "IMAGES": {
+    "EMPTY-IMAGE-TITLE": "Bitte fügen Sie Fotos zum Vergleichen hinzu.",
+    "EMPTY-IMAGE-DESCRIPTION-1": "Fügen Sie Fotos zum Vergleichen hinzu",
+    "EMPTY-IMAGE-DESCRIPTION-2": "Klassifizieren Sie die Fotos.",
+    "DIALOG-TITLE": "Klassifizierungselement hinzufügen",
+    "DIALOG-PLACEHOLDER": "Bitte eingeben",
+    "DIALOG-SUCCESS-TITLE": "Erfolgreich gespeichert",
+    "DIALOG-SUCCESS-DESCRIPTION": "Das Klassifizierungselement wurde erfolgreich hinzugefügt.",
+    "DIALOG-ERROR-NAME-EXISTS": "Dieser Name existiert bereits.",
+    "DIALOG-ERROR-NAME-TOO-LONG": "Bitte geben Sie maximal 50 Zeichen ein.",
+    "CROP-DIALOG-TITLE": "Zuschneiden erneut",
+    "CROP-DIALOG-SELECT-AREA": "Bitte wählen Sie den zuzuschneidenden Bereich",
+    "CROP-DIALOG-INSTRUCTIONS-1": "Bitte definieren Sie den Zuschneidebereich aus dem Originalfoto neu.",
+    "CROP-DIALOG-INSTRUCTIONS-2": "Passen Sie den blauen Bereich an, um die Zuschneidefläche zu bestimmen.",
+    "CROP-DIALOG-SELECT-PLAYER": "Bitte wählen Sie einen Spieler",
+    "CROP-DIALOG-SELECT-PERSON": "Bitte wählen Sie eine Person",
+    "CROP-DIALOG-CONFIRM": "Bestätigen",
+    "CROP-DIALOG-CANCEL": "Abbrechen"
   }
 }

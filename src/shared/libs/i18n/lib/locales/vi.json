@@ -90,7 +90,28 @@
     "TUTORIAL-STEP-2": "Bạn có thể trích xuất và kiểm tra chỉ khuôn mặt từ ảnh!",
     "TUTORIAL-STEP-3": "Chọn bản thân là bắt buộc và phân loại ít nhất một đối tượng so sánh.",
     "TUTORIAL-STEP-4": "Bạn có thể tự chỉnh sửa lại hoặc xóa hình ảnh!",
+    "TUTORIAL-STEP-5": "Sau khi chọn xong, nhấn nút!",
     "BUTTON-BACK": "Quay lại",
-    "BUTTON-HELP": "Trợ giúp"
+    "BUTTON-HELP": "Trợ giúp",
+    "SELECT-PICTURE-TITLE": "Vui lòng chọn ảnh để so sánh"
+  },
+  "IMAGES": {
+    "EMPTY-IMAGE-TITLE": "Vui lòng thêm ảnh để so sánh.",
+    "EMPTY-IMAGE-DESCRIPTION-1": "Thêm ảnh để so sánh",
+    "EMPTY-IMAGE-DESCRIPTION-2": "Phân loại ảnh.",
+    "DIALOG-TITLE": "Thêm mục phân loại",
+    "DIALOG-PLACEHOLDER": "Vui lòng nhập",
+    "DIALOG-SUCCESS-TITLE": "Lưu thành công",
+    "DIALOG-SUCCESS-DESCRIPTION": "Mục phân loại đã được thêm thành công.",
+    "DIALOG-ERROR-NAME-EXISTS": "Tên này đã tồn tại.",
+    "DIALOG-ERROR-NAME-TOO-LONG": "Vui lòng nhập trong vòng 50 ký tự.",
+    "CROP-DIALOG-TITLE": "Cắt lại",
+    "CROP-DIALOG-SELECT-AREA": "Vui lòng chọn khu vực cần cắt",
+    "CROP-DIALOG-INSTRUCTIONS-1": "Vui lòng xác định lại khu vực cắt từ ảnh gốc.",
+    "CROP-DIALOG-INSTRUCTIONS-2": "Điều chỉnh khu vực màu xanh để xác định vùng cắt.",
+    "CROP-DIALOG-SELECT-PLAYER": "Vui lòng chọn một người chơi",
+    "CROP-DIALOG-SELECT-PERSON": "Vui lòng chọn một người",
+    "CROP-DIALOG-CONFIRM": "Xác nhận",
+    "CROP-DIALOG-CANCEL": "Hủy"
   }
 }

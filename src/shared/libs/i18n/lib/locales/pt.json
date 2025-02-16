@@ -90,7 +90,28 @@
     "TUTORIAL-STEP-2": "Você pode extrair e verificar apenas os rostos das fotos!",
     "TUTORIAL-STEP-3": "Selecione-se obrigatoriamente e classifique pelo menos um alvo de comparação.",
     "TUTORIAL-STEP-4": "Você pode recortar manualmente ou excluir imagens!",
+    "TUTORIAL-STEP-5": "Uma vez que a seleção estiver completa, pressione o botão!",
     "BUTTON-BACK": "Voltar",
-    "BUTTON-HELP": "Ajuda"
+    "BUTTON-HELP": "Ajuda",
+    "SELECT-PICTURE-TITLE": "Por favor, selecione as fotos para comparar"
+  },
+  "IMAGES": {
+    "EMPTY-IMAGE-TITLE": "Por favor, adicione fotos para comparar.",
+    "EMPTY-IMAGE-DESCRIPTION-1": "Adicione fotos para comparar",
+    "EMPTY-IMAGE-DESCRIPTION-2": "Classifique as fotos.",
+    "DIALOG-TITLE": "Adicionar item de classificação",
+    "DIALOG-PLACEHOLDER": "Por favor, insira",
+    "DIALOG-SUCCESS-TITLE": "Salvo com sucesso",
+    "DIALOG-SUCCESS-DESCRIPTION": "O item de classificação foi adicionado com sucesso.",
+    "DIALOG-ERROR-NAME-EXISTS": "Este nome já existe.",
+    "DIALOG-ERROR-NAME-TOO-LONG": "Por favor, insira dentro de 50 caracteres.",
+    "CROP-DIALOG-TITLE": "Refazer corte",
+    "CROP-DIALOG-SELECT-AREA": "Por favor, selecione a área para cortar",
+    "CROP-DIALOG-INSTRUCTIONS-1": "Redefina a área de corte da foto original.",
+    "CROP-DIALOG-INSTRUCTIONS-2": "Ajuste a área azul para especificar a região de corte.",
+    "CROP-DIALOG-SELECT-PLAYER": "Por favor, selecione um jogador",
+    "CROP-DIALOG-SELECT-PERSON": "Por favor, selecione uma pessoa",
+    "CROP-DIALOG-CONFIRM": "Confirmar",
+    "CROP-DIALOG-CANCEL": "Cancelar"
   }
 }

@@ -90,7 +90,28 @@
     "TUTORIAL-STEP-2": "사진에서 얼굴만 추출해서 확인 가능해요!",
     "TUTORIAL-STEP-3": "나를 필수 선택하고 비교할 대상을 최소 1명이상 분류해주세요.",
     "TUTORIAL-STEP-4": "크롭을 다시 수동으로 하거나 이미지를 삭제 가능해요!",
+    "TUTORIAL-STEP-5": "선택이 완료되면 버튼을 눌러주세요!",
     "BUTTON-BACK": "뒤로 가기",
-    "BUTTON-HELP": "도움말"
+    "BUTTON-HELP": "도움말",
+    "SELECT-PICTURE-TITLE": "비교할 사진을 선택해주세요"
+  },
+  "IMAGES": {
+    "EMPTY-IMAGE-TITLE": "비교할 사진을 추가해주세요.",
+    "EMPTY-IMAGE-DESCRIPTION-1": "비교할 사진을 추가하고",
+    "EMPTY-IMAGE-DESCRIPTION-2": "사진을 분류해주세요.",
+    "DIALOG-TITLE": "분류 항목 추가하기",
+    "DIALOG-PLACEHOLDER": "입력해주세요",
+    "DIALOG-SUCCESS-TITLE": "저장에 성공했습니다",
+    "DIALOG-SUCCESS-DESCRIPTION": "분류 항목 추가가 성공했습니다.",
+    "DIALOG-ERROR-NAME-EXISTS": "이미 존재하는 이름입니다.",
+    "DIALOG-ERROR-NAME-TOO-LONG": "50자 이하로 입력해주세요.",
+    "CROP-DIALOG-TITLE": "크롭 다시하기",
+    "CROP-DIALOG-SELECT-AREA": "크롭할 영역을 선택해주세요",
+    "CROP-DIALOG-INSTRUCTIONS-1": "원본사진에서 크롭 영역을 다시 지정해주세요.",
+    "CROP-DIALOG-INSTRUCTIONS-2": "파란색 영역의 크기를 조절하면 영역이 지정됩니다.",
+    "CROP-DIALOG-SELECT-PLAYER": "사진을 분류해주세요",
+    "CROP-DIALOG-SELECT-PERSON": "사람을 선택해주세요.",
+    "CROP-DIALOG-CONFIRM": "완료",
+    "CROP-DIALOG-CANCEL": "되돌리기"
   }
 }

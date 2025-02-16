@@ -90,7 +90,28 @@
     "TUTORIAL-STEP-2": "आप केवल फोटो से चेहरे निकालकर देख सकते हैं!",
     "TUTORIAL-STEP-3": "स्वयं को अनिवार्य रूप से चुनें और कम से कम एक तुलना लक्ष्य वर्गीकृत करें।",
     "TUTORIAL-STEP-4": "आप मैन्युअल रूप से क्रॉप दोबारा कर सकते हैं या छवियां हटा सकते हैं!",
+    "TUTORIAL-STEP-5": "चयन पूरा होने के बाद, बटन दबाएँ!",
     "BUTTON-BACK": "वापस जाएं",
-    "BUTTON-HELP": "सहायता"
+    "BUTTON-HELP": "सहायता",
+    "SELECT-PICTURE-TITLE": "कृपया तुलना करने के लिए तस्वीरें चुनें"
+  },
+  "IMAGES": {
+    "EMPTY-IMAGE-TITLE": "कृपया तुलना करने के लिए तस्वीरें जोड़ें।",
+    "EMPTY-IMAGE-DESCRIPTION-1": "तुलना करने के लिए तस्वीरें जोड़ें",
+    "EMPTY-IMAGE-DESCRIPTION-2": "कृपया तस्वीरों को वर्गीकृत करें।",
+    "DIALOG-TITLE": "वर्गीकरण आइटम जोड़ें",
+    "DIALOG-PLACEHOLDER": "कृपया दर्ज करें",
+    "DIALOG-SUCCESS-TITLE": "सहेजा गया सफलतापूर्वक",
+    "DIALOG-SUCCESS-DESCRIPTION": "वर्गीकरण आइटम सफलतापूर्वक जोड़ा गया।",
+    "DIALOG-ERROR-NAME-EXISTS": "यह नाम पहले से मौजूद है।",
+    "DIALOG-ERROR-NAME-TOO-LONG": "कृपया 50 वर्णों के भीतर दर्ज करें।",
+    "CROP-DIALOG-TITLE": "फसल पुनः करें",
+    "CROP-DIALOG-SELECT-AREA": "कृपया क्रॉप करने के लिए क्षेत्र चुनें",
+    "CROP-DIALOG-INSTRUCTIONS-1": "कृपया मूल फोटो से क्रॉप क्षेत्र को पुनः परिभाषित करें।",
+    "CROP-DIALOG-INSTRUCTIONS-2": "क्रॉप क्षेत्र निर्दिष्ट करने के लिए नीले क्षेत्र को समायोजित करें।",
+    "CROP-DIALOG-SELECT-PLAYER": "कृपया एक खिलाड़ी चुनें",
+    "CROP-DIALOG-SELECT-PERSON": "कृपया एक व्यक्ति चुनें",
+    "CROP-DIALOG-CONFIRM": "पुष्टि करें",
+    "CROP-DIALOG-CANCEL": "रद्द करें"
   }
 }

@@ -90,7 +90,28 @@
     "TUTORIAL-STEP-2": "Vous pouvez extraire et vérifier uniquement les visages des photos !",
     "TUTORIAL-STEP-3": "Sélectionnez-vous obligatoirement et classez au moins une cible de comparaison.",
     "TUTORIAL-STEP-4": "Vous pouvez recadrer manuellement ou supprimer des images !",
+    "TUTORIAL-STEP-5": "Une fois la sélection terminée, appuyez sur le bouton !",
     "BUTTON-BACK": "Retour",
-    "BUTTON-HELP": "Aide"
+    "BUTTON-HELP": "Aide",
+    "SELECT-PICTURE-TITLE": "Veuillez sélectionner les photos à comparer"
+  },
+  "IMAGES": {
+    "EMPTY-IMAGE-TITLE": "Veuillez ajouter des photos à comparer.",
+    "EMPTY-IMAGE-DESCRIPTION-1": "Ajoutez des photos à comparer",
+    "EMPTY-IMAGE-DESCRIPTION-2": "Veuillez classer les photos.",
+    "DIALOG-TITLE": "Ajouter un élément de classification",
+    "DIALOG-PLACEHOLDER": "Veuillez entrer",
+    "DIALOG-SUCCESS-TITLE": "Enregistré avec succès",
+    "DIALOG-SUCCESS-DESCRIPTION": "L'élément de classification a été ajouté avec succès.",
+    "DIALOG-ERROR-NAME-EXISTS": "Ce nom existe déjà.",
+    "DIALOG-ERROR-NAME-TOO-LONG": "Veuillez entrer dans la limite de 50 caractères.",
+    "CROP-DIALOG-TITLE": "Recadrer à nouveau",
+    "CROP-DIALOG-SELECT-AREA": "Veuillez sélectionner la zone à recadrer",
+    "CROP-DIALOG-INSTRUCTIONS-1": "Veuillez redéfinir la zone de recadrage à partir de la photo originale.",
+    "CROP-DIALOG-INSTRUCTIONS-2": "Ajustez la zone bleue pour spécifier la région de recadrage.",
+    "CROP-DIALOG-SELECT-PLAYER": "Veuillez sélectionner un joueur",
+    "CROP-DIALOG-SELECT-PERSON": "Veuillez sélectionner une personne",
+    "CROP-DIALOG-CONFIRM": "Confirmer",
+    "CROP-DIALOG-CANCEL": "Annuler"
   }
 }

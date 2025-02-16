@@ -90,7 +90,28 @@
     "TUTORIAL-STEP-2": "写真から顔だけを抽出して確認できます！",
     "TUTORIAL-STEP-3": "自分を必ず選択し、比較対象を最低1人以上分類してください。",
     "TUTORIAL-STEP-4": "手動でクロップを再度行うか、画像を削除できます！",
+    "TUTORIAL-STEP-5": "選択が完了したら、ボタンを押してください！",
     "BUTTON-BACK": "戻る",
-    "BUTTON-HELP": "ヘルプ"
+    "BUTTON-HELP": "ヘルプ",
+    "SELECT-PICTURE-TITLE": "比較する写真を選択してください"
+  },
+  "IMAGES": {
+    "EMPTY-IMAGE-TITLE": "比較する写真を追加してください。",
+    "EMPTY-IMAGE-DESCRIPTION-1": "比較する写真を追加し",
+    "EMPTY-IMAGE-DESCRIPTION-2": "写真を分類してください。",
+    "DIALOG-TITLE": "分類項目を追加する",
+    "DIALOG-PLACEHOLDER": "入力してください",
+    "DIALOG-SUCCESS-TITLE": "保存に成功しました",
+    "DIALOG-SUCCESS-DESCRIPTION": "分類項目の追加に成功しました。",
+    "DIALOG-ERROR-NAME-EXISTS": "この名前は既に存在します。",
+    "DIALOG-ERROR-NAME-TOO-LONG": "50文字以内で入力してください。",
+    "CROP-DIALOG-TITLE": "クロップをやり直す",
+    "CROP-DIALOG-SELECT-AREA": "クロップする領域を選択してください",
+    "CROP-DIALOG-INSTRUCTIONS-1": "元の写真からクロップ領域を再指定してください。",
+    "CROP-DIALOG-INSTRUCTIONS-2": "青い領域のサイズを調整してクロップ領域を指定します。",
+    "CROP-DIALOG-SELECT-PLAYER": "プレイヤーを選択してください",
+    "CROP-DIALOG-SELECT-PERSON": "人を選択してください",
+    "CROP-DIALOG-CONFIRM": "確認",
+    "CROP-DIALOG-CANCEL": "キャンセル"
   }
 }

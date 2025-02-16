@@ -90,7 +90,28 @@
     "TUTORIAL-STEP-2": "يمكنك استخراج والتحقق فقط من الوجوه في الصور!",
     "TUTORIAL-STEP-3": "يجب عليك اختيار نفسك وتصنيف هدف مقارنة واحد على الأقل.",
     "TUTORIAL-STEP-4": "يمكنك إعادة اقتصاص الصور يدويًا أو حذفها!",
+    "TUTORIAL-STEP-5": "بمجرد اكتمال التحديد، اضغط على الزر!",
     "BUTTON-BACK": "العودة",
-    "BUTTON-HELP": "مساعدة"
+    "BUTTON-HELP": "مساعدة",
+    "SELECT-PICTURE-TITLE": "يرجى تحديد الصور للمقارنة"
+  },
+  "IMAGES": {
+    "EMPTY-IMAGE-TITLE": "يرجى إضافة الصور للمقارنة.",
+    "EMPTY-IMAGE-DESCRIPTION-1": "أضف الصور للمقارنة",
+    "EMPTY-IMAGE-DESCRIPTION-2": "يرجى تصنيف الصور.",
+    "DIALOG-TITLE": "إضافة عنصر تصنيف",
+    "DIALOG-PLACEHOLDER": "الرجاء إدخال",
+    "DIALOG-SUCCESS-TITLE": "تم الحفظ بنجاح",
+    "DIALOG-SUCCESS-DESCRIPTION": "تمت إضافة عنصر التصنيف بنجاح.",
+    "DIALOG-ERROR-NAME-EXISTS": "هذا الاسم موجود بالفعل.",
+    "DIALOG-ERROR-NAME-TOO-LONG": "يرجى إدخال 50 حرفًا أو أقل.",
+    "CROP-DIALOG-TITLE": "إعادة الاقتصاص",
+    "CROP-DIALOG-SELECT-AREA": "يرجى تحديد المنطقة المراد اقتصاصها",
+    "CROP-DIALOG-INSTRUCTIONS-1": "يرجى إعادة تحديد منطقة الاقتصاص من الصورة الأصلية.",
+    "CROP-DIALOG-INSTRUCTIONS-2": "قم بضبط المنطقة الزرقاء لتحديد منطقة الاقتصاص.",
+    "CROP-DIALOG-SELECT-PLAYER": "الرجاء اختيار لاعب",
+    "CROP-DIALOG-SELECT-PERSON": "الرجاء اختيار شخص",
+    "CROP-DIALOG-CONFIRM": "تأكيد",
+    "CROP-DIALOG-CANCEL": "إلغاء"
   }
 }
