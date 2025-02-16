@@ -1,3 +1,6 @@
+"use client";
+
+import { useTranslations } from "next-intl";
 import React from "react";
 
 import { ImageMetadata } from "@/features/ImageSelector/models";
@@ -25,6 +28,8 @@ const RemoveTemplateDialog: React.FC<RemoveTemplateDialogProps> = ({
   onChangeVisible,
   onSubmit,
 }) => {
+  const t = useTranslations();
+
   return (
     <AlertDialog swipePercent={0.2} className="min-h-[21rem]" isVisible={isVisible} onChangeVisible={onChangeVisible}>
       <AlertDialog.Header className="flex flex-col gap-[1.1rem]">
@@ -35,7 +40,7 @@ const RemoveTemplateDialog: React.FC<RemoveTemplateDialogProps> = ({
       <AlertDialog.Body className="flex flex-row gap-4 grow items-center justify-between py-6 px-6">
         <div className="w-[80%] h-full justify-center flex text-text-01 flex-col body-2">
           <p>{description}</p>
-          <p>삭제를 완료후 되돌리기 어렵습니다.</p>
+          <p>{t("RemoveTemplateDialog.warning")}</p>
         </div>
         <div>
           <Image
@@ -55,8 +60,8 @@ const RemoveTemplateDialog: React.FC<RemoveTemplateDialogProps> = ({
        * to show both Cancel and Submit actions
        **/}
       <AlertDialog.SubmitForm
-        submitText="확인"
-        cancelText="취소"
+        submitText={t("RemoveTemplateDialog.confirm")}
+        cancelText={t("RemoveTemplateDialog.cancel")}
         cancelButtonProps={{
           variant: "errorLine",
         }}

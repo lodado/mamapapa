@@ -112,6 +112,20 @@
     "CROP-DIALOG-SELECT-PLAYER": "โปรดเลือกผู้เล่น",
     "CROP-DIALOG-SELECT-PERSON": "โปรดเลือกบุคคล",
     "CROP-DIALOG-CONFIRM": "ยืนยัน",
-    "CROP-DIALOG-CANCEL": "ยกเลิก"
+    "CROP-DIALOG-CANCEL": "ยกเลิก",
+    "ImageLists-unselected": "ไม่ได้เลือก",
+    "ImageLists-add_new": "เพิ่มใหม่",
+    "ImageLists-recrop": "ครอบใหม่",
+    "ImageLists-delete": "ลบ",
+    "ImageLists-unrecognized": "ไม่รู้จัก",
+    "RemoveImageDialog-title": "ลบรูปภาพ",
+    "RemoveImageDialog-description": "คุณแน่ใจหรือไม่ว่าต้องการลบรูปภาพเปรียบเทียบ?",
+    "RemoveImageDialog-success_title": "ลบสำเร็จ",
+    "RemoveImageDialog-success_description": "ลบรูปภาพสำเร็จแล้ว"
+  },
+  "RemoveTemplateDialog": {
+    "warning": "เมื่อถูกลบแล้ว การกระทำนี้จะไม่สามารถย้อนกลับได้",
+    "confirm": "ยืนยัน",
+    "cancel": "ยกเลิก"
   }
 }

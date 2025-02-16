@@ -112,6 +112,20 @@
     "CROP-DIALOG-SELECT-PLAYER": "Lütfen bir oyuncu seçin",
     "CROP-DIALOG-SELECT-PERSON": "Lütfen bir kişi seçin",
     "CROP-DIALOG-CONFIRM": "Onayla",
-    "CROP-DIALOG-CANCEL": "İptal"
+    "CROP-DIALOG-CANCEL": "İptal",
+    "ImageLists-unselected": "Seçilmedi",
+    "ImageLists-add_new": "Yeni ekle",
+    "ImageLists-recrop": "Yeniden kırp",
+    "ImageLists-delete": "Sil",
+    "ImageLists-unrecognized": "Tanınmıyor",
+    "RemoveImageDialog-title": "Fotoğrafı Sil",
+    "RemoveImageDialog-description": "Karşılaştırma fotoğrafını silmek istediğinizden emin misiniz?",
+    "RemoveImageDialog-success_title": "Silme Başarılı",
+    "RemoveImageDialog-success_description": "Fotoğraf başarıyla silindi."
+  },
+  "RemoveTemplateDialog": {
+    "warning": "Silindikten sonra bu işlem geri alınamaz.",
+    "confirm": "Onayla",
+    "cancel": "İptal"
   }
 }

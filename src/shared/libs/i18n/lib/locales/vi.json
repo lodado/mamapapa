@@ -112,6 +112,20 @@
     "CROP-DIALOG-SELECT-PLAYER": "Vui lòng chọn một người chơi",
     "CROP-DIALOG-SELECT-PERSON": "Vui lòng chọn một người",
     "CROP-DIALOG-CONFIRM": "Xác nhận",
-    "CROP-DIALOG-CANCEL": "Hủy"
+    "CROP-DIALOG-CANCEL": "Hủy",
+    "ImageLists-unselected": "Chưa chọn",
+    "ImageLists-add_new": "Thêm mới",
+    "ImageLists-recrop": "Cắt lại",
+    "ImageLists-delete": "Xóa",
+    "ImageLists-unrecognized": "Không nhận diện",
+    "RemoveImageDialog-title": "Xóa ảnh",
+    "RemoveImageDialog-description": "Bạn có chắc chắn muốn xóa ảnh so sánh không?",
+    "RemoveImageDialog-success_title": "Xóa thành công",
+    "RemoveImageDialog-success_description": "Ảnh đã được xóa thành công."
+  },
+  "RemoveTemplateDialog": {
+    "warning": "Sau khi xóa, hành động này không thể được hoàn tác.",
+    "confirm": "Xác nhận",
+    "cancel": "Hủy"
   }
 }

@@ -112,6 +112,20 @@
     "CROP-DIALOG-SELECT-PLAYER": "कृपया एक खिलाड़ी चुनें",
     "CROP-DIALOG-SELECT-PERSON": "कृपया एक व्यक्ति चुनें",
     "CROP-DIALOG-CONFIRM": "पुष्टि करें",
-    "CROP-DIALOG-CANCEL": "रद्द करें"
+    "CROP-DIALOG-CANCEL": "रद्द करें",
+    "ImageLists-unselected": "अचयनित",
+    "ImageLists-add_new": "नया जोड़ें",
+    "ImageLists-recrop": "पुनः क्रॉप करें",
+    "ImageLists-delete": "हटाएं",
+    "ImageLists-unrecognized": "अमान्य",
+    "RemoveImageDialog-title": "फोटो हटाएं",
+    "RemoveImageDialog-description": "क्या आप वाकई तुलना करने वाली तस्वीर हटाना चाहते हैं?",
+    "RemoveImageDialog-success_title": "हटाना सफल",
+    "RemoveImageDialog-success_description": "फोटो सफलतापूर्वक हटा दी गई।"
+  },
+  "RemoveTemplateDialog": {
+    "warning": "हटाने के बाद इसे वापस नहीं किया जा सकता।",
+    "confirm": "पुष्टि करें",
+    "cancel": "रद्द करें"
   }
 }

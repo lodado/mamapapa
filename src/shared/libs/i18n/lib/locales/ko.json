@@ -112,6 +112,20 @@
     "CROP-DIALOG-SELECT-PLAYER": "사진을 분류해주세요",
     "CROP-DIALOG-SELECT-PERSON": "사람을 선택해주세요.",
     "CROP-DIALOG-CONFIRM": "완료",
-    "CROP-DIALOG-CANCEL": "되돌리기"
+    "CROP-DIALOG-CANCEL": "되돌리기",
+    "ImageLists-unselected": "미선택",
+    "ImageLists-add_new": "새로 추가하기",
+    "ImageLists-recrop": "크롭 다시하기",
+    "ImageLists-delete": "삭제하기",
+    "ImageLists-unrecognized": "미인식",
+    "RemoveImageDialog-title": "사진 삭제",
+    "RemoveImageDialog-description": "비교할 사진을 정말로 삭제하시겠습니까?",
+    "RemoveImageDialog-success_title": "삭제 성공",
+    "RemoveImageDialog-success_description": "사진 삭제에 성공했습니다."
+  },
+  "RemoveTemplateDialog": {
+    "warning": "삭제를 완료 후 되돌리기 어렵습니다.",
+    "confirm": "확인",
+    "cancel": "취소"
   }
 }

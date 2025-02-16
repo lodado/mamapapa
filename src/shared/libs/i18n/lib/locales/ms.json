@@ -112,6 +112,20 @@
     "CROP-DIALOG-SELECT-PLAYER": "Sila pilih pemain",
     "CROP-DIALOG-SELECT-PERSON": "Sila pilih seseorang",
     "CROP-DIALOG-CONFIRM": "Sahkan",
-    "CROP-DIALOG-CANCEL": "Batal"
+    "CROP-DIALOG-CANCEL": "Batal",
+    "ImageLists-unselected": "Tidak dipilih",
+    "ImageLists-add_new": "Tambah baru",
+    "ImageLists-recrop": "Pangkas semula",
+    "ImageLists-delete": "Padam",
+    "ImageLists-unrecognized": "Tidak dikenali",
+    "RemoveImageDialog-title": "Padam Foto",
+    "RemoveImageDialog-description": "Adakah anda pasti mahu memadam foto perbandingan?",
+    "RemoveImageDialog-success_title": "Pemadaman Berjaya",
+    "RemoveImageDialog-success_description": "Foto berjaya dipadamkan."
+  },
+  "RemoveTemplateDialog": {
+    "warning": "Setelah dipadam, tindakan ini tidak boleh dibatalkan.",
+    "confirm": "Sahkan",
+    "cancel": "Batal"
   }
 }

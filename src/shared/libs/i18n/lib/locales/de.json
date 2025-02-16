@@ -112,6 +112,20 @@
     "CROP-DIALOG-SELECT-PLAYER": "Bitte wählen Sie einen Spieler",
     "CROP-DIALOG-SELECT-PERSON": "Bitte wählen Sie eine Person",
     "CROP-DIALOG-CONFIRM": "Bestätigen",
-    "CROP-DIALOG-CANCEL": "Abbrechen"
+    "CROP-DIALOG-CANCEL": "Abbrechen",
+    "ImageLists-unselected": "Nicht ausgewählt",
+    "ImageLists-add_new": "Neu hinzufügen",
+    "ImageLists-recrop": "Erneut zuschneiden",
+    "ImageLists-delete": "Löschen",
+    "ImageLists-unrecognized": "Nicht erkannt",
+    "RemoveImageDialog-title": "Foto löschen",
+    "RemoveImageDialog-description": "Sind Sie sicher, dass Sie das Vergleichsfoto löschen möchten?",
+    "RemoveImageDialog-success_title": "Löschen erfolgreich",
+    "RemoveImageDialog-success_description": "Das Foto wurde erfolgreich gelöscht."
+  },
+  "RemoveTemplateDialog": {
+    "warning": "Nach dem Löschen kann diese Aktion nicht rückgängig gemacht werden.",
+    "confirm": "Bestätigen",
+    "cancel": "Abbrechen"
   }
 }

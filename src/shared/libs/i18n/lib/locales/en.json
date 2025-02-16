@@ -112,6 +112,20 @@
     "CROP-DIALOG-SELECT-PLAYER": "Please select a player",
     "CROP-DIALOG-SELECT-PERSON": "Please select a person",
     "CROP-DIALOG-CONFIRM": "Confirm",
-    "CROP-DIALOG-CANCEL": "Cancel"
+    "CROP-DIALOG-CANCEL": "Cancel",
+    "ImageLists-unselected": "Unselected",
+    "ImageLists-add_new": "Add New",
+    "ImageLists-recrop": "Recrop",
+    "ImageLists-delete": "Delete",
+    "ImageLists-unrecognized": "Unrecognized",
+    "RemoveImageDialog-title": "Delete Photo",
+    "RemoveImageDialog-description": "Are you sure you want to delete the comparison photo?",
+    "RemoveImageDialog-success_title": "Delete Successful",
+    "RemoveImageDialog-success_description": "The photo was successfully deleted."
+  },
+  "RemoveTemplateDialog": {
+    "warning": "Once deleted, this action cannot be undone.",
+    "confirm": "Confirm",
+    "cancel": "Cancel"
   }
 }

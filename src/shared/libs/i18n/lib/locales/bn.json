@@ -112,6 +112,20 @@
     "CROP-DIALOG-SELECT-PLAYER": "একজন খেলোয়াড় নির্বাচন করুন",
     "CROP-DIALOG-SELECT-PERSON": "একজন ব্যক্তিকে নির্বাচন করুন",
     "CROP-DIALOG-CONFIRM": "নিশ্চিত করুন",
-    "CROP-DIALOG-CANCEL": "বাতিল করুন"
+    "CROP-DIALOG-CANCEL": "বাতিল করুন",
+    "ImageLists-unselected": "অচয়নিত",
+    "ImageLists-add_new": "নতুন যোগ করুন",
+    "ImageLists-recrop": "পুনরায় ক্রপ করুন",
+    "ImageLists-delete": "মুছুন",
+    "ImageLists-unrecognized": "অপরিচিত",
+    "RemoveImageDialog-title": "ছবি মুছুন",
+    "RemoveImageDialog-description": "আপনি কি নিশ্চিত যে আপনি তুলনামূলক ছবিটি মুছতে চান?",
+    "RemoveImageDialog-success_title": "মুছে ফেলা সফল",
+    "RemoveImageDialog-success_description": "ছবি সফলভাবে মুছে ফেলা হয়েছে।"
+  },
+  "RemoveTemplateDialog": {
+    "warning": "মুছে ফেলার পর, এটি পুনরুদ্ধার করা সম্ভব নয়।",
+    "confirm": "নিশ্চিত করুন",
+    "cancel": "বাতিল করুন"
   }
 }

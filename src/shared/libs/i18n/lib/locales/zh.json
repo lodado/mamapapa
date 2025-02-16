@@ -112,6 +112,20 @@
     "CROP-DIALOG-SELECT-PLAYER": "请选择一个玩家",
     "CROP-DIALOG-SELECT-PERSON": "请选择一个人",
     "CROP-DIALOG-CONFIRM": "确认",
-    "CROP-DIALOG-CANCEL": "取消"
+    "CROP-DIALOG-CANCEL": "取消",
+    "ImageLists-unselected": "未选择",
+    "ImageLists-add_new": "新增",
+    "ImageLists-recrop": "重新裁剪",
+    "ImageLists-delete": "删除",
+    "ImageLists-unrecognized": "未识别",
+    "RemoveImageDialog-title": "删除照片",
+    "RemoveImageDialog-description": "您确定要删除对比照片吗？",
+    "RemoveImageDialog-success_title": "删除成功",
+    "RemoveImageDialog-success_description": "照片已成功删除。"
+  },
+  "RemoveTemplateDialog": {
+    "warning": "删除后将无法撤销此操作。",
+    "confirm": "确认",
+    "cancel": "取消"
   }
 }

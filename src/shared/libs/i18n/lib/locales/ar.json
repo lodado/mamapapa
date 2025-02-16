@@ -112,6 +112,20 @@
     "CROP-DIALOG-SELECT-PLAYER": "الرجاء اختيار لاعب",
     "CROP-DIALOG-SELECT-PERSON": "الرجاء اختيار شخص",
     "CROP-DIALOG-CONFIRM": "تأكيد",
-    "CROP-DIALOG-CANCEL": "إلغاء"
+    "CROP-DIALOG-CANCEL": "إلغاء",
+    "ImageLists-unselected": "غير محدد",
+    "ImageLists-add_new": "إضافة جديد",
+    "ImageLists-recrop": "إعادة الاقتصاص",
+    "ImageLists-delete": "حذف",
+    "ImageLists-unrecognized": "غير معترف به",
+    "RemoveImageDialog-title": "حذف الصورة",
+    "RemoveImageDialog-description": "هل أنت متأكد أنك تريد حذف صورة المقارنة؟",
+    "RemoveImageDialog-success_title": "تم الحذف بنجاح",
+    "RemoveImageDialog-success_description": "تم حذف الصورة بنجاح."
+  },
+  "RemoveTemplateDialog": {
+    "warning": "بمجرد الحذف، لا يمكن التراجع عن هذا الإجراء.",
+    "confirm": "تأكيد",
+    "cancel": "إلغاء"
   }
 }

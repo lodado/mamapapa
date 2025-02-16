@@ -112,6 +112,20 @@
     "CROP-DIALOG-SELECT-PLAYER": "Пожалуйста, выберите игрока",
     "CROP-DIALOG-SELECT-PERSON": "Пожалуйста, выберите человека",
     "CROP-DIALOG-CONFIRM": "Подтвердить",
-    "CROP-DIALOG-CANCEL": "Отмена"
+    "CROP-DIALOG-CANCEL": "Отмена",
+    "ImageLists-unselected": "Не выбрано",
+    "ImageLists-add_new": "Добавить новый",
+    "ImageLists-recrop": "Обрезать снова",
+    "ImageLists-delete": "Удалить",
+    "ImageLists-unrecognized": "Не распознано",
+    "RemoveImageDialog-title": "Удалить фото",
+    "RemoveImageDialog-description": "Вы уверены, что хотите удалить фото для сравнения?",
+    "RemoveImageDialog-success_title": "Удаление успешно",
+    "RemoveImageDialog-success_description": "Фото успешно удалено."
+  },
+  "RemoveTemplateDialog": {
+    "warning": "После удаления это действие нельзя отменить.",
+    "confirm": "Подтвердить",
+    "cancel": "Отмена"
   }
 }

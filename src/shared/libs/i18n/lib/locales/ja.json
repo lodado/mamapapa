@@ -112,6 +112,20 @@
     "CROP-DIALOG-SELECT-PLAYER": "プレイヤーを選択してください",
     "CROP-DIALOG-SELECT-PERSON": "人を選択してください",
     "CROP-DIALOG-CONFIRM": "確認",
-    "CROP-DIALOG-CANCEL": "キャンセル"
+    "CROP-DIALOG-CANCEL": "キャンセル",
+    "ImageLists-unselected": "未選択",
+    "ImageLists-add_new": "新しく追加",
+    "ImageLists-recrop": "再クロップ",
+    "ImageLists-delete": "削除",
+    "ImageLists-unrecognized": "認識されていません",
+    "RemoveImageDialog-title": "写真削除",
+    "RemoveImageDialog-description": "比較する写真を本当に削除しますか？",
+    "RemoveImageDialog-success_title": "削除成功",
+    "RemoveImageDialog-success_description": "写真が正常に削除されました。"
+  },
+  "RemoveTemplateDialog": {
+    "warning": "削除を完了すると、元に戻すことはできません。",
+    "confirm": "確認",
+    "cancel": "キャンセル"
   }
 }

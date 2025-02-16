@@ -112,6 +112,20 @@
     "CROP-DIALOG-SELECT-PLAYER": "Por favor, seleccione un jugador",
     "CROP-DIALOG-SELECT-PERSON": "Por favor, seleccione una persona",
     "CROP-DIALOG-CONFIRM": "Confirmar",
-    "CROP-DIALOG-CANCEL": "Cancelar"
+    "CROP-DIALOG-CANCEL": "Cancelar",
+    "ImageLists-unselected": "No seleccionado",
+    "ImageLists-add_new": "Agregar nuevo",
+    "ImageLists-recrop": "Recortar de nuevo",
+    "ImageLists-delete": "Eliminar",
+    "ImageLists-unrecognized": "No reconocido",
+    "RemoveImageDialog-title": "Eliminar foto",
+    "RemoveImageDialog-description": "¿Está seguro de que desea eliminar la foto de comparación?",
+    "RemoveImageDialog-success_title": "Eliminación exitosa",
+    "RemoveImageDialog-success_description": "La foto se eliminó correctamente."
+  },
+  "RemoveTemplateDialog": {
+    "warning": "Una vez eliminado, esta acción no se puede deshacer.",
+    "confirm": "Confirmar",
+    "cancel": "Cancelar"
   }
 }
