@@ -47,7 +47,7 @@ const Page = async ({ params }: { params: { locale: string } }) => {
               <BodySvg />
             </div>
 
-            <h1 className="display-1 flex flex-row justify-center mb-2 w-full text-text-01 items-center">
+            <h1 className="display-1 flex flex-row text-center justify-center mb-2 w-full text-text-01 items-center">
               {t("TITLE")}
             </h1>
 
