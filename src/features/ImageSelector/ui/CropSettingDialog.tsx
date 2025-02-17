@@ -101,7 +101,7 @@ const CropSettingDialog: React.FC<CropSettingDialogProps> = ({
               {imageMetadata?.selectedPlayer ?? t("CROP-DIALOG-SELECT-PLAYER")}
             </Dropdown.Trigger>
             <Dropdown.Content className="w-screen md:w-[calc(768px-5rem)]">
-              {Array.from(players.keys())?.map((key: string) => {
+              {Array.from(players.values())?.map((key: string) => {
                 return (
                   <Dropdown.Item
                     key={key}

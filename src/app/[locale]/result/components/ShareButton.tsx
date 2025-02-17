@@ -1,9 +1,10 @@
 "use client";
 
 import { useRouter } from "next/navigation";
+import { useTranslations } from "next-intl";
 import React, { useCallback, useMemo } from "react";
 
-import { USER_PLAYER_NAME } from "@/entities";
+import { USER_PLAYER_NAME_INTI_KEY } from "@/entities";
 import { useAuthStore } from "@/entities/Auth/client/models/store/AuthStore";
 import { ImageMetadata, useImageSelectorStore } from "@/features/ImageSelector/models";
 import { IndexedDBController } from "@/shared";
@@ -15,6 +16,7 @@ import { cosineSimilarity, cosineToPercentage } from "@/widgets/ImagePrediction"
 import { picturesSubmitApi } from "../api/picturesSubmitApi";
 
 const ShareButton = () => {
+  const t = useTranslations();
   const imageContainer = useMemo(() => new IndexedDBController<ImageMetadata[]>("IMG_CONTAINER"), []);
   const { onSubmit } = useServerAction(picturesSubmitApi);
   const { isLoading, setLoading } = useLoadingStore();
@@ -25,7 +27,7 @@ const ShareButton = () => {
 
   const handleSubmitFormData = async () => {
     setLoading(true);
-    const playerImage = images.find((image) => image.selectedPlayer === USER_PLAYER_NAME)!;
+    const playerImage = images.find((image) => image.selectedPlayer === t(USER_PLAYER_NAME_INTI_KEY))!;
 
     try {
       const formData = new FormData();

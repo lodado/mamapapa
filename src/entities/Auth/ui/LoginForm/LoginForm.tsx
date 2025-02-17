@@ -17,11 +17,11 @@ const LoginForm = ({ afterCallback }: { afterCallback?: () => void }) => {
   return (
     <div className="w-full flex flex-col items-start gap-2.5 relative self-stretch h-[220px] flex-[0_0_auto]">
       <div className="w-full flex flex-col justify-center items-center text-center body-2 text-black">
-        <span>닮은꼴 비교하기를 서로 공유하고</span>
-        <span>피드백을 받아볼 수 있습니다.</span>
+        <span>{t("share_comparison")}</span>
+        <span>{t("receive_feedback")}</span>
       </div>
 
-      <p className="w-full flex justify-center items-center text-center head-2 text-black">SNS 간편 로그인</p>
+      <p className="w-full flex justify-center items-center text-center head-2 text-black">{t("sns_login")}</p>
 
       <form action={onSubmit} className="flex justify-center items-center flex-row w-full gap-2">
         <input className="hidden" hidden name="href" value={(isClient ? window?.location.href : "") ?? ""} />
@@ -40,4 +40,5 @@ const LoginForm = ({ afterCallback }: { afterCallback?: () => void }) => {
     </div>
   );
 };
+
 export default LoginForm;

@@ -3,7 +3,6 @@
 import { useTranslations } from "next-intl";
 import React from "react";
 
-import { USER_PLAYER_NAME } from "@/entities";
 import { ButtonLink } from "@/entities/Router";
 import { PAGE_ROUTE } from "@/entities/Router/configs/route";
 import { useFaceModelStore } from "@/features/AiModel/model";
@@ -19,7 +18,7 @@ const CompareButtonLink = () => {
   const { faceRecognitionModel } = useFaceModelStore();
 
   const modelNotFound = !faceRecognitionModel;
-  const isUserPlayerNotSelected = images.every((image) => image.selectedPlayer !== USER_PLAYER_NAME);
+  const isUserPlayerNotSelected = images.every((image) => image.selectedPlayer !== t("PLAYERS.Myself"));
   const isLessThanTwoPlayersSelected =
     new Set(images.filter((image) => !!image.selectedPlayer).map((image) => image.selectedPlayer)).size <= 1;
   const isAnyFaceNotRecognized = images

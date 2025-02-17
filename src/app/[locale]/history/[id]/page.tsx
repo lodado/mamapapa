@@ -1,7 +1,8 @@
+import { getTranslations } from "next-intl/server";
 import React from "react";
 
 import { EDGE_DI_REPOSITORY } from "@/DI/edge.server";
-import { LoginButton, USER_PLAYER_NAME } from "@/entities";
+import { LoginButton, USER_PLAYER_NAME_INTI_KEY } from "@/entities";
 import { GetUserInfoUseCase } from "@/entities/Auth/core";
 import { ButtonLink } from "@/entities/Router";
 import { PAGE_ROUTE } from "@/entities/Router/configs/route";
@@ -21,6 +22,7 @@ export const dynamicParams = true;
 
 const Page = async ({ params }: { params: { id: string } }) => {
   const { id } = params;
+  const t = await getTranslations();
 
   const { data, error } = await getCachedCompareHistory(id)();
 
@@ -32,7 +34,7 @@ const Page = async ({ params }: { params: { id: string } }) => {
   }
 
   const comparisonList = JSON.parse(data?.imageList || []) as ComparisonMetaData[];
-  const playerImage = comparisonList.find((image) => image.selectedPlayer === USER_PLAYER_NAME)!;
+  const playerImage = comparisonList.find((image) => image.selectedPlayer === t(USER_PLAYER_NAME_INTI_KEY))!;
 
   const title = data.title;
   const createdAt = data.createdAt;
