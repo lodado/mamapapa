@@ -16,7 +16,7 @@ import { cosineSimilarity, cosineToPercentage } from "@/widgets/ImagePrediction"
 import { picturesSubmitApi } from "../api/picturesSubmitApi";
 
 const ShareButton = () => {
-  const t = useTranslations("ShareButton");
+  const t = useTranslations();
   const { onSubmit } = useServerAction(picturesSubmitApi);
   const { isLoading, setLoading } = useLoadingStore();
 
@@ -108,7 +108,7 @@ const ShareButton = () => {
         onClick={handleShareButtonClick}
         disabled={isLoading && !images.every((image) => image.embedding != undefined)}
       >
-        {t("share")}
+        {t("ShareButton.share")}
       </Button>
     </div>
   );
