@@ -1,6 +1,7 @@
 "use client";
 
 import { ChevronLeft } from "lucide-react";
+import { useTranslations } from "next-intl";
 import React from "react";
 
 import { LocaleLink } from "@/entities/Router";
@@ -8,7 +9,8 @@ import { PAGE_ROUTE } from "@/entities/Router/configs/route";
 import { Header } from "@/features";
 import { useScrollTrigger } from "@/shared/hooks";
 
-const FacePageHeader = () => {
+const ResultPageHeader = () => {
+  const t = useTranslations("ResultPage");
   const { triggered: hideSecondLine } = useScrollTrigger({ threshold: 150 });
 
   return (
@@ -21,7 +23,7 @@ const FacePageHeader = () => {
               href={PAGE_ROUTE.FACES}
             >
               <ChevronLeft width={20} height={24} strokeWidth={3} />
-              뒤로 가기
+              {t("go_back")}
             </LocaleLink>
           </Header>
           <div className="w-full h-[4rem] flex-shrink-0" role="none presentation" />
@@ -35,7 +37,7 @@ const FacePageHeader = () => {
         `}
         >
           <h1 className="md:w-[768px] top-[4rem] h-[3rem] display-2 pb-2 flex flex-row justify-start mb-2 w-full text-text-01 px-[1rem] items-center ">
-            <span className="h-[2.25rem]">닮은꼴 비교하기</span>
+            <span className="h-[2.25rem]">{t("compare_faces")}</span>
           </h1>
         </div>
       </div>
@@ -44,4 +46,4 @@ const FacePageHeader = () => {
   );
 };
 
-export default FacePageHeader;
+export default ResultPageHeader;

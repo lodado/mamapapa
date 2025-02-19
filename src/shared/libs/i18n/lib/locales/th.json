@@ -12,7 +12,10 @@
   "LoginForm": {
     "KakaoButton": "สมัครด้วย Kakao",
     "GoogleButton": "สมัครด้วย Google",
-    "GithubButton": "สมัครด้วย GitHub"
+    "GithubButton": "สมัครด้วย GitHub",
+    "share_comparison": "แชร์การเปรียบเทียบความคล้ายคลึงกัน",
+    "receive_feedback": "รับความคิดเห็น",
+    "sns_login": "เข้าสู่ระบบ SNS ง่าย"
   },
   "loginButton": {
     "login": "เข้าสู่ระบบ"
@@ -138,5 +141,20 @@
     "placeholder": "กรุณาใส่",
     "confirm": "ยืนยัน",
     "cancel": "ยกเลิก"
+  },
+  "LoginFormDialog": {
+    "please_login": "Vui lòng đăng nhập"
+  },
+  "ResultPage": {
+    "return_home": "กลับไปที่หน้าหลัก",
+    "go_back": "กลับ",
+    "compare_faces": "เปรียบเทียบใบหน้าคล้ายกัน"
+  },
+  "ImagePrediction": {
+    "similarity_text": "[{player}] และ [{comparison}] เป็น",
+    "looks_similar": "ดูคล้ายกัน"
+  },
+  "ShareButton": {
+    "share": "แชร์"
   }
 }

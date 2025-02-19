@@ -12,7 +12,10 @@
   "LoginForm": {
     "KakaoButton": "카카오로 회원가입하기",
     "GoogleButton": "구글로 회원가입하기",
-    "GithubButton": "깃허브로 회원가입하기"
+    "GithubButton": "깃허브로 회원가입하기",
+    "share_comparison": "닮은꼴 비교하기를 서로 공유하고",
+    "receive_feedback": "피드백을 받아볼 수 있습니다.",
+    "sns_login": "SNS 간편 로그인"
   },
   "loginButton": {
     "login": "로그인"
@@ -138,5 +141,20 @@
     "placeholder": "입력해주세요",
     "confirm": "확인",
     "cancel": "취소"
+  },
+  "LoginFormDialog": {
+    "please_login": "LoginFormDialog.please_login"
+  },
+  "ResultPage": {
+    "return_home": "처음 화면으로 돌아가기",
+    "go_back": "뒤로 가기",
+    "compare_faces": "닮은꼴 비교하기"
+  },
+  "ImagePrediction": {
+    "similarity_text": "[{player}]와 [{comparison}]는",
+    "looks_similar": "닮았습니다."
+  },
+  "ShareButton": {
+    "share": "공유하기"
   }
 }

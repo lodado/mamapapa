@@ -12,7 +12,10 @@
   "LoginForm": {
     "KakaoButton": "Inscrivez-vous avec Kakao",
     "GoogleButton": "Inscrivez-vous avec Google",
-    "GithubButton": "Inscrivez-vous avec GitHub"
+    "GithubButton": "Inscrivez-vous avec GitHub",
+    "share_comparison": "Partagez des comparaisons de sosies",
+    "receive_feedback": "Recevez des commentaires",
+    "sns_login": "Connexion SNS facile"
   },
   "loginButton": {
     "login": "Connexion"
@@ -138,5 +141,20 @@
     "placeholder": "Veuillez entrer",
     "confirm": "Confirmer",
     "cancel": "Annuler"
+  },
+  "LoginFormDialog": {
+    "please_login": "कृपया लॉग इन करें"
+  },
+  "ResultPage": {
+    "return_home": "Retourner à l'écran d'accueil",
+    "go_back": "Retour",
+    "compare_faces": "Comparer les sosies"
+  },
+  "ImagePrediction": {
+    "similarity_text": "[{player}] et [{comparison}] sont",
+    "looks_similar": "Se ressemblent."
+  },
+  "ShareButton": {
+    "share": "Partager"
   }
 }

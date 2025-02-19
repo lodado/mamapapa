@@ -12,7 +12,10 @@
   "LoginForm": {
     "KakaoButton": "カカオで登録",
     "GoogleButton": "Googleで登録",
-    "GithubButton": "GitHubで登録"
+    "GithubButton": "GitHubで登録",
+    "share_comparison": "似た顔の比較を共有する",
+    "receive_feedback": "フィードバックを受け取ることができます",
+    "sns_login": "簡単SNSログイン"
   },
   "loginButton": {
     "login": "ログイン"
@@ -138,5 +141,20 @@
     "placeholder": "入力してください",
     "confirm": "確認",
     "cancel": "キャンセル"
+  },
+  "LoginFormDialog": {
+    "please_login": "Please log in"
+  },
+  "ResultPage": {
+    "return_home": "ホーム画面に戻る",
+    "go_back": "戻る",
+    "compare_faces": "似た顔を比較"
+  },
+  "ImagePrediction": {
+    "similarity_text": "[{player}]と[{comparison}]は",
+    "looks_similar": "似ています。"
+  },
+  "ShareButton": {
+    "share": "共有する"
   }
 }

@@ -12,7 +12,10 @@
   "LoginForm": {
     "KakaoButton": "سجّل عبر Kakao",
     "GoogleButton": "سجّل عبر Google",
-    "GithubButton": "سجّل عبر GitHub"
+    "GithubButton": "سجّل عبر GitHub",
+    "share_comparison": "شارك مقارنات الشبه مع الآخرين",
+    "receive_feedback": "تلقي التعليقات",
+    "sns_login": "تسجيل الدخول السهل عبر SNS"
   },
   "loginButton": {
     "login": "تسجيل الدخول"
@@ -138,5 +141,20 @@
     "placeholder": "يرجى الإدخال",
     "confirm": "تأكيد",
     "cancel": "إلغاء"
+  },
+  "LoginFormDialog": {
+    "please_login": "Por favor, inicie sesión"
+  },
+  "ResultPage": {
+    "return_home": "العودة إلى الشاشة الرئيسية",
+    "go_back": "الرجوع",
+    "compare_faces": "مقارنة الشبه"
+  },
+  "ImagePrediction": {
+    "similarity_text": "[{player}] و[{comparison}] هما",
+    "looks_similar": "تبدو متشابهة."
+  },
+  "ShareButton": {
+    "share": "مشاركة"
   }
 }

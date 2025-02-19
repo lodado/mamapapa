@@ -12,7 +12,10 @@
   "LoginForm": {
     "KakaoButton": "Kakao ile kayıt ol",
     "GoogleButton": "Google ile kayıt ol",
-    "GithubButton": "GitHub ile kayıt ol"
+    "GithubButton": "GitHub ile kayıt ol",
+    "share_comparison": "Benzerlik karşılaştırmalarını paylaşın",
+    "receive_feedback": "Geri bildirim alın",
+    "sns_login": "Kolay SNS girişi"
   },
   "loginButton": {
     "login": "Giriş yap"
@@ -138,5 +141,20 @@
     "placeholder": "Lütfen girin",
     "confirm": "Onayla",
     "cancel": "İptal"
+  },
+  "LoginFormDialog": {
+    "please_login": "Bitte einloggen"
+  },
+  "ResultPage": {
+    "return_home": "Ana ekrana dön",
+    "go_back": "Geri dön",
+    "compare_faces": "Benzerlikleri karşılaştır"
+  },
+  "ImagePrediction": {
+    "similarity_text": "[{player}] ve [{comparison}] benzer",
+    "looks_similar": "Benzer görünüyor."
+  },
+  "ShareButton": {
+    "share": "Paylaş"
   }
 }

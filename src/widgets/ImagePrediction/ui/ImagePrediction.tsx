@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 import React from "react";
 
 import Simliarity0 from "/public/similarity0.svg";
@@ -16,6 +17,8 @@ const ImagePrediction = ({
   playerImage: ComparisonMetaData;
   comparisons: ComparisonMetaData[];
 }) => {
+  const t = useTranslations("ImagePrediction");
+
   return (
     <div className="w-full flex flex-col items-center p-4">
       {comparisons.map((comparison) => {
@@ -31,7 +34,11 @@ const ImagePrediction = ({
                 {similarity < 20 && <Simliarity0 />}
                 {similarity >= 20 && similarity < 50 && <Simliarity20 />}
                 {similarity >= 50 && similarity < 70 && <Simliarity50 />}
-                {similarity >= 70 && <Simliarity80 />}[{playerImage.selectedPlayer}]와 [{comparison.selectedPlayer}]는{" "}
+                {similarity >= 70 && <Simliarity80 />}
+                {t("similarity_text", {
+                  player: playerImage.selectedPlayer,
+                  comparison: comparison.selectedPlayer,
+                })}
                 <span
                   className={`underline
                   ${similarity < 20 ? "text-text-03" : ""}
@@ -44,7 +51,7 @@ const ImagePrediction = ({
                 </span>
               </p>
 
-              <p>닮았습니다.</p>
+              <p>{t("looks_similar")}</p>
             </div>
             <div className="w-full flex flex-row gap-[0.4688rem]">
               <div className="relative w-[50%]">

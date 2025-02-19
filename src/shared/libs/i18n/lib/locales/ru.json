@@ -12,7 +12,10 @@
   "LoginForm": {
     "KakaoButton": "Зарегистрироваться через Kakao",
     "GoogleButton": "Зарегистрироваться через Google",
-    "GithubButton": "Зарегистрироваться через GitHub"
+    "GithubButton": "Зарегистрироваться через GitHub",
+    "share_comparison": "Делитесь сравнением схожести",
+    "receive_feedback": "Получайте отзывы",
+    "sns_login": "Легкий вход через SNS"
   },
   "loginButton": {
     "login": "Войти"
@@ -138,5 +141,20 @@
     "placeholder": "Пожалуйста, введите",
     "confirm": "Подтвердить",
     "cancel": "Отмена"
+  },
+  "LoginFormDialog": {
+    "please_login": "Sila log masuk"
+  },
+  "ResultPage": {
+    "return_home": "Вернуться на главный экран",
+    "go_back": "Назад",
+    "compare_faces": "Сравнить схожие лица"
+  },
+  "ImagePrediction": {
+    "similarity_text": "[{player}] и [{comparison}] являются",
+    "looks_similar": "Выглядят похоже."
+  },
+  "ShareButton": {
+    "share": "Поделиться"
   }
 }

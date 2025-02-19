@@ -12,7 +12,10 @@
   "LoginForm": {
     "KakaoButton": "Inscreva-se com Kakao",
     "GoogleButton": "Inscreva-se com Google",
-    "GithubButton": "Inscreva-se com GitHub"
+    "GithubButton": "Inscreva-se com GitHub",
+    "share_comparison": "Compartilhe comparações de semelhança",
+    "receive_feedback": "Receba feedback",
+    "sns_login": "Login fácil via SNS"
   },
   "loginButton": {
     "login": "Entrar"
@@ -138,5 +141,20 @@
     "placeholder": "Por favor, insira",
     "confirm": "Confirmar",
     "cancel": "Cancelar"
+  },
+  "LoginFormDialog": {
+    "please_login": "দয়া করে লগইন করুন"
+  },
+  "ResultPage": {
+    "return_home": "Voltar para a tela inicial",
+    "go_back": "Voltar",
+    "compare_faces": "Comparar semelhanças"
+  },
+  "ImagePrediction": {
+    "similarity_text": "[{player}] e [{comparison}] são",
+    "looks_similar": "Parecem semelhantes."
+  },
+  "ShareButton": {
+    "share": "Compartilhar"
   }
 }

@@ -12,7 +12,10 @@
   "LoginForm": {
     "KakaoButton": "Đăng ký với Kakao",
     "GoogleButton": "Đăng ký với Google",
-    "GithubButton": "Đăng ký với GitHub"
+    "GithubButton": "Đăng ký với GitHub",
+    "share_comparison": "Chia sẻ so sánh tương đồng với nhau",
+    "receive_feedback": "Nhận phản hồi",
+    "sns_login": "Đăng nhập SNS dễ dàng"
   },
   "loginButton": {
     "login": "Đăng nhập"
@@ -138,5 +141,20 @@
     "placeholder": "Vui lòng nhập",
     "confirm": "Xác nhận",
     "cancel": "Hủy"
+  },
+  "LoginFormDialog": {
+    "please_login": "Effettua il login"
+  },
+  "ResultPage": {
+    "return_home": "Quay lại màn hình chính",
+    "go_back": "Quay lại",
+    "compare_faces": "So sánh gương mặt giống nhau"
+  },
+  "ImagePrediction": {
+    "similarity_text": "[{player}] và [{comparison}] là",
+    "looks_similar": "Trông giống nhau."
+  },
+  "ShareButton": {
+    "share": "Chia sẻ"
   }
 }

@@ -12,7 +12,10 @@
   "LoginForm": {
     "KakaoButton": "কাকাও দিয়ে সাইন আপ করুন",
     "GoogleButton": "গুগল দিয়ে সাইন আপ করুন",
-    "GithubButton": "গিটহাব দিয়ে সাইন আপ করুন"
+    "GithubButton": "গিটহাব দিয়ে সাইন আপ করুন",
+    "share_comparison": "একটি অপরের সাথে সাদৃশ্য তুলনা ভাগ করুন",
+    "receive_feedback": "প্রতিক্রিয়া গ্রহণ করুন",
+    "sns_login": "সহজ SNS লগইন"
   },
   "loginButton": {
     "login": "লগইন করুন"
@@ -138,5 +141,20 @@
     "placeholder": "অনুগ্রহ করে প্রবেশ করুন",
     "confirm": "নিশ্চিত করুন",
     "cancel": "বাতিল করুন"
+  },
+  "LoginFormDialog": {
+    "please_login": "الرجاء تسجيل الدخول"
+  },
+  "ResultPage": {
+    "return_home": "প্রধান পর্দায় ফিরে যান",
+    "go_back": "ফিরে যান",
+    "compare_faces": "সাদৃশ্য তুলনা করুন"
+  },
+  "ImagePrediction": {
+    "similarity_text": "[{player}] এবং [{comparison}] হল",
+    "looks_similar": "দেখতে একরকম।"
+  },
+  "ShareButton": {
+    "share": "শেয়ার করুন"
   }
 }

@@ -12,7 +12,10 @@
   "LoginForm": {
     "KakaoButton": "काकाओ से साइन अप करें",
     "GoogleButton": "Google से साइन अप करें",
-    "GithubButton": "GitHub से साइन अप करें"
+    "GithubButton": "GitHub से साइन अप करें",
+    "share_comparison": "एक-दूसरे से समानता तुलना साझा करें",
+    "receive_feedback": "प्रतिक्रिया प्राप्त करें",
+    "sns_login": "आसान एसएनएस लॉगिन"
   },
   "loginButton": {
     "login": "लॉग इन करें"
@@ -138,5 +141,20 @@
     "placeholder": "कृपया दर्ज करें",
     "confirm": "पुष्टि करें",
     "cancel": "रद्द करें"
+  },
+  "LoginFormDialog": {
+    "please_login": "请登录"
+  },
+  "ResultPage": {
+    "return_home": "मुख्य स्क्रीन पर लौटें",
+    "go_back": "वापस जाएं",
+    "compare_faces": "समान चेहरों की तुलना करें"
+  },
+  "ImagePrediction": {
+    "similarity_text": "[{player}] और [{comparison}] हैं",
+    "looks_similar": "समान दिखते हैं।"
+  },
+  "ShareButton": {
+    "share": "साझा करें"
   }
 }

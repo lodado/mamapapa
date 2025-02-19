@@ -12,7 +12,10 @@
   "LoginForm": {
     "KakaoButton": "Iscriviti con Kakao",
     "GoogleButton": "Iscriviti con Google",
-    "GithubButton": "Iscriviti con GitHub"
+    "GithubButton": "Iscriviti con GitHub",
+    "share_comparison": "Condividi confronti di somiglianza",
+    "receive_feedback": "Ricevi feedback",
+    "sns_login": "Accesso SNS facile"
   },
   "loginButton": {
     "login": "Accedi"
@@ -138,5 +141,20 @@
     "placeholder": "Si prega di inserire",
     "confirm": "Confermare",
     "cancel": "Annullare"
+  },
+  "LoginFormDialog": {
+    "please_login": "Silakan masuk"
+  },
+  "ResultPage": {
+    "return_home": "Torna alla schermata principale",
+    "go_back": "Torna indietro",
+    "compare_faces": "Confronta somiglianze"
+  },
+  "ImagePrediction": {
+    "similarity_text": "[{player}] e [{comparison}] sono",
+    "looks_similar": "Sembrano simili."
+  },
+  "ShareButton": {
+    "share": "Condividi"
   }
 }

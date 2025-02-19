@@ -12,7 +12,10 @@
   "LoginForm": {
     "KakaoButton": "通过Kakao注册",
     "GoogleButton": "通过Google注册",
-    "GithubButton": "通过GitHub注册"
+    "GithubButton": "通过GitHub注册",
+    "share_comparison": "分享相似比较",
+    "receive_feedback": "可以收到反馈",
+    "sns_login": "SNS快捷登录"
   },
   "loginButton": {
     "login": "登录"
@@ -138,5 +141,20 @@
     "placeholder": "请输入",
     "confirm": "确认",
     "cancel": "取消"
+  },
+  "LoginFormDialog": {
+    "please_login": "ログインしてください"
+  },
+  "ResultPage": {
+    "return_home": "返回主页面",
+    "go_back": "返回",
+    "compare_faces": "比较相似的面孔"
+  },
+  "ImagePrediction": {
+    "similarity_text": "[{player}]和[{comparison}]是",
+    "looks_similar": "看起来相似。"
+  },
+  "ShareButton": {
+    "share": "分享"
   }
 }

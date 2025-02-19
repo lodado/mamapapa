@@ -12,7 +12,10 @@
   "LoginForm": {
     "KakaoButton": "Daftar dengan Kakao",
     "GoogleButton": "Daftar dengan Google",
-    "GithubButton": "Daftar dengan GitHub"
+    "GithubButton": "Daftar dengan GitHub",
+    "share_comparison": "Kongsi perbandingan rupa dengan satu sama lain",
+    "receive_feedback": "Terima maklum balas",
+    "sns_login": "Log masuk SNS mudah"
   },
   "loginButton": {
     "login": "Log masuk"
@@ -138,5 +141,20 @@
     "placeholder": "Sila masukkan",
     "confirm": "Sahkan",
     "cancel": "Batal"
+  },
+  "LoginFormDialog": {
+    "please_login": "กรุณาเข้าสู่ระบบ"
+  },
+  "ResultPage": {
+    "return_home": "Kembali ke skrin utama",
+    "go_back": "Kembali",
+    "compare_faces": "Bandingkan wajah serupa"
+  },
+  "ImagePrediction": {
+    "similarity_text": "[{player}] dan [{comparison}] adalah",
+    "looks_similar": "Nampak serupa."
+  },
+  "ShareButton": {
+    "share": "Kongsi"
   }
 }
