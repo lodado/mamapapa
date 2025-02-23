@@ -29,17 +29,6 @@ export function generateViewport(): Viewport {
   };
 }
 
-export function generateMetadata(): Metadata {
-  return {
-    title: "Simmey",
-
-    icons: [
-      { rel: "apple-touch-icon", url: "/Logo.svg" },
-      { rel: "icon", url: "/Logo.svg" },
-    ],
-  };
-}
-
 /**
  * TO DO - pwa 관련 옵션 수정
  */

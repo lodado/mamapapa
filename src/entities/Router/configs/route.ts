@@ -4,4 +4,4 @@ export const PAGE_ROUTE = {
   RESULT: "/result",
 
   HISTORY_LIST: "/history",
-};
+} as const;
