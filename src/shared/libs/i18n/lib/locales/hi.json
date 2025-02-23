@@ -143,7 +143,7 @@
     "cancel": "रद्द करें"
   },
   "LoginFormDialog": {
-    "please_login": "请登录"
+    "please_login": "कृपया लॉग इन करें"
   },
   "ResultPage": {
     "return_home": "मुख्य स्क्रीन पर लौटें",
@@ -156,5 +156,42 @@
   },
   "ShareButton": {
     "share": "साझा करें"
+  },
+  "LoginPopupPage": {
+    "login_completed": "लॉगिन पूरा हो गया है। कृपया इस विंडो को बंद करें और पुनः प्रयास करें।"
+  },
+  "FORM": {
+    "TITLE-COMPARE-LOOKS": "समान दिखने वालों की तुलना करें"
+  },
+  "HistoryPage": {
+    "error_page_not_found": "पृष्ठ नहीं मिला!",
+    "go_to_homepage": "मुख्य पृष्ठ पर वापस जाएं"
+  },
+  "HistoryPageHeader": {
+    "rename_history": "इतिहास का नाम बदलें",
+    "delete_history": "इतिहास हटाएं"
+  },
+  "CommentInput": {
+    "error": "त्रुटि",
+    "cooldown_error_title": "कृपया बाद में पुनः प्रयास करें",
+    "cooldown_error_description": "आप बहुत जल्दी टाइप कर रहे हैं।",
+    "input_placeholder": "एक टिप्पणी दर्ज करें..."
+  },
+  "CopyLinkButton": {
+    "copy_success": "कॉपी सफल",
+    "copy_success_description": "URL कॉपी हो गया है।"
+  },
+  "UpdateHistoryTitleDialog": {
+    "dialog_title": "शीर्षक संपादित करें",
+    "success_title": "अपडेट सफल",
+    "success_description": "शीर्षक सफलतापूर्वक अपडेट किया गया है।",
+    "placeholder": "कृपया शीर्षक दर्ज करें",
+    "max_length_error": "अक्षरों या उससे कम।"
+  },
+  "RemoveCommentDialog": {
+    "dialog_title": "तुलना परिणाम हटाएं",
+    "dialog_description": "क्या आप वाकई इस परिणाम को हटाना चाहते हैं?",
+    "success_title": "हटाना सफल",
+    "success_description": "परिणाम सफलतापूर्वक हटा दिया गया है।"
   }
 }

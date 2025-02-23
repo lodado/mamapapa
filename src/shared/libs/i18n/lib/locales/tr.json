@@ -143,7 +143,7 @@
     "cancel": "İptal"
   },
   "LoginFormDialog": {
-    "please_login": "Bitte einloggen"
+    "please_login": "Lütfen giriş yapın"
   },
   "ResultPage": {
     "return_home": "Ana ekrana dön",
@@ -156,5 +156,42 @@
   },
   "ShareButton": {
     "share": "Paylaş"
+  },
+  "LoginPopupPage": {
+    "login_completed": "Giriş tamamlandı. Lütfen bu pencereyi kapatın ve tekrar deneyin."
+  },
+  "FORM": {
+    "TITLE-COMPARE-LOOKS": "Benzerlikleri karşılaştır"
+  },
+  "HistoryPage": {
+    "error_page_not_found": "Sayfa bulunamadı!",
+    "go_to_homepage": "Ana sayfaya geri dön"
+  },
+  "HistoryPageHeader": {
+    "rename_history": "Geçmişi Yeniden Adlandır",
+    "delete_history": "Geçmişi Sil"
+  },
+  "CommentInput": {
+    "error": "Hata",
+    "cooldown_error_title": "Lütfen daha sonra tekrar deneyin",
+    "cooldown_error_description": "Çok hızlı yazıyorsunuz.",
+    "input_placeholder": "Bir yorum girin..."
+  },
+  "CopyLinkButton": {
+    "copy_success": "Kopyalama Başarılı",
+    "copy_success_description": "URL kopyalandı."
+  },
+  "UpdateHistoryTitleDialog": {
+    "dialog_title": "Başlığı Düzenle",
+    "success_title": "Güncelleme Başarılı",
+    "success_description": "Başlık başarıyla güncellendi.",
+    "placeholder": "Lütfen bir başlık girin",
+    "max_length_error": "karakter veya daha az."
+  },
+  "RemoveCommentDialog": {
+    "dialog_title": "Karşılaştırma Sonucunu Sil",
+    "dialog_description": "Bu sonucu silmek istediğinizden emin misiniz?",
+    "success_title": "Başarıyla Silindi",
+    "success_description": "Sonuç başarıyla silindi."
   }
 }

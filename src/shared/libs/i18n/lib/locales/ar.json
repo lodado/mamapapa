@@ -143,7 +143,7 @@
     "cancel": "إلغاء"
   },
   "LoginFormDialog": {
-    "please_login": "Por favor, inicie sesión"
+    "please_login": "الرجاء تسجيل الدخول"
   },
   "ResultPage": {
     "return_home": "العودة إلى الشاشة الرئيسية",
@@ -156,5 +156,42 @@
   },
   "ShareButton": {
     "share": "مشاركة"
+  },
+  "LoginPopupPage": {
+    "login_completed": "تم تسجيل الدخول بنجاح. الرجاء إغلاق هذه النافذة والمحاولة مرة أخرى."
+  },
+  "FORM": {
+    "TITLE-COMPARE-LOOKS": "قارن بين الأشخاص المتشابهين"
+  },
+  "HistoryPage": {
+    "error_page_not_found": "الصفحة غير موجودة!",
+    "go_to_homepage": "العودة إلى الصفحة الرئيسية"
+  },
+  "HistoryPageHeader": {
+    "rename_history": "إعادة تسمية السجل",
+    "delete_history": "حذف السجل"
+  },
+  "CommentInput": {
+    "error": "خطأ",
+    "cooldown_error_title": "يرجى المحاولة مرة أخرى لاحقًا",
+    "cooldown_error_description": "أنت تكتب بسرعة كبيرة.",
+    "input_placeholder": "أدخل تعليقًا..."
+  },
+  "CopyLinkButton": {
+    "copy_success": "تم النسخ بنجاح",
+    "copy_success_description": "تم نسخ الرابط."
+  },
+  "UpdateHistoryTitleDialog": {
+    "dialog_title": "تحرير العنوان",
+    "success_title": "تم التحديث بنجاح",
+    "success_description": "تم تحديث العنوان بنجاح.",
+    "placeholder": "يرجى إدخال عنوان",
+    "max_length_error": "أو أقل من الأحرف."
+  },
+  "RemoveCommentDialog": {
+    "dialog_title": "حذف نتيجة المقارنة",
+    "dialog_description": "هل أنت متأكد أنك تريد حذف هذه النتيجة؟",
+    "success_title": "تم الحذف بنجاح",
+    "success_description": "تم حذف النتيجة بنجاح."
   }
 }

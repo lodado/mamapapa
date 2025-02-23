@@ -2,10 +2,11 @@
 
 import { useMutation } from "@tanstack/react-query";
 import { SquarePlus } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { useState } from "react";
 
 import { getQueryClient } from "@/shared";
-import { Button, IconButton, Input } from "@/shared/ui";
+import { IconButton, Input } from "@/shared/ui";
 import { useToastStore } from "@/shared/ui/Toast/stores";
 
 import { updateComments } from "../api/fetchComments";
@@ -14,6 +15,7 @@ import { getParsedBoardKey } from "../utils/constant";
 const COOLDOWN_TIME = 2000; // 2초 동안 제출 제한
 
 const CommentInput = ({ userId, boardId }: { userId: string; boardId: string }) => {
+  const t = useTranslations("CommentInput");
   const { addToast } = useToastStore();
   const [content, setContent] = useState("");
   const [lastSubmittedTime, setLastSubmittedTime] = useState(0);
@@ -29,7 +31,7 @@ const CommentInput = ({ userId, boardId }: { userId: string; boardId: string }) 
     },
     onError: (error) => {
       addToast({
-        title: "에러",
+        title: t("error"),
         description: `${error.message}`,
         type: "error",
       });
@@ -43,8 +45,8 @@ const CommentInput = ({ userId, boardId }: { userId: string; boardId: string }) 
     const now = Date.now();
     if (now - lastSubmittedTime < COOLDOWN_TIME) {
       addToast({
-        title: "잠시 후에 다시 시도해주세요",
-        description: "너무 빠르게 입력하셨습니다.",
+        title: t("cooldown_error_title"),
+        description: t("cooldown_error_description"),
         type: "error",
       });
       return;
@@ -63,7 +65,7 @@ const CommentInput = ({ userId, boardId }: { userId: string; boardId: string }) 
         setValue={(newValue) => {
           setContent(newValue);
         }}
-        placeholder="댓글을 입력하세요..."
+        placeholder={t("input_placeholder")}
       />
 
       <div>

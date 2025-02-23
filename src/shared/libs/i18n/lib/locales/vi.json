@@ -143,7 +143,7 @@
     "cancel": "Hủy"
   },
   "LoginFormDialog": {
-    "please_login": "Effettua il login"
+    "please_login": "Vui lòng đăng nhập"
   },
   "ResultPage": {
     "return_home": "Quay lại màn hình chính",
@@ -156,5 +156,42 @@
   },
   "ShareButton": {
     "share": "Chia sẻ"
+  },
+  "LoginPopupPage": {
+    "login_completed": "Đăng nhập đã hoàn tất. Vui lòng đóng cửa sổ này và thử lại."
+  },
+  "FORM": {
+    "TITLE-COMPARE-LOOKS": "So sánh những người giống nhau"
+  },
+  "HistoryPage": {
+    "error_page_not_found": "Không tìm thấy trang!",
+    "go_to_homepage": "Quay lại trang chủ"
+  },
+  "HistoryPageHeader": {
+    "rename_history": "Đổi tên lịch sử",
+    "delete_history": "Xóa lịch sử"
+  },
+  "CommentInput": {
+    "error": "Lỗi",
+    "cooldown_error_title": "Vui lòng thử lại sau",
+    "cooldown_error_description": "Bạn đang nhập quá nhanh.",
+    "input_placeholder": "Nhập bình luận..."
+  },
+  "CopyLinkButton": {
+    "copy_success": "Sao chép thành công",
+    "copy_success_description": "URL đã được sao chép."
+  },
+  "UpdateHistoryTitleDialog": {
+    "dialog_title": "Chỉnh sửa tiêu đề",
+    "success_title": "Cập nhật thành công",
+    "success_description": "Tiêu đề đã được cập nhật thành công.",
+    "placeholder": "Vui lòng nhập tiêu đề",
+    "max_length_error": "ký tự hoặc ít hơn."
+  },
+  "RemoveCommentDialog": {
+    "dialog_title": "Xóa kết quả so sánh",
+    "dialog_description": "Bạn có chắc chắn muốn xóa kết quả này không?",
+    "success_title": "Xóa thành công",
+    "success_description": "Kết quả đã được xóa thành công."
   }
 }

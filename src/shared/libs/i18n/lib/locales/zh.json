@@ -143,7 +143,7 @@
     "cancel": "取消"
   },
   "LoginFormDialog": {
-    "please_login": "ログインしてください"
+    "please_login": "请登录"
   },
   "ResultPage": {
     "return_home": "返回主页面",
@@ -156,5 +156,42 @@
   },
   "ShareButton": {
     "share": "分享"
+  },
+  "LoginPopupPage": {
+    "login_completed": "登录已完成。请关闭此窗口并重试。"
+  },
+  "FORM": {
+    "TITLE-COMPARE-LOOKS": "比较相似的人"
+  },
+  "HistoryPage": {
+    "error_page_not_found": "未找到页面！",
+    "go_to_homepage": "返回首页"
+  },
+  "HistoryPageHeader": {
+    "rename_history": "重命名历史",
+    "delete_history": "删除历史"
+  },
+  "CommentInput": {
+    "error": "错误",
+    "cooldown_error_title": "请稍后再试",
+    "cooldown_error_description": "您输入得太快了。",
+    "input_placeholder": "请输入评论..."
+  },
+  "CopyLinkButton": {
+    "copy_success": "复制成功",
+    "copy_success_description": "URL已复制。"
+  },
+  "UpdateHistoryTitleDialog": {
+    "dialog_title": "编辑标题",
+    "success_title": "更新成功",
+    "success_description": "标题已成功更新。",
+    "placeholder": "请输入标题",
+    "max_length_error": "字符以内。"
+  },
+  "RemoveCommentDialog": {
+    "dialog_title": "删除比较结果",
+    "dialog_description": "您确定要删除此结果吗？",
+    "success_title": "删除成功",
+    "success_description": "结果已成功删除。"
   }
 }

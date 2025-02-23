@@ -1,10 +1,9 @@
 "use client";
 
-import { revalidatePath, revalidateTag } from "next/cache";
 import { useParams, useRouter } from "next/navigation";
+import { useTranslations } from "next-intl";
 import React, { useEffect, useState } from "react";
 
-import { useServerAction } from "@/shared/hooks";
 import { AddTemplateDialog } from "@/shared/ui/Dialog";
 import { useToastStore } from "@/shared/ui/Toast/stores";
 
@@ -15,13 +14,11 @@ interface AddNewPlayerDialogContainerProps {
   previousTitle: string;
   onChangeVisible: (newVisibleStatus: boolean) => void;
 }
-const DialogTitleText = "타이틀 수정";
-const successToastTitle = "변경에 성공했습니다";
-const successToastDescription = "이름 변경에 성공했습니다";
-const placeholder = "입력해주세요";
+
 const maxNameLength = 50;
 
 function UpdateHistoryTitleDialog({ previousTitle, isVisible, onChangeVisible }: AddNewPlayerDialogContainerProps) {
+  const t = useTranslations("UpdateHistoryTitleDialog");
   const [inputValue, setInputValue] = useState(previousTitle);
 
   const { addToast } = useToastStore();
@@ -39,16 +36,16 @@ function UpdateHistoryTitleDialog({ previousTitle, isVisible, onChangeVisible }:
   const isInvalid = isTooLongName;
 
   // 에러 메시지 노드 (Container 내부에서 직접 구성)
-  const errorNode = <>{isTooLongName && `${maxNameLength}자 이하로 입력해주세요.`}</>;
+  const errorNode = <>{isTooLongName && `${maxNameLength} ${t("max_length_error")}`}</>;
 
   // onSubmit 로직
   const handleSubmit = async () => {
     await updateCompareHistory(id as string, inputValue);
 
     addToast({
-      title: successToastTitle,
+      title: t("success_title"),
       type: "success",
-      description: successToastDescription,
+      description: t("success_description"),
     });
     setInputValue("");
 
@@ -60,10 +57,10 @@ function UpdateHistoryTitleDialog({ previousTitle, isVisible, onChangeVisible }:
     <AddTemplateDialog
       isVisible={isVisible}
       onChangeVisible={onChangeVisible}
-      title={DialogTitleText}
+      title={t("dialog_title")}
       inputValue={inputValue}
       onChangeInputValue={setInputValue}
-      placeholder={placeholder}
+      placeholder={t("placeholder")}
       isInvalid={isInvalid}
       onSubmit={handleSubmit}
       // errorComponent를 prop으로 받지 않고, 내부에서 만든 노드를 직접 주입

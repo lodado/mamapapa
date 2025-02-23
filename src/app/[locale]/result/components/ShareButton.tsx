@@ -6,8 +6,7 @@ import React, { useCallback, useMemo } from "react";
 
 import { USER_PLAYER_NAME_INTI_KEY } from "@/entities";
 import { useAuthStore } from "@/entities/Auth/client/models/store/AuthStore";
-import { ImageMetadata, useImageSelectorStore } from "@/features/ImageSelector/models";
-import { IndexedDBController } from "@/shared";
+import { useImageSelectorStore } from "@/features/ImageSelector/models";
 import { useServerAction } from "@/shared/hooks";
 import { Button } from "@/shared/ui";
 import { useLoadingStore } from "@/shared/ui/LoadingSpinner";
@@ -30,6 +29,9 @@ const ShareButton = () => {
 
     try {
       const formData = new FormData();
+
+      formData.append(`title`, t("FORM.TITLE-COMPARE-LOOKS"));
+
       images.forEach((image, index) => {
         Object.entries(image).forEach(([key, value]) => {
           if (key === "embedding") {

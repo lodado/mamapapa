@@ -143,7 +143,7 @@
     "cancel": "キャンセル"
   },
   "LoginFormDialog": {
-    "please_login": "Please log in"
+    "please_login": "ログインしてください"
   },
   "ResultPage": {
     "return_home": "ホーム画面に戻る",
@@ -156,5 +156,42 @@
   },
   "ShareButton": {
     "share": "共有する"
+  },
+  "LoginPopupPage": {
+    "login_completed": "ログインが完了しました。このウィンドウを閉じて再試行してください。"
+  },
+  "FORM": {
+    "TITLE-COMPARE-LOOKS": "似ている人を比較する"
+  },
+  "HistoryPage": {
+    "error_page_not_found": "ページが見つかりません！",
+    "go_to_homepage": "ホームページに戻る"
+  },
+  "HistoryPageHeader": {
+    "rename_history": "履歴の名前を変更する",
+    "delete_history": "履歴を削除する"
+  },
+  "CommentInput": {
+    "error": "エラー",
+    "cooldown_error_title": "後でもう一度お試しください",
+    "cooldown_error_description": "入力が早すぎます。",
+    "input_placeholder": "コメントを入力してください..."
+  },
+  "CopyLinkButton": {
+    "copy_success": "コピー成功",
+    "copy_success_description": "URLがコピーされました。"
+  },
+  "UpdateHistoryTitleDialog": {
+    "dialog_title": "タイトルを編集",
+    "success_title": "更新に成功しました",
+    "success_description": "タイトルが正常に更新されました。",
+    "placeholder": "タイトルを入力してください",
+    "max_length_error": "文字以内で入力してください。"
+  },
+  "RemoveCommentDialog": {
+    "dialog_title": "比較結果を削除",
+    "dialog_description": "この結果を本当に削除しますか？",
+    "success_title": "削除成功",
+    "success_description": "結果が正常に削除されました。"
   }
 }

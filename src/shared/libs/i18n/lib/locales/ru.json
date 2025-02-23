@@ -143,7 +143,7 @@
     "cancel": "Отмена"
   },
   "LoginFormDialog": {
-    "please_login": "Sila log masuk"
+    "please_login": "Пожалуйста, войдите"
   },
   "ResultPage": {
     "return_home": "Вернуться на главный экран",
@@ -156,5 +156,42 @@
   },
   "ShareButton": {
     "share": "Поделиться"
+  },
+  "LoginPopupPage": {
+    "login_completed": "Вход выполнен. Пожалуйста, закройте это окно и попробуйте снова."
+  },
+  "FORM": {
+    "TITLE-COMPARE-LOOKS": "Сравнить похожих людей"
+  },
+  "HistoryPage": {
+    "error_page_not_found": "Страница не найдена!",
+    "go_to_homepage": "Вернуться на главную страницу"
+  },
+  "HistoryPageHeader": {
+    "rename_history": "Переименовать историю",
+    "delete_history": "Удалить историю"
+  },
+  "CommentInput": {
+    "error": "Ошибка",
+    "cooldown_error_title": "Пожалуйста, попробуйте позже",
+    "cooldown_error_description": "Вы печатаете слишком быстро.",
+    "input_placeholder": "Введите комментарий..."
+  },
+  "CopyLinkButton": {
+    "copy_success": "Копирование успешно",
+    "copy_success_description": "URL скопирован."
+  },
+  "UpdateHistoryTitleDialog": {
+    "dialog_title": "Редактировать заголовок",
+    "success_title": "Обновление успешно",
+    "success_description": "Заголовок успешно обновлен.",
+    "placeholder": "Пожалуйста, введите заголовок",
+    "max_length_error": "символов или меньше."
+  },
+  "RemoveCommentDialog": {
+    "dialog_title": "Удалить результат сравнения",
+    "dialog_description": "Вы уверены, что хотите удалить этот результат?",
+    "success_title": "Удаление успешно",
+    "success_description": "Результат успешно удален."
   }
 }

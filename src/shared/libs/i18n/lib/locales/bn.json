@@ -143,7 +143,7 @@
     "cancel": "বাতিল করুন"
   },
   "LoginFormDialog": {
-    "please_login": "الرجاء تسجيل الدخول"
+    "please_login": "দয়া করে লগইন করুন"
   },
   "ResultPage": {
     "return_home": "প্রধান পর্দায় ফিরে যান",
@@ -156,5 +156,42 @@
   },
   "ShareButton": {
     "share": "শেয়ার করুন"
+  },
+  "LoginPopupPage": {
+    "login_completed": "লগইন সম্পন্ন হয়েছে। অনুগ্রহ করে এই উইন্ডোটি বন্ধ করুন এবং পুনরায় চেষ্টা করুন।"
+  },
+  "FORM": {
+    "TITLE-COMPARE-LOOKS": "মিল দেখতে তুলনা করুন"
+  },
+  "HistoryPage": {
+    "error_page_not_found": "পৃষ্ঠা পাওয়া যায়নি!",
+    "go_to_homepage": "হোমপেজে ফিরে যান"
+  },
+  "HistoryPageHeader": {
+    "rename_history": "ইতিহাসের নাম পরিবর্তন করুন",
+    "delete_history": "ইতিহাস মুছুন"
+  },
+  "CommentInput": {
+    "error": "ত্রুটি",
+    "cooldown_error_title": "অনুগ্রহ করে পরে আবার চেষ্টা করুন",
+    "cooldown_error_description": "আপনি খুব দ্রুত টাইপ করছেন।",
+    "input_placeholder": "একটি মন্তব্য লিখুন..."
+  },
+  "CopyLinkButton": {
+    "copy_success": "কপি সফল",
+    "copy_success_description": "URL কপি করা হয়েছে।"
+  },
+  "UpdateHistoryTitleDialog": {
+    "dialog_title": "শিরোনাম সম্পাদনা করুন",
+    "success_title": "আপডেট সফল হয়েছে",
+    "success_description": "শিরোনাম সফলভাবে আপডেট করা হয়েছে।",
+    "placeholder": "অনুগ্রহ করে একটি শিরোনাম লিখুন",
+    "max_length_error": "অক্ষরের মধ্যে রাখুন।"
+  },
+  "RemoveCommentDialog": {
+    "dialog_title": "তুলনা ফলাফল মুছুন",
+    "dialog_description": "আপনি কি নিশ্চিত যে আপনি এই ফলাফল মুছতে চান?",
+    "success_title": "মুছে ফেলা সফল",
+    "success_description": "ফলাফল সফলভাবে মুছে ফেলা হয়েছে।"
   }
 }

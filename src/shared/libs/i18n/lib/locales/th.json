@@ -143,7 +143,7 @@
     "cancel": "ยกเลิก"
   },
   "LoginFormDialog": {
-    "please_login": "Vui lòng đăng nhập"
+    "please_login": "กรุณาเข้าสู่ระบบ"
   },
   "ResultPage": {
     "return_home": "กลับไปที่หน้าหลัก",
@@ -156,5 +156,42 @@
   },
   "ShareButton": {
     "share": "แชร์"
+  },
+  "LoginPopupPage": {
+    "login_completed": "การเข้าสู่ระบบเสร็จสมบูรณ์แล้ว กรุณาปิดหน้าต่างนี้และลองอีกครั้ง"
+  },
+  "FORM": {
+    "TITLE-COMPARE-LOOKS": "เปรียบเทียบความเหมือน"
+  },
+  "HistoryPage": {
+    "error_page_not_found": "ไม่พบหน้า!",
+    "go_to_homepage": "กลับไปที่หน้าแรก"
+  },
+  "HistoryPageHeader": {
+    "rename_history": "เปลี่ยนชื่อตำแหน่ง",
+    "delete_history": "ลบประวัติ"
+  },
+  "CommentInput": {
+    "error": "ข้อผิดพลาด",
+    "cooldown_error_title": "กรุณาลองใหม่ภายหลัง",
+    "cooldown_error_description": "คุณกำลังพิมพ์เร็วเกินไป",
+    "input_placeholder": "กรอกความคิดเห็น..."
+  },
+  "CopyLinkButton": {
+    "copy_success": "คัดลอกสำเร็จ",
+    "copy_success_description": "URL ถูกคัดลอกแล้ว"
+  },
+  "UpdateHistoryTitleDialog": {
+    "dialog_title": "แก้ไขชื่อเรื่อง",
+    "success_title": "อัปเดตสำเร็จ",
+    "success_description": "ชื่อเรื่องได้รับการอัปเดตเรียบร้อยแล้ว",
+    "placeholder": "กรุณาใส่ชื่อเรื่อง",
+    "max_length_error": "ตัวอักษรหรือน้อยกว่า"
+  },
+  "RemoveCommentDialog": {
+    "dialog_title": "ลบผลการเปรียบเทียบ",
+    "dialog_description": "คุณแน่ใจหรือไม่ว่าต้องการลบผลลัพธ์นี้?",
+    "success_title": "ลบสำเร็จ",
+    "success_description": "ผลลัพธ์ถูกลบเรียบร้อยแล้ว"
   }
 }

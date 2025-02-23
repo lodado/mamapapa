@@ -143,7 +143,7 @@
     "cancel": "Cancel"
   },
   "LoginFormDialog": {
-    "please_login": "로그인을 해주세요"
+    "please_login": "Please log in"
   },
   "ResultPage": {
     "return_home": "Return to the home screen",
@@ -156,5 +156,42 @@
   },
   "ShareButton": {
     "share": "Share"
+  },
+  "LoginPopupPage": {
+    "login_completed": "Login is complete. Please close this window and try again."
+  },
+  "FORM": {
+    "TITLE-COMPARE-LOOKS": "Compare looks alike"
+  },
+  "HistoryPage": {
+    "error_page_not_found": "Page not found!",
+    "go_to_homepage": "Go back to the homepage"
+  },
+  "HistoryPageHeader": {
+    "rename_history": "Rename History",
+    "delete_history": "Delete History"
+  },
+  "CommentInput": {
+    "error": "Error",
+    "cooldown_error_title": "Please try again later",
+    "cooldown_error_description": "You are typing too quickly.",
+    "input_placeholder": "Enter a comment..."
+  },
+  "CopyLinkButton": {
+    "copy_success": "Copy Successful",
+    "copy_success_description": "The URL has been copied."
+  },
+  "UpdateHistoryTitleDialog": {
+    "dialog_title": "Edit Title",
+    "success_title": "Update Successful",
+    "success_description": "The title has been successfully updated.",
+    "placeholder": "Please enter a title",
+    "max_length_error": "characters or fewer."
+  },
+  "RemoveCommentDialog": {
+    "dialog_title": "Delete Comparison Result",
+    "dialog_description": "Are you sure you want to delete this result?",
+    "success_title": "Delete Successful",
+    "success_description": "The result has been successfully deleted."
   }
 }

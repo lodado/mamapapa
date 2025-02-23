@@ -143,7 +143,7 @@
     "cancel": "Batal"
   },
   "LoginFormDialog": {
-    "please_login": "กรุณาเข้าสู่ระบบ"
+    "please_login": "Sila log masuk"
   },
   "ResultPage": {
     "return_home": "Kembali ke skrin utama",
@@ -156,5 +156,42 @@
   },
   "ShareButton": {
     "share": "Kongsi"
+  },
+  "LoginPopupPage": {
+    "login_completed": "Log masuk selesai. Sila tutup tetingkap ini dan cuba lagi."
+  },
+  "FORM": {
+    "TITLE-COMPARE-LOOKS": "Bandingkan rupa yang serupa"
+  },
+  "HistoryPage": {
+    "error_page_not_found": "Halaman tidak dijumpai!",
+    "go_to_homepage": "Kembali ke halaman utama"
+  },
+  "HistoryPageHeader": {
+    "rename_history": "Tukar Nama Sejarah",
+    "delete_history": "Padam Sejarah"
+  },
+  "CommentInput": {
+    "error": "Ralat",
+    "cooldown_error_title": "Sila cuba lagi kemudian",
+    "cooldown_error_description": "Anda menaip terlalu pantas.",
+    "input_placeholder": "Masukkan komen..."
+  },
+  "CopyLinkButton": {
+    "copy_success": "Salinan Berjaya",
+    "copy_success_description": "URL telah disalin."
+  },
+  "UpdateHistoryTitleDialog": {
+    "dialog_title": "Edit Tajuk",
+    "success_title": "Kemas kini Berjaya",
+    "success_description": "Tajuk telah berjaya dikemas kini.",
+    "placeholder": "Sila masukkan tajuk",
+    "max_length_error": "aksara atau kurang."
+  },
+  "RemoveCommentDialog": {
+    "dialog_title": "Padam Keputusan Perbandingan",
+    "dialog_description": "Adakah anda pasti mahu memadam keputusan ini?",
+    "success_title": "Berjaya Dipadam",
+    "success_description": "Keputusan telah berjaya dipadamkan."
   }
 }

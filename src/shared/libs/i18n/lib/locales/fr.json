@@ -143,7 +143,7 @@
     "cancel": "Annuler"
   },
   "LoginFormDialog": {
-    "please_login": "कृपया लॉग इन करें"
+    "please_login": "Veuillez vous connecter"
   },
   "ResultPage": {
     "return_home": "Retourner à l'écran d'accueil",
@@ -156,5 +156,42 @@
   },
   "ShareButton": {
     "share": "Partager"
+  },
+  "LoginPopupPage": {
+    "login_completed": "La connexion est terminée. Veuillez fermer cette fenêtre et réessayer."
+  },
+  "FORM": {
+    "TITLE-COMPARE-LOOKS": "Comparer les ressemblances"
+  },
+  "HistoryPage": {
+    "error_page_not_found": "Page non trouvée !",
+    "go_to_homepage": "Retour à la page d'accueil"
+  },
+  "HistoryPageHeader": {
+    "rename_history": "Renommer l'historique",
+    "delete_history": "Supprimer l'historique"
+  },
+  "CommentInput": {
+    "error": "Erreur",
+    "cooldown_error_title": "Veuillez réessayer plus tard",
+    "cooldown_error_description": "Vous tapez trop rapidement.",
+    "input_placeholder": "Entrez un commentaire..."
+  },
+  "CopyLinkButton": {
+    "copy_success": "Copie réussie",
+    "copy_success_description": "L'URL a été copiée."
+  },
+  "UpdateHistoryTitleDialog": {
+    "dialog_title": "Modifier le titre",
+    "success_title": "Mise à jour réussie",
+    "success_description": "Le titre a été mis à jour avec succès.",
+    "placeholder": "Veuillez entrer un titre",
+    "max_length_error": "caractères ou moins."
+  },
+  "RemoveCommentDialog": {
+    "dialog_title": "Supprimer le résultat de la comparaison",
+    "dialog_description": "Êtes-vous sûr de vouloir supprimer ce résultat ?",
+    "success_title": "Suppression réussie",
+    "success_description": "Le résultat a été supprimé avec succès."
   }
 }

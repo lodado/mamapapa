@@ -30,7 +30,7 @@ const Page = async ({ params }: { params: { id: string } }) => {
   const isLogin = user?.id;
 
   if (error) {
-    return <>page not found!</>;
+    return <>{t("HistoryPage.error_page_not_found")}</>;
   }
 
   const comparisonList = JSON.parse(data?.imageList || []) as ComparisonMetaData[];
@@ -69,7 +69,7 @@ const Page = async ({ params }: { params: { id: string } }) => {
           {isLogin && <CommentInput userId={user?.id ?? "-1"} boardId={id} />}
 
           <ButtonLink wrapperClassName="w-full max-w-[29rem]" variant="primarySolid" href={PAGE_ROUTE.MAIN}>
-            처음 화면으로 돌아가기
+            {t("HistoryPage.go_to_homepage")}
           </ButtonLink>
 
           {!isLogin && <LoginButton />}

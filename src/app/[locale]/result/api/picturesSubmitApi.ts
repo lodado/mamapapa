@@ -43,6 +43,7 @@ export async function picturesSubmitApi(formData: FormData) {
       };
     }
 
+    const title = formData.get("title") ?? "";
     const size = Number(formData.get("size") ?? "0");
 
     const images = Array.from({
@@ -90,7 +91,7 @@ export async function picturesSubmitApi(formData: FormData) {
     // (2) Supabase DB에 메타데이터 저장
 
     const insertData = {
-      title: "이미지 비교 결과",
+      title: `${user.name}'s ${title}`,
       description: null,
 
       imageList: JSON.stringify(

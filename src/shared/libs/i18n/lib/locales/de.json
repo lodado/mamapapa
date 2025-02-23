@@ -143,7 +143,7 @@
     "cancel": "Abbrechen"
   },
   "LoginFormDialog": {
-    "please_login": "Пожалуйста, войдите"
+    "please_login": "Bitte einloggen"
   },
   "ResultPage": {
     "return_home": "Zurück zum Startbildschirm",
@@ -156,5 +156,42 @@
   },
   "ShareButton": {
     "share": "Teilen"
+  },
+  "LoginPopupPage": {
+    "login_completed": "Die Anmeldung ist abgeschlossen. Bitte schließen Sie dieses Fenster und versuchen Sie es erneut."
+  },
+  "FORM": {
+    "TITLE-COMPARE-LOOKS": "Vergleiche Ähnlichkeiten"
+  },
+  "HistoryPage": {
+    "error_page_not_found": "Seite nicht gefunden!",
+    "go_to_homepage": "Zur Startseite zurückkehren"
+  },
+  "HistoryPageHeader": {
+    "rename_history": "Verlauf umbenennen",
+    "delete_history": "Verlauf löschen"
+  },
+  "CommentInput": {
+    "error": "Fehler",
+    "cooldown_error_title": "Bitte versuchen Sie es später erneut",
+    "cooldown_error_description": "Sie tippen zu schnell.",
+    "input_placeholder": "Geben Sie einen Kommentar ein..."
+  },
+  "CopyLinkButton": {
+    "copy_success": "Kopieren erfolgreich",
+    "copy_success_description": "Die URL wurde kopiert."
+  },
+  "UpdateHistoryTitleDialog": {
+    "dialog_title": "Titel bearbeiten",
+    "success_title": "Aktualisierung erfolgreich",
+    "success_description": "Der Titel wurde erfolgreich aktualisiert.",
+    "placeholder": "Bitte geben Sie einen Titel ein",
+    "max_length_error": "Zeichen oder weniger."
+  },
+  "RemoveCommentDialog": {
+    "dialog_title": "Vergleichsergebnis löschen",
+    "dialog_description": "Möchten Sie dieses Ergebnis wirklich löschen?",
+    "success_title": "Erfolgreich gelöscht",
+    "success_description": "Das Ergebnis wurde erfolgreich gelöscht."
   }
 }

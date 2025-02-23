@@ -143,7 +143,7 @@
     "cancel": "Annullare"
   },
   "LoginFormDialog": {
-    "please_login": "Silakan masuk"
+    "please_login": "Effettua il login"
   },
   "ResultPage": {
     "return_home": "Torna alla schermata principale",
@@ -156,5 +156,42 @@
   },
   "ShareButton": {
     "share": "Condividi"
+  },
+  "LoginPopupPage": {
+    "login_completed": "Il login è stato completato. Chiudi questa finestra e riprova."
+  },
+  "FORM": {
+    "TITLE-COMPARE-LOOKS": "Confronta le somiglianze"
+  },
+  "HistoryPage": {
+    "error_page_not_found": "Pagina non trovata!",
+    "go_to_homepage": "Torna alla home page"
+  },
+  "HistoryPageHeader": {
+    "rename_history": "Rinomina cronologia",
+    "delete_history": "Elimina cronologia"
+  },
+  "CommentInput": {
+    "error": "Errore",
+    "cooldown_error_title": "Per favore riprova più tardi",
+    "cooldown_error_description": "Stai digitando troppo velocemente.",
+    "input_placeholder": "Inserisci un commento..."
+  },
+  "CopyLinkButton": {
+    "copy_success": "Copia riuscita",
+    "copy_success_description": "L'URL è stato copiato."
+  },
+  "UpdateHistoryTitleDialog": {
+    "dialog_title": "Modifica titolo",
+    "success_title": "Aggiornamento riuscito",
+    "success_description": "Il titolo è stato aggiornato con successo.",
+    "placeholder": "Si prega di inserire un titolo",
+    "max_length_error": "caratteri o meno."
+  },
+  "RemoveCommentDialog": {
+    "dialog_title": "Elimina risultato del confronto",
+    "dialog_description": "Sei sicuro di voler eliminare questo risultato?",
+    "success_title": "Eliminazione riuscita",
+    "success_description": "Il risultato è stato eliminato con successo."
   }
 }

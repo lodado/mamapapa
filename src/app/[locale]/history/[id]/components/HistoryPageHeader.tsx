@@ -2,6 +2,7 @@
 
 import { ChevronLeft, Ellipsis } from "lucide-react";
 import { useParams, useRouter } from "next/navigation";
+import { useTranslations } from "next-intl";
 import React, { useState } from "react";
 
 import Delete from "/public/delete.svg";
@@ -28,6 +29,7 @@ const HistoryPageHeader = ({
   const [isUpdateDialogOpen, setIsUpdateDialogOpen] = useState(false);
 
   const { session } = useAuthStore();
+  const t = useTranslations("HistoryPageHeader");
 
   const isOwner = creatorUserId === session?.user?.id;
   const router = useRouter();
@@ -74,7 +76,7 @@ const HistoryPageHeader = ({
                       setIsUpdateDialogOpen(true);
                     }}
                   >
-                    제목 변경하기
+                    {t("rename_history")}
                   </Dropdown.Item>
                   <Dropdown.Item
                     key={"remove-item"}
@@ -82,7 +84,7 @@ const HistoryPageHeader = ({
                       setIsRemoveDialogOpen(true);
                     }}
                   >
-                    <Delete /> 삭제하기
+                    <Delete /> {t("delete_history")}
                   </Dropdown.Item>
                 </Dropdown.Content>
               </Dropdown>

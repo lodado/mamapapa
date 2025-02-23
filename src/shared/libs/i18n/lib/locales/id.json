@@ -143,7 +143,7 @@
     "cancel": "Batal"
   },
   "LoginFormDialog": {
-    "please_login": "Por favor, faça login"
+    "please_login": "Silakan masuk"
   },
   "ResultPage": {
     "return_home": "Kembali ke layar utama",
@@ -156,5 +156,42 @@
   },
   "ShareButton": {
     "share": "Bagikan"
+  },
+  "LoginPopupPage": {
+    "login_completed": "Login selesai. Silakan tutup jendela ini dan coba lagi."
+  },
+  "FORM": {
+    "TITLE-COMPARE-LOOKS": "Bandingkan kemiripan"
+  },
+  "HistoryPage": {
+    "error_page_not_found": "Halaman tidak ditemukan!",
+    "go_to_homepage": "Kembali ke beranda"
+  },
+  "HistoryPageHeader": {
+    "rename_history": "Ganti Nama Riwayat",
+    "delete_history": "Hapus Riwayat"
+  },
+  "CommentInput": {
+    "error": "Kesalahan",
+    "cooldown_error_title": "Silakan coba lagi nanti",
+    "cooldown_error_description": "Anda mengetik terlalu cepat.",
+    "input_placeholder": "Masukkan komentar..."
+  },
+  "CopyLinkButton": {
+    "copy_success": "Salin Berhasil",
+    "copy_success_description": "URL telah disalin."
+  },
+  "UpdateHistoryTitleDialog": {
+    "dialog_title": "Edit Judul",
+    "success_title": "Pembaruan Berhasil",
+    "success_description": "Judul telah berhasil diperbarui.",
+    "placeholder": "Silakan masukkan judul",
+    "max_length_error": "karakter atau kurang."
+  },
+  "RemoveCommentDialog": {
+    "dialog_title": "Hapus Hasil Perbandingan",
+    "dialog_description": "Apakah Anda yakin ingin menghapus hasil ini?",
+    "success_title": "Berhasil Dihapus",
+    "success_description": "Hasil berhasil dihapus."
   }
 }
