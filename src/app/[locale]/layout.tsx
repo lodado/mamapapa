@@ -6,18 +6,11 @@ import React from "react";
 
 import HydratePlayerStore from "@/entities/Player/ui/HydratePlayerStore";
 import { LocaleProps, ThemeScript } from "@/shared";
+import { GA } from "@/shared/libs/GA";
 import { GlobalDialogContainer } from "@/widgets";
 
 import { RootProvider } from "../provider";
 import ScreenVhScript from "./ScreenVhScript";
-
-/** TODO - GA 설치 */
-// import { GA } from "@/shared/lib/GA";
-// import GlobalAdapterServer from '@/shared/ui/GlobalAdapter/GlobalAdapter.server'
-
-// import { LayoutProps } from '../../shared/config/interface/type'
-// import LibraryProvider from '../providers/LibraryProvider'
-// import ScreenVhScript from './ScreenVhScript'
 
 export function generateViewport(): Viewport {
   return {
@@ -305,7 +298,7 @@ const RootLayout: React.FunctionComponent<LocaleProps> = ({ children, params: { 
             <HydratePlayerStore />
           </NextIntlClientProvider>
         </RootProvider>
-        {/* <GA nonce={nonce} /> */}
+        <GA nonce={nonce} />
       </body>
     </html>
   );
