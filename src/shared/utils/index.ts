@@ -6,5 +6,6 @@ export * from "./compareArrays";
 export * from "./contextBuildHelper";
 export * from "./isServerSide";
 export * from "./noop";
+export * from "./rtl";
 export * from "./StorageStrategy";
 export * from "./time";

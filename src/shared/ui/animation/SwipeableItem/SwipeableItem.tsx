@@ -3,27 +3,30 @@
 import { motion, useAnimation, useMotionValue } from "motion/react";
 import React, { PropsWithChildren, useEffect, useRef, useState } from "react";
 
+import { isRtl } from "@/shared/utils";
+
 import { useSwipeContext } from "./SwipeableItemProvider";
 
 interface SwipeableItemProps {
-  // 아이템 식별용 id (옵션)
   itemId?: string;
-  leftSwipeLimit?: number;
+  leftSwipeLimit?: number; // LTR에서는 음수 (예: -50), RTL에서는 절대값만 사용 (예: 50)
   children: React.ReactNode;
   swipeOptionChildren: React.ReactNode;
   onSwipeLeft?: () => void;
-  // 다른 아이템 스와이프 시 자신의 상태를 리셋할지 여부
   resetOnOtherSwipe?: boolean;
 }
 
 export const SwipeOptionContainer = ({ isSwiped, children }: PropsWithChildren & { isSwiped: boolean }) => {
+  const isRTL = isRtl();
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: isSwiped ? 1 : 0 }}
       transition={{ duration: 0 }}
-      style={{ originX: 1 }}
-      className="absolute right-0 top-0 inset-0 flex h-full justify-end items-center"
+      // LTR: originX가 1, 오른쪽에 위치; RTL: originX는 0, 왼쪽에 위치
+      style={{ originX: isRTL ? 0 : 1 }}
+      className={"absolute right-0 top-0 inset-0 flex h-full justify-end items-center"}
     >
       {children}
     </motion.div>
@@ -46,10 +49,12 @@ const SwipeableItem: React.FC<SwipeableItemProps> = ({
     setSwipedItemId: () => {},
   };
 
-  // 아이템 식별용 id, 제공되지 않으면 내부에서 랜덤 생성
   const idRef = useRef(itemId || Math.random().toString(36).substr(2, 9));
+  // 현재 RTL 여부 감지 (LTR이면 false, RTL이면 true)
+  const isRTL = isRtl();
+  // LTR에서는 leftSwipeLimit이 음수 값, RTL에서는 절대값(양수) 사용
+  const effectiveSwipeLimit = isRTL ? Math.abs(leftSwipeLimit) : leftSwipeLimit;
 
-  // 전역 스와이프 상태가 바뀔 때, 자신이 스와이프 상태인데 다른 아이템이 스와이프되면 리셋
   useEffect(() => {
     if (resetOnOtherSwipe && swipedItemId !== idRef.current && isSwiped) {
       controls.start({ x: 0 });
@@ -58,19 +63,22 @@ const SwipeableItem: React.FC<SwipeableItemProps> = ({
   }, [swipedItemId, resetOnOtherSwipe, isSwiped, controls]);
 
   const handleDrag = async (event: any, info: { offset: { x: number } }) => {
-    if (info.offset.x < leftSwipeLimit / 2) {
-      await controls.start({ x: leftSwipeLimit });
+    const thresholdMet = isRTL ? info.offset.x > effectiveSwipeLimit / 2 : info.offset.x < effectiveSwipeLimit / 2;
+
+    if (thresholdMet) {
+      await controls.start({ x: effectiveSwipeLimit });
       setIsSwiped(true);
       onSwipeLeft?.();
       if (resetOnOtherSwipe) {
         setSwipedItemId(idRef.current);
       }
-    } else {
-      await controls.start({ x: 0 });
-      setIsSwiped(false);
-      if (resetOnOtherSwipe && swipedItemId === idRef.current) {
-        setSwipedItemId(null);
-      }
+      return;
+    }
+
+    await controls.start({ x: 0 });
+    setIsSwiped(false);
+    if (resetOnOtherSwipe && swipedItemId === idRef.current) {
+      setSwipedItemId(null);
     }
   };
 
@@ -78,7 +86,8 @@ const SwipeableItem: React.FC<SwipeableItemProps> = ({
     <div className="relative">
       <motion.div
         drag="x"
-        dragConstraints={{ left: leftSwipeLimit, right: 0 }}
+        // LTR: 왼쪽으로만 드래그, RTL: 오른쪽으로만 드래그하도록 제약조건 설정
+        dragConstraints={isRTL ? { left: 0, right: effectiveSwipeLimit } : { left: effectiveSwipeLimit, right: 0 }}
         dragElastic={0}
         dragMomentum={false}
         style={{ x }}
