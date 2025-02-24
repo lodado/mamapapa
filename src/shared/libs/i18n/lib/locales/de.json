@@ -58,7 +58,10 @@
     "TITLE": "Starten Sie Ihren Ähnlichkeitsvergleich",
     "DESCRIPTION-1": "Aktualisieren Sie ein Foto für den Ähnlichkeitsvergleich und fahren Sie mit dem Vergleich fort.",
     "DESCRIPTION-2": "Sie können überprüfen, wem Sie mehr ähneln.",
-    "BUTTON-START-COMPARISON": "Vergleich der Ähnlichkeit starten"
+    "BUTTON-START-COMPARISON": "Vergleich der Ähnlichkeit starten",
+    "title": "Simmey - Entdecken Sie, wie sehr Sie Ihrer Mutter und Ihrem Vater ähneln, mit unserer Gesichtserkennungs-KI!",
+    "description": "Entdecken Sie, wie sehr Sie Ihrer Mutter und Ihrem Vater ähneln, mit unserer Gesichtserkennungs-KI! Dies ist die Hauptseite, auf der Sie mit Ihrem unterhaltsamen und ansprechenden Familienähnlichkeitsvergleich beginnen können.",
+    "keywords": "Gesichtsvergleich, Eltern, Ähnlichkeit, Spaß, Familie"
   },
   "BUTTON": {
     "CHECK-HISTORY": "Überprüfen Sie die geteilte Historie"

@@ -7,6 +7,7 @@ export * from "./Form";
 export * from "./icons";
 export * from "./Image";
 export * from "./Input";
+export * from "./JsonLd";
 export * from "./QueryContainer";
 export * from "./ScreenReaderOnly";
 export * from "./ScrollArea";

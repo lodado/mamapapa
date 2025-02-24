@@ -58,7 +58,10 @@
     "TITLE": "Benzerlik Karşılaştırmanızı Başlatın",
     "DESCRIPTION-1": "Benzerlik karşılaştırması için bir fotoğraf güncelleyin ve karşılaştırmaya devam edin.",
     "DESCRIPTION-2": "Kime daha çok benzediğinizi kontrol edebilirsiniz.",
-    "BUTTON-START-COMPARISON": "Benzerlik Karşılaştırmasını Başlat"
+    "BUTTON-START-COMPARISON": "Benzerlik Karşılaştırmasını Başlat",
+    "title": "Simmey - Yüz eşleştirme yapay zekamızla annenize ve babanıza ne kadar benzediğinizi keşfedin!",
+    "description": "Yüz eşleştirme yapay zekamızla annenize ve babanıza ne kadar benzediğinizi keşfedin! Bu, eğlenceli ve ilgi çekici aile benzerliği karşılaştırmanıza başlayabileceğiniz ana sayfadır.",
+    "keywords": "yüz karşılaştırması, ebeveynler, benzerlik, eğlence, aile"
   },
   "BUTTON": {
     "CHECK-HISTORY": "Paylaşılan Geçmişi Kontrol Et"

@@ -58,7 +58,10 @@
     "TITLE": "开始你的相似度比较",
     "DESCRIPTION-1": "更新照片进行相似度比较，然后继续比较。",
     "DESCRIPTION-2": "你可以看看你更像谁。",
-    "BUTTON-START-COMPARISON": "开始相似度比较"
+    "BUTTON-START-COMPARISON": "开始相似度比较",
+    "title": "Simmey - 我们的面部匹配AI可以帮您发现您与父母的相似程度!",
+    "description": "使用我们的面部匹配AI，发现您与父母有多相似! 这是您可以开始有趣且引人入胜的家庭相似度比较的主页。",
+    "keywords": "面部比较, 父母, 相似性, 趣味, 家庭"
   },
   "BUTTON": {
     "CHECK-HISTORY": "查看共享历史"

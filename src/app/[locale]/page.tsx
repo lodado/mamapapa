@@ -1,3 +1,4 @@
+import { get } from "http";
 import { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import React from "react";
@@ -6,7 +7,7 @@ import { ButtonLink } from "@/entities/Router";
 import { PAGE_ROUTE } from "@/entities/Router/configs/route";
 import { ModelDownloader } from "@/features";
 import { getLocalesListsForStateParams } from "@/shared/libs/i18n/server/getLocalesListsForStateParams";
-import { ScrollLock } from "@/shared/ui";
+import { JsonLdScript, ScrollLock } from "@/shared/ui";
 import { Motion } from "@/shared/ui/animation/animation";
 import { ReactiveLayout } from "@/shared/ui/ReactiveLayout";
 import { getMetadata } from "@/shared/utils/index.server";
@@ -15,11 +16,12 @@ import BodySvg from "./BODY.svg";
 import HistoryLink from "./components/HistoryLink";
 import HeadSvg from "./HEAD.svg";
 
-export function generateMetadata({ params: { locale } }: { params: { locale: string } }): Metadata {
+export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
+  const t = await getTranslations("MAINPAGE");
+
   return getMetadata({
-    title: "Simmey - Discover how much you resemble your mom and dad using our face-matching AI!",
-    description:
-      "Discover how much you resemble your mom and dad using our face-matching AI! This is the main page where you can start your fun and engaging family resemblance comparison.",
+    title: t("title"),
+    description: t("description"),
     path: PAGE_ROUTE.MAIN,
     keywords: "face comparison, parents, similarity, fun, family",
     locale,
@@ -36,6 +38,15 @@ const Page = async ({ params }: { params: { locale: string } }) => {
 
   return (
     <>
+      <JsonLdScript
+        customMeta={{
+          title: t("title"),
+          url: PAGE_ROUTE.MAIN,
+          description: t("description"),
+          date: new Date().toISOString(),
+        }}
+      />
+
       <ScrollLock>
         <ReactiveLayout>
           <main className="flex flex-col justify-center items-center w-full h-screen pt-[3rem] px-[2rem]">

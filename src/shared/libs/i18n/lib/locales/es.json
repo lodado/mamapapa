@@ -58,7 +58,10 @@
     "TITLE": "Inicie su comparación de parecidos",
     "DESCRIPTION-1": "Actualiza una foto para la comparación de parecidos y procede con la comparación.",
     "DESCRIPTION-2": "Puedes ver a quién te pareces más.",
-    "BUTTON-START-COMPARISON": "Iniciar comparación de parecidos"
+    "BUTTON-START-COMPARISON": "Iniciar comparación de parecidos",
+    "title": "Simmey - ¡Descubre cuánto te pareces a tu mamá y papá usando nuestra IA de coincidencia facial!",
+    "description": "¡Descubre cuánto te pareces a tu mamá y papá usando nuestra IA de coincidencia facial! Esta es la página principal donde puedes comenzar tu divertida y atractiva comparación de parecido familiar.",
+    "keywords": "comparación de caras, padres, similitud, diversión, familia"
   },
   "BUTTON": {
     "CHECK-HISTORY": "Verificar historial compartido"

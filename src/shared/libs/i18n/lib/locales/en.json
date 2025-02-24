@@ -58,7 +58,10 @@
     "TITLE": "Start Your Look-Alike Comparison",
     "DESCRIPTION-1": "Update a photo for look-alike comparison and proceed with the comparison.",
     "DESCRIPTION-2": "You can check who you resemble more.",
-    "BUTTON-START-COMPARISON": "Start Look-Alike Comparison"
+    "BUTTON-START-COMPARISON": "Start Look-Alike Comparison",
+    "title": "Simmey - Discover how much you resemble your mom and dad using our face-matching AI!",
+    "description": "Discover how much you resemble your mom and dad using our face-matching AI! This is the main page where you can start your fun and engaging family resemblance comparison.",
+    "keywords": "face comparison, parents, similarity, fun, family"
   },
   "BUTTON": {
     "CHECK-HISTORY": "Check Shared History"

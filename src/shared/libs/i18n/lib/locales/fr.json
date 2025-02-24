@@ -58,7 +58,10 @@
     "TITLE": "Commencez votre comparaison de ressemblances",
     "DESCRIPTION-1": "Mettez à jour une photo pour la comparaison de ressemblances et poursuivez la comparaison.",
     "DESCRIPTION-2": "Vous pouvez voir à qui vous ressemblez le plus.",
-    "BUTTON-START-COMPARISON": "Commencer la comparaison de ressemblances"
+    "BUTTON-START-COMPARISON": "Commencer la comparaison de ressemblances",
+    "title": "Simmey - Découvrez à quel point vous ressemblez à votre mère et votre père grâce à notre IA de correspondance faciale!",
+    "description": "Découvrez à quel point vous ressemblez à votre mère et votre père grâce à notre IA de correspondance faciale! C'est la page principale où vous pouvez commencer votre comparaison amusante et engageante des ressemblances familiales.",
+    "keywords": "comparaison de visage, parents, similarité, amusant, famille"
   },
   "BUTTON": {
     "CHECK-HISTORY": "Vérifier l’historique partagé"
