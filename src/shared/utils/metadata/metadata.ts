@@ -70,6 +70,7 @@ export default function getMetadata(props: MetadataProps): Metadata {
 
       keywords: keywords,
       robots: "index, follow",
+      "naver-site-verification": "6b5e4679e9cb2d3e41ab048473812ee8dc051ad3",
     },
 
     alternates: {
