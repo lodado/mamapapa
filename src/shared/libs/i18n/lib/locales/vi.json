@@ -99,7 +99,9 @@
     "TUTORIAL-STEP-5": "Sau khi chọn xong, nhấn nút!",
     "BUTTON-BACK": "Quay lại",
     "BUTTON-HELP": "Trợ giúp",
-    "SELECT-PICTURE-TITLE": "Vui lòng chọn ảnh để so sánh"
+    "SELECT-PICTURE-TITLE": "Vui lòng chọn ảnh để so sánh",
+    "description": "Đây là trang chủ so khớp khuôn mặt, nơi bạn có thể tải ảnh lên để trích xuất và so sánh khuôn mặt. Hãy chọn chính bạn và ít nhất một người khác để dễ dàng so sánh khuôn mặt.",
+    "keywords": "So khớp khuôn mặt, so sánh khuôn mặt, tải ảnh lên, trích xuất khuôn mặt, cắt ảnh, nhận diện khuôn mặt, so sánh ảnh"
   },
   "IMAGES": {
     "EMPTY-IMAGE-TITLE": "Vui lòng thêm ảnh để so sánh.",

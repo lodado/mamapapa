@@ -99,7 +99,9 @@
     "TUTORIAL-STEP-5": "Once selection is complete, press the button!",
     "BUTTON-BACK": "Go Back",
     "BUTTON-HELP": "Help",
-    "SELECT-PICTURE-TITLE": "Please select photos to compare"
+    "SELECT-PICTURE-TITLE": "Please select photos to compare",
+    "description": "This is a face matching homepage where you can upload photos to extract and compare faces. Select yourself and at least one other person to easily compare faces.",
+    "keywords": "Face matching, face comparison, photo upload, face extraction, image crop, face recognition, photo comparison"
   },
   "IMAGES": {
     "EMPTY-IMAGE-TITLE": "Please add photos to compare.",

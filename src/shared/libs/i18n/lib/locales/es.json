@@ -99,7 +99,9 @@
     "TUTORIAL-STEP-5": "Una vez que la selección esté completa, presione el botón!",
     "BUTTON-BACK": "Volver",
     "BUTTON-HELP": "Ayuda",
-    "SELECT-PICTURE-TITLE": "Por favor, seleccione las fotos para comparar"
+    "SELECT-PICTURE-TITLE": "Por favor, seleccione las fotos para comparar",
+    "description": "Esta es una página de emparejamiento facial donde puedes subir fotos para extraer y comparar rostros. Selecciona tu rostro y al menos otra persona para comparar fácilmente.",
+    "keywords": "Emparejamiento facial, comparación facial, carga de fotos, extracción facial, recorte de imagen, reconocimiento facial, comparación de fotos"
   },
   "IMAGES": {
     "EMPTY-IMAGE-TITLE": "Por favor, agregue fotos para comparar.",

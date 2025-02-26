@@ -99,7 +99,9 @@
     "TUTORIAL-STEP-5": "选择完成后，请按按钮！",
     "BUTTON-BACK": "返回",
     "BUTTON-HELP": "帮助",
-    "SELECT-PICTURE-TITLE": "请选择要比较的照片"
+    "SELECT-PICTURE-TITLE": "请选择要比较的照片",
+    "description": "这是一个人脸匹配主页，您可以上传照片以提取和比较人脸。 必须选择自己并至少指定一个比较对象，以便轻松进行人脸对比。",
+    "keywords": "人脸匹配, 人脸对比, 照片上传, 人脸提取, 图像裁剪, 人脸识别, 照片对比"
   },
   "IMAGES": {
     "EMPTY-IMAGE-TITLE": "请添加要比较的照片。",

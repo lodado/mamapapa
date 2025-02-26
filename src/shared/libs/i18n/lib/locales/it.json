@@ -99,7 +99,9 @@
     "TUTORIAL-STEP-5": "Una volta completata la selezione, premi il pulsante!",
     "BUTTON-BACK": "Torna indietro",
     "BUTTON-HELP": "Aiuto",
-    "SELECT-PICTURE-TITLE": "Seleziona le foto da confrontare"
+    "SELECT-PICTURE-TITLE": "Seleziona le foto da confrontare",
+    "description": "Questa è una pagina di abbinamento del viso dove puoi caricare foto per estrarre e confrontare i volti. Seleziona te stesso e almeno un'altra persona per confrontare facilmente.",
+    "keywords": "Abbinamento del viso, confronto del viso, caricamento foto, estrazione del viso, ritaglio immagine, riconoscimento facciale, confronto foto"
   },
   "IMAGES": {
     "EMPTY-IMAGE-TITLE": "Aggiungi foto da confrontare.",

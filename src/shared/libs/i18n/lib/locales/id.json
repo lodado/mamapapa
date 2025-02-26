@@ -99,7 +99,9 @@
     "TUTORIAL-STEP-5": "Setelah pemilihan selesai, tekan tombol!",
     "BUTTON-BACK": "Kembali",
     "BUTTON-HELP": "Bantuan",
-    "SELECT-PICTURE-TITLE": "Silakan pilih foto untuk dibandingkan"
+    "SELECT-PICTURE-TITLE": "Silakan pilih foto untuk dibandingkan",
+    "description": "Ini adalah halaman pencocokan wajah tempat Anda dapat mengunggah foto untuk mengekstrak dan membandingkan wajah. Pilih diri sendiri dan setidaknya satu orang lain untuk membandingkan dengan mudah.",
+    "keywords": "Pencocokan wajah, perbandingan wajah, unggah foto, ekstraksi wajah, pemotongan gambar, pengenalan wajah, perbandingan foto"
   },
   "IMAGES": {
     "EMPTY-IMAGE-TITLE": "Silakan tambahkan foto untuk dibandingkan.",

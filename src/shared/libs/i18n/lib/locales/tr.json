@@ -99,7 +99,9 @@
     "TUTORIAL-STEP-5": "Seçim tamamlandıktan sonra düğmeye basın!",
     "BUTTON-BACK": "Geri Git",
     "BUTTON-HELP": "Yardım",
-    "SELECT-PICTURE-TITLE": "Lütfen karşılaştırmak için fotoğrafları seçin"
+    "SELECT-PICTURE-TITLE": "Lütfen karşılaştırmak için fotoğrafları seçin",
+    "description": "Bu, yüzleri çıkarmak ve karşılaştırmak için fotoğraflar yükleyebileceğiniz bir yüz eşleştirme ana sayfasıdır. Kendinizi seçin ve en az bir kişi daha belirleyerek kolayca karşılaştırma yapın.",
+    "keywords": "Yüz eşleştirme, yüz karşılaştırma, fotoğraf yükleme, yüz çıkarma, görüntü kırpma, yüz tanıma, fotoğraf karşılaştırma"
   },
   "IMAGES": {
     "EMPTY-IMAGE-TITLE": "Lütfen karşılaştırmak için fotoğraflar ekleyin.",
