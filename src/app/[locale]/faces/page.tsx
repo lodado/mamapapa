@@ -1,11 +1,14 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import React from "react";
 
+import { PAGE_ROUTE } from "@/entities/Router/configs/route";
 import { ModelDownloader } from "@/features";
 import { ImageContainer } from "@/features/ImageSelector";
 import { getLocalesListsForStateParams } from "@/shared/index.server";
+import { JsonLdScript } from "@/shared/ui";
 import { ReactiveLayout } from "@/shared/ui/ReactiveLayout";
 import { ToastViewPort } from "@/shared/ui/Toast";
+import { getMetadata } from "@/shared/utils/index.server";
 
 import AddPictureButton from "./components/AddPictureButton";
 import CompareButtonLink from "./components/CompareButtonLink";
@@ -16,12 +19,35 @@ export async function generateStaticParams() {
   return getLocalesListsForStateParams();
 }
 
+export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
+  const mainTranslate = await getTranslations("MAINPAGE");
+  const t = await getTranslations("FACES");
+
+  return getMetadata({
+    title: mainTranslate("title"),
+    description: t("description"),
+    path: PAGE_ROUTE.FACES,
+    keywords: t("keywords"),
+    locale,
+  });
+}
+
 const Page = async ({ params }: { params: { locale: string } }) => {
   setRequestLocale(params.locale);
   const t = await getTranslations("FACES");
+  const mainTranslate = await getTranslations("MAINPAGE");
 
   return (
     <>
+      <JsonLdScript
+        customMeta={{
+          title: mainTranslate("title"),
+          url: PAGE_ROUTE.FACES,
+          description: t("description"),
+          date: new Date().toISOString(),
+        }}
+      />
+
       <ReactiveLayout>
         <div role="none presentation" className="w-full flex-shrink-0 h-[4rem]" />
         <FacePageHeader />

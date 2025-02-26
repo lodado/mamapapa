@@ -99,7 +99,9 @@
     "TUTORIAL-STEP-5": "Sobald die Auswahl abgeschlossen ist, drücken Sie die Taste!",
     "BUTTON-BACK": "Zurück",
     "BUTTON-HELP": "Hilfe",
-    "SELECT-PICTURE-TITLE": "Bitte wählen Sie Fotos zum Vergleichen aus"
+    "SELECT-PICTURE-TITLE": "Bitte wählen Sie Fotos zum Vergleichen aus",
+    "description": "Dies ist die Gesichtsabgleich-Homepage, auf der Sie Fotos hochladen können, um Gesichter zu extrahieren und zu vergleichen. Wählen Sie sich selbst und mindestens eine weitere Person aus, um Gesichter einfach zu vergleichen.",
+    "keywords": "Gesichtsabgleich, Gesichtsvergleich, Foto-Upload, Gesichtsextraktion, Bildzuschnitt, Gesichtserkennung, Fotovergleich"
   },
   "IMAGES": {
     "EMPTY-IMAGE-TITLE": "Bitte fügen Sie Fotos zum Vergleichen hinzu.",

@@ -5,7 +5,7 @@ import { Viewport } from "@radix-ui/react-toast";
 import { cn, isRtl } from "@/shared";
 
 const ToastViewPort = ({ className }: { className?: string }) => {
-  const dir = isRtl() ? "ltr" : "rtl";
+  const dir = isRtl() ? "rtl" : "ltr";
 
   return (
     <Viewport
@@ -14,7 +14,7 @@ const ToastViewPort = ({ className }: { className?: string }) => {
         `
     fixed bottom-0 left-1/2 
     ${dir === "rtl" ? "translate-x-1/2" : "-translate-x-1/2"}
-    transform -translate-x-1/2 
+    transform  
     flex flex-col items-center
     w-[calc(100%-3rem)] max-w-[29rem] 
     gap-2

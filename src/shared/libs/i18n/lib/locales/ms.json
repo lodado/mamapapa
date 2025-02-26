@@ -99,7 +99,9 @@
     "TUTORIAL-STEP-5": "Setelah pilihan selesai, tekan butang!",
     "BUTTON-BACK": "Kembali",
     "BUTTON-HELP": "Bantuan",
-    "SELECT-PICTURE-TITLE": "Sila pilih foto untuk dibandingkan"
+    "SELECT-PICTURE-TITLE": "Sila pilih foto untuk dibandingkan",
+    "description": "Ini adalah halaman utama padanan wajah di mana anda boleh memuat naik foto untuk mengekstrak dan membandingkan wajah. Pilih diri anda dan sekurang-kurangnya satu orang lain untuk membandingkan dengan mudah.",
+    "keywords": "Padanan wajah, perbandingan wajah, muat naik foto, pengekstrakan wajah, pemotongan imej, pengecaman wajah, perbandingan foto"
   },
   "IMAGES": {
     "EMPTY-IMAGE-TITLE": "Sila tambah foto untuk dibandingkan.",
