@@ -107,6 +107,7 @@
     "EMPTY-IMAGE-TITLE": "يرجى إضافة الصور للمقارنة.",
     "EMPTY-IMAGE-DESCRIPTION-1": "أضف الصور للمقارنة",
     "EMPTY-IMAGE-DESCRIPTION-2": "يرجى تصنيف الصور.",
+    "ImageUpload-info": "*لن يتم تخزين معلومات الصورة على الخادم حتى يتم مشاركتها!",
     "DIALOG-TITLE": "إضافة عنصر تصنيف",
     "DIALOG-PLACEHOLDER": "الرجاء إدخال",
     "DIALOG-SUCCESS-TITLE": "تم الحفظ بنجاح",
@@ -197,7 +198,9 @@
     "dialog_title": "حذف نتيجة المقارنة",
     "dialog_description": "هل أنت متأكد أنك تريد حذف هذه النتيجة؟",
     "success_title": "تم الحذف بنجاح",
-    "success_description": "تم حذف النتيجة بنجاح."
+    "success_description": "تم حذف النتيجة بنجاح.",
+    "title": "حذف نتيجة المقارنة",
+    "description": "هل أنت متأكد أنك تريد حذف هذه النتيجة؟"
   },
   "LOGIN": {
     "title": "Simmey - اكتشف مدى تشابهك مع والدتك ووالدك باستخدام ذكاءنا الاصطناعي لمطابقة الوجوه!",

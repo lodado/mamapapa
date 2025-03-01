@@ -107,6 +107,7 @@
     "EMPTY-IMAGE-TITLE": "比較する写真を追加してください。",
     "EMPTY-IMAGE-DESCRIPTION-1": "比較する写真を追加し",
     "EMPTY-IMAGE-DESCRIPTION-2": "写真を分類してください。",
+    "ImageUpload-info": "*共有するまで画像情報はサーバーに保存されません！",
     "DIALOG-TITLE": "分類項目を追加する",
     "DIALOG-PLACEHOLDER": "入力してください",
     "DIALOG-SUCCESS-TITLE": "保存に成功しました",
@@ -197,7 +198,9 @@
     "dialog_title": "比較結果を削除",
     "dialog_description": "この結果を本当に削除しますか？",
     "success_title": "削除成功",
-    "success_description": "結果が正常に削除されました。"
+    "success_description": "結果の削除に成功しました。",
+    "title": "比較結果を削除",
+    "description": "この結果を本当に削除しますか？"
   },
   "LOGIN": {
     "title": "Simmey - 私たちの顔マッチングAIを使用して、あなたが両親とどれだけ似ているかを発見してください!",

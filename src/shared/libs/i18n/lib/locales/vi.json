@@ -107,6 +107,7 @@
     "EMPTY-IMAGE-TITLE": "Vui lòng thêm ảnh để so sánh.",
     "EMPTY-IMAGE-DESCRIPTION-1": "Thêm ảnh để so sánh",
     "EMPTY-IMAGE-DESCRIPTION-2": "Phân loại ảnh.",
+    "ImageUpload-info": "*Thông tin hình ảnh không được lưu trữ trên máy chủ cho đến khi được chia sẻ!",
     "DIALOG-TITLE": "Thêm mục phân loại",
     "DIALOG-PLACEHOLDER": "Vui lòng nhập",
     "DIALOG-SUCCESS-TITLE": "Lưu thành công",
@@ -197,7 +198,9 @@
     "dialog_title": "Xóa kết quả so sánh",
     "dialog_description": "Bạn có chắc chắn muốn xóa kết quả này không?",
     "success_title": "Xóa thành công",
-    "success_description": "Kết quả đã được xóa thành công."
+    "success_description": "Kết quả đã được xóa thành công.",
+    "title": "Xóa kết quả so sánh",
+    "description": "Bạn có chắc chắn muốn xóa kết quả này không?"
   },
   "LOGIN": {
     "title": "Simmey - Khám phá bạn giống mẹ và bố bao nhiêu bằng AI so khớp khuôn mặt của chúng tôi!",

@@ -107,6 +107,7 @@
     "EMPTY-IMAGE-TITLE": "비교할 사진을 추가해주세요.",
     "EMPTY-IMAGE-DESCRIPTION-1": "비교할 사진을 추가하고",
     "EMPTY-IMAGE-DESCRIPTION-2": "사진을 분류해주세요.",
+    "ImageUpload-info": "*공유 이전까진 이미지 정보가 서버에 저장되지 않아요!",
     "DIALOG-TITLE": "분류 항목 추가하기",
     "DIALOG-PLACEHOLDER": "입력해주세요",
     "DIALOG-SUCCESS-TITLE": "저장에 성공했습니다",
@@ -197,7 +198,9 @@
     "dialog_title": "비교 결과 삭제",
     "dialog_description": "결과를 정말로 삭제하시겠습니까?",
     "success_title": "삭제 성공",
-    "success_description": "삭제에 성공했습니다."
+    "success_description": "삭제에 성공했습니다.",
+    "title": "비교 결과 삭제",
+    "description": "결과를 정말로 삭제하시겠습니까?"
   },
   "LOGIN": {
     "title": "Simmey - 우리의 얼굴 매칭 AI를 사용하여 부모님과 얼마나 닮았는지 확인해보세요!",

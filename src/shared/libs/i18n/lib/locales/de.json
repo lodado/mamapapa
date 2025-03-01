@@ -107,6 +107,7 @@
     "EMPTY-IMAGE-TITLE": "Bitte fügen Sie Fotos zum Vergleichen hinzu.",
     "EMPTY-IMAGE-DESCRIPTION-1": "Fügen Sie Fotos zum Vergleichen hinzu",
     "EMPTY-IMAGE-DESCRIPTION-2": "Klassifizieren Sie die Fotos.",
+    "ImageUpload-info": "*Bildinformationen werden nicht auf dem Server gespeichert, bis sie geteilt werden!",
     "DIALOG-TITLE": "Klassifizierungselement hinzufügen",
     "DIALOG-PLACEHOLDER": "Bitte eingeben",
     "DIALOG-SUCCESS-TITLE": "Erfolgreich gespeichert",
@@ -196,8 +197,10 @@
   "RemoveCommentDialog": {
     "dialog_title": "Vergleichsergebnis löschen",
     "dialog_description": "Möchten Sie dieses Ergebnis wirklich löschen?",
-    "success_title": "Erfolgreich gelöscht",
-    "success_description": "Das Ergebnis wurde erfolgreich gelöscht."
+    "success_title": "Löschen erfolgreich",
+    "success_description": "Das Ergebnis wurde erfolgreich gelöscht.",
+    "title": "Vergleichsergebnis löschen",
+    "description": "Sind Sie sicher, dass Sie dieses Ergebnis löschen möchten?"
   },
   "LOGIN": {
     "title": "Simmey - Entdecken Sie, wie sehr Sie Ihrer Mutter und Ihrem Vater ähneln, mit unserer Gesichtserkennungs-KI!",

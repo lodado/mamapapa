@@ -107,6 +107,7 @@
     "EMPTY-IMAGE-TITLE": "Lütfen karşılaştırmak için fotoğraflar ekleyin.",
     "EMPTY-IMAGE-DESCRIPTION-1": "Karşılaştırmak için fotoğraflar ekleyin",
     "EMPTY-IMAGE-DESCRIPTION-2": "Fotoğrafları sınıflandırın.",
+    "ImageUpload-info": "*Görsel bilgileri, paylaşılana kadar sunucuda saklanmaz!",
     "DIALOG-TITLE": "Sınıflandırma Öğesi Ekle",
     "DIALOG-PLACEHOLDER": "Lütfen girin",
     "DIALOG-SUCCESS-TITLE": "Başarıyla kaydedildi",
@@ -196,8 +197,10 @@
   "RemoveCommentDialog": {
     "dialog_title": "Karşılaştırma Sonucunu Sil",
     "dialog_description": "Bu sonucu silmek istediğinizden emin misiniz?",
-    "success_title": "Başarıyla Silindi",
-    "success_description": "Sonuç başarıyla silindi."
+    "success_title": "Silme başarılı",
+    "success_description": "Sonuç başarıyla silindi.",
+    "title": "Karşılaştırma sonucunu sil",
+    "description": "Bu sonucu gerçekten silmek istiyor musunuz?"
   },
   "LOGIN": {
     "title": "Simmey - Yüz eşleştirme yapay zekamızla annenize ve babanıza ne kadar benzediğinizi keşfedin!",

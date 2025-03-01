@@ -21,6 +21,10 @@ const EmptyImageContainer = () => {
         <span className="text-text-03 body-2 flex w-full justify-center items-center">
           {t("EMPTY-IMAGE-DESCRIPTION-2")}
         </span>
+
+        <span className="text-text-03 mt-6 body-3 flex w-full justify-center items-center">
+          {t("ImageUpload-info")}
+        </span>
       </div>
     </div>
   );

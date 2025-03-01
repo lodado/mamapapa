@@ -107,6 +107,7 @@
     "EMPTY-IMAGE-TITLE": "অনুগ্রহ করে তুলনার জন্য ছবি যোগ করুন।",
     "EMPTY-IMAGE-DESCRIPTION-1": "তুলনার জন্য ছবি যোগ করুন",
     "EMPTY-IMAGE-DESCRIPTION-2": "অনুগ্রহ করে ছবিগুলি শ্রেণীবদ্ধ করুন।",
+    "ImageUpload-info": "*শেয়ার করার আগে চিত্র তথ্য সার্ভারে সংরক্ষণ করা হয় না!",
     "DIALOG-TITLE": "শ্রেণীবিভাগ আইটেম যোগ করুন",
     "DIALOG-PLACEHOLDER": "অনুগ্রহ করে লিখুন",
     "DIALOG-SUCCESS-TITLE": "সফলভাবে সংরক্ষণ করা হয়েছে",
@@ -196,8 +197,10 @@
   "RemoveCommentDialog": {
     "dialog_title": "তুলনা ফলাফল মুছুন",
     "dialog_description": "আপনি কি নিশ্চিত যে আপনি এই ফলাফল মুছতে চান?",
-    "success_title": "মুছে ফেলা সফল",
-    "success_description": "ফলাফল সফলভাবে মুছে ফেলা হয়েছে।"
+    "success_title": "মোছা সফল",
+    "success_description": "ফলাফল সফলভাবে মোছা হয়েছে।",
+    "title": "তুলনা ফলাফল মুছুন",
+    "description": "আপনি কি সত্যিই এই ফলাফলটি মুছে ফেলতে চান?"
   },
   "LOGIN": {
     "title": "Simmey - আমাদের ফেস-ম্যাচিং AI ব্যবহার করে দেখুন আপনি আপনার মা-বাবার সাথে কতটা মিল!",

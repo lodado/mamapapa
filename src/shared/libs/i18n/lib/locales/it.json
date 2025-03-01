@@ -107,6 +107,7 @@
     "EMPTY-IMAGE-TITLE": "Aggiungi foto da confrontare.",
     "EMPTY-IMAGE-DESCRIPTION-1": "Aggiungi foto da confrontare",
     "EMPTY-IMAGE-DESCRIPTION-2": "Classifica le foto.",
+    "ImageUpload-info": "*Le informazioni sull'immagine non vengono memorizzate sul server fino a quando non vengono condivise!",
     "DIALOG-TITLE": "Aggiungi elemento di classificazione",
     "DIALOG-PLACEHOLDER": "Si prega di inserire",
     "DIALOG-SUCCESS-TITLE": "Salvataggio riuscito",
@@ -197,7 +198,9 @@
     "dialog_title": "Elimina risultato del confronto",
     "dialog_description": "Sei sicuro di voler eliminare questo risultato?",
     "success_title": "Eliminazione riuscita",
-    "success_description": "Il risultato è stato eliminato con successo."
+    "success_description": "Il risultato è stato eliminato con successo.",
+    "title": "Elimina risultato del confronto",
+    "description": "Sei sicuro di voler eliminare questo risultato?"
   },
   "LOGIN": {
     "title": "Simmey - Scopri quanto assomigli a tua madre e tuo padre usando la nostra AI di riconoscimento facciale!",

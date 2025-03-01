@@ -107,6 +107,7 @@
     "EMPTY-IMAGE-TITLE": "Por favor, agregue fotos para comparar.",
     "EMPTY-IMAGE-DESCRIPTION-1": "Agregue fotos para comparar",
     "EMPTY-IMAGE-DESCRIPTION-2": "Clasifique las fotos.",
+    "ImageUpload-info": "*La información de la imagen no se almacena en el servidor hasta que se comparte!",
     "DIALOG-TITLE": "Agregar elemento de clasificación",
     "DIALOG-PLACEHOLDER": "Por favor ingrese",
     "DIALOG-SUCCESS-TITLE": "Guardado exitoso",
@@ -197,7 +198,9 @@
     "dialog_title": "Eliminar resultado de la comparación",
     "dialog_description": "¿Está seguro de que desea eliminar este resultado?",
     "success_title": "Eliminación exitosa",
-    "success_description": "El resultado ha sido eliminado con éxito."
+    "success_description": "El resultado se eliminó correctamente.",
+    "title": "Eliminar resultado de comparación",
+    "description": "¿Estás seguro de que deseas eliminar este resultado?"
   },
   "LOGIN": {
     "title": "Simmey - ¡Descubre cuánto te pareces a tu mamá y papá usando nuestra IA de coincidencia facial!",

@@ -107,6 +107,7 @@
     "EMPTY-IMAGE-TITLE": "Sila tambah foto untuk dibandingkan.",
     "EMPTY-IMAGE-DESCRIPTION-1": "Tambah foto untuk dibandingkan",
     "EMPTY-IMAGE-DESCRIPTION-2": "Klasifikasikan foto.",
+    "ImageUpload-info": "*Maklumat imej tidak disimpan di pelayan sehingga ia dikongsi!",
     "DIALOG-TITLE": "Tambah item klasifikasi",
     "DIALOG-PLACEHOLDER": "Sila masukkan",
     "DIALOG-SUCCESS-TITLE": "Berjaya disimpan",
@@ -196,8 +197,10 @@
   "RemoveCommentDialog": {
     "dialog_title": "Padam Keputusan Perbandingan",
     "dialog_description": "Adakah anda pasti mahu memadam keputusan ini?",
-    "success_title": "Berjaya Dipadam",
-    "success_description": "Keputusan telah berjaya dipadamkan."
+    "success_title": "Pemadaman berjaya",
+    "success_description": "Hasil telah berjaya dipadamkan.",
+    "title": "Padam hasil perbandingan",
+    "description": "Adakah anda pasti mahu memadam hasil ini?"
   },
   "LOGIN": {
     "title": "Simmey - Temui berapa banyak anda menyerupai ibu dan bapa anda menggunakan AI padanan wajah kami!",

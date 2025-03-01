@@ -107,6 +107,7 @@
     "EMPTY-IMAGE-TITLE": "请添加要比较的照片。",
     "EMPTY-IMAGE-DESCRIPTION-1": "添加要比较的照片",
     "EMPTY-IMAGE-DESCRIPTION-2": "请对照片进行分类。",
+    "ImageUpload-info": "*在共享之前，图片信息不会存储在服务器上！",
     "DIALOG-TITLE": "添加分类项目",
     "DIALOG-PLACEHOLDER": "请输入",
     "DIALOG-SUCCESS-TITLE": "保存成功",
@@ -197,7 +198,9 @@
     "dialog_title": "删除比较结果",
     "dialog_description": "您确定要删除此结果吗？",
     "success_title": "删除成功",
-    "success_description": "结果已成功删除。"
+    "success_description": "结果已成功删除。",
+    "title": "删除对比结果",
+    "description": "您确定要删除此结果吗？"
   },
   "LOGIN": {
     "title": "Simmey - 我们的面部匹配AI可以帮您发现您与父母的相似程度!",

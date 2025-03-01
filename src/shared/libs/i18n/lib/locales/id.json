@@ -107,6 +107,7 @@
     "EMPTY-IMAGE-TITLE": "Silakan tambahkan foto untuk dibandingkan.",
     "EMPTY-IMAGE-DESCRIPTION-1": "Tambahkan foto untuk dibandingkan",
     "EMPTY-IMAGE-DESCRIPTION-2": "Klasifikasikan foto.",
+    "ImageUpload-info": "*Informasi gambar tidak disimpan di server sampai dibagikan!",
     "DIALOG-TITLE": "Tambahkan item klasifikasi",
     "DIALOG-PLACEHOLDER": "Silakan masukkan",
     "DIALOG-SUCCESS-TITLE": "Berhasil disimpan",
@@ -196,8 +197,10 @@
   "RemoveCommentDialog": {
     "dialog_title": "Hapus Hasil Perbandingan",
     "dialog_description": "Apakah Anda yakin ingin menghapus hasil ini?",
-    "success_title": "Berhasil Dihapus",
-    "success_description": "Hasil berhasil dihapus."
+    "success_title": "Penghapusan berhasil",
+    "success_description": "Hasil berhasil dihapus.",
+    "title": "Hapus hasil perbandingan",
+    "description": "Apakah Anda yakin ingin menghapus hasil ini?"
   },
   "LOGIN": {
     "title": "Simmey - Temukan seberapa mirip Anda dengan ibu dan ayah Anda menggunakan AI pencocokan wajah kami!",
