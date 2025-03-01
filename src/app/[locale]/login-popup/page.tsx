@@ -1,12 +1,7 @@
-"use client";
-
 import { Metadata } from "next";
-import { useTranslations } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import React from "react";
 
-import { useAuthStore } from "@/entities/Auth/client/models/store/AuthStore";
-import LoginForm from "@/entities/Auth/ui/LoginForm/LoginForm";
 import { PAGE_ROUTE } from "@/entities/Router/configs/route";
 import { getLocalesListsForStateParams } from "@/shared/index.server";
 import { JsonLdScript } from "@/shared/ui";
