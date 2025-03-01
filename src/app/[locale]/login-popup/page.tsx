@@ -1,22 +1,50 @@
 "use client";
 
+import { Metadata } from "next";
 import { useTranslations } from "next-intl";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import React from "react";
 
 import { useAuthStore } from "@/entities/Auth/client/models/store/AuthStore";
 import LoginForm from "@/entities/Auth/ui/LoginForm/LoginForm";
+import { PAGE_ROUTE } from "@/entities/Router/configs/route";
+import { getLocalesListsForStateParams } from "@/shared/index.server";
+import { JsonLdScript } from "@/shared/ui";
+import { getMetadata } from "@/shared/utils/index.server";
 
-export default function LoginPopupPage() {
-  const t = useTranslations("LoginPopupPage");
-  const { isLogin } = useAuthStore();
+import LoginPopup from "./LoginPopup";
 
-  const handleLoginSuccess = () => {
-    window.opener?.postMessage("LOGIN_SUCCESS", "*");
-  };
+export async function generateStaticParams() {
+  return getLocalesListsForStateParams();
+}
+
+export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
+  const t = await getTranslations("LOGIN");
+
+  return getMetadata({
+    title: t("title"),
+    description: t("description"),
+    path: PAGE_ROUTE.LOGIN,
+    keywords: t("keywords"),
+    locale,
+  });
+}
+
+export default async function LoginPopupPage({ params }: { params: { locale: string } }) {
+  setRequestLocale(params.locale);
+  const t = await getTranslations("LOGIN");
 
   return (
-    <div className="flex flex-col w-screen h-screen items-center justify-center">
-      {isLogin ? <div>{t("login_completed")}</div> : <LoginForm afterCallback={handleLoginSuccess} />}
-    </div>
+    <>
+      <JsonLdScript
+        customMeta={{
+          title: t("title"),
+          url: PAGE_ROUTE.LOGIN,
+          description: t("description"),
+          date: new Date().toISOString(),
+        }}
+      />
+      <LoginPopup />
+    </>
   );
 }
