@@ -18,6 +18,10 @@ interface MetadataProps {
     data: string | number;
   };
   locale?: string;
+
+  others?: {
+    [key in string]: string;
+  };
 }
 
 const webUrl = process.env.NEXT_PUBLIC_CLIENT_URL;
@@ -31,7 +35,7 @@ export interface MetadataParams {
 }
 
 export default function getMetadata(props: MetadataProps): Metadata {
-  const { title, description: desc, path, image, keywords, label1, label2, locale = "KO" } = props;
+  const { title, description: desc, path, image, keywords, label1, label2, others, locale = "KO" } = props;
   const description = `${desc}`;
 
   const images = webUrl + (image ?? defaultImage);
@@ -71,6 +75,8 @@ export default function getMetadata(props: MetadataProps): Metadata {
       keywords: keywords,
       robots: "index, follow",
       "naver-site-verification": "6b5e4679e9cb2d3e41ab048473812ee8dc051ad3",
+
+      ...(others ?? {}),
     },
 
     alternates: {

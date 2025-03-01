@@ -3,19 +3,14 @@ import React from "react";
 const webUrl = process.env.NEXT_PUBLIC_CLIENT_URL;
 
 const defaultImage = "/Logo.svg";
-
-interface CustomMeta {
-  title: string;
-  description: string;
-  date: string;
-}
-
+ 
 interface Metadata {
   title: string;
   description: string;
   author?: string;
   url: string;
   date: string;
+  isAccessibleForFree?: boolean;
 }
 
 // 기본 메타 데이터 (필요에 따라 실제 데이터로 교체)
@@ -24,6 +19,7 @@ const defaultMetadata: Metadata = {
   description: "Use a face-matching AI to see how much you resemble your mom and dad!",
   url: webUrl!,
   date: new Date().toISOString(),
+  isAccessibleForFree: true,
 };
 
 /**
@@ -46,6 +42,7 @@ export const generateJsonLd = (customMeta: Metadata = defaultMetadata) => {
     keywords: "face matching, ai, fun, family",
     url: webUrl + metadata.url,
     datePublished: metadata.date,
+    isAccessibleForFree: metadata.isAccessibleForFree,
 
     publisher: {
       "@type": "Organization",
