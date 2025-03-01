@@ -198,5 +198,25 @@
     "dialog_description": "Apakah Anda yakin ingin menghapus hasil ini?",
     "success_title": "Berhasil Dihapus",
     "success_description": "Hasil berhasil dihapus."
+  },
+  "LOGIN": {
+    "title": "Simmey - Temukan seberapa mirip Anda dengan ibu dan ayah Anda menggunakan AI pencocokan wajah kami!",
+    "description": "Akses fitur yang diinginkan dengan cepat melalui sistem login yang aman dan mudah.",
+    "keywords": "Login, akses akun, login aman, login mudah, autentikasi"
+  },
+  "HISTORY": {
+    "title": "Hasil Pencocokan Wajah Sebelumnya",
+    "description": "Periksa hasil pencocokan wajah Anda sebelumnya dan bagikan dengan keluarga serta teman-teman.",
+    "keywords": "pencocokan wajah, AI, riwayat hasil, keluarga, teman, kesenangan"
+  },
+  "RESULT": {
+    "title": "Halaman Hasil Perbandingan",
+    "description": "Periksa hasil pencocokan wajah Anda!",
+    "keywords": "pencocokan wajah, AI, riwayat hasil, keluarga, teman, kesenangan"
+  },
+  "HISTORYID": {
+    "title": "Hasil Pencocokan Wajah Sebelumnya",
+    "description": "Periksa hasil pencocokan wajah Anda sebelumnya dan bagikan dengan keluarga serta teman-teman.",
+    "keywords": "pencocokan wajah, AI, riwayat hasil, keluarga, teman, kesenangan"
   }
 }

@@ -198,5 +198,25 @@
     "dialog_description": "Sei sicuro di voler eliminare questo risultato?",
     "success_title": "Eliminazione riuscita",
     "success_description": "Il risultato è stato eliminato con successo."
+  },
+  "LOGIN": {
+    "title": "Simmey - Scopri quanto assomigli a tua madre e tuo padre usando la nostra AI di riconoscimento facciale!",
+    "description": "Accedi rapidamente alle funzionalità desiderate con un sistema di login sicuro e semplice.",
+    "keywords": "Accesso, accesso all'account, login sicuro, login facile, autenticazione"
+  },
+  "HISTORY": {
+    "title": "Risultati passati del confronto facciale",
+    "description": "Controlla i tuoi risultati passati del confronto facciale e condividili con famiglia e amici.",
+    "keywords": "confronto facciale, IA, cronologia dei risultati, famiglia, amici, divertimento"
+  },
+  "RESULT": {
+    "title": "Pagina dei risultati del confronto",
+    "description": "Controlla i tuoi risultati di confronto facciale!",
+    "keywords": "confronto facciale, IA, cronologia dei risultati, famiglia, amici, divertimento"
+  },
+  "HISTORYID": {
+    "title": "Risultati passati del confronto facciale",
+    "description": "Controlla i tuoi risultati passati del confronto facciale e condividili con famiglia e amici.",
+    "keywords": "confronto facciale, IA, cronologia dei risultati, famiglia, amici, divertimento"
   }
 }

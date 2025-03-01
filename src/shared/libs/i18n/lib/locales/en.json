@@ -60,7 +60,7 @@
     "DESCRIPTION-2": "You can check who you resemble more.",
     "BUTTON-START-COMPARISON": "Start Look-Alike Comparison",
     "title": "Simmey - Discover how much you resemble your mom and dad using our face-matching AI!",
-    "description": "Discover how much you resemble your mom and dad using our face-matching AI! This is the main page where you can start your fun and engaging family resemblance comparison.",
+    "description": "Use our face-matching AI to see how much you resemble your parents! This is the main page where you can start a fun and exciting family look-alike comparison.",
     "keywords": "face comparison, parents, similarity, fun, family"
   },
   "BUTTON": {
@@ -198,5 +198,25 @@
     "dialog_description": "Are you sure you want to delete this result?",
     "success_title": "Delete Successful",
     "success_description": "The result has been successfully deleted."
+  },
+  "LOGIN": {
+    "title": "Simmey - Discover how much you resemble your mom and dad using our face-matching AI!",
+    "description": "Quickly access desired features with a secure and simple login system.",
+    "keywords": "Login, account access, secure login, easy login, authentication"
+  },
+  "HISTORY": {
+    "title": "Past Face Matching Results",
+    "description": "Check your previous face matching results and share them with family and friends.",
+    "keywords": "face matching, AI, result history, family, friends, fun"
+  },
+  "RESULT": {
+    "title": "Comparison Results Page",
+    "description": "Check your face matching results!",
+    "keywords": "face matching, AI, result history, family, friends, fun"
+  },
+  "HISTORYID": {
+    "title": "Past Face Matching Results",
+    "description": "Check your previous face matching results and share them with family and friends.",
+    "keywords": "face matching, AI, result history, family, friends, fun"
   }
 }

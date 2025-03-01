@@ -198,5 +198,25 @@
     "dialog_description": "您确定要删除此结果吗？",
     "success_title": "删除成功",
     "success_description": "结果已成功删除。"
+  },
+  "LOGIN": {
+    "title": "Simmey - 我们的面部匹配AI可以帮您发现您与父母的相似程度!",
+    "description": "通过安全简便的登录系统，快速访问所需功能。",
+    "keywords": "登录, 账户访问, 安全登录, 便捷登录, 认证"
+  },
+  "HISTORY": {
+    "title": "过去的面部匹配结果",
+    "description": "查看您以前的面部匹配结果，并与家人和朋友分享。",
+    "keywords": "面部匹配, AI, 结果记录, 家庭, 朋友, 乐趣"
+  },
+  "RESULT": {
+    "title": "比较结果页面",
+    "description": "查看您的面部匹配结果！",
+    "keywords": "面部匹配, AI, 结果记录, 家庭, 朋友, 乐趣"
+  },
+  "HISTORYID": {
+    "title": "过去的面部匹配结果",
+    "description": "查看您以前的面部匹配结果，并与家人和朋友分享。",
+    "keywords": "面部匹配, AI, 结果记录, 家庭, 朋友, 乐趣"
   }
 }

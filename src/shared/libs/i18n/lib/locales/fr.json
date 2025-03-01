@@ -198,5 +198,25 @@
     "dialog_description": "Êtes-vous sûr de vouloir supprimer ce résultat ?",
     "success_title": "Suppression réussie",
     "success_description": "Le résultat a été supprimé avec succès."
+  },
+  "LOGIN": {
+    "title": "Simmey - Découvrez à quel point vous ressemblez à votre mère et votre père grâce à notre IA de correspondance faciale!",
+    "description": "Accédez rapidement aux fonctionnalités souhaitées grâce à un système de connexion sécurisé et simple.",
+    "keywords": "Connexion, accès au compte, connexion sécurisée, connexion facile, authentification"
+  },
+  "HISTORY": {
+    "title": "Résultats précédents de correspondance faciale",
+    "description": "Consultez vos résultats précédents de correspondance faciale et partagez-les avec votre famille et vos amis.",
+    "keywords": "correspondance faciale, IA, historique des résultats, famille, amis, amusement"
+  },
+  "RESULT": {
+    "title": "Page des résultats de comparaison",
+    "description": "Vérifiez vos résultats de correspondance faciale !",
+    "keywords": "correspondance faciale, IA, historique des résultats, famille, amis, amusement"
+  },
+  "HISTORYID": {
+    "title": "Résultats précédents de correspondance faciale",
+    "description": "Consultez vos résultats précédents de correspondance faciale et partagez-les avec votre famille et vos amis.",
+    "keywords": "correspondance faciale, IA, historique des résultats, famille, amis, amusement"
   }
 }

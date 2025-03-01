@@ -198,5 +198,25 @@
     "dialog_description": "Bạn có chắc chắn muốn xóa kết quả này không?",
     "success_title": "Xóa thành công",
     "success_description": "Kết quả đã được xóa thành công."
+  },
+  "LOGIN": {
+    "title": "Simmey - Khám phá bạn giống mẹ và bố bao nhiêu bằng AI so khớp khuôn mặt của chúng tôi!",
+    "description": "Truy cập nhanh các tính năng mong muốn với hệ thống đăng nhập an toàn và đơn giản.",
+    "keywords": "Đăng nhập, truy cập tài khoản, đăng nhập an toàn, đăng nhập dễ dàng, xác thực"
+  },
+  "HISTORY": {
+    "title": "Kết quả đối sánh khuôn mặt trước đây",
+    "description": "Kiểm tra kết quả đối sánh khuôn mặt trước đây của bạn và chia sẻ với gia đình, bạn bè.",
+    "keywords": "đối sánh khuôn mặt, AI, lịch sử kết quả, gia đình, bạn bè, vui vẻ"
+  },
+  "RESULT": {
+    "title": "Trang kết quả so sánh",
+    "description": "Kiểm tra kết quả đối sánh khuôn mặt của bạn!",
+    "keywords": "đối sánh khuôn mặt, AI, lịch sử kết quả, gia đình, bạn bè, vui vẻ"
+  },
+  "HISTORYID": {
+    "title": "Kết quả đối sánh khuôn mặt trước đây",
+    "description": "Kiểm tra kết quả đối sánh khuôn mặt trước đây của bạn và chia sẻ với gia đình, bạn bè.",
+    "keywords": "đối sánh khuôn mặt, AI, lịch sử kết quả, gia đình, bạn bè, vui vẻ"
   }
 }

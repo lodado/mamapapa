@@ -198,5 +198,25 @@
     "dialog_description": "Möchten Sie dieses Ergebnis wirklich löschen?",
     "success_title": "Erfolgreich gelöscht",
     "success_description": "Das Ergebnis wurde erfolgreich gelöscht."
+  },
+  "LOGIN": {
+    "title": "Simmey - Entdecken Sie, wie sehr Sie Ihrer Mutter und Ihrem Vater ähneln, mit unserer Gesichtserkennungs-KI!",
+    "description": "Greifen Sie schnell auf gewünschte Funktionen zu mit einem sicheren und einfachen Anmeldesystem.",
+    "keywords": "Anmeldung, Kontozugang, sichere Anmeldung, einfache Anmeldung, Authentifizierung"
+  },
+  "HISTORY": {
+    "title": "Frühere Ergebnisse der Gesichtserkennung",
+    "description": "Überprüfen Sie Ihre früheren Ergebnisse der Gesichtserkennung und teilen Sie sie mit Familie und Freunden.",
+    "keywords": "Gesichtserkennung, KI, Ergebnishistorie, Familie, Freunde, Spaß"
+  },
+  "RESULT": {
+    "title": "Seite mit Vergleichsergebnissen",
+    "description": "Überprüfen Sie Ihre Gesichtserkennungsergebnisse!",
+    "keywords": "Gesichtserkennung, KI, Ergebnishistorie, Familie, Freunde, Spaß"
+  },
+  "HISTORYID": {
+    "title": "Frühere Ergebnisse der Gesichtserkennung",
+    "description": "Überprüfen Sie Ihre früheren Ergebnisse der Gesichtserkennung und teilen Sie sie mit Familie und Freunden.",
+    "keywords": "Gesichtserkennung, KI, Ergebnishistorie, Familie, Freunde, Spaß"
   }
 }

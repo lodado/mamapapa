@@ -198,5 +198,25 @@
     "dialog_description": "결과를 정말로 삭제하시겠습니까?",
     "success_title": "삭제 성공",
     "success_description": "삭제에 성공했습니다."
+  },
+  "LOGIN": {
+    "title": "Simmey - 우리의 얼굴 매칭 AI를 사용하여 부모님과 얼마나 닮았는지 확인해보세요!",
+    "description": "안전하고 간편한 로그인 시스템을 통해 원하는 기능을 빠르게 이용하세요.",
+    "keywords": "로그인, 계정 접속, 보안 로그인, 간편 로그인, 인증"
+  },
+  "HISTORY": {
+    "title": "과거 얼굴 매칭 결과",
+    "description": "이전 얼굴 매칭 결과를 확인하고 가족 및 친구와 공유해보세요.",
+    "keywords": "얼굴 매칭, AI, 결과 기록, 가족, 친구, 재미"
+  },
+  "RESULT": {
+    "title": "비교 결과 페이지",
+    "description": "얼굴 매칭 결과를 확인해보세요!",
+    "keywords": "얼굴 매칭, AI, 결과 기록, 가족, 친구, 재미"
+  },
+  "HISTORYID": {
+    "title": "과거 얼굴 매칭 결과",
+    "description": "이전 얼굴 매칭 결과를 확인하고 가족 및 친구와 공유해보세요.",
+    "keywords": "얼굴 매칭, AI, 결과 기록, 가족, 친구, 재미"
   }
 }

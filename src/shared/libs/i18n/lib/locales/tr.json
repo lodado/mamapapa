@@ -198,5 +198,25 @@
     "dialog_description": "Bu sonucu silmek istediğinizden emin misiniz?",
     "success_title": "Başarıyla Silindi",
     "success_description": "Sonuç başarıyla silindi."
+  },
+  "LOGIN": {
+    "title": "Simmey - Yüz eşleştirme yapay zekamızla annenize ve babanıza ne kadar benzediğinizi keşfedin!",
+    "description": "Güvenli ve basit bir giriş sistemiyle istediğiniz özelliklere hızlıca erişin.",
+    "keywords": "Giriş, hesap erişimi, güvenli giriş, kolay giriş, kimlik doğrulama"
+  },
+  "HISTORY": {
+    "title": "Geçmiş Yüz Eşleştirme Sonuçları",
+    "description": "Önceki yüz eşleştirme sonuçlarınızı kontrol edin ve aileniz ve arkadaşlarınızla paylaşın.",
+    "keywords": "yüz eşleştirme, yapay zeka, sonuç geçmişi, aile, arkadaşlar, eğlence"
+  },
+  "RESULT": {
+    "title": "Karşılaştırma Sonuçları Sayfası",
+    "description": "Yüz eşleştirme sonuçlarınızı kontrol edin!",
+    "keywords": "yüz eşleştirme, yapay zeka, sonuç geçmişi, aile, arkadaşlar, eğlence"
+  },
+  "HISTORYID": {
+    "title": "Geçmiş Yüz Eşleştirme Sonuçları",
+    "description": "Önceki yüz eşleştirme sonuçlarınızı kontrol edin ve aileniz ve arkadaşlarınızla paylaşın.",
+    "keywords": "yüz eşleştirme, yapay zeka, sonuç geçmişi, aile, arkadaşlar, eğlence"
   }
 }

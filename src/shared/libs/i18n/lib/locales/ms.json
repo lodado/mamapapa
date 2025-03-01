@@ -198,5 +198,25 @@
     "dialog_description": "Adakah anda pasti mahu memadam keputusan ini?",
     "success_title": "Berjaya Dipadam",
     "success_description": "Keputusan telah berjaya dipadamkan."
+  },
+  "LOGIN": {
+    "title": "Simmey - Temui berapa banyak anda menyerupai ibu dan bapa anda menggunakan AI padanan wajah kami!",
+    "description": "Akses ciri yang diinginkan dengan cepat melalui sistem log masuk yang selamat dan mudah.",
+    "keywords": "Log masuk, akses akaun, log masuk selamat, log masuk mudah, pengesahan"
+  },
+  "HISTORY": {
+    "title": "Keputusan Padanan Wajah Terdahulu",
+    "description": "Semak keputusan padanan wajah terdahulu anda dan kongsikan dengan keluarga serta rakan-rakan.",
+    "keywords": "padanan wajah, AI, sejarah keputusan, keluarga, rakan, keseronokan"
+  },
+  "RESULT": {
+    "title": "Halaman Keputusan Perbandingan",
+    "description": "Periksa keputusan padanan wajah anda!",
+    "keywords": "padanan wajah, AI, sejarah keputusan, keluarga, rakan, keseronokan"
+  },
+  "HISTORYID": {
+    "title": "Keputusan Padanan Wajah Terdahulu",
+    "description": "Semak keputusan padanan wajah terdahulu anda dan kongsikan dengan keluarga serta rakan-rakan.",
+    "keywords": "padanan wajah, AI, sejarah keputusan, keluarga, rakan, keseronokan"
   }
 }
