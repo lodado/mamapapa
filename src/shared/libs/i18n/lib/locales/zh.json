@@ -207,7 +207,8 @@
   "HISTORY": {
     "title": "过去的面部匹配结果",
     "description": "查看您以前的面部匹配结果，并与家人和朋友分享。",
-    "keywords": "面部匹配, AI, 结果记录, 家庭, 朋友, 乐趣"
+    "keywords": "面部匹配, AI, 结果记录, 家庭, 朋友, 乐趣",
+    "go_to_homepage": "返回首页"
   },
   "RESULT": {
     "title": "比较结果页面",
@@ -218,5 +219,8 @@
     "title": "过去的面部匹配结果",
     "description": "查看您以前的面部匹配结果，并与家人和朋友分享。",
     "keywords": "面部匹配, AI, 结果记录, 家庭, 朋友, 乐趣"
+  },
+  "HistoryList": {
+    "delete": "删除"
   }
 }

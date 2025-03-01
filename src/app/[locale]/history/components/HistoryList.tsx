@@ -3,7 +3,8 @@
 
 import { useInfiniteQuery, useQueryClient } from "@tanstack/react-query";
 import { MessageSquareText } from "lucide-react";
-import { useParams, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
+import { useTranslations } from "next-intl";
 import React, { useState } from "react";
 import { Virtuoso } from "react-virtuoso";
 
@@ -17,7 +18,7 @@ import RemoveCommentDialog from "./RemoveHisoryDialog";
 
 const SwipeOption = ({ id, userId }: { id: string; userId: string }) => {
   const [isRemoveDialogOpen, setIsRemoveDialogOpen] = useState(false);
-
+  const t = useTranslations("HistoryList");
   const queryClient = useQueryClient();
 
   return (
@@ -29,7 +30,7 @@ const SwipeOption = ({ id, userId }: { id: string; userId: string }) => {
           setIsRemoveDialogOpen(true);
         }}
       >
-        삭제
+        {t("delete")}
       </button>
       <RemoveCommentDialog
         id={id as string}

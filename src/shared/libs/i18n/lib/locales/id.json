@@ -207,7 +207,8 @@
   "HISTORY": {
     "title": "Hasil Pencocokan Wajah Sebelumnya",
     "description": "Periksa hasil pencocokan wajah Anda sebelumnya dan bagikan dengan keluarga serta teman-teman.",
-    "keywords": "pencocokan wajah, AI, riwayat hasil, keluarga, teman, kesenangan"
+    "keywords": "pencocokan wajah, AI, riwayat hasil, keluarga, teman, kesenangan",
+    "go_to_homepage": "Kembali ke beranda"
   },
   "RESULT": {
     "title": "Halaman Hasil Perbandingan",
@@ -218,5 +219,8 @@
     "title": "Hasil Pencocokan Wajah Sebelumnya",
     "description": "Periksa hasil pencocokan wajah Anda sebelumnya dan bagikan dengan keluarga serta teman-teman.",
     "keywords": "pencocokan wajah, AI, riwayat hasil, keluarga, teman, kesenangan"
+  },
+  "HistoryList": {
+    "delete": "Hapus"
   }
 }

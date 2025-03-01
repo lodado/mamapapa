@@ -207,7 +207,8 @@
   "HISTORY": {
     "title": "Resultados anteriores de comparación facial",
     "description": "Consulta tus resultados anteriores de comparación facial y compártelos con familiares y amigos.",
-    "keywords": "comparación facial, IA, historial de resultados, familia, amigos, diversión"
+    "keywords": "comparación facial, IA, historial de resultados, familia, amigos, diversión",
+    "go_to_homepage": "Volver a la página de inicio"
   },
   "RESULT": {
     "title": "Página de resultados de comparación",
@@ -218,5 +219,8 @@
     "title": "Resultados anteriores de comparación facial",
     "description": "Consulta tus resultados anteriores de comparación facial y compártelos con familiares y amigos.",
     "keywords": "comparación facial, IA, historial de resultados, familia, amigos, diversión"
+  },
+  "HistoryList": {
+    "delete": "Eliminar"
   }
 }

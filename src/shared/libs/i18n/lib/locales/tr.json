@@ -207,7 +207,8 @@
   "HISTORY": {
     "title": "Geçmiş Yüz Eşleştirme Sonuçları",
     "description": "Önceki yüz eşleştirme sonuçlarınızı kontrol edin ve aileniz ve arkadaşlarınızla paylaşın.",
-    "keywords": "yüz eşleştirme, yapay zeka, sonuç geçmişi, aile, arkadaşlar, eğlence"
+    "keywords": "yüz eşleştirme, yapay zeka, sonuç geçmişi, aile, arkadaşlar, eğlence",
+    "go_to_homepage": "Ana sayfaya geri dön"
   },
   "RESULT": {
     "title": "Karşılaştırma Sonuçları Sayfası",
@@ -218,5 +219,8 @@
     "title": "Geçmiş Yüz Eşleştirme Sonuçları",
     "description": "Önceki yüz eşleştirme sonuçlarınızı kontrol edin ve aileniz ve arkadaşlarınızla paylaşın.",
     "keywords": "yüz eşleştirme, yapay zeka, sonuç geçmişi, aile, arkadaşlar, eğlence"
+  },
+  "HistoryList": {
+    "delete": "Sil"
   }
 }

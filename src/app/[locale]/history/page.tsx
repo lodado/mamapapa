@@ -66,7 +66,7 @@ const Page = async ({ params }: { params: { locale: string } }) => {
         `}
         >
           <ButtonLink wrapperClassName="w-full max-w-[29rem]" variant="primarySolid" href={PAGE_ROUTE.MAIN}>
-            처음 화면으로 돌아가기
+            {t("go_to_homepage")}
           </ButtonLink>
         </nav>
       </ReactiveLayout>

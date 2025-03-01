@@ -207,7 +207,8 @@
   "HISTORY": {
     "title": "Resultados anteriores de correspondência facial",
     "description": "Verifique seus resultados anteriores de correspondência facial e compartilhe-os com familiares e amigos.",
-    "keywords": "correspondência facial, IA, histórico de resultados, família, amigos, diversão"
+    "keywords": "correspondência facial, IA, histórico de resultados, família, amigos, diversão",
+    "go_to_homepage": "Voltar para a página inicial"
   },
   "RESULT": {
     "title": "Página de resultados de comparação",
@@ -218,5 +219,8 @@
     "title": "Resultados anteriores de correspondência facial",
     "description": "Verifique seus resultados anteriores de correspondência facial e compartilhe-os com familiares e amigos.",
     "keywords": "correspondência facial, IA, histórico de resultados, família, amigos, diversão"
+  },
+  "HistoryList": {
+    "delete": "Excluir"
   }
 }

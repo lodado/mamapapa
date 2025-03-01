@@ -207,7 +207,8 @@
   "HISTORY": {
     "title": "Risultati passati del confronto facciale",
     "description": "Controlla i tuoi risultati passati del confronto facciale e condividili con famiglia e amici.",
-    "keywords": "confronto facciale, IA, cronologia dei risultati, famiglia, amici, divertimento"
+    "keywords": "confronto facciale, IA, cronologia dei risultati, famiglia, amici, divertimento",
+    "go_to_homepage": "Torna alla home page"
   },
   "RESULT": {
     "title": "Pagina dei risultati del confronto",
@@ -218,5 +219,8 @@
     "title": "Risultati passati del confronto facciale",
     "description": "Controlla i tuoi risultati passati del confronto facciale e condividili con famiglia e amici.",
     "keywords": "confronto facciale, IA, cronologia dei risultati, famiglia, amici, divertimento"
+  },
+  "HistoryList": {
+    "delete": "Elimina"
   }
 }

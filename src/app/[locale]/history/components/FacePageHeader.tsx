@@ -4,7 +4,6 @@ import { ChevronLeft } from "lucide-react";
 import { useTranslations } from "next-intl";
 import React from "react";
 
-import SimminIcon from "/public/SimminIcon.svg";
 import { LocaleLink } from "@/entities/Router";
 import { PAGE_ROUTE } from "@/entities/Router/configs/route";
 import { Header } from "@/features";

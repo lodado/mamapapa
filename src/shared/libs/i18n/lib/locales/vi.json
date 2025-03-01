@@ -207,7 +207,8 @@
   "HISTORY": {
     "title": "Kết quả đối sánh khuôn mặt trước đây",
     "description": "Kiểm tra kết quả đối sánh khuôn mặt trước đây của bạn và chia sẻ với gia đình, bạn bè.",
-    "keywords": "đối sánh khuôn mặt, AI, lịch sử kết quả, gia đình, bạn bè, vui vẻ"
+    "keywords": "đối sánh khuôn mặt, AI, lịch sử kết quả, gia đình, bạn bè, vui vẻ",
+    "go_to_homepage": "Quay lại trang chủ"
   },
   "RESULT": {
     "title": "Trang kết quả so sánh",
@@ -218,5 +219,8 @@
     "title": "Kết quả đối sánh khuôn mặt trước đây",
     "description": "Kiểm tra kết quả đối sánh khuôn mặt trước đây của bạn và chia sẻ với gia đình, bạn bè.",
     "keywords": "đối sánh khuôn mặt, AI, lịch sử kết quả, gia đình, bạn bè, vui vẻ"
+  },
+  "HistoryList": {
+    "delete": "Xóa"
   }
 }

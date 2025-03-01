@@ -207,7 +207,8 @@
   "HISTORY": {
     "title": "Past Face Matching Results",
     "description": "Check your previous face matching results and share them with family and friends.",
-    "keywords": "face matching, AI, result history, family, friends, fun"
+    "keywords": "face matching, AI, result history, family, friends, fun",
+    "go_to_homepage": "Go back to the homepage"
   },
   "RESULT": {
     "title": "Comparison Results Page",
@@ -218,5 +219,8 @@
     "title": "Past Face Matching Results",
     "description": "Check your previous face matching results and share them with family and friends.",
     "keywords": "face matching, AI, result history, family, friends, fun"
+  },
+  "HistoryList": {
+    "delete": "Delete"
   }
 }

@@ -207,7 +207,8 @@
   "HISTORY": {
     "title": "Keputusan Padanan Wajah Terdahulu",
     "description": "Semak keputusan padanan wajah terdahulu anda dan kongsikan dengan keluarga serta rakan-rakan.",
-    "keywords": "padanan wajah, AI, sejarah keputusan, keluarga, rakan, keseronokan"
+    "keywords": "padanan wajah, AI, sejarah keputusan, keluarga, rakan, keseronokan",
+    "go_to_homepage": "Kembali ke halaman utama"
   },
   "RESULT": {
     "title": "Halaman Keputusan Perbandingan",
@@ -218,5 +219,8 @@
     "title": "Keputusan Padanan Wajah Terdahulu",
     "description": "Semak keputusan padanan wajah terdahulu anda dan kongsikan dengan keluarga serta rakan-rakan.",
     "keywords": "padanan wajah, AI, sejarah keputusan, keluarga, rakan, keseronokan"
+  },
+  "HistoryList": {
+    "delete": "Padam"
   }
 }
