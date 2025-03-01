@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import React from "react";
 
@@ -7,6 +8,7 @@ import { ModelDownloader } from "@/features";
 import { getLocalesListsForStateParams } from "@/shared/index.server";
 import { ReactiveLayout } from "@/shared/ui/ReactiveLayout";
 import { ToastViewPort } from "@/shared/ui/Toast";
+import { getMetadata } from "@/shared/utils/index.server";
 
 import ResultPageHeader from "./components/ResultPageHeader";
 import ResultPageImagePrediction from "./components/ResultPageImagePrediction";
@@ -14,6 +16,21 @@ import ShareButton from "./components/ShareButton";
 
 export async function generateStaticParams() {
   return getLocalesListsForStateParams();
+}
+
+export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
+  const t = await getTranslations("HISTORY");
+
+  return getMetadata({
+    title: t("title"),
+    description: t("description"),
+    path: PAGE_ROUTE.RESULT,
+    keywords: t("keywords"),
+    locale,
+    others: {
+      robots: "noindex, nofollow",
+    },
+  });
 }
 
 const Page = async ({ params }: { params: { locale: string } }) => {

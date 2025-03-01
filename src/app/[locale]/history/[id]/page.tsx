@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import React from "react";
 
@@ -10,8 +11,10 @@ import { CommentLayout } from "@/features/Comments/index.server";
 import CommentInput from "@/features/Comments/ui/CommentInput";
 import { ComparisonMetaData } from "@/features/ImageSelector/models";
 import { ReactionLayout } from "@/features/Reaction/index.server";
+import { JsonLdScript } from "@/shared/ui";
 import { ReactiveLayout } from "@/shared/ui/ReactiveLayout";
 import { ToastViewPort } from "@/shared/ui/Toast";
+import { getMetadata } from "@/shared/utils/index.server";
 import { ImagePrediction } from "@/widgets/ImagePrediction";
 
 import { getCachedCompareHistory } from "./api/compareHistory";
@@ -19,6 +22,23 @@ import HistoryPageHeader from "./components/HistoryPageHeader";
 
 export const revalidate = 7200000; // 2 hours
 export const dynamicParams = true;
+
+export async function generateMetadata({
+  params: { id, locale },
+}: {
+  params: { id: string; locale: string };
+}): Promise<Metadata> {
+  const t = await getTranslations("HISTORYID");
+  const { data, error } = await getCachedCompareHistory(id)();
+
+  return getMetadata({
+    title: `${t("title")} －id: ${id}, title: ${data?.title}`,
+    description: `${t("description")}`,
+    path: `${PAGE_ROUTE.HISTORY_LIST}/${id}`,
+    keywords: t("keywords"),
+    locale,
+  });
+}
 
 const Page = async ({ params }: { params: { id: string } }) => {
   const { id } = params;
@@ -43,6 +63,15 @@ const Page = async ({ params }: { params: { id: string } }) => {
 
   return (
     <>
+      <JsonLdScript
+        customMeta={{
+          title: t("HISTORYID.title"),
+          url: `${PAGE_ROUTE.HISTORY_LIST}/${id}`,
+          description: t("HISTORYID.description"),
+          date: new Date().toISOString(),
+        }}
+      />
+
       <ReactiveLayout>
         <div role="none presentation" className="w-full flex-shrink-0 h-[4rem]" />
         <HistoryPageHeader creatorUserId={creatorUserId} title={title} updatedAt={updatedAt} />
