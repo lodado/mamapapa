@@ -4,9 +4,19 @@ import { AuthError } from "next-auth";
 
 import { EDGE_DI_REPOSITORY } from "@/DI/edge.server";
 import { Oauth2LoginUsecase } from "@/entities/Auth/core";
+import { request } from "@/shared";
 
 import { LOGIN_METHOD } from "./constant";
 
+/**
+ * 주의 - 이 명령은 되돌릴 수 없음
+ */
+export const handleDeleteUserId = async () => {
+  return request({
+    method: "POST",
+    url: "/api/auth",
+  });
+};
  
 export async function authenticateAction(formData: FormData) {
   const signupMethod = formData.get(LOGIN_METHOD);

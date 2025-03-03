@@ -4,26 +4,29 @@ import { useRouter } from "next/navigation";
 import React from "react";
 
 import { CLIENT_DI_REPOSITORY } from "@/DI";
+import { handleDeleteUserId } from "@/entities/Auth/api/loginApi";
 import { useAuthStore } from "@/entities/Auth/client/models/store/AuthStore";
 import { LogoutUseCase } from "@/entities/Auth/core";
 import { PAGE_ROUTE } from "@/entities/Router/configs/route";
-import { supabaseInstance } from "@/shared/index.server";
 
 const RemoveAccountPage: React.FC = () => {
-  const { session, clearSession } = useAuthStore();
+  const { clearSession } = useAuthStore();
   const router = useRouter();
 
   const handleRemoveAccount = async () => {
-    const { error } = await supabaseInstance.schema("next_auth").from("users").delete().eq("id", session?.user.id);
+    try {
+      /**
+       * 주의 - 이 명령은 되돌릴 수 없음
+       */
+      await handleDeleteUserId();
 
-    if (error) {
-      console.error("계정 삭제 중 오류가 발생했습니다:", error);
-      return;
+      alert("delete success");
+      clearSession();
+
+      router.push(PAGE_ROUTE.MAIN);
+    } catch (e) {
+      console.log(e, "error");
     }
-    alert("delete success");
-    clearSession();
-    new LogoutUseCase(new CLIENT_DI_REPOSITORY.Auth()).execute();
-    router.push(PAGE_ROUTE.MAIN);
   };
 
   return (

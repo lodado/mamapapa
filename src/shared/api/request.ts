@@ -40,6 +40,7 @@ const request = async <T>({
      * server component에서 서버에 api 호출시 cookie 정보를 빼먹어서 명시적으로 넣어줌
      */
     const cookieString = await parseServerCookie();
+
     requestHeaders.Cookie = cookieString;
   }
 
@@ -56,7 +57,7 @@ const request = async <T>({
     headers: requestHeaders,
     ...(!isServerSide() && isSignalRequired ? { signal: controller.signal } : {}),
 
-    /** ISA 때 이상하게 동작함 */
+    /** ISR 때 이상하게 동작함 */
     cache: "no-cache",
     ...options,
   });
