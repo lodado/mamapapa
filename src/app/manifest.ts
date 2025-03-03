@@ -2,6 +2,7 @@ import { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
+    id: new Date().toISOString(),
     name: "Simmey",
     short_name: "Simmey",
     description: "Use a face-matching AI to see how much you resemble your mom and dad!",
