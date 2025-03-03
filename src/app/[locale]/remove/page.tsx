@@ -14,7 +14,7 @@ const RemoveAccountPage: React.FC = () => {
   const router = useRouter();
 
   const handleRemoveAccount = async () => {
-    const { error } = await supabaseInstance.from('"next_auth"."users"').delete().eq("id", session?.user.id);
+    const { error } = await supabaseInstance.schema("next_auth").from("users").delete().eq("id", session?.user.id);
 
     if (error) {
       console.error("계정 삭제 중 오류가 발생했습니다:", error);
