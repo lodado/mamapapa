@@ -25,6 +25,13 @@ export default function manifest(): MetadataRoute.Manifest {
         src: "/simmeyIcon.svg",
         type: "image/svg",
       },
+
+      {
+        purpose: "any",
+        sizes: "512x512",
+        src: "/splash_screens/icon.png",
+        type: "image/png",
+      },
     ],
   };
 }
