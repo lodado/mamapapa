@@ -13,7 +13,7 @@ import { LOGIN_METHOD } from "./constant";
  */
 export const handleDeleteUserId = async () => {
   return request({
-    method: "POST",
+    method: "DELETE",
     url: "/api/auth",
   });
 };

@@ -7,7 +7,7 @@ interface ContainerSkeletonProps {
 }
 
 const Skeleton: React.FC<ContainerSkeletonProps> = ({ className }) => {
-  return <div className={cn("container-skeleton", "rounded-e-xl", className)}></div>;
+  return <div className={cn("container-skeleton", "rounded", className)}></div>;
 };
 
 export default Skeleton;

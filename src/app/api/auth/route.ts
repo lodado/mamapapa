@@ -7,7 +7,7 @@ import { supabaseInstance } from "@/shared/index.server";
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
-export const POST = async (request: NextRequest) => {
+export const DELETE = async (request: NextRequest) => {
   try {
     const user = await new GetUserInfoUseCase(new EDGE_DI_REPOSITORY.Auth()).execute();
     const id = user?.id;
