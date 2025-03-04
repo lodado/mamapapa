@@ -1,7 +1,7 @@
 import { ChevronLeft } from "lucide-react";
 import React from "react";
 
-import { Header } from "@/features";
+import Header from "@/features/Navigation/ui/Header/Header";
 import Skeleton from "@/shared/ui/Skeleton/Skeleton";
 
 const LoadingHeader = () => {
