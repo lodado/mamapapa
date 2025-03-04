@@ -14,6 +14,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
         lastModified: new Date(),
         changeFrequency: "monthly" as const,
         priority: Math.max(0.5, 1 - index * 0.1),
+
+        /* 아래 넣으면 파싱 에러남
         alternates: {
           languages: {
             ...i18nOption.locales.reduce((total: any, locale) => {
@@ -22,6 +24,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
             }, {}),
           },
         },
+        */
       };
     }),
   ];
