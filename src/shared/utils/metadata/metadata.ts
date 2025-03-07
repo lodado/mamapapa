@@ -2,6 +2,8 @@ import { Metadata } from 'next'
 
 import { i18nOption } from "@/shared/libs/i18n/lib/option";
 
+import { ISO_LANGUAGE_JSON } from "./../../libs/i18n/lib/option";
+
 interface MetadataProps {
   title: string;
   description: string;
@@ -35,7 +37,7 @@ export interface MetadataParams {
 }
 
 export default function getMetadata(props: MetadataProps): Metadata {
-  const { title, description: desc, path, image, keywords, label1, label2, others, locale = "KO" } = props;
+  const { title, description: desc, path = "/", image, keywords, label1, label2, others, locale = "ko" } = props;
   const description = `${desc}`;
 
   const images = webUrl + (image ?? defaultImage);
@@ -80,12 +82,14 @@ export default function getMetadata(props: MetadataProps): Metadata {
     },
 
     alternates: {
-      canonical: "/en" + path,
+      canonical: `/${locale}` + path,
       languages: {
+        "x-default": path,
         ...i18nOption.locales
-          .filter((ele) => ele !== "en")
+          .filter((ele) => ele !== locale)
           .reduce((total: any, locale) => {
             total[locale] = `/${locale}${path}`;
+            total[ISO_LANGUAGE_JSON[locale]] = `/${locale}${path}`;
             return total;
           }, {}),
       },
