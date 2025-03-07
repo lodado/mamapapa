@@ -89,7 +89,7 @@ export default function getMetadata(props: MetadataProps): Metadata {
           .filter((ele) => ele !== locale)
           .reduce((total: any, locale) => {
             total[locale] = `/${locale}${path}`;
-            total[ISO_LANGUAGE_JSON[locale]] = `/${locale}${path}`;
+
             return total;
           }, {}),
       },
