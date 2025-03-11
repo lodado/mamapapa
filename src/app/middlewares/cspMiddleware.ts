@@ -10,7 +10,7 @@ export const cspMiddleware = (request: NextRequest, response: NextResponse) => {
     img-src 'self' blob: data: ${supabaseProjectId}.supabase.co vercel.live vercel.com https://lh3.googleusercontent.com
     https://k.kakaocdn.net https://avatars.githubusercontent.com;
     font-src 'self' cdnjs.cloudflare.com spoqa.github.io cdn.jsdelivr.net data:;
-    script-src 'self' ${
+    script-src 'wasm-unsafe-eval' 'self' ${
       process.env.NODE_ENV !== "production" ? `'unsafe-eval'` : ""
     } 'nonce-${nonce}' 'strict-dynamic' vercel.live vercel.com cdn.jsdelivr.net;
     script-src-elem 'self' vercel.live vercel.com 'nonce-${nonce}';
