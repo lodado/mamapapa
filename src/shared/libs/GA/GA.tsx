@@ -7,7 +7,12 @@ import GAClient from "./GAClient";
 const GA = ({ nonce }: { nonce: string }) => {
   return (
     <>
-      <Script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_KEY}`} nonce={nonce} />
+      <Script
+        async
+        src={`https://www.googletagmanager.com/gtag/js?id=${GA_KEY}`}
+        strategy="afterInteractive"
+        nonce={nonce}
+      />
       <GAClient nonce={nonce} />
     </>
   );

@@ -7,7 +7,7 @@ import { GA_KEY } from "./constant";
 
 const GAClient = ({ nonce }: { nonce: string }) => {
   return (
-    <Script id="ga-script" nonce={nonce}>
+    <Script id="ga-script" nonce={nonce} strategy="afterInteractive">
       {`
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
