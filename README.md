@@ -1,101 +1,61 @@
-# Lotion
+# Simmey
 
-this project is currently under development.
+![image](https://github.com/user-attachments/assets/9d4941d5-7d4e-4e78-ad73-2dcd526605aa)
 
-## Project Architecture
+엄마 아빠와 내가 얼마나 닮았는지 알려주는 웹앱 사이트! 
 
-This project is designed with a focus on maintainability, scalability, and separation of concerns. The architecture leverages Clean Architecture principles, Feature-Sliced Design (FSD), and event-driven patterns using Redux and Redux-Saga.
+전 세계 사람들이 나에게 1원씩만(광고 수익) 주면 부자가 되지 않을까..? 싶어서 
+16개국 다국어 지원을 통하여 사이드 프로젝트 홈페이지를 만들고 테스트 해봤습니다.
 
-### Clean Architecture
+다국어 지원은 chatgpt AI로 번역했고, SEO 다국어 지원이 가능한지 가설 및 검증은 아래 링크의 "두루미스" 플랫폼을 참고해서 구현했습니다.
 
-Clean Architecture is employed to achieve a clear separation of concerns.
-
-This is accomplished through modularization, encapsulation, and the arrangement of software layers.
-
-The primary layers include:
-
-```
-Entities: Core business logic and domain objects.
-
-Use Cases: Application-specific business rules.
-
-Adapters: Interface adapters and controllers.
-
-Frameworks & Drivers: External interfaces such as databases, and external APIs.
-```
-
-Business logic is handled in the UseCase layer, while libraries like Redux and TanStack Query are only responsible for propagating re-renders due to state changes.
-
-#### Clean Architecture Motivation
-
-1. Frustrated with the frequently changing frontend library ecosystem, I designed a system to extract stable business logic into a UseCase layer and connect different libraries (React, Next, Redux, etc.) via an Adapter layer.
-
-2. To abstract and unify business logic used in React's RSC and client components, delegating detailed implementations through DIP (Dependency Inversion Principle).
-
-3. To make writing test code easier.
+https://blog.naver.com/dreamyoungs_inc/223425945113
 
 
-#### Simple Example
+자세한 글)
 
-```
-Entities: src/entities/Auth/core/entities/UserEntity.tsx
+https://lodado.tistory.com/104
 
-Use Cases: src/entities/Auth/core/usecase/Oauth2LoginUseCase.ts, LogoutUseCase.ts 
 
-Adapters: Redux(for client state) or tanstack-query(for server state) 
+## 구조 설명
 
-Frameworks & Drivers: src/entities/Auth/server/repository 
-or 
-src/entities/Auth/client/repository
-```
+
+### 인브라우저 인공지능 모델  
+
+tensorflow.js를 사용해서 브라우저에서 "인공지능 모델(facenet 경량버전)"이 동작합니다.
+이를 통하여 유저는 사진 유출 걱정 없이 브라우저에서 닮은꼴 사진들을 마끔껏 비교 가능합니다.
+물론 원하면 oauth2 소셜 로그인을 통하여 결과 공유도 가능하지만
+수상한(?) 사이트에 지금까지 "사진을 공유한 유저"는 없었습니다..ㅎㅎ 
 
 ### Feature-Sliced Design (FSD)
 
-Feature-Sliced Design is used to explicitly define business logic and ensure that each feature is self-contained. This approach helps in organizing the codebase by features rather than technical layers, making it easier to manage and scale.
+Feature-Sliced Design은 비즈니스 로직을 명확히 분리하고, 각 기능을 독립적으로 구성할 수 있도록 돕는 설계 방식이다. 기술 레이어 중심이 아닌 "기능 중심"으로 코드를 관리함으로써, 유지보수성과 확장성을 높이는 것이 목적이다.
 
 ```
-App: The top-level layer responsible for the application's initial setup and global configurations.
-
-homePages(Pages): Individual screens presented to the user, combining various features and entities.
-
-Widgets: A higher-level layer created by combining several feature layers.
-
-Features: Self-contained units that provide specific business functionalities.
-
-Entities: Defines data models and related logic within the business domain.
-
-Shared: A collection of utilities and components commonly used across multiple layers.
-
+App: 앱의 초기 설정 및 전역 설정 담당
+Pages: 화면 단위, 여러 기능과 엔티티를 조합해 구성
+Widgets: feature/entity/shared 레이어의 구성 요소 2개 이상을 조합한 상위 UI
+Features: 독립적인 비즈니스 기능 단위
+Entities: 도메인 모델과 관련 로직 정의
+Shared: 공통 유틸리티, 컴포넌트, 스타일 등
 ```
 
-#### FSD Motivation
+### 도입 배경
+
+의존성 관리가 어려웠고, 이를 구조적으로 해결할 수 있는 파일 구조가 필요했다.
+
+순환 의존성을 제거하고, 각 레이어 간 관계를 명확히 드러내고 싶었다.
 
 
-1. I encountered difficulties managing code files, which led me to feel the need for a file structure that supports more manageable dependencies.
+### 커스텀 룰
 
-2. I wanted to eliminate circular dependencies. It doesn't make sense for a Button to use a Calendar, but a Calendar might use a Button. I wanted to make this explicitly visible in the file structure.
+Widgets는 features/entities/shared 레이어의 컴포넌트 2개 이상을 조합할 때만 생성한다. widget과 feature의 경계가 모호해지는 것을 방지하기 위함이다.
 
-
-#### Custom roles
-
-I was concerned that following the standard FSD rules might lead to a single layer containing dozens of files, similar to atomic design, which could hurt readability.
-
-So I added a few of my own rules:
+대부분의 페이지는 하나의 feature만 사용하는 경우가 많다. 따라서 해당 페이지 전용 feature는 pages 폴더 내부에 위치시키며, GNB처럼 여러 페이지에서 사용하는 공통 feature만 features/widgets에 둔다.
 
 
-1. I worried that the boundary between the widget layer and the features layer could be subjective and ambiguous for different people. Therefore, the widget layer is used only when combining components from the features/entities/shared layer. (at least 2 features layer components)
-
-2. Anticipating that too many features layers might be created but that typically only one feature would be used per page, I decided to place features used in the pages layer within that folder. The features/widgets layer is reserved for common components like the GNB Bar.
 
 
-### Event-Driven Architecture with Redux and Redux-Saga (Currently experimenting)
 
-Redux and Redux-Saga are used to implement an event-driven architecture pattern. This ensures that state changes are handled in a transactional manner, providing consistency and reliability.
 
-#### EDA Motivation
 
-I drew inspiration from the MSA architecture in backend systems and the workings of Kafka.
-
-I divided the functionality into several domains(entities) and used the publisher-subscriber pattern to propagate events (state changes) to each domain when changes occurred. Each domain handled the event appropriately, using loose coupling to reduce dependency.
-
-Additionally, I implemented it using redux-saga, ensuring that the events were either fully applied like a database transaction or rolled back if not.
