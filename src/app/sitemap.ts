@@ -13,7 +13,7 @@ export default function sitemap() {
     ...Object.entries(PAGE_ROUTE).map(([key, path], index) => {
       return {
         url: webUrl + path,
-        lastModified: new Date(),
+        lastModified: new Date().toISOString(),
         changeFrequency: "monthly" as const,
         priority: Math.max(0.5, 0.99 - index * 0.1),
 
