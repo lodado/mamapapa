@@ -1,10 +1,8 @@
 "use client";
 
+import Image from "next/image";
 import React from "react";
 
-import BbangparayEmoticon from "/public/emoticon/BbangparayEmoticon.svg";
-import LoveEmoticon from "/public/emoticon/LoveEmoticon.svg";
-import ThumbsUpEmoticon from "/public/emoticon/ThumbsUpEmoticon.svg";
 import { useAuthStore } from "@/entities/Auth/client/models/store/AuthStore";
 import { useMutationWithNotification } from "@/shared/hooks";
 import { BadgeButton, useQueryContainer } from "@/shared/ui";
@@ -14,17 +12,21 @@ import { getParsedReactionKey } from "../utils/constant";
 import { getOptimisticUpdateReactions } from "../utils/getOptimisticUpdateReactions";
 import CopyLinkButton from "./CopyLinkButton";
 
-const ReactionList = ({ userId, boardId }: { userId: string; boardId: string }) => {
+interface ReactionListProps {
+  userId: string;
+  boardId: string;
+}
+
+const ICON_SIZE = 24;
+
+const ReactionList: React.FC<ReactionListProps> = ({ userId, boardId }) => {
   const { isLogin } = useAuthStore();
 
-  const auth = isLogin
-    ? {
-        canUpdateReaction: true,
-      }
-    : {
-        canUpdateReaction: false,
-      };
+  const auth = {
+    canUpdateReaction: isLogin,
+  } as const;
 
+  // --- TanStack Query ------------------------------------------------------
   const {
     query: { data },
     handleOptimisticUpdate: handleOptimisticReactionUpdate,
@@ -37,9 +39,17 @@ const ReactionList = ({ userId, boardId }: { userId: string; boardId: string }) 
 
   const userReaction = data!.userReaction!;
 
+  // --- Mutation (optimistic) ------------------------------------------------
   const { mutate } = useMutationWithNotification({
     mutationFn: async ({ liked, thumbsUp, bbangparay }: { liked: boolean; thumbsUp: boolean; bbangparay: boolean }) => {
-      handleOptimisticReactionUpdate(getOptimisticUpdateReactions({ userReaction, liked, thumbsUp, bbangparay }));
+      handleOptimisticReactionUpdate(
+        getOptimisticUpdateReactions({
+          userReaction,
+          liked,
+          thumbsUp,
+          bbangparay,
+        })
+      );
 
       return postReaction({ boardId, userId, liked, thumbsUp, bbangparay });
     },
@@ -49,10 +59,12 @@ const ReactionList = ({ userId, boardId }: { userId: string; boardId: string }) 
     },
   });
 
+  // -------------------------------------------------------------------------
   return (
     <div className="px-4 flex flex-row w-full h-12 gap-1 items-center">
       <CopyLinkButton />
 
+      {/* Thumbs Up */}
       <BadgeButton
         type="button"
         variant={userReaction.thumbsUp ? "isSelected" : "line"}
@@ -61,9 +73,11 @@ const ReactionList = ({ userId, boardId }: { userId: string; boardId: string }) 
         }}
         disabled={!auth.canUpdateReaction}
       >
-        <ThumbsUpEmoticon /> {data?.thumbsUpCount}
+        <Image src="/emoticon/ThumbsUpEmoticon.svg" alt="Thumbs Up" width={ICON_SIZE} height={ICON_SIZE} priority />
+        {data?.thumbsUpCount}
       </BadgeButton>
 
+      {/* Like */}
       <BadgeButton
         type="button"
         variant={userReaction.liked ? "isSelected" : "line"}
@@ -72,9 +86,11 @@ const ReactionList = ({ userId, boardId }: { userId: string; boardId: string }) 
         }}
         disabled={!auth.canUpdateReaction}
       >
-        <LoveEmoticon /> {data?.likeCount}
+        <Image src="/emoticon/LoveEmoticon.svg" alt="Love" width={ICON_SIZE} height={ICON_SIZE} priority />
+        {data?.likeCount}
       </BadgeButton>
 
+      {/* Bbangparay */}
       <BadgeButton
         type="button"
         variant={userReaction.bbangparay ? "isSelected" : "line"}
@@ -83,7 +99,8 @@ const ReactionList = ({ userId, boardId }: { userId: string; boardId: string }) 
         }}
         disabled={!auth.canUpdateReaction}
       >
-        <BbangparayEmoticon /> {data?.bbangparayCount}
+        <Image src="/emoticon/BbangparayEmoticon.svg" alt="Bbangparay" width={ICON_SIZE} height={ICON_SIZE} priority />
+        {data?.bbangparayCount}
       </BadgeButton>
     </div>
   );

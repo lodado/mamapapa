@@ -1,7 +1,4 @@
-import "@tensorflow/tfjs-backend-cpu";
-import "@tensorflow/tfjs-backend-webgl";
-
-import { LayersModel, loadLayersModel,regularizers, serialization } from "@tensorflow/tfjs";
+import { LayersModel, loadLayersModel, regularizers, serialization } from "@tensorflow/tfjs";
 import * as blazeface from "@tensorflow-models/blazeface";
 import { create } from "zustand";
 
