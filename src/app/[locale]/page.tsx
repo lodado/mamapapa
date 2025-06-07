@@ -50,7 +50,7 @@ const Page = async ({ params }: { params: { locale: string } }) => {
       <ScrollLock>
         <ReactiveLayout>
           <main className="flex flex-col justify-center items-center w-full h-screen pt-[3rem] px-[2rem]">
-            <div className="h-5 top-1 right-10 absolute z-[100]">
+            <div className="h-5 top-1 right-3 absolute z-[100]">
               <SettingDialog />
             </div>
 
