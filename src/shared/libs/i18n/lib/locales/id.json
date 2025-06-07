@@ -225,5 +225,34 @@
   },
   "HistoryList": {
     "delete": "Hapus"
+  },
+  "settings": {
+    "title": "Pengaturan",
+    "tabsUserSettings": "Pengaturan",
+    "tabsSupport": "Dukungan",
+    "userSettingsLanguage": "Pengaturan Bahasa",
+    "tab2Content": "Konten Tab 2",
+    "manage-app-settings-description": "Kelola dan sesuaikan pengaturan aplikasi Anda.",
+    "settings": "Pengaturan"
+  },
+  "DIALOG": {
+    "SUBMITTEXT": "Kirim",
+    "CANCELTEXT": "Batal"
+  },
+  "support": {
+    "title": "Hubungi Kami",
+    "description": "Ada pertanyaan atau masalah? Hubungi kami.",
+    "form-label-name": "Nama",
+    "form-placeholder-name": "Masukkan nama Anda",
+    "form-label-email": "Email",
+    "form-placeholder-email": "Masukkan email Anda",
+    "form-button": "Kirim",
+    "common-content": "Konten",
+    "max-500-characters": "Tidak boleh melebihi 500 karakter.",
+    "enter-content": "Silakan masukkan konten.",
+    "enter-email": "Silakan masukkan email Anda."
+  },
+  "common": {
+    "terms-of-service": "Syarat Layanan"
   }
 }

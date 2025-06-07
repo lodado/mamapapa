@@ -225,5 +225,34 @@
   },
   "HistoryList": {
     "delete": "Удалить"
+  },
+  "settings": {
+    "title": "Настройки",
+    "tabsUserSettings": "Настройки",
+    "tabsSupport": "Поддержка",
+    "userSettingsLanguage": "Настройки языка",
+    "tab2Content": "Содержимое вкладки 2",
+    "manage-app-settings-description": "Управляйте и персонализируйте настройки вашего приложения.",
+    "settings": "Настройки"
+  },
+  "DIALOG": {
+    "SUBMITTEXT": "Отправить",
+    "CANCELTEXT": "Отмена"
+  },
+  "support": {
+    "title": "Свяжитесь с нами",
+    "description": "Есть вопрос или проблема? Свяжитесь с нами.",
+    "form-label-name": "Имя",
+    "form-placeholder-name": "Введите ваше имя",
+    "form-label-email": "Электронная почта",
+    "form-placeholder-email": "Введите ваш email",
+    "form-button": "Отправить",
+    "common-content": "Содержание",
+    "max-500-characters": "Не может превышать 500 символов.",
+    "enter-content": "Пожалуйста, введите содержание.",
+    "enter-email": "Пожалуйста, введите ваш email."
+  },
+  "common": {
+    "terms-of-service": "Условия использования"
   }
 }

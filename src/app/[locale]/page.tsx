@@ -1,4 +1,3 @@
-import { get } from "http";
 import { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import React from "react";
@@ -6,6 +5,7 @@ import React from "react";
 import { ButtonLink } from "@/entities/Router";
 import { PAGE_ROUTE } from "@/entities/Router/configs/route";
 import { ModelDownloader } from "@/features";
+import { SettingDialog } from "@/features/Settings";
 import { getLocalesListsForStateParams } from "@/shared/libs/i18n/server/getLocalesListsForStateParams";
 import { JsonLdScript, ScrollLock } from "@/shared/ui";
 import { Motion } from "@/shared/ui/animation/animation";
@@ -50,6 +50,10 @@ const Page = async ({ params }: { params: { locale: string } }) => {
       <ScrollLock>
         <ReactiveLayout>
           <main className="flex flex-col justify-center items-center w-full h-screen pt-[3rem] px-[2rem]">
+            <div className="h-5 top-1 right-10 absolute z-[100]">
+              <SettingDialog />
+            </div>
+
             <div className="relative flex flex-col items-center mb-6">
               <Motion
                 className="absolute will-change-transform"
@@ -71,7 +75,7 @@ const Page = async ({ params }: { params: { locale: string } }) => {
               <BodySvg />
             </div>
 
-            <h1 className="display-1 flex flex-row text-center justify-center mb-2 w-full text-text-01 items-center">
+            <h1 className="display-1 relative flex flex-row text-center justify-center mb-2 w-full text-text-01 items-center">
               {t("TITLE")}
             </h1>
 

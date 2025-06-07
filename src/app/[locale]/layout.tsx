@@ -5,12 +5,12 @@ import { NextIntlClientProvider, useMessages } from "next-intl";
 import React from "react";
 
 import HydratePlayerStore from "@/entities/Player/ui/HydratePlayerStore";
+import { ScreenVhScript } from "@/features/Script";
 import { LocaleProps, ThemeScript } from "@/shared";
 import { GA } from "@/shared/libs/GA";
 import { GlobalDialogContainer } from "@/widgets";
 
 import { RootProvider } from "../provider";
-import ScreenVhScript from "./ScreenVhScript";
 
 export function generateViewport(): Viewport {
   return {

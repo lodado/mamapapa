@@ -225,5 +225,34 @@
   },
   "HistoryList": {
     "delete": "Supprimer"
+  },
+  "settings": {
+    "title": "Paramètres",
+    "tabsUserSettings": "Paramètres",
+    "tabsSupport": "Assistance",
+    "userSettingsLanguage": "Paramètres de langue",
+    "tab2Content": "Contenu de l'onglet 2",
+    "manage-app-settings-description": "Gérez et personnalisez vos paramètres d'application.",
+    "settings": "Paramètres"
+  },
+  "DIALOG": {
+    "SUBMITTEXT": "Soumettre",
+    "CANCELTEXT": "Annuler"
+  },
+  "support": {
+    "title": "Nous contacter",
+    "description": "Une question ou un problème ? Contactez-nous.",
+    "form-label-name": "Nom",
+    "form-placeholder-name": "Entrez votre nom",
+    "form-label-email": "Email",
+    "form-placeholder-email": "Entrez votre e-mail",
+    "form-button": "Envoyer",
+    "common-content": "Contenu",
+    "max-500-characters": "Ne peut pas dépasser 500 caractères.",
+    "enter-content": "Veuillez entrer du contenu.",
+    "enter-email": "Veuillez entrer votre e-mail."
+  },
+  "common": {
+    "terms-of-service": "Conditions d'utilisation"
   }
 }

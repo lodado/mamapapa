@@ -225,5 +225,34 @@
   },
   "HistoryList": {
     "delete": "Padam"
+  },
+  "settings": {
+    "title": "Tetapan",
+    "tabsUserSettings": "Tetapan",
+    "tabsSupport": "Sokongan",
+    "userSettingsLanguage": "Tetapan Bahasa",
+    "tab2Content": "Kandungan Tab 2",
+    "manage-app-settings-description": "Urus dan peribadikan tetapan aplikasi anda.",
+    "settings": "Tetapan"
+  },
+  "DIALOG": {
+    "SUBMITTEXT": "Hantar",
+    "CANCELTEXT": "Batal"
+  },
+  "support": {
+    "title": "Hubungi Kami",
+    "description": "Ada soalan atau masalah? Hubungi kami.",
+    "form-label-name": "Nama",
+    "form-placeholder-name": "Masukkan nama anda",
+    "form-label-email": "Emel",
+    "form-placeholder-email": "Masukkan e-mel anda",
+    "form-button": "Hantar",
+    "common-content": "Kandungan",
+    "max-500-characters": "Tidak boleh melebihi 500 aksara.",
+    "enter-content": "Sila masukkan kandungan.",
+    "enter-email": "Sila masukkan e-mel anda."
+  },
+  "common": {
+    "terms-of-service": "Terma Perkhidmatan"
   }
 }

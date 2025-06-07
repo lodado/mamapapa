@@ -13,4 +13,5 @@ export * from "./ScreenReaderOnly";
 export * from "./ScrollArea";
 export * from "./Select";
 export * from "./Switch";
+export * from "./Tabs";
 export * from "./Tooltip";

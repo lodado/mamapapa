@@ -225,5 +225,34 @@
   },
   "HistoryList": {
     "delete": "Xóa"
+  },
+  "settings": {
+    "title": "Cài đặt",
+    "tabsUserSettings": "Cài đặt",
+    "tabsSupport": "Hỗ trợ",
+    "userSettingsLanguage": "Cài đặt ngôn ngữ",
+    "tab2Content": "Nội dung tab 2",
+    "manage-app-settings-description": "Quản lý và cá nhân hóa cài đặt ứng dụng của bạn.",
+    "settings": "Cài đặt"
+  },
+  "DIALOG": {
+    "SUBMITTEXT": "Gửi",
+    "CANCELTEXT": "Hủy bỏ"
+  },
+  "support": {
+    "title": "Liên hệ với chúng tôi",
+    "description": "Có câu hỏi hoặc vấn đề? Liên hệ với chúng tôi.",
+    "form-label-name": "Tên",
+    "form-placeholder-name": "Nhập tên của bạn",
+    "form-label-email": "Email",
+    "form-placeholder-email": "Nhập email của bạn",
+    "form-button": "Gửi",
+    "common-content": "Nội dung",
+    "max-500-characters": "Không thể vượt quá 500 ký tự.",
+    "enter-content": "Vui lòng nhập nội dung.",
+    "enter-email": "Vui lòng nhập email của bạn."
+  },
+  "common": {
+    "terms-of-service": "Điều khoản dịch vụ"
   }
 }
