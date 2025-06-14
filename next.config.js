@@ -74,6 +74,7 @@ const nextConfig = {
           */
 
           /*
+           nonce 때문에 middleware에서 CSP 설정
           {
             key: 'Content-Security-Policy',
             value: CSP.replace(/\n/g, '')
