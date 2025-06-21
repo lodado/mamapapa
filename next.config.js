@@ -28,7 +28,6 @@ function parseURL(rawUrl) {
     port: url.port,
   };
 }
- 
 
 const nextConfig = {
   /*
@@ -66,6 +65,11 @@ const nextConfig = {
 
         // nginx 쓰면 기본적으로 제공해주긴 함
         headers: [
+          {
+            key: "Strict-Transport-Security",
+            value: "max-age=63072000; includeSubDomains; preload",
+          },
+
           /*
             This header helps prevent cross-site scripting (XSS),
             clickjacking and other code injection attacks.
