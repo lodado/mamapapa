@@ -32,17 +32,30 @@ class FaceModelStore extends BaseAsyncStore<FaceModelState> {
     this.startLoading(); // 공통 로딩 시작 로직
 
     try {
-      const faceRecognitionModel = await loadLayersModel("/models/ghostnet2/model.json");
+      let faceRecognitionModel: LayersModel;
+
+      // IndexedDB에서 먼저 로드 시도
+      try {
+        faceRecognitionModel = await loadLayersModel(`indexeddb://${MODEL_ID}`);
+        console.log("모델을 IndexedDB에서 로드했습니다.");
+      } catch (indexedDBError) {
+        console.log("IndexedDB에서 모델을 찾을 수 없어 HTTP에서 로드합니다.");
+        // IndexedDB에 없으면 HTTP에서 로드
+        faceRecognitionModel = await loadLayersModel("/models/ghostnet2/model.json");
+
+        // 로드한 모델을 IndexedDB에 저장
+        await faceRecognitionModel.save(`indexeddb://${MODEL_ID}`);
+        console.log("모델을 IndexedDB에 저장했습니다.");
+      }
+
       const faceCropModel = await blazeface.load();
 
       // 모델 세팅
       this.setModel(faceRecognitionModel, faceCropModel);
 
       this.finishLoading();
-
-      // offline에서도 사용 가능하도록 indexed DB caching
-      await faceRecognitionModel.save(`indexeddb://${MODEL_ID}`);
     } catch (error) {
+      console.error("모델 로딩 중 오류 발생:", error);
       this.setModel(null, null);
       this.set({ isLoading: false, isError: true });
     }
