@@ -1,4 +1,6 @@
-import { useCallback, useRef, useState } from "react";
+import { useCallback, useDeferredValue, useState } from "react";
+
+import { useQueryContainer } from "@/shared/ui/QueryContainer";
 
 import { CelebrityProfile } from "../configs/sampleCelebrities";
 
@@ -23,97 +25,82 @@ const buildTagsFromDescription = (description?: string): string[] => {
     .slice(0, 4);
 };
 
-export const useCelebritySearch = () => {
-  const [results, setResults] = useState<CelebrityProfile[]>([]);
-  const [isSearching, setIsSearching] = useState(false);
-  const abortControllerRef = useRef<AbortController | null>(null);
+const fetchCelebritiesFromWikipedia = async (query: string): Promise<CelebrityProfile[]> => {
+  const trimmedQuery = query.trim();
 
-  const clearResults = useCallback(() => {
-    abortControllerRef.current?.abort();
-    setResults([]);
-    setIsSearching(false);
+  if (!trimmedQuery) {
+    return [];
+  }
+
+  const params = new URLSearchParams({
+    action: "query",
+    format: "json",
+    prop: "pageimages|description",
+    piprop: "thumbnail",
+    pithumbsize: "640",
+    generator: "search",
+    gsrlimit: "12",
+    gsrsearch: `${trimmedQuery} celebrity`,
+    origin: "*",
+  });
+
+  const response = await fetch(`${WIKIPEDIA_API_ENDPOINT}?${params.toString()}`);
+
+  if (!response.ok) {
+    throw new Error("Failed to fetch celebrity data");
+  }
+
+  const data = await response.json();
+  const pages: Record<string, WikipediaPage> | undefined = data?.query?.pages;
+
+  if (!pages) {
+    return [];
+  }
+
+  return Object.values(pages)
+    .filter((page) => Boolean(page.thumbnail?.source))
+    .map((page) => ({
+      id: String(page.pageid),
+      name: page.title,
+      imageUrl: page.thumbnail!.source,
+      tags: buildTagsFromDescription(page.description),
+    }));
+};
+
+export const useCelebritySearch = () => {
+  const [searchQuery, setSearchQuery] = useState<string>("");
+  const deferredSearchQuery = useDeferredValue(searchQuery);
+
+  const { query } = useQueryContainer({
+    queryKey: ["celebrity-search", deferredSearchQuery],
+    queryFn: () => {
+      console.log("useCelebritySearch: Fetching celebrities for:", deferredSearchQuery);
+      return fetchCelebritiesFromWikipedia(deferredSearchQuery);
+    },
+    queryOptions: {
+      enabled: Boolean(deferredSearchQuery.trim()),
+      staleTime: 5 * 60 * 1000, // 5분
+      retry: 1,
+    },
+  });
+
+  const searchCelebrities = useCallback((query: string) => {
+    setSearchQuery(query);
   }, []);
 
-  const searchCelebrities = useCallback(
-    async (query: string) => {
-      const trimmedQuery = query.trim();
-
-      if (!trimmedQuery) {
-        clearResults();
-        return [];
-      }
-
-      abortControllerRef.current?.abort();
-
-      const controller = new AbortController();
-      abortControllerRef.current = controller;
-
-      setIsSearching(true);
-
-      const params = new URLSearchParams({
-        action: "query",
-        format: "json",
-        prop: "pageimages|description",
-        piprop: "thumbnail",
-        pithumbsize: "640",
-        generator: "search",
-        gsrlimit: "12",
-        gsrsearch: `${trimmedQuery} celebrity`,
-        origin: "*",
-      });
-
-      try {
-        const response = await fetch(`${WIKIPEDIA_API_ENDPOINT}?${params.toString()}`, {
-          signal: controller.signal,
-        });
-
-        if (!response.ok) {
-          throw new Error("Failed to fetch celebrity data");
-        }
-
-        const data = await response.json();
-        const pages: Record<string, WikipediaPage> | undefined = data?.query?.pages;
-
-        if (!pages) {
-          setResults([]);
-          return [];
-        }
-
-        const parsedResults = Object.values(pages)
-          .filter((page) => Boolean(page.thumbnail?.source))
-          .map((page) => ({
-            id: String(page.pageid),
-            name: page.title,
-            imageUrl: page.thumbnail!.source,
-            tags: buildTagsFromDescription(page.description),
-          }));
-
-        setResults(parsedResults);
-
-        return parsedResults;
-      } catch (error) {
-        if (error instanceof DOMException && error.name === "AbortError") {
-          return [];
-        }
-
-        console.error(error);
-        setResults([]);
-
-        return [];
-      } finally {
-        if (!controller.signal.aborted) {
-          setIsSearching(false);
-        }
-      }
-    },
-    [clearResults],
-  );
+  const clearResults = useCallback(() => {
+    setSearchQuery("");
+  }, []);
 
   return {
-    results,
+    results: query.data || [],
     searchCelebrities,
-    isSearching,
+    isSearching: query.isFetching,
     clearResults,
+    error: query.error,
+    currentQuery: searchQuery,
+    deferredQuery: deferredSearchQuery,
+    isPending: searchQuery !== deferredSearchQuery,
   };
 };
 

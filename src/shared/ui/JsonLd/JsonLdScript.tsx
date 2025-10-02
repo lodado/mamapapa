@@ -4,7 +4,7 @@ const webUrl = process.env.NEXT_PUBLIC_CLIENT_URL;
 const baseUrl = webUrl ?? "";
 
 const defaultImage = "/Logo.svg";
- 
+
 interface Metadata {
   title: string;
   description: string;
@@ -12,10 +12,54 @@ interface Metadata {
   url: string;
   datePublished: string;
   dateModified?: string;
+  date?: string; // 추가된 속성
   isAccessibleForFree?: boolean;
   keywords?: string;
   image?: string;
   locale?: string;
+}
+
+interface JsonLdData {
+  "@context": string;
+  "@type": string;
+  applicationCategory: string;
+  name: string;
+  description: string;
+  author: {
+    "@type": string;
+    name: string;
+  };
+  keywords?: string;
+  url: string;
+  inLanguage?: string;
+  datePublished: string;
+  dateModified: string;
+  isAccessibleForFree?: boolean;
+  image: string;
+  publisher: {
+    "@type": string;
+    name: string;
+    logo: {
+      "@type": string;
+      url: string;
+    };
+  };
+  operatingSystem: string;
+  browserRequirements: string;
+  offers: {
+    "@type": string;
+    price: string;
+    priceCurrency: string;
+  };
+  potentialAction: {
+    "@type": string;
+    target: string;
+    expectsAcceptanceOf: {
+      "@type": string;
+      price: string;
+      priceCurrency: string;
+    };
+  };
 }
 
 // 기본 메타 데이터 (필요에 따라 실제 데이터로 교체)
@@ -52,12 +96,12 @@ const resolveImageUrl = (image?: string) => {
   return /^https?:\/\//.test(image) ? image : `${baseUrl}${image}`;
 };
 
-export const generateJsonLd = (customMeta: Metadata = defaultMetadata) => {
+export const generateJsonLd = (customMeta: Partial<Metadata> = {}): JsonLdData => {
   const metadata = { ...defaultMetadata, ...customMeta };
   const absoluteUrl = resolveAbsoluteUrl(metadata);
   const imageUrl = resolveImageUrl(metadata.image);
 
-  const structuredData = {
+  const structuredData: JsonLdData = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
     applicationCategory: "EntertainmentApplication", // 엔터테인먼트 카테고리 지정
@@ -71,7 +115,7 @@ export const generateJsonLd = (customMeta: Metadata = defaultMetadata) => {
     url: absoluteUrl,
     inLanguage: metadata.locale,
     datePublished: metadata.datePublished,
-    dateModified: metadata.dateModified ?? metadata.datePublished,
+    dateModified: metadata.dateModified ?? metadata.date ?? metadata.datePublished,
     isAccessibleForFree: metadata.isAccessibleForFree,
     image: imageUrl,
 
@@ -109,10 +153,10 @@ export const generateJsonLd = (customMeta: Metadata = defaultMetadata) => {
  * JSON‑LD 데이터를 <script> 태그를 통해 head 또는 body에 삽입하는 컴포넌트
  */
 interface JsonLdProps {
-  customMeta?: Metadata;
+  customMeta?: Partial<Metadata>;
 }
 
 export const JsonLdScript = ({ customMeta }: JsonLdProps) => {
-  const jsonLdData = generateJsonLd(customMeta ?? defaultMetadata);
+  const jsonLdData = generateJsonLd(customMeta);
   return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdData) }} />;
 };

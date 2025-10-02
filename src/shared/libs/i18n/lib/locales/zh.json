@@ -256,7 +256,7 @@
     "CELEBRITY_SECTION_TITLE": "选择要比较的明星",
     "CELEBRITY_SECTION_DESCRIPTION": "搜索我们精心整理的全球明星库，将他们的示例照片直接加入对比。",
     "SEARCH_PLACEHOLDER": "按明星姓名搜索",
-    "SEARCH_EMPTY": "未找到与"{query}"匹配的明星，请尝试其他名字。",
+    "SEARCH_EMPTY": "未找到与\"{query}\"匹配的明星，请尝试其他名字。",
     "SEARCH_ERROR": "无法加载{name}的照片，请重试。",
     "ADD_BUTTON": "使用这位明星",
     "IMAGE_ALT": "{name} 的示例肖像"

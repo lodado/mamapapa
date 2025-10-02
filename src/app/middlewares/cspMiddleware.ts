@@ -8,14 +8,14 @@ export const cspMiddleware = (request: NextRequest, response: NextResponse) => {
     default-src 'self';
     style-src 'self' 'unsafe-inline' spoqa.github.io cdn.jsdelivr.net data:;
     img-src 'self' blob: data: ${supabaseProjectId}.supabase.co vercel.live vercel.com https://lh3.googleusercontent.com
-    https://k.kakaocdn.net https://avatars.githubusercontent.com https://upstash.com https://images.unsplash.com;
+    https://k.kakaocdn.net https://avatars.githubusercontent.com https://en.wikipedia.org https://upstash.com https://images.unsplash.com https://upload.wikimedia.org;
     font-src 'self' cdnjs.cloudflare.com spoqa.github.io cdn.jsdelivr.net data:;
     script-src 'wasm-unsafe-eval' 'self' ${
       process.env.NODE_ENV !== "production" ? `'unsafe-eval'` : ""
     } 'nonce-${nonce}' 'strict-dynamic' vercel.live vercel.com cdn.jsdelivr.net;
     script-src-elem 'self' vercel.live vercel.com 'nonce-${nonce}';
     object-src 'none';
-    connect-src 'self' https://qmwtuvttspuxwuwrsuci.supabase.co blob: https://www.kaggle.com https://tfhub.dev https://storage.googleapis.com vercel.live vercel.com https://www.google-analytics.com https://o4506497206779904.ingest.sentry.io;
+    connect-src 'self' https://qmwtuvttspuxwuwrsuci.supabase.co blob: https://www.kaggle.com https://tfhub.dev https://storage.googleapis.com vercel.live vercel.com https://www.google-analytics.com https://o4506497206779904.ingest.sentry.io https://en.wikipedia.org https://upload.wikimedia.org;
     base-uri 'self';
     form-action 'self';
     frame-ancestors 'none';

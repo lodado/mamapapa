@@ -57,7 +57,7 @@ const CelebritySearchSection = () => {
   const { setLoading } = useLoadingStore();
   const { addToast } = useToastStore();
   const { detectFaces, faceCropModel } = useFaceDetection();
-  const { results: searchResults, searchCelebrities, isSearching, clearResults } = useCelebritySearch();
+  const { results: searchResults, searchCelebrities, isSearching, clearResults, error } = useCelebritySearch();
 
   const normalizedQuery = useMemo(() => normalizeText(query), [query]);
 
@@ -78,16 +78,11 @@ const CelebritySearchSection = () => {
       return;
     }
 
-    const handler = setTimeout(() => {
-      searchCelebrities(query);
-    }, 400);
-
-    return () => {
-      clearTimeout(handler);
-    };
+    console.log("Searching for:", query);
+    searchCelebrities(query);
   }, [query, searchCelebrities, clearResults]);
 
-  const shouldShowSearchResults = Boolean(normalizedQuery) && searchResults.length > 0;
+  const shouldShowSearchResults = Boolean(normalizedQuery) && (isSearching || searchResults.length > 0);
   const displayCelebrities = shouldShowSearchResults ? searchResults : filteredCelebrities;
 
   const handleAddCelebrity = async (profile: CelebrityProfile) => {
@@ -142,6 +137,8 @@ const CelebritySearchSection = () => {
 
       {isSearching ? (
         <p className="body-2 text-text-03">Loading...</p>
+      ) : error ? (
+        <p className="body-2 text-text-03">검색 중 오류가 발생했습니다. 다시 시도해 주세요.</p>
       ) : displayCelebrities.length === 0 ? (
         <p className="body-2 text-text-03">{t("SEARCH_EMPTY", { query })}</p>
       ) : (

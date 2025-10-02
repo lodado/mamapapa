@@ -256,7 +256,7 @@
     "CELEBRITY_SECTION_TITLE": "比較する芸能人を選ぶ",
     "CELEBRITY_SECTION_DESCRIPTION": "厳選した世界のスターリストから検索して、サンプル写真を比較に追加しましょう。",
     "SEARCH_PLACEHOLDER": "芸能人名で検索",
-    "SEARCH_EMPTY": "「{query}」に一致する芸能人が見つかりません。別の名前をお試しください。",
+    "SEARCH_EMPTY": "\"{query}\"に一致する芸能人が見つかりません。別の名前をお試しください。",
     "SEARCH_ERROR": "{name}の写真を読み込めませんでした。もう一度お試しください。",
     "ADD_BUTTON": "この芸能人を使う",
     "IMAGE_ALT": "{name}のサンプルポートレート"
