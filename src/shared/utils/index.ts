@@ -8,4 +8,5 @@ export * from "./isServerSide";
 export * from "./noop";
 export * from "./rtl";
 export * from "./StorageStrategy";
+export * from "./textNormalization";
 export * from "./time";
