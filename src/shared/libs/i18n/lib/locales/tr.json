@@ -61,7 +61,8 @@
     "BUTTON-START-COMPARISON": "Benzerlik Karşılaştırmasını Başlat",
     "title": "Simmey - Yüz eşleştirme yapay zekamızla annenize ve babanıza ne kadar benzediğinizi keşfedin!",
     "description": "Yüz eşleştirme yapay zekamızla annenize ve babanıza ne kadar benzediğinizi keşfedin! Bu, eğlenceli ve ilgi çekici aile benzerliği karşılaştırmanıza başlayabileceğiniz ana sayfadır.",
-    "keywords": "yüz karşılaştırması, ebeveynler, benzerlik, eğlence, aile"
+    "keywords": "yüz karşılaştırması, ebeveynler, benzerlik, eğlence, aile",
+    "BUTTON-START-CELEBRITY": "Ünlülerle karşılaştır"
   },
   "BUTTON": {
     "CHECK-HISTORY": "Paylaşılan Geçmişi Kontrol Et"
@@ -254,5 +255,19 @@
   },
   "common": {
     "terms-of-service": "Hizmet Şartları"
+  },
+  "CELEBRITYFACES": {
+    "SEO_TITLE": "Fotoğrafını ünlü benzerleriyle karşılaştır",
+    "SEO_DESCRIPTION": "Fotoğrafını yükle, ünlü yüzleri ara ve seçilmiş ünlülerle benzerliğini saniyeler içinde karşılaştır.",
+    "SEO_KEYWORDS": "ünlü benzeri, yıldız yüz eşleştirme, ünlü karşılaştırma, yapay zekâ fotoğraf analizi",
+    "HEADER_TITLE": "Ünlülerle karşılaştırma",
+    "UPLOAD_SECTION_TITLE": "Ünlü karşılaştırmasına başlamak için fotoğrafını ekle",
+    "CELEBRITY_SECTION_TITLE": "Karşılaştırmak için bir ünlü seç",
+    "CELEBRITY_SECTION_DESCRIPTION": "Özenle seçilmiş dünya yıldızları listemizde ara ve örnek fotoğraflarını doğrudan karşılaştırmana ekle.",
+    "SEARCH_PLACEHOLDER": "Ünlü adına göre ara",
+    "SEARCH_EMPTY": "\"{query}\" için ünlü bulunamadı. Başka bir ad dene.",
+    "SEARCH_ERROR": "{name} fotoğrafı yüklenemedi. Lütfen tekrar dene.",
+    "ADD_BUTTON": "Bu ünlüyü kullan",
+    "IMAGE_ALT": "{name} örnek portresi"
   }
 }

@@ -61,7 +61,8 @@
     "BUTTON-START-COMPARISON": "닮은꼴 비교 시작하기",
     "title": "Simmey - 우리의 얼굴 매칭 AI를 사용하여 부모님과 얼마나 닮았는지 확인해보세요!",
     "description": "우리의 얼굴 매칭 AI를 사용하여 부모님과 얼마나 닮았는지 확인해보세요! 재미있고 흥미로운 가족 닮은꼴 비교를 시작할 수 있는 메인 페이지입니다.",
-    "keywords": "얼굴 비교, 부모님, 유사성, 재미, 가족"
+    "keywords": "얼굴 비교, 부모님, 유사성, 재미, 가족",
+    "BUTTON-START-CELEBRITY": "연예인과 비교하기"
   },
   "BUTTON": {
     "CHECK-HISTORY": "공유 내역 확인하기"
@@ -254,5 +255,19 @@
   },
   "common": {
     "terms-of-service": "이용 약관"
+  },
+  "CELEBRITYFACES": {
+    "SEO_TITLE": "내 사진을 연예인 닮은꼴과 비교해 보세요",
+    "SEO_DESCRIPTION": "내 사진을 업로드하고 인기 스타를 검색해 몇 초 만에 엄선된 연예인과 닮은 정도를 비교하세요.",
+    "SEO_KEYWORDS": "연예인 닮은꼴, 스타 얼굴 매칭, 유명인 비교, AI 사진 분석",
+    "HEADER_TITLE": "연예인 닮은꼴 비교",
+    "UPLOAD_SECTION_TITLE": "연예인 비교를 시작하려면 내 사진을 추가하세요",
+    "CELEBRITY_SECTION_TITLE": "비교할 연예인을 선택하세요",
+    "CELEBRITY_SECTION_DESCRIPTION": "큐레이션된 글로벌 스타 목록을 검색해 샘플 사진을 바로 비교에 추가하세요.",
+    "SEARCH_PLACEHOLDER": "연예인 이름으로 검색",
+    "SEARCH_EMPTY": "\"{query}\"에 해당하는 연예인을 찾지 못했어요. 다른 이름으로 검색해 보세요.",
+    "SEARCH_ERROR": "{name}의 사진을 불러오지 못했어요. 다시 시도해 주세요.",
+    "ADD_BUTTON": "이 연예인 사용하기",
+    "IMAGE_ALT": "{name}의 샘플 사진"
   }
 }

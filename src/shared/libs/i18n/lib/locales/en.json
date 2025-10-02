@@ -61,7 +61,8 @@
     "BUTTON-START-COMPARISON": "Start Look-Alike Comparison",
     "title": "Simmey - Discover how much you resemble your mom and dad using our face-matching AI!",
     "description": "Use our face-matching AI to see how much you resemble your parents! This is the main page where you can start a fun and exciting family look-alike comparison.",
-    "keywords": "face comparison, parents, similarity, fun, family"
+    "keywords": "face comparison, parents, similarity, fun, family",
+    "BUTTON-START-CELEBRITY": "Compare with celebrities"
   },
   "BUTTON": {
     "CHECK-HISTORY": "Check Shared History"
@@ -254,5 +255,19 @@
   },
   "common": {
     "terms-of-service": "Terms of Service"
+  },
+  "CELEBRITYFACES": {
+    "SEO_TITLE": "Compare your photo with celebrity look-alikes",
+    "SEO_DESCRIPTION": "Upload your photo, search famous faces, and compare similarities with curated celebrities in seconds.",
+    "SEO_KEYWORDS": "celebrity look alike, star face match, famous people comparison, ai photo analyzer",
+    "HEADER_TITLE": "Celebrity look-alike comparison",
+    "UPLOAD_SECTION_TITLE": "Add your photo to start the celebrity comparison",
+    "CELEBRITY_SECTION_TITLE": "Pick a celebrity to compare",
+    "CELEBRITY_SECTION_DESCRIPTION": "Search our curated roster of global stars and drop their sample photos straight into your comparison.",
+    "SEARCH_PLACEHOLDER": "Search by celebrity name",
+    "SEARCH_EMPTY": "No celebrity matches found for \"{query}\". Try another name.",
+    "SEARCH_ERROR": "We couldn't load {name}'s photo. Please try again.",
+    "ADD_BUTTON": "Use this celebrity",
+    "IMAGE_ALT": "Sample portrait of {name}"
   }
 }

@@ -61,7 +61,8 @@
     "BUTTON-START-COMPARISON": "Vergleich der Ähnlichkeit starten",
     "title": "Simmey - Entdecken Sie, wie sehr Sie Ihrer Mutter und Ihrem Vater ähneln, mit unserer Gesichtserkennungs-KI!",
     "description": "Entdecken Sie, wie sehr Sie Ihrer Mutter und Ihrem Vater ähneln, mit unserer Gesichtserkennungs-KI! Dies ist die Hauptseite, auf der Sie mit Ihrem unterhaltsamen und ansprechenden Familienähnlichkeitsvergleich beginnen können.",
-    "keywords": "Gesichtsvergleich, Eltern, Ähnlichkeit, Spaß, Familie"
+    "keywords": "Gesichtsvergleich, Eltern, Ähnlichkeit, Spaß, Familie",
+    "BUTTON-START-CELEBRITY": "Mit Prominenten vergleichen"
   },
   "BUTTON": {
     "CHECK-HISTORY": "Überprüfen Sie die geteilte Historie"
@@ -254,5 +255,19 @@
   },
   "common": {
     "terms-of-service": "Nutzungsbedingungen"
+  },
+  "CELEBRITYFACES": {
+    "SEO_TITLE": "Vergleiche dein Foto mit Celebrity-Doppelgängern",
+    "SEO_DESCRIPTION": "Lade dein Foto hoch, suche nach bekannten Gesichtern und vergleiche die Ähnlichkeit mit ausgewählten Stars in wenigen Sekunden.",
+    "SEO_KEYWORDS": "Celebrity Doppelgänger, Star-Gesichtserkennung, Promi-Vergleich, KI-Fotoanalyse",
+    "HEADER_TITLE": "Vergleich mit Prominenten",
+    "UPLOAD_SECTION_TITLE": "Füge dein Foto hinzu, um den Promi-Vergleich zu starten",
+    "CELEBRITY_SECTION_TITLE": "Wähle eine Prominente oder einen Prominenten zum Vergleich",
+    "CELEBRITY_SECTION_DESCRIPTION": "Durchsuche unsere kuratierte Liste globaler Stars und füge ihre Beispielbilder direkt zu deinem Vergleich hinzu.",
+    "SEARCH_PLACEHOLDER": "Nach Prominenten-Namen suchen",
+    "SEARCH_EMPTY": "Keine Prominenten für \"{query}\" gefunden. Versuche einen anderen Namen.",
+    "SEARCH_ERROR": "Das Foto von {name} konnte nicht geladen werden. Bitte versuche es erneut.",
+    "ADD_BUTTON": "Diese Prominente verwenden",
+    "IMAGE_ALT": "Beispielfoto von {name}"
   }
 }

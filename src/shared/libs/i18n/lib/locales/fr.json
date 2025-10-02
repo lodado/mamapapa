@@ -61,7 +61,8 @@
     "BUTTON-START-COMPARISON": "Commencer la comparaison de ressemblances",
     "title": "Simmey - Découvrez à quel point vous ressemblez à votre mère et votre père grâce à notre IA de correspondance faciale!",
     "description": "Découvrez à quel point vous ressemblez à votre mère et votre père grâce à notre IA de correspondance faciale! C'est la page principale où vous pouvez commencer votre comparaison amusante et engageante des ressemblances familiales.",
-    "keywords": "comparaison de visage, parents, similarité, amusant, famille"
+    "keywords": "comparaison de visage, parents, similarité, amusant, famille",
+    "BUTTON-START-CELEBRITY": "Comparer avec des célébrités"
   },
   "BUTTON": {
     "CHECK-HISTORY": "Vérifier l’historique partagé"
@@ -254,5 +255,19 @@
   },
   "common": {
     "terms-of-service": "Conditions d'utilisation"
+  },
+  "CELEBRITYFACES": {
+    "SEO_TITLE": "Comparez votre photo à des sosies de célébrités",
+    "SEO_DESCRIPTION": "Téléchargez votre photo, recherchez des visages célèbres et comparez votre ressemblance avec des célébrités sélectionnées en quelques secondes.",
+    "SEO_KEYWORDS": "sosie de célébrité, correspondance de visage de star, comparaison de célébrités, analyse photo IA",
+    "HEADER_TITLE": "Comparaison avec des célébrités",
+    "UPLOAD_SECTION_TITLE": "Ajoutez votre photo pour lancer la comparaison avec les célébrités",
+    "CELEBRITY_SECTION_TITLE": "Choisissez une célébrité à comparer",
+    "CELEBRITY_SECTION_DESCRIPTION": "Parcourez notre sélection de stars du monde entier et ajoutez leurs photos d'exemple directement à votre comparaison.",
+    "SEARCH_PLACEHOLDER": "Rechercher par nom de célébrité",
+    "SEARCH_EMPTY": "Aucune célébrité trouvée pour « {query} ». Essayez un autre nom.",
+    "SEARCH_ERROR": "Impossible de charger la photo de {name}. Veuillez réessayer.",
+    "ADD_BUTTON": "Utiliser cette célébrité",
+    "IMAGE_ALT": "Portrait d'exemple de {name}"
   }
 }

@@ -8,7 +8,7 @@ export const cspMiddleware = (request: NextRequest, response: NextResponse) => {
     default-src 'self';
     style-src 'self' 'unsafe-inline' spoqa.github.io cdn.jsdelivr.net data:;
     img-src 'self' blob: data: ${supabaseProjectId}.supabase.co vercel.live vercel.com https://lh3.googleusercontent.com
-    https://k.kakaocdn.net https://avatars.githubusercontent.com;
+    https://k.kakaocdn.net https://avatars.githubusercontent.com https://upstash.com https://images.unsplash.com;
     font-src 'self' cdnjs.cloudflare.com spoqa.github.io cdn.jsdelivr.net data:;
     script-src 'wasm-unsafe-eval' 'self' ${
       process.env.NODE_ENV !== "production" ? `'unsafe-eval'` : ""

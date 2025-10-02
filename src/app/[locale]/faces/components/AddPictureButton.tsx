@@ -4,55 +4,13 @@ import { useTranslations } from "next-intl";
 import React, { useRef } from "react";
 
 import CrossHair from "/public/CrossHair.svg";
-import { useFaceModelStore } from "@/features/AiModel/model";
 import { FaceCoordinates, ImageMetadata, useImageSelectorStore } from "@/features/ImageSelector/models";
 import { Button } from "@/shared/ui";
 import { useLoadingStore } from "@/shared/ui/LoadingSpinner";
 import { useToastStore } from "@/shared/ui/Toast/stores";
 
 import { ADD_PICTURE_BUTTON_ID } from "../configs/constant";
-
-// Hook for handling face detection logic
-const useFaceDetection = () => {
-  const { faceCropModel } = useFaceModelStore();
-
-  const detectFaces = async (file: File): Promise<FaceCoordinates | undefined> => {
-    const img = new Image();
-    const imgURL = URL.createObjectURL(file);
-    img.src = imgURL;
-
-    return new Promise((resolve) => {
-      img.onload = async () => {
-        const predictions = await faceCropModel!.estimateFaces(img, false);
-
-        if (predictions.length === 0) {
-          resolve({
-            x: 0,
-            y: 0,
-            width: 0,
-            height: 0,
-          });
-          return;
-        }
-
-        const face = predictions[0];
-        const [x, y] = face.topLeft as [number, number];
-        const [rx, ry] = face.bottomRight as [number, number];
-        const width = rx - x;
-        const height = ry - y;
-
-        resolve({
-          x,
-          y,
-          width,
-          height,
-        });
-      };
-    });
-  };
-
-  return { faceCropModel, detectFaces };
-};
+import { useFaceDetection } from "../hooks/useFaceDetection";
 
 // Hook for handling image selection logic
 const useImageSelection = () => {

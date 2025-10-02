@@ -61,7 +61,8 @@
     "BUTTON-START-COMPARISON": "そっくり比較を始める",
     "title": "Simmey - 私たちの顔マッチングAIを使用して、あなたが両親とどれだけ似ているかを発見してください!",
     "description": "私たちの顔マッチングAIを使用して、両親とどれだけ似ているかを発見しましょう! これは楽しく魅力的な家族の類似性比較を始めるためのメインページです。",
-    "keywords": "顔比較, 両親, 類似性, 楽しさ, 家族"
+    "keywords": "顔比較, 両親, 類似性, 楽しさ, 家族",
+    "BUTTON-START-CELEBRITY": "芸能人と比較する"
   },
   "BUTTON": {
     "CHECK-HISTORY": "共有履歴を確認する"
@@ -254,5 +255,19 @@
   },
   "common": {
     "terms-of-service": "利用規約"
+  },
+  "CELEBRITYFACES": {
+    "SEO_TITLE": "自分の写真を芸能人そっくりさんと比較しよう",
+    "SEO_DESCRIPTION": "写真をアップロードして人気芸能人を検索し、厳選されたスターと数秒で似ている度合いを比べましょう。",
+    "SEO_KEYWORDS": "芸能人そっくり, スター顔マッチ, 有名人比較, AI写真解析",
+    "HEADER_TITLE": "芸能人そっくり比較",
+    "UPLOAD_SECTION_TITLE": "芸能人比較を始めるには写真を追加してください",
+    "CELEBRITY_SECTION_TITLE": "比較する芸能人を選ぶ",
+    "CELEBRITY_SECTION_DESCRIPTION": "厳選した世界のスターリストから検索して、サンプル写真を比較に追加しましょう。",
+    "SEARCH_PLACEHOLDER": "芸能人名で検索",
+    "SEARCH_EMPTY": "「{query}」に一致する芸能人が見つかりません。別の名前をお試しください。",
+    "SEARCH_ERROR": "{name}の写真を読み込めませんでした。もう一度お試しください。",
+    "ADD_BUTTON": "この芸能人を使う",
+    "IMAGE_ALT": "{name}のサンプルポートレート"
   }
 }

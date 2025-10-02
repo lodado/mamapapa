@@ -6,6 +6,7 @@ const defaultImage = "/Logo.svg";
 export const PAGE_ROUTE = {
   MAIN: "/",
   FACES: "/faces",
+  FACES_CELEBRITY: "/faces/celebrity",
 } as const;
 
 const modificationDate = new Date();

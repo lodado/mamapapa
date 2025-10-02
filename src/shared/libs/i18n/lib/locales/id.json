@@ -61,7 +61,8 @@
     "BUTTON-START-COMPARISON": "Mulai Perbandingan Kemiripan",
     "title": "Simmey - Temukan seberapa mirip Anda dengan ibu dan ayah Anda menggunakan AI pencocokan wajah kami!",
     "description": "Temukan seberapa mirip Anda dengan ibu dan ayah Anda menggunakan AI pencocokan wajah kami! Ini adalah halaman utama tempat Anda dapat memulai perbandingan kemiripan keluarga yang menyenangkan dan menarik.",
-    "keywords": "perbandingan wajah, orang tua, kemiripan, menyenangkan, keluarga"
+    "keywords": "perbandingan wajah, orang tua, kemiripan, menyenangkan, keluarga",
+    "BUTTON-START-CELEBRITY": "Bandingkan dengan selebritas"
   },
   "BUTTON": {
     "CHECK-HISTORY": "Periksa Riwayat Dibagikan"
@@ -254,5 +255,19 @@
   },
   "common": {
     "terms-of-service": "Syarat Layanan"
+  },
+  "CELEBRITYFACES": {
+    "SEO_TITLE": "Bandingkan fotomu dengan mirip selebritas",
+    "SEO_DESCRIPTION": "Unggah fotomu, cari wajah terkenal, dan bandingkan kemiripannya dengan selebritas pilihan dalam hitungan detik.",
+    "SEO_KEYWORDS": "mirip selebritas, kecocokan wajah bintang, perbandingan selebritas, analisis foto AI",
+    "HEADER_TITLE": "Perbandingan dengan selebritas",
+    "UPLOAD_SECTION_TITLE": "Tambahkan fotomu untuk mulai membandingkan dengan selebritas",
+    "CELEBRITY_SECTION_TITLE": "Pilih selebritas untuk dibandingkan",
+    "CELEBRITY_SECTION_DESCRIPTION": "Telusuri daftar bintang dunia pilihan kami dan tambahkan foto contoh mereka langsung ke perbandinganmu.",
+    "SEARCH_PLACEHOLDER": "Cari berdasarkan nama selebritas",
+    "SEARCH_EMPTY": "Tidak ditemukan selebritas untuk \"{query}\". Coba nama lain.",
+    "SEARCH_ERROR": "Foto {name} tidak dapat dimuat. Silakan coba lagi.",
+    "ADD_BUTTON": "Gunakan selebritas ini",
+    "IMAGE_ALT": "Potret contoh {name}"
   }
 }

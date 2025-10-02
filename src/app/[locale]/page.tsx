@@ -93,6 +93,9 @@ const Page = async ({ params }: { params: { locale: string } }) => {
             <ButtonLink variant="primarySolid" href={PAGE_ROUTE.FACES}>
               {t("BUTTON-START-COMPARISON")}
             </ButtonLink>
+            <ButtonLink variant="primaryLine" href={PAGE_ROUTE.FACES_CELEBRITY}>
+              {t("BUTTON-START-CELEBRITY")}
+            </ButtonLink>
             <HistoryLink />
           </nav>
         </ReactiveLayout>
