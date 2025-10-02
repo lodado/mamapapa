@@ -1,3 +1,5 @@
+import { keepPreviousData } from "@tanstack/react-query";
+
 import { useDebouncedQuery } from "@/shared/hooks";
 import { useQueryContainer } from "@/shared/ui/QueryContainer";
 
@@ -25,7 +27,7 @@ const buildTagsFromDescription = (description?: string): string[] => {
     .slice(0, 4);
 };
 
-const fetchCelebritiesFromWikipedia = async (query: string): Promise<CelebrityProfile[]> => {
+const fetchCelebritiesFromWikipedia = async (query: string, signal?: AbortSignal): Promise<CelebrityProfile[]> => {
   const trimmedQuery = query.trim();
 
   if (!trimmedQuery) {
@@ -44,7 +46,9 @@ const fetchCelebritiesFromWikipedia = async (query: string): Promise<CelebrityPr
     origin: "*",
   });
 
-  const response = await fetch(`${WIKIPEDIA_API_ENDPOINT}?${params.toString()}`);
+  const response = await fetch(`${WIKIPEDIA_API_ENDPOINT}?${params.toString()}`, {
+    signal,
+  });
 
   if (!response.ok) {
     throw new Error("Failed to fetch celebrity data");
@@ -72,13 +76,14 @@ export const useCelebritySearch = (searchQuery: string) => {
 
   const { query } = useQueryContainer({
     queryKey: ["celebrity-search", debouncedQuery],
-    queryFn: () => {
-      return fetchCelebritiesFromWikipedia(debouncedQuery);
+    queryFn: ({ signal }) => {
+      return fetchCelebritiesFromWikipedia(debouncedQuery, signal);
     },
     queryOptions: {
       enabled: Boolean(debouncedQuery.trim()),
       staleTime: 5 * 60 * 1000, // 5분
       retry: 1,
+      placeholderData: keepPreviousData,
     },
   });
 

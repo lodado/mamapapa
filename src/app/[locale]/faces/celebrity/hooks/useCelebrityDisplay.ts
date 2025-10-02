@@ -8,9 +8,10 @@ interface UseCelebrityDisplayProps {
   query: string;
   searchResults: CelebrityProfile[];
   isSearching: boolean;
+  isPending: boolean;
 }
 
-export const useCelebrityDisplay = ({ query, searchResults, isSearching }: UseCelebrityDisplayProps) => {
+export const useCelebrityDisplay = ({ query, searchResults, isSearching, isPending }: UseCelebrityDisplayProps) => {
   const displayCelebrities = useMemo(() => {
     const normalizedQuery = normalizeText(query);
     const hasQuery = Boolean(normalizedQuery);
@@ -31,8 +32,14 @@ export const useCelebrityDisplay = ({ query, searchResults, isSearching }: UseCe
     });
   }, [query, isSearching, searchResults]);
 
+  const isLoading = useMemo(() => {
+    const hasQuery = Boolean(normalizeText(query));
+    return hasQuery && (isPending || isSearching);
+  }, [query, isPending, isSearching]);
+
   return {
     displayCelebrities,
     hasQuery: Boolean(normalizeText(query)),
+    isLoading,
   };
 };

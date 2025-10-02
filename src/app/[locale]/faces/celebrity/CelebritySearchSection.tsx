@@ -14,14 +14,15 @@ import { useCelebritySearch } from "./hooks/useCelebritySearch";
 const CelebritySearchSection = () => {
   const t = useTranslations("CELEBRITYFACES");
   const [query, setQuery] = useState("");
-  const { results: searchResults, isSearching, error } = useCelebritySearch(query);
+  const { results: searchResults, isSearching, error, isPending } = useCelebritySearch(query);
   const { handleAddCelebrity, faceCropModel } = useAddCelebrity();
   const { run: isTutorialRunning } = useTutorialStore();
 
-  const { displayCelebrities } = useCelebrityDisplay({
+  const { displayCelebrities, isLoading } = useCelebrityDisplay({
     query,
     searchResults,
     isSearching,
+    isPending,
   });
 
   return (
@@ -33,7 +34,7 @@ const CelebritySearchSection = () => {
       ) : (
         <CelebrityGrid
           celebrities={displayCelebrities}
-          isSearching={isSearching}
+          isSearching={isLoading}
           onAddCelebrity={handleAddCelebrity}
           isDisabled={!faceCropModel}
           searchQuery={query}

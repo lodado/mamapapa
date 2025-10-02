@@ -15,7 +15,7 @@ export function useQueryContainer<RESPONSE>({
   queryOptions,
 }: {
   queryKey: string | string[];
-  queryFn: () => Promise<RESPONSE>;
+  queryFn: (context: { signal: AbortSignal }) => Promise<RESPONSE>;
   initialData?: RESPONSE;
 
   queryOptions?: Omit<UseQueryOptions<RESPONSE, unknown, RESPONSE, any>, "queryKey" | "queryFn">;
@@ -27,7 +27,7 @@ export function useQueryContainer<RESPONSE>({
 
   const query = useQuery({
     retry: 1,
-    queryFn: () => queryFn(),
+    queryFn: (context) => queryFn(context),
     initialData,
     ...queryOptions,
     queryKey: parsedQueryKey,
