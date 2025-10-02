@@ -1,0 +1,22 @@
+---
+description: Documentation and testing guidelines, available on demand
+alwaysApply: false
+---
+
+## Documentation
+
+- After defining any function, method, or component:
+  - Write a JSDoc comment explaining its purpose, parameters, and return value.
+  - Keep it concise but informative.
+
+## Testing
+
+- Test code with various inputs, including edge cases.
+- use **vitest** for testing, not jest
+- Include both positive and negative scenarios.
+- Use a clear "as is → when → to be/should" structure:
+  - `describe('<Unit>')`
+    - `describe('as is: <current state>')`
+      - `describe('when <condition>')`
+        - `it('to be: <expected>, should <assertions>')`
+- Avoid testing implementation details — focus on public behavior.
