@@ -12,8 +12,9 @@ import { ToastViewPort } from "@/shared/ui/Toast";
 import { getMetadata } from "@/shared/utils/index.server";
 
 import FacePageTutorialConnector from "../components/FacePageTutorialConnector";
+import CelebritySearchSection from "./CelebritySearchSection";
 import CelebrityPageHeader from "./components/CelebrityPageHeader";
-import CelebritySearchSection from "./components/CelebritySearchSection";
+import CelebrityTutorialConnector from "./components/CelebrityTutorialConnector";
 import { CELEBRITY_PROFILES } from "./configs/sampleCelebrities";
 
 const webUrl = process.env.NEXT_PUBLIC_CLIENT_URL!;
@@ -44,7 +45,7 @@ const createCelebrityItemListJsonLd = (locale: string, description: string) => {
       "@type": "ListItem",
       position: index + 1,
       name: profile.name,
-      url: `${webUrl}/${locale}${PAGE_ROUTE.FACES_CELEBRITY}#${profile.id}`,
+      url: profile.imageUrl,
     })),
   };
 };
@@ -80,8 +81,10 @@ const Page = async ({ params }: { params: { locale: string } }) => {
       </ReactiveLayout>
 
       <ToastViewPort key="viewPort" className="bottom-[6.25rem]" />
-      <ModelDownloader />
-      <FacePageTutorialConnector />
+      <div className="hidden">
+        <ModelDownloader />
+      </div>
+      <CelebrityTutorialConnector />
     </>
   );
 };

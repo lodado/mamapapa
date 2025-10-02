@@ -258,8 +258,12 @@
     "SEARCH_PLACEHOLDER": "Search by celebrity name",
     "SEARCH_EMPTY": "No celebrity matches found for \"{query}\". Try another name.",
     "SEARCH_ERROR": "We couldn't load {name}'s photo. Please try again.",
+    "SEARCH_GENERAL_ERROR": "An error occurred during search. Please try again.",
     "ADD_BUTTON": "Use this celebrity",
-    "IMAGE_ALT": "Sample portrait of {name}"
+    "IMAGE_ALT": "Sample portrait of {name}",
+    "TUTORIAL-STEP-1": "Search for celebrity names here. Try typing 'Taylor Swift' or 'BTS' to find related celebrities.",
+    "TUTORIAL-STEP-2": "Here you can see celebrity profile cards. Each card shows the celebrity's photo and tags.",
+    "TUTORIAL-STEP-3": "Click this button to add the celebrity to your comparison. Compare your photo with the selected celebrity!"
   },
   "HISTORYPAGE": {
     "ERROR-PAGE-NOT-FOUND": "Page not found!",

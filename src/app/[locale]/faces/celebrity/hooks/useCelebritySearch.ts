@@ -1,4 +1,4 @@
-import { useCallback, useDeferredValue, useState } from "react";
+import { useDeferredValue } from "react";
 
 import { useQueryContainer } from "@/shared/ui/QueryContainer";
 
@@ -67,14 +67,12 @@ const fetchCelebritiesFromWikipedia = async (query: string): Promise<CelebrityPr
     }));
 };
 
-export const useCelebritySearch = () => {
-  const [searchQuery, setSearchQuery] = useState<string>("");
+export const useCelebritySearch = (searchQuery: string) => {
   const deferredSearchQuery = useDeferredValue(searchQuery);
 
   const { query } = useQueryContainer({
     queryKey: ["celebrity-search", deferredSearchQuery],
     queryFn: () => {
-      console.log("useCelebritySearch: Fetching celebrities for:", deferredSearchQuery);
       return fetchCelebritiesFromWikipedia(deferredSearchQuery);
     },
     queryOptions: {
@@ -84,19 +82,9 @@ export const useCelebritySearch = () => {
     },
   });
 
-  const searchCelebrities = useCallback((query: string) => {
-    setSearchQuery(query);
-  }, []);
-
-  const clearResults = useCallback(() => {
-    setSearchQuery("");
-  }, []);
-
   return {
     results: query.data || [],
-    searchCelebrities,
     isSearching: query.isFetching,
-    clearResults,
     error: query.error,
     currentQuery: searchQuery,
     deferredQuery: deferredSearchQuery,

@@ -258,8 +258,12 @@
     "SEARCH_PLACEHOLDER": "Tìm theo tên người nổi tiếng",
     "SEARCH_EMPTY": "Không tìm thấy người nổi tiếng trùng với \"{query}\". Hãy thử tên khác.",
     "SEARCH_ERROR": "Không tải được ảnh của {name}. Vui lòng thử lại.",
+    "SEARCH_GENERAL_ERROR": "Đã xảy ra lỗi trong quá trình tìm kiếm. Vui lòng thử lại.",
     "ADD_BUTTON": "Dùng người nổi tiếng này",
-    "IMAGE_ALT": "Ảnh chân dung mẫu của {name}"
+    "IMAGE_ALT": "Ảnh chân dung mẫu của {name}",
+    "TUTORIAL-STEP-1": "Tìm kiếm tên người nổi tiếng ở đây. Thử gõ 'Taylor Swift' hoặc 'BTS' để tìm những người nổi tiếng liên quan.",
+    "TUTORIAL-STEP-2": "Ở đây bạn có thể xem các thẻ hồ sơ người nổi tiếng. Mỗi thẻ hiển thị ảnh và thẻ tag của người nổi tiếng.",
+    "TUTORIAL-STEP-3": "Nhấp vào nút này để thêm người nổi tiếng vào phần so sánh của bạn. So sánh ảnh của bạn với người nổi tiếng đã chọn!"
   },
   "HISTORYPAGE": {
     "ERROR-PAGE-NOT-FOUND": "Không tìm thấy trang!",

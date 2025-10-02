@@ -258,8 +258,12 @@
     "SEARCH_PLACEHOLDER": "Nach Prominenten-Namen suchen",
     "SEARCH_EMPTY": "Keine Prominenten für \"{query}\" gefunden. Versuche einen anderen Namen.",
     "SEARCH_ERROR": "Das Foto von {name} konnte nicht geladen werden. Bitte versuche es erneut.",
+    "SEARCH_GENERAL_ERROR": "Bei der Suche ist ein Fehler aufgetreten. Bitte versuche es erneut.",
     "ADD_BUTTON": "Diese Prominente verwenden",
-    "IMAGE_ALT": "Beispielfoto von {name}"
+    "IMAGE_ALT": "Beispielfoto von {name}",
+    "TUTORIAL-STEP-1": "Suche hier nach Prominenten-Namen. Versuche 'Taylor Swift' oder 'BTS' einzugeben, um verwandte Prominente zu finden.",
+    "TUTORIAL-STEP-2": "Hier kannst du Prominenten-Profilkarten sehen. Jede Karte zeigt das Foto und die Tags der Prominenten.",
+    "TUTORIAL-STEP-3": "Klicke auf diese Schaltfläche, um die Prominente zu deinem Vergleich hinzuzufügen. Vergleiche dein Foto mit der ausgewählten Prominenten!"
   },
   "HISTORYPAGE": {
     "ERROR-PAGE-NOT-FOUND": "Seite nicht gefunden!",

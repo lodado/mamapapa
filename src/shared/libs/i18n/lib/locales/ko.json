@@ -258,8 +258,12 @@
     "SEARCH_PLACEHOLDER": "연예인 이름으로 검색",
     "SEARCH_EMPTY": "\"{query}\"에 해당하는 연예인을 찾지 못했어요. 다른 이름으로 검색해 보세요.",
     "SEARCH_ERROR": "{name}의 사진을 불러오지 못했어요. 다시 시도해 주세요.",
+    "SEARCH_GENERAL_ERROR": "검색 중 오류가 발생했습니다. 다시 시도해 주세요.",
     "ADD_BUTTON": "이 연예인 사용하기",
-    "IMAGE_ALT": "{name}의 샘플 사진"
+    "IMAGE_ALT": "{name}의 샘플 사진",
+    "TUTORIAL-STEP-1": "연예인 이름을 검색해보세요. 예를 들어 'Taylor Swift'나 'BTS'를 입력하면 관련 연예인들을 찾을 수 있어요.",
+    "TUTORIAL-STEP-2": "여기서는 연예인의 프로필 카드를 볼 수 있어요. 각 카드에는 연예인의 사진과 태그가 표시됩니다.",
+    "TUTORIAL-STEP-3": "이 버튼을 클릭하면 해당 연예인을 비교에 추가할 수 있어요. 추가된 연예인과 내 사진을 비교해보세요!"
   },
   "HISTORYPAGE": {
     "ERROR-PAGE-NOT-FOUND": "페이지를 찾을 수 없습니다!",

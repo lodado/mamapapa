@@ -258,8 +258,12 @@
     "SEARCH_PLACEHOLDER": "Ünlü adına göre ara",
     "SEARCH_EMPTY": "\"{query}\" için ünlü bulunamadı. Başka bir ad dene.",
     "SEARCH_ERROR": "{name} fotoğrafı yüklenemedi. Lütfen tekrar dene.",
+    "SEARCH_GENERAL_ERROR": "Arama sırasında hata oluştu. Lütfen tekrar deneyin.",
     "ADD_BUTTON": "Bu ünlüyü kullan",
-    "IMAGE_ALT": "{name} örnek portresi"
+    "IMAGE_ALT": "{name} örnek portresi",
+    "TUTORIAL-STEP-1": "Burada ünlü isimleri ara. İlgili ünlüleri bulmak için 'Taylor Swift' veya 'BTS' yazmayı dene.",
+    "TUTORIAL-STEP-2": "Burada ünlü profil kartlarını görebilirsin. Her kart ünlünün fotoğrafını ve etiketlerini gösterir.",
+    "TUTORIAL-STEP-3": "Bu düğmeye tıklayarak ünlüyü karşılaştırmana ekle. Fotoğrafını seçilen ünlüyle karşılaştır!"
   },
   "HISTORYPAGE": {
     "ERROR-PAGE-NOT-FOUND": "Sayfa bulunamadı!",

@@ -26,9 +26,7 @@ const CelebrityPageHeader = () => {
         <h1 className="md:w-[768px] top-[4rem] h-[3rem] display-2 pb-2 flex flex-col justify-start mb-1 w-full text-text-01 px-[1rem] items-start">
           <span className="h-[2.25rem]">{t("HEADER_TITLE")}</span>
         </h1>
-        <p className="md:w-[768px] px-[1rem] pb-3 text-text-03 body-2">
-          {t("CELEBRITY_SECTION_DESCRIPTION")}
-        </p>
+        <p className="md:w-[768px] px-[1rem] pb-3 text-text-03 body-2">{t("CELEBRITY_SECTION_DESCRIPTION")}</p>
       </div>
     </div>
   );

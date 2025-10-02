@@ -258,8 +258,12 @@
     "SEARCH_PLACEHOLDER": "Cari berdasarkan nama selebritas",
     "SEARCH_EMPTY": "Tidak ditemukan selebritas untuk \"{query}\". Coba nama lain.",
     "SEARCH_ERROR": "Foto {name} tidak dapat dimuat. Silakan coba lagi.",
+    "SEARCH_GENERAL_ERROR": "Terjadi kesalahan saat pencarian. Silakan coba lagi.",
     "ADD_BUTTON": "Gunakan selebritas ini",
-    "IMAGE_ALT": "Potret contoh {name}"
+    "IMAGE_ALT": "Potret contoh {name}",
+    "TUTORIAL-STEP-1": "Cari nama selebritas di sini. Coba ketik 'Taylor Swift' atau 'BTS' untuk menemukan selebritas terkait.",
+    "TUTORIAL-STEP-2": "Di sini Anda dapat melihat kartu profil selebritas. Setiap kartu menampilkan foto dan tag selebritas.",
+    "TUTORIAL-STEP-3": "Klik tombol ini untuk menambahkan selebritas ke perbandingan Anda. Bandingkan foto Anda dengan selebritas yang dipilih!"
   },
   "HISTORYPAGE": {
     "ERROR-PAGE-NOT-FOUND": "Halaman tidak ditemukan!",

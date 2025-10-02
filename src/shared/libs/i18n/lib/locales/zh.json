@@ -258,8 +258,12 @@
     "SEARCH_PLACEHOLDER": "按明星姓名搜索",
     "SEARCH_EMPTY": "未找到与\"{query}\"匹配的明星，请尝试其他名字。",
     "SEARCH_ERROR": "无法加载{name}的照片，请重试。",
+    "SEARCH_GENERAL_ERROR": "搜索时发生错误，请重试。",
     "ADD_BUTTON": "使用这位明星",
-    "IMAGE_ALT": "{name} 的示例肖像"
+    "IMAGE_ALT": "{name} 的示例肖像",
+    "TUTORIAL-STEP-1": "在这里搜索明星姓名。尝试输入\"Taylor Swift\"或\"BTS\"来找到相关明星。",
+    "TUTORIAL-STEP-2": "这里可以看到明星资料卡片。每张卡片显示明星的照片和标签。",
+    "TUTORIAL-STEP-3": "点击此按钮可将明星添加到对比中。将你的照片与选中的明星进行比较！"
   },
   "HISTORYPAGE": {
     "ERROR-PAGE-NOT-FOUND": "未找到页面！",

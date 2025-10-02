@@ -258,8 +258,12 @@
     "SEARCH_PLACEHOLDER": "Buscar por nombre de celebridad",
     "SEARCH_EMPTY": "No se encontraron celebridades para \"{query}\". Prueba con otro nombre.",
     "SEARCH_ERROR": "No pudimos cargar la foto de {name}. Inténtalo de nuevo.",
+    "SEARCH_GENERAL_ERROR": "Ocurrió un error durante la búsqueda. Inténtalo de nuevo.",
     "ADD_BUTTON": "Usar esta celebridad",
-    "IMAGE_ALT": "Retrato de muestra de {name}"
+    "IMAGE_ALT": "Retrato de muestra de {name}",
+    "TUTORIAL-STEP-1": "Busca nombres de celebridades aquí. Intenta escribir 'Taylor Swift' o 'BTS' para encontrar celebridades relacionadas.",
+    "TUTORIAL-STEP-2": "Aquí puedes ver las tarjetas de perfil de celebridades. Cada tarjeta muestra la foto y etiquetas de la celebridad.",
+    "TUTORIAL-STEP-3": "Haz clic en este botón para agregar la celebridad a tu comparación. ¡Compara tu foto con la celebridad seleccionada!"
   },
   "HISTORYPAGE": {
     "ERROR-PAGE-NOT-FOUND": "¡Página no encontrada!",
