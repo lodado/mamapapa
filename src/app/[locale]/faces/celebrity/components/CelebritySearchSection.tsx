@@ -4,7 +4,7 @@ import { Search } from "lucide-react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 
 import { usePlayerStore } from "@/entities/Player";
 import { FaceCoordinates, ImageMetadata, useImageSelectorStore } from "@/features/ImageSelector/models";
@@ -14,6 +14,7 @@ import { useToastStore } from "@/shared/ui/Toast/stores";
 
 import { useFaceDetection } from "../../hooks/useFaceDetection";
 import { CELEBRITY_PROFILES, CelebrityProfile } from "../configs/sampleCelebrities";
+import { useCelebritySearch } from "../hooks/useCelebritySearch";
 
 const normalizeText = (text: string) =>
   text
@@ -56,6 +57,7 @@ const CelebritySearchSection = () => {
   const { setLoading } = useLoadingStore();
   const { addToast } = useToastStore();
   const { detectFaces, faceCropModel } = useFaceDetection();
+  const { results: searchResults, searchCelebrities, isSearching, clearResults } = useCelebritySearch();
 
   const normalizedQuery = useMemo(() => normalizeText(query), [query]);
 
@@ -69,6 +71,24 @@ const CelebritySearchSection = () => {
       return normalizedName.includes(normalizedQuery) || normalizedTags.some((tag) => tag.includes(normalizedQuery));
     });
   }, [normalizedQuery]);
+
+  useEffect(() => {
+    if (!query.trim()) {
+      clearResults();
+      return;
+    }
+
+    const handler = setTimeout(() => {
+      searchCelebrities(query);
+    }, 400);
+
+    return () => {
+      clearTimeout(handler);
+    };
+  }, [query, searchCelebrities, clearResults]);
+
+  const shouldShowSearchResults = Boolean(normalizedQuery) && searchResults.length > 0;
+  const displayCelebrities = shouldShowSearchResults ? searchResults : filteredCelebrities;
 
   const handleAddCelebrity = async (profile: CelebrityProfile) => {
     if (!faceCropModel) return;
@@ -120,11 +140,13 @@ const CelebritySearchSection = () => {
         <Search className="absolute left-4 top-1/2 -translate-y-1/2" aria-hidden width={18} height={18} />
       </Input>
 
-      {filteredCelebrities.length === 0 ? (
+      {isSearching ? (
+        <p className="body-2 text-text-03">Loading...</p>
+      ) : displayCelebrities.length === 0 ? (
         <p className="body-2 text-text-03">{t("SEARCH_EMPTY", { query })}</p>
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          {filteredCelebrities.map((profile) => (
+          {displayCelebrities.map((profile) => (
             <article
               key={profile.id}
               id={profile.id}
@@ -138,6 +160,7 @@ const CelebritySearchSection = () => {
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, 50vw"
                   priority={false}
+                  unoptimized
                 />
               </div>
 
