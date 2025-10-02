@@ -170,14 +170,6 @@
   "FORM": {
     "TITLE-COMPARE-LOOKS": "比较相似的人"
   },
-  "HistoryPage": {
-    "error_page_not_found": "未找到页面！",
-    "go_to_homepage": "返回首页"
-  },
-  "HistoryPageHeader": {
-    "rename_history": "重命名历史",
-    "delete_history": "删除历史"
-  },
   "CommentInput": {
     "error": "错误",
     "cooldown_error_title": "请稍后再试",
@@ -211,8 +203,7 @@
   "HISTORY": {
     "title": "过去的面部匹配结果",
     "description": "查看您以前的面部匹配结果，并与家人和朋友分享。",
-    "keywords": "面部匹配, AI, 结果记录, 家庭, 朋友, 乐趣",
-    "go_to_homepage": "返回首页"
+    "keywords": "面部匹配, AI, 结果记录, 家庭, 朋友, 乐趣"
   },
   "RESULT": {
     "title": "比较结果页面",
@@ -265,9 +256,17 @@
     "CELEBRITY_SECTION_TITLE": "选择要比较的明星",
     "CELEBRITY_SECTION_DESCRIPTION": "搜索我们精心整理的全球明星库，将他们的示例照片直接加入对比。",
     "SEARCH_PLACEHOLDER": "按明星姓名搜索",
-    "SEARCH_EMPTY": "未找到与“{query}”匹配的明星，请尝试其他名字。",
+    "SEARCH_EMPTY": "未找到与"{query}"匹配的明星，请尝试其他名字。",
     "SEARCH_ERROR": "无法加载{name}的照片，请重试。",
     "ADD_BUTTON": "使用这位明星",
     "IMAGE_ALT": "{name} 的示例肖像"
+  },
+  "HISTORYPAGE": {
+    "ERROR-PAGE-NOT-FOUND": "未找到页面！",
+    "GO-TO-HOMEPAGE": "返回首页"
+  },
+  "HISTORYPAGEHEADER": {
+    "RENAME-HISTORY": "重命名历史",
+    "DELETE-HISTORY": "删除历史"
   }
 }

@@ -36,7 +36,10 @@ export default async function LoginPopupPage({ params }: { params: { locale: str
           title: t("title"),
           url: PAGE_ROUTE.LOGIN,
           description: t("description"),
-          date: new Date().toISOString(),
+          datePublished: new Date().toISOString(),
+          keywords: t("keywords"),
+          locale: params.locale,
+          isAccessibleForFree: true,
         }}
       />
       <LoginPopup />

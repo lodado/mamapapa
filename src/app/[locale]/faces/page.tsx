@@ -45,7 +45,10 @@ const Page = async ({ params }: { params: { locale: string } }) => {
           title: mainTranslate("title"),
           url: PAGE_ROUTE.FACES,
           description: t("description"),
-          date: new Date().toISOString(),
+          datePublished: new Date().toISOString(),
+          keywords: t("keywords"),
+          locale: params.locale,
+          isAccessibleForFree: true,
         }}
       />
 

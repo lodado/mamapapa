@@ -170,14 +170,6 @@
   "FORM": {
     "TITLE-COMPARE-LOOKS": "Compare looks alike"
   },
-  "HistoryPage": {
-    "error_page_not_found": "Page not found!",
-    "go_to_homepage": "Go back to the homepage"
-  },
-  "HistoryPageHeader": {
-    "rename_history": "Rename History",
-    "delete_history": "Delete History"
-  },
   "CommentInput": {
     "error": "Error",
     "cooldown_error_title": "Please try again later",
@@ -211,8 +203,7 @@
   "HISTORY": {
     "title": "Past Face Matching Results",
     "description": "Check your previous face matching results and share them with family and friends.",
-    "keywords": "face matching, AI, result history, family, friends, fun",
-    "go_to_homepage": "Go back to the homepage"
+    "keywords": "face matching, AI, result history, family, friends, fun"
   },
   "RESULT": {
     "title": "Comparison Results Page",
@@ -269,5 +260,13 @@
     "SEARCH_ERROR": "We couldn't load {name}'s photo. Please try again.",
     "ADD_BUTTON": "Use this celebrity",
     "IMAGE_ALT": "Sample portrait of {name}"
+  },
+  "HISTORYPAGE": {
+    "ERROR-PAGE-NOT-FOUND": "Page not found!",
+    "GO-TO-HOMEPAGE": "Go back to the homepage"
+  },
+  "HISTORYPAGEHEADER": {
+    "RENAME-HISTORY": "Rename History",
+    "DELETE-HISTORY": "Delete History"
   }
 }

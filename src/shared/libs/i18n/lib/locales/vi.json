@@ -170,14 +170,6 @@
   "FORM": {
     "TITLE-COMPARE-LOOKS": "So sánh những người giống nhau"
   },
-  "HistoryPage": {
-    "error_page_not_found": "Không tìm thấy trang!",
-    "go_to_homepage": "Quay lại trang chủ"
-  },
-  "HistoryPageHeader": {
-    "rename_history": "Đổi tên lịch sử",
-    "delete_history": "Xóa lịch sử"
-  },
   "CommentInput": {
     "error": "Lỗi",
     "cooldown_error_title": "Vui lòng thử lại sau",
@@ -211,8 +203,7 @@
   "HISTORY": {
     "title": "Kết quả đối sánh khuôn mặt trước đây",
     "description": "Kiểm tra kết quả đối sánh khuôn mặt trước đây của bạn và chia sẻ với gia đình, bạn bè.",
-    "keywords": "đối sánh khuôn mặt, AI, lịch sử kết quả, gia đình, bạn bè, vui vẻ",
-    "go_to_homepage": "Quay lại trang chủ"
+    "keywords": "đối sánh khuôn mặt, AI, lịch sử kết quả, gia đình, bạn bè, vui vẻ"
   },
   "RESULT": {
     "title": "Trang kết quả so sánh",
@@ -269,5 +260,13 @@
     "SEARCH_ERROR": "Không tải được ảnh của {name}. Vui lòng thử lại.",
     "ADD_BUTTON": "Dùng người nổi tiếng này",
     "IMAGE_ALT": "Ảnh chân dung mẫu của {name}"
+  },
+  "HISTORYPAGE": {
+    "ERROR-PAGE-NOT-FOUND": "Không tìm thấy trang!",
+    "GO-TO-HOMEPAGE": "Quay lại trang chủ"
+  },
+  "HISTORYPAGEHEADER": {
+    "RENAME-HISTORY": "Đổi tên lịch sử",
+    "DELETE-HISTORY": "Xóa lịch sử"
   }
 }

@@ -170,14 +170,6 @@
   "FORM": {
     "TITLE-COMPARE-LOOKS": "似ている人を比較する"
   },
-  "HistoryPage": {
-    "error_page_not_found": "ページが見つかりません！",
-    "go_to_homepage": "ホームページに戻る"
-  },
-  "HistoryPageHeader": {
-    "rename_history": "履歴の名前を変更する",
-    "delete_history": "履歴を削除する"
-  },
   "CommentInput": {
     "error": "エラー",
     "cooldown_error_title": "後でもう一度お試しください",
@@ -211,8 +203,7 @@
   "HISTORY": {
     "title": "過去の顔マッチング結果",
     "description": "以前の顔マッチング結果を確認し、家族や友人と共有しましょう。",
-    "keywords": "顔マッチング, AI, 結果履歴, 家族, 友人, 楽しみ",
-    "go_to_homepage": "ホームページに戻る"
+    "keywords": "顔マッチング, AI, 結果履歴, 家族, 友人, 楽しみ"
   },
   "RESULT": {
     "title": "比較結果ページ",
@@ -269,5 +260,13 @@
     "SEARCH_ERROR": "{name}の写真を読み込めませんでした。もう一度お試しください。",
     "ADD_BUTTON": "この芸能人を使う",
     "IMAGE_ALT": "{name}のサンプルポートレート"
+  },
+  "HISTORYPAGE": {
+    "ERROR-PAGE-NOT-FOUND": "ページが見つかりません！",
+    "GO-TO-HOMEPAGE": "ホームページに戻る"
+  },
+  "HISTORYPAGEHEADER": {
+    "RENAME-HISTORY": "履歴の名前を変更する",
+    "DELETE-HISTORY": "履歴を削除する"
   }
 }

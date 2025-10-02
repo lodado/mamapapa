@@ -170,14 +170,6 @@
   "FORM": {
     "TITLE-COMPARE-LOOKS": "قارن بين الأشخاص المتشابهين"
   },
-  "HistoryPage": {
-    "error_page_not_found": "الصفحة غير موجودة!",
-    "go_to_homepage": "العودة إلى الصفحة الرئيسية"
-  },
-  "HistoryPageHeader": {
-    "rename_history": "إعادة تسمية السجل",
-    "delete_history": "حذف السجل"
-  },
   "CommentInput": {
     "error": "خطأ",
     "cooldown_error_title": "يرجى المحاولة مرة أخرى لاحقًا",
@@ -211,8 +203,7 @@
   "HISTORY": {
     "title": "نتائج مطابقة الوجه السابقة",
     "description": "تحقق من نتائج مطابقة الوجه السابقة وشاركها مع العائلة والأصدقاء.",
-    "keywords": "مطابقة الوجه, الذكاء الاصطناعي, سجل النتائج, العائلة, الأصدقاء, المتعة",
-    "go_to_homepage": "العودة إلى الصفحة الرئيسية"
+    "keywords": "مطابقة الوجه, الذكاء الاصطناعي, سجل النتائج, العائلة, الأصدقاء, المتعة"
   },
   "RESULT": {
     "title": "صفحة نتائج المقارنة",
@@ -269,5 +260,13 @@
     "SEARCH_ERROR": "تعذّر تحميل صورة {name}. يرجى المحاولة مرة أخرى.",
     "ADD_BUTTON": "استخدم هذا المشهور",
     "IMAGE_ALT": "صورة نموذجية لـ {name}"
+  },
+  "HISTORYPAGE": {
+    "ERROR-PAGE-NOT-FOUND": "الصفحة غير موجودة!",
+    "GO-TO-HOMEPAGE": "العودة إلى الصفحة الرئيسية"
+  },
+  "HISTORYPAGEHEADER": {
+    "RENAME-HISTORY": "إعادة تسمية السجل",
+    "DELETE-HISTORY": "حذف السجل"
   }
 }

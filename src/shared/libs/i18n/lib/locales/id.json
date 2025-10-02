@@ -170,14 +170,6 @@
   "FORM": {
     "TITLE-COMPARE-LOOKS": "Bandingkan kemiripan"
   },
-  "HistoryPage": {
-    "error_page_not_found": "Halaman tidak ditemukan!",
-    "go_to_homepage": "Kembali ke beranda"
-  },
-  "HistoryPageHeader": {
-    "rename_history": "Ganti Nama Riwayat",
-    "delete_history": "Hapus Riwayat"
-  },
   "CommentInput": {
     "error": "Kesalahan",
     "cooldown_error_title": "Silakan coba lagi nanti",
@@ -211,8 +203,7 @@
   "HISTORY": {
     "title": "Hasil Pencocokan Wajah Sebelumnya",
     "description": "Periksa hasil pencocokan wajah Anda sebelumnya dan bagikan dengan keluarga serta teman-teman.",
-    "keywords": "pencocokan wajah, AI, riwayat hasil, keluarga, teman, kesenangan",
-    "go_to_homepage": "Kembali ke beranda"
+    "keywords": "pencocokan wajah, AI, riwayat hasil, keluarga, teman, kesenangan"
   },
   "RESULT": {
     "title": "Halaman Hasil Perbandingan",
@@ -269,5 +260,13 @@
     "SEARCH_ERROR": "Foto {name} tidak dapat dimuat. Silakan coba lagi.",
     "ADD_BUTTON": "Gunakan selebritas ini",
     "IMAGE_ALT": "Potret contoh {name}"
+  },
+  "HISTORYPAGE": {
+    "ERROR-PAGE-NOT-FOUND": "Halaman tidak ditemukan!",
+    "GO-TO-HOMEPAGE": "Kembali ke beranda"
+  },
+  "HISTORYPAGEHEADER": {
+    "RENAME-HISTORY": "Ganti Nama Riwayat",
+    "DELETE-HISTORY": "Hapus Riwayat"
   }
 }

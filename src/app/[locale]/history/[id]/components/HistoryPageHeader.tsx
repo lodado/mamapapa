@@ -29,7 +29,7 @@ const HistoryPageHeader = ({
   const [isUpdateDialogOpen, setIsUpdateDialogOpen] = useState(false);
 
   const { session } = useAuthStore();
-  const t = useTranslations("HistoryPageHeader");
+  const t = useTranslations("HISTORYPAGEHEADER");
 
   const isOwner = creatorUserId === session?.user?.id;
   const router = useRouter();
@@ -76,7 +76,7 @@ const HistoryPageHeader = ({
                       setIsUpdateDialogOpen(true);
                     }}
                   >
-                    {t("rename_history")}
+                    {t("RENAME-HISTORY")}
                   </Dropdown.Item>
                   <Dropdown.Item
                     key={"remove-item"}
@@ -84,7 +84,7 @@ const HistoryPageHeader = ({
                       setIsRemoveDialogOpen(true);
                     }}
                   >
-                    <Delete /> {t("delete_history")}
+                    <Delete /> {t("DELETE-HISTORY")}
                   </Dropdown.Item>
                 </Dropdown.Content>
               </Dropdown>

@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import React from "react";
 
 import { EDGE_DI_REPOSITORY } from "@/DI/edge.server";
@@ -29,20 +29,26 @@ export async function generateMetadata({
   params: { id: string; locale: string };
 }): Promise<Metadata> {
   const t = await getTranslations("HISTORYID");
-  const { data, error } = await getCachedCompareHistory(id)();
+  const { data } = await getCachedCompareHistory(id)();
 
   return getMetadata({
-    title: `${t("title")} －id: ${id}, title: ${data?.title}`,
-    description: `${t("description")}`,
+    title: data?.title ? `${data.title} | ${t("title")}` : `${t("title")} (${id})`,
+    description: data?.description ?? t("description"),
     path: `${PAGE_ROUTE.HISTORY_LIST}/${id}`,
     keywords: t("keywords"),
     locale,
+    others: {
+      robots: "noindex, nofollow",
+    },
   });
 }
 
-const Page = async ({ params }: { params: { id: string } }) => {
-  const { id } = params;
+const Page = async ({ params }: { params: { id: string; locale: string } }) => {
+  const { id, locale } = params;
+  setRequestLocale(locale);
   const t = await getTranslations();
+  const historyMessages = await getTranslations("HISTORYID");
+  const historyPageMessages = await getTranslations("HISTORYPAGE");
 
   const { data, error } = await getCachedCompareHistory(id)();
 
@@ -50,7 +56,7 @@ const Page = async ({ params }: { params: { id: string } }) => {
   const isLogin = user?.id;
 
   if (error) {
-    return <>{t("HistoryPage.error_page_not_found")}</>;
+    return <>{historyPageMessages("ERROR-PAGE-NOT-FOUND")}</>;
   }
 
   const comparisonList = JSON.parse(data?.imageList || []) as ComparisonMetaData[];
@@ -61,14 +67,22 @@ const Page = async ({ params }: { params: { id: string } }) => {
   const updatedAt = data.updatedAt;
   const creatorUserId = data.userId;
 
+  const createdAtIso = createdAt ? new Date(createdAt).toISOString() : new Date().toISOString();
+  const updatedAtIso = updatedAt ? new Date(updatedAt).toISOString() : createdAtIso;
+  const jsonLdTitle = title ? `${title} | ${historyMessages("title")}` : historyMessages("title");
+
   return (
     <>
       <JsonLdScript
         customMeta={{
-          title: t("HISTORYID.title"),
+          title: jsonLdTitle,
           url: `${PAGE_ROUTE.HISTORY_LIST}/${id}`,
-          description: t("HISTORYID.description"),
-          date: new Date().toISOString(),
+          description: historyMessages("description"),
+          datePublished: createdAtIso,
+          dateModified: updatedAtIso,
+          keywords: historyMessages("keywords"),
+          locale,
+          isAccessibleForFree: false,
         }}
       />
 
@@ -98,7 +112,7 @@ const Page = async ({ params }: { params: { id: string } }) => {
           {isLogin && <CommentInput userId={user?.id ?? "-1"} boardId={id} />}
 
           <ButtonLink wrapperClassName="w-full max-w-[29rem]" variant="primarySolid" href={PAGE_ROUTE.MAIN}>
-            {t("HistoryPage.go_to_homepage")}
+            {historyPageMessages("GO-TO-HOMEPAGE")}
           </ButtonLink>
 
           {!isLogin && <LoginButton />}

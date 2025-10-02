@@ -23,7 +23,7 @@ export async function generateMetadata({ params: { locale } }: { params: { local
     title: t("title"),
     description: t("description"),
     path: PAGE_ROUTE.MAIN,
-    keywords: "face comparison, parents, similarity, fun, family",
+    keywords: t("keywords"),
     locale,
   });
 }
@@ -43,7 +43,10 @@ const Page = async ({ params }: { params: { locale: string } }) => {
           title: t("title"),
           url: PAGE_ROUTE.MAIN,
           description: t("description"),
-          date: new Date().toISOString(),
+          datePublished: new Date().toISOString(),
+          keywords: t("keywords"),
+          locale: params.locale,
+          isAccessibleForFree: true,
         }}
       />
 

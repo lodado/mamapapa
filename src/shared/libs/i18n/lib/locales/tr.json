@@ -170,14 +170,6 @@
   "FORM": {
     "TITLE-COMPARE-LOOKS": "Benzerlikleri karşılaştır"
   },
-  "HistoryPage": {
-    "error_page_not_found": "Sayfa bulunamadı!",
-    "go_to_homepage": "Ana sayfaya geri dön"
-  },
-  "HistoryPageHeader": {
-    "rename_history": "Geçmişi Yeniden Adlandır",
-    "delete_history": "Geçmişi Sil"
-  },
   "CommentInput": {
     "error": "Hata",
     "cooldown_error_title": "Lütfen daha sonra tekrar deneyin",
@@ -211,8 +203,7 @@
   "HISTORY": {
     "title": "Geçmiş Yüz Eşleştirme Sonuçları",
     "description": "Önceki yüz eşleştirme sonuçlarınızı kontrol edin ve aileniz ve arkadaşlarınızla paylaşın.",
-    "keywords": "yüz eşleştirme, yapay zeka, sonuç geçmişi, aile, arkadaşlar, eğlence",
-    "go_to_homepage": "Ana sayfaya geri dön"
+    "keywords": "yüz eşleştirme, yapay zeka, sonuç geçmişi, aile, arkadaşlar, eğlence"
   },
   "RESULT": {
     "title": "Karşılaştırma Sonuçları Sayfası",
@@ -269,5 +260,13 @@
     "SEARCH_ERROR": "{name} fotoğrafı yüklenemedi. Lütfen tekrar dene.",
     "ADD_BUTTON": "Bu ünlüyü kullan",
     "IMAGE_ALT": "{name} örnek portresi"
+  },
+  "HISTORYPAGE": {
+    "ERROR-PAGE-NOT-FOUND": "Sayfa bulunamadı!",
+    "GO-TO-HOMEPAGE": "Ana sayfaya geri dön"
+  },
+  "HISTORYPAGEHEADER": {
+    "RENAME-HISTORY": "Geçmişi Yeniden Adlandır",
+    "DELETE-HISTORY": "Geçmişi Sil"
   }
 }

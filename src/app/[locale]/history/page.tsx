@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import React from "react";
 
 import { EDGE_DI_REPOSITORY } from "@/DI/edge.server";
@@ -20,7 +20,7 @@ export async function generateMetadata({ params: { locale } }: { params: { local
   return getMetadata({
     title: t("title"),
     description: t("description"),
-    path: PAGE_ROUTE.LOGIN,
+    path: PAGE_ROUTE.HISTORY_LIST,
     keywords: t("keywords"),
     locale,
     others: {
@@ -30,11 +30,13 @@ export async function generateMetadata({ params: { locale } }: { params: { local
 }
 
 const Page = async ({ params }: { params: { locale: string } }) => {
+  setRequestLocale(params.locale);
   const t = await getTranslations("HISTORY");
+  const historyPageMessages = await getTranslations("HISTORYPAGE");
   const auth = await new GetUserInfoUseCase(new EDGE_DI_REPOSITORY.Auth()).execute();
 
   if (!auth) {
-    return <>page not found!</>;
+    return <>{historyPageMessages("ERROR-PAGE-NOT-FOUND")}</>;
   }
 
   return (
@@ -42,10 +44,12 @@ const Page = async ({ params }: { params: { locale: string } }) => {
       <JsonLdScript
         customMeta={{
           title: t("title"),
-          url: PAGE_ROUTE.LOGIN,
+          url: PAGE_ROUTE.HISTORY_LIST,
           description: t("description"),
-          date: new Date().toISOString(),
+          datePublished: new Date().toISOString(),
           isAccessibleForFree: false,
+          keywords: t("keywords"),
+          locale: params.locale,
         }}
       />
 
@@ -66,7 +70,7 @@ const Page = async ({ params }: { params: { locale: string } }) => {
         `}
         >
           <ButtonLink wrapperClassName="w-full max-w-[29rem]" variant="primarySolid" href={PAGE_ROUTE.MAIN}>
-            {t("go_to_homepage")}
+            {historyPageMessages("GO-TO-HOMEPAGE")}
           </ButtonLink>
         </nav>
       </ReactiveLayout>

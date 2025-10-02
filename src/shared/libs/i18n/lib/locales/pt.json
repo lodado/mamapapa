@@ -170,14 +170,6 @@
   "FORM": {
     "TITLE-COMPARE-LOOKS": "Compare as semelhanças"
   },
-  "HistoryPage": {
-    "error_page_not_found": "Página não encontrada!",
-    "go_to_homepage": "Voltar para a página inicial"
-  },
-  "HistoryPageHeader": {
-    "rename_history": "Renomear histórico",
-    "delete_history": "Excluir histórico"
-  },
   "CommentInput": {
     "error": "Erro",
     "cooldown_error_title": "Por favor, tente novamente mais tarde",
@@ -211,8 +203,7 @@
   "HISTORY": {
     "title": "Resultados anteriores de correspondência facial",
     "description": "Verifique seus resultados anteriores de correspondência facial e compartilhe-os com familiares e amigos.",
-    "keywords": "correspondência facial, IA, histórico de resultados, família, amigos, diversão",
-    "go_to_homepage": "Voltar para a página inicial"
+    "keywords": "correspondência facial, IA, histórico de resultados, família, amigos, diversão"
   },
   "RESULT": {
     "title": "Página de resultados de comparação",
@@ -269,5 +260,13 @@
     "SEARCH_ERROR": "Não foi possível carregar a foto de {name}. Tente novamente.",
     "ADD_BUTTON": "Usar esta celebridade",
     "IMAGE_ALT": "Retrato de exemplo de {name}"
+  },
+  "HISTORYPAGE": {
+    "ERROR-PAGE-NOT-FOUND": "Página não encontrada!",
+    "GO-TO-HOMEPAGE": "Voltar para a página inicial"
+  },
+  "HISTORYPAGEHEADER": {
+    "RENAME-HISTORY": "Renomear histórico",
+    "DELETE-HISTORY": "Excluir histórico"
   }
 }

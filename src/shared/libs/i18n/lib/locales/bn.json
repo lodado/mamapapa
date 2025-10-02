@@ -170,14 +170,6 @@
   "FORM": {
     "TITLE-COMPARE-LOOKS": "মিল দেখতে তুলনা করুন"
   },
-  "HistoryPage": {
-    "error_page_not_found": "পৃষ্ঠা পাওয়া যায়নি!",
-    "go_to_homepage": "হোমপেজে ফিরে যান"
-  },
-  "HistoryPageHeader": {
-    "rename_history": "ইতিহাসের নাম পরিবর্তন করুন",
-    "delete_history": "ইতিহাস মুছুন"
-  },
   "CommentInput": {
     "error": "ত্রুটি",
     "cooldown_error_title": "অনুগ্রহ করে পরে আবার চেষ্টা করুন",
@@ -211,8 +203,7 @@
   "HISTORY": {
     "title": "পূর্ববর্তী মুখ মিলানোর ফলাফল",
     "description": "আপনার পূর্ববর্তী মুখ মিলানোর ফলাফল দেখুন এবং পরিবারের ও বন্ধুদের সাথে শেয়ার করুন।",
-    "keywords": "মুখ মিলানো, এআই, ফলাফল ইতিহাস, পরিবার, বন্ধু, মজা",
-    "go_to_homepage": "হোমপেজে ফিরে যান"
+    "keywords": "মুখ মিলানো, এআই, ফলাফল ইতিহাস, পরিবার, বন্ধু, মজা"
   },
   "RESULT": {
     "title": "তুলনা ফলাফল পৃষ্ঠা",
@@ -269,5 +260,13 @@
     "SEARCH_ERROR": "{name} এর ছবি লোড করা যায়নি। আবার চেষ্টা করুন।",
     "ADD_BUTTON": "এই সেলিব্রিটিকে ব্যবহার করুন",
     "IMAGE_ALT": "{name} এর নমুনা প্রতিকৃতি"
+  },
+  "HISTORYPAGE": {
+    "ERROR-PAGE-NOT-FOUND": "পৃষ্ঠা পাওয়া যায়নি!",
+    "GO-TO-HOMEPAGE": "হোমপেজে ফিরে যান"
+  },
+  "HISTORYPAGEHEADER": {
+    "RENAME-HISTORY": "ইতিহাসের নাম পরিবর্তন করুন",
+    "DELETE-HISTORY": "ইতিহাস মুছুন"
   }
 }

@@ -6,6 +6,7 @@ import { ButtonLink } from "@/entities/Router";
 import { PAGE_ROUTE } from "@/entities/Router/configs/route";
 import { ModelDownloader } from "@/features";
 import { getLocalesListsForStateParams } from "@/shared/index.server";
+import { JsonLdScript } from "@/shared/ui";
 import { ReactiveLayout } from "@/shared/ui/ReactiveLayout";
 import { ToastViewPort } from "@/shared/ui/Toast";
 import { getMetadata } from "@/shared/utils/index.server";
@@ -19,7 +20,7 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
-  const t = await getTranslations("HISTORY");
+  const t = await getTranslations("RESULT");
 
   return getMetadata({
     title: t("title"),
@@ -36,9 +37,21 @@ export async function generateMetadata({ params: { locale } }: { params: { local
 const Page = async ({ params }: { params: { locale: string } }) => {
   setRequestLocale(params.locale);
   const t = await getTranslations("ResultPage");
+  const resultMessages = await getTranslations("RESULT");
 
   return (
     <>
+      <JsonLdScript
+        customMeta={{
+          title: resultMessages("title"),
+          url: PAGE_ROUTE.RESULT,
+          description: resultMessages("description"),
+          datePublished: new Date().toISOString(),
+          keywords: resultMessages("keywords"),
+          locale: params.locale,
+          isAccessibleForFree: false,
+        }}
+      />
       <ReactiveLayout>
         <div role="none presentation" className="w-full flex-shrink-0 h-[4rem]" />
         <ResultPageHeader />

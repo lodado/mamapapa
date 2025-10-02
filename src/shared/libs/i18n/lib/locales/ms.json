@@ -170,14 +170,6 @@
   "FORM": {
     "TITLE-COMPARE-LOOKS": "Bandingkan rupa yang serupa"
   },
-  "HistoryPage": {
-    "error_page_not_found": "Halaman tidak dijumpai!",
-    "go_to_homepage": "Kembali ke halaman utama"
-  },
-  "HistoryPageHeader": {
-    "rename_history": "Tukar Nama Sejarah",
-    "delete_history": "Padam Sejarah"
-  },
   "CommentInput": {
     "error": "Ralat",
     "cooldown_error_title": "Sila cuba lagi kemudian",
@@ -211,8 +203,7 @@
   "HISTORY": {
     "title": "Keputusan Padanan Wajah Terdahulu",
     "description": "Semak keputusan padanan wajah terdahulu anda dan kongsikan dengan keluarga serta rakan-rakan.",
-    "keywords": "padanan wajah, AI, sejarah keputusan, keluarga, rakan, keseronokan",
-    "go_to_homepage": "Kembali ke halaman utama"
+    "keywords": "padanan wajah, AI, sejarah keputusan, keluarga, rakan, keseronokan"
   },
   "RESULT": {
     "title": "Halaman Keputusan Perbandingan",
@@ -269,5 +260,13 @@
     "SEARCH_ERROR": "Foto {name} tidak dapat dimuatkan. Sila cuba lagi.",
     "ADD_BUTTON": "Gunakan selebriti ini",
     "IMAGE_ALT": "Potret contoh {name}"
+  },
+  "HISTORYPAGE": {
+    "ERROR-PAGE-NOT-FOUND": "Halaman tidak dijumpai!",
+    "GO-TO-HOMEPAGE": "Kembali ke halaman utama"
+  },
+  "HISTORYPAGEHEADER": {
+    "RENAME-HISTORY": "Tukar Nama Sejarah",
+    "DELETE-HISTORY": "Padam Sejarah"
   }
 }
