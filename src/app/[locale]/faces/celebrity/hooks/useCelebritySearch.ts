@@ -1,5 +1,4 @@
-import { useDeferredValue } from "react";
-
+import { useDebouncedQuery } from "@/shared/hooks";
 import { useQueryContainer } from "@/shared/ui/QueryContainer";
 
 import { CelebrityProfile } from "../configs/sampleCelebrities";
@@ -14,6 +13,7 @@ interface WikipediaPage {
 }
 
 const WIKIPEDIA_API_ENDPOINT = "https://en.wikipedia.org/w/api.php";
+const SEARCH_DEBOUNCE_DELAY = 700; // milliseconds
 
 const buildTagsFromDescription = (description?: string): string[] => {
   if (!description) return [];
@@ -68,15 +68,15 @@ const fetchCelebritiesFromWikipedia = async (query: string): Promise<CelebrityPr
 };
 
 export const useCelebritySearch = (searchQuery: string) => {
-  const deferredSearchQuery = useDeferredValue(searchQuery);
+  const debouncedQuery = useDebouncedQuery(searchQuery, SEARCH_DEBOUNCE_DELAY);
 
   const { query } = useQueryContainer({
-    queryKey: ["celebrity-search", deferredSearchQuery],
+    queryKey: ["celebrity-search", debouncedQuery],
     queryFn: () => {
-      return fetchCelebritiesFromWikipedia(deferredSearchQuery);
+      return fetchCelebritiesFromWikipedia(debouncedQuery);
     },
     queryOptions: {
-      enabled: Boolean(deferredSearchQuery.trim()),
+      enabled: Boolean(debouncedQuery.trim()),
       staleTime: 5 * 60 * 1000, // 5분
       retry: 1,
     },
@@ -87,8 +87,8 @@ export const useCelebritySearch = (searchQuery: string) => {
     isSearching: query.isFetching,
     error: query.error,
     currentQuery: searchQuery,
-    deferredQuery: deferredSearchQuery,
-    isPending: searchQuery !== deferredSearchQuery,
+    debouncedQuery,
+    isPending: searchQuery !== debouncedQuery,
   };
 };
 

@@ -254,7 +254,7 @@
     "HEADER_TITLE": "芸能人そっくり比較",
     "UPLOAD_SECTION_TITLE": "芸能人比較を始めるには写真を追加してください",
     "CELEBRITY_SECTION_TITLE": "比較する芸能人を選ぶ",
-    "CELEBRITY_SECTION_DESCRIPTION": "厳選した世界のスターリストから検索して、サンプル写真を比較に追加しましょう。",
+    "CELEBRITY_SECTION_DESCRIPTION": "世界のスターと比較してみましょう。",
     "SEARCH_PLACEHOLDER": "芸能人名で検索",
     "SEARCH_EMPTY": "\"{query}\"に一致する芸能人が見つかりません。別の名前をお試しください。",
     "SEARCH_ERROR": "{name}の写真を読み込めませんでした。もう一度お試しください。",

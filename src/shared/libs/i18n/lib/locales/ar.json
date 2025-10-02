@@ -254,7 +254,7 @@
     "HEADER_TITLE": "مقارنة مع المشاهير",
     "UPLOAD_SECTION_TITLE": "أضف صورتك لبدء مقارنة المشاهير",
     "CELEBRITY_SECTION_TITLE": "اختر مشهورًا للمقارنة",
-    "CELEBRITY_SECTION_DESCRIPTION": "ابحث في قائمتنا المنتقاة من نجوم العالم وأضف صورهم النموذجية مباشرة إلى المقارنة.",
+    "CELEBRITY_SECTION_DESCRIPTION": "قارن مع نجوم العالم.",
     "SEARCH_PLACEHOLDER": "ابحث باسم المشهور",
     "SEARCH_EMPTY": "لم يتم العثور على أي مشهور يطابق \"{query}\". جرّب اسمًا آخر.",
     "SEARCH_ERROR": "تعذّر تحميل صورة {name}. يرجى المحاولة مرة أخرى.",

@@ -31,3 +31,15 @@ export function viewportCode() {
 
   window.visualViewport!.onresize = handleVisualViewportResize;
 }
+
+const CLOSING_SCRIPT_TAG = /<\/script/gi;
+
+export const createSafeInlineScript = (fn: () => void, context: string) => {
+  const script = `(${fn.toString()})();`;
+
+  if (CLOSING_SCRIPT_TAG.test(script)) {
+    throw new Error(`Unsafe inline script content detected in ${context}`);
+  }
+
+  return script;
+};

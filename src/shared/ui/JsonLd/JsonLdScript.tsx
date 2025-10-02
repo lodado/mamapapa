@@ -1,5 +1,7 @@
 import React from "react";
 
+import { serializeJsonWithGuard } from "@/shared/utils/safeJson";
+
 const webUrl = process.env.NEXT_PUBLIC_CLIENT_URL;
 const baseUrl = webUrl ?? "";
 
@@ -158,5 +160,10 @@ interface JsonLdProps {
 
 export const JsonLdScript = ({ customMeta }: JsonLdProps) => {
   const jsonLdData = generateJsonLd(customMeta);
-  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdData) }} />;
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: serializeJsonWithGuard(jsonLdData, "JsonLdScript") }}
+    />
+  );
 };

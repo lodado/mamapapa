@@ -1,4 +1,5 @@
 import useDebounce from "./useDebounce";
+import { useDebouncedQuery } from "./useDebouncedQuery";
 import useErrorBoundary from "./useErrorBoundary";
 import useForceRenderer from "./useForceRender";
 import useForkRef from "./useForkRef";
@@ -22,4 +23,4 @@ export {
   useServerAction,
 };
 
-export { useDebounce, useForceRenderer,useForkRef, useInterval, useIsClient, useLinkHref };
+export { useDebounce, useDebouncedQuery, useForceRenderer, useForkRef, useInterval, useIsClient, useLinkHref };

@@ -254,7 +254,7 @@
     "HEADER_TITLE": "Vergleich mit Prominenten",
     "UPLOAD_SECTION_TITLE": "Füge dein Foto hinzu, um den Promi-Vergleich zu starten",
     "CELEBRITY_SECTION_TITLE": "Wähle eine Prominente oder einen Prominenten zum Vergleich",
-    "CELEBRITY_SECTION_DESCRIPTION": "Durchsuche unsere kuratierte Liste globaler Stars und füge ihre Beispielbilder direkt zu deinem Vergleich hinzu.",
+    "CELEBRITY_SECTION_DESCRIPTION": "Vergleiche mit globalen Stars.",
     "SEARCH_PLACEHOLDER": "Nach Prominenten-Namen suchen",
     "SEARCH_EMPTY": "Keine Prominenten für \"{query}\" gefunden. Versuche einen anderen Namen.",
     "SEARCH_ERROR": "Das Foto von {name} konnte nicht geladen werden. Bitte versuche es erneut.",

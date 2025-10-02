@@ -254,7 +254,7 @@
     "HEADER_TITLE": "So sánh với người nổi tiếng",
     "UPLOAD_SECTION_TITLE": "Thêm ảnh của bạn để bắt đầu so sánh với người nổi tiếng",
     "CELEBRITY_SECTION_TITLE": "Chọn người nổi tiếng để so sánh",
-    "CELEBRITY_SECTION_DESCRIPTION": "Tìm kiếm trong danh sách ngôi sao toàn cầu được tuyển chọn và thêm ảnh mẫu của họ trực tiếp vào phần so sánh.",
+    "CELEBRITY_SECTION_DESCRIPTION": "So sánh với các ngôi sao toàn cầu.",
     "SEARCH_PLACEHOLDER": "Tìm theo tên người nổi tiếng",
     "SEARCH_EMPTY": "Không tìm thấy người nổi tiếng trùng với \"{query}\". Hãy thử tên khác.",
     "SEARCH_ERROR": "Không tải được ảnh của {name}. Vui lòng thử lại.",

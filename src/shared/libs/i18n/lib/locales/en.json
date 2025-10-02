@@ -254,7 +254,7 @@
     "HEADER_TITLE": "Celebrity look-alike comparison",
     "UPLOAD_SECTION_TITLE": "Add your photo to start the celebrity comparison",
     "CELEBRITY_SECTION_TITLE": "Pick a celebrity to compare",
-    "CELEBRITY_SECTION_DESCRIPTION": "Search our curated roster of global stars and drop their sample photos straight into your comparison.",
+    "CELEBRITY_SECTION_DESCRIPTION": "Compare with global stars.",
     "SEARCH_PLACEHOLDER": "Search by celebrity name",
     "SEARCH_EMPTY": "No celebrity matches found for \"{query}\". Try another name.",
     "SEARCH_ERROR": "We couldn't load {name}'s photo. Please try again.",

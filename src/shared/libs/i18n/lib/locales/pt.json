@@ -254,7 +254,7 @@
     "HEADER_TITLE": "Comparação com celebridades",
     "UPLOAD_SECTION_TITLE": "Adicione sua foto para iniciar a comparação com celebridades",
     "CELEBRITY_SECTION_TITLE": "Escolha uma celebridade para comparar",
-    "CELEBRITY_SECTION_DESCRIPTION": "Pesquise nossa lista selecionada de estrelas globais e adicione as fotos de exemplo diretamente à sua comparação.",
+    "CELEBRITY_SECTION_DESCRIPTION": "Compare com estrelas globais.",
     "SEARCH_PLACEHOLDER": "Pesquisar pelo nome da celebridade",
     "SEARCH_EMPTY": "Nenhuma celebridade encontrada para \"{query}\". Tente outro nome.",
     "SEARCH_ERROR": "Não foi possível carregar a foto de {name}. Tente novamente.",
