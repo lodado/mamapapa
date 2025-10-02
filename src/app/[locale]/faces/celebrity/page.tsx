@@ -10,6 +10,7 @@ import { JsonLdScript } from "@/shared/ui";
 import { ReactiveLayout } from "@/shared/ui/ReactiveLayout";
 import { ToastViewPort } from "@/shared/ui/Toast";
 import { getMetadata } from "@/shared/utils/index.server";
+import { serializeJsonWithGuard } from "@/shared/utils/safeJson";
 
 import FacePageTutorialConnector from "../components/FacePageTutorialConnector";
 import CelebritySearchSection from "./CelebritySearchSection";
@@ -67,7 +68,10 @@ const Page = async ({ params }: { params: { locale: string } }) => {
           date: new Date().toISOString(),
         }}
       />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: serializeJsonWithGuard(itemListJsonLd, "celebrity-item-list-jsonld") }}
+      />
 
       <ReactiveLayout>
         <div role="none presentation" className="w-full flex-shrink-0 h-[4rem]" />
