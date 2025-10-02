@@ -26,7 +26,7 @@ const CelebritySearchSection = () => {
   });
 
   return (
-    <section className="w-full mt-[6.25rem] px-4">
+    <section className="w-full mt-[4.5rem] px-4">
       <SearchInput value={query} onChange={setQuery} />
 
       {error ? (

@@ -80,7 +80,7 @@ const Page = async ({ params }: { params: { locale: string } }) => {
         <main className="flex flex-col items-center w-full justify-start flex-grow">
           <CelebritySearchSection />
 
-          <div role="none presentation" className="h-[200px]" />
+          <div role="none presentation" className="h-[30px]" />
         </main>
       </ReactiveLayout>
 
