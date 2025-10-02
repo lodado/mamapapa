@@ -61,7 +61,8 @@
     "BUTTON-START-COMPARISON": "Mulakan Perbandingan Keserupaan",
     "title": "Simmey - Temui berapa banyak anda menyerupai ibu dan bapa anda menggunakan AI padanan wajah kami!",
     "description": "Temui berapa banyak anda menyerupai ibu dan bapa anda menggunakan AI padanan wajah kami! Ini adalah halaman utama di mana anda boleh memulakan perbandingan persamaan keluarga yang menyeronokkan dan menarik.",
-    "keywords": "perbandingan wajah, ibu bapa, persamaan, keseronokan, keluarga"
+    "keywords": "perbandingan wajah, ibu bapa, persamaan, keseronokan, keluarga",
+    "BUTTON-START-CELEBRITY": "Bandingkan dengan selebriti"
   },
   "BUTTON": {
     "CHECK-HISTORY": "Semak Sejarah yang Dikongsi"
@@ -169,14 +170,6 @@
   "FORM": {
     "TITLE-COMPARE-LOOKS": "Bandingkan rupa yang serupa"
   },
-  "HistoryPage": {
-    "error_page_not_found": "Halaman tidak dijumpai!",
-    "go_to_homepage": "Kembali ke halaman utama"
-  },
-  "HistoryPageHeader": {
-    "rename_history": "Tukar Nama Sejarah",
-    "delete_history": "Padam Sejarah"
-  },
   "CommentInput": {
     "error": "Ralat",
     "cooldown_error_title": "Sila cuba lagi kemudian",
@@ -210,8 +203,7 @@
   "HISTORY": {
     "title": "Keputusan Padanan Wajah Terdahulu",
     "description": "Semak keputusan padanan wajah terdahulu anda dan kongsikan dengan keluarga serta rakan-rakan.",
-    "keywords": "padanan wajah, AI, sejarah keputusan, keluarga, rakan, keseronokan",
-    "go_to_homepage": "Kembali ke halaman utama"
+    "keywords": "padanan wajah, AI, sejarah keputusan, keluarga, rakan, keseronokan"
   },
   "RESULT": {
     "title": "Halaman Keputusan Perbandingan",
@@ -254,5 +246,31 @@
   },
   "common": {
     "terms-of-service": "Terma Perkhidmatan"
+  },
+  "CELEBRITYFACES": {
+    "SEO_TITLE": "Bandingkan foto anda dengan mirip selebriti",
+    "SEO_DESCRIPTION": "Muat naik foto anda, cari wajah terkenal dan bandingkan tahap kemiripan dengan selebriti pilihan dalam beberapa saat.",
+    "SEO_KEYWORDS": "mirip selebriti, padanan wajah bintang, perbandingan selebriti, penganalisis foto AI",
+    "HEADER_TITLE": "Perbandingan dengan selebriti",
+    "UPLOAD_SECTION_TITLE": "Tambah foto anda untuk memulakan perbandingan selebriti",
+    "CELEBRITY_SECTION_TITLE": "Pilih selebriti untuk dibandingkan",
+    "CELEBRITY_SECTION_DESCRIPTION": "Terokai senarai bintang global terpilih kami dan tambah foto contoh mereka terus ke perbandingan anda.",
+    "SEARCH_PLACEHOLDER": "Cari mengikut nama selebriti",
+    "SEARCH_EMPTY": "Tiada selebriti ditemui untuk \"{query}\". Cuba nama lain.",
+    "SEARCH_ERROR": "Foto {name} tidak dapat dimuatkan. Sila cuba lagi.",
+    "SEARCH_GENERAL_ERROR": "Ralat berlaku semasa carian. Sila cuba lagi.",
+    "ADD_BUTTON": "Gunakan selebriti ini",
+    "IMAGE_ALT": "Potret contoh {name}",
+    "TUTORIAL-STEP-1": "Cari nama selebriti di sini. Cuba taip 'Taylor Swift' atau 'BTS' untuk mencari selebriti berkaitan.",
+    "TUTORIAL-STEP-2": "Di sini anda boleh melihat kad profil selebriti. Setiap kad menunjukkan foto dan tag selebriti.",
+    "TUTORIAL-STEP-3": "Klik butang ini untuk menambah selebriti kepada perbandingan anda. Bandingkan foto anda dengan selebriti yang dipilih!"
+  },
+  "HISTORYPAGE": {
+    "ERROR-PAGE-NOT-FOUND": "Halaman tidak dijumpai!",
+    "GO-TO-HOMEPAGE": "Kembali ke halaman utama"
+  },
+  "HISTORYPAGEHEADER": {
+    "RENAME-HISTORY": "Tukar Nama Sejarah",
+    "DELETE-HISTORY": "Padam Sejarah"
   }
 }

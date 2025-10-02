@@ -61,7 +61,8 @@
     "BUTTON-START-COMPARISON": "Vergleich der Ähnlichkeit starten",
     "title": "Simmey - Entdecken Sie, wie sehr Sie Ihrer Mutter und Ihrem Vater ähneln, mit unserer Gesichtserkennungs-KI!",
     "description": "Entdecken Sie, wie sehr Sie Ihrer Mutter und Ihrem Vater ähneln, mit unserer Gesichtserkennungs-KI! Dies ist die Hauptseite, auf der Sie mit Ihrem unterhaltsamen und ansprechenden Familienähnlichkeitsvergleich beginnen können.",
-    "keywords": "Gesichtsvergleich, Eltern, Ähnlichkeit, Spaß, Familie"
+    "keywords": "Gesichtsvergleich, Eltern, Ähnlichkeit, Spaß, Familie",
+    "BUTTON-START-CELEBRITY": "Mit Prominenten vergleichen"
   },
   "BUTTON": {
     "CHECK-HISTORY": "Überprüfen Sie die geteilte Historie"
@@ -169,14 +170,6 @@
   "FORM": {
     "TITLE-COMPARE-LOOKS": "Vergleiche Ähnlichkeiten"
   },
-  "HistoryPage": {
-    "error_page_not_found": "Seite nicht gefunden!",
-    "go_to_homepage": "Zur Startseite zurückkehren"
-  },
-  "HistoryPageHeader": {
-    "rename_history": "Verlauf umbenennen",
-    "delete_history": "Verlauf löschen"
-  },
   "CommentInput": {
     "error": "Fehler",
     "cooldown_error_title": "Bitte versuchen Sie es später erneut",
@@ -210,8 +203,7 @@
   "HISTORY": {
     "title": "Frühere Ergebnisse der Gesichtserkennung",
     "description": "Überprüfen Sie Ihre früheren Ergebnisse der Gesichtserkennung und teilen Sie sie mit Familie und Freunden.",
-    "keywords": "Gesichtserkennung, KI, Ergebnishistorie, Familie, Freunde, Spaß",
-    "go_to_homepage": "Zur Startseite zurückkehren"
+    "keywords": "Gesichtserkennung, KI, Ergebnishistorie, Familie, Freunde, Spaß"
   },
   "RESULT": {
     "title": "Seite mit Vergleichsergebnissen",
@@ -254,5 +246,31 @@
   },
   "common": {
     "terms-of-service": "Nutzungsbedingungen"
+  },
+  "CELEBRITYFACES": {
+    "SEO_TITLE": "Vergleiche dein Foto mit Celebrity-Doppelgängern",
+    "SEO_DESCRIPTION": "Lade dein Foto hoch, suche nach bekannten Gesichtern und vergleiche die Ähnlichkeit mit ausgewählten Stars in wenigen Sekunden.",
+    "SEO_KEYWORDS": "Celebrity Doppelgänger, Star-Gesichtserkennung, Promi-Vergleich, KI-Fotoanalyse",
+    "HEADER_TITLE": "Vergleich mit Prominenten",
+    "UPLOAD_SECTION_TITLE": "Füge dein Foto hinzu, um den Promi-Vergleich zu starten",
+    "CELEBRITY_SECTION_TITLE": "Wähle eine Prominente oder einen Prominenten zum Vergleich",
+    "CELEBRITY_SECTION_DESCRIPTION": "Durchsuche unsere kuratierte Liste globaler Stars und füge ihre Beispielbilder direkt zu deinem Vergleich hinzu.",
+    "SEARCH_PLACEHOLDER": "Nach Prominenten-Namen suchen",
+    "SEARCH_EMPTY": "Keine Prominenten für \"{query}\" gefunden. Versuche einen anderen Namen.",
+    "SEARCH_ERROR": "Das Foto von {name} konnte nicht geladen werden. Bitte versuche es erneut.",
+    "SEARCH_GENERAL_ERROR": "Bei der Suche ist ein Fehler aufgetreten. Bitte versuche es erneut.",
+    "ADD_BUTTON": "Diese Prominente verwenden",
+    "IMAGE_ALT": "Beispielfoto von {name}",
+    "TUTORIAL-STEP-1": "Suche hier nach Prominenten-Namen. Versuche 'Taylor Swift' oder 'BTS' einzugeben, um verwandte Prominente zu finden.",
+    "TUTORIAL-STEP-2": "Hier kannst du Prominenten-Profilkarten sehen. Jede Karte zeigt das Foto und die Tags der Prominenten.",
+    "TUTORIAL-STEP-3": "Klicke auf diese Schaltfläche, um die Prominente zu deinem Vergleich hinzuzufügen. Vergleiche dein Foto mit der ausgewählten Prominenten!"
+  },
+  "HISTORYPAGE": {
+    "ERROR-PAGE-NOT-FOUND": "Seite nicht gefunden!",
+    "GO-TO-HOMEPAGE": "Zur Startseite zurückkehren"
+  },
+  "HISTORYPAGEHEADER": {
+    "RENAME-HISTORY": "Verlauf umbenennen",
+    "DELETE-HISTORY": "Verlauf löschen"
   }
 }

@@ -23,7 +23,7 @@ export async function generateMetadata({ params: { locale } }: { params: { local
     title: t("title"),
     description: t("description"),
     path: PAGE_ROUTE.MAIN,
-    keywords: "face comparison, parents, similarity, fun, family",
+    keywords: t("keywords"),
     locale,
   });
 }
@@ -43,7 +43,10 @@ const Page = async ({ params }: { params: { locale: string } }) => {
           title: t("title"),
           url: PAGE_ROUTE.MAIN,
           description: t("description"),
-          date: new Date().toISOString(),
+          datePublished: new Date().toISOString(),
+          keywords: t("keywords"),
+          locale: params.locale,
+          isAccessibleForFree: true,
         }}
       />
 
@@ -92,6 +95,9 @@ const Page = async ({ params }: { params: { locale: string } }) => {
           <nav className="flex bg-background-op-01 flex-col w-full max-w-[29rem] md:w-[768px] gap-3 p-6 fixed bottom-0 mb-[var(--safe-area-bottom)]">
             <ButtonLink variant="primarySolid" href={PAGE_ROUTE.FACES}>
               {t("BUTTON-START-COMPARISON")}
+            </ButtonLink>
+            <ButtonLink variant="primaryLine" href={PAGE_ROUTE.FACES_CELEBRITY}>
+              {t("BUTTON-START-CELEBRITY")}
             </ButtonLink>
             <HistoryLink />
           </nav>

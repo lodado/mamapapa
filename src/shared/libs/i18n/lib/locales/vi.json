@@ -61,7 +61,8 @@
     "BUTTON-START-COMPARISON": "Bắt đầu so sánh giống nhau",
     "title": "Simmey - Khám phá bạn giống mẹ và bố bao nhiêu bằng AI so khớp khuôn mặt của chúng tôi!",
     "description": "Khám phá bạn giống mẹ và bố bao nhiêu bằng AI so khớp khuôn mặt của chúng tôi! Đây là trang chính nơi bạn có thể bắt đầu so sánh mức độ giống nhau trong gia đình một cách vui vẻ và hấp dẫn.",
-    "keywords": "so sánh khuôn mặt, cha mẹ, sự giống nhau, vui vẻ, gia đình"
+    "keywords": "so sánh khuôn mặt, cha mẹ, sự giống nhau, vui vẻ, gia đình",
+    "BUTTON-START-CELEBRITY": "So sánh với người nổi tiếng"
   },
   "BUTTON": {
     "CHECK-HISTORY": "Kiểm tra lịch sử đã chia sẻ"
@@ -169,14 +170,6 @@
   "FORM": {
     "TITLE-COMPARE-LOOKS": "So sánh những người giống nhau"
   },
-  "HistoryPage": {
-    "error_page_not_found": "Không tìm thấy trang!",
-    "go_to_homepage": "Quay lại trang chủ"
-  },
-  "HistoryPageHeader": {
-    "rename_history": "Đổi tên lịch sử",
-    "delete_history": "Xóa lịch sử"
-  },
   "CommentInput": {
     "error": "Lỗi",
     "cooldown_error_title": "Vui lòng thử lại sau",
@@ -210,8 +203,7 @@
   "HISTORY": {
     "title": "Kết quả đối sánh khuôn mặt trước đây",
     "description": "Kiểm tra kết quả đối sánh khuôn mặt trước đây của bạn và chia sẻ với gia đình, bạn bè.",
-    "keywords": "đối sánh khuôn mặt, AI, lịch sử kết quả, gia đình, bạn bè, vui vẻ",
-    "go_to_homepage": "Quay lại trang chủ"
+    "keywords": "đối sánh khuôn mặt, AI, lịch sử kết quả, gia đình, bạn bè, vui vẻ"
   },
   "RESULT": {
     "title": "Trang kết quả so sánh",
@@ -254,5 +246,31 @@
   },
   "common": {
     "terms-of-service": "Điều khoản dịch vụ"
+  },
+  "CELEBRITYFACES": {
+    "SEO_TITLE": "So sánh ảnh của bạn với người giống ngôi sao",
+    "SEO_DESCRIPTION": "Tải ảnh của bạn lên, tìm các gương mặt nổi tiếng và so sánh độ giống với những ngôi sao được tuyển chọn chỉ trong vài giây.",
+    "SEO_KEYWORDS": "giống người nổi tiếng, khớp khuôn mặt ngôi sao, so sánh người nổi tiếng, phân tích ảnh AI",
+    "HEADER_TITLE": "So sánh với người nổi tiếng",
+    "UPLOAD_SECTION_TITLE": "Thêm ảnh của bạn để bắt đầu so sánh với người nổi tiếng",
+    "CELEBRITY_SECTION_TITLE": "Chọn người nổi tiếng để so sánh",
+    "CELEBRITY_SECTION_DESCRIPTION": "Tìm kiếm trong danh sách ngôi sao toàn cầu được tuyển chọn và thêm ảnh mẫu của họ trực tiếp vào phần so sánh.",
+    "SEARCH_PLACEHOLDER": "Tìm theo tên người nổi tiếng",
+    "SEARCH_EMPTY": "Không tìm thấy người nổi tiếng trùng với \"{query}\". Hãy thử tên khác.",
+    "SEARCH_ERROR": "Không tải được ảnh của {name}. Vui lòng thử lại.",
+    "SEARCH_GENERAL_ERROR": "Đã xảy ra lỗi trong quá trình tìm kiếm. Vui lòng thử lại.",
+    "ADD_BUTTON": "Dùng người nổi tiếng này",
+    "IMAGE_ALT": "Ảnh chân dung mẫu của {name}",
+    "TUTORIAL-STEP-1": "Tìm kiếm tên người nổi tiếng ở đây. Thử gõ 'Taylor Swift' hoặc 'BTS' để tìm những người nổi tiếng liên quan.",
+    "TUTORIAL-STEP-2": "Ở đây bạn có thể xem các thẻ hồ sơ người nổi tiếng. Mỗi thẻ hiển thị ảnh và thẻ tag của người nổi tiếng.",
+    "TUTORIAL-STEP-3": "Nhấp vào nút này để thêm người nổi tiếng vào phần so sánh của bạn. So sánh ảnh của bạn với người nổi tiếng đã chọn!"
+  },
+  "HISTORYPAGE": {
+    "ERROR-PAGE-NOT-FOUND": "Không tìm thấy trang!",
+    "GO-TO-HOMEPAGE": "Quay lại trang chủ"
+  },
+  "HISTORYPAGEHEADER": {
+    "RENAME-HISTORY": "Đổi tên lịch sử",
+    "DELETE-HISTORY": "Xóa lịch sử"
   }
 }

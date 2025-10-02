@@ -61,7 +61,8 @@
     "BUTTON-START-COMPARISON": "Iniciar comparação de semelhança",
     "title": "Simmey - Descubra o quanto você se parece com sua mãe e seu pai usando nossa IA de correspondência facial!",
     "description": "Descubra o quanto você se parece com sua mãe e seu pai usando nossa IA de correspondência facial! Esta é a página principal onde você pode começar sua comparação divertida e envolvente de semelhança familiar.",
-    "keywords": "comparação facial, pais, semelhança, diversão, família"
+    "keywords": "comparação facial, pais, semelhança, diversão, família",
+    "BUTTON-START-CELEBRITY": "Comparar com celebridades"
   },
   "BUTTON": {
     "CHECK-HISTORY": "Verificar histórico compartilhado"
@@ -169,14 +170,6 @@
   "FORM": {
     "TITLE-COMPARE-LOOKS": "Compare as semelhanças"
   },
-  "HistoryPage": {
-    "error_page_not_found": "Página não encontrada!",
-    "go_to_homepage": "Voltar para a página inicial"
-  },
-  "HistoryPageHeader": {
-    "rename_history": "Renomear histórico",
-    "delete_history": "Excluir histórico"
-  },
   "CommentInput": {
     "error": "Erro",
     "cooldown_error_title": "Por favor, tente novamente mais tarde",
@@ -210,8 +203,7 @@
   "HISTORY": {
     "title": "Resultados anteriores de correspondência facial",
     "description": "Verifique seus resultados anteriores de correspondência facial e compartilhe-os com familiares e amigos.",
-    "keywords": "correspondência facial, IA, histórico de resultados, família, amigos, diversão",
-    "go_to_homepage": "Voltar para a página inicial"
+    "keywords": "correspondência facial, IA, histórico de resultados, família, amigos, diversão"
   },
   "RESULT": {
     "title": "Página de resultados de comparação",
@@ -254,5 +246,31 @@
   },
   "common": {
     "terms-of-service": "Termos de serviço"
+  },
+  "CELEBRITYFACES": {
+    "SEO_TITLE": "Compare sua foto com sósias de celebridades",
+    "SEO_DESCRIPTION": "Envie sua foto, pesquise rostos famosos e compare a semelhança com celebridades selecionadas em segundos.",
+    "SEO_KEYWORDS": "sósia de celebridade, correspondência de rosto de estrela, comparação de famosos, analisador de fotos com IA",
+    "HEADER_TITLE": "Comparação com celebridades",
+    "UPLOAD_SECTION_TITLE": "Adicione sua foto para iniciar a comparação com celebridades",
+    "CELEBRITY_SECTION_TITLE": "Escolha uma celebridade para comparar",
+    "CELEBRITY_SECTION_DESCRIPTION": "Pesquise nossa lista selecionada de estrelas globais e adicione as fotos de exemplo diretamente à sua comparação.",
+    "SEARCH_PLACEHOLDER": "Pesquisar pelo nome da celebridade",
+    "SEARCH_EMPTY": "Nenhuma celebridade encontrada para \"{query}\". Tente outro nome.",
+    "SEARCH_ERROR": "Não foi possível carregar a foto de {name}. Tente novamente.",
+    "SEARCH_GENERAL_ERROR": "Ocorreu um erro durante a pesquisa. Tente novamente.",
+    "ADD_BUTTON": "Usar esta celebridade",
+    "IMAGE_ALT": "Retrato de exemplo de {name}",
+    "TUTORIAL-STEP-1": "Pesquise nomes de celebridades aqui. Tente digitar 'Taylor Swift' ou 'BTS' para encontrar celebridades relacionadas.",
+    "TUTORIAL-STEP-2": "Aqui você pode ver cartões de perfil de celebridades. Cada cartão mostra a foto e as tags da celebridade.",
+    "TUTORIAL-STEP-3": "Clique neste botão para adicionar a celebridade à sua comparação. Compare sua foto com a celebridade selecionada!"
+  },
+  "HISTORYPAGE": {
+    "ERROR-PAGE-NOT-FOUND": "Página não encontrada!",
+    "GO-TO-HOMEPAGE": "Voltar para a página inicial"
+  },
+  "HISTORYPAGEHEADER": {
+    "RENAME-HISTORY": "Renomear histórico",
+    "DELETE-HISTORY": "Excluir histórico"
   }
 }

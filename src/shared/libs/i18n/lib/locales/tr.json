@@ -61,7 +61,8 @@
     "BUTTON-START-COMPARISON": "Benzerlik Karşılaştırmasını Başlat",
     "title": "Simmey - Yüz eşleştirme yapay zekamızla annenize ve babanıza ne kadar benzediğinizi keşfedin!",
     "description": "Yüz eşleştirme yapay zekamızla annenize ve babanıza ne kadar benzediğinizi keşfedin! Bu, eğlenceli ve ilgi çekici aile benzerliği karşılaştırmanıza başlayabileceğiniz ana sayfadır.",
-    "keywords": "yüz karşılaştırması, ebeveynler, benzerlik, eğlence, aile"
+    "keywords": "yüz karşılaştırması, ebeveynler, benzerlik, eğlence, aile",
+    "BUTTON-START-CELEBRITY": "Ünlülerle karşılaştır"
   },
   "BUTTON": {
     "CHECK-HISTORY": "Paylaşılan Geçmişi Kontrol Et"
@@ -169,14 +170,6 @@
   "FORM": {
     "TITLE-COMPARE-LOOKS": "Benzerlikleri karşılaştır"
   },
-  "HistoryPage": {
-    "error_page_not_found": "Sayfa bulunamadı!",
-    "go_to_homepage": "Ana sayfaya geri dön"
-  },
-  "HistoryPageHeader": {
-    "rename_history": "Geçmişi Yeniden Adlandır",
-    "delete_history": "Geçmişi Sil"
-  },
   "CommentInput": {
     "error": "Hata",
     "cooldown_error_title": "Lütfen daha sonra tekrar deneyin",
@@ -210,8 +203,7 @@
   "HISTORY": {
     "title": "Geçmiş Yüz Eşleştirme Sonuçları",
     "description": "Önceki yüz eşleştirme sonuçlarınızı kontrol edin ve aileniz ve arkadaşlarınızla paylaşın.",
-    "keywords": "yüz eşleştirme, yapay zeka, sonuç geçmişi, aile, arkadaşlar, eğlence",
-    "go_to_homepage": "Ana sayfaya geri dön"
+    "keywords": "yüz eşleştirme, yapay zeka, sonuç geçmişi, aile, arkadaşlar, eğlence"
   },
   "RESULT": {
     "title": "Karşılaştırma Sonuçları Sayfası",
@@ -254,5 +246,31 @@
   },
   "common": {
     "terms-of-service": "Hizmet Şartları"
+  },
+  "CELEBRITYFACES": {
+    "SEO_TITLE": "Fotoğrafını ünlü benzerleriyle karşılaştır",
+    "SEO_DESCRIPTION": "Fotoğrafını yükle, ünlü yüzleri ara ve seçilmiş ünlülerle benzerliğini saniyeler içinde karşılaştır.",
+    "SEO_KEYWORDS": "ünlü benzeri, yıldız yüz eşleştirme, ünlü karşılaştırma, yapay zekâ fotoğraf analizi",
+    "HEADER_TITLE": "Ünlülerle karşılaştırma",
+    "UPLOAD_SECTION_TITLE": "Ünlü karşılaştırmasına başlamak için fotoğrafını ekle",
+    "CELEBRITY_SECTION_TITLE": "Karşılaştırmak için bir ünlü seç",
+    "CELEBRITY_SECTION_DESCRIPTION": "Özenle seçilmiş dünya yıldızları listemizde ara ve örnek fotoğraflarını doğrudan karşılaştırmana ekle.",
+    "SEARCH_PLACEHOLDER": "Ünlü adına göre ara",
+    "SEARCH_EMPTY": "\"{query}\" için ünlü bulunamadı. Başka bir ad dene.",
+    "SEARCH_ERROR": "{name} fotoğrafı yüklenemedi. Lütfen tekrar dene.",
+    "SEARCH_GENERAL_ERROR": "Arama sırasında hata oluştu. Lütfen tekrar deneyin.",
+    "ADD_BUTTON": "Bu ünlüyü kullan",
+    "IMAGE_ALT": "{name} örnek portresi",
+    "TUTORIAL-STEP-1": "Burada ünlü isimleri ara. İlgili ünlüleri bulmak için 'Taylor Swift' veya 'BTS' yazmayı dene.",
+    "TUTORIAL-STEP-2": "Burada ünlü profil kartlarını görebilirsin. Her kart ünlünün fotoğrafını ve etiketlerini gösterir.",
+    "TUTORIAL-STEP-3": "Bu düğmeye tıklayarak ünlüyü karşılaştırmana ekle. Fotoğrafını seçilen ünlüyle karşılaştır!"
+  },
+  "HISTORYPAGE": {
+    "ERROR-PAGE-NOT-FOUND": "Sayfa bulunamadı!",
+    "GO-TO-HOMEPAGE": "Ana sayfaya geri dön"
+  },
+  "HISTORYPAGEHEADER": {
+    "RENAME-HISTORY": "Geçmişi Yeniden Adlandır",
+    "DELETE-HISTORY": "Geçmişi Sil"
   }
 }

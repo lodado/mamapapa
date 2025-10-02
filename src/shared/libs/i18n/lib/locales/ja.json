@@ -61,7 +61,8 @@
     "BUTTON-START-COMPARISON": "そっくり比較を始める",
     "title": "Simmey - 私たちの顔マッチングAIを使用して、あなたが両親とどれだけ似ているかを発見してください!",
     "description": "私たちの顔マッチングAIを使用して、両親とどれだけ似ているかを発見しましょう! これは楽しく魅力的な家族の類似性比較を始めるためのメインページです。",
-    "keywords": "顔比較, 両親, 類似性, 楽しさ, 家族"
+    "keywords": "顔比較, 両親, 類似性, 楽しさ, 家族",
+    "BUTTON-START-CELEBRITY": "芸能人と比較する"
   },
   "BUTTON": {
     "CHECK-HISTORY": "共有履歴を確認する"
@@ -169,14 +170,6 @@
   "FORM": {
     "TITLE-COMPARE-LOOKS": "似ている人を比較する"
   },
-  "HistoryPage": {
-    "error_page_not_found": "ページが見つかりません！",
-    "go_to_homepage": "ホームページに戻る"
-  },
-  "HistoryPageHeader": {
-    "rename_history": "履歴の名前を変更する",
-    "delete_history": "履歴を削除する"
-  },
   "CommentInput": {
     "error": "エラー",
     "cooldown_error_title": "後でもう一度お試しください",
@@ -210,8 +203,7 @@
   "HISTORY": {
     "title": "過去の顔マッチング結果",
     "description": "以前の顔マッチング結果を確認し、家族や友人と共有しましょう。",
-    "keywords": "顔マッチング, AI, 結果履歴, 家族, 友人, 楽しみ",
-    "go_to_homepage": "ホームページに戻る"
+    "keywords": "顔マッチング, AI, 結果履歴, 家族, 友人, 楽しみ"
   },
   "RESULT": {
     "title": "比較結果ページ",
@@ -254,5 +246,31 @@
   },
   "common": {
     "terms-of-service": "利用規約"
+  },
+  "CELEBRITYFACES": {
+    "SEO_TITLE": "自分の写真を芸能人そっくりさんと比較しよう",
+    "SEO_DESCRIPTION": "写真をアップロードして人気芸能人を検索し、厳選されたスターと数秒で似ている度合いを比べましょう。",
+    "SEO_KEYWORDS": "芸能人そっくり, スター顔マッチ, 有名人比較, AI写真解析",
+    "HEADER_TITLE": "芸能人そっくり比較",
+    "UPLOAD_SECTION_TITLE": "芸能人比較を始めるには写真を追加してください",
+    "CELEBRITY_SECTION_TITLE": "比較する芸能人を選ぶ",
+    "CELEBRITY_SECTION_DESCRIPTION": "厳選した世界のスターリストから検索して、サンプル写真を比較に追加しましょう。",
+    "SEARCH_PLACEHOLDER": "芸能人名で検索",
+    "SEARCH_EMPTY": "\"{query}\"に一致する芸能人が見つかりません。別の名前をお試しください。",
+    "SEARCH_ERROR": "{name}の写真を読み込めませんでした。もう一度お試しください。",
+    "SEARCH_GENERAL_ERROR": "検索中にエラーが発生しました。もう一度お試しください。",
+    "ADD_BUTTON": "この芸能人を使う",
+    "IMAGE_ALT": "{name}のサンプルポートレート",
+    "TUTORIAL-STEP-1": "芸能人の名前で検索してみてください。例えば「Taylor Swift」や「BTS」と入力すると関連する芸能人を見つけることができます。",
+    "TUTORIAL-STEP-2": "ここでは芸能人のプロフィールカードを見ることができます。各カードには芸能人の写真とタグが表示されます。",
+    "TUTORIAL-STEP-3": "このボタンをクリックすると、その芸能人を比較に追加できます。追加された芸能人と自分の写真を比較してみてください！"
+  },
+  "HISTORYPAGE": {
+    "ERROR-PAGE-NOT-FOUND": "ページが見つかりません！",
+    "GO-TO-HOMEPAGE": "ホームページに戻る"
+  },
+  "HISTORYPAGEHEADER": {
+    "RENAME-HISTORY": "履歴の名前を変更する",
+    "DELETE-HISTORY": "履歴を削除する"
   }
 }
