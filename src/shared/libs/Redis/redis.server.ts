@@ -1,35 +1,27 @@
-import { createClient } from "redis";
+import { Redis as UpstashRedis } from "@upstash/redis";
 
 class RedisRepository {
-  client: ReturnType<typeof createClient>;
+  client: UpstashRedis;
 
   constructor() {
-    const client = createClient({
-      url: process.env.REDIS_URL,
-      socket: {
-        reconnectStrategy: function (retries) {
-          if (retries > 20) {
-            console.log("Too many attempts to reconnect. Redis connection was terminated");
-            return new Error("Too many retries.");
-          } else {
-            return retries * 500;
-          }
-        },
-      },
-    });
+    const url = process.env.UPSTASH_REDIS_REST_URL;
+    const token = process.env.UPSTASH_REDIS_REST_TOKEN;
 
-    client.on("error", function (error) {
-      console.error(error);
-    });
-
-    this.client = client;
-    this.connect();
-  }
-
-  async connect() {
-    if (!this.client.isOpen) {
-      await this.client.connect();
+    if (!url) {
+      console.warn("Upstash Redis URL not found. Using mock Redis client.");
+      // Mock Redis client for development
+      this.client = {
+        setex: async () => {},
+        get: async () => null,
+        del: async () => {},
+      } as any;
+      return;
     }
+
+    this.client = new UpstashRedis({
+      url,
+      token,
+    });
   }
 
   async set(
@@ -40,21 +32,14 @@ class RedisRepository {
   ): Promise<void> {
     const { expireTime = process.env.NODE_ENV === "development" ? 60 : 60 * 60 * 24 * 90 } = option ?? {};
 
-    if (!this.client.isOpen) await this.connect();
-    await this.client.set(key, value);
-
-    this.client.expire(key, expireTime);
+    await this.client.setex(key, expireTime, value);
   }
 
   async get(key: string): Promise<string | null> {
-    if (!this.client.isOpen) await this.connect();
-
     return await this.client.get(key);
   }
 
   async delete(key: string): Promise<void> {
-    if (!this.client.isOpen) await this.connect();
-
     await this.client.del(key);
   }
 }

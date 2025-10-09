@@ -11,17 +11,24 @@ import setCircuitBreaker from "@/shared/libs/Redis/setCircuitBreaker";
 
 const getUniqueFileName = (originalFileName: string) => {
   const fileExtension = originalFileName?.split(".")?.pop() ?? "jpg"; // 확장자 추출
-  const baseFileName = originalFileName?.split(".").slice(0, -1).join(".") ?? "default";
+
+  // 한글 파일명을 영문으로 변환하고 특수문자 제거
+  const sanitizedFileName =
+    originalFileName
+      ?.split(".")
+      .slice(0, -1)
+      .join(".")
+      .replace(/[^\w\-_]/g, "_") // 영문, 숫자, 하이픈, 언더스코어만 허용
+      .substring(0, 50) ?? "image"; // 파일명 길이 제한
 
   // 중복 방지를 위해 UUID 사용
   const uniqueId = uuidv4();
-  return `${baseFileName}-${uniqueId}.${fileExtension}`;
+  return `${sanitizedFileName}-${uniqueId}.${fileExtension}`;
 };
 
 const getCircuitBreakerId = (id: string | number) => `picturesSubmitApiUser${id}`;
 const CIRCUIT_BREAKER_LIMIT = 12;
 
- 
 export async function picturesSubmitApi(formData: FormData) {
   try {
     const user = await new GetUserInfoUseCase(new EDGE_DI_REPOSITORY.Auth()).execute();
