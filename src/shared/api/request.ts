@@ -47,8 +47,6 @@ const request = async <T>({
     requestHeaders.Cookie = cookieString;
   }
 
-  console.log("url", url, "tsst");
-
   const urlObject = new URL(
     url,
     isClientServer ? process.env.NEXT_PUBLIC_CLIENT_URL : process.env.NEXT_PUBLIC_SERVER_URL
