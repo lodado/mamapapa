@@ -45,7 +45,10 @@ class FaceModelStore extends BaseAsyncStore<FaceModelState> {
         await faceRecognitionModel.save(`indexeddb://${MODEL_ID}`);
       }
 
-      const faceCropModel = await blazeface.load();
+      // BlazeFace 모델 로드 (IndexedDB 저장은 지원하지 않음)
+      const faceCropModel = await blazeface.load({
+        modelUrl: "/models/blazeface/model.json",
+      });
 
       // 모델 세팅
       this.setModel(faceRecognitionModel, faceCropModel);
