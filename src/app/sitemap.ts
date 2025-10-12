@@ -9,16 +9,22 @@ export const PAGE_ROUTE = {
   FACES_CELEBRITY: "/faces/celebrity",
 } as const;
 
+const PAGE_PRIORITIES = {
+  MAIN: 1.0,
+  FACES: 0.8,
+  FACES_CELEBRITY: 1.0,
+} as const;
+
 const modificationDate = new Date();
 
 export default function sitemap() {
   return [
-    ...Object.entries(PAGE_ROUTE).map(([key, path], index) => {
+    ...Object.entries(PAGE_ROUTE).map(([key, path]) => {
       return {
         url: webUrl + path,
         lastModified: modificationDate,
         changeFrequency: "monthly" as const,
-        priority: Math.max(0.5, 0.99 - index * 0.1),
+        priority: PAGE_PRIORITIES[key as keyof typeof PAGE_PRIORITIES] || 0.5,
 
         alternates: {
           languages: {
