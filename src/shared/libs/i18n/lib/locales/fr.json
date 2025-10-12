@@ -54,6 +54,24 @@
     "de": "Allemand",
     "tr": "Turc"
   },
+  "SITELINKS": {
+    "MAIN": {
+      "name": "Simmey - IA de Correspondance Faciale",
+      "description": "Découvrez à quel point vous ressemblez à vos parents"
+    },
+    "FACES": {
+      "name": "Commencer la Comparaison de Ressemblance",
+      "description": "Comparez la similarité faciale avec les membres de la famille"
+    },
+    "CELEBRITY": {
+      "name": "Comparer avec les Célébrités",
+      "description": "Voyez à quel point vous ressemblez aux personnes célèbres ! Recherchez et comparez avec des stars K-pop ou des célébrités d'Hollywood"
+    },
+    "HISTORY": {
+      "name": "Vérifier l'Historique de Comparaison",
+      "description": "Consultez vos résultats de comparaison précédents"
+    }
+  },
   "MAINPAGE": {
     "TITLE": "Commencez votre comparaison de ressemblances",
     "DESCRIPTION-1": "Mettez à jour une photo pour la comparaison de ressemblances et poursuivez la comparaison.",
@@ -248,9 +266,9 @@
     "terms-of-service": "Conditions d'utilisation"
   },
   "CELEBRITYFACES": {
-    "SEO_TITLE": "Comparez votre photo à des sosies de célébrités",
-    "SEO_DESCRIPTION": "Téléchargez votre photo, recherchez des visages célèbres et comparez votre ressemblance avec des célébrités sélectionnées en quelques secondes.",
-    "SEO_KEYWORDS": "sosie de célébrité, correspondance de visage de star, comparaison de célébrités, analyse photo IA",
+    "SEO_TITLE": "Comparez votre photo avec des stars K-pop et des célébrités d'Hollywood",
+    "SEO_DESCRIPTION": "Téléchargez votre photo, recherchez des stars K-pop, des célébrités d'Hollywood et d'autres visages célèbres, et comparez votre ressemblance avec des célébrités sélectionnées en quelques secondes.",
+    "SEO_KEYWORDS": "sosie de célébrité, comparaison avec stars K-pop, célébrités d'Hollywood, correspondance de visage de star, comparaison de célébrités, analyse photo IA",
     "HEADER_TITLE": "Comparaison avec des célébrités",
     "UPLOAD_SECTION_TITLE": "Ajoutez votre photo pour lancer la comparaison avec les célébrités",
     "CELEBRITY_SECTION_TITLE": "Choisissez une célébrité à comparer",

@@ -7,6 +7,12 @@ const baseUrl = webUrl ?? "";
 
 const defaultImage = "/Logo.svg";
 
+interface SitelinkItem {
+  name: string;
+  url: string;
+  description?: string;
+}
+
 interface Metadata {
   title: string;
   description: string;
@@ -19,6 +25,7 @@ interface Metadata {
   keywords?: string;
   image?: string;
   locale?: string;
+  sitelinks?: SitelinkItem[];
 }
 
 interface JsonLdData {
@@ -60,6 +67,17 @@ interface JsonLdData {
       "@type": string;
       price: string;
       priceCurrency: string;
+    };
+  };
+  mainEntity?: {
+    "@type": string;
+    name: string;
+    url: string;
+    description?: string;
+    potentialAction?: {
+      "@type": string;
+      target: string;
+      "query-input": string;
     };
   };
 }
@@ -147,6 +165,25 @@ export const generateJsonLd = (customMeta: Partial<Metadata> = {}): JsonLdData =
       },
     },
   };
+
+  // Sitelinks가 있는 경우 별도의 WebSite 스키마 추가
+  if (metadata.sitelinks && metadata.sitelinks.length > 0) {
+    structuredData.mainEntity = {
+      "@type": "WebSite",
+      name: metadata.title,
+      url: absoluteUrl,
+      description: metadata.description,
+      // 실제 sitelinks 데이터를 구조화된 데이터로 추가
+      ...(metadata.sitelinks.length > 0 && {
+        hasPart: metadata.sitelinks.map((sitelink) => ({
+          "@type": "WebPage",
+          name: sitelink.name,
+          url: sitelink.url.startsWith("http") ? sitelink.url : `${baseUrl}${sitelink.url}`,
+          description: sitelink.description,
+        })),
+      }),
+    };
+  }
 
   return structuredData;
 };

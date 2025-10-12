@@ -54,6 +54,24 @@
     "de": "Deutsch",
     "tr": "Türkisch"
   },
+  "SITELINKS": {
+    "MAIN": {
+      "name": "Simmey - Gesichtserkennungs-KI",
+      "description": "Entdecken Sie, wie sehr Sie Ihren Eltern ähneln"
+    },
+    "FACES": {
+      "name": "Ähnlichkeitsvergleich Starten",
+      "description": "Vergleichen Sie Gesichtsähnlichkeit mit Familienmitgliedern"
+    },
+    "CELEBRITY": {
+      "name": "Mit Prominenten Vergleichen",
+      "description": "Sehen Sie, wie sehr Sie berühmten Personen ähneln! Suchen und vergleichen Sie mit K-pop-Stars oder Hollywood-Prominenten"
+    },
+    "HISTORY": {
+      "name": "Vergleichshistorie Überprüfen",
+      "description": "Sehen Sie Ihre vorherigen Vergleichsergebnisse"
+    }
+  },
   "MAINPAGE": {
     "TITLE": "Starten Sie Ihren Ähnlichkeitsvergleich",
     "DESCRIPTION-1": "Aktualisieren Sie ein Foto für den Ähnlichkeitsvergleich und fahren Sie mit dem Vergleich fort.",
@@ -248,9 +266,9 @@
     "terms-of-service": "Nutzungsbedingungen"
   },
   "CELEBRITYFACES": {
-    "SEO_TITLE": "Vergleiche dein Foto mit Celebrity-Doppelgängern",
-    "SEO_DESCRIPTION": "Lade dein Foto hoch, suche nach bekannten Gesichtern und vergleiche die Ähnlichkeit mit ausgewählten Stars in wenigen Sekunden.",
-    "SEO_KEYWORDS": "Celebrity Doppelgänger, Star-Gesichtserkennung, Promi-Vergleich, KI-Fotoanalyse",
+    "SEO_TITLE": "Vergleiche dein Foto mit K-pop-Stars und Hollywood-Prominenten",
+    "SEO_DESCRIPTION": "Lade dein Foto hoch, suche nach K-pop-Stars, Hollywood-Prominenten und anderen bekannten Gesichtern, und vergleiche die Ähnlichkeit mit ausgewählten Stars in wenigen Sekunden.",
+    "SEO_KEYWORDS": "Celebrity Doppelgänger, K-pop-Star-Vergleich, Hollywood-Prominente, Star-Gesichtserkennung, Promi-Vergleich, KI-Fotoanalyse",
     "HEADER_TITLE": "Vergleich mit Prominenten",
     "UPLOAD_SECTION_TITLE": "Füge dein Foto hinzu, um den Promi-Vergleich zu starten",
     "CELEBRITY_SECTION_TITLE": "Wähle eine Prominente oder einen Prominenten zum Vergleich",

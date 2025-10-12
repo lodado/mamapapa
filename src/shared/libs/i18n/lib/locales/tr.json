@@ -54,6 +54,24 @@
     "de": "Almanca",
     "tr": "Türkçe"
   },
+  "SITELINKS": {
+    "MAIN": {
+      "name": "Simmey - Yüz Eşleştirme AI",
+      "description": "Ebeveynlerinize ne kadar benzediğinizi keşfedin"
+    },
+    "FACES": {
+      "name": "Benzerlik Karşılaştırmasını Başlat",
+      "description": "Aile üyeleriyle yüz benzerliğini karşılaştırın"
+    },
+    "CELEBRITY": {
+      "name": "Ünlülerle Karşılaştır",
+      "description": "Ünlü insanlara ne kadar benzediğinizi görün! K-pop yıldızları veya Hollywood ünlüleriyle arayın ve karşılaştırın"
+    },
+    "HISTORY": {
+      "name": "Karşılaştırma Geçmişini Kontrol Et",
+      "description": "Önceki karşılaştırma sonuçlarınızı görüntüleyin"
+    }
+  },
   "MAINPAGE": {
     "TITLE": "Benzerlik Karşılaştırmanızı Başlatın",
     "DESCRIPTION-1": "Benzerlik karşılaştırması için bir fotoğraf güncelleyin ve karşılaştırmaya devam edin.",
@@ -248,9 +266,9 @@
     "terms-of-service": "Hizmet Şartları"
   },
   "CELEBRITYFACES": {
-    "SEO_TITLE": "Fotoğrafını ünlü benzerleriyle karşılaştır",
-    "SEO_DESCRIPTION": "Fotoğrafını yükle, ünlü yüzleri ara ve seçilmiş ünlülerle benzerliğini saniyeler içinde karşılaştır.",
-    "SEO_KEYWORDS": "ünlü benzeri, yıldız yüz eşleştirme, ünlü karşılaştırma, yapay zekâ fotoğraf analizi",
+    "SEO_TITLE": "Fotoğrafını K-pop yıldızları ve Hollywood ünlüleriyle karşılaştır",
+    "SEO_DESCRIPTION": "Fotoğrafını yükle, K-pop yıldızları, Hollywood ünlüleri ve diğer ünlü yüzleri ara ve seçilmiş ünlülerle benzerliğini saniyeler içinde karşılaştır.",
+    "SEO_KEYWORDS": "ünlü benzeri, K-pop yıldız karşılaştırması, Hollywood ünlüleri, yıldız yüz eşleştirme, ünlü karşılaştırma, yapay zekâ fotoğraf analizi",
     "HEADER_TITLE": "Ünlülerle karşılaştırma",
     "UPLOAD_SECTION_TITLE": "Ünlü karşılaştırmasına başlamak için fotoğrafını ekle",
     "CELEBRITY_SECTION_TITLE": "Karşılaştırmak için bir ünlü seç",

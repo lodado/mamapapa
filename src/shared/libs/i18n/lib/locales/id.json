@@ -54,6 +54,24 @@
     "de": "Jerman",
     "tr": "Turki"
   },
+  "SITELINKS": {
+    "MAIN": {
+      "name": "Simmey - AI Pencocokan Wajah",
+      "description": "Temukan seberapa mirip Anda dengan orang tua Anda"
+    },
+    "FACES": {
+      "name": "Mulai Perbandingan Kemiripan",
+      "description": "Bandingkan kesamaan wajah dengan anggota keluarga"
+    },
+    "CELEBRITY": {
+      "name": "Bandingkan dengan Selebritas",
+      "description": "Lihat seberapa mirip Anda dengan orang terkenal! Cari dan bandingkan dengan bintang K-pop atau selebritas Hollywood"
+    },
+    "HISTORY": {
+      "name": "Periksa Riwayat Perbandingan",
+      "description": "Lihat hasil perbandingan Anda sebelumnya"
+    }
+  },
   "MAINPAGE": {
     "TITLE": "Mulai Perbandingan Kemiripan Anda",
     "DESCRIPTION-1": "Perbarui foto untuk perbandingan kemiripan dan lanjutkan perbandingan.",
@@ -248,9 +266,9 @@
     "terms-of-service": "Syarat Layanan"
   },
   "CELEBRITYFACES": {
-    "SEO_TITLE": "Bandingkan fotomu dengan mirip selebritas",
-    "SEO_DESCRIPTION": "Unggah fotomu, cari wajah terkenal, dan bandingkan kemiripannya dengan selebritas pilihan dalam hitungan detik.",
-    "SEO_KEYWORDS": "mirip selebritas, kecocokan wajah bintang, perbandingan selebritas, analisis foto AI",
+    "SEO_TITLE": "Bandingkan fotomu dengan bintang K-pop dan selebritas Hollywood",
+    "SEO_DESCRIPTION": "Unggah fotomu, cari bintang K-pop, selebritas Hollywood dan wajah terkenal lainnya, dan bandingkan kemiripannya dengan selebritas pilihan dalam hitungan detik.",
+    "SEO_KEYWORDS": "mirip selebritas, perbandingan bintang K-pop, selebritas Hollywood, kecocokan wajah bintang, perbandingan selebritas, analisis foto AI",
     "HEADER_TITLE": "Perbandingan dengan selebritas",
     "UPLOAD_SECTION_TITLE": "Tambahkan fotomu untuk mulai membandingkan dengan selebritas",
     "CELEBRITY_SECTION_TITLE": "Pilih selebritas untuk dibandingkan",

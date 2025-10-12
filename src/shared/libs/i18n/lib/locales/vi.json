@@ -54,6 +54,24 @@
     "de": "Tiếng Đức",
     "tr": "Tiếng Thổ Nhĩ Kỳ"
   },
+  "SITELINKS": {
+    "MAIN": {
+      "name": "Simmey - AI Khớp Khuôn Mặt",
+      "description": "Khám phá bạn giống bố mẹ đến mức nào"
+    },
+    "FACES": {
+      "name": "Bắt Đầu So Sánh Độ Giống Nhau",
+      "description": "So sánh độ tương đồng khuôn mặt với thành viên gia đình"
+    },
+    "CELEBRITY": {
+      "name": "So Sánh Với Người Nổi Tiếng",
+      "description": "Xem bạn giống người nổi tiếng đến mức nào! Tìm kiếm và so sánh với các ngôi sao K-pop hoặc người nổi tiếng Hollywood"
+    },
+    "HISTORY": {
+      "name": "Kiểm Tra Lịch Sử So Sánh",
+      "description": "Xem kết quả so sánh trước đây của bạn"
+    }
+  },
   "MAINPAGE": {
     "TITLE": "Bắt đầu so sánh giống nhau của bạn",
     "DESCRIPTION-1": "Cập nhật ảnh để so sánh giống nhau và tiếp tục so sánh.",
@@ -248,9 +266,9 @@
     "terms-of-service": "Điều khoản dịch vụ"
   },
   "CELEBRITYFACES": {
-    "SEO_TITLE": "So sánh ảnh của bạn với người giống ngôi sao",
-    "SEO_DESCRIPTION": "Tải ảnh của bạn lên, tìm các gương mặt nổi tiếng và so sánh độ giống với những ngôi sao được tuyển chọn chỉ trong vài giây.",
-    "SEO_KEYWORDS": "giống người nổi tiếng, khớp khuôn mặt ngôi sao, so sánh người nổi tiếng, phân tích ảnh AI",
+    "SEO_TITLE": "So sánh ảnh của bạn với các ngôi sao K-pop và người nổi tiếng Hollywood",
+    "SEO_DESCRIPTION": "Tải ảnh của bạn lên, tìm các ngôi sao K-pop, người nổi tiếng Hollywood và những gương mặt nổi tiếng khác, và so sánh độ giống với những ngôi sao được tuyển chọn chỉ trong vài giây.",
+    "SEO_KEYWORDS": "giống người nổi tiếng, so sánh ngôi sao K-pop, người nổi tiếng Hollywood, khớp khuôn mặt ngôi sao, so sánh người nổi tiếng, phân tích ảnh AI",
     "HEADER_TITLE": "So sánh với người nổi tiếng",
     "UPLOAD_SECTION_TITLE": "Thêm ảnh của bạn để bắt đầu so sánh với người nổi tiếng",
     "CELEBRITY_SECTION_TITLE": "Chọn người nổi tiếng để so sánh",

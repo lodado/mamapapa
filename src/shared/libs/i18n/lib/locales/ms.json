@@ -54,6 +54,24 @@
     "de": "Bahasa Jerman",
     "tr": "Bahasa Turki"
   },
+  "SITELINKS": {
+    "MAIN": {
+      "name": "Simmey - AI Pencocokan Muka",
+      "description": "Temukan betapa miripnya anda dengan ibu bapa anda"
+    },
+    "FACES": {
+      "name": "Mulakan Perbandingan Keserupaan",
+      "description": "Bandingkan persamaan muka dengan ahli keluarga"
+    },
+    "CELEBRITY": {
+      "name": "Bandingkan dengan Selebriti",
+      "description": "Lihat betapa miripnya anda dengan orang terkenal! Cari dan bandingkan dengan bintang K-pop atau selebriti Hollywood"
+    },
+    "HISTORY": {
+      "name": "Periksa Sejarah Perbandingan",
+      "description": "Lihat hasil perbandingan anda yang terdahulu"
+    }
+  },
   "MAINPAGE": {
     "TITLE": "Mulakan Perbandingan Keserupaan Anda",
     "DESCRIPTION-1": "Kemas kini foto untuk perbandingan keserupaan dan teruskan perbandingan.",
@@ -248,9 +266,9 @@
     "terms-of-service": "Terma Perkhidmatan"
   },
   "CELEBRITYFACES": {
-    "SEO_TITLE": "Bandingkan foto anda dengan mirip selebriti",
-    "SEO_DESCRIPTION": "Muat naik foto anda, cari wajah terkenal dan bandingkan tahap kemiripan dengan selebriti pilihan dalam beberapa saat.",
-    "SEO_KEYWORDS": "mirip selebriti, padanan wajah bintang, perbandingan selebriti, penganalisis foto AI",
+    "SEO_TITLE": "Bandingkan foto anda dengan bintang K-pop dan selebriti Hollywood",
+    "SEO_DESCRIPTION": "Muat naik foto anda, cari bintang K-pop, selebriti Hollywood dan wajah terkenal lain, dan bandingkan tahap kemiripan dengan selebriti pilihan dalam beberapa saat.",
+    "SEO_KEYWORDS": "mirip selebriti, perbandingan bintang K-pop, selebriti Hollywood, padanan wajah bintang, perbandingan selebriti, penganalisis foto AI",
     "HEADER_TITLE": "Perbandingan dengan selebriti",
     "UPLOAD_SECTION_TITLE": "Tambah foto anda untuk memulakan perbandingan selebriti",
     "CELEBRITY_SECTION_TITLE": "Pilih selebriti untuk dibandingkan",

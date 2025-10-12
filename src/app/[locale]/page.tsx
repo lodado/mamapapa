@@ -6,6 +6,7 @@ import { ButtonLink } from "@/entities/Router";
 import { PAGE_ROUTE } from "@/entities/Router/configs/route";
 import { ModelDownloader } from "@/features";
 import { SettingDialog } from "@/features/Settings";
+import { generateSitelinks } from "@/shared/index.server";
 import { getLocalesListsForStateParams } from "@/shared/libs/i18n/server/getLocalesListsForStateParams";
 import { JsonLdScript, ScrollLock } from "@/shared/ui";
 import { Motion } from "@/shared/ui/animation/animation";
@@ -35,6 +36,7 @@ export async function generateStaticParams() {
 const Page = async ({ params }: { params: { locale: string } }) => {
   setRequestLocale(params.locale);
   const t = await getTranslations("MAINPAGE");
+  const sitelinks = await generateSitelinks(params.locale);
 
   return (
     <>
@@ -47,6 +49,7 @@ const Page = async ({ params }: { params: { locale: string } }) => {
           keywords: t("keywords"),
           locale: params.locale,
           isAccessibleForFree: true,
+          sitelinks,
         }}
       />
 

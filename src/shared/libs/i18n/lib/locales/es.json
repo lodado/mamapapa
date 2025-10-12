@@ -54,6 +54,24 @@
     "de": "Alemán",
     "tr": "Turco"
   },
+  "SITELINKS": {
+    "MAIN": {
+      "name": "Simmey - IA de Coincidencia Facial",
+      "description": "Descubre cuánto te pareces a tus padres"
+    },
+    "FACES": {
+      "name": "Iniciar Comparación de Parecido",
+      "description": "Compara la similitud facial con miembros de la familia"
+    },
+    "CELEBRITY": {
+      "name": "Comparar con Celebridades",
+      "description": "¡Ve cuánto te pareces a personas famosas! Busca y compara con estrellas del K-pop o celebridades de Hollywood"
+    },
+    "HISTORY": {
+      "name": "Verificar Historial de Comparación",
+      "description": "Ve tus resultados de comparación anteriores"
+    }
+  },
   "MAINPAGE": {
     "TITLE": "Inicie su comparación de parecidos",
     "DESCRIPTION-1": "Actualiza una foto para la comparación de parecidos y procede con la comparación.",
@@ -248,9 +266,9 @@
     "terms-of-service": "Términos de servicio"
   },
   "CELEBRITYFACES": {
-    "SEO_TITLE": "Compara tu foto con parecidos de celebridades",
-    "SEO_DESCRIPTION": "Sube tu foto, busca rostros famosos y compara la similitud con celebridades seleccionadas en segundos.",
-    "SEO_KEYWORDS": "parecido a celebridad, coincidencia de rostro de estrella, comparación de famosos, analizador de fotos con IA",
+    "SEO_TITLE": "Compara tu foto con estrellas de K-pop y celebridades de Hollywood",
+    "SEO_DESCRIPTION": "Sube tu foto, busca estrellas de K-pop, celebridades de Hollywood y otros rostros famosos, y compara la similitud con celebridades seleccionadas en segundos.",
+    "SEO_KEYWORDS": "parecido a celebridad, comparación con estrellas K-pop, celebridades de Hollywood, coincidencia de rostro de estrella, comparación de famosos, analizador de fotos con IA",
     "HEADER_TITLE": "Comparación con celebridades",
     "UPLOAD_SECTION_TITLE": "Agrega tu foto para iniciar la comparación con celebridades",
     "CELEBRITY_SECTION_TITLE": "Elige una celebridad para comparar",

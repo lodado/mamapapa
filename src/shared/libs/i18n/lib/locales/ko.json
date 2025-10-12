@@ -54,6 +54,24 @@
     "de": "독일어",
     "tr": "터키어"
   },
+  "SITELINKS": {
+    "MAIN": {
+      "name": "Simmey - 얼굴 매칭 AI",
+      "description": "부모님과 얼마나 닮았는지 확인해보세요"
+    },
+    "FACES": {
+      "name": "닮은꼴 비교하기",
+      "description": "가족과 얼굴 유사도를 비교해보세요"
+    },
+    "CELEBRITY": {
+      "name": "연예인과 비교하기",
+      "description": "유명인과 얼마나 닮았는지 확인해보세요! 검색을 통하여 K-pop 스타 혹은 헐리우드 스타들과 비교해보세요"
+    },
+    "HISTORY": {
+      "name": "비교 내역 확인",
+      "description": "이전 비교 결과를 확인해보세요"
+    }
+  },
   "MAINPAGE": {
     "TITLE": "닮은꼴 비교를 시작해보세요",
     "DESCRIPTION-1": "닮은꼴 비교를 위한 사진을 업데이트를 하고 닮은꼴 비교를 진행해보세요.",
@@ -248,9 +266,9 @@
     "terms-of-service": "이용 약관"
   },
   "CELEBRITYFACES": {
-    "SEO_TITLE": "내 사진을 연예인 닮은꼴과 비교해 보세요",
-    "SEO_DESCRIPTION": "내 사진을 업로드하고 인기 스타를 검색해 몇 초 만에 엄선된 연예인과 닮은 정도를 비교하세요.",
-    "SEO_KEYWORDS": "연예인 닮은꼴, 스타 얼굴 매칭, 유명인 비교, AI 사진 분석",
+    "SEO_TITLE": "내 사진을 K-pop 스타와 헐리우드 연예인과 비교해 보세요",
+    "SEO_DESCRIPTION": "내 사진을 업로드하고 K-pop 스타, 헐리우드 연예인 등 인기 스타를 검색해 몇 초 만에 엄선된 연예인과 닮은 정도를 비교하세요.",
+    "SEO_KEYWORDS": "연예인 닮은꼴, K-pop 스타 비교, 헐리우드 연예인, 스타 얼굴 매칭, 유명인 비교, AI 사진 분석",
     "HEADER_TITLE": "연예인 닮은꼴 비교",
     "UPLOAD_SECTION_TITLE": "연예인 비교를 시작하려면 내 사진을 추가하세요",
     "CELEBRITY_SECTION_TITLE": "비교할 연예인을 선택하세요",

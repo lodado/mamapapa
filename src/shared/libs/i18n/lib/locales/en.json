@@ -54,6 +54,24 @@
     "de": "German",
     "tr": "Turkish"
   },
+  "SITELINKS": {
+    "MAIN": {
+      "name": "Simmey - Face Matching AI",
+      "description": "Discover how much you resemble your parents"
+    },
+    "FACES": {
+      "name": "Start Look-Alike Comparison",
+      "description": "Compare facial similarity with family members"
+    },
+    "CELEBRITY": {
+      "name": "Compare with Celebrities",
+      "description": "See how much you resemble famous people! Search and compare with K-pop stars or Hollywood celebrities"
+    },
+    "HISTORY": {
+      "name": "Check Comparison History",
+      "description": "View your previous comparison results"
+    }
+  },
   "MAINPAGE": {
     "TITLE": "Start Your Look-Alike Comparison",
     "DESCRIPTION-1": "Update a photo for look-alike comparison and proceed with the comparison.",
@@ -248,9 +266,9 @@
     "terms-of-service": "Terms of Service"
   },
   "CELEBRITYFACES": {
-    "SEO_TITLE": "Compare your photo with celebrity look-alikes",
-    "SEO_DESCRIPTION": "Upload your photo, search famous faces, and compare similarities with curated celebrities in seconds.",
-    "SEO_KEYWORDS": "celebrity look alike, star face match, famous people comparison, ai photo analyzer",
+    "SEO_TITLE": "Compare your photo with K-pop stars and Hollywood celebrities",
+    "SEO_DESCRIPTION": "Upload your photo, search K-pop stars, Hollywood celebrities and other famous faces, and compare similarities with curated celebrities in seconds.",
+    "SEO_KEYWORDS": "celebrity look alike, K-pop star comparison, Hollywood celebrities, star face match, famous people comparison, ai photo analyzer",
     "HEADER_TITLE": "Celebrity look-alike comparison",
     "UPLOAD_SECTION_TITLE": "Add your photo to start the celebrity comparison",
     "CELEBRITY_SECTION_TITLE": "Pick a celebrity to compare",

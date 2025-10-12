@@ -54,6 +54,24 @@
     "de": "德语",
     "tr": "土耳其语"
   },
+  "SITELINKS": {
+    "MAIN": {
+      "name": "Simmey - 面部匹配AI",
+      "description": "发现您与父母的相似程度"
+    },
+    "FACES": {
+      "name": "开始相似度比较",
+      "description": "与家庭成员比较面部相似性"
+    },
+    "CELEBRITY": {
+      "name": "与明星比较",
+      "description": "看看您与名人的相似程度！通过搜索与K-pop明星或好莱坞明星进行比较"
+    },
+    "HISTORY": {
+      "name": "查看比较历史",
+      "description": "查看您之前的比较结果"
+    }
+  },
   "MAINPAGE": {
     "TITLE": "开始你的相似度比较",
     "DESCRIPTION-1": "更新照片进行相似度比较，然后继续比较。",
@@ -248,9 +266,9 @@
     "terms-of-service": "服务条款"
   },
   "CELEBRITYFACES": {
-    "SEO_TITLE": "将你的照片与明星相似脸进行比较",
-    "SEO_DESCRIPTION": "上传你的照片，搜索知名面孔，在几秒内与精选明星比较相似度。",
-    "SEO_KEYWORDS": "明星相似脸, 星脸匹配, 名人对比, AI 照片分析",
+    "SEO_TITLE": "将你的照片与K-pop明星和好莱坞名人进行比较",
+    "SEO_DESCRIPTION": "上传你的照片，搜索K-pop明星、好莱坞名人等知名面孔，在几秒内与精选明星比较相似度。",
+    "SEO_KEYWORDS": "明星相似脸, K-pop明星比较, 好莱坞名人, 星脸匹配, 名人对比, AI 照片分析",
     "HEADER_TITLE": "明星相似脸对比",
     "UPLOAD_SECTION_TITLE": "添加你的照片开启明星对比",
     "CELEBRITY_SECTION_TITLE": "选择要比较的明星",
