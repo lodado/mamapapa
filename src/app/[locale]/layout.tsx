@@ -29,7 +29,6 @@ export function generateViewport(): Viewport {
   };
 }
 
-
 /**
  * TO DO - pwa 관련 옵션 수정
  */
@@ -280,14 +279,14 @@ const RootLayout: React.FunctionComponent<LocaleProps> = ({ children, params: { 
       <body>
         <ThemeScript nonce={nonce} />
         <ScreenVhScript nonce={nonce} />
-        <RootProvider>
-          <NextIntlClientProvider locale={locale} messages={messages}>
+        <NextIntlClientProvider locale={locale} messages={messages}>
+          <RootProvider>
             {children}
             <GlobalDialogContainer />
 
             <HydratePlayerStore />
-          </NextIntlClientProvider>
-        </RootProvider>
+          </RootProvider>
+        </NextIntlClientProvider>
         <GA nonce={nonce} />
       </body>
     </html>

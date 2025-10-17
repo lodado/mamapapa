@@ -2,6 +2,7 @@ export * from "./animation";
 export * from "./Badge";
 export * from "./Button";
 export * from "./Children";
+export * from "./Dialog";
 export * from "./Dropdown";
 export * from "./Form";
 export * from "./icons";

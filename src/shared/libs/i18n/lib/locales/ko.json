@@ -72,6 +72,32 @@
       "description": "이전 비교 결과를 확인해보세요"
     }
   },
+  "cookieConsent": {
+    "banner": {
+      "title": "쿠키 사용에 동의하시겠습니까?",
+      "description": "저희는 웹사이트의 성능을 향상시키고 사용자 경험을 개선하기 위해 쿠키를 사용합니다. 귀하의 개인정보는 안전하게 보호됩니다.",
+      "acceptAll": "모두 허용",
+      "rejectAll": "모두 거부",
+      "customize": "설정"
+    },
+    "modal": {
+      "title": "쿠키 설정",
+      "description": "아래에서 쿠키 유형을 선택하여 개인정보 보호 설정을 관리할 수 있습니다.",
+      "cancel": "취소",
+      "save": "저장"
+    },
+    "preferences": {
+      "necessary": {
+        "title": "필수 쿠키",
+        "description": "웹사이트의 기본 기능을 위해 필요한 쿠키입니다. 이 쿠키는 비활성화할 수 없습니다."
+      },
+      "analytics": {
+        "title": "분석 쿠키",
+        "description": "웹사이트 사용 방식을 이해하고 개선하기 위해 사용됩니다. (Google Analytics 등)"
+      },
+      "alwaysActive": "항상 활성화"
+    }
+  },
   "MAINPAGE": {
     "TITLE": "닮은꼴 비교를 시작해보세요",
     "DESCRIPTION-1": "닮은꼴 비교를 위한 사진을 업데이트를 하고 닮은꼴 비교를 진행해보세요.",

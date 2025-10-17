@@ -1,5 +1,3 @@
- 
-
 import { sanitizeUrl } from "@/shared/utils/sanitizeUrl";
 
 import { AuthorizedParams, JWT, JWTParams, NextAuthSessionResponse, SessionParams, SignInParams } from "../../type";

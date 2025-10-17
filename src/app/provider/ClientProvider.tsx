@@ -4,6 +4,7 @@ import { PropsWithChildren } from "react";
 
 import { NextAuthSessionResponse } from "@/entities/Auth/server/type";
 import { ReactDndProvider, ReactQueryProvider, RtlProvider, ThemeProvider } from "@/shared";
+import { CookieConsentProvider } from "@/shared/libs/CookieConsent";
 import ToastProvider from "@/shared/ui/Toast/ui/ToastProvider";
 
 const ClientProvider = ({
@@ -15,9 +16,10 @@ const ClientProvider = ({
   return (
     <ReactDndProvider>
       <ReactQueryProvider>
-        <ToastProvider>{children}</ToastProvider>
-
-        <RtlProvider />
+        <CookieConsentProvider>
+          <ToastProvider>{children}</ToastProvider>
+          <RtlProvider />
+        </CookieConsentProvider>
       </ReactQueryProvider>
     </ReactDndProvider>
   );

@@ -72,6 +72,32 @@
       "description": "View your previous comparison results"
     }
   },
+  "cookieConsent": {
+    "banner": {
+      "title": "Do you agree to the use of cookies?",
+      "description": "We use cookies to improve website performance and enhance user experience. Your personal information is safely protected.",
+      "acceptAll": "Accept All",
+      "rejectAll": "Reject All",
+      "customize": "Customize"
+    },
+    "modal": {
+      "title": "Cookie Settings",
+      "description": "You can manage your privacy settings by selecting cookie types below.",
+      "cancel": "Cancel",
+      "save": "Save"
+    },
+    "preferences": {
+      "necessary": {
+        "title": "Necessary Cookies",
+        "description": "Essential cookies required for basic website functionality. These cookies cannot be disabled."
+      },
+      "analytics": {
+        "title": "Analytics Cookies",
+        "description": "Used to understand and improve how the website is used. (Google Analytics, etc.)"
+      },
+      "alwaysActive": "Always Active"
+    }
+  },
   "MAINPAGE": {
     "TITLE": "Start Your Look-Alike Comparison",
     "DESCRIPTION-1": "Update a photo for look-alike comparison and proceed with the comparison.",
