@@ -290,5 +290,31 @@
   "HISTORYPAGEHEADER": {
     "RENAME-HISTORY": "Đổi tên lịch sử",
     "DELETE-HISTORY": "Xóa lịch sử"
+  },
+  "cookieConsent": {
+    "banner": {
+      "title": "Bạn có đồng ý sử dụng cookie không?",
+      "description": "Chúng tôi sử dụng cookie để cải thiện hiệu suất trang web và nâng cao trải nghiệm người dùng. Thông tin cá nhân của bạn được bảo vệ an toàn.",
+      "acceptAll": "Chấp nhận tất cả",
+      "rejectAll": "Từ chối tất cả",
+      "customize": "Tùy chỉnh"
+    },
+    "modal": {
+      "title": "Cài đặt Cookie",
+      "description": "Bạn có thể quản lý cài đặt quyền riêng tư bằng cách chọn các loại cookie bên dưới.",
+      "cancel": "Hủy",
+      "save": "Lưu"
+    },
+    "preferences": {
+      "necessary": {
+        "title": "Cookie cần thiết",
+        "description": "Cookie cần thiết cho chức năng cơ bản của trang web. Những cookie này không thể bị vô hiệu hóa."
+      },
+      "analytics": {
+        "title": "Cookie phân tích",
+        "description": "Được sử dụng để hiểu và cải thiện cách trang web được sử dụng. (Google Analytics, v.v.)"
+      },
+      "alwaysActive": "Luôn hoạt động"
+    }
   }
 }

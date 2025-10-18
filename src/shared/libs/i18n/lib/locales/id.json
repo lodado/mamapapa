@@ -290,5 +290,31 @@
   "HISTORYPAGEHEADER": {
     "RENAME-HISTORY": "Ganti Nama Riwayat",
     "DELETE-HISTORY": "Hapus Riwayat"
+  },
+  "cookieConsent": {
+    "banner": {
+      "title": "Apakah Anda setuju dengan penggunaan cookie?",
+      "description": "Kami menggunakan cookie untuk meningkatkan performa website dan meningkatkan pengalaman pengguna. Informasi pribadi Anda dilindungi dengan aman.",
+      "acceptAll": "Terima Semua",
+      "rejectAll": "Tolak Semua",
+      "customize": "Sesuaikan"
+    },
+    "modal": {
+      "title": "Pengaturan Cookie",
+      "description": "Anda dapat mengelola pengaturan privasi Anda dengan memilih jenis cookie di bawah ini.",
+      "cancel": "Batal",
+      "save": "Simpan"
+    },
+    "preferences": {
+      "necessary": {
+        "title": "Cookie yang Diperlukan",
+        "description": "Cookie penting yang diperlukan untuk fungsi dasar website. Cookie ini tidak dapat dinonaktifkan."
+      },
+      "analytics": {
+        "title": "Cookie Analitik",
+        "description": "Digunakan untuk memahami dan meningkatkan cara website digunakan. (Google Analytics, dll.)"
+      },
+      "alwaysActive": "Selalu Aktif"
+    }
   }
 }

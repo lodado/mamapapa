@@ -290,5 +290,31 @@
   "HISTORYPAGEHEADER": {
     "RENAME-HISTORY": "Geçmişi Yeniden Adlandır",
     "DELETE-HISTORY": "Geçmişi Sil"
+  },
+  "cookieConsent": {
+    "banner": {
+      "title": "Çerez kullanımını kabul ediyor musunuz?",
+      "description": "Web sitesi performansını artırmak ve kullanıcı deneyimini geliştirmek için çerezler kullanıyoruz. Kişisel bilgileriniz güvenle korunmaktadır.",
+      "acceptAll": "Tümünü Kabul Et",
+      "rejectAll": "Tümünü Reddet",
+      "customize": "Özelleştir"
+    },
+    "modal": {
+      "title": "Çerez Ayarları",
+      "description": "Aşağıdaki çerez türlerini seçerek gizlilik ayarlarınızı yönetebilirsiniz.",
+      "cancel": "İptal",
+      "save": "Kaydet"
+    },
+    "preferences": {
+      "necessary": {
+        "title": "Gerekli Çerezler",
+        "description": "Web sitesinin temel işlevselliği için gerekli olan temel çerezler. Bu çerezler devre dışı bırakılamaz."
+      },
+      "analytics": {
+        "title": "Analitik Çerezler",
+        "description": "Web sitesinin nasıl kullanıldığını anlamak ve geliştirmek için kullanılır. (Google Analytics vb.)"
+      },
+      "alwaysActive": "Her Zaman Aktif"
+    }
   }
 }

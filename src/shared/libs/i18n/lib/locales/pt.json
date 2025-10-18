@@ -290,5 +290,31 @@
   "HISTORYPAGEHEADER": {
     "RENAME-HISTORY": "Renomear histórico",
     "DELETE-HISTORY": "Excluir histórico"
+  },
+  "cookieConsent": {
+    "banner": {
+      "title": "Você concorda com o uso de cookies?",
+      "description": "Usamos cookies para melhorar o desempenho do site e aprimorar a experiência do usuário. Suas informações pessoais são protegidas com segurança.",
+      "acceptAll": "Aceitar Todos",
+      "rejectAll": "Rejeitar Todos",
+      "customize": "Personalizar"
+    },
+    "modal": {
+      "title": "Configurações de Cookies",
+      "description": "Você pode gerenciar suas configurações de privacidade selecionando os tipos de cookies abaixo.",
+      "cancel": "Cancelar",
+      "save": "Salvar"
+    },
+    "preferences": {
+      "necessary": {
+        "title": "Cookies Necessários",
+        "description": "Cookies essenciais necessários para a funcionalidade básica do site. Estes cookies não podem ser desabilitados."
+      },
+      "analytics": {
+        "title": "Cookies de Análise",
+        "description": "Usados para entender e melhorar como o site é usado. (Google Analytics, etc.)"
+      },
+      "alwaysActive": "Sempre Ativo"
+    }
   }
 }

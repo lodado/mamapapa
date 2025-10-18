@@ -290,5 +290,31 @@
   "HISTORYPAGEHEADER": {
     "RENAME-HISTORY": "Tukar Nama Sejarah",
     "DELETE-HISTORY": "Padam Sejarah"
+  },
+  "cookieConsent": {
+    "banner": {
+      "title": "Adakah anda bersetuju dengan penggunaan kuki?",
+      "description": "Kami menggunakan kuki untuk meningkatkan prestasi laman web dan meningkatkan pengalaman pengguna. Maklumat peribadi anda dilindungi dengan selamat.",
+      "acceptAll": "Terima Semua",
+      "rejectAll": "Tolak Semua",
+      "customize": "Sesuaikan"
+    },
+    "modal": {
+      "title": "Tetapan Kuki",
+      "description": "Anda boleh menguruskan tetapan privasi anda dengan memilih jenis kuki di bawah.",
+      "cancel": "Batal",
+      "save": "Simpan"
+    },
+    "preferences": {
+      "necessary": {
+        "title": "Kuki yang Diperlukan",
+        "description": "Kuki penting yang diperlukan untuk fungsi asas laman web. Kuki ini tidak boleh dimatikan."
+      },
+      "analytics": {
+        "title": "Kuki Analitik",
+        "description": "Digunakan untuk memahami dan meningkatkan cara laman web digunakan. (Google Analytics, dll.)"
+      },
+      "alwaysActive": "Sentiasa Aktif"
+    }
   }
 }

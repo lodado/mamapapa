@@ -290,5 +290,31 @@
   "HISTORYPAGEHEADER": {
     "RENAME-HISTORY": "履歴の名前を変更する",
     "DELETE-HISTORY": "履歴を削除する"
+  },
+  "cookieConsent": {
+    "banner": {
+      "title": "クッキーの使用に同意しますか？",
+      "description": "ウェブサイトのパフォーマンスを向上させ、ユーザーエクスペリエンスを向上させるためにクッキーを使用しています。お客様の個人情報は安全に保護されます。",
+      "acceptAll": "すべて受け入れる",
+      "rejectAll": "すべて拒否",
+      "customize": "カスタマイズ"
+    },
+    "modal": {
+      "title": "クッキー設定",
+      "description": "以下のクッキータイプを選択してプライバシー設定を管理できます。",
+      "cancel": "キャンセル",
+      "save": "保存"
+    },
+    "preferences": {
+      "necessary": {
+        "title": "必須クッキー",
+        "description": "ウェブサイトの基本機能に必要なクッキーです。これらのクッキーは無効にできません。"
+      },
+      "analytics": {
+        "title": "分析クッキー",
+        "description": "ウェブサイトの使用方法を理解し改善するために使用されます。（Google Analyticsなど）"
+      },
+      "alwaysActive": "常にアクティブ"
+    }
   }
 }

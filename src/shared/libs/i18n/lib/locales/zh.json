@@ -290,5 +290,31 @@
   "HISTORYPAGEHEADER": {
     "RENAME-HISTORY": "重命名历史",
     "DELETE-HISTORY": "删除历史"
+  },
+  "cookieConsent": {
+    "banner": {
+      "title": "您同意使用Cookie吗？",
+      "description": "我们使用Cookie来改善网站性能并提升用户体验。您的个人信息将得到安全保护。",
+      "acceptAll": "全部接受",
+      "rejectAll": "全部拒绝",
+      "customize": "自定义"
+    },
+    "modal": {
+      "title": "Cookie设置",
+      "description": "您可以通过选择下面的Cookie类型来管理您的隐私设置。",
+      "cancel": "取消",
+      "save": "保存"
+    },
+    "preferences": {
+      "necessary": {
+        "title": "必要Cookie",
+        "description": "这些Cookie是网站基本功能所必需的。无法禁用这些Cookie。"
+      },
+      "analytics": {
+        "title": "分析Cookie",
+        "description": "用于了解和改进网站使用方式。（Google Analytics等）"
+      },
+      "alwaysActive": "始终激活"
+    }
   }
 }

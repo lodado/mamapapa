@@ -290,5 +290,31 @@
   "HISTORYPAGEHEADER": {
     "RENAME-HISTORY": "Verlauf umbenennen",
     "DELETE-HISTORY": "Verlauf löschen"
+  },
+  "cookieConsent": {
+    "banner": {
+      "title": "Stimmen Sie der Verwendung von Cookies zu?",
+      "description": "Wir verwenden Cookies, um die Website-Performance zu verbessern und die Benutzererfahrung zu optimieren. Ihre persönlichen Daten sind sicher geschützt.",
+      "acceptAll": "Alle akzeptieren",
+      "rejectAll": "Alle ablehnen",
+      "customize": "Anpassen"
+    },
+    "modal": {
+      "title": "Cookie-Einstellungen",
+      "description": "Sie können Ihre Datenschutzeinstellungen verwalten, indem Sie die Cookie-Typen unten auswählen.",
+      "cancel": "Abbrechen",
+      "save": "Speichern"
+    },
+    "preferences": {
+      "necessary": {
+        "title": "Notwendige Cookies",
+        "description": "Wesentliche Cookies, die für die grundlegende Website-Funktionalität erforderlich sind. Diese Cookies können nicht deaktiviert werden."
+      },
+      "analytics": {
+        "title": "Analyse-Cookies",
+        "description": "Werden verwendet, um zu verstehen und zu verbessern, wie die Website genutzt wird. (Google Analytics, etc.)"
+      },
+      "alwaysActive": "Immer aktiv"
+    }
   }
 }
