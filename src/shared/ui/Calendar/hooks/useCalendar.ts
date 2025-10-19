@@ -1,4 +1,4 @@
-import { useState, useMemo, useCallback } from "react";
+import { useCallback,useMemo, useState } from "react";
 
 export interface UseCalendarOptions {
   initialDate?: Date;
@@ -28,17 +28,15 @@ export const useCalendar = ({
 
   const goToPreviousMonth = useCallback(() => {
     setCurrentDate(prev => {
-      const newDate = new Date(prev);
-      newDate.setMonth(prev.getMonth() - 1);
-      return newDate;
+      // Fix month overflow by using constructor to avoid day overflow
+      return new Date(prev.getFullYear(), prev.getMonth() - 1, 1);
     });
   }, []);
 
   const goToNextMonth = useCallback(() => {
     setCurrentDate(prev => {
-      const newDate = new Date(prev);
-      newDate.setMonth(prev.getMonth() + 1);
-      return newDate;
+      // Fix month overflow by using constructor to avoid day overflow
+      return new Date(prev.getFullYear(), prev.getMonth() + 1, 1);
     });
   }, []);
 

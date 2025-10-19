@@ -7,18 +7,24 @@ import { cn } from "@/shared/utils";
 import { CalendarDayProps } from "./types";
 
 const CalendarDay = forwardRef<HTMLButtonElement, CalendarDayProps>(
-  ({ 
-    date, 
-    isCurrentMonth = true, 
-    isToday = false, 
-    isSelected = false, 
-    isDisabled = false,
-    className,
-    onClick,
-    ...props 
-  }, ref) => {
+  (
+    {
+      date,
+      isCurrentMonth = true,
+      isToday = false,
+      isSelected = false,
+      isDisabled = false,
+      className,
+      onClick,
+      ...props
+    },
+    ref
+  ) => {
     const dayNumber = date.getDate();
     
+    // Create local date key for consistent comparison
+    const dateKey = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
+
     const getTextColor = () => {
       if (isDisabled) return "text-gray-400";
       if (isToday) return "text-blue-600 font-bold";
@@ -44,12 +50,12 @@ const CalendarDay = forwardRef<HTMLButtonElement, CalendarDayProps>(
         event.preventDefault();
         handleClick();
       }
-      
+
       // Arrow key navigation
       if (event.key.startsWith("Arrow")) {
         event.preventDefault();
         const currentDate = new Date(date);
-        
+
         switch (event.key) {
           case "ArrowLeft":
             currentDate.setDate(currentDate.getDate() - 1);
@@ -64,9 +70,9 @@ const CalendarDay = forwardRef<HTMLButtonElement, CalendarDayProps>(
             currentDate.setDate(currentDate.getDate() + 7);
             break;
         }
-        
+
         // Focus the new date element
-        const newElement = document.querySelector(`[data-date="${currentDate.toISOString().split('T')[0]}"]`);
+        const newElement = document.querySelector(`[data-date="${currentDate.toISOString().split("T")[0]}"]`);
         if (newElement instanceof HTMLElement) {
           newElement.focus();
         }
@@ -90,18 +96,19 @@ const CalendarDay = forwardRef<HTMLButtonElement, CalendarDayProps>(
         aria-label={`${date.toLocaleDateString()}, ${isToday ? "today" : ""} ${isSelected ? "selected" : ""}`}
         aria-selected={isSelected}
         aria-current={isToday ? "date" : undefined}
-        role="gridcell"
         tabIndex={isDisabled ? -1 : 0}
-        data-date={date.toISOString().split('T')[0]}
+        data-date={dateKey}
         {...props}
       >
-        <div className={cn(
-          "absolute flex flex-col font-normal h-8 justify-center leading-0 left-1/2 not-italic text-[14px] text-center top-1/2 translate-x-[-50%] translate-y-[-50%] w-[41px]",
-          getTextColor()
-        )}>
+        <div
+          className={cn(
+            "absolute flex flex-col font-normal h-8 justify-center leading-0 left-1/2 not-italic text-[14px] text-center top-1/2 translate-x-[-50%] translate-y-[-50%] w-[41px]",
+            getTextColor()
+          )}
+        >
           <p className="leading-[20px]">{dayNumber}</p>
         </div>
-        
+
         {/* Today indicator dot */}
         {isToday && (
           <div className="absolute bottom-1 h-0 left-1/2 translate-x-[-50%] w-[33px]">

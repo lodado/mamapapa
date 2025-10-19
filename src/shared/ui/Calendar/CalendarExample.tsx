@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { Calendar } from "@/shared/ui";
+
+import Calendar from "./Calendar";
 
 const CalendarExample = () => {
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);

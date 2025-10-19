@@ -1,7 +1,9 @@
 "use client";
 
 import { forwardRef } from "react";
+
 import { cn } from "@/shared/utils";
+
 import { CalendarBodyProps } from "./types";
 
 const CalendarBody = forwardRef<HTMLDivElement, CalendarBodyProps>(
@@ -10,12 +12,13 @@ const CalendarBody = forwardRef<HTMLDivElement, CalendarBodyProps>(
       <div
         ref={ref}
         className={cn(
-          "absolute contents left-[16px] top-[85px]",
+          "grid grid-cols-7 gap-1",
           className
         )}
+        {...props}
         role="grid"
         aria-label="Calendar days"
-        {...props}
+        aria-colcount={7}
       >
         {children}
       </div>

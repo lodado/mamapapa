@@ -1,7 +1,9 @@
 "use client";
 
 import { forwardRef } from "react";
+
 import { cn } from "@/shared/utils";
+
 import { CalendarWeekdaysProps } from "./types";
 
 const defaultWeekdays = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
@@ -12,7 +14,7 @@ const CalendarWeekdays = forwardRef<HTMLDivElement, CalendarWeekdaysProps>(
       <div
         ref={ref}
         className={cn(
-          "absolute content-stretch flex font-bold items-start leading-0 left-[16px] not-italic text-[#6b778c] text-[11px] text-center top-[61px]",
+          "grid grid-cols-7 items-center font-bold not-italic text-[#6b778c] text-[11px] text-center",
           className
         )}
         role="row"
@@ -21,8 +23,8 @@ const CalendarWeekdays = forwardRef<HTMLDivElement, CalendarWeekdaysProps>(
       >
         {weekdays.map((weekday, index) => (
           <div
-            key={weekday}
-            className="flex flex-col justify-center relative shrink-0 w-[41px]"
+            key={`${weekday}-${index}`}
+            className="flex flex-col justify-center"
             role="columnheader"
             aria-label={weekday}
           >

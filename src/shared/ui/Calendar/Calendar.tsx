@@ -1,9 +1,18 @@
 "use client";
 
-import { forwardRef, createContext, useContext } from "react";
+import { createContext, forwardRef, useContext, useMemo } from "react";
+
 import { cn } from "@/shared/utils";
-import { CalendarContextValue, CalendarProps } from "./types";
+
+import CalendarBody from "./CalendarBody";
+import CalendarDay from "./CalendarDay";
+import CalendarGrid from "./CalendarGrid";
+import CalendarHeader from "./CalendarHeader";
+import CalendarNavigation from "./CalendarNavigation";
+import CalendarTitle from "./CalendarTitle";
+import CalendarWeekdays from "./CalendarWeekdays";
 import { useCalendar, UseCalendarOptions } from "./hooks/useCalendar";
+import { CalendarContextValue, CalendarProps } from "./types";
 
 const CalendarContext = createContext<CalendarContextValue | null>(null);
 
@@ -22,11 +31,11 @@ const Calendar = forwardRef<HTMLDivElement, CalendarProps & UseCalendarOptions>(
       onDateChange: onValueChange || onDateChange 
     });
 
-    const contextValue: CalendarContextValue = {
-      value: calendar.selectedDate || undefined,
+    const contextValue = useMemo<CalendarContextValue>(() => ({
+      value: calendar.selectedDate ?? undefined,
       onValueChange: calendar.setSelectedDate,
       calendar,
-    };
+    }), [calendar]);
 
     return (
       <CalendarContext.Provider value={contextValue}>
@@ -36,9 +45,8 @@ const Calendar = forwardRef<HTMLDivElement, CalendarProps & UseCalendarOptions>(
             "bg-white overflow-hidden relative rounded-[3px] shadow-[0px_3px_5px_0px_rgba(9,30,66,0.2),0px_0px_1px_0px_rgba(9,30,66,0.31)]",
             className
           )}
-          role="application"
+          role="grid"
           aria-label="Calendar"
-          aria-roledescription="calendar"
           {...props}
         >
           {children}
@@ -50,4 +58,15 @@ const Calendar = forwardRef<HTMLDivElement, CalendarProps & UseCalendarOptions>(
 
 Calendar.displayName = "Calendar";
 
-export default Calendar;
+// Compound Pattern을 위한 타입 확장
+const CalendarWithSubComponents = Calendar as typeof Calendar & {
+  Header: typeof CalendarHeader;
+  Body: typeof CalendarBody;
+  Day: typeof CalendarDay;
+  Navigation: typeof CalendarNavigation;
+  Weekdays: typeof CalendarWeekdays;
+  Title: typeof CalendarTitle;
+  Grid: typeof CalendarGrid;
+};
+
+export default CalendarWithSubComponents;
