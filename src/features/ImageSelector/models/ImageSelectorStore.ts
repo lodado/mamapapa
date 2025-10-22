@@ -1,6 +1,8 @@
 import * as tf from "@tensorflow/tfjs";
 import { create } from "zustand";
 
+import { clearStoredImages, persistImagesToIndexedDB } from "../utils/indexedDb";
+
 export interface FaceCoordinates {
   x: number;
   y: number;
@@ -30,6 +32,7 @@ export interface ComparisonMetaData extends RawImageMetadata {
 export interface ImageSelectorState {
   images: ImageMetadata[];
   setImages: (images: ImageMetadata[]) => void;
+  hydrateImages: (images: ImageMetadata[]) => void;
   addImages: (image: ImageMetadata[]) => void;
   removeImage: (image: ImageMetadata) => void;
   updateImage: (image: ImageMetadata) => void;
@@ -43,20 +46,55 @@ export interface ImageSelectorState {
 export const useImageSelectorStore = create<ImageSelectorState>((set, get) => ({
   images: [],
 
-  setImages: (images: ImageMetadata[]) => set({ images }),
+  setImages: (images: ImageMetadata[]) => {
+    set({ images });
+    void persistImagesToIndexedDB(images);
+  },
 
-  addImages: (newImages: ImageMetadata[]) => set((state) => ({ images: [...state.images, ...newImages] })),
-  removeImage: (image) => set((state) => ({ images: state.images.filter((img) => img.url !== image.url) })),
-  clearImages: () => set({ images: [] }),
+  hydrateImages: (images: ImageMetadata[]) => {
+    set({ images });
+  },
+
+  addImages: (newImages: ImageMetadata[]) =>
+    set((state) => {
+      const updatedImages = [...state.images, ...newImages];
+      void persistImagesToIndexedDB(updatedImages);
+
+      return { images: updatedImages };
+    }),
+  removeImage: (image) =>
+    set((state) => {
+      if (typeof URL !== "undefined" && typeof URL.revokeObjectURL === "function") {
+        URL.revokeObjectURL(image.url);
+      }
+      const updatedImages = state.images.filter((img) => img.id !== image.id);
+      void persistImagesToIndexedDB(updatedImages);
+
+      return { images: updatedImages };
+    }),
+  clearImages: () =>
+    set((state) => {
+      state.images.forEach((img) => {
+        if (typeof URL !== "undefined" && typeof URL.revokeObjectURL === "function") {
+          URL.revokeObjectURL(img.url);
+        }
+      });
+      void clearStoredImages();
+
+      return { images: [] };
+    }),
 
   updateImage: (newImage: ImageMetadata) =>
-    set((state) => ({
-      images: state.images.map((image) => {
+    set((state) => {
+      const updatedImages = state.images.map((image) => {
         if (newImage.id === image.id) return newImage;
 
         return image;
-      }),
-    })),
+      });
+      void persistImagesToIndexedDB(updatedImages);
+
+      return { images: updatedImages };
+    }),
 
   handleUpdatePlayer: (image, player) => {
     set((state) => {
@@ -80,6 +118,8 @@ export const useImageSelectorStore = create<ImageSelectorState>((set, get) => ({
 
       updatedImages[targetIndex] = { ...image, selectedPlayer: player };
 
+      void persistImagesToIndexedDB(updatedImages);
+
       return { images: updatedImages };
     });
   },
@@ -98,6 +138,7 @@ export const useImageSelectorStore = create<ImageSelectorState>((set, get) => ({
 
     // 상태 업데이트
     set({ images: updatedImages });
+    void persistImagesToIndexedDB(updatedImages);
   },
 }));
 
