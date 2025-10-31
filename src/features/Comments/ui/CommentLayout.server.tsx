@@ -1,7 +1,7 @@
 import { dehydrate, HydrationBoundary } from "@tanstack/react-query";
 import React from "react";
 
-import { getQueryClient } from "@/shared";
+import { getServerQueryClient } from "@/shared/index.server";
 
 import { fetchComments } from "../api/fetchComments";
 import { getParsedBoardKey } from "../utils/constant";
@@ -9,7 +9,7 @@ import CommentList from "./CommentList";
 import { CommentsProps } from "./type";
 
 const CommentLayout = async ({ userId, boardId }: CommentsProps) => {
-  const queryClient = getQueryClient();
+  const queryClient = getServerQueryClient()();
   await queryClient.fetchInfiniteQuery({
     queryKey: getParsedBoardKey({ boardId, userId }),
     queryFn: ({ pageParam }) => fetchComments({ boardId, pageParam }),

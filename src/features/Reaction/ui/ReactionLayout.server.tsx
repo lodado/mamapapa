@@ -1,7 +1,7 @@
 import { dehydrate, HydrationBoundary } from "@tanstack/react-query";
 import React from "react";
 
-import { getQueryClient } from "@/shared";
+import { getServerQueryClient } from "@/shared/index.server";
 
 import { fetchReaction } from "../api/fetchReactions";
 import { getParsedReactionKey } from "../utils/constant";
@@ -9,7 +9,7 @@ import ReactionList from "./ReactionList";
 import { ReactionProps } from "./type";
 
 const ReactionLayout = async ({ userId, boardId }: ReactionProps) => {
-  const queryClient = getQueryClient();
+  const queryClient = getServerQueryClient()();
   await queryClient.fetchQuery({
     queryKey: getParsedReactionKey({ boardId, userId }),
     queryFn: ({}) => fetchReaction({ boardId, userId }),
