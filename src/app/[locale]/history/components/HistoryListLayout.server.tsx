@@ -1,14 +1,14 @@
 import { dehydrate, HydrationBoundary } from "@tanstack/react-query";
 import React from "react";
 
-import { getQueryClient } from "@/shared";
+import { getServerQueryClient } from "@/shared/libs/TanstackQuery/queryClient.server";
 
 import { getUserHistoryList } from "../api/userHistoryList";
 import { getParsedHistoryListKey } from "../utils/getParsedHistoryListKey";
 import HistoryList from "./HistoryList";
 
 const HistoryListLayout = async ({ userId }: { userId: string }) => {
-  const queryClient = getQueryClient();
+  const queryClient = getServerQueryClient()();
 
   /*
   굳이 server에서 해야하나? 
