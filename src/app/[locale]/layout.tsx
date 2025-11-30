@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/next"
 import type { Metadata, Viewport } from "next";
 import Head from "next/head";
 import { headers } from "next/headers";
@@ -288,6 +289,7 @@ const RootLayout: React.FunctionComponent<LocaleProps> = ({ children, params: { 
           </RootProvider>
         </NextIntlClientProvider>
         <GA nonce={nonce} />
+        <Analytics />
       </body>
     </html>
   );
