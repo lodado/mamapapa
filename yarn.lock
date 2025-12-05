@@ -5385,6 +5385,11 @@
   dependencies:
     crypto-js "^4.2.0"
 
+"@vercel/analytics@^1.5.0":
+  version "1.6.1"
+  resolved "https://registry.yarnpkg.com/@vercel/analytics/-/analytics-1.6.1.tgz#b4e16daf445cf6cd365a91e43d86e9e5b3428ddc"
+  integrity sha512-oH9He/bEM+6oKlv3chWuOOcp8Y6fo6/PSro8hEkgCW3pu9/OiCXiUpRUogDh3Fs3LH2sosDrx8CxeOLBEE+afg==
+
 "@vitejs/plugin-react@^4.3.1":
   version "4.3.1"
   resolved "https://registry.yarnpkg.com/@vitejs/plugin-react/-/plugin-react-4.3.1.tgz#d0be6594051ded8957df555ff07a991fb618b48e"
@@ -6224,6 +6229,13 @@ browser-assert@^1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/browser-assert/-/browser-assert-1.2.1.tgz#9aaa5a2a8c74685c2ae05bfe46efd606f068c200"
   integrity sha512-nfulgvOR6S4gt9UKCeGJOuSGBPGiFT6oQ/2UBnvTY/5aQ1PnksW72fhZkM30DzoRRv2WpwZf1vHHEr3mtuXIWQ==
+
+browser-image-compression@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/browser-image-compression/-/browser-image-compression-2.0.2.tgz#4d5ef8882e9e471d6d923715ceb9034499d14eaa"
+  integrity sha512-pBLlQyUf6yB8SmmngrcOw3EoS4RpQ1BcylI3T9Yqn7+4nrQTXJD4sJDe5ODnJdrvNMaio5OicFo75rDyJD2Ucw==
+  dependencies:
+    uzip "0.20201231.0"
 
 browserify-aes@^1.0.4, browserify-aes@^1.2.0:
   version "1.2.0"
@@ -13641,6 +13653,11 @@ uuid@^9.0.0:
   version "9.0.1"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-9.0.1.tgz#e188d4c8853cc722220392c424cd637f32293f30"
   integrity sha512-b+1eJOlsR9K8HJpow9Ok3fiWOWSIcIzXodvv0rQjVoOVNpWMpxf1wZNpt4y9h10odCNrqnYp1OBzRktckBe3sA==
+
+uzip@0.20201231.0:
+  version "0.20201231.0"
+  resolved "https://registry.yarnpkg.com/uzip/-/uzip-0.20201231.0.tgz#9e64b065b9a8ebf26eb7583fe8e77e1d9a15ed14"
+  integrity sha512-OZeJfZP+R0z9D6TmBgLq2LHzSSptGMGDGigGiEe0pr8UBe/7fdflgHlHBNDASTXB5jnFuxHpNaJywSg8YFeGng==
 
 vary@~1.1.2:
   version "1.1.2"

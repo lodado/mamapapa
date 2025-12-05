@@ -5,6 +5,7 @@ import React, { useRef } from "react";
 
 import CrossHair from "/public/CrossHair.svg";
 import { FaceCoordinates, ImageMetadata, useImageSelectorStore } from "@/features/ImageSelector/models";
+import { compressImage } from "@/features/ImageSelector/utils/compressImage";
 import { Button } from "@/shared/ui";
 import { useLoadingStore } from "@/shared/ui/LoadingSpinner";
 import { useToastStore } from "@/shared/ui/Toast/stores";
@@ -23,12 +24,15 @@ const useImageSelection = () => {
 
     try {
       for (const file of files) {
-        const faceCoordinates = await detectFaces(file);
+        // 이미지 압축 (1MB 이상일 경우)
+        const compressedFile = await compressImage(file);
+
+        const faceCoordinates = await detectFaces(compressedFile);
 
         newImages.push({
-          id: `${file.name}-${Date.now()}`,
-          url: URL.createObjectURL(file),
-          file,
+          id: `${compressedFile.name}-${Date.now()}`,
+          url: URL.createObjectURL(compressedFile),
+          file: compressedFile,
           faceCoordinates: faceCoordinates ?? {
             width: 0,
             height: 0,

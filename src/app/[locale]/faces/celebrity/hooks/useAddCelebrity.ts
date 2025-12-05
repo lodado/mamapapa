@@ -4,6 +4,7 @@ import { useCallback } from "react";
 
 import { usePlayerStore } from "@/entities/Player";
 import { FaceCoordinates, ImageMetadata, useImageSelectorStore } from "@/features/ImageSelector/models";
+import { compressImage } from "@/features/ImageSelector/utils/compressImage";
 import { useLoadingStore } from "@/shared/ui/LoadingSpinner";
 import { useToastStore } from "@/shared/ui/Toast/stores";
 
@@ -19,8 +20,10 @@ const fetchImageAsFile = async (imageUrl: string, filename: string) => {
 
   const blob = await response.blob();
   const extension = blob.type.split("/").pop() ?? "jpg";
+  const file = new File([blob], `${filename}.${extension}`, { type: blob.type });
 
-  return new File([blob], `${filename}.${extension}`, { type: blob.type });
+  // 이미지 압축 (1MB 이상일 경우)
+  return compressImage(file);
 };
 
 const createImageMetadata = (file: File, faceCoordinates?: FaceCoordinates): ImageMetadata => ({
