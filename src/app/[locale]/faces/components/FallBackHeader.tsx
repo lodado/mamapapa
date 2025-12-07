@@ -4,7 +4,7 @@ import { ChevronLeft } from "lucide-react";
 import { useTranslations } from "next-intl";
 import React from "react";
 
-import { useTutorialTracking } from "@/entities/Analytics";
+import { ClickEventLogger } from "@/entities/Analytics";
 import { LocaleLink } from "@/entities/Router/index.server";
 import { useTutorialStore } from "@/entities/Tutorial";
 import { Header } from "@/features";
@@ -13,12 +13,6 @@ import { Button } from "@/shared/ui";
 const FallBackHeader = ({ fallbackUrl }: { fallbackUrl: string }) => {
   const t = useTranslations("FACES");
   const { setRuns } = useTutorialStore();
-  const { trackTutorialStart } = useTutorialTracking({ page: "faces" });
-
-  const handleTutorialStart = () => {
-    trackTutorialStart();
-    setRuns(true);
-  };
 
   return (
     <>
@@ -28,13 +22,15 @@ const FallBackHeader = ({ fallbackUrl }: { fallbackUrl: string }) => {
           {t("BUTTON-BACK")}
         </LocaleLink>
 
-        <Button
-          onClick={handleTutorialStart}
-          variant="link"
-          className="py-[11px] px-4 text-text-primary flex flex-row gap-1"
-        >
-          {t("BUTTON-HELP")}
-        </Button>
+        <ClickEventLogger path={["faces", "header", "tutorial_start"]}>
+          <Button
+            onClick={() => setRuns(true)}
+            variant="link"
+            className="py-[11px] px-4 text-text-primary flex flex-row gap-1"
+          >
+            {t("BUTTON-HELP")}
+          </Button>
+        </ClickEventLogger>
       </Header>
       <div className="w-full h-[4rem] flex-shrink-0" role="none presentation" />
     </>
