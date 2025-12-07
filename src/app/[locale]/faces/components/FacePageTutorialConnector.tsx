@@ -1,9 +1,10 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import React, { useMemo } from "react";
+import React, { useCallback, useMemo } from "react";
 
-import { TutorialConnector, TutorialStep } from "@/entities/Tutorial";
+import { useTutorialTracking } from "@/entities/Analytics";
+import { TutorialConnector, TutorialEndStatus, TutorialStep } from "@/entities/Tutorial";
 import { ADDITIONAL_OPTION_DROPDOWN_ID, PLAYER_SELECTOR_ID } from "@/features";
 import { useImageSelectorStore } from "@/features/ImageSelector/models";
 
@@ -12,6 +13,7 @@ import { ADD_PICTURE_BUTTON_ID, EXAMPLE_IMAGE_DATA_ID, START_COMPARE_LINK_ID } f
 const FacePageTutorialConnector = () => {
   const t = useTranslations("FACES");
   const { addImages, removeImage } = useImageSelectorStore();
+  const { trackTutorialEnd } = useTutorialTracking({ page: "faces" });
 
   const EXAMPLE_IMAGE = useMemo(() => {
     return {
@@ -88,7 +90,14 @@ const FacePageTutorialConnector = () => {
     [t, addImages, removeImage, EXAMPLE_IMAGE]
   );
 
-  return <TutorialConnector steps={steps} />;
+  const handleTutorialEnd = useCallback(
+    (status: TutorialEndStatus) => {
+      trackTutorialEnd(status);
+    },
+    [trackTutorialEnd]
+  );
+
+  return <TutorialConnector steps={steps} onTutorialEnd={handleTutorialEnd} />;
 };
 
 export default FacePageTutorialConnector;

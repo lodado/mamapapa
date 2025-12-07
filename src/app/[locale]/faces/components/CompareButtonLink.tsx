@@ -3,6 +3,7 @@
 import { useTranslations } from "next-intl";
 import React from "react";
 
+import { useNavigationTracking } from "@/entities/Analytics";
 import { ButtonLink } from "@/entities/Router";
 import { PAGE_ROUTE } from "@/entities/Router/configs/route";
 import { useFaceModelStore } from "@/features/AiModel/model";
@@ -16,6 +17,7 @@ const CompareButtonLink = () => {
   const { addToast } = useToastStore();
   const { images } = useImageSelectorStore();
   const { faceRecognitionModel } = useFaceModelStore();
+  const { trackNextPhaseClick } = useNavigationTracking({ from: "faces" });
 
   const modelNotFound = !faceRecognitionModel;
   const isUserPlayerNotSelected = images.every((image) => image.selectedPlayer !== t("PLAYERS.Myself"));
@@ -67,6 +69,9 @@ const CompareButtonLink = () => {
       e.preventDefault();
       return;
     }
+
+    // 모든 validation 통과 시 이벤트 추적
+    trackNextPhaseClick();
   };
 
   return (

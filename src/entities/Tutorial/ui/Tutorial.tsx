@@ -10,8 +10,13 @@ import { useIsClient } from "@/shared/hooks";
 
 import { TutorialStep, useTutorialStore } from "../stores";
 
+/** 튜토리얼 종료 상태 */
+export type TutorialEndStatus = "finished" | "skipped";
+
 interface ReactTutorialProps extends Omit<ComponentProps<typeof Joyride>, "run"> {
   steps: TutorialStep[];
+  /** 튜토리얼 종료 시 호출되는 콜백 */
+  onTutorialEnd?: (status: TutorialEndStatus) => void;
 }
 
 interface JoyrideCallbackData extends CallBackProps {}
@@ -27,12 +32,12 @@ const defaultOptions = {
   height: "max-content",
 };
 
-const Tutorial = ({ steps, ...rest }: ReactTutorialProps) => {
+const Tutorial = ({ steps, onTutorialEnd, ...rest }: ReactTutorialProps) => {
   const isClient = useIsClient();
   const { run, setRuns } = useTutorialStore();
 
   const handleJoyrideCallback = (data: JoyrideCallbackData) => {
-    const { lifecycle, status, index, type } = data;
+    const { status, index, type } = data;
     const finishedStatuses = [STATUS.FINISHED, STATUS.SKIPPED];
     const step = steps[index];
 
@@ -57,6 +62,8 @@ const Tutorial = ({ steps, ...rest }: ReactTutorialProps) => {
 
     // @ts-ignore
     if (finishedStatuses.includes(status)) {
+      const endStatus: TutorialEndStatus = status === STATUS.FINISHED ? "finished" : "skipped";
+      onTutorialEnd?.(endStatus);
       setRuns(false);
     }
   };
