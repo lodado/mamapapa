@@ -1,47 +1,11 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 
 import { ButtonLink } from "@/entities/Router";
 import { PAGE_ROUTE } from "@/entities/Router/configs/route";
 
-const STORAGE_KEY = "offline-demo-outbox";
-
-type OutboxItem = {
-  id: string;
-  content: string;
-  createdAt: number;
-  status: "queued" | "sending" | "sent" | "failed";
-  error?: string;
-};
-
-const safeParseQueue = (): OutboxItem[] => {
-  if (typeof window === "undefined") {
-    return [];
-  }
-
-  const raw = window.localStorage.getItem(STORAGE_KEY);
-
-  if (!raw) {
-    return [];
-  }
-
-  try {
-    const parsed = JSON.parse(raw) as OutboxItem[];
-    return Array.isArray(parsed) ? parsed : [];
-  } catch (error) {
-    console.error("Failed to parse outbox", error);
-    return [];
-  }
-};
-
-const persistQueue = (queue: OutboxItem[]) => {
-  if (typeof window === "undefined") {
-    return;
-  }
-
-  window.localStorage.setItem(STORAGE_KEY, JSON.stringify(queue));
-};
+import { getAllOutboxItems, OutboxItem, putOutboxItem } from "./outboxStorage";
 
 const createItem = (content: string): OutboxItem => ({
   id: crypto.randomUUID?.() ?? `outbox-${Date.now()}`,
@@ -50,18 +14,88 @@ const createItem = (content: string): OutboxItem => ({
   status: "queued",
 });
 
+type ServiceWorkerMessage =
+  | { type: "outbox-queue"; queue: OutboxItem[] }
+  | { type: "sync-start" }
+  | { type: "sync-complete" };
+
 const OfflineDemo = () => {
   const [message, setMessage] = useState("");
   const [queue, setQueue] = useState<OutboxItem[]>([]);
   const [isOnline, setIsOnline] = useState(true);
   const [isFlushing, setIsFlushing] = useState(false);
+  const [serviceWorkerReady, setServiceWorkerReady] = useState(false);
+  const swRegistrationRef = useRef<ServiceWorkerRegistration | null>(null);
+
+  const loadQueue = async () => {
+    if (typeof window === "undefined") return;
+    const items = await getAllOutboxItems();
+    setQueue(items);
+  };
+
+  const sendToServiceWorker = (payload: Record<string, unknown>) => {
+    const activeWorker = swRegistrationRef.current?.active ?? navigator.serviceWorker.controller;
+    activeWorker?.postMessage(payload);
+  };
 
   useEffect(() => {
     setIsOnline(navigator.onLine);
-    setQueue(safeParseQueue());
+    void loadQueue();
 
-    const handleOnline = () => setIsOnline(true);
-    const handleOffline = () => setIsOnline(false);
+    if ("serviceWorker" in navigator) {
+      const handleMessage = (event: MessageEvent<ServiceWorkerMessage>) => {
+        if (!event.data) return;
+
+        if (event.data.type === "outbox-queue") {
+          setQueue(event.data.queue);
+          return;
+        }
+
+        if (event.data.type === "sync-start") {
+          setIsFlushing(true);
+          return;
+        }
+
+        if (event.data.type === "sync-complete") {
+          setIsFlushing(false);
+          void loadQueue();
+        }
+      };
+
+      navigator.serviceWorker.addEventListener("message", handleMessage);
+
+      void (async () => {
+        try {
+          const registration = await navigator.serviceWorker.register("/offline-demo-sw.js");
+          const ready = await navigator.serviceWorker.ready;
+          swRegistrationRef.current = ready;
+          setServiceWorkerReady(true);
+          const worker = ready.active ?? registration.active;
+          worker?.postMessage({ type: "request-queue" });
+          worker?.postMessage({ type: "network-status", online: navigator.onLine });
+        } catch (error) {
+          console.error("Service worker registration failed", error);
+        }
+      })();
+
+      return () => {
+        navigator.serviceWorker.removeEventListener("message", handleMessage);
+      };
+    }
+
+    return undefined;
+  }, []);
+
+  useEffect(() => {
+    const handleOnline = () => {
+      setIsOnline(true);
+      sendToServiceWorker({ type: "network-status", online: true });
+      sendToServiceWorker({ type: "manual-sync" });
+    };
+    const handleOffline = () => {
+      setIsOnline(false);
+      sendToServiceWorker({ type: "network-status", online: false });
+    };
 
     window.addEventListener("online", handleOnline);
     window.addEventListener("offline", handleOffline);
@@ -72,82 +106,32 @@ const OfflineDemo = () => {
     };
   }, []);
 
-  useEffect(() => {
-    persistQueue(queue);
-  }, [queue]);
+  const hasPending = useMemo(
+    () => queue.some((item) => item.status === "queued" || item.status === "failed"),
+    [queue],
+  );
 
-  useEffect(() => {
-    if (isOnline && !isFlushing && queue.some((item) => item.status === "queued" || item.status === "failed")) {
-      void flushQueue();
-    }
-  }, [isOnline, isFlushing, queue]);
-
-  const hasPending = useMemo(() => queue.some((item) => item.status === "queued" || item.status === "failed"), [queue]);
-
-  const addMessage = () => {
+  const addMessage = async () => {
     const trimmed = message.trim();
 
     if (!trimmed) {
       return;
     }
 
-    setQueue((prev) => [...prev, createItem(trimmed)]);
+    const item = createItem(trimmed);
+    await putOutboxItem(item);
     setMessage("");
-  };
+    await loadQueue();
 
-  const updateStatus = (id: string, status: OutboxItem["status"], error?: string) => {
-    setQueue((prev) =>
-      prev.map((item) =>
-        item.id === id
-          ? {
-              ...item,
-              status,
-              error,
-            }
-          : item,
-      ),
-    );
-  };
-
-  const flushQueue = async () => {
-    if (isFlushing) {
-      return;
+    if (isOnline && serviceWorkerReady) {
+      sendToServiceWorker({ type: "manual-sync" });
     }
+  };
 
+  const requestFlush = () => {
+    if (!hasPending) return;
     setIsFlushing(true);
-
-    for (const item of queue) {
-      if (item.status === "sent") {
-        continue;
-      }
-
-      updateStatus(item.id, "sending");
-
-      try {
-        const response = await fetch("/api/offline-demo", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            id: item.id,
-            message: item.content,
-            createdAt: item.createdAt,
-          }),
-        });
-
-        if (!response.ok) {
-          throw new Error(`API returned ${response.status}`);
-        }
-
-        updateStatus(item.id, "sent");
-      } catch (error) {
-        console.error("Failed to flush", error);
-        updateStatus(item.id, "failed", error instanceof Error ? error.message : "Unknown error");
-      }
-    }
-
-    setIsFlushing(false);
+    sendToServiceWorker({ type: "manual-sync" });
   };
 
   return (
@@ -165,8 +149,8 @@ const OfflineDemo = () => {
         </div>
 
         <p className="body-2 text-text-02">
-          입력한 메시지는 Outbox (로컬 영속 큐)에 저장됩니다. 오프라인이어도 큐에 기록되며, 온라인 상태가 되면 자동으로 Next API
-          route로 전송되어 서버 콘솔에 기록됩니다.
+          입력한 메시지는 IndexedDB 기반 Outbox (로컬 영속 큐)에 저장됩니다. 오프라인이어도 큐에 기록되며, 서비스 워커가 Background Sync
+          로 온라인 복구 시 큐를 Next API route로 전송하여 서버 콘솔에 기록합니다.
         </p>
       </div>
 
@@ -184,15 +168,15 @@ const OfflineDemo = () => {
         <div className="flex items-center justify-end gap-3">
           <button
             type="button"
-            onClick={addMessage}
+            onClick={() => void addMessage()}
             className="rounded-lg bg-text-01 px-4 py-2 text-background-01 transition hover:opacity-80 disabled:cursor-not-allowed disabled:opacity-40"
-            disabled={!message.trim()}
+            disabled={!message.trim() || !serviceWorkerReady}
           >
             Outbox에 추가
           </button>
           <button
             type="button"
-            onClick={() => void flushQueue()}
+            onClick={requestFlush}
             className="rounded-lg border border-text-01 px-4 py-2 text-text-01 transition hover:bg-text-01 hover:text-background-01 disabled:cursor-not-allowed disabled:opacity-40"
             disabled={!hasPending || isFlushing}
           >
@@ -204,7 +188,7 @@ const OfflineDemo = () => {
       <div className="flex w-full max-w-3xl flex-col gap-3 rounded-xl border border-border-02 bg-background-op-02 p-6 shadow-md">
         <div className="flex items-center justify-between">
           <p className="body-1 font-semibold">Outbox</p>
-          <p className="caption-1 text-text-03">자동 저장 및 재전송</p>
+          <p className="caption-1 text-text-03">자동 저장 및 Background Sync</p>
         </div>
 
         {queue.length === 0 ? (
