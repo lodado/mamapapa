@@ -77,10 +77,10 @@ const OfflineDemo = () => {
   }, [queue]);
 
   useEffect(() => {
-    if (isOnline && queue.some((item) => item.status === "queued" || item.status === "failed")) {
+    if (isOnline && !isFlushing && queue.some((item) => item.status === "queued" || item.status === "failed")) {
       void flushQueue();
     }
-  }, [isOnline]);
+  }, [isOnline, isFlushing, queue]);
 
   const hasPending = useMemo(() => queue.some((item) => item.status === "queued" || item.status === "failed"), [queue]);
 
