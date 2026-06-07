@@ -24,13 +24,13 @@ export function CookieConsentBanner({ onAcceptAll, onRejectAll, onCustomize }: C
       aria-live="polite"
     >
       <div className="max-w-4xl mx-auto">
-        <div className="flex flex-col sm:flex-row items-center gap-4">
-          <div className="w-full flex-1 text-center sm:w-auto sm:text-left">
+        <div className="flex flex-col items-center gap-4 text-center">
+          <div>
             <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">{t("banner.title")}</h3>
-            <p className="text-sm text-gray-600 dark:text-gray-300 mb-4">{t("banner.description")}</p>
+            <p className="text-sm text-gray-600 dark:text-gray-300">{t("banner.description")}</p>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-2 w-full sm:w-auto">
+          <div className="flex flex-col sm:flex-row gap-2 justify-center w-full sm:w-auto">
             <Button
               variant="primaryLine"
               size="custom"
