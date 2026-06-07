@@ -18,47 +18,45 @@ export function CookieConsentBanner({ onAcceptAll, onRejectAll, onCustomize }: C
 
   return (
     <div
-      className="fixed bottom-0 left-0 right-0 z-50 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 p-4 shadow-lg"
+      className="fixed bottom-0 left-1/2 -translate-x-1/2 z-50 w-full max-w-[29rem] md:w-[768px] bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 px-6 py-4 shadow-lg"
       role="banner"
       aria-label={t("banner.title")}
       aria-live="polite"
     >
-      <div className="max-w-4xl mx-auto">
-        <div className="flex flex-col items-center gap-4 text-center">
-          <div>
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">{t("banner.title")}</h3>
-            <p className="text-sm text-gray-600 dark:text-gray-300">{t("banner.description")}</p>
-          </div>
+      <div className="flex flex-col items-center gap-4 w-full">
+        <div className="w-full">
+          <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2 text-center">{t("banner.title")}</h3>
+          <p className="text-sm text-gray-600 dark:text-gray-300 text-center">{t("banner.description")}</p>
+        </div>
 
-          <div className="flex flex-col sm:flex-row gap-2 justify-center w-full sm:w-auto">
-            <Button
-              variant="primaryLine"
-              size="custom"
-              onClick={onRejectAll}
-              className="w-full sm:w-auto"
-              aria-label={t("banner.rejectAll")}
-            >
-              {t("banner.rejectAll")}
-            </Button>
-            <Button
-              variant="primaryLine"
-              size="custom"
-              onClick={onCustomize}
-              className="w-full sm:w-auto"
-              aria-label={t("banner.customize")}
-            >
-              {t("banner.customize")}
-            </Button>
-            <Button
-              variant="primarySolid"
-              size="custom"
-              onClick={onAcceptAll}
-              className="w-full sm:w-auto"
-              aria-label={t("banner.acceptAll")}
-            >
-              {t("banner.acceptAll")}
-            </Button>
-          </div>
+        <div className="flex flex-col sm:flex-row gap-2 justify-center items-center w-full">
+          <Button
+            variant="primaryLine"
+            size="custom"
+            onClick={onRejectAll}
+            className="w-full sm:w-auto"
+            aria-label={t("banner.rejectAll")}
+          >
+            {t("banner.rejectAll")}
+          </Button>
+          <Button
+            variant="primaryLine"
+            size="custom"
+            onClick={onCustomize}
+            className="w-full sm:w-auto"
+            aria-label={t("banner.customize")}
+          >
+            {t("banner.customize")}
+          </Button>
+          <Button
+            variant="primarySolid"
+            size="custom"
+            onClick={onAcceptAll}
+            className="w-full sm:w-auto"
+            aria-label={t("banner.acceptAll")}
+          >
+            {t("banner.acceptAll")}
+          </Button>
         </div>
       </div>
     </div>
