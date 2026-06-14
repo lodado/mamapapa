@@ -1,7 +1,6 @@
 "use client";
 
 import { ImagePlus, Loader2, Sparkles } from "lucide-react";
-import { motion } from "motion/react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import React, { useEffect, useMemo, useRef, useState } from "react";
@@ -21,71 +20,7 @@ const EMOTION_STYLE = {
   surprised: { icon: "✦", color: "#FF9F43", glow: "rgba(255,159,67,0.34)" },
 } as const;
 
-const RING_RADIUS = 58;
-const RING_CIRCUMFERENCE = 2 * Math.PI * RING_RADIUS;
-
 type EmotionStyleLabel = keyof typeof EMOTION_STYLE;
-type EmotionTranslator = ReturnType<typeof useTranslations<"EMOTIONPAGE">>;
-
-const getLocalizedErrorMessage = (message: string, t: EmotionTranslator) => {
-  if (message === "EMOTION_MODEL_NOT_READY") return t("errors.modelNotReady");
-  if (message === "EMOTION_FACE_NOT_FOUND") return t("errors.faceNotFound");
-  if (message === "EMOTION_IMAGE_LOAD_FAILED") return t("errors.imageLoadFailed");
-  if (message === "EMOTION_MODEL_LOAD_FAILED") return t("errors.modelLoadFailed");
-  return t("errors.predictionFailed");
-};
-
-const EmotionScoreRing = ({ label, score }: { label: EmotionStyleLabel; score: number }) => {
-  const t = useTranslations("EMOTIONPAGE");
-  const emotion = EMOTION_STYLE[label];
-  const dashOffset = RING_CIRCUMFERENCE - (RING_CIRCUMFERENCE * score) / 100;
-
-  return (
-    <div className="relative mx-auto mt-2 flex h-[190px] w-[190px] items-center justify-center">
-      <Motion
-        componentType="div"
-        className="absolute h-[132px] w-[132px] rounded-full blur-2xl"
-        style={{ backgroundColor: emotion.glow }}
-        initial={{ opacity: 0, scale: 0.7 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.55, ease: "easeOut" }}
-      >
-        {null}
-      </Motion>
-
-      <svg className="absolute inset-0 -rotate-90 drop-shadow-sm" viewBox="0 0 190 190" aria-hidden="true">
-        <circle cx="95" cy="95" r={RING_RADIUS} fill="none" stroke="rgba(139,149,161,0.14)" strokeWidth="15" />
-        <motion.circle
-          cx="95"
-          cy="95"
-          r={RING_RADIUS}
-          fill="none"
-          stroke={emotion.color}
-          strokeWidth="15"
-          strokeLinecap="round"
-          strokeDasharray={RING_CIRCUMFERENCE}
-          initial={{ strokeDashoffset: RING_CIRCUMFERENCE }}
-          animate={{ strokeDashoffset: dashOffset }}
-          transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-        />
-      </svg>
-
-      <Motion
-        componentType="div"
-        className="relative flex h-[126px] w-[126px] flex-col items-center justify-center rounded-full border border-white/40 bg-background-01/90 text-center shadow-[0_18px_50px_rgba(0,0,0,0.10)] backdrop-blur"
-        initial={{ opacity: 0, y: 10, scale: 0.92 }}
-        animate={{ opacity: 1, y: 0, scale: 1 }}
-        transition={{ duration: 0.38, delay: 0.14 }}
-      >
-        <span className="text-[2.25rem] leading-none" style={{ color: emotion.color }}>
-          {emotion.icon}
-        </span>
-        <span className="body-2 mt-1 text-text-03">{t(`emotions.${label}`)}</span>
-        <span className="display-1 text-text-01">{score}%</span>
-      </Motion>
-    </div>
-  );
-};
 
 const EmotionScoreBar = ({ label, score, index }: { label: EmotionStyleLabel; score: number; index: number }) => {
   const t = useTranslations("EMOTIONPAGE");
@@ -130,15 +65,49 @@ const EmotionScoreBar = ({ label, score, index }: { label: EmotionStyleLabel; sc
   );
 };
 
+const AnalyzingProgress = () => {
+  const t = useTranslations("EMOTIONPAGE");
+
+  return (
+    <Motion
+      componentType="div"
+      className="w-full max-w-[29rem] rounded-2xl border border-line-01 bg-background-01 p-4 shadow-sm"
+      initial={{ opacity: 0, y: 10 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.24 }}
+    >
+      <div className="mb-3 flex items-center gap-2 body-2 text-text-02">
+        <Loader2 className="animate-spin text-primary-01" size={18} />
+        {t("analyzingButton")}
+      </div>
+      <div className="h-2 overflow-hidden rounded-full bg-background-02">
+        <Motion
+          componentType="div"
+          className="h-full w-1/3 rounded-full bg-primary-01"
+          initial={{ x: "-120%" }}
+          animate={{ x: "320%" }}
+          transition={{ duration: 1.05, repeat: Infinity, ease: "easeInOut" }}
+        >
+          {null}
+        </Motion>
+      </div>
+    </Motion>
+  );
+};
+
 const EmotionAnalyzer = () => {
   const t = useTranslations("EMOTIONPAGE");
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const lastAnalyzedFileRef = useRef<File | null>(null);
   const [preview, setPreview] = useState<string | null>(null);
   const [file, setFile] = useState<File | null>(null);
   const [result, setResult] = useState<EmotionPredictionResult | null>(null);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [isPredicting, setPredicting] = useState(false);
   const { faceApi, isLoading, isError, progress, loadModelWithProgress, predictEmotion } = useEmotionModelStore();
+
+  const modelReady = !!faceApi && !isLoading;
+  const dominantScore = useMemo(() => result?.scores.find((score) => score.label === result.dominantEmotion), [result]);
 
   useEffect(() => {
     loadModelWithProgress();
@@ -151,39 +120,60 @@ const EmotionAnalyzer = () => {
     [preview]
   );
 
-  const dominantScore = useMemo(() => result?.scores.find((score) => score.label === result.dominantEmotion), [result]);
-  const modelReady = !!faceApi && !isLoading;
+  useEffect(() => {
+    if (!file || !modelReady || isPredicting || lastAnalyzedFileRef.current === file) return;
+
+    let isCancelled = false;
+
+    const runPrediction = async () => {
+      try {
+        lastAnalyzedFileRef.current = file;
+        setPredicting(true);
+        setErrorMessage(null);
+        setResult(null);
+        const prediction = await predictEmotion(file);
+        if (!isCancelled) setResult(prediction);
+      } catch (error) {
+        if (!isCancelled) {
+          if (error instanceof Error) {
+            if (error.message === "EMOTION_MODEL_NOT_READY") setErrorMessage(t("errors.modelNotReady"));
+            else if (error.message === "EMOTION_FACE_NOT_FOUND") setErrorMessage(t("errors.faceNotFound"));
+            else if (error.message === "EMOTION_IMAGE_LOAD_FAILED") setErrorMessage(t("errors.imageLoadFailed"));
+            else if (error.message === "EMOTION_MODEL_LOAD_FAILED") setErrorMessage(t("errors.modelLoadFailed"));
+            else setErrorMessage(t("errors.predictionFailed"));
+          } else {
+            setErrorMessage(t("errors.predictionFailed"));
+          }
+        }
+      } finally {
+        if (!isCancelled) setPredicting(false);
+      }
+    };
+
+    runPrediction();
+
+    return () => {
+      isCancelled = true;
+    };
+  }, [file, isPredicting, modelReady, predictEmotion, t]);
 
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const selectedFile = event.target.files?.[0];
     if (!selectedFile) return;
 
     if (preview) URL.revokeObjectURL(preview);
+    lastAnalyzedFileRef.current = null;
     setPreview(URL.createObjectURL(selectedFile));
     setFile(selectedFile);
     setResult(null);
     setErrorMessage(null);
+    event.target.value = "";
   };
 
-  const handleAnalyze = async () => {
-    if (!file) {
-      setErrorMessage(t("errors.choosePhotoFirst"));
-      return;
-    }
-
-    try {
-      setPredicting(true);
-      setErrorMessage(null);
-      setResult(await predictEmotion(file));
-    } catch (error) {
-      setErrorMessage(error instanceof Error ? getLocalizedErrorMessage(error.message, t) : t("errors.predictionFailed"));
-    } finally {
-      setPredicting(false);
-    }
-  };
+  const dominantEmotionStyle = result ? EMOTION_STYLE[result.dominantEmotion] : null;
 
   return (
-    <section className="relative flex w-full flex-col items-center gap-5 px-4 pb-[180px] pt-6">
+    <section className="relative flex w-full flex-col items-center gap-5 px-4 pb-[140px] pt-6">
       <Motion
         componentType="div"
         className="pointer-events-none absolute left-6 top-0 h-28 w-28 rounded-full bg-primary-01/15 blur-3xl"
@@ -208,10 +198,24 @@ const EmotionAnalyzer = () => {
         >
           {preview ? (
             <>
-              <Image src={preview} alt={t("previewAlt")} fill className="object-cover transition-transform duration-700 group-hover:scale-[1.03]" sizes="(max-width: 768px) 100vw, 29rem" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-black/5 to-transparent" />
+              <Image
+                src={preview}
+                alt={t("previewAlt")}
+                fill
+                className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                sizes="(max-width: 768px) 100vw, 29rem"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/5 to-transparent" />
+              {isPredicting && (
+                <div className="absolute inset-0 flex items-center justify-center bg-black/20 backdrop-blur-[2px]">
+                  <div className="flex items-center gap-2 rounded-full bg-white/90 px-4 py-2 text-text-01 shadow-lg">
+                    <Loader2 className="animate-spin text-primary-01" size={18} />
+                    <span className="body-2">{t("analyzingButton")}</span>
+                  </div>
+                </div>
+              )}
               <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between rounded-2xl border border-white/25 bg-black/30 px-4 py-3 text-white backdrop-blur-md">
-                <span className="body-2 line-clamp-1">{file?.name}</span>
+                <span className="body-2 truncate">{file?.name}</span>
                 <ImagePlus size={20} />
               </div>
             </>
@@ -247,22 +251,18 @@ const EmotionAnalyzer = () => {
             <span>{progress}%</span>
           </div>
           <div className="h-2 overflow-hidden rounded-full bg-background-02">
-            <Motion
-              componentType="div"
-              className="h-full rounded-full bg-primary-01"
-              initial={{ width: 0 }}
-              animate={{ width: `${progress}%` }}
-            >
+            <Motion componentType="div" className="h-full rounded-full bg-primary-01" initial={{ width: 0 }} animate={{ width: `${progress}%` }}>
               {null}
             </Motion>
           </div>
         </div>
       )}
 
+      {isPredicting && <AnalyzingProgress />}
       {isError && <p className="body-2 text-error-01">{t("errors.modelLoadFailed")}</p>}
       {errorMessage && <p className="body-2 max-w-[29rem] rounded-2xl bg-error-01/10 px-4 py-3 text-center text-error-01">{errorMessage}</p>}
 
-      {result && dominantScore && (
+      {result && dominantScore && dominantEmotionStyle && (
         <Motion
           componentType="div"
           className="w-full max-w-[29rem] overflow-hidden rounded-[2rem] border border-white/50 bg-background-01 p-5 shadow-[0_24px_70px_rgba(0,0,0,0.10)]"
@@ -270,14 +270,25 @@ const EmotionAnalyzer = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4 }}
         >
-          <div className="flex items-center justify-between">
-            <p className="body-2 text-text-03">{t("dominantEmotion")}</p>
-            <span className="rounded-full bg-primary-01/10 px-3 py-1 caption-1 text-primary-01">AI</span>
+          <div className="mb-5 flex items-center justify-between">
+            <div>
+              <p className="body-2 text-text-03">{t("dominantEmotion")}</p>
+              <div className="mt-1 flex items-end gap-2">
+                <span className="display-1 text-text-01">{t(`emotions.${result.dominantEmotion}`)}</span>
+                <span className="headline" style={{ color: dominantEmotionStyle.color }}>
+                  {dominantScore.score}%
+                </span>
+              </div>
+            </div>
+            <span
+              className="flex h-12 w-12 items-center justify-center rounded-2xl text-[1.35rem] font-bold"
+              style={{ backgroundColor: `${dominantEmotionStyle.color}24`, color: dominantEmotionStyle.color }}
+            >
+              {dominantEmotionStyle.icon}
+            </span>
           </div>
 
-          <EmotionScoreRing label={result.dominantEmotion} score={dominantScore.score} />
-
-          <div className="mt-3 flex flex-col gap-2.5">
+          <div className="flex flex-col gap-2.5">
             {result.scores.map((score, index) => (
               <EmotionScoreBar key={score.label} label={score.label} score={score.score} index={index} />
             ))}
@@ -291,19 +302,10 @@ const EmotionAnalyzer = () => {
         `}
       >
         <Motion componentType="div" whileTap={{ scale: 0.985 }}>
-          <Button className="w-full" variant="primaryLine" onClick={() => fileInputRef.current?.click()}>
+          <Button className="w-full" variant="primarySolid" onClick={() => fileInputRef.current?.click()}>
             <span className="flex items-center justify-center gap-2">
               <ImagePlus size={19} />
               {t("choosePhoto")}
-            </span>
-          </Button>
-        </Motion>
-
-        <Motion componentType="div" whileTap={modelReady && !isPredicting ? { scale: 0.985 } : undefined}>
-          <Button className="w-full" variant="primarySolid" disabled={!modelReady || isPredicting} onClick={handleAnalyze}>
-            <span className="flex items-center justify-center gap-2">
-              {isPredicting ? <Loader2 className="animate-spin" size={19} /> : <Sparkles size={19} />}
-              {isPredicting ? t("analyzingButton") : t("analyzeButton")}
             </span>
           </Button>
         </Motion>
@@ -313,3 +315,4 @@ const EmotionAnalyzer = () => {
 };
 
 export default EmotionAnalyzer;
+
