@@ -316,5 +316,37 @@
       },
       "alwaysActive": "نشط دائماً"
     }
+  },
+  "EMOTIONPAGE": {
+    "title": "تحليل مشاعر الوجه بالذكاء الاصطناعي",
+    "description": "حلّل المشاعر الظاهرة في الوجه من الصورة مباشرة داخل المتصفح.",
+    "keywords": "تحليل المشاعر, تعبيرات الوجه, تحليل الصور بالذكاء الاصطناعي, TensorFlow.js",
+    "mainCta": "ابدأ تحليل المشاعر بالذكاء الاصطناعي",
+    "back": "رجوع",
+    "choosePhoto": "اختر صورة",
+    "addPhotoTitle": "أضف صورة",
+    "addPhotoDescription": "الصورة الواضحة للوجه تعطي نتيجة أفضل.",
+    "analyzeButton": "تحليل المشاعر",
+    "analyzingButton": "جارٍ التحليل...",
+    "preparingModel": "جارٍ تجهيز نموذج المشاعر...",
+    "dominantEmotion": "المشاعر الأبرز",
+    "previewAlt": "معاينة صورة تحليل المشاعر",
+    "emotions": {
+      "neutral": "محايد",
+      "happy": "سعيد",
+      "sad": "حزين",
+      "angry": "غاضب",
+      "fearful": "خائف",
+      "disgusted": "منزعج",
+      "surprised": "متفاجئ"
+    },
+    "errors": {
+      "modelLoadFailed": "تعذر تحميل نموذج المشاعر.",
+      "modelNotReady": "نموذج المشاعر غير جاهز بعد.",
+      "choosePhotoFirst": "يرجى اختيار صورة أولاً.",
+      "faceNotFound": "لم يتم العثور على وجه. اختر صورة يظهر فيها الوجه بوضوح.",
+      "imageLoadFailed": "تعذر تحميل الصورة.",
+      "predictionFailed": "فشل تحليل المشاعر."
+    }
   }
 }

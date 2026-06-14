@@ -316,5 +316,37 @@
       },
       "alwaysActive": "Selalu Aktif"
     }
+  },
+  "EMOTIONPAGE": {
+    "title": "Analisis Emosi Wajah AI",
+    "description": "Analisis emosi wajah yang terlihat dari foto langsung di browser.",
+    "keywords": "analisis emosi, pengenalan ekspresi wajah, analisis foto AI, TensorFlow.js",
+    "mainCta": "Mulai analisis emosi AI",
+    "back": "Kembali",
+    "choosePhoto": "Pilih foto",
+    "addPhotoTitle": "Tambahkan foto",
+    "addPhotoDescription": "Foto wajah yang jelas memberi hasil terbaik.",
+    "analyzeButton": "Analisis emosi",
+    "analyzingButton": "Menganalisis...",
+    "preparingModel": "Menyiapkan model emosi...",
+    "dominantEmotion": "Emosi dominan",
+    "previewAlt": "Pratinjau gambar analisis emosi",
+    "emotions": {
+      "neutral": "Netral",
+      "happy": "Bahagia",
+      "sad": "Sedih",
+      "angry": "Marah",
+      "fearful": "Takut",
+      "disgusted": "Jijik",
+      "surprised": "Terkejut"
+    },
+    "errors": {
+      "modelLoadFailed": "Gagal memuat model emosi.",
+      "modelNotReady": "Model emosi belum siap.",
+      "choosePhotoFirst": "Pilih foto terlebih dahulu.",
+      "faceNotFound": "Wajah tidak ditemukan. Pilih foto dengan wajah yang terlihat jelas.",
+      "imageLoadFailed": "Gagal memuat gambar.",
+      "predictionFailed": "Analisis emosi gagal."
+    }
   }
 }

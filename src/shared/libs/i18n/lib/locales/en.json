@@ -316,5 +316,37 @@
   "HISTORYPAGEHEADER": {
     "RENAME-HISTORY": "Rename History",
     "DELETE-HISTORY": "Delete History"
+  },
+  "EMOTIONPAGE": {
+    "title": "AI Face Emotion Analysis",
+    "description": "Analyze visible facial emotions from a photo directly in your browser.",
+    "keywords": "emotion analysis, facial expression recognition, AI photo analysis, TensorFlow.js",
+    "mainCta": "Start AI emotion analysis",
+    "back": "Back",
+    "choosePhoto": "Choose photo",
+    "addPhotoTitle": "Add a photo",
+    "addPhotoDescription": "A clear face photo works best.",
+    "analyzeButton": "Analyze emotion",
+    "analyzingButton": "Analyzing...",
+    "preparingModel": "Preparing emotion model...",
+    "dominantEmotion": "Dominant emotion",
+    "previewAlt": "Emotion analysis preview image",
+    "emotions": {
+      "neutral": "Neutral",
+      "happy": "Happy",
+      "sad": "Sad",
+      "angry": "Angry",
+      "fearful": "Fearful",
+      "disgusted": "Disgusted",
+      "surprised": "Surprised"
+    },
+    "errors": {
+      "modelLoadFailed": "Failed to load emotion model.",
+      "modelNotReady": "The emotion model is not ready yet.",
+      "choosePhotoFirst": "Please choose a photo first.",
+      "faceNotFound": "No face was found. Please choose a photo where the face is clearly visible.",
+      "imageLoadFailed": "Failed to load the image.",
+      "predictionFailed": "Emotion analysis failed."
+    }
   }
 }

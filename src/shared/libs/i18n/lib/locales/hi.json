@@ -316,5 +316,37 @@
       },
       "alwaysActive": "हमेशा सक्रिय"
     }
+  },
+  "EMOTIONPAGE": {
+    "title": "AI चेहरे की भावना विश्लेषण",
+    "description": "फोटो में दिखने वाली चेहरे की भावनाओं का विश्लेषण सीधे ब्राउज़र में करें।",
+    "keywords": "भावना विश्लेषण, चेहरे के भाव पहचान, AI फोटो विश्लेषण, TensorFlow.js",
+    "mainCta": "AI भावना विश्लेषण शुरू करें",
+    "back": "वापस",
+    "choosePhoto": "फोटो चुनें",
+    "addPhotoTitle": "फोटो जोड़ें",
+    "addPhotoDescription": "स्पष्ट चेहरे वाली फोटो सबसे बेहतर काम करती है।",
+    "analyzeButton": "भावना विश्लेषण करें",
+    "analyzingButton": "विश्लेषण हो रहा है...",
+    "preparingModel": "भावना मॉडल तैयार हो रहा है...",
+    "dominantEmotion": "प्रमुख भावना",
+    "previewAlt": "भावना विश्लेषण फोटो पूर्वावलोकन",
+    "emotions": {
+      "neutral": "तटस्थ",
+      "happy": "खुशी",
+      "sad": "उदासी",
+      "angry": "गुस्सा",
+      "fearful": "डर",
+      "disgusted": "घृणा",
+      "surprised": "आश्चर्य"
+    },
+    "errors": {
+      "modelLoadFailed": "भावना मॉडल लोड नहीं हो सका।",
+      "modelNotReady": "भावना मॉडल अभी तैयार नहीं है।",
+      "choosePhotoFirst": "कृपया पहले फोटो चुनें।",
+      "faceNotFound": "चेहरा नहीं मिला। कृपया स्पष्ट चेहरे वाली फोटो चुनें।",
+      "imageLoadFailed": "छवि लोड नहीं हो सकी।",
+      "predictionFailed": "भावना विश्लेषण विफल रहा।"
+    }
   }
 }

@@ -316,5 +316,37 @@
       },
       "alwaysActive": "Immer aktiv"
     }
+  },
+  "EMOTIONPAGE": {
+    "title": "KI-Gesichtsemotionsanalyse",
+    "description": "Analysiere sichtbare Gesichtsemotionen aus einem Foto direkt im Browser.",
+    "keywords": "Emotionsanalyse, Gesichtsausdruckserkennung, KI-Fotoanalyse, TensorFlow.js",
+    "mainCta": "KI-Emotionsanalyse starten",
+    "back": "Zurück",
+    "choosePhoto": "Foto auswählen",
+    "addPhotoTitle": "Foto hinzufügen",
+    "addPhotoDescription": "Ein klares Gesichtsfoto funktioniert am besten.",
+    "analyzeButton": "Emotion analysieren",
+    "analyzingButton": "Analysiere...",
+    "preparingModel": "Emotionsmodell wird vorbereitet...",
+    "dominantEmotion": "Dominante Emotion",
+    "previewAlt": "Vorschau für Emotionsanalyse",
+    "emotions": {
+      "neutral": "Neutral",
+      "happy": "Freude",
+      "sad": "Traurigkeit",
+      "angry": "Wut",
+      "fearful": "Angst",
+      "disgusted": "Ekel",
+      "surprised": "Überraschung"
+    },
+    "errors": {
+      "modelLoadFailed": "Emotionsmodell konnte nicht geladen werden.",
+      "modelNotReady": "Das Emotionsmodell ist noch nicht bereit.",
+      "choosePhotoFirst": "Bitte wähle zuerst ein Foto aus.",
+      "faceNotFound": "Kein Gesicht gefunden. Bitte wähle ein Foto mit gut sichtbarem Gesicht.",
+      "imageLoadFailed": "Bild konnte nicht geladen werden.",
+      "predictionFailed": "Emotionsanalyse fehlgeschlagen."
+    }
   }
 }

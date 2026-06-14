@@ -15,7 +15,7 @@ export const cspMiddleware = (request: NextRequest, response: NextResponse) => {
     } 'nonce-${nonce}' 'strict-dynamic' vercel.live vercel.com cdn.jsdelivr.net;
     script-src-elem 'self' vercel.live vercel.com 'nonce-${nonce}';
     object-src 'none';
-    connect-src 'self' https://qmwtuvttspuxwuwrsuci.supabase.co blob: https://www.kaggle.com https://tfhub.dev https://storage.googleapis.com vercel.live vercel.com https://www.google-analytics.com https://o4506497206779904.ingest.sentry.io https://en.wikipedia.org https://upload.wikimedia.org;
+    connect-src 'self' https://qmwtuvttspuxwuwrsuci.supabase.co blob: https://www.kaggle.com https://tfhub.dev https://storage.googleapis.com https://cdn.jsdelivr.net vercel.live vercel.com https://www.google-analytics.com https://o4506497206779904.ingest.sentry.io https://en.wikipedia.org https://upload.wikimedia.org;
     base-uri 'self';
     form-action 'self';
     frame-ancestors 'none';

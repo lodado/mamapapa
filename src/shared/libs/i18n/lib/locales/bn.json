@@ -316,5 +316,37 @@
       },
       "alwaysActive": "সর্বদা সক্রিয়"
     }
+  },
+  "EMOTIONPAGE": {
+    "title": "AI মুখের আবেগ বিশ্লেষণ",
+    "description": "ছবির মুখে দৃশ্যমান আবেগ সরাসরি ব্রাউজারে বিশ্লেষণ করুন।",
+    "keywords": "আবেগ বিশ্লেষণ, মুখের অভিব্যক্তি, AI ছবি বিশ্লেষণ, TensorFlow.js",
+    "mainCta": "AI আবেগ বিশ্লেষণ শুরু করুন",
+    "back": "ফিরে যান",
+    "choosePhoto": "ছবি নির্বাচন করুন",
+    "addPhotoTitle": "একটি ছবি যোগ করুন",
+    "addPhotoDescription": "স্পষ্ট মুখের ছবি হলে ফল ভালো হয়।",
+    "analyzeButton": "আবেগ বিশ্লেষণ করুন",
+    "analyzingButton": "বিশ্লেষণ চলছে...",
+    "preparingModel": "আবেগ মডেল প্রস্তুত হচ্ছে...",
+    "dominantEmotion": "প্রধান আবেগ",
+    "previewAlt": "আবেগ বিশ্লেষণের ছবির প্রিভিউ",
+    "emotions": {
+      "neutral": "নিরপেক্ষ",
+      "happy": "আনন্দ",
+      "sad": "দুঃখ",
+      "angry": "রাগ",
+      "fearful": "ভয়",
+      "disgusted": "বিরক্তি",
+      "surprised": "বিস্ময়"
+    },
+    "errors": {
+      "modelLoadFailed": "আবেগ মডেল লোড করা যায়নি।",
+      "modelNotReady": "আবেগ মডেল এখনও প্রস্তুত নয়।",
+      "choosePhotoFirst": "প্রথমে একটি ছবি নির্বাচন করুন।",
+      "faceNotFound": "কোনও মুখ পাওয়া যায়নি। মুখ পরিষ্কার দেখা যায় এমন ছবি বেছে নিন।",
+      "imageLoadFailed": "ছবি লোড করা যায়নি।",
+      "predictionFailed": "আবেগ বিশ্লেষণ ব্যর্থ হয়েছে।"
+    }
   }
 }

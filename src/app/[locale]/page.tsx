@@ -36,6 +36,7 @@ export async function generateStaticParams() {
 const Page = async ({ params }: { params: { locale: string } }) => {
   setRequestLocale(params.locale);
   const t = await getTranslations("MAINPAGE");
+  const emotionT = await getTranslations("EMOTIONPAGE");
   const sitelinks = await generateSitelinks(params.locale);
 
   return (
@@ -101,6 +102,9 @@ const Page = async ({ params }: { params: { locale: string } }) => {
             </ButtonLink>
             <ButtonLink variant="primaryLine" href={PAGE_ROUTE.FACES_CELEBRITY}>
               {t("BUTTON-START-CELEBRITY")}
+            </ButtonLink>
+            <ButtonLink variant="primaryLine" href={PAGE_ROUTE.EMOTION}>
+              {emotionT("mainCta")}
             </ButtonLink>
             <HistoryLink />
           </nav>

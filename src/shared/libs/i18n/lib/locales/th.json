@@ -316,5 +316,37 @@
       },
       "alwaysActive": "เปิดใช้งานเสมอ"
     }
+  },
+  "EMOTIONPAGE": {
+    "title": "วิเคราะห์อารมณ์ใบหน้าด้วย AI",
+    "description": "วิเคราะห์อารมณ์บนใบหน้าจากรูปภาพได้โดยตรงในเบราว์เซอร์",
+    "keywords": "วิเคราะห์อารมณ์, จดจำสีหน้า, วิเคราะห์รูปภาพด้วย AI, TensorFlow.js",
+    "mainCta": "เริ่มวิเคราะห์อารมณ์ด้วย AI",
+    "back": "กลับ",
+    "choosePhoto": "เลือกรูปภาพ",
+    "addPhotoTitle": "เพิ่มรูปภาพ",
+    "addPhotoDescription": "รูปใบหน้าที่ชัดเจนจะให้ผลดีที่สุด",
+    "analyzeButton": "วิเคราะห์อารมณ์",
+    "analyzingButton": "กำลังวิเคราะห์...",
+    "preparingModel": "กำลังเตรียมโมเดลอารมณ์...",
+    "dominantEmotion": "อารมณ์เด่น",
+    "previewAlt": "ตัวอย่างรูปภาพสำหรับวิเคราะห์อารมณ์",
+    "emotions": {
+      "neutral": "เป็นกลาง",
+      "happy": "มีความสุข",
+      "sad": "เศร้า",
+      "angry": "โกรธ",
+      "fearful": "กลัว",
+      "disgusted": "รังเกียจ",
+      "surprised": "ประหลาดใจ"
+    },
+    "errors": {
+      "modelLoadFailed": "โหลดโมเดลอารมณ์ไม่สำเร็จ",
+      "modelNotReady": "โมเดลอารมณ์ยังไม่พร้อม",
+      "choosePhotoFirst": "โปรดเลือกรูปภาพก่อน",
+      "faceNotFound": "ไม่พบใบหน้า โปรดเลือกรูปที่เห็นใบหน้าชัดเจน",
+      "imageLoadFailed": "โหลดรูปภาพไม่สำเร็จ",
+      "predictionFailed": "วิเคราะห์อารมณ์ไม่สำเร็จ"
+    }
   }
 }

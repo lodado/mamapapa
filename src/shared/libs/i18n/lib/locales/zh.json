@@ -316,5 +316,37 @@
       },
       "alwaysActive": "始终激活"
     }
+  },
+  "EMOTIONPAGE": {
+    "title": "AI 面部情绪分析",
+    "description": "直接在浏览器中分析照片里脸部呈现的情绪。",
+    "keywords": "情绪分析, 面部表情识别, AI照片分析, TensorFlow.js",
+    "mainCta": "开始 AI 情绪分析",
+    "back": "返回",
+    "choosePhoto": "选择照片",
+    "addPhotoTitle": "添加照片",
+    "addPhotoDescription": "面部清晰的照片效果最好。",
+    "analyzeButton": "分析情绪",
+    "analyzingButton": "分析中...",
+    "preparingModel": "正在准备情绪模型...",
+    "dominantEmotion": "主要情绪",
+    "previewAlt": "情绪分析预览图片",
+    "emotions": {
+      "neutral": "平静",
+      "happy": "开心",
+      "sad": "悲伤",
+      "angry": "生气",
+      "fearful": "害怕",
+      "disgusted": "厌恶",
+      "surprised": "惊讶"
+    },
+    "errors": {
+      "modelLoadFailed": "情绪模型加载失败。",
+      "modelNotReady": "情绪模型尚未准备好。",
+      "choosePhotoFirst": "请先选择照片。",
+      "faceNotFound": "未找到人脸。请选择脸部清晰可见的照片。",
+      "imageLoadFailed": "图片加载失败。",
+      "predictionFailed": "情绪分析失败。"
+    }
   }
 }

@@ -316,5 +316,37 @@
       },
       "alwaysActive": "Luôn hoạt động"
     }
+  },
+  "EMOTIONPAGE": {
+    "title": "Phân tích cảm xúc khuôn mặt bằng AI",
+    "description": "Phân tích cảm xúc hiển thị trên khuôn mặt từ ảnh ngay trong trình duyệt.",
+    "keywords": "phân tích cảm xúc, nhận diện biểu cảm khuôn mặt, phân tích ảnh AI, TensorFlow.js",
+    "mainCta": "Bắt đầu phân tích cảm xúc AI",
+    "back": "Quay lại",
+    "choosePhoto": "Chọn ảnh",
+    "addPhotoTitle": "Thêm ảnh",
+    "addPhotoDescription": "Ảnh khuôn mặt rõ sẽ cho kết quả tốt nhất.",
+    "analyzeButton": "Phân tích cảm xúc",
+    "analyzingButton": "Đang phân tích...",
+    "preparingModel": "Đang chuẩn bị mô hình cảm xúc...",
+    "dominantEmotion": "Cảm xúc nổi bật",
+    "previewAlt": "Ảnh xem trước phân tích cảm xúc",
+    "emotions": {
+      "neutral": "Bình tĩnh",
+      "happy": "Vui vẻ",
+      "sad": "Buồn",
+      "angry": "Tức giận",
+      "fearful": "Sợ hãi",
+      "disgusted": "Khó chịu",
+      "surprised": "Ngạc nhiên"
+    },
+    "errors": {
+      "modelLoadFailed": "Không thể tải mô hình cảm xúc.",
+      "modelNotReady": "Mô hình cảm xúc chưa sẵn sàng.",
+      "choosePhotoFirst": "Vui lòng chọn ảnh trước.",
+      "faceNotFound": "Không tìm thấy khuôn mặt. Hãy chọn ảnh có khuôn mặt rõ ràng.",
+      "imageLoadFailed": "Không thể tải hình ảnh.",
+      "predictionFailed": "Phân tích cảm xúc thất bại."
+    }
   }
 }

@@ -316,5 +316,37 @@
       },
       "alwaysActive": "Sempre Ativo"
     }
+  },
+  "EMOTIONPAGE": {
+    "title": "Análise de emoções faciais com IA",
+    "description": "Analise emoções faciais visíveis em uma foto diretamente no navegador.",
+    "keywords": "análise de emoções, reconhecimento de expressões faciais, análise de foto com IA, TensorFlow.js",
+    "mainCta": "Iniciar análise de emoções com IA",
+    "back": "Voltar",
+    "choosePhoto": "Escolher foto",
+    "addPhotoTitle": "Adicione uma foto",
+    "addPhotoDescription": "Uma foto clara do rosto funciona melhor.",
+    "analyzeButton": "Analisar emoção",
+    "analyzingButton": "Analisando...",
+    "preparingModel": "Preparando modelo de emoções...",
+    "dominantEmotion": "Emoção dominante",
+    "previewAlt": "Prévia da imagem de análise de emoções",
+    "emotions": {
+      "neutral": "Neutro",
+      "happy": "Felicidade",
+      "sad": "Tristeza",
+      "angry": "Raiva",
+      "fearful": "Medo",
+      "disgusted": "Nojo",
+      "surprised": "Surpresa"
+    },
+    "errors": {
+      "modelLoadFailed": "Falha ao carregar o modelo de emoções.",
+      "modelNotReady": "O modelo de emoções ainda não está pronto.",
+      "choosePhotoFirst": "Escolha uma foto primeiro.",
+      "faceNotFound": "Nenhum rosto foi encontrado. Escolha uma foto com o rosto claramente visível.",
+      "imageLoadFailed": "Falha ao carregar a imagem.",
+      "predictionFailed": "A análise de emoções falhou."
+    }
   }
 }

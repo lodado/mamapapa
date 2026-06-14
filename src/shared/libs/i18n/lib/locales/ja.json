@@ -316,5 +316,37 @@
       },
       "alwaysActive": "常にアクティブ"
     }
+  },
+  "EMOTIONPAGE": {
+    "title": "AI表情感情分析",
+    "description": "写真の顔から見える感情をブラウザ上で直接分析します。",
+    "keywords": "感情分析, 表情認識, AI写真分析, TensorFlow.js",
+    "mainCta": "AI感情分析を始める",
+    "back": "戻る",
+    "choosePhoto": "写真を選択",
+    "addPhotoTitle": "写真を追加してください",
+    "addPhotoDescription": "顔がはっきり見える写真ほど正確です。",
+    "analyzeButton": "感情を分析する",
+    "analyzingButton": "分析中...",
+    "preparingModel": "感情分析モデルを準備中...",
+    "dominantEmotion": "最も強く見える感情",
+    "previewAlt": "感情分析画像のプレビュー",
+    "emotions": {
+      "neutral": "落ち着き",
+      "happy": "喜び",
+      "sad": "悲しみ",
+      "angry": "怒り",
+      "fearful": "恐れ",
+      "disgusted": "不快",
+      "surprised": "驚き"
+    },
+    "errors": {
+      "modelLoadFailed": "感情分析モデルの読み込みに失敗しました。",
+      "modelNotReady": "感情分析モデルはまだ準備できていません。",
+      "choosePhotoFirst": "先に写真を選択してください。",
+      "faceNotFound": "顔が見つかりませんでした。顔がはっきり見える写真を選んでください。",
+      "imageLoadFailed": "画像を読み込めませんでした。",
+      "predictionFailed": "感情分析に失敗しました。"
+    }
   }
 }

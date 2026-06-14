@@ -316,5 +316,37 @@
       },
       "alwaysActive": "Her Zaman Aktif"
     }
+  },
+  "EMOTIONPAGE": {
+    "title": "AI Yüz Duygu Analizi",
+    "description": "Bir fotoğraftaki görünür yüz duygularını doğrudan tarayıcıda analiz edin.",
+    "keywords": "duygu analizi, yüz ifadesi tanıma, AI fotoğraf analizi, TensorFlow.js",
+    "mainCta": "AI duygu analizini başlat",
+    "back": "Geri",
+    "choosePhoto": "Fotoğraf seç",
+    "addPhotoTitle": "Fotoğraf ekleyin",
+    "addPhotoDescription": "Net bir yüz fotoğrafı en iyi sonucu verir.",
+    "analyzeButton": "Duyguyu analiz et",
+    "analyzingButton": "Analiz ediliyor...",
+    "preparingModel": "Duygu modeli hazırlanıyor...",
+    "dominantEmotion": "Baskın duygu",
+    "previewAlt": "Duygu analizi görsel önizlemesi",
+    "emotions": {
+      "neutral": "Nötr",
+      "happy": "Mutlu",
+      "sad": "Üzgün",
+      "angry": "Kızgın",
+      "fearful": "Korkmuş",
+      "disgusted": "Tiksinmiş",
+      "surprised": "Şaşkın"
+    },
+    "errors": {
+      "modelLoadFailed": "Duygu modeli yüklenemedi.",
+      "modelNotReady": "Duygu modeli henüz hazır değil.",
+      "choosePhotoFirst": "Lütfen önce bir fotoğraf seçin.",
+      "faceNotFound": "Yüz bulunamadı. Yüzün net göründüğü bir fotoğraf seçin.",
+      "imageLoadFailed": "Görsel yüklenemedi.",
+      "predictionFailed": "Duygu analizi başarısız oldu."
+    }
   }
 }
