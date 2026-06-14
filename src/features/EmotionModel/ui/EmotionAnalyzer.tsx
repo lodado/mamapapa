@@ -98,7 +98,7 @@ const AnalyzingProgress = () => {
 const EmotionAnalyzer = () => {
   const t = useTranslations("EMOTIONPAGE");
   const fileInputRef = useRef<HTMLInputElement>(null);
-  const lastAnalyzedFileRef = useRef<File | null>(null);
+  const predictionRequestIdRef = useRef(0);
   const [preview, setPreview] = useState<string | null>(null);
   const [file, setFile] = useState<File | null>(null);
   const [result, setResult] = useState<EmotionPredictionResult | null>(null);
@@ -121,20 +121,20 @@ const EmotionAnalyzer = () => {
   );
 
   useEffect(() => {
-    if (!file || !modelReady || isPredicting || lastAnalyzedFileRef.current === file) return;
+    if (!file || !modelReady) return;
 
-    let isCancelled = false;
+    const requestId = predictionRequestIdRef.current + 1;
+    predictionRequestIdRef.current = requestId;
 
     const runPrediction = async () => {
       try {
-        lastAnalyzedFileRef.current = file;
         setPredicting(true);
         setErrorMessage(null);
         setResult(null);
         const prediction = await predictEmotion(file);
-        if (!isCancelled) setResult(prediction);
+        if (predictionRequestIdRef.current === requestId) setResult(prediction);
       } catch (error) {
-        if (!isCancelled) {
+        if (predictionRequestIdRef.current === requestId) {
           if (error instanceof Error) {
             if (error.message === "EMOTION_MODEL_NOT_READY") setErrorMessage(t("errors.modelNotReady"));
             else if (error.message === "EMOTION_FACE_NOT_FOUND") setErrorMessage(t("errors.faceNotFound"));
@@ -146,23 +146,18 @@ const EmotionAnalyzer = () => {
           }
         }
       } finally {
-        if (!isCancelled) setPredicting(false);
+        if (predictionRequestIdRef.current === requestId) setPredicting(false);
       }
     };
 
     runPrediction();
-
-    return () => {
-      isCancelled = true;
-    };
-  }, [file, isPredicting, modelReady, predictEmotion, t]);
+  }, [file, modelReady, predictEmotion, t]);
 
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const selectedFile = event.target.files?.[0];
     if (!selectedFile) return;
 
     if (preview) URL.revokeObjectURL(preview);
-    lastAnalyzedFileRef.current = null;
     setPreview(URL.createObjectURL(selectedFile));
     setFile(selectedFile);
     setResult(null);
@@ -315,4 +310,3 @@ const EmotionAnalyzer = () => {
 };
 
 export default EmotionAnalyzer;
-
