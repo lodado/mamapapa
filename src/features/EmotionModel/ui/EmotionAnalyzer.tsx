@@ -6,8 +6,8 @@ import Image from "next/image";
 import { useTranslations } from "next-intl";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 
-import { Motion } from "@/shared/ui/animation/animation";
 import { Button } from "@/shared/ui";
+import { Motion } from "@/shared/ui/animation/animation";
 
 import { EmotionPredictionResult, useEmotionModelStore } from "../model";
 
