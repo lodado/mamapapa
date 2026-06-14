@@ -1,8 +1,8 @@
 "use client";
 
+import { motion } from "motion/react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
-import { motion } from "motion/react";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 
 import { Motion } from "@/shared/ui/animation/animation";
