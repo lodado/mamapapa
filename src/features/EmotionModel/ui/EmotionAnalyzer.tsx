@@ -1,6 +1,7 @@
 "use client";
 
 import { ImagePlus, Loader2, Sparkles } from "lucide-react";
+import { motion } from "motion/react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import React, { useEffect, useMemo, useRef, useState } from "react";
@@ -11,13 +12,13 @@ import { Motion } from "@/shared/ui/animation/animation";
 import { EmotionPredictionResult, useEmotionModelStore } from "../model";
 
 const EMOTION_STYLE = {
-  neutral: { icon: "○", color: "#8B95A1", glow: "rgba(139,149,161,0.32)" },
-  happy: { icon: "☺", color: "#FFC83D", glow: "rgba(255,200,61,0.36)" },
-  sad: { icon: "☔", color: "#6CA8FF", glow: "rgba(108,168,255,0.34)" },
-  angry: { icon: "!", color: "#FF6B6B", glow: "rgba(255,107,107,0.34)" },
-  fearful: { icon: "△", color: "#9B7BFF", glow: "rgba(155,123,255,0.34)" },
-  disgusted: { icon: "×", color: "#63D297", glow: "rgba(99,210,151,0.34)" },
-  surprised: { icon: "✦", color: "#FF9F43", glow: "rgba(255,159,67,0.34)" },
+  neutral: { icon: "○", color: "#8B95A1" },
+  happy: { icon: "☺", color: "#FFC83D" },
+  sad: { icon: "☔", color: "#6CA8FF" },
+  angry: { icon: "!", color: "#FF6B6B" },
+  fearful: { icon: "△", color: "#9B7BFF" },
+  disgusted: { icon: "×", color: "#63D297" },
+  surprised: { icon: "✦", color: "#FF9F43" },
 } as const;
 
 type EmotionStyleLabel = keyof typeof EMOTION_STYLE;
@@ -36,31 +37,27 @@ const EmotionScoreBar = ({ label, score, index }: { label: EmotionStyleLabel; sc
     >
       <div className="mb-2 flex justify-between body-2 text-text-02">
         <span className="flex items-center gap-2">
-          <span
-            className="inline-flex h-7 w-7 items-center justify-center rounded-full text-[0.8rem] font-bold"
-            style={{ backgroundColor: `${emotion.color}24`, color: emotion.color }}
-          >
+          <span className="inline-flex w-5 items-center justify-center text-[0.95rem] font-bold" style={{ color: emotion.color }}>
             {emotion.icon}
           </span>
           {t(`emotions.${label}`)}
         </span>
         <span className="font-semibold text-text-01">{score}%</span>
       </div>
-      <div className="h-2.5 overflow-hidden rounded-full bg-background-01">
-        <Motion
-          componentType="div"
-          className="h-full rounded-full"
-          style={{
-            background: `linear-gradient(90deg, ${emotion.color}99, ${emotion.color})`,
-            boxShadow: `0 0 18px ${emotion.glow}`,
-          }}
-          initial={{ width: 0 }}
-          animate={{ width: `${score}%` }}
+      <svg className="h-3 w-full overflow-visible" viewBox="0 0 100 8" preserveAspectRatio="none" aria-hidden="true">
+        <line x1="0" y1="4" x2="100" y2="4" stroke="currentColor" className="text-background-01" strokeWidth="8" strokeLinecap="round" />
+        <motion.line
+          x1="0"
+          y1="4"
+          y2="4"
+          stroke={emotion.color}
+          strokeWidth="8"
+          strokeLinecap="round"
+          initial={{ x2: 0 }}
+          animate={{ x2: score }}
           transition={{ duration: 0.72, delay: 0.16 + 0.07 * index, ease: "easeOut" }}
-        >
-          {null}
-        </Motion>
-      </div>
+        />
+      </svg>
     </Motion>
   );
 };
@@ -275,10 +272,7 @@ const EmotionAnalyzer = () => {
                 </span>
               </div>
             </div>
-            <span
-              className="flex h-12 w-12 items-center justify-center rounded-2xl text-[1.35rem] font-bold"
-              style={{ backgroundColor: `${dominantEmotionStyle.color}24`, color: dominantEmotionStyle.color }}
-            >
+            <span className="flex h-12 w-8 items-center justify-center text-[1.35rem] font-bold" style={{ color: dominantEmotionStyle.color }}>
               {dominantEmotionStyle.icon}
             </span>
           </div>
