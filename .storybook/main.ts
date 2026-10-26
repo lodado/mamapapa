@@ -1,5 +1,6 @@
 import type { StorybookConfig } from "@storybook/nextjs";
 
+// shortcut: webpack is pinned to 5.101.2 until Storybook supports Next.js's bundled Webpack hooks.
 const config: StorybookConfig = {
   stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
   addons: [

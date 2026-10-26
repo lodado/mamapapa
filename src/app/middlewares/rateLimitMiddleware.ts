@@ -41,7 +41,7 @@ const defaultRateLimitConfig = {
 
 // IP 주소 추출
 function getClientIp(request: NextRequest) {
-  return request.ip || request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "127.0.0.1";
+  return request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "127.0.0.1";
 }
 
 // 레이트 리미트 미들웨어 함수

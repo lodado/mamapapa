@@ -24,8 +24,9 @@ export async function generateStaticParams() {
   return getLocalesListsForStateParams();
 }
 
-export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
-  const t = await getTranslations("CELEBRITYFACES");
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "CELEBRITYFACES" });
 
   return getMetadata({
     title: t("SEO_TITLE"),
@@ -51,12 +52,13 @@ const createCelebrityItemListJsonLd = (locale: string, description: string) => {
   };
 };
 
-const Page = async ({ params }: { params: { locale: string } }) => {
-  setRequestLocale(params.locale);
+const Page = async ({ params }: { params: Promise<{ locale: string }> }) => {
+  const { locale } = await params;
+  setRequestLocale(locale);
   const t = await getTranslations("CELEBRITYFACES");
   const mainTranslate = await getTranslations("MAINPAGE");
 
-  const itemListJsonLd = createCelebrityItemListJsonLd(params.locale, t("SEO_DESCRIPTION"));
+  const itemListJsonLd = createCelebrityItemListJsonLd(locale, t("SEO_DESCRIPTION"));
 
   return (
     <>

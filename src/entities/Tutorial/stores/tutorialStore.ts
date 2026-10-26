@@ -10,6 +10,7 @@ export interface TutorialStep extends Step {
     skip: ReactNode;
   };
   disableBeacon: boolean;
+  spotlightClicks?: boolean;
 
   callbackBeforeStart?: (index: number) => void;
   callbackAfterStart?: (index: number) => void;

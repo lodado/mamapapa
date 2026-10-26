@@ -85,10 +85,10 @@ export async function POST(request: NextRequest) {
 }
 
 // POST: 댓글 업데이트 by id
-export async function PUT_BY_ID(request: NextRequest,  { params }: { params: { id: string } }) {
-  const { id } = params; 
+export async function PUT_BY_ID(request: NextRequest,  { params }: { params: Promise<{ id: string }> }) {
 
   try {
+    const { id } = await params;
     const body: Comment = await request.json();
     const { content } = body;
  
@@ -115,11 +115,11 @@ export async function PUT_BY_ID(request: NextRequest,  { params }: { params: { i
 }
 
 // POST: 댓글 업데이트 by id
-export async function DELETE_BY_ID(request: NextRequest,  { params }: { params: { id: string } }) {
+export async function DELETE_BY_ID(request: NextRequest,  { params }: { params: Promise<{ id: string }> }) {
 
 
   try {
-    const { id } = params;
+    const { id } = await params;
    
     const { data, error } = await supabaseInstance
       .from("simminyComments")

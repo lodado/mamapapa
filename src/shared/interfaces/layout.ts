@@ -1,3 +1,3 @@
 import { ReactNode } from "react";
 
-export type LocaleProps = { children?: ReactNode; params: { locale: string } };
+export type LocaleProps = { children?: ReactNode; params: Promise<{ locale: string }> };

@@ -10,7 +10,8 @@ import { getMetadata } from "@/shared/utils/index.server";
 
 import EmotionPageHeader from "./components/EmotionPageHeader";
 
-export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "EMOTIONPAGE" });
 
   return getMetadata({
@@ -22,8 +23,9 @@ export async function generateMetadata({ params: { locale } }: { params: { local
   });
 }
 
-const Page = async ({ params }: { params: { locale: string } }) => {
-  setRequestLocale(params.locale);
+const Page = async ({ params }: { params: Promise<{ locale: string }> }) => {
+  const { locale } = await params;
+  setRequestLocale(locale);
   const t = await getTranslations("EMOTIONPAGE");
 
   return (
@@ -35,7 +37,7 @@ const Page = async ({ params }: { params: { locale: string } }) => {
           description: t("description"),
           datePublished: new Date().toISOString(),
           keywords: t("keywords"),
-          locale: params.locale,
+          locale,
           isAccessibleForFree: true,
         }}
       />

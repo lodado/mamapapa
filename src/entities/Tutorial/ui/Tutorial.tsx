@@ -4,7 +4,7 @@ import "./style.scss";
 
 import { ComponentProps, useEffect, useMemo } from "react";
 import { preload } from "react-dom";
-import Joyride, { CallBackProps, STATUS } from "react-joyride";
+import { EventData, Joyride, STATUS } from "react-joyride";
 
 import { useIsClient } from "@/shared/hooks";
 
@@ -19,31 +19,27 @@ interface ReactTutorialProps extends Omit<ComponentProps<typeof Joyride>, "run">
   onTutorialEnd?: (status: TutorialEndStatus) => void;
 }
 
-interface JoyrideCallbackData extends CallBackProps {}
-
 const defaultOptions = {
+  arrowBase: 50,
+  arrowSize: 50,
   backgroundColor: "transparent",
   beaconSize: 36,
   overlayColor: "rgba(0, 0, 0, 0.5)",
   primaryColor: "var(--Primary-01)",
-  spotlightShadow: "0 0 15px rgba(0, 0, 0, 0.5)",
+  skipScroll: true,
   textColor: "var(--Text-00)",
-  width: "max-content",
-  height: "max-content",
 };
 
 const Tutorial = ({ steps, onTutorialEnd, ...rest }: ReactTutorialProps) => {
   const isClient = useIsClient();
   const { run, setRuns } = useTutorialStore();
 
-  const handleJoyrideCallback = (data: JoyrideCallbackData) => {
+  const handleJoyrideCallback = (data: EventData) => {
     const { status, index, type } = data;
-    const finishedStatuses = [STATUS.FINISHED, STATUS.SKIPPED];
     const step = steps[index];
 
     if (type === "step:before") {
       step.callbackBeforeStart?.(index);
-
       /* 
           Using querySelector in React might feel nasty,
           but since react-joyride uses element Id as targets, 
@@ -60,8 +56,7 @@ const Tutorial = ({ steps, onTutorialEnd, ...rest }: ReactTutorialProps) => {
       step.callbackAfterStart?.(index);
     }
 
-    // @ts-ignore
-    if (finishedStatuses.includes(status)) {
+    if (status === STATUS.FINISHED || status === STATUS.SKIPPED) {
       const endStatus: TutorialEndStatus = status === STATUS.FINISHED ? "finished" : "skipped";
       onTutorialEnd?.(endStatus);
       setRuns(false);
@@ -69,9 +64,11 @@ const Tutorial = ({ steps, onTutorialEnd, ...rest }: ReactTutorialProps) => {
   };
 
   const preprocessedSteps = useMemo(() => {
-    return steps.map((step) => {
+    return steps.map(({ callbackBeforeStart, callbackAfterStart, disableBeacon, spotlightClicks, ...step }) => {
       return {
         ...step,
+        skipBeacon: disableBeacon,
+        blockTargetInteraction: !spotlightClicks,
       };
     });
   }, [steps]);
@@ -90,16 +87,13 @@ const Tutorial = ({ steps, onTutorialEnd, ...rest }: ReactTutorialProps) => {
         <Joyride
           steps={preprocessedSteps}
           continuous={false} // Next 버튼 제거
-          showProgress={false} // 진행 상황 숨김
-          showSkipButton={false} // Skip 버튼 숨김
           run={run}
           scrollToFirstStep={false}
-          disableScrolling={true}
-          floaterProps={{}}
+          options={{ ...defaultOptions, buttons: [] }}
+          floatingOptions={{}}
           styles={{
-            options: defaultOptions,
-            tooltip: {},
-            buttonNext: {
+            tooltip: { width: "max-content" },
+            buttonPrimary: {
               display: "none", // Next 버튼 숨기기
             },
             buttonBack: {
@@ -110,7 +104,7 @@ const Tutorial = ({ steps, onTutorialEnd, ...rest }: ReactTutorialProps) => {
             },
           }}
           {...rest}
-          callback={handleJoyrideCallback}
+          onEvent={handleJoyrideCallback}
         />
       )}
     </>

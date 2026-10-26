@@ -13,8 +13,9 @@ export async function generateStaticParams() {
   return getLocalesListsForStateParams();
 }
 
-export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
-  const t = await getTranslations("LOGIN");
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "LOGIN" });
 
   return getMetadata({
     title: t("title"),
@@ -25,8 +26,9 @@ export async function generateMetadata({ params: { locale } }: { params: { local
   });
 }
 
-export default async function LoginPopupPage({ params }: { params: { locale: string } }) {
-  setRequestLocale(params.locale);
+export default async function LoginPopupPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   const t = await getTranslations("LOGIN");
 
   return (
@@ -38,7 +40,7 @@ export default async function LoginPopupPage({ params }: { params: { locale: str
           description: t("description"),
           datePublished: new Date().toISOString(),
           keywords: t("keywords"),
-          locale: params.locale,
+          locale,
           isAccessibleForFree: true,
         }}
       />

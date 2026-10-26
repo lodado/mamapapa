@@ -20,9 +20,10 @@ export async function generateStaticParams() {
   return getLocalesListsForStateParams();
 }
 
-export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
-  const mainTranslate = await getTranslations("MAINPAGE");
-  const t = await getTranslations("FACES");
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  const mainTranslate = await getTranslations({ locale, namespace: "MAINPAGE" });
+  const t = await getTranslations({ locale, namespace: "FACES" });
 
   return getMetadata({
     title: mainTranslate("title"),
@@ -33,8 +34,9 @@ export async function generateMetadata({ params: { locale } }: { params: { local
   });
 }
 
-const Page = async ({ params }: { params: { locale: string } }) => {
-  setRequestLocale(params.locale);
+const Page = async ({ params }: { params: Promise<{ locale: string }> }) => {
+  const { locale } = await params;
+  setRequestLocale(locale);
   const t = await getTranslations("FACES");
   const mainTranslate = await getTranslations("MAINPAGE");
 
@@ -47,7 +49,7 @@ const Page = async ({ params }: { params: { locale: string } }) => {
           description: t("description"),
           datePublished: new Date().toISOString(),
           keywords: t("keywords"),
-          locale: params.locale,
+          locale,
           isAccessibleForFree: true,
         }}
       />

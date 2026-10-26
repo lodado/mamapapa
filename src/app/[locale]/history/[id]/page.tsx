@@ -24,11 +24,12 @@ export const revalidate = 7200000; // 2 hours
 export const dynamicParams = true;
 
 export async function generateMetadata({
-  params: { id, locale },
+  params,
 }: {
-  params: { id: string; locale: string };
+  params: Promise<{ id: string; locale: string }>;
 }): Promise<Metadata> {
-  const t = await getTranslations("HISTORYID");
+  const { id, locale } = await params;
+  const t = await getTranslations({ locale, namespace: "HISTORYID" });
   const { data } = await getCachedCompareHistory(id)();
 
   return getMetadata({
@@ -43,8 +44,8 @@ export async function generateMetadata({
   });
 }
 
-const Page = async ({ params }: { params: { id: string; locale: string } }) => {
-  const { id, locale } = params;
+const Page = async ({ params }: { params: Promise<{ id: string; locale: string }> }) => {
+  const { id, locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations();
   const historyMessages = await getTranslations("HISTORYID");

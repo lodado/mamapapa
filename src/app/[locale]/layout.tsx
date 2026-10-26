@@ -2,7 +2,8 @@ import { Analytics } from "@vercel/analytics/next"
 import type { Metadata, Viewport } from "next";
 import Head from "next/head";
 import { headers } from "next/headers";
-import { NextIntlClientProvider, useMessages } from "next-intl";
+import { NextIntlClientProvider } from "next-intl";
+import { getMessages } from "next-intl/server";
 import React from "react";
 
 import HydratePlayerStore from "@/entities/Player/ui/HydratePlayerStore";
@@ -33,9 +34,10 @@ export function generateViewport(): Viewport {
 /**
  * TO DO - pwa 관련 옵션 수정
  */
-const RootLayout: React.FunctionComponent<LocaleProps> = ({ children, params: { locale } }) => {
-  const messages = useMessages();
-  const nonce = headers().get("x-nonce")!;
+const RootLayout = async ({ children, params }: LocaleProps) => {
+  const { locale } = await params;
+  const messages = await getMessages({ locale });
+  const nonce = (await headers()).get("x-nonce")!;
 
   return (
     <html lang={locale} suppressHydrationWarning>

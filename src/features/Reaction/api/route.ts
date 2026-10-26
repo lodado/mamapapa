@@ -7,9 +7,9 @@ import { supabaseInstance } from "@/shared/index.server";
  * GET: 특정 boardId에 대한 각 반응의 총 개수와 특정 userId의 반응 여부를 반환합니다.
  * 예) GET /api/reactions?boardId=1&userId=user1
  */
-export async function GET(request: Request, { params }: { params: { boardId: string } }) {
+export async function GET(request: Request, { params }: { params: Promise<{ boardId: string }> }) {
   const { pathname, searchParams } = new URL(request.url);
-  const { boardId } = params;
+  const { boardId } = await params;
   const userId = searchParams.get("userId");
 
   if (!boardId) {
@@ -127,9 +127,9 @@ export async function GET_ALL(request: Request) {
   return NextResponse.json({ boards: Object.values(boardCounts) });
 }
 
-export async function POST(request: Request, { params }: { params: { boardId: string } }) {
+export async function POST(request: Request, { params }: { params: Promise<{ boardId: string }> }) {
   try {
-    const { boardId } = params;
+    const { boardId } = await params;
 
     const body = await request.json();
     const { userId, liked, thumbsUp, bbangparay } = body;

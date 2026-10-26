@@ -46,7 +46,7 @@
     "lucide-react": "^0.453.0",
     "mongodb": "^6.9.0",
     "motion": "^11.16.1",
-    "next": "^14.2.3",
+    "next": "15.5.28",
     "next-auth": "^5.0.0-beta.21",
     "next-intl": "^3.26.3",
     "next-pwa": "^5.6.0",
@@ -56,7 +56,7 @@
     "react-dnd": "^16.0.1",
     "react-dnd-touch-backend": "^16.0.1",
     "react-dom": "^18",
-    "react-joyride": "^2.9.3",
+    "react-joyride": "3.2.0",
     "react-virtuoso": "^4.12.5",
     "redis": "^4.7.0",
     "sanitize-html": "^2.13.0",
@@ -66,7 +66,7 @@
   "devDependencies": {
     "@chromatic-com/storybook": "1.9.0",
     "@eslint/js": "^9.19.0",
-    "@next/bundle-analyzer": "^15.1.4",
+    "@next/bundle-analyzer": "15.5.28",
     "@sentry/nextjs": "8",
     "@storybook/addon-essentials": "^8.3.0",
     "@storybook/addon-interactions": "^8.3.0",
@@ -93,7 +93,7 @@
     "clsx": "^2.1.1",
     "eslint": "^9.19.0",
     "eslint-config-airbnb": "^19.0.4",
-    "eslint-config-next": "14.2.11",
+    "eslint-config-next": "15.5.28",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-import": "^2.30.0",
     "eslint-plugin-jsx-a11y": "^6.10.0",
@@ -128,6 +128,7 @@
     "*.{js,jsx,ts,tsx}": "yarn lint"
   },
   "resolutions": {
-    "@supabase/auth-js": "2.61.0"
+    "@supabase/auth-js": "2.61.0",
+    "webpack": "5.101.2"
   }
 }

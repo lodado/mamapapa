@@ -1,15 +1,14 @@
 "use client";
 
-import { Params } from "next/dist/shared/lib/router/utils/route-matcher";
 import { useParams, usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useLocale } from "next-intl";
 
-export interface MetadataParams {
+export type MetadataParams = {
   locale: string;
   subDomain?: string;
-}
+};
 
-const useUrl = <T extends Params = MetadataParams>() => {
+const useUrl = <T extends Record<string, string | string[] | undefined> = MetadataParams>() => {
   const pathname = usePathname();
   const locale = useLocale();
   const router = useRouter();

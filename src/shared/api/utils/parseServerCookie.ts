@@ -1,8 +1,8 @@
 import { cache } from "react";
 
 const rawParseServerCookie = async () => {
-  const cookieString = (await import("next/headers"))
-    .cookies()
+  const cookieStore = await (await import("next/headers")).cookies();
+  const cookieString = cookieStore
     .getAll()
     .filter(({ name }) => /authjs/.test(name))
 

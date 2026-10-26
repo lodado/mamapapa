@@ -17,8 +17,9 @@ import BodySvg from "./BODY.svg";
 import HistoryLink from "./components/HistoryLink";
 import HeadSvg from "./HEAD.svg";
 
-export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
-  const t = await getTranslations("MAINPAGE");
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "MAINPAGE" });
 
   return getMetadata({
     title: t("title"),
@@ -33,11 +34,12 @@ export async function generateStaticParams() {
   return getLocalesListsForStateParams();
 }
 
-const Page = async ({ params }: { params: { locale: string } }) => {
-  setRequestLocale(params.locale);
+const Page = async ({ params }: { params: Promise<{ locale: string }> }) => {
+  const { locale } = await params;
+  setRequestLocale(locale);
   const t = await getTranslations("MAINPAGE");
   const emotionT = await getTranslations("EMOTIONPAGE");
-  const sitelinks = await generateSitelinks(params.locale);
+  const sitelinks = await generateSitelinks(locale);
 
   return (
     <>
@@ -48,7 +50,7 @@ const Page = async ({ params }: { params: { locale: string } }) => {
           description: t("description"),
           datePublished: new Date().toISOString(),
           keywords: t("keywords"),
-          locale: params.locale,
+          locale,
           isAccessibleForFree: true,
           sitelinks,
         }}

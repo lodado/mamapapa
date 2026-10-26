@@ -8,7 +8,7 @@ import tseslint from "typescript-eslint";
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
-  { ignores: ["dist", "public", ".next"] },
+  { ignores: ["dist", "public", ".next", "next-env.d.ts"] },
 
   { files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"] },
   {

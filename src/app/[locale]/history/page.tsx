@@ -14,8 +14,9 @@ import { getMetadata } from "@/shared/utils/index.server";
 import FacePageHeader from "./components/FacePageHeader";
 import HistoryListLayout from "./components/HistoryListLayout.server";
 
-export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
-  const t = await getTranslations("HISTORY");
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "HISTORY" });
 
   return getMetadata({
     title: t("title"),
@@ -29,8 +30,9 @@ export async function generateMetadata({ params: { locale } }: { params: { local
   });
 }
 
-const Page = async ({ params }: { params: { locale: string } }) => {
-  setRequestLocale(params.locale);
+const Page = async ({ params }: { params: Promise<{ locale: string }> }) => {
+  const { locale } = await params;
+  setRequestLocale(locale);
   const t = await getTranslations("HISTORY");
   const historyPageMessages = await getTranslations("HISTORYPAGE");
   const auth = await new GetUserInfoUseCase(new EDGE_DI_REPOSITORY.Auth()).execute();
@@ -49,7 +51,7 @@ const Page = async ({ params }: { params: { locale: string } }) => {
           datePublished: new Date().toISOString(),
           isAccessibleForFree: false,
           keywords: t("keywords"),
-          locale: params.locale,
+          locale,
         }}
       />
 
